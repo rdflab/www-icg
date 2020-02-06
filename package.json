@@ -12,7 +12,9 @@
     "gatsby-plugin-react-helmet": "^3.1.14",
     "gatsby-plugin-sass": "^2.1.28",
     "gatsby-plugin-sharp": "^2.2.37",
-    "gatsby-source-filesystem": "^2.1.36",
+    "gatsby-source-filesystem": "^2.1.48",
+    "gatsby-transformer-json": "^2.2.26",
+    "gatsby-transformer-remark": "^2.6.50",
     "gatsby-transformer-sharp": "^2.3.3",
     "node-sass": "^4.13.1",
     "prop-types": "^15.7.2",
@@ -24,7 +26,10 @@
     "prettier": "^1.19.1"
   },
   "keywords": [
-    "gatsby"
+    "ICG",
+    "Columbia",
+    "Cancer",
+    "Genetics"
   ],
   "license": "MIT",
   "scripts": {
