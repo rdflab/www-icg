@@ -1,0 +1,504 @@
+{
+  "labId": "katia-basso",
+  "publications": [
+    {
+      "authors": [
+        "Brescia P",
+        "Schneider C",
+        "Holmes AB",
+        "Shen Q",
+        "Hussein S",
+        "Pasqualucci L",
+        "<strong>Basso K</strong>",
+        "Dalla-Favera RMEF2B Instructs Germinal Center Development",
+        "Acts as an Oncogene in B Cell Lymphomagenesis"
+      ],
+      "title": "Cancer Cell",
+      "journal": "10;",
+      "date": 2018,
+      "url": "",
+      "volume": "34",
+      "issue": "3",
+      "pages": "453-465"
+    },
+    {
+      "authors": [
+        "<strong>Basso K</strong>"
+      ],
+      "title": "Singling out the out-of-tune in lymphoma",
+      "journal": "Nature Imm",
+      "date": 2018,
+      "url": "",
+      "volume": "19",
+      "issue": "9",
+      "pages": "903-905"
+    },
+    {
+      "authors": [
+        "Zhang J",
+        "Vlasevska S",
+        "Wells VA",
+        "Nataraj S",
+        "Holmes AB",
+        "Duval R",
+        "Meyer SN",
+        "Mo T",
+        "<strong>Basso K</strong>",
+        "Brindle PK",
+        "Hussein S",
+        "Dalla-Favera R",
+        "Pasqualucci L The CREBBP Acetyltransferase is a haploinsufficient tumor suppressor in B-cell lymphoma"
+      ],
+      "title": "Cancer Discov",
+      "journal": "",
+      "date": 2017,
+      "url": "",
+      "volume": "7",
+      "issue": "3",
+      "pages": "322-337"
+    },
+    {
+      "authors": [
+        "Schneider C",
+        "Kon N",
+        "Amadori L",
+        "Shen Q",
+        "Schwartz FH",
+        "Tischler B",
+        "Bossennec M",
+        "Dominguez-Sola D",
+        "Bhagat G",
+        "Gu W",
+        "<strong>Basso K</strong>",
+        "Dalla-Favera R"
+      ],
+      "title": "FBXO11 inactivation leads to abnormal germinal-center formation and lymphoproliferative disease",
+      "journal": "Blood",
+      "date": 2016,
+      "url": "",
+      "volume": "",
+      "issue": "",
+      "pages": ""
+    },
+    {
+      "authors": [
+        "Dominguez-Sola D",
+        "Kung J",
+        "Holems AB",
+        "Wells VA",
+        "Mo T,<strong> Basso K</strong>",
+        "Dalla-Favera R",
+        "Pasqualucci L"
+      ],
+      "title": "The FOXO1 transcription factor instructs the germinal center dark zone program",
+      "journal": "Immunity",
+      "date": 2015,
+      "url": "",
+      "volume": "43",
+      "issue": "6",
+      "pages": "1064-74"
+    },
+    {
+      "authors": [
+        "Zhang J",
+        "Dominguez-Sola D",
+        "Hussein S",
+        "Lee JE",
+        "Holems AB",
+        "Bansal M",
+        "Vlasevska S",
+        "Mo T",
+        "Tang H",
+        "<strong>Basso K</strong>",
+        "Ge K",
+        "Dalla-Favera R",
+        "Pasqualucci L"
+      ],
+      "title": "Disruption of KMT2D perturbs germinal center B cell development and promotes lymphomagenesis",
+      "journal": "Nat Med",
+      "date": 2015,
+      "url": "",
+      "volume": "",
+      "issue": "",
+      "pages": ""
+    },
+    {
+      "authors": [
+        "Schneider C",
+        "Setty M",
+        "Holmes AB",
+        "Maute RL",
+        "Leslie CS",
+        "Mussolin L",
+        "Rosolen A",
+        "Dalla-Favera R",
+        "<strong>Basso K</strong>"
+      ],
+      "title": "microRNA 28 controls cell proliferation and is down-regulated in B-cell lymphomas",
+      "journal": "Proc Natl Acad Sci USA",
+      "date": 2014,
+      "url": "",
+      "volume": "",
+      "issue": "",
+      "pages": ""
+    },
+    {
+      "authors": [
+        "Mussolin L",
+        "Holmes AB",
+        "Romualdi C",
+        "Sales G",
+        "D'Amore ES",
+        "Ghisi M",
+        "Pillon M",
+        "Rosolen A",
+        "<strong>Basso K</strong>"
+      ],
+      "title": "An aberrant microRNA signature in childhood T-cell lymphoblastic lymphoma affecting CDKN1B expression, NOTCH1 and growth factor signaling pathways",
+      "journal": "Leukemia",
+      "date": 2014,
+      "url": "",
+      "volume": "28",
+      "issue": "9",
+      "pages": "1909-12"
+    },
+    {
+      "authors": [
+        "Ying CY",
+        "Dominguez-Sola D",
+        "Fabi M",
+        "Lorenz IC",
+        "Hussein S",
+        "Bansal M",
+        "Califano A",
+        "Pasqualucci L",
+        "<strong>Basso K</strong>",
+        "Dalla-Favera R"
+      ],
+      "title": "MEF2B mutations lead to deregulated expression of the oncogene BCL6 in diffuse large B cell lymphoma",
+      "journal": "Nat Immunol",
+      "date": 2013,
+      "url": "",
+      "volume": "",
+      "issue": "",
+      "pages": ""
+    },
+    {
+      "authors": [
+        "Maute RL",
+        "Schneider C",
+        "Sumazin P",
+        "Holmes A",
+        "Califano A",
+        "<strong>Basso K</strong>",
+        "Dalla-Favera R"
+      ],
+      "title": "t-RNA-derived microRNA modulates proliferation and DNA damage response and is down-regulated in B cell lymphoma",
+      "journal": "Proc Natl Acad Sci USA",
+      "date": 2013,
+      "url": "",
+      "volume": "",
+      "issue": "",
+      "pages": ""
+    },
+    {
+      "authors": [
+        "<strong>Basso K</strong>",
+        "Schneider C",
+        "Shen Q",
+        "Holmes AB",
+        "Setty M",
+        "Leslie C",
+        "Dalla-Favera R"
+      ],
+      "title": "BCL6 positevely regulates AID and germinal center gene expression via repression of miR-155",
+      "journal": "J Exp Med",
+      "date": 2012,
+      "url": "",
+      "volume": "",
+      "issue": "",
+      "pages": ""
+    },
+    {
+      "authors": [
+        "Kitagawa Y",
+        "Brahmachary M",
+        "Tiacci E",
+        "Dalla-Favera R Falini B",
+        "<strong>Basso K</strong>"
+      ],
+      "title": "A microRNA signature specific for hairy cell leukemia and associated with modulation of the MAPK-JNK pathways",
+      "journal": "Leukemia",
+      "date": 2012,
+      "url": "",
+      "volume": "26",
+      "issue": "12",
+      "pages": "2564-7"
+    },
+    {
+      "authors": [
+        "<strong>Basso K</strong>",
+        "Mussolin L",
+        "Lettieri A",
+        "Brahamachary M",
+        "Lim WK",
+        "Califano A",
+        "Basso G",
+        "Biondi A",
+        "Cazzaniga G",
+        "Rosolen A"
+      ],
+      "title": "T-cell lymphoblastic lymphoma shows differences and similarities with T-cell acute lymphoblastic leukemia by genomic and gene expression analyses",
+      "journal": "Genes Chromosomes Cancer",
+      "date": 2011,
+      "url": "",
+      "volume": "50",
+      "issue": "12",
+      "pages": "1063-75"
+    },
+    {
+      "authors": [
+        "<strong>Basso K</strong>",
+        "Saito M",
+        "Sumazin P",
+        "Margolin AA",
+        "Wang K",
+        "Lim WK",
+        "Kitagawa Y",
+        "Schneider C",
+        "Alvarez M",
+        "Califano A",
+        "Dalla-Favera R"
+      ],
+      "title": "Integrated biochemical and computational approach identifies BCL6 direct target genes controlling multiple pathways in normal germinal-center B cells",
+      "journal": "Blood",
+      "date": 2010,
+      "url": "",
+      "volume": "",
+      "issue": "",
+      "pages": ""
+    },
+    {
+      "authors": [
+        "Saito M",
+        "Novak U",
+        "Piovan E",
+        "<strong>Basso K</strong>",
+        "Sumazin P",
+        "Schneider C",
+        "Crespo M",
+        "Shen Q",
+        "Bhagat G",
+        "Califano A",
+        "Chadburn A",
+        "Pasqualucci L",
+        "Dalla-Favera R"
+      ],
+      "title": "BCL6 suppression of BCL2 via Miz1 and its disruption in diffuse large B cell lymphoma",
+      "journal": "Proc Natl Acad Sci USA",
+      "date": 2009,
+      "url": "",
+      "volume": "",
+      "issue": "",
+      "pages": ""
+    },
+    {
+      "authors": [
+        "<strong>Basso K</strong>",
+        "Sumazin P",
+        "Morozov P",
+        "Schneider C",
+        "Maute RL",
+        "Kitagawa Y",
+        "Mandelbaum J",
+        "Haddad J",
+        "Chen CZ",
+        "Califano A",
+        "Dalla-Favera R"
+      ],
+      "title": "Identification of the human mature B cell miRNome",
+      "journal": "Immunity",
+      "date": 2009,
+      "url": "",
+      "volume": "",
+      "issue": "",
+      "pages": ""
+    },
+    {
+      "authors": [
+        "Saito M",
+        "Gao J",
+        "<strong>Basso K</strong>",
+        "Kitagawa Y",
+        "Smith PM",
+        "Bhagat G",
+        "Pasqualucci L",
+        "Dalla-Favera R"
+      ],
+      "title": "A signaling pathway mediating downregulation of BCL6 in germinal center B cells is blocked by BCL6 gene alterations in B cell lymphoma",
+      "journal": "Cancer Cell",
+      "date": 2007,
+      "url": "",
+      "volume": "12",
+      "issue": "3",
+      "pages": "280-92"
+    },
+    {
+      "authors": [
+        "Phan RT",
+        "Saito M",
+        "<strong>Basso K</strong>",
+        "Niu H",
+        "Dalla-Favera R"
+      ],
+      "title": "BCL6 interacts with the transcription factor Miz-1 to suppress the cyclin-dependent kinase inhibitor p21 and cell cycle arrest in germinal center B cells",
+      "journal": "Nat Immunol",
+      "date": 2005,
+      "url": "",
+      "volume": "",
+      "issue": "",
+      "pages": ""
+    },
+    {
+      "authors": [
+        "<strong>Basso K</strong>",
+        "Margolin AA",
+        "Stolovitzky G",
+        "Klein U",
+        "Dalla-Favera R",
+        "Califano A"
+      ],
+      "title": "Reverse engineering of regulatory networks in human B cells",
+      "journal": "Nat Genet",
+      "date": 2005,
+      "url": "",
+      "volume": "",
+      "issue": "",
+      "pages": ""
+    },
+    {
+      "authors": [
+        "<strong>Basso K</strong>",
+        "Klein U",
+        "Niu H",
+        "Stolovitzky G",
+        "Tu Y",
+        "Califano A",
+        "Cattoretti G",
+        "Dalla-Favera R"
+      ],
+      "title": "Tracking CD40 signaling during germinal center development",
+      "journal": "Blood",
+      "date": 2004,
+      "url": "",
+      "volume": "",
+      "issue": "",
+      "pages": ""
+    },
+    {
+      "authors": [
+        "<strong>Basso K</strong>",
+        "Liso A",
+        "Tiacci E",
+        "Benedetti R",
+        "Pulsoni A",
+        "Foa R",
+        "Di Raimondo F",
+        "Ambrosetti A",
+        "Califano A",
+        "Klein U",
+        "Dalla-Favera R",
+        "Falini B"
+      ],
+      "title": "Gene expression profiling of hairy cell leukemia reveals a phenotype related to memory B cells with altered expression of chemokine and adhesion receptors",
+      "journal": "JEM",
+      "date": 2004,
+      "url": "",
+      "volume": "199",
+      "issue": "1",
+      "pages": "59-68"
+    },
+    {
+      "authors": [
+        "Pasqualucci L",
+        "Migliazza A",
+        "<strong>Basso K</strong>",
+        "Houldsworth J",
+        "Chaganti RS",
+        "Dalla-Favera R"
+      ],
+      "title": "Mutations of the BCL6 proto-oncogene disrupt its negative autoregulation in diffuse large B-cell lymphoma",
+      "journal": "Blood",
+      "date": 2003,
+      "url": "",
+      "volume": "",
+      "issue": "",
+      "pages": ""
+    },
+    {
+      "authors": [
+        "<strong>Basso K</strong>",
+        "Dalla-Favera R"
+      ],
+      "title": "Germinal centres and B cell lymphomagenesis",
+      "journal": "Nat Rev Immunol",
+      "date": 2015,
+      "url": "",
+      "volume": "",
+      "issue": "",
+      "pages": ""
+    },
+    {
+      "authors": [
+        "Maute RL",
+        "Dalla-Favera R",
+        "<strong>Basso K</strong>"
+      ],
+      "title": "RNA with multiple personalities",
+      "journal": "Wiley Interdiscip Rev RNA",
+      "date": 2014,
+      "url": "",
+      "volume": "5",
+      "issue": "1",
+      "pages": "1-13"
+    },
+    {
+      "authors": [
+        "<strong>Basso K</strong>",
+        "Dalla-Favera R"
+      ],
+      "title": "Role of BCL6 in normal and transformed germinal center B cells",
+      "journal": "Immunol Rev",
+      "date": 2012,
+      "url": "",
+      "volume": "",
+      "issue": "",
+      "pages": ""
+    },
+    {
+      "authors": [
+        "<strong>Basso K</strong>",
+        "Dalla-Favera R"
+      ],
+      "title": "BCL6: master regulator of the germinal center reaction and key oncogene in B cell lymphomagenesis",
+      "journal": "Adv Immunol",
+      "date": 2010,
+      "url": "",
+      "volume": "",
+      "issue": "",
+      "pages": ""
+    },
+    {
+      "authors": [
+        "<strong>Basso K</strong>"
+      ],
+      "title": "Toward a systems biology approach to investigate cellular networks in normal and malignant B cells",
+      "journal": "Leukemia",
+      "date": 2009,
+      "url": "",
+      "volume": "23",
+      "issue": "7",
+      "pages": "1219-25"
+    }
+  ]
+}

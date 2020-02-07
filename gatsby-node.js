@@ -1,15 +1,35 @@
 const path = require(`path`)
+
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
-  const facultyTemplate = path.resolve(`src/templates/faculty.js`)
+  const labTemplate = path.resolve(`src/templates/lab.js`)
   
   
-  const result = await graphql(`
+  const results = await graphql(`
     query {
       faculty: allFacultyJson {
         edges {
           node {
-            lab_id
+            labId
+            name
+          }
+        }
+      }
+
+      publications: allPublicationsJson {
+        edges {
+          node {
+            labId
+            publications {
+              title
+              journal
+              date
+              url
+              volume
+              issue
+              pages
+              authors
+            }
           }
         }
       }
@@ -31,15 +51,32 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   //   })
   // })
 
-  console.log(result)
+  const faculty = results.data.faculty.edges
+  const allPublications = results.data.publications.edges
 
-  result.data.faculty.edges.forEach(({ node }) => {
+  faculty.forEach(({ node }) => {
     console.log('cake', node)
+
+    const labId = node.labId
+    const name = node.name
+    
+    var publications = []
+
+    allPublications.forEach(({ node }) => {
+      if (node.labId === labId) {
+        publications = node.publications
+      }
+    })
+
+    console.log("Making ", labId, publications)
+
     createPage({
-      path: `/faculty/${node.lab_id}`,
-      component: facultyTemplate,
+      path: `/research-areas/labs/${labId}`,
+      component: labTemplate,
       context: {
-        labId: node.lab_id
+        labId: labId,
+        name: name,
+        publications: publications
       }, // additional data can be passed via context
     })
   })
