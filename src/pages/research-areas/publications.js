@@ -51,7 +51,7 @@ const sort = (publications) => {
 const Publications = props => {
   const { data } = props
 
-  const allPublications = sort(flatten(data.publications.edges))
+  const allPublications = data.publications.edges //sort(flatten(data.publications.edges))
   const emptyQuery = ""
   const [state, setState] = React.useState({query: emptyQuery, filteredPublications: []})
 
@@ -61,7 +61,8 @@ const Publications = props => {
 
     const publications = allPublications || []   
     // return all filtered posts  
-    const filteredPublications = publications.filter(publication => {    
+    const filteredPublications = publications.filter(({ node }) => {
+      const publication = node   
       // destructure data from post frontmatter    
       return (      
         // standardize data with .toLowerCase()      
@@ -79,7 +80,7 @@ const Publications = props => {
 
   const { filteredPublications, query } = state
   const hasSearchResults = filteredPublications && query !== emptyQuery
-  const posts = hasSearchResults ? filteredPublications : allPublications
+  const publications = hasSearchResults ? filteredPublications : allPublications
 
   return (
     <Layout>
@@ -91,26 +92,21 @@ const Publications = props => {
 
       <input type="text" aria-label="Search" placeholder="Type to find publication..." onChange={handleInputChange} />
 
-      <h2>{posts.length} Found {posts.length === 1 ? "publication" : "publications"} found</h2>
+      <h2>{publications.length} Found {publications.length === 1 ? "publication" : "publications"} found</h2>
 
-      {posts.map(publication => {
+      {publications.map(({ node }) => {
+        const publication = node
+        console.log(publication)
         const title = publication.title
 
         return (
           <article>
             <header>
               <h2>
-                {title}
+                cake {title}
               </h2>
               
             </header>
-            {/* <section>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: description || excerpt,
-                }}
-              />
-            </section> */}
             <hr />
           </article>
         )
@@ -131,20 +127,21 @@ export const pageQuery = graphql`
       }
     }
 
-    publications: allPublicationsJson {
+    publications: allPublicationsJson(sort: {fields: [year, title], order: [DESC, ASC]}) {
       edges {
         node {
-          labId
-          publications {
-            title
-            journal
-            date
-            url
-            volume
-            issue
-            pages
-            authors
+          authors {
+            corresponding
+            initials
+            lastName
           }
+          labId
+          journal
+          issue
+          pages
+          title
+          volume
+          year
         }
       }
     }

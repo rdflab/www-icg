@@ -2,6 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
+import Breadcrumb from "../../components/breadcrumb"
 
 const FacultyIndex = props => {
   const { data } = props
@@ -39,10 +40,12 @@ const FacultyIndex = props => {
   return (
     <Layout>
       <SEO title="Labs" />
+
+      <Breadcrumb crumbs={ [ ['For Research Scientists','/research-areas/labs'], ['iLottNum','test'] ] } />
     
 
       {/*in-line css for demo purposes*/}
-      <h1 style={{ textAlign: `center` }}>Faculty</h1>
+      <h1>Research Labs</h1>
 
       <input type="text" aria-label="Search" placeholder="Type to find faculty member..." onChange={handleInputChange} />
 

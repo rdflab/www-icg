@@ -7,42 +7,52 @@ import Publications from "../components/publications"
 const LabTemplate = props => {
   const { data, pageContext } = props
 
-  const { labId, name, publications } = pageContext
+  const { member } = pageContext
+
+  const allPublications = data.allPublications.edges
+
+  var publications = []
+
+  allPublications.forEach(({ node }) => {
+    publications.push(node)
+  })
 
   //const { markdownRemark } = data // data.markdownRemark holds your post data
   //const { frontmatter, html } = markdownRemark
   return (
     <Layout>
-      <SEO title={`The ${name} Lab`} />
+      <SEO title={`The ${member.lastName} Lab`} />
 
       <div className="blog-post-container">
         
-        hello {labId}
 
         <Publications publications={publications}/>
-
-        {/* <div className="blog-post">
-          <h1>{frontmatter.title}</h1>
-          <h2>{frontmatter.date}</h2>
-          <div
-            className="blog-post-content"
-            dangerouslySetInnerHTML={{ __html: html }}
-          />
-        </div> */}
       </div>
     </Layout>
   )
 }
-// export const pageQuery = graphql`
-//   query($path: String!) {
-//     markdownRemark(frontmatter: { path: { eq: $path } }) {
-//       html
-//       frontmatter {
-//         date(formatString: "MMMM DD, YYYY")
-//         path
-//         title
-//       }
-//     }
-//   }`
+
+export const pageQuery = graphql`
+  query($labId: String!) {
+    allPublications: allPublicationsJson(sort: {fields: [year, title], order: [DESC, ASC]}, filter: {labId: {eq: $labId}}) {
+      edges {
+        node {
+          authors {
+            corresponding
+            initials
+            lastName
+          }
+          labId
+          journal
+          issue
+          pages
+          title
+          volume
+          year
+        }
+      }
+    }
+  }
+`
 
 export default LabTemplate

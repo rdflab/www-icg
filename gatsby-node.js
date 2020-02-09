@@ -7,29 +7,31 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   
   const results = await graphql(`
     query {
-      faculty: allFacultyJson {
+      allFaculty: allFacultyJson {
         edges {
           node {
             labId
-            name
+            firstName
+            lastName
           }
         }
       }
 
-      publications: allPublicationsJson {
+      allPublications: allPublicationsJson {
         edges {
           node {
-            labId
-            publications {
-              title
-              journal
-              date
-              url
-              volume
-              issue
-              pages
-              authors
+            authors {
+              corresponding
+              initials
+              lastName
             }
+            labId
+            journal
+            issue
+            pages
+            title
+            volume
+            year
           }
         }
       }
@@ -51,32 +53,18 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   //   })
   // })
 
-  const faculty = results.data.faculty.edges
-  const allPublications = results.data.publications.edges
+  const allFaculty = results.data.allFaculty.edges
+  const allPublications = results.data.allPublications.edges
 
-  faculty.forEach(({ node }) => {
-    console.log('cake', node)
-
-    const labId = node.labId
-    const name = node.name
-    
-    var publications = []
-
-    allPublications.forEach(({ node }) => {
-      if (node.labId === labId) {
-        publications = node.publications
-      }
-    })
-
-    console.log("Making ", labId, publications)
+  allFaculty.forEach(({ node }) => {
+    const member = node
 
     createPage({
-      path: `/research-areas/labs/${labId}`,
+      path: `/research-areas/labs/${member.labId}`,
       component: labTemplate,
       context: {
-        labId: labId,
-        name: name,
-        publications: publications
+        labId: member.labId,
+        member: member
       }, // additional data can be passed via context
     })
   })

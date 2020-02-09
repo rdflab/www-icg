@@ -10,7 +10,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 const Publications = ({ publications }) => (
   <>
-    {publications.map((publication) => (
+    {publications.map(publication => (
           <div>{publication.title}</div>  
     ))}
     </>
