@@ -5,17 +5,18 @@ import React from "react"
 import headerStyles from "./header.module.scss"
 import Container from "react-bootstrap/Container"
 
+import Logo from "../assets/logo.svg";
+import HeaderLinks from "./headerlinks"
+
+
 const Header = ({ siteTitle }) => (
   <header className={headerStyles.header}>
     <Container>
-    <div style={{padding: `10px`, color: `rgba(255, 255, 255, 0.8)`}}>INSTITUTE FOR CANCER GENETICS</div>
+      <Logo style={{width: `400px`}}></Logo>
     </Container>
-    <div style={{backgroundColor: `rgba(0, 0, 0, 0)`}}>
     <Container>
-      <Link to={'/research-areas/labs/'}>Reasearch Labs</Link>
-      </Container>
-    </div>
-    
+      <HeaderLinks></HeaderLinks>
+    </Container>
   </header>
 )
 

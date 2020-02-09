@@ -13,6 +13,7 @@ import Header from "./header"
 import "./layout.scss"
 import Helmet from "react-helmet"
 import Footer from "./footer"
+import Container from "react-bootstrap/Container"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -35,7 +36,11 @@ const Layout = ({ children }) => {
           crossorigin="anonymous"/>
       </Helmet>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <main>{children}</main>
+      
+      <main>
+        <Container>{children}</Container>
+      </main>
+
       <Footer siteTitle={data.site.siteMetadata.title}></Footer>
     </>
   )
