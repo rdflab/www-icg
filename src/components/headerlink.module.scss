@@ -1,0 +1,9 @@
+.headerlink {
+    color: rgba(255, 255, 255, 0.7) !important;
+    transition: color 0.5s;
+    text-decoration: none !important;
+}
+
+.headerlink:hover {
+    color: rgba(255, 255, 255, 0.9) !important;
+}

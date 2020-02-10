@@ -13,7 +13,9 @@ import Header from "./header"
 import "./layout.scss"
 import Helmet from "react-helmet"
 import Footer from "./footer"
-import Container from "react-bootstrap/Container"
+import { Container } from "react-bootstrap"
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`

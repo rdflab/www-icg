@@ -3,9 +3,7 @@ import { Link } from "gatsby"
 import HICCCImage from "./hicccimage"
 
 import footerStyles from "./footer.module.scss"
-import Container from "react-bootstrap/Container"
-import Row from "react-bootstrap/Row"
-import Col from "react-bootstrap/Col"
+import { Container, Row, Col } from "react-bootstrap"
 import FooterLinks from "./footerlinks"
 
 
@@ -18,10 +16,10 @@ const Footer = props => {
           <Col>
             <FooterLinks></FooterLinks>
           </Col>
-          <Col className={`justify-content-md-center`}>
+          <Col className={`text-center`}>
             <HICCCImage />
           </Col>
-          <Col>
+          <Col className={`text-right`}>
             &copy; {new Date().getFullYear()} {siteTitle}
           </Col>
 

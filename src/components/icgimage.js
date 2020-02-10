@@ -1,10 +1,6 @@
 import React from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
-
-import HeaderLink from "./headerlink"
-
-import headerlinksStyles from "./headerlinks.module.scss"
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -17,33 +13,20 @@ import headerlinksStyles from "./headerlinks.module.scss"
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-const HeaderLinks = () => {
+const ICGImage = ({style}) => {
   const data = useStaticQuery(graphql`
     query {
-      allHeaderlinksJson {
-        edges {
-          node {
-            name
-            link
+      placeholderImage: file(relativePath: { eq: "icg.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 500) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
     }
   `)
 
-  const links = data.allHeaderlinksJson.edges
-
-  return (
-    <ul className={headerlinksStyles.headerlinks}>
-      {links.map(({ node })  => {
-        return(
-          <li>
-            <HeaderLink to={node.link}>{node.name}</HeaderLink>
-          </li>
-        )
-      })}
-    </ul>
-  )
+  return <Img fluid={data.placeholderImage.childImageSharp.fluid} style={style}/>
 }
 
-export default HeaderLinks
+export default ICGImage
