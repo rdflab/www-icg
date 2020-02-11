@@ -7,11 +7,12 @@
 
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import Publication from "./publication"
 
 const Publications = ({ publications }) => (
   <>
     {publications.map(publication => (
-      <div>{publication.title}</div>  
+      <Publication>{publication}</Publication>
     ))}
   </>
 )

@@ -12,7 +12,6 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -20,7 +19,12 @@ module.exports = {
         name: `markdown-pages`,
       },
     },
-    `gatsby-transformer-remark`,
+    {
+      "resolve": `gatsby-transformer-remark`,
+      "options": {
+        "excerpt_separator": `<!-- endexcerpt -->`
+      }
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     `gatsby-transformer-sharp`,
@@ -59,6 +63,10 @@ module.exports = {
         fonts: [
           {
             family: `Lato`,
+            variants: [`300`, `400`, `700`]
+          },
+          {
+            family: `Montserrat`,
             variants: [`300`, `400`, `700`]
           },
           // {

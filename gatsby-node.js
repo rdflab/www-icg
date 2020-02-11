@@ -13,6 +13,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             labId
             firstName
             lastName
+            email
           }
         }
       }
