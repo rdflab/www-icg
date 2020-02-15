@@ -1,0 +1,72 @@
+{
+  "labId": "christine-chio",
+  "people": [
+    {
+      "tags": [
+        "faculty"
+      ],
+      "labId": "christine-chio",
+      "id": "christine-chio",
+      "firstName": "Christine",
+      "lastName": "Chio",
+      "postNominalLetters": [
+        "PhD"
+      ],
+      "title": "Assistant Professor of Genetics and Development",
+      "phone": [
+        "(212) 851-4966"
+      ],
+      "room": "505",
+      "email": "ic2445@cumc.columbia.edu"
+    },
+    {
+      "tags": [
+        "postdoc",
+        "fellow"
+      ],
+      "labId": "christine-chio",
+      "id": "marina-m.-ayres-pereira",
+      "firstName": "Marina M.",
+      "lastName": "Ayres Pereira",
+      "postNominalLetters": [],
+      "title": "Postdoctoral Fellow",
+      "phone": [
+        "(212) 851-4966"
+      ],
+      "room": "505",
+      "email": "mma2246@cumc.columbia.edu"
+    },
+    {
+      "tags": [
+        "staff"
+      ],
+      "labId": "christine-chio",
+      "id": "karina-chan",
+      "firstName": "Karina",
+      "lastName": "Chan",
+      "postNominalLetters": [],
+      "title": "Technician B",
+      "phone": [
+        "(212) 851-4966"
+      ],
+      "room": "505",
+      "email": "kmc@cumc.columbia.edu"
+    },
+    {
+      "tags": [
+        "graduate"
+      ],
+      "labId": "christine-chio",
+      "id": "xiangyi-ke",
+      "firstName": "Xiangyi",
+      "lastName": "Ke",
+      "postNominalLetters": [],
+      "title": "Graduate Student",
+      "phone": [
+        "(212) 851-4966"
+      ],
+      "room": "505",
+      "email": "xk2138@cumc.columbia.edu"
+    }
+  ]
+}

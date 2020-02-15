@@ -1,0 +1,74 @@
+{
+  "id": "shan-zha",
+  "education": [
+    {
+      "date": "1998",
+      "degree": "M.D. Medicine, Peking University, Health Science Center, Beijing, China."
+    },
+    {
+      "date": "2004",
+      "degree": "Ph.D. Pharmacology and Molecular Sciences, Johns Hopkins University, Baltimore."
+    },
+    {
+      "date": "2009",
+      "degree": "Postdoc Genetics and Immunology, Harvard University, Children\u2019s Hospital at Boston and HHMI"
+    }
+  ],
+  "honors": [
+    {
+      "date": "",
+      "degree": "2012-2014 Gabrielle's Angel Foundation Medical Research Award"
+    },
+    {
+      "date": "",
+      "degree": "2010-2011 John M. Driscoll, Jr., M.D. Children\u2019s Fund Awards"
+    },
+    {
+      "date": "",
+      "degree": "2010-2013 St. Baldrick Scholar"
+    },
+    {
+      "date": "2010",
+      "degree": "Young Investigator Award, 2010 A-T workshop, Los Angeles, USA"
+    },
+    {
+      "date": "2009",
+      "degree": "Bristol-Myers Squibb Oncology Scholar-in-Training Award, American Association for Cancer Research"
+    },
+    {
+      "date": "",
+      "degree": "2007-2010 Senior Fellowship Award from Leukemia and Lymphoma Society"
+    },
+    {
+      "date": "",
+      "degree": "2004-2007 Fellowship Award from Leukemia and Lymphoma Society"
+    },
+    {
+      "date": "2006",
+      "degree": "Young Investigator Award, 2006 A-T Workshop, Banff, Canada"
+    },
+    {
+      "date": "2003",
+      "degree": "AFLAC-Scholar-in-Training Award, American Association for Cancer Research"
+    },
+    {
+      "date": "1998",
+      "degree": "Honor Thesis, Peking University, School of Medicine"
+    },
+    {
+      "date": "1998",
+      "degree": "Graduate with highest honor, Peking University School of Medicine"
+    },
+    {
+      "date": "",
+      "degree": "1994-1997 Fellowship for Academic Excellence, Peking University School of Medicine"
+    },
+    {
+      "date": "1993",
+      "degree": "Freshman Fellowship for Academic Excellence and Admission with waiver of national college admission examination"
+    }
+  ],
+  "photo_url": "../sites/default/files/zha2015.jpg",
+  "name": "Shan Zha M.D., Ph.D.",
+  "title": "Associate Professor of Pediatrics, Pathology and Cell Biology"
+}

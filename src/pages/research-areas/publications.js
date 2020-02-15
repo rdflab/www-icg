@@ -1,17 +1,19 @@
-import React from "react"
+import React, {useState} from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
+import Publication from "../../components/publication"
+import Pagination from "../../components/pagination"
+
+const EMPTY_QUERY = ""
 
 const flatten = (publications) => {
   let ret = [];
 
   publications.forEach(({node}) => {
-    const { publications } = node
+    const publication = node
 
-    if (publications !== null) {
-      ret = ret.concat(publications)
-    }
+    ret.push(publication)
   })
 
   return ret
@@ -51,40 +53,56 @@ const sort = (publications) => {
 const Publications = props => {
   const { data } = props
 
-  const allPublications = data.publications.edges //sort(flatten(data.publications.edges))
-  const emptyQuery = ""
-  const [state, setState] = React.useState({query: emptyQuery, filteredPublications: []})
+  const allPublications = flatten(data.publications.edges) //sort(flatten(data.publications.edges))
+  //const [state, setState] = useState({query: emptyQuery})
 
-  const handleInputChange = event => {  
-    const query = event.target.value  
+  const [query, setQuery] = useState(EMPTY_QUERY)
+  const [filteredPublications, setFilteredPublications] = useState([])
+  const [page, setPage] = useState(1)
+  const [recordsPerPage, setRecordsPerPage] = useState(20)
+  const [count, setCount] = useState(0);
+
+  const handleInputChange = e => {  
+    const q = e.target.value  
     const { data } = props
 
-    const publications = allPublications || []   
-    // return all filtered posts  
-    const filteredPublications = publications.filter(({ node }) => {
-      const publication = node   
-      // destructure data from post frontmatter    
-      return (      
-        // standardize data with .toLowerCase()      
-        // return true if the description, title or tags      
-        // contains the query string      
-        publication.title.toLowerCase().includes(query.toLowerCase())
-      ) 
-    })
-      // update state according to the latest query and results  
-    setState({ 
-      query, // with current query string from the `Input` event    
-      filteredPublications: filteredPublications, // with filtered data from posts.filter(post => (//filteredData)) above  
-    })
+    let ret = []   
+    
+    for (let publication of allPublications) {
+      if (publication.title.toLowerCase().includes(q.toLowerCase())) {
+        ret.push(publication)
+      }
+    }
+
+      // update state according to the latest query and results 
+    console.log('wobble', page)
+    setFilteredPublications(ret)
+    setPage(1)
   }
 
-  const { filteredPublications, query } = state
-  const hasSearchResults = filteredPublications && query !== emptyQuery
-  const publications = hasSearchResults ? filteredPublications : allPublications
+  const onPageChanged = data => {
+    const { currentPage } = data
+    console.log(currentPage)
 
+    setPage(currentPage)
+  }
+
+  
+
+  const hasSearchResults = filteredPublications.length > 0 // && query !== emptyQuery
+  const publications = hasSearchResults ? filteredPublications : allPublications
+  const offset = (page - 1) * recordsPerPage;
+  const pagedPublications = publications.slice(offset, offset + recordsPerPage);
+  
+  console.log('slop', offset, page, recordsPerPage, filteredPublications.length, hasSearchResults)
   return (
     <Layout>
       <SEO title="Publications" />
+
+      <p>You clicked {count} times</p>
+        <button onClick={() => setCount(count + 1)}>
+         Click me
+        </button>
     
 
       {/*in-line css for demo purposes*/}
@@ -94,23 +112,17 @@ const Publications = props => {
 
       <h2>{publications.length} Found {publications.length === 1 ? "publication" : "publications"} found</h2>
 
-      {publications.map(({ node }) => {
-        const publication = node
-        console.log(publication)
-        const title = publication.title
-
+      {pagedPublications.map(publication => {
         return (
           <article>
-            <header>
-              <h2>
-                cake {title}
-              </h2>
-              
-            </header>
+
+            <Publication publication={publication} />
             <hr />
           </article>
         )
       })}
+
+      <Pagination page={page} totalRecords={publications.length} recordsPerPage={recordsPerPage} pageNeighbours={1} onPageChanged={onPageChanged} />
     </Layout>
   )
 }

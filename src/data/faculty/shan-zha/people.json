@@ -1,0 +1,107 @@
+{
+  "labId": "shan-zha",
+  "people": [
+    {
+      "tags": [
+        "faculty"
+      ],
+      "labId": "shan-zha",
+      "id": "shan-zha",
+      "firstName": "Shan",
+      "lastName": "Zha",
+      "postNominalLetters": [
+        "MD",
+        "PhD"
+      ],
+      "title": "Associate Professor of Pediatrics and Pathology and Cell Biology",
+      "phone": [
+        "(212) 851-4779"
+      ],
+      "room": "505A",
+      "email": "sz2296@cumc.columbia.edu"
+    },
+    {
+      "tags": [
+        "staff"
+      ],
+      "labId": "shan-zha",
+      "id": "brian-lee",
+      "firstName": "Brian",
+      "lastName": "Lee",
+      "postNominalLetters": [],
+      "title": "Technician B",
+      "phone": [
+        "(212) 851-4785"
+      ],
+      "room": "501",
+      "email": "bl2530@cumc.columbia.edu"
+    },
+    {
+      "tags": [],
+      "labId": "shan-zha",
+      "id": "demis-menolfi",
+      "firstName": "Demis",
+      "lastName": "Menolfi",
+      "postNominalLetters": [
+        "PhD"
+      ],
+      "title": "Postoctoral Research Scientist",
+      "phone": [
+        "(212) 851-4785"
+      ],
+      "room": "501",
+      "email": "dm3231@cumc.columbia.edu"
+    },
+    {
+      "tags": [],
+      "labId": "shan-zha",
+      "id": "maja-milanovic",
+      "firstName": "Maja",
+      "lastName": "Milanovic",
+      "postNominalLetters": [
+        "PhD"
+      ],
+      "title": "Postoctoral Research Scientist",
+      "phone": [
+        "(212) 851-4785"
+      ],
+      "room": "501",
+      "email": "mm4619@cumc.columbia.edu"
+    },
+    {
+      "tags": [
+        "postdoc"
+      ],
+      "labId": "shan-zha",
+      "id": "zhengping-shao",
+      "firstName": "Zhengping",
+      "lastName": "Shao",
+      "postNominalLetters": [
+        "MD",
+        "PhD"
+      ],
+      "title": "Postdoctoral Research Scientist",
+      "phone": [
+        "(212) 851-4785"
+      ],
+      "room": "501",
+      "email": "zs2275@cumc.columbia.edu"
+    },
+    {
+      "tags": [
+        "graduate"
+      ],
+      "labId": "shan-zha",
+      "id": "xiobin-summer-wang",
+      "firstName": "Xiobin (Summer)",
+      "lastName": "Wang",
+      "postNominalLetters": [],
+      "title": "Graduate Student",
+      "phone": [
+        "(212) 851-4785"
+      ],
+      "room": "501",
+      "email": "xw2394@columbia.edu"
+    }
+  ]
+}
