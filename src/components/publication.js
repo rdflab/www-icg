@@ -7,10 +7,26 @@
 
 import React from "react"
 
-const Publication = ({publication}) => (
-  <>
-    <div>{publication.title}</div>
-  </>
-)
+const authorString = authors => {
+  let strs = []
+
+  authors.map((author) => {
+    strs.push(author.lastName + ' ' + author.initials)
+  });
+
+  return strs.join(', ')
+};
+
+const Publication = ({publication}) => {
+
+  const authors = authorString(publication.authors)
+
+  return (
+    <article>
+      <div>{publication.title}</div>
+      <div>{authors}</div>
+    </article>
+  );
+};
 
 export default Publication

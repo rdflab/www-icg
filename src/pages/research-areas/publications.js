@@ -2,7 +2,7 @@ import React, {useState} from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
-import Publication from "../../components/publication"
+import PublicationList from "../../components/publicationlist"
 import Pagination from "../../components/pagination"
 
 const EMPTY_QUERY = ""
@@ -94,7 +94,7 @@ const Publications = props => {
   const offset = (page - 1) * recordsPerPage;
   const pagedPublications = publications.slice(offset, offset + recordsPerPage);
   
-  console.log('slop', offset, page, recordsPerPage, filteredPublications.length, hasSearchResults)
+  console.log('slop', offset, page, recordsPerPage, pagedPublications.length, hasSearchResults)
   return (
     <Layout>
       <SEO title="Publications" />
@@ -112,15 +112,7 @@ const Publications = props => {
 
       <h2>{publications.length} Found {publications.length === 1 ? "publication" : "publications"} found</h2>
 
-      {pagedPublications.map(publication => {
-        return (
-          <article>
-
-            <Publication publication={publication} />
-            <hr />
-          </article>
-        )
-      })}
+      <PublicationList publications={pagedPublications} />
 
       <Pagination page={page} totalRecords={publications.length} recordsPerPage={recordsPerPage} pageNeighbours={1} onPageChanged={onPageChanged} />
     </Layout>

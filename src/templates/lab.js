@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Publications from "../components/publications"
+import PublicationList from "../components/publicationlist"
 import { Container, Row, Col } from "react-bootstrap"
 
 import { MdEmail } from 'react-icons/md';

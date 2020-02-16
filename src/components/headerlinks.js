@@ -35,9 +35,9 @@ const HeaderLinks = () => {
 
   return (
     <ul className={headerlinksStyles.headerlinks}>
-      {links.map(({ node })  => {
+      {links.map(({ node }, index)  => {
         return(
-          <li>
+          <li key={index}>
             <HeaderLink to={node.link}>{node.name}</HeaderLink>
           </li>
         )

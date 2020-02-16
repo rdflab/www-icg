@@ -9,12 +9,12 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Publication from "./publication"
 
-const Publications = ({ publications }) => (
+const PublicationList = ({publications}) => (
   <>
-    {publications.map(publication => (
-      <Publication>{publication}</Publication>
+    {publications.map((publication, index) => (
+      <Publication key={index} publication={publication} />
     ))}
   </>
 )
 
-export default Publications
+export default PublicationList
