@@ -2,8 +2,11 @@ import React, {useState} from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
-import PublicationList from "../../components/publicationlist"
+import PublicationYears from "../../components/publicationyears"
 import Pagination from "../../components/pagination"
+import SearchBar from "../../components/searchbar"
+import YearsFilter from "../../components/yearsfilter"
+import { Row, Col } from "react-bootstrap"
 
 const EMPTY_QUERY = ""
 
@@ -18,37 +21,6 @@ const flatten = (publications) => {
 
   return ret
 }
-/**
- * Sorts a list of publications by date desc and title asc
- * @param {*} publications 
- */
-const sort = (publications) => {
-  let dateMap = new Map()
-
-  for (let publication of publications) {
-    const { date, title } = publication
-
-    if (!dateMap.has(date)) {
-      dateMap.set(date, new Map())
-    }
-
-    dateMap.get(date).set(title, publication)
-  }
-
-  let ret = [];
-
-  const dateKeys = Array.from(dateMap.keys()).sort().reverse()
-
-  for (let date of dateKeys) {
-    const titleKeys = Array.from(dateMap.get(date).keys()).sort()
-
-    for (let title of titleKeys) {
-      ret.push(dateMap.get(date).get(title))
-    }
-  }
-
-  return ret
-}
 
 const Publications = props => {
   const { data } = props
@@ -60,7 +32,7 @@ const Publications = props => {
   const [filteredPublications, setFilteredPublications] = useState([])
   const [page, setPage] = useState(1)
   const [recordsPerPage, setRecordsPerPage] = useState(20)
-  const [count, setCount] = useState(0);
+  const [yearFilter, setYearFilter] = useState(new Map())
 
   const handleInputChange = e => {  
     const q = e.target.value  
@@ -74,8 +46,8 @@ const Publications = props => {
       }
     }
 
-      // update state according to the latest query and results 
-    console.log('wobble', page)
+    // update state according to the latest query and results
+    setQuery(q)
     setFilteredPublications(ret)
     setPage(1)
   }
@@ -87,34 +59,45 @@ const Publications = props => {
     setPage(currentPage)
   }
 
+  const handleClick = data => {
+    console.log('asdasd', data)
+    setYearFilter(data)
+  }
   
 
-  const hasSearchResults = filteredPublications.length > 0 // && query !== emptyQuery
-  const publications = hasSearchResults ? filteredPublications : allPublications
-  const offset = (page - 1) * recordsPerPage;
-  const pagedPublications = publications.slice(offset, offset + recordsPerPage);
+  const hasSearchResults = query !== EMPTY_QUERY
+  let publications = hasSearchResults ? filteredPublications : allPublications
   
-  console.log('slop', offset, page, recordsPerPage, pagedPublications.length, hasSearchResults)
+  
+
+  if (yearFilter.size > 0) {
+    publications = publications.filter((publication) => {
+      return yearFilter.has(publication.year)
+    })
+  }
+
+  const offset = (page - 1) * recordsPerPage
+  let pagedPublications = publications.slice(offset, offset + recordsPerPage)
+  
+  console.log('slop', query, offset, page, recordsPerPage, pagedPublications.length, hasSearchResults)
   return (
     <Layout>
       <SEO title="Publications" />
+      <h1>Publications</h1>
 
-      <p>You clicked {count} times</p>
-        <button onClick={() => setCount(count + 1)}>
-         Click me
-        </button>
-    
+      <Row>
+        <Col xs={4}>
+          <SearchBar handleInputChange={handleInputChange}/>
 
-      {/*in-line css for demo purposes*/}
-      <h1 style={{ textAlign: `center` }}>Publications</h1>
+          <YearsFilter publications={publications} handleClick={handleClick} />
+        </Col>
+        <Col>
+          <h2>{publications.length} Found {publications.length === 1 ? "publication" : "publications"} found</h2>
+          <PublicationYears publications={pagedPublications} />
 
-      <input type="text" aria-label="Search" placeholder="Type to find publication..." onChange={handleInputChange} />
-
-      <h2>{publications.length} Found {publications.length === 1 ? "publication" : "publications"} found</h2>
-
-      <PublicationList publications={pagedPublications} />
-
-      <Pagination page={page} totalRecords={publications.length} recordsPerPage={recordsPerPage} pageNeighbours={1} onPageChanged={onPageChanged} />
+          <Pagination page={page} totalRecords={publications.length} recordsPerPage={recordsPerPage} pageNeighbours={1} onPageChanged={onPageChanged} />
+        </Col>
+      </Row>
     </Layout>
   )
 }

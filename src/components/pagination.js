@@ -95,21 +95,12 @@ class Pagination extends Component {
 
   constructor(props) {
     super(props);
-    // const { page = 1, totalRecords = null, recordsPerPage = 30, pageNeighbours = 0 } = props;
-
-    // this.recordsPerPage = typeof recordsPerPage === 'number' ? recordsPerPage : 30;
-    // this.totalRecords = typeof totalRecords === 'number' ? totalRecords : 0;
-
-    // // pageNeighbours can be: 0, 1 or 2
-    // this.pageNeighbours = typeof pageNeighbours === 'number'
-    //   ? Math.max(0, Math.min(pageNeighbours, 2))
-    //   : 0;
-
+    
     this.totalPages = Math.ceil(props.totalRecords / props.recordsPerPage)
   }
 
   componentDidMount() {
-    this.gotoPage(this.props.page);
+    this.gotoPage(1);
   }
 
   shouldComponentUpdate(nextProps, nextState) {

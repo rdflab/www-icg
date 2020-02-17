@@ -6,6 +6,7 @@
  */
 
 import React from "react"
+import publicationStyles from "./publication.module.scss"
 
 const authorString = authors => {
   let strs = []
@@ -14,7 +15,10 @@ const authorString = authors => {
     strs.push(author.lastName + ' ' + author.initials)
   });
 
-  return strs.join(', ')
+  var ret = strs.join(', ')
+  var ret = ret.replace(/, ([^,]+)$/, ", and $1");
+
+  return ret
 };
 
 const Publication = ({publication}) => {
@@ -22,9 +26,10 @@ const Publication = ({publication}) => {
   const authors = authorString(publication.authors)
 
   return (
-    <article>
-      <div>{publication.title}</div>
+    <article className={publicationStyles.publication}>
+      <div className={publicationStyles.publicationTitle}>{publication.title}</div>
       <div>{authors}</div>
+      <div className={publicationStyles.publicationYear}>{publication.year}</div>
     </article>
   );
 };
