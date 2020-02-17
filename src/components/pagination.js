@@ -148,8 +148,7 @@ class Pagination extends Component {
 
     return (
       <>
-      <div>cc{this.props.totalRecords}</div>
-      <nav aria-label="Pagination">
+      <nav aria-label="Pagination" style={{textAlign: "center"}}>
         <ul className="pagination">
           { 
             pages.map((page, index) => {

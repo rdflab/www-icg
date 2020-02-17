@@ -1,14 +1,26 @@
 import React, {useState} from "react"
 import { Link, graphql } from "gatsby"
-import Layout from "../../components/layout"
-import SEO from "../../components/seo"
-import PublicationYears from "../../components/publicationyears"
-import Pagination from "../../components/pagination"
-import SearchBar from "../../components/searchbar"
-import YearsFilter from "../../components/yearsfilter"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+import PublicationYears from "../components/publicationyears"
+import Pagination from "../components/pagination"
+import SearchBar from "../components/searchbar"
+import YearsFilter from "../components/yearsfilter"
 import { Row, Col } from "react-bootstrap"
 
 const EMPTY_QUERY = ""
+
+const processFaculty = (faculty) => {
+  let ret = new Map()
+
+  faculty.forEach(({node}) => {
+    const publication = node
+
+    ret.set(node.labId, node)
+  })
+
+  return ret
+}
 
 const flatten = (publications) => {
   let ret = [];
@@ -24,6 +36,9 @@ const flatten = (publications) => {
 
 const Publications = props => {
   const { data } = props
+  const facultyMap = processFaculty(data.faculty.edges)
+
+  console.log(facultyMap)
 
   const allPublications = flatten(data.publications.edges) //sort(flatten(data.publications.edges))
   //const [state, setState] = useState({query: emptyQuery})
@@ -32,7 +47,7 @@ const Publications = props => {
   const [filteredPublications, setFilteredPublications] = useState([])
   const [page, setPage] = useState(1)
   const [recordsPerPage, setRecordsPerPage] = useState(20)
-  const [yearFilter, setYearFilter] = useState(new Map())
+  const [yearsFilter, setYearsFilter] = useState(new Set())
 
   const handleInputChange = e => {  
     const q = e.target.value  
@@ -60,24 +75,26 @@ const Publications = props => {
   }
 
   const handleClick = data => {
-    console.log('asdasd', data)
-    setYearFilter(data)
+    setYearsFilter(data)
+    setPage(1)
   }
   
 
   const hasSearchResults = query !== EMPTY_QUERY
   let publications = hasSearchResults ? filteredPublications : allPublications
   
-  
+  let yearFilteredPublications
 
-  if (yearFilter.size > 0) {
-    publications = publications.filter((publication) => {
-      return yearFilter.has(publication.year)
+  if (yearsFilter.size > 0) {
+    yearFilteredPublications = publications.filter((publication) => {
+      return yearsFilter.has(publication.year)
     })
+  } else {
+    yearFilteredPublications = publications
   }
 
   const offset = (page - 1) * recordsPerPage
-  let pagedPublications = publications.slice(offset, offset + recordsPerPage)
+  let pagedPublications = yearFilteredPublications.slice(offset, offset + recordsPerPage)
   
   console.log('slop', query, offset, page, recordsPerPage, pagedPublications.length, hasSearchResults)
   return (
@@ -92,10 +109,10 @@ const Publications = props => {
           <YearsFilter publications={publications} handleClick={handleClick} />
         </Col>
         <Col>
-          <h2>{publications.length} Found {publications.length === 1 ? "publication" : "publications"} found</h2>
+          <h2>{yearFilteredPublications.length} Found {yearFilteredPublications.length === 1 ? "publication" : "publications"} found</h2>
           <PublicationYears publications={pagedPublications} />
 
-          <Pagination page={page} totalRecords={publications.length} recordsPerPage={recordsPerPage} pageNeighbours={1} onPageChanged={onPageChanged} />
+          <Pagination page={page} totalRecords={yearFilteredPublications.length} recordsPerPage={recordsPerPage} pageNeighbours={1} onPageChanged={onPageChanged} />
         </Col>
       </Row>
     </Layout>

@@ -7,6 +7,7 @@
 
 import React from "react"
 import publicationStyles from "./publication.module.scss"
+import { Link } from "gatsby";
 
 const authorString = authors => {
   let strs = []
@@ -30,6 +31,7 @@ const Publication = ({publication}) => {
       <div className={publicationStyles.publicationTitle}>{publication.title}</div>
       <div>{authors}</div>
       <div className={publicationStyles.publicationYear}>{publication.year}</div>
+      <Link to={`/research-areas/labs/${publication.labId}`}>lab</Link>
     </article>
   );
 };

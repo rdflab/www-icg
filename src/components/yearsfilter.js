@@ -12,44 +12,39 @@ class YearsFilter extends Component {
 
   constructor(props) {
     super(props)
+
+    this.state = { selectedYears : new Set()}
   }
 
   handleClick = data => {
-    const yearMap = new Map(this.state.yearMap)
-    const year = data.year
-    const selected = !yearMap.get(year)
-    yearMap.set(year, selected)
+    const selectedYears = new Set(this.state.selectedYears)
 
-    this.setState({yearMap}, console.log(this.state));
-
-    console.log('piio', data.year, data.selected, yearMap)
-
-    let selectedMap = new Map()
-
-    for (let year of yearMap.keys()) {
-      if (yearMap.get(year)) {
-        selectedMap.set(year, true)
-      }
+    if (data.selected) {
+      selectedYears.add(data.year)
+    } else {
+      selectedYears.delete(data.year)
     }
 
-    console.log('seel', selectedMap)
+    this.setState({selectedYears: selectedYears}, console.log(this.state));
 
-    this.props.handleClick(selectedMap)
+    console.log('piio', data.year, data.selected, selectedYears)
+
+    this.props.handleClick(selectedYears)
   }
 
   render() {
-    let yearMap = new Map()
+    let years= new Set()
 
-    for (let publication of props.publications) {
+    for (let publication of this.props.publications) {
       if (publication.year !== -1) {
-        yearMap.set(publication.year, false)
+        years.add(publication.year)
       }
     }
 
     let comps = []
 
-    for (let year of Array.from(yearMap.keys()).sort().reverse()) {
-      comps.push(<YearFiler handleClick={this.handleClick} year={year} selected={yearMap.get(year)} />)
+    for (let year of Array.from(years).sort().reverse()) {
+      comps.push(<YearFiler handleClick={this.handleClick} year={year} />)
     }
   
     return(
