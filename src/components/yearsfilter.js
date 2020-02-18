@@ -6,7 +6,7 @@
  */
 
 import React, {Component} from "react"
-import YearFiler from "./yearfilter"
+import YearFilter from "./yearfilter"
 
 class YearsFilter extends Component {
 
@@ -44,7 +44,7 @@ class YearsFilter extends Component {
     let comps = []
 
     for (let year of Array.from(years).sort().reverse()) {
-      comps.push(<YearFiler handleClick={this.handleClick} year={year} />)
+      comps.push(<YearFilter handleClick={this.handleClick} year={year} />)
     }
   
     return(

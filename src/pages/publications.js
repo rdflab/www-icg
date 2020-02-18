@@ -6,17 +6,17 @@ import PublicationYears from "../components/publicationyears"
 import Pagination from "../components/pagination"
 import SearchBar from "../components/searchbar"
 import YearsFilter from "../components/yearsfilter"
-import { Row, Col } from "react-bootstrap"
+import Collapsible from "../components/collapsible"
 
 const EMPTY_QUERY = ""
 
-const processFaculty = (faculty) => {
+const toMap = (people) => {
   let ret = new Map()
 
-  faculty.forEach(({node}) => {
-    const publication = node
+  people.forEach(({node}) => {
+    const person = node
 
-    ret.set(node.labId, node)
+    ret.set(person.id, person)
   })
 
   return ret
@@ -36,9 +36,10 @@ const flatten = (publications) => {
 
 const Publications = props => {
   const { data } = props
-  const facultyMap = processFaculty(data.faculty.edges)
+  const peopleMap = toMap(data.people.edges)
 
-  console.log(facultyMap)
+
+  console.log(peopleMap)
 
   const allPublications = flatten(data.publications.edges) //sort(flatten(data.publications.edges))
   //const [state, setState] = useState({query: emptyQuery})
@@ -102,19 +103,20 @@ const Publications = props => {
       <SEO title="Publications" />
       <h1>Publications</h1>
 
-      <Row>
-        <Col xs={4}>
+      <div className="columns">
+        <div className="column is-one-third">
           <SearchBar handleInputChange={handleInputChange}/>
-
-          <YearsFilter publications={publications} handleClick={handleClick} />
-        </Col>
-        <Col>
+          <Collapsible title="Year filter" height="auto">
+            <YearsFilter publications={publications} handleClick={handleClick} />
+          </Collapsible>
+        </div>
+        <div className="column">
           <h2>{yearFilteredPublications.length} Found {yearFilteredPublications.length === 1 ? "publication" : "publications"} found</h2>
-          <PublicationYears publications={pagedPublications} />
+          <PublicationYears publications={pagedPublications} peopleMap={peopleMap} />
 
           <Pagination page={page} totalRecords={yearFilteredPublications.length} recordsPerPage={recordsPerPage} pageNeighbours={1} onPageChanged={onPageChanged} />
-        </Col>
-      </Row>
+        </div>
+      </div>
     </Layout>
   )
 }
@@ -127,6 +129,18 @@ export const pageQuery = graphql`
       edges {
         node {
           labId
+        }
+      }
+    }
+
+    people: allPeopleJson {
+      edges {
+        node {
+          labId
+          id
+          firstName
+          lastName
+          title
         }
       }
     }

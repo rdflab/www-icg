@@ -4,29 +4,24 @@ import React from "react"
 
 import headerStyles from "./header.module.scss"
 
-import 'bootstrap/dist/css/bootstrap.css';
-import {Container, Navbar, Nav, NavItem} from "react-bootstrap"
-
-
 import HeaderLinks from "./headerlinks"
 import ICGImage from "./icgimage";
 
 
 const Header = ({ siteTitle }) => (
   <header className={headerStyles.header}>
-    <Container>
-      <Navbar expand="lg" style={{paddingLeft: 0, paddingRight: 0}}>
-        <Navbar.Brand>
-          {/* <Link to="/"><Logo style={{width: `200px`, border: `solid 1px red`}}></Logo></Link> */}
+    <div className="container">
+      <nav className="navbar" role="navigation" aria-label="main navigation">
+        <div className="navbar-brand">
           <Link to="/"><ICGImage style={{width: `250px`}}/></Link>
-        </Navbar.Brand>
+        </div>
 
-        <Nav className="ml-auto justify-content-end" >
+        <div className="navbar-end">
           <HeaderLinks></HeaderLinks>
-        </Nav>
-      </Navbar>
+        </div>
+      </nav>
       
-    </Container>
+    </div>
   </header>
 )
 

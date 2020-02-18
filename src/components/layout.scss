@@ -1,3 +1,6 @@
+@charset "utf-8";
+@import "~bulma/bulma.sass";
+
 body {
   font-family: 'Lato' !important;
   font-weight: 400 !important;
@@ -17,4 +20,8 @@ h2 {
 h3 {
   font-family: Montserrat !important;
   font-weight: 200 !important;
+}
+
+.navbar {
+  background-color: transparent;
 }

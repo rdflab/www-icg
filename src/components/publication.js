@@ -22,16 +22,19 @@ const authorString = authors => {
   return ret
 };
 
-const Publication = ({publication}) => {
+const Publication = ({publication, peopleMap}) => {
 
   const authors = authorString(publication.authors)
+  const pi = peopleMap.get(publication.labId)
+
+  console.log(publication.labId, pi, Array.from(peopleMap.keys()))
 
   return (
     <article className={publicationStyles.publication}>
       <div className={publicationStyles.publicationTitle}>{publication.title}</div>
       <div>{authors}</div>
       <div className={publicationStyles.publicationYear}>{publication.year}</div>
-      <Link to={`/research-areas/labs/${publication.labId}`}>lab</Link>
+      <Link to={`/research-areas/labs/${publication.labId}`}>{publication.labId}  Lab</Link>
     </article>
   );
 };

@@ -3,7 +3,6 @@ import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PublicationList from "../components/publicationlist"
-import { Container, Row, Col } from "react-bootstrap"
 
 import { MdEmail } from 'react-icons/md';
 import TopPublications from "../components/toppublications"
@@ -26,40 +25,41 @@ const LabTemplate = props => {
     <Layout>
       <SEO title={`The ${member.lastName} Lab`} />
 
-      <Row>
-        <Col>
-        </Col>
-        <Col>
+      <div className="columns">
+        <div className="column">
+        </div>
+        <div className="column">
           <div dangerouslySetInnerHTML={{ __html: excerpt }} />
           <Link to={'./overview'} className="btn btn-primary">Learn more</Link>
-        </Col>
-      </Row>
+        </div>
+      </div>
 
-      <Row>
-        <Col>
+      <div className="columns">
+        <div className="column">
           <h2>{`${member.firstName} ${member.lastName}`}</h2>
           <h3>Research Focus</h3>
           <h3>Education</h3>
-        </Col>
-        <Col>
-        </Col>
-        <Col>
-          <Row>
-            <Col md="auto"><MdEmail size="2rem" /></Col>
-            <Col>
+        </div>
+        <div className="column">
+        </div>
+        <div className="column">
+          <div className="columns">
+            <div className="column">
+              <MdEmail size="2rem" />
+            </div>
+            <div className="column">
               <h4>Email Address</h4>
               <a href={`mailto:${member.email}`}>{member.email}</a>
-            </Col>
-          </Row>
-        </Col>
-      </Row>
+            </div>
+          </div>
+        </div>
+      </div>
 
-      <Row>
-        <Col xs={8}>
+      <div className="columns">
+        <div className="column is-two-thirds">
           <TopPublications publications={publications} />
-        </Col>
-
-      </Row>
+        </div>
+      </div>
 
     </Layout>
   )

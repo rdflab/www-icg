@@ -3,29 +3,26 @@ import { Link } from "gatsby"
 import HICCCImage from "./hicccimage"
 
 import footerStyles from "./footer.module.scss"
-import { Container, Row, Col } from "react-bootstrap"
 import FooterLinks from "./footerlinks"
 
 
 const Footer = props => {
   const { siteTitle } = props
   return (
-    <footer className={footerStyles.footer}>
-      <Container>
-        <Row>
-          <Col>
+    <footer className={`footer ${footerStyles.footer}`}>
+      <div className="container">
+        <div className="columns">
+          <div className="column">
             <FooterLinks></FooterLinks>
-          </Col>
-          <Col className={`text-center`}>
+          </div>
+          <div className="column text-center">
             <HICCCImage />
-          </Col>
-          <Col className={`text-right`}>
+          </div>
+          <div className="column text-right">
             &copy; {new Date().getFullYear()} {siteTitle}
-          </Col>
-
-        </Row>
-
-      </Container>
+          </div>
+        </div>
+      </div>
     </footer>
   )
 }

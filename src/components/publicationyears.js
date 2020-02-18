@@ -10,7 +10,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Publication from "./publication"
 import PublicationList from "./publicationlist"
 
-const PublicationYears = ({publications}) => {
+const PublicationYears = ({publications, peopleMap}) => {
   
   let yearMap = new Map()
 
@@ -26,7 +26,7 @@ const PublicationYears = ({publications}) => {
 
   for (let year of Array.from(yearMap.keys()).sort().reverse()) {
     comps.push(<h1>{year}</h1>)
-    comps.push(<PublicationList publications={yearMap.get(year)} />)
+    comps.push(<PublicationList publications={yearMap.get(year)} peopleMap={peopleMap} />)
   }
 
   return(

@@ -5,34 +5,28 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React, {Component} from "react"
+import React, {useState} from "react"
 import yearFilterStyles from "./yearfilter.module.scss"
+import { MdCheck } from "react-icons/md"
 
-class YearFiler extends Component {
+const YearFilter = (props) => {
+  const [selected, setSelected] = useState(false)
 
-  constructor(props) {
-    super(props)
+  const handleClick = e => {
+    const data = {year: props.year, selected: !selected }
 
-    this.state = {selected : false}
+    setSelected(data.selected)
+
+    props.handleClick(data)
   }
 
-  handleClick = e => {
-    const data = {year: this.props.year, selected: !this.state.selected }
+  return(
+    <div onClick={handleClick} className={`${yearFilterStyles.yearFilter} ${selected ? yearFilterStyles.yearFilterSelected : ""}`}>
+      {props.year}
 
-    this.setState({selected: data.selected})
-
-    this.props.handleClick(data)
-  }
-
-  render() {
-    return(
-      <div onClick={this.handleClick} className={`${yearFilterStyles.yearFilter} ${this.state.selected ? yearFilterStyles.yearFilterSelected : ""}`}>{this.props.year}</div>
-    )
-  }
-  
-  
-
-  
+      {selected ? <div style={{float: "right"}}><MdCheck/></div> : ""}
+    </div>
+  )
 }
 
-export default YearFiler
+export default YearFilter
