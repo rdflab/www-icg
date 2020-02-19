@@ -8,6 +8,7 @@ import toPeopleMap from "../../utils/topeoplemap"
 import toLabMap from "../../utils/tolabmap"
 import SearchBar from "../../components/searchbar"
 import { MdLibraryBooks, MdPeople, MdEmail } from 'react-icons/md';
+import SearchCount from "../../components/searchcount"
 
 const EMPTY_QUERY = ""
 
@@ -47,7 +48,7 @@ const Labs = props => {
     <Layout>
       <SEO title="Research Labs" />
 
-      <Breadcrumb crumbs={ [ ['For Research Scientists','/research-areas/labs'], ['Labs','/research-areas/labsest'] ] } />
+      <Breadcrumb crumbs={ [ ['For Research Scientists','/research-areas'], ['Labs','/research-areas/labs'] ] } />
     
 
       {/*in-line css for demo purposes*/}
@@ -58,7 +59,8 @@ const Labs = props => {
           <SearchBar handleInputChange={handleInputChange} placeholder="Type to find faculty..." />
         </div>
         <div className="column">
-          <div style={{paddingBottom: "1rem"}}><span style={{color: "rgba(0, 0, 255, 1)"}}>{labs.length}</span> Faculty {labs.length === 1 ? "Member" : "Members"} found</div>
+          <div style={{paddingBottom: "1rem"}}>
+            <SearchCount>{labs.length}</SearchCount> Faculty {labs.length === 1 ? "Member" : "Members"} found</div>
 
           {labs.map((lab, index) => {
             const person = peopleMap.get(lab.faculty)

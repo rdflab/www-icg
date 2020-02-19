@@ -7,6 +7,7 @@ import Pagination from "./pagination"
 import SearchBar from "./searchbar"
 import YearsFilter from "./yearsfilter"
 import Collapsible from "./collapsible"
+import SearchCount from "../components/searchcount"
 
 const EMPTY_QUERY = ""
 
@@ -76,7 +77,7 @@ const PubSearch = ({labMap, peopleMap, allPublications, showLabLink }) => {
           </Collapsible>
         </div>
         <div className="column">
-          <h2>{yearFilteredPublications.length} Found {yearFilteredPublications.length === 1 ? "publication" : "publications"} found</h2>
+          <div><SearchCount>{yearFilteredPublications.length}</SearchCount> {yearFilteredPublications.length === 1 ? "Publication" : "Publications"} found</div>
           <PublicationYears publications={pagedPublications} labMap={labMap} showLabLink={showLabLink} />
 
           <Pagination page={page} totalRecords={yearFilteredPublications.length} recordsPerPage={recordsPerPage} pageNeighbours={1} onPageChanged={onPageChanged} />

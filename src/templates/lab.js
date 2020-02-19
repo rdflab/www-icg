@@ -8,6 +8,8 @@ import TopPublications from "../components/toppublications"
 import toPeopleMap from "../utils/topeoplemap"
 import toLabs from "../utils/tolabs"
 import toLabMap from "../utils/tolabmap"
+import Breadcrumb from "../components/breadcrumb"
+import Card from "../components/card";
 
 const LabTemplate = props => {
   const { data, pageContext } = props
@@ -34,6 +36,8 @@ const LabTemplate = props => {
   return (
     <Layout>
       <SEO title={`The ${faculty.lastName} Lab`} />
+
+      <Breadcrumb crumbs={ [ ['For Research Scientists','/research-areas'], ['Labs', '/research-areas/labs'], [`${faculty.firstName} ${faculty.lastName}`, `/research-areas/labs/${lab.id}`] ] } />
 
       <div className="columns">
         <div className="column">
@@ -67,9 +71,9 @@ const LabTemplate = props => {
 
       <div className="columns">
         <div className="column is-two-thirds">
-          <div style={{boxShadow: "0 4px 8px 0 rgba(0,0,0,0.2)", padding:"1rem"}}>
-          <TopPublications lab={lab} publications={publications} labMap={labMap} />
-          </div>
+          <Card>
+            <TopPublications lab={lab} publications={publications} labMap={labMap} />
+          </Card>
         </div>
       </div>
 

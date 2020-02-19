@@ -5,7 +5,7 @@ import React from "react"
 import headerLinkStyles from "./headerlink.module.scss"
 
 const HeaderLink = ({ to, children }) => (
-  <Link to={to} className={headerLinkStyles.headerlink}>
+  <Link to={to} className={`navbar-item ${headerLinkStyles.headerlink}`}>
     {children}
   </Link>
 )

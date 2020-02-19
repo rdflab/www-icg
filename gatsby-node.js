@@ -4,6 +4,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
   const labTemplate = path.resolve(`src/templates/lab.js`)
   const labPublicationsTemplate = path.resolve(`src/templates/labpublications.js`)
+  const labMembersTemplate = path.resolve(`src/templates/labmembers.js`)
   
   const result = await graphql(`
     query {
@@ -102,6 +103,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         lab,
         allPeople,
         allPublications
+      }, // additional data can be passed via context
+    });
+
+    createPage({
+      path: `/research-areas/labs/${lab.id}/members`,
+      component: labMembersTemplate,
+      context: {
+        lab,
+        allPeople
       }, // additional data can be passed via context
     });
   })

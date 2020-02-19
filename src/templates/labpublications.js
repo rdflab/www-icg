@@ -7,6 +7,7 @@ import toPeopleMap from "../utils/topeoplemap"
 import toLabs from "../utils/tolabs"
 import toLabMap from "../utils/tolabmap"
 import PubSearch from "../components/pubsearch"
+import Breadcrumb from "../components/breadcrumb"
 
 const LabPublicationsTemplate = props => {
   const { data, pageContext } = props
@@ -30,6 +31,8 @@ const LabPublicationsTemplate = props => {
   return (
     <Layout>
       <SEO title={title} />
+
+      <Breadcrumb crumbs={ [ ['For Research Scientists','/research-areas'], ['Labs', '/research-areas/labs'], [`${faculty.firstName} ${faculty.lastName}`, `/research-areas/labs/${lab.id}`], ['publications', `/research-areas/labs/${lab.id}/publications`] ] } />
 
       <h1>{title}</h1>
 

@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Img from "gatsby-image"
-
+import flattenEdges from "../utils/flattenedges"
 import HeaderLink from "./headerlink"
 
 import headerlinksStyles from "./headerlinks.module.scss"
@@ -31,18 +31,16 @@ const HeaderLinks = () => {
     }
   `)
 
-  const links = data.allHeaderlinksJson.edges
+  const links = flattenEdges(data.allHeaderlinksJson.edges)
 
   return (
-    <ul className={headerlinksStyles.headerlinks}>
-      {links.map(({ node }, index)  => {
+    <>
+      {links.map((link, index)  => {
         return(
-          <li key={index}>
-            <HeaderLink to={node.link}>{node.name}</HeaderLink>
-          </li>
+          <HeaderLink key={index} to={link.link}>{link.name}</HeaderLink>
         )
       })}
-    </ul>
+    </>
   )
 }
 
