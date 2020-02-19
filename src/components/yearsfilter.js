@@ -41,15 +41,13 @@ class YearsFilter extends Component {
       }
     }
 
-    let comps = []
-
-    for (let year of Array.from(years).sort().reverse()) {
-      comps.push(<YearFilter handleClick={this.handleClick} year={year} />)
-    }
-  
     return(
       <>
-        {comps}
+        {
+          Array.from(years).sort().reverse().map((year, index) => {
+            return(<YearFilter key={index} handleClick={this.handleClick} year={year} />)
+          })
+        }
       </>
     )
   }

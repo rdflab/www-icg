@@ -1,24 +1,39 @@
-const path = require(`path`)
+const path = require(`path`);
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
   const labTemplate = path.resolve(`src/templates/lab.js`)
+  const labPublicationsTemplate = path.resolve(`src/templates/labpublications.js`)
   
-  
-  const results = await graphql(`
+  const result = await graphql(`
     query {
-      allFaculty: allFacultyJson {
+      labs: allLabsJson {
         edges {
           node {
-            labId
-            firstName
-            lastName
-            email
+            id
+            name
+            faculty
           }
         }
       }
 
-      allPublications: allPublicationsJson {
+      people: allPeopleJson {
+        edges {
+          node {
+            id
+            firstName
+            lastName
+            email
+            phoneNumbers
+            titles
+            postNominalLetters
+            tags
+            labs
+          }
+        }
+      }
+
+      publications: allPublicationsJson {
         edges {
           node {
             authors {
@@ -26,7 +41,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               initials
               lastName
             }
-            labId
+            labs
             journal
             issue
             pages
@@ -54,19 +69,40 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   //   })
   // })
 
-  const allFaculty = results.data.allFaculty.edges
-  const allPublications = results.data.allPublications.edges
+  const allPeople = []
+  const allPublications = []
+  
+  result.data.people.edges.forEach(({node}) => {
+    allPeople.push(node)
+  })
 
-  allFaculty.forEach(({ node }) => {
-    const member = node
+  result.data.publications.edges.forEach(({node}) => {
+    allPublications.push(node)
+  })
+
+  result.data.labs.edges.forEach(({node}) => {
+    const lab = node
+
+    console.log('make page ' + `/research-areas/labs/${lab.id}`)
 
     createPage({
-      path: `/research-areas/labs/${member.labId}`,
+      path: `/research-areas/labs/${lab.id}`,
       component: labTemplate,
       context: {
-        labId: member.labId,
-        member: member
+        lab,
+        allPeople,
+        allPublications
       }, // additional data can be passed via context
-    })
+    });
+
+    createPage({
+      path: `/research-areas/labs/${lab.id}/publications`,
+      component: labPublicationsTemplate,
+      context: {
+        lab,
+        allPeople,
+        allPublications
+      }, // additional data can be passed via context
+    });
   })
 }

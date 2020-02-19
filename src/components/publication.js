@@ -12,7 +12,7 @@ import { Link } from "gatsby";
 const authorString = authors => {
   let strs = []
 
-  authors.map((author) => {
+  authors.map(author => {
     strs.push(author.lastName + ' ' + author.initials)
   });
 
@@ -22,19 +22,31 @@ const authorString = authors => {
   return ret
 };
 
-const Publication = ({publication, peopleMap}) => {
+const Publication = ({publication, labMap, showLabLink}) => {
 
   const authors = authorString(publication.authors)
-  const pi = peopleMap.get(publication.labId)
+  const labId = publication.labs[0]
 
-  console.log(publication.labId, pi, Array.from(peopleMap.keys()))
+  console.log(labId, labMap, )
+
+  let name
+
+  if (labMap.has(labId)) {
+    const lab = labMap.get(labId)
+    name = lab.faculty.firstName + " " + lab.faculty.lastName +  " Lab"
+  } else {
+    name = ""
+  }
 
   return (
     <article className={publicationStyles.publication}>
       <div className={publicationStyles.publicationTitle}>{publication.title}</div>
       <div>{authors}</div>
       <div className={publicationStyles.publicationYear}>{publication.year}</div>
-      <Link to={`/research-areas/labs/${publication.labId}`}>{publication.labId}  Lab</Link>
+
+      {(name !== "" && showLabLink) &&
+        <Link to={`/research-areas/labs/${labId}`}>{name}</Link>
+      }
     </article>
   );
 };

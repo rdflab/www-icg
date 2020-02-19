@@ -4,8 +4,8 @@ import React from "react"
 
 import headerLinkStyles from "./headerlink.module.scss"
 
-const HeaderLink = ({ index, children }) => (
-  <Link className={headerLinkStyles.headerlink}>
+const HeaderLink = ({ to, children }) => (
+  <Link to={to} className={headerLinkStyles.headerlink}>
     {children}
   </Link>
 )

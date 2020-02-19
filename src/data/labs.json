@@ -1,0 +1,62 @@
+[
+  {
+    "id": "adolfo-ferrando",
+    "name": "Adolfo Ferrando Lab",
+    "faculty": "adolfo-ferrando"
+  },
+  {
+    "id": "anna-lasorella",
+    "name": "Anna Lasorella Lab",
+    "faculty": "anna-lasorella"
+  },
+  {
+    "id": "antonio-iavarone",
+    "name": "Antonio Iavarone Lab",
+    "faculty": "antonio-iavarone"
+  },
+  {
+    "id": "christine-chio",
+    "name": "Christine Chio Lab",
+    "faculty": "christine-chio"
+  },
+  {
+    "id": "jean-gautier",
+    "name": "Jean Gautier Lab",
+    "faculty": "jean-gautier"
+  },
+  {
+    "id": "murty-vundavalli",
+    "name": "Murty Vundavalli Lab",
+    "faculty": "murty-vundavalli"
+  },
+  {
+    "id": "riccardo-dalla-favera",
+    "name": "Riccardo Dalla-Favera Lab",
+    "faculty": "riccardo-dalla-favera"
+  },
+  {
+    "id": "richard-baer",
+    "name": "Richard Baer Lab",
+    "faculty": "richard-baer"
+  },
+  {
+    "id": "shan-zha",
+    "name": "Shan Zha Lab",
+    "faculty": "shan-zha"
+  },
+  {
+    "id": "swarnali-acharyya",
+    "name": "Swarnali Acharyya Lab",
+    "faculty": "swarnali-acharyya"
+  },
+  {
+    "id": "wei-gu",
+    "name": "Wei Gu Lab",
+    "faculty": "wei-gu"
+  },
+  {
+    "id": "zhiguo-zhang",
+    "name": "Zhiguo Zhang Lab",
+    "faculty": "zhiguo-zhang"
+  }
+]

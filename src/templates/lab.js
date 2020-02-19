@@ -2,28 +2,38 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import PublicationList from "../components/publicationlist"
 
 import { MdEmail } from 'react-icons/md';
 import TopPublications from "../components/toppublications"
- 
+import toPeopleMap from "../utils/topeoplemap"
+import toLabs from "../utils/tolabs"
+import toLabMap from "../utils/tolabmap"
 
 const LabTemplate = props => {
   const { data, pageContext } = props
-  const { member } = pageContext
+  const { lab, allPeople, allPublications } = pageContext
   const { markdownRemark } = data // data.markdownRemark holds our post data
   const { frontmatter, excerpt, html } = markdownRemark
-  const allPublications = data.allPublications.edges
+  const peopleMap = toPeopleMap(allPeople)
 
-  var publications = []
+  const labs = toLabs([lab], peopleMap)
+  const labMap = toLabMap(labs)
 
-  allPublications.forEach(({ node }) => {
-    publications.push(node)
+  console.log(labMap)
+
+  const faculty = peopleMap.get(lab.faculty)
+
+  const publications = []
+
+  allPublications.forEach(publication => {
+    if (publication.labs.includes(lab.id)) {
+      publications.push(publication)
+    }
   })
 
   return (
     <Layout>
-      <SEO title={`The ${member.lastName} Lab`} />
+      <SEO title={`The ${faculty.lastName} Lab`} />
 
       <div className="columns">
         <div className="column">
@@ -36,7 +46,7 @@ const LabTemplate = props => {
 
       <div className="columns">
         <div className="column">
-          <h2>{`${member.firstName} ${member.lastName}`}</h2>
+          <h2>{`${faculty.firstName} ${faculty.lastName}`}</h2>
           <h3>Research Focus</h3>
           <h3>Education</h3>
         </div>
@@ -49,7 +59,7 @@ const LabTemplate = props => {
             </div>
             <div className="column">
               <h4>Email Address</h4>
-              <a href={`mailto:${member.email}`}>{member.email}</a>
+              <a href={`mailto:${faculty.email}`}>{faculty.email}</a>
             </div>
           </div>
         </div>
@@ -57,7 +67,9 @@ const LabTemplate = props => {
 
       <div className="columns">
         <div className="column is-two-thirds">
-          <TopPublications publications={publications} />
+          <div style={{boxShadow: "0 4px 8px 0 rgba(0,0,0,0.2)", padding:"1rem"}}>
+          <TopPublications lab={lab} publications={publications} labMap={labMap} />
+          </div>
         </div>
       </div>
 
@@ -66,8 +78,8 @@ const LabTemplate = props => {
 }
 
 export const pageQuery = graphql`
-  query($labId: String!, $path: String!) {
-    allPublications: allPublicationsJson(sort: {fields: [year, title], order: [DESC, ASC]}, filter: {labId: {eq: $labId}}) {
+  query($path: String!) {
+    publications: allPublicationsJson(sort: {fields: [year, title], order: [DESC, ASC]}) {
       edges {
         node {
           authors {
@@ -75,7 +87,7 @@ export const pageQuery = graphql`
             initials
             lastName
           }
-          labId
+          labs
           journal
           issue
           pages
@@ -85,6 +97,7 @@ export const pageQuery = graphql`
         }
       }
     }
+
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       excerpt(format: HTML)
       html

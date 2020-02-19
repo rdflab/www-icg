@@ -1,6 +1,7 @@
 ul.breadcrumb {
     display: inline-block;
-    padding: 10px 16px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     list-style: none;
   }
   
@@ -10,9 +11,10 @@ ul.breadcrumb {
   }
   
   ul.breadcrumb li+li:before {
-    padding: 8px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
     color: black;
-    content: "/\00a0";
+    content: "/";
   }
   
   ul.breadcrumb li a {

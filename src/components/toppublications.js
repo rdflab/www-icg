@@ -7,14 +7,15 @@
 
 import React from "react"
 import Publication from "./publication"
+import { Link } from "gatsby"
 
-const TopPublications = ({publications}) => {
-  const createPublications = (publications) => {
+const TopPublications = ({lab, publications, labMap, top}) => {
+  const createPublications = publications => {
     let ret = []
 
     // Outer loop to create parent
-    for (let i = 0; i < Math.min(10, publications.length); ++i) {
-      ret.push(<Publication publication={publications[i]} />)
+    for (let i = 0; i < Math.min(top, publications.length); ++i) {
+      ret.push(<Publication key={i} publication={publications[i]} labMap={labMap} />)
     }
 
     return ret
@@ -23,8 +24,13 @@ const TopPublications = ({publications}) => {
   return(
     <>
       {createPublications(publications)}
+      <Link to={`/research-areas/labs/${lab.id}/publications`} className="button is-primary">More</Link>
     </>
   )
+}
+
+TopPublications.defaultProps = {
+  top: 10
 }
 
 export default TopPublications

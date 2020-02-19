@@ -3,88 +3,123 @@ import { Link, graphql } from "gatsby"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import Breadcrumb from "../../components/breadcrumb"
+import flattenEdges from "../../utils/flattenedges"
+import toPeopleMap from "../../utils/topeoplemap"
+import toLabMap from "../../utils/tolabmap"
+import SearchBar from "../../components/searchbar"
+import { MdLibraryBooks, MdPeople, MdEmail } from 'react-icons/md';
 
-const FacultyIndex = props => {
+const EMPTY_QUERY = ""
+
+const Labs = props => {
   const { data } = props
-  const allFaculty = data.faculty.edges
-  const emptyQuery = ""
-  const [state, setState] = React.useState({query: emptyQuery, filteredFaculty: []})
+  const peopleMap = toPeopleMap(flattenEdges(data.people.edges))
+  const allLabs = flattenEdges(data.labs.edges)
+  const labMap = toLabMap(peopleMap)
+
+  
+  const [query, setQuery] = React.useState(EMPTY_QUERY)
+  const [filteredLabs, setFilteredLabs] = React.useState([])
 
   const handleInputChange = event => {  
-    const query = event.target.value  
+    const q = event.target.value  
     const { data } = props
 
-    const faculty = allFaculty || []   
+    const labs = allLabs || []   
     // return all filtered posts  
-    const filteredFaculty = faculty.filter(post => {    
-      // destructure data from post frontmatter    
-      const { labId } = post.node 
+    const filteredLabs = labs.filter(lab => {
       return (      
         // standardize data with .toLowerCase()      
         // return true if the description, title or tags      
         // contains the query string      
-        labId.toLowerCase().includes(query.toLowerCase())
+        lab.id.toLowerCase().includes(q.toLowerCase())
       ) 
     })
-      // update state according to the latest query and results  
-    setState({ 
-      query, // with current query string from the `Input` event    
-      filteredFaculty: filteredFaculty, // with filtered data from posts.filter(post => (//filteredData)) above  
-    })
+
+    setQuery(q)
+    setFilteredLabs(filteredLabs)
   }
 
-  const { filteredFaculty, query } = state
-  const hasSearchResults = filteredFaculty && query !== emptyQuery
-  const posts = hasSearchResults ? filteredFaculty : allFaculty
+  const hasSearchResults = filteredLabs.length > 0 || query !== EMPTY_QUERY
+  const labs = hasSearchResults ? filteredLabs : allLabs
 
   return (
     <Layout>
       <SEO title="Labs" />
 
-      <Breadcrumb crumbs={ [ ['For Research Scientists','/research-areas/labs'], ['iLottNum','test'] ] } />
+      <Breadcrumb crumbs={ [ ['For Research Scientists','/research-areas/labs'], ['Labs','/research-areas/labsest'] ] } />
     
 
       {/*in-line css for demo purposes*/}
       <h1>Research Labs</h1>
+      
+      <div className="columns">
+        <div className="column is-one-third">
+          <SearchBar handleInputChange={handleInputChange} placeholder="Type to find faculty..." />
+        </div>
+        <div className="column">
+          <div style={{paddingBottom: "1rem"}}><span style={{color: "rgba(0, 0, 255, 1)"}}>{labs.length}</span> Faculty {labs.length === 1 ? "Member" : "Members"} found</div>
 
-      <input type="text" aria-label="Search" placeholder="Type to find faculty member..." onChange={handleInputChange} />
+          {labs.map((lab, index) => {
+            const person = peopleMap.get(lab.faculty)
 
-      <h2>{posts.length} Faculty {posts.length === 1 ? "Member" : "Members"} found</h2>
+            let name = person.firstName + ' ' + person.lastName
 
-      {posts.map(({ node }) => {
-        const labId = node.labId
+            if (person.postNominalLetters.length > 0) {
+              name += ', ' + person.postNominalLetters.join(' ')
+            }
 
-        return (
-          <article key={labId}>
-            <header>
-              <h2>
-                <Link to={`/research-areas/labs/${labId}`}>{labId}</Link>
-              </h2>
-              
-            </header>
-            {/* <section>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: description || excerpt,
-                }}
-              />
-            </section> */}
-            <hr />
-          </article>
-        )
-      })}
+
+            return (
+              <article key={index} style={{paddingTop: "2rem", paddingBottom: "2rem", borderTop: "solid 2px rgba(0, 0, 128, 0.5)"}}>
+                <main>
+                  <div className="columns">
+                    <div className="column is-two-thirds">
+                    <h3>
+                      <Link to={`/research-areas/labs/${lab.id}`}>{name}</Link>
+                    </h3>
+                    </div>
+                    <div className="column" style={{borderLeft: "solid 1px lightgray"}}>
+                      <div><MdPeople/><Link to={`/research-areas/labs/${lab.id}/members`}>View Lab Members</Link></div>
+                      <div><MdLibraryBooks/><Link to={`/research-areas/labs/${lab.id}/publications`}>View Publications</Link></div>
+                      <div><MdEmail/><a href={`mailto:${person.email}`}>{person.email}</a></div>
+                    </div>
+                  </div>
+                </main>
+              </article>
+            )
+          })}
+        </div>
+      </div>
     </Layout>
   )
 }
 
-export default FacultyIndex
+export default Labs
 
 export const pageQuery = graphql`
   query {
-    faculty: allFacultyJson {
+    labs: allLabsJson {
       edges {
         node {
-          labId
+          id
+          name
+          faculty
+        }
+      }
+    }
+
+    people: allPeopleJson {
+      edges {
+        node {
+          labs
+          id
+          firstName
+          lastName
+          email
+          titles
+          postNominalLetters
+          tags
         }
       }
     }

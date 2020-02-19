@@ -9,10 +9,10 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Publication from "./publication"
 
-const PublicationList = ({publications, peopleMap}) => (
+const PublicationList = ({publications, labMap, showLabLink}) => (
   <>
     {publications.map((publication, index) => (
-      <Publication key={index} publication={publication} peopleMap={peopleMap} />
+      <Publication key={index} publication={publication} labMap={labMap} showLabLink={showLabLink} />
     ))}
   </>
 )
