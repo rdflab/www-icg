@@ -45,7 +45,7 @@ const Labs = props => {
 
   return (
     <Layout>
-      <SEO title="Labs" />
+      <SEO title="Research Labs" />
 
       <Breadcrumb crumbs={ [ ['For Research Scientists','/research-areas/labs'], ['Labs','/research-areas/labsest'] ] } />
     
