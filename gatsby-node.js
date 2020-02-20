@@ -1,11 +1,13 @@
-const path = require(`path`);
+const path = require(`path`)
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
   const labTemplate = path.resolve(`src/templates/lab.js`)
-  const labPublicationsTemplate = path.resolve(`src/templates/labpublications.js`)
+  const labPublicationsTemplate = path.resolve(
+    `src/templates/labpublications.js`
+  )
   const labMembersTemplate = path.resolve(`src/templates/labmembers.js`)
-  
+
   const result = await graphql(`
     query {
       labs: allLabsJson {
@@ -14,6 +16,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             id
             name
             faculty
+            uri
           }
         }
       }
@@ -49,12 +52,25 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             title
             volume
             year
+            tags
+            uri
+          }
+        }
+      }
+
+      markdown: allMarkdownRemark {
+        edges {
+          node {
+            html
+            frontmatter {
+              path
+            }
+            excerpt(format: HTML)
           }
         }
       }
     }
   `)
-
 
   // Handle errors
   // if (result.errors) {
@@ -72,19 +88,36 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const allPeople = []
   const allPublications = []
-  
-  result.data.people.edges.forEach(({node}) => {
+
+  result.data.people.edges.forEach(({ node }) => {
     allPeople.push(node)
   })
 
-  result.data.publications.edges.forEach(({node}) => {
+  result.data.publications.edges.forEach(({ node }) => {
     allPublications.push(node)
   })
 
-  result.data.labs.edges.forEach(({node}) => {
+  const markdownMap = new Map()
+
+  result.data.markdown.edges.forEach(({ node }) => {
+    markdownMap.set(node.frontmatter.path, node)
+  })
+
+  result.data.labs.edges.forEach(({ node }) => {
     const lab = node
 
-    console.log('make page ' + `/research-areas/labs/${lab.id}`)
+    const path = `/research-areas/labs/${lab.id}`
+
+    let labHtml = ""
+    let labExcerptHtml = ""
+
+    if (markdownMap.has(path)) {
+      const markdown = markdownMap.get(path)
+      labHtml = markdown.html
+      labExcerptHtml = markdown.excerpt
+    }
+
+    console.log("make page " + `/research-areas/labs/${lab.id}`)
 
     createPage({
       path: `/research-areas/labs/${lab.id}`,
@@ -92,27 +125,29 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       context: {
         lab,
         allPeople,
-        allPublications
+        allPublications,
+        labExcerptHtml,
+        labHtml,
       }, // additional data can be passed via context
-    });
+    })
 
     createPage({
-      path: `/research-areas/labs/${lab.id}/publications`,
+      path: `${path}/publications`,
       component: labPublicationsTemplate,
       context: {
         lab,
         allPeople,
-        allPublications
+        allPublications,
       }, // additional data can be passed via context
-    });
+    })
 
     createPage({
       path: `/research-areas/labs/${lab.id}/members`,
       component: labMembersTemplate,
       context: {
         lab,
-        allPeople
+        allPeople,
       }, // additional data can be passed via context
-    });
+    })
   })
 }

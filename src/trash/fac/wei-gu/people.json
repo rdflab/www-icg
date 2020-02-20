@@ -2,21 +2,14 @@
   "labId": "wei-gu",
   "people": [
     {
-      "tags": [
-        "faculty"
-      ],
+      "tags": ["faculty"],
       "labId": "wei-gu",
       "id": "wei-gu",
       "firstName": "Wei",
       "lastName": "Gu",
-      "postNominalLetters": [
-        "PhD"
-      ],
+      "postNominalLetters": ["PhD"],
       "title": "Professor of Pathology and Cell Biology",
-      "phone": [
-        "(212) 851-5282",
-        "(212) 851-5284"
-      ],
+      "phone": ["(212) 851-5282", "(212) 851-5284"],
       "room": "609A",
       "email": "wg8@cumc.columbia.edu"
     },
@@ -26,13 +19,9 @@
       "id": "delin-chen",
       "firstName": "Delin",
       "lastName": "Chen",
-      "postNominalLetters": [
-        "PhD"
-      ],
+      "postNominalLetters": ["PhD"],
       "title": "Associate Research Scientist",
-      "phone": [
-        "(212) 851-5285"
-      ],
+      "phone": ["(212) 851-5285"],
       "room": "608",
       "email": "dc723@cumc.columbia.edu"
     },
@@ -42,20 +31,14 @@
       "id": "ning-kon",
       "firstName": "Ning",
       "lastName": "Kon",
-      "postNominalLetters": [
-        "PhD"
-      ],
+      "postNominalLetters": ["PhD"],
       "title": "Associate Research Scientist",
-      "phone": [
-        "(212) 851-5285"
-      ],
+      "phone": ["(212) 851-5285"],
       "room": "608",
       "email": "nk2139@cumc.columbia.edu"
     },
     {
-      "tags": [
-        "staff"
-      ],
+      "tags": ["staff"],
       "labId": "wei-gu",
       "id": "huan-li",
       "firstName": "Huan",
@@ -72,85 +55,57 @@
       "id": "shujuan-song",
       "firstName": "Shujuan",
       "lastName": "Song",
-      "postNominalLetters": [
-        "PhD"
-      ],
+      "postNominalLetters": ["PhD"],
       "title": "Visiting Scientist",
-      "phone": [
-        "(212) 851-5285"
-      ],
+      "phone": ["(212) 851-5285"],
       "room": "608",
       "email": "ss5519@cumc.columbia.edu"
     },
     {
-      "tags": [
-        "postdoc"
-      ],
+      "tags": ["postdoc"],
       "labId": "wei-gu",
       "id": "zhenyi-su",
       "firstName": "Zhenyi",
       "lastName": "Su",
-      "postNominalLetters": [
-        "PhD"
-      ],
+      "postNominalLetters": ["PhD"],
       "title": "Postdoctoral Research Scientist",
-      "phone": [
-        "(212) 851-5285"
-      ],
+      "phone": ["(212) 851-5285"],
       "room": "608",
       "email": "zs2391@cumc.columbia.edu"
     },
     {
-      "tags": [
-        "postdoc"
-      ],
+      "tags": ["postdoc"],
       "labId": "wei-gu",
       "id": "donglai-wang",
       "firstName": "Donglai",
       "lastName": "Wang",
-      "postNominalLetters": [
-        "PhD"
-      ],
+      "postNominalLetters": ["PhD"],
       "title": "Postdoctoral Research Scientist",
-      "phone": [
-        "(212) 851-5285"
-      ],
+      "phone": ["(212) 851-5285"],
       "room": "608",
       "email": "dw2586@cumc.columbia.edu"
     },
     {
-      "tags": [
-        "postdoc"
-      ],
+      "tags": ["postdoc"],
       "labId": "wei-gu",
       "id": "xingwu-wang",
       "firstName": "Xingwu",
       "lastName": "Wang",
-      "postNominalLetters": [
-        "PhD"
-      ],
+      "postNominalLetters": ["PhD"],
       "title": "Postdoctoral Research Scientist",
-      "phone": [
-        "(212) 851-5285"
-      ],
+      "phone": ["(212) 851-5285"],
       "room": "608",
       "email": "wx2519@cumc.columbia.edu"
     },
     {
-      "tags": [
-        "postdoc"
-      ],
+      "tags": ["postdoc"],
       "labId": "wei-gu",
       "id": "jingjie-yi",
       "firstName": "JIngjie",
       "lastName": "Yi",
-      "postNominalLetters": [
-        "PhD"
-      ],
+      "postNominalLetters": ["PhD"],
       "title": "Postdoctoral Research Scientist",
-      "phone": [
-        "(212) 851-5285"
-      ],
+      "phone": ["(212) 851-5285"],
       "room": "608",
       "email": "jy2651@cumc.columbia.edu"
     }

@@ -1,7 +1,7 @@
 const flattenEdges = edges => {
-  let ret = [];
+  let ret = []
 
-  edges.forEach(({node}) => {
+  edges.forEach(({ node }) => {
     ret.push(node)
   })
 

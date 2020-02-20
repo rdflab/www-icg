@@ -107,10 +107,7 @@
       "url": ""
     },
     {
-      "authors": [
-        "Palomero T",
-        "<strong>Ferrando A</strong>"
-      ],
+      "authors": ["Palomero T", "<strong>Ferrando A</strong>"],
       "title": "Targeted cellular immunotherapy for T cell malignancies",
       "journal": "Nat Med",
       "date": "",
@@ -150,10 +147,7 @@
       "url": ""
     },
     {
-      "authors": [
-        "Sanchez-Martin M",
-        "<strong>Ferrando A</strong>"
-      ],
+      "authors": ["Sanchez-Martin M", "<strong>Ferrando A</strong>"],
       "title": "The NOTCH1-MYC highway toward T-cell acute lymphoblastic leukemia",
       "journal": "Blood",
       "date": "",
@@ -193,10 +187,7 @@
       "url": ""
     },
     {
-      "authors": [
-        "Belver L",
-        "<strong>Ferrando A</strong>"
-      ],
+      "authors": ["Belver L", "<strong>Ferrando A</strong>"],
       "title": "The genetics and mechanisms of T cell acute lymphoblastic leukaemia",
       "journal": "Nat Rev Cancer",
       "date": "",

@@ -5,19 +5,30 @@ import React from "react"
 import headerStyles from "./header.module.scss"
 
 import HeaderLinks from "./headerlinks"
-import ICGImage from "./icgimage";
-
+import ICGImage from "./icgimage"
 
 const Header = ({ siteTitle }) => (
   <header className={headerStyles.header}>
     <div className="container">
-      <nav className="navbar" role="navigation" aria-label="main navigation" style={{paddingLeft: 0, paddingBottom: 0}}>
-        <div className="navbar-brand" style={{padding: 0, margin: 0}}>
-          <Link to="/"><ICGImage style={{width: `250px`}}/></Link>
+      <nav
+        className="navbar"
+        role="navigation"
+        aria-label="main navigation"
+        style={{ paddingLeft: 0, paddingBottom: 0 }}
+      >
+        <div className="navbar-brand" style={{ padding: 0, margin: 0 }}>
+          <Link to="/">
+            <ICGImage style={{ width: `250px` }} />
+          </Link>
         </div>
       </nav>
-      <nav className="navbar" role="navigation" aria-label="main navigation" style={{paddingLeft: 0, paddingTop: 0}}>
-        <div className="navbar-start" style={{padding: 0, margin: 0}}>
+      <nav
+        className="navbar"
+        role="navigation"
+        aria-label="main navigation"
+        style={{ paddingLeft: 0, paddingTop: 0 }}
+      >
+        <div className="navbar-start" style={{ padding: 0, margin: 0 }}>
           <HeaderLinks />
         </div>
       </nav>

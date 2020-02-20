@@ -7,15 +7,14 @@
 
 import React from "react"
 import personStyles from "./person.module.scss"
-import { Link } from "gatsby";
+import { Link } from "gatsby"
 
-const Person = ({person, labMap, showLabLink}) => {
-
+const Person = ({ person, labMap, showLabLink }) => {
   return (
     <div className={personStyles.person}>
       {person.firstName} {person.lastName}
     </div>
-  );
-};
+  )
+}
 
 export default Person

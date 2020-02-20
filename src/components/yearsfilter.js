@@ -5,15 +5,14 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React, {Component} from "react"
+import React, { Component } from "react"
 import YearFilter from "./yearfilter"
 
 class YearsFilter extends Component {
-
   constructor(props) {
     super(props)
 
-    this.state = { selectedYears : new Set()}
+    this.state = { selectedYears: new Set() }
   }
 
   handleClick = data => {
@@ -25,15 +24,15 @@ class YearsFilter extends Component {
       selectedYears.delete(data.year)
     }
 
-    this.setState({selectedYears: selectedYears}, console.log(this.state));
+    this.setState({ selectedYears: selectedYears }, console.log(this.state))
 
-    console.log('piio', data.year, data.selected, selectedYears)
+    console.log("piio", data.year, data.selected, selectedYears)
 
     this.props.handleClick(selectedYears)
   }
 
   render() {
-    let years= new Set()
+    let years = new Set()
 
     for (let publication of this.props.publications) {
       if (publication.year !== -1) {
@@ -41,20 +40,23 @@ class YearsFilter extends Component {
       }
     }
 
-    return(
+    return (
       <>
-        {
-          Array.from(years).sort().reverse().map((year, index) => {
-            return(<YearFilter key={index} handleClick={this.handleClick} year={year} />)
-          })
-        }
+        {Array.from(years)
+          .sort()
+          .reverse()
+          .map((year, index) => {
+            return (
+              <YearFilter
+                key={index}
+                handleClick={this.handleClick}
+                year={year}
+              />
+            )
+          })}
       </>
     )
   }
-  
-  
-
-  
 }
 
 export default YearsFilter

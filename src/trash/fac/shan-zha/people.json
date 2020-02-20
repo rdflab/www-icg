@@ -2,37 +2,26 @@
   "labId": "shan-zha",
   "people": [
     {
-      "tags": [
-        "faculty"
-      ],
+      "tags": ["faculty"],
       "labId": "shan-zha",
       "id": "shan-zha",
       "firstName": "Shan",
       "lastName": "Zha",
-      "postNominalLetters": [
-        "MD",
-        "PhD"
-      ],
+      "postNominalLetters": ["MD", "PhD"],
       "title": "Associate Professor of Pediatrics and Pathology and Cell Biology",
-      "phone": [
-        "(212) 851-4779"
-      ],
+      "phone": ["(212) 851-4779"],
       "room": "505A",
       "email": "sz2296@cumc.columbia.edu"
     },
     {
-      "tags": [
-        "staff"
-      ],
+      "tags": ["staff"],
       "labId": "shan-zha",
       "id": "brian-lee",
       "firstName": "Brian",
       "lastName": "Lee",
       "postNominalLetters": [],
       "title": "Technician B",
-      "phone": [
-        "(212) 851-4785"
-      ],
+      "phone": ["(212) 851-4785"],
       "room": "501",
       "email": "bl2530@cumc.columbia.edu"
     },
@@ -42,13 +31,9 @@
       "id": "demis-menolfi",
       "firstName": "Demis",
       "lastName": "Menolfi",
-      "postNominalLetters": [
-        "PhD"
-      ],
+      "postNominalLetters": ["PhD"],
       "title": "Postoctoral Research Scientist",
-      "phone": [
-        "(212) 851-4785"
-      ],
+      "phone": ["(212) 851-4785"],
       "room": "501",
       "email": "dm3231@cumc.columbia.edu"
     },
@@ -58,48 +43,33 @@
       "id": "maja-milanovic",
       "firstName": "Maja",
       "lastName": "Milanovic",
-      "postNominalLetters": [
-        "PhD"
-      ],
+      "postNominalLetters": ["PhD"],
       "title": "Postoctoral Research Scientist",
-      "phone": [
-        "(212) 851-4785"
-      ],
+      "phone": ["(212) 851-4785"],
       "room": "501",
       "email": "mm4619@cumc.columbia.edu"
     },
     {
-      "tags": [
-        "postdoc"
-      ],
+      "tags": ["postdoc"],
       "labId": "shan-zha",
       "id": "zhengping-shao",
       "firstName": "Zhengping",
       "lastName": "Shao",
-      "postNominalLetters": [
-        "MD",
-        "PhD"
-      ],
+      "postNominalLetters": ["MD", "PhD"],
       "title": "Postdoctoral Research Scientist",
-      "phone": [
-        "(212) 851-4785"
-      ],
+      "phone": ["(212) 851-4785"],
       "room": "501",
       "email": "zs2275@cumc.columbia.edu"
     },
     {
-      "tags": [
-        "graduate"
-      ],
+      "tags": ["graduate"],
       "labId": "shan-zha",
       "id": "xiobin-summer-wang",
       "firstName": "Xiobin (Summer)",
       "lastName": "Wang",
       "postNominalLetters": [],
       "title": "Graduate Student",
-      "phone": [
-        "(212) 851-4785"
-      ],
+      "phone": ["(212) 851-4785"],
       "room": "501",
       "email": "xw2394@columbia.edu"
     }

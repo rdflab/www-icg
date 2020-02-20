@@ -20,9 +20,11 @@ const FooterLinks = () => {
 
   return (
     <>
-      {links.map(({ node }, index)  => {
-        return(
-          <Link key={index} to={node.link}>{node.name}</Link>
+      {links.map(({ node }, index) => {
+        return (
+          <Link key={index} to={node.link}>
+            {node.name}
+          </Link>
         )
       })}
     </>

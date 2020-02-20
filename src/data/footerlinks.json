@@ -1,10 +1,10 @@
 [
-    {
-        "name": "Pressroom",
-        "link": "/pressroom"
-    },
-    {
-        "name": "Contact Us",
-        "link": "/contact"
-    }
+  {
+    "name": "Pressroom",
+    "link": "/pressroom"
+  },
+  {
+    "name": "Contact Us",
+    "link": "/contact"
+  }
 ]

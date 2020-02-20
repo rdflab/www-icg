@@ -32,37 +32,28 @@ const LabPublicationsTemplate = props => {
     <Layout>
       <SEO title={title} />
 
-      <Breadcrumb crumbs={ [ ['For Research Scientists','/research-areas'], ['Labs', '/research-areas/labs'], [`${faculty.firstName} ${faculty.lastName}`, `/research-areas/labs/${lab.id}`], ['publications', `/research-areas/labs/${lab.id}/publications`] ] } />
+      <Breadcrumb
+        crumbs={[
+          ["For Research Scientists", "/research-areas"],
+          ["Labs", "/research-areas/labs"],
+          [
+            `${faculty.firstName} ${faculty.lastName}`,
+            `/research-areas/labs/${lab.id}`,
+          ],
+          ["publications", `/research-areas/labs/${lab.id}/publications`],
+        ]}
+      />
 
       <h1>{title}</h1>
 
-      <PubSearch labMap={labMap} peopleMap={peopleMap} allPublications={publications} showLabLink={false} />
-
+      <PubSearch
+        labMap={labMap}
+        peopleMap={peopleMap}
+        allPublications={publications}
+        showLabLink={false}
+      />
     </Layout>
   )
 }
-
-export const pageQuery = graphql`
-  query {
-    publications: allPublicationsJson(sort: {fields: [year, title], order: [DESC, ASC]}) {
-      edges {
-        node {
-          authors {
-            corresponding
-            initials
-            lastName
-          }
-          labs
-          journal
-          issue
-          pages
-          title
-          volume
-          year
-        }
-      }
-    }
-  }
-`
 
 export default LabPublicationsTemplate

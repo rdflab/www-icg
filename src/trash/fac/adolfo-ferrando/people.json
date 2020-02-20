@@ -2,54 +2,37 @@
   "labId": "adolfo-ferrando",
   "people": [
     {
-      "tags": [
-        "faculty"
-      ],
+      "tags": ["faculty"],
       "labId": "adolfo-ferrando",
       "id": "adolfo-ferrando",
       "firstName": "Adolfo",
       "lastName": "Ferrando",
-      "postNominalLetters": [
-        "MD",
-        "PhD"
-      ],
+      "postNominalLetters": ["MD", "PhD"],
       "title": "Associate Professor of Pediatrics and Pathology and Cell Biology",
-      "phone": [
-        "(212) 851-4611"
-      ],
+      "phone": ["(212) 851-4611"],
       "room": "402A",
       "email": "af2196@cumc.columbia.edu"
     },
     {
-      "tags": [
-        "postdoc"
-      ],
+      "tags": ["postdoc"],
       "labId": "adolfo-ferrando",
       "id": "robert-albero",
       "firstName": "Robert",
       "lastName": "Albero",
-      "postNominalLetters": [
-        "PhD"
-      ],
+      "postNominalLetters": ["PhD"],
       "title": "Postdoctoral Research Scientist",
       "phone": [],
       "room": ""
     },
     {
-      "tags": [
-        "postdoc"
-      ],
+      "tags": ["postdoc"],
       "labId": "adolfo-ferrando",
       "id": "silvia-alvarez-nanez",
       "firstName": "Silvia",
       "lastName": "Alvarez Nanez",
-      "postNominalLetters": [
-        "PhD"
-      ],
+      "postNominalLetters": ["PhD"],
       "title": "Postdoctoral Research Scientist",
-      "phone": [
-        "(212) 851-5292"
-      ],
+      "phone": ["(212) 851-5292"],
       "room": "401B",
       "email": "sa3358@cumc.columbia.edu"
     },
@@ -59,13 +42,9 @@
       "id": "laura-belver-miguel",
       "firstName": "Laura",
       "lastName": "Belver-Miguel",
-      "postNominalLetters": [
-        "PhD"
-      ],
+      "postNominalLetters": ["PhD"],
       "title": "Associate Research Scientist",
-      "phone": [
-        "(212) 851-5292"
-      ],
+      "phone": ["(212) 851-5292"],
       "room": "401B",
       "email": "lb2878@cumc.columbia.edu"
     },
@@ -77,51 +56,36 @@
       "lastName": "Cooke",
       "postNominalLetters": [],
       "title": "Techinican B",
-      "phone": [
-        "(212) 851-5292"
-      ],
+      "phone": ["(212) 851-5292"],
       "room": "401B",
       "email": "aa3276@cumc.columbia.edu"
     },
     {
-      "tags": [
-        "graduate"
-      ],
+      "tags": ["graduate"],
       "labId": "adolfo-ferrando",
       "id": "chelsea-dieck",
       "firstName": "Chelsea",
       "lastName": "Dieck",
       "postNominalLetters": [],
       "title": "Graduate Student Integrated PhD Program",
-      "phone": [
-        "(212) 851-5292"
-      ],
+      "phone": ["(212) 851-5292"],
       "room": "401B",
       "email": "cld2151@cumc.columbia.edu"
     },
     {
-      "tags": [
-        "postdoc",
-        "fellow"
-      ],
+      "tags": ["postdoc", "fellow"],
       "labId": "adolfo-ferrando",
       "id": "francesca-gianni",
       "firstName": "Francesca",
       "lastName": "Gianni",
-      "postNominalLetters": [
-        "PhD"
-      ],
+      "postNominalLetters": ["PhD"],
       "title": "Postdoctoral Research Fellow",
-      "phone": [
-        "(212) 851-5292"
-      ],
+      "phone": ["(212) 851-5292"],
       "room": "401B",
       "email": "fg2442@cumc.columbia.edu"
     },
     {
-      "tags": [
-        "staff"
-      ],
+      "tags": ["staff"],
       "labId": "adolfo-ferrando",
       "id": "thomas-gunning",
       "firstName": "Thomas",
@@ -132,193 +96,134 @@
       "room": ""
     },
     {
-      "tags": [
-        "staff"
-      ],
+      "tags": ["staff"],
       "labId": "adolfo-ferrando",
       "id": "devya-gurung",
       "firstName": "Devya",
       "lastName": "Gurung",
       "postNominalLetters": [],
       "title": "Technician B",
-      "phone": [
-        "(212) 851-5292"
-      ],
+      "phone": ["(212) 851-5292"],
       "room": "401B",
       "email": "dg3043@cumc.columbia.edu"
     },
     {
-      "tags": [
-        "staff"
-      ],
+      "tags": ["staff"],
       "labId": "adolfo-ferrando",
       "id": "adam-mackey",
       "firstName": "Adam",
       "lastName": "Mackey",
       "postNominalLetters": [],
       "title": "Senior Technician",
-      "phone": [
-        "(212) 851-5292"
-      ],
+      "phone": ["(212) 851-5292"],
       "room": "401B",
       "email": "alm2283@cumc.columbia.edu"
     },
     {
-      "tags": [
-        "graduate"
-      ],
+      "tags": ["graduate"],
       "labId": "adolfo-ferrando",
       "id": "christine-moon",
       "firstName": "Christine",
       "lastName": "Moon",
       "postNominalLetters": [],
       "title": "Graduate Research Associate",
-      "phone": [
-        "(212) 851-5292"
-      ],
+      "phone": ["(212) 851-5292"],
       "room": "401B",
       "email": "csk2127@cumc.columbia.edu"
     },
     {
-      "tags": [
-        "postdoc"
-      ],
+      "tags": ["postdoc"],
       "labId": "adolfo-ferrando",
       "id": "lucia-morgado-palacin",
       "firstName": "Lucia",
       "lastName": "Morgado-Palacin",
-      "postNominalLetters": [
-        "PhD"
-      ],
+      "postNominalLetters": ["PhD"],
       "title": "Postdoctoral Research Scientist",
-      "phone": [
-        "(212) 851-5292"
-      ],
+      "phone": ["(212) 851-5292"],
       "room": "401B",
       "email": "lm3230@cumc.columbia.edu"
     },
     {
-      "tags": [
-        "faculty"
-      ],
+      "tags": ["faculty"],
       "labId": "adolfo-ferrando",
       "id": "teresa-palomero",
       "firstName": "Teresa",
       "lastName": "Palomero",
-      "postNominalLetters": [
-        "PhD"
-      ],
+      "postNominalLetters": ["PhD"],
       "title": "Associate Professor of Clinical Pathology",
-      "phone": [
-        "(212) 851-4778"
-      ],
+      "phone": ["(212) 851-4778"],
       "room": "401B",
       "email": "tp2151@cumc.columbia.edu"
     },
     {
-      "tags": [
-        "postdoc"
-      ],
+      "tags": ["postdoc"],
       "labId": "adolfo-ferrando",
       "id": "pablo-perez-duran",
       "firstName": "Pablo",
       "lastName": "Perez-Duran",
-      "postNominalLetters": [
-        "PhD"
-      ],
+      "postNominalLetters": ["PhD"],
       "title": "Postdoctoral Research Scientist",
-      "phone": [
-        "(212) 851-5292"
-      ],
+      "phone": ["(212) 851-5292"],
       "room": "401B",
       "email": "pp2569@cumc.columbia.edu"
     },
     {
-      "tags": [
-        "graduate"
-      ],
+      "tags": ["graduate"],
       "labId": "adolfo-ferrando",
       "id": "aidan-stuart-quinn",
       "firstName": "Aidan Stuart",
       "lastName": "Quinn",
       "postNominalLetters": [],
       "title": "Graduate Student",
-      "phone": [
-        "(212) 851-5292"
-      ],
+      "phone": ["(212) 851-5292"],
       "room": "401B",
       "email": "saq2106@cumc.columbia.edu"
     },
     {
-      "tags": [
-        "postdoc",
-        "fellow"
-      ],
+      "tags": ["postdoc", "fellow"],
       "labId": "adolfo-ferrando",
       "id": "marissa-rashkovan",
       "firstName": "Marissa",
       "lastName": "Rashkovan",
-      "postNominalLetters": [
-        "PhD"
-      ],
+      "postNominalLetters": ["PhD"],
       "title": "Postdoctoral Research Fellow",
-      "phone": [
-        "(212) 851-5292"
-      ],
+      "phone": ["(212) 851-5292"],
       "room": "401B",
       "email": "mr3694@cumc.columbia.edu"
     },
     {
-      "tags": [
-        "postdoc"
-      ],
+      "tags": ["postdoc"],
       "labId": "adolfo-ferrando",
       "id": "clara-reglero-gomez",
       "firstName": "Clara",
       "lastName": "Reglero Gomez",
-      "postNominalLetters": [
-        "PhD"
-      ],
+      "postNominalLetters": ["PhD"],
       "title": "Postdoctoral Research Scientist",
-      "phone": [
-        "(212) 851-5292"
-      ],
+      "phone": ["(212) 851-5292"],
       "room": "401B",
       "email": "cr3023@cumc.columbia.edu"
     },
     {
-      "tags": [
-        "postdoc"
-      ],
+      "tags": ["postdoc"],
       "labId": "adolfo-ferrando",
       "id": "jose-rodriguez-cortes",
       "firstName": "Jose",
       "lastName": "Rodriguez-Cortes",
-      "postNominalLetters": [
-        "PhD"
-      ],
+      "postNominalLetters": ["PhD"],
       "title": "Postdoctoral Research Scientist",
-      "phone": [
-        "(212) 851-5292"
-      ],
+      "phone": ["(212) 851-5292"],
       "room": "401B",
       "email": "jr3434@cumc.columbia.edu"
     },
     {
-      "tags": [
-        "postdoc"
-      ],
+      "tags": ["postdoc"],
       "labId": "adolfo-ferrando",
       "id": "agnieszka-wendorff",
       "firstName": "Agnieszka",
       "lastName": "Wendorff",
-      "postNominalLetters": [
-        "PhD"
-      ],
+      "postNominalLetters": ["PhD"],
       "title": "Postdoctoral Research Scientist",
-      "phone": [
-        "(212) 851-2564"
-      ],
+      "phone": ["(212) 851-2564"],
       "room": "401B",
       "email": "aw2785@cumc.columbia.edu"
     }

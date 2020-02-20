@@ -2,37 +2,26 @@
   "labId": "richard-baer",
   "people": [
     {
-      "tags": [
-        "faculty"
-      ],
+      "tags": ["faculty"],
       "labId": "richard-baer",
       "id": "richard-baer",
       "firstName": "Richard",
       "lastName": "Baer",
-      "postNominalLetters": [
-        "PhD"
-      ],
+      "postNominalLetters": ["PhD"],
       "title": "Professor of Pathology and Cell Biology",
-      "phone": [
-        "(212) 851-5275",
-        "(212) 851-5267"
-      ],
+      "phone": ["(212) 851-5275", "(212) 851-5267"],
       "room": "503A",
       "email": "rb670@cumc.columbia.edu"
     },
     {
-      "tags": [
-        "staff"
-      ],
+      "tags": ["staff"],
       "labId": "richard-baer",
       "id": "foon-wu-baer",
       "firstName": "Foon",
       "lastName": "Wu-Baer",
       "postNominalLetters": [],
       "title": "Senior Staff Associate",
-      "phone": [
-        "(212) 851-5260"
-      ],
+      "phone": ["(212) 851-5260"],
       "room": "502",
       "email": "fw110@cumc.columbia.edu"
     }

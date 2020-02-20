@@ -2,61 +2,73 @@
   {
     "id": "adolfo-ferrando",
     "name": "Adolfo Ferrando Lab",
-    "faculty": "adolfo-ferrando"
+    "faculty": "adolfo-ferrando",
+    "uri": "http://ferrandolab.org/"
   },
   {
     "id": "anna-lasorella",
     "name": "Anna Lasorella Lab",
-    "faculty": "anna-lasorella"
+    "faculty": "anna-lasorella",
+    "uri": ""
   },
   {
     "id": "antonio-iavarone",
     "name": "Antonio Iavarone Lab",
-    "faculty": "antonio-iavarone"
+    "faculty": "antonio-iavarone",
+    "uri": ""
   },
   {
     "id": "christine-chio",
     "name": "Christine Chio Lab",
-    "faculty": "christine-chio"
+    "faculty": "christine-chio",
+    "uri": ""
   },
   {
     "id": "jean-gautier",
     "name": "Jean Gautier Lab",
-    "faculty": "jean-gautier"
+    "faculty": "jean-gautier",
+    "uri": ""
   },
   {
     "id": "murty-vundavalli",
     "name": "Murty Vundavalli Lab",
-    "faculty": "murty-vundavalli"
+    "faculty": "murty-vundavalli",
+    "uri": ""
   },
   {
     "id": "riccardo-dalla-favera",
     "name": "Riccardo Dalla-Favera Lab",
-    "faculty": "riccardo-dalla-favera"
+    "faculty": "riccardo-dalla-favera",
+    "uri": ""
   },
   {
     "id": "richard-baer",
     "name": "Richard Baer Lab",
-    "faculty": "richard-baer"
+    "faculty": "richard-baer",
+    "uri": ""
   },
   {
     "id": "shan-zha",
     "name": "Shan Zha Lab",
-    "faculty": "shan-zha"
+    "faculty": "shan-zha",
+    "uri": ""
   },
   {
     "id": "swarnali-acharyya",
     "name": "Swarnali Acharyya Lab",
-    "faculty": "swarnali-acharyya"
+    "faculty": "swarnali-acharyya",
+    "uri": ""
   },
   {
     "id": "wei-gu",
     "name": "Wei Gu Lab",
-    "faculty": "wei-gu"
+    "faculty": "wei-gu",
+    "uri": ""
   },
   {
     "id": "zhiguo-zhang",
     "name": "Zhiguo Zhang Lab",
-    "faculty": "zhiguo-zhang"
+    "faculty": "zhiguo-zhang",
+    "uri": ""
   }
 ]

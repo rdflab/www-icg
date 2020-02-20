@@ -5,7 +5,6 @@ import HICCCImage from "./hicccimage"
 import footerStyles from "./footer.module.scss"
 import FooterLinks from "./footerlinks"
 
-
 const Footer = props => {
   const { siteTitle } = props
   return (

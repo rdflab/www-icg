@@ -20,10 +20,10 @@ module.exports = {
       },
     },
     {
-      "resolve": `gatsby-transformer-remark`,
-      "options": {
-        "excerpt_separator": `<!-- endexcerpt -->`
-      }
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        excerpt_separator: `<!-- endexcerpt -->`,
+      },
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
@@ -50,12 +50,12 @@ module.exports = {
     },
     `gatsby-transformer-json`,
     {
-      resolve: 'gatsby-plugin-react-svg',
+      resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
-          include: /assets/
-        }
-      }
+          include: /assets/,
+        },
+      },
     },
     {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
@@ -63,11 +63,11 @@ module.exports = {
         fonts: [
           {
             family: `Lato`,
-            variants: [`300`, `400`, `700`]
+            variants: [`300`, `400`, `700`],
           },
           {
             family: `Montserrat`,
-            variants: [`300`, `400`, `700`]
+            variants: [`300`, `400`, `700`],
           },
           // {
           //   family: `Source Sans Pro`,
@@ -75,7 +75,7 @@ module.exports = {
           // },
           {
             family: `Quicksand`,
-            variants: [`300`, `400`, `700`]
+            variants: [`300`, `400`, `700`],
           },
         ],
       },

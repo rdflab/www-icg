@@ -26,7 +26,7 @@ const LabMembersTemplate = props => {
     }
   })
 
-  console.log('cake', people)
+  console.log("cake", people)
 
   const title = `The ${faculty.firstName} ${faculty.lastName} Lab Members`
 
@@ -34,16 +34,23 @@ const LabMembersTemplate = props => {
     <Layout>
       <SEO title={title} />
 
-      <Breadcrumb crumbs={ [ ['For Research Scientists','/research-areas'], ['Labs', '/research-areas/labs'], [`${faculty.firstName} ${faculty.lastName}`, `/research-areas/labs/${lab.id}`], ['members', `/research-areas/labs/${lab.id}/members`] ] } />
+      <Breadcrumb
+        crumbs={[
+          ["For Research Scientists", "/research-areas"],
+          ["Labs", "/research-areas/labs"],
+          [
+            `${faculty.firstName} ${faculty.lastName}`,
+            `/research-areas/labs/${lab.id}`,
+          ],
+          ["members", `/research-areas/labs/${lab.id}/members`],
+        ]}
+      />
 
       <h1>{title}</h1>
 
       <PeopleSearch labMap={labMap} allPeople={people} showLabLink={false} />
-
     </Layout>
   )
 }
-
-
 
 export default LabMembersTemplate

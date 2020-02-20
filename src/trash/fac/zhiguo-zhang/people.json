@@ -2,20 +2,14 @@
   "labId": "zhiguo-zhang",
   "people": [
     {
-      "tags": [
-        "faculty"
-      ],
+      "tags": ["faculty"],
       "labId": "zhiguo-zhang",
       "id": "zhiguo-zhang",
       "firstName": "Zhiguo",
       "lastName": "Zhang",
-      "postNominalLetters": [
-        "PhD"
-      ],
+      "postNominalLetters": ["PhD"],
       "title": "Professor of Epigenomics and Molecular Biology;in Pediatrics, Genetics and Development",
-      "phone": [
-        "(212) 851-4936"
-      ],
+      "phone": ["(212) 851-4936"],
       "room": "851-4936",
       "email": "zz2401@cumc.columbia.edu"
     },
@@ -27,24 +21,18 @@
       "lastName": "Chang",
       "postNominalLetters": [],
       "title": "",
-      "phone": [
-        "(212) 851-4937"
-      ],
+      "phone": ["(212) 851-4937"],
       "room": "851-4937"
     },
     {
-      "tags": [
-        "postdoc"
-      ],
+      "tags": ["postdoc"],
       "labId": "zhiguo-zhang",
       "id": "xu-hua",
       "firstName": "Xu",
       "lastName": "Hua",
       "postNominalLetters": [],
       "title": "Postdoctoral Research Scientist",
-      "phone": [
-        "(212) 851-4937"
-      ],
+      "phone": ["(212) 851-4937"],
       "room": "851-4937",
       "email": "xh2387@cumc.columbia.edu"
     },
@@ -56,96 +44,66 @@
       "lastName": "Li",
       "postNominalLetters": [],
       "title": "",
-      "phone": [
-        "(212) 851-4937"
-      ],
+      "phone": ["(212) 851-4937"],
       "room": "851-4937"
     },
     {
-      "tags": [
-        "postdoc"
-      ],
+      "tags": ["postdoc"],
       "labId": "zhiguo-zhang",
       "id": "yan-mo",
       "firstName": "Yan",
       "lastName": "Mo",
-      "postNominalLetters": [
-        "PhD"
-      ],
+      "postNominalLetters": ["PhD"],
       "title": "Postdoctoral Research Scientist",
-      "phone": [
-        "(212) 851-4937"
-      ],
+      "phone": ["(212) 851-4937"],
       "room": "851-4937",
       "email": "ym2667@cumc.columbia.edu"
     },
     {
-      "tags": [
-        "postdoc"
-      ],
+      "tags": ["postdoc"],
       "labId": "zhiguo-zhang",
       "id": "albert-serra-cardona",
       "firstName": "Albert",
       "lastName": "Serra-Cardona",
-      "postNominalLetters": [
-        "PhD"
-      ],
+      "postNominalLetters": ["PhD"],
       "title": "Postdoctoral Research Scientist",
-      "phone": [
-        "(212) 851-4937"
-      ],
+      "phone": ["(212) 851-4937"],
       "room": "407",
       "email": "as5251@cumc.columbia.edu"
     },
     {
-      "tags": [
-        "postdoc"
-      ],
+      "tags": ["postdoc"],
       "labId": "zhiguo-zhang",
       "id": "xiaowei-xu",
       "firstName": "Xiaowei",
       "lastName": "Xu",
-      "postNominalLetters": [
-        "PhD"
-      ],
+      "postNominalLetters": ["PhD"],
       "title": "Postdoctoral Research Scientist",
-      "phone": [
-        "(212) 851-4937"
-      ],
+      "phone": ["(212) 851-4937"],
       "room": "851-4937",
       "email": "xx2285@cumc.columbia.edu"
     },
     {
-      "tags": [
-        "postdoc"
-      ],
+      "tags": ["postdoc"],
       "labId": "zhiguo-zhang",
       "id": "xu-zhang",
       "firstName": "Xu",
       "lastName": "Zhang",
-      "postNominalLetters": [
-        "PhD"
-      ],
+      "postNominalLetters": ["PhD"],
       "title": "Postdoctoral Research Scientist",
-      "phone": [
-        "(212) 851-4937"
-      ],
+      "phone": ["(212) 851-4937"],
       "room": "851-4937",
       "email": "xz2711@cumc.columbia.edu"
     },
     {
-      "tags": [
-        "staff"
-      ],
+      "tags": ["staff"],
       "labId": "zhiguo-zhang",
       "id": "hui-zhou",
       "firstName": "Hui",
       "lastName": "Zhou",
       "postNominalLetters": [],
       "title": "Sr. Staff Associate",
-      "phone": [
-        "(212) 851-4937"
-      ],
+      "phone": ["(212) 851-4937"],
       "room": "407",
       "email": "hz2458@cumc.columbia.edu"
     }

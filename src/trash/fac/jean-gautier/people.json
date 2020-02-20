@@ -2,20 +2,14 @@
   "labId": "jean-gautier",
   "people": [
     {
-      "tags": [
-        "faculty"
-      ],
+      "tags": ["faculty"],
       "labId": "jean-gautier",
       "id": "jean-gautier",
       "firstName": "Jean",
       "lastName": "Gautier",
-      "postNominalLetters": [
-        "PhD"
-      ],
+      "postNominalLetters": ["PhD"],
       "title": "Professor of Genetics and Development",
-      "phone": [
-        "(212) 851-4564"
-      ],
+      "phone": ["(212) 851-4564"],
       "room": "603A",
       "email": "jg130@cumc.columbia.edu"
     },
@@ -25,114 +19,81 @@
       "id": "tomas-aparicio",
       "firstName": "Tomas",
       "lastName": "Aparicio",
-      "postNominalLetters": [
-        "PhD"
-      ],
+      "postNominalLetters": ["PhD"],
       "title": "Associate Research Scientist",
-      "phone": [
-        "(212) 851-4566"
-      ],
+      "phone": ["(212) 851-4566"],
       "room": "602",
       "email": "ta2308@cumc.columbia.edu"
     },
     {
-      "tags": [
-        "graduate"
-      ],
+      "tags": ["graduate"],
       "labId": "jean-gautier",
       "id": "andrew-liebau",
       "firstName": "Andrew",
       "lastName": "Liebau",
       "postNominalLetters": [],
       "title": "Graduate Student",
-      "phone": [
-        "(212) 851-4566"
-      ],
+      "phone": ["(212) 851-4566"],
       "room": "602",
       "email": "awl2142@cumc.columbia.edu"
     },
     {
-      "tags": [
-        "graduate"
-      ],
+      "tags": ["graduate"],
       "labId": "jean-gautier",
       "id": "benjamin-schrank",
       "firstName": "Benjamin",
       "lastName": "Schrank",
       "postNominalLetters": [],
       "title": "Graduate Student",
-      "phone": [
-        "(212) 851-4566"
-      ],
+      "phone": ["(212) 851-4566"],
       "room": "602",
       "email": "brs2144@cumc.columbia.edu"
     },
     {
-      "tags": [
-        "postdoc"
-      ],
+      "tags": ["postdoc"],
       "labId": "jean-gautier",
       "id": "gaganpreet-sidhu",
       "firstName": "Gaganpreet",
       "lastName": "Sidhu",
-      "postNominalLetters": [
-        "PhD"
-      ],
+      "postNominalLetters": ["PhD"],
       "title": "Postdoctoral Research Scientist",
-      "phone": [
-        "(212) 851-4566"
-      ],
+      "phone": ["(212) 851-4566"],
       "room": "602",
       "email": "gs2732@cumc.columbia.edu"
     },
     {
-      "tags": [
-        "postdoc"
-      ],
+      "tags": ["postdoc"],
       "labId": "jean-gautier",
       "id": "yu-tao",
       "firstName": "Yu",
       "lastName": "Tao",
-      "postNominalLetters": [
-        "PhD"
-      ],
+      "postNominalLetters": ["PhD"],
       "title": "Postdoctoral Research Scientist",
       "phone": [],
       "room": "",
       "email": "yt2569@cumc.columbia.edu"
     },
     {
-      "tags": [
-        "staff"
-      ],
+      "tags": ["staff"],
       "labId": "jean-gautier",
       "id": "soumini-vasan",
       "firstName": "Soumini",
       "lastName": "Vasan",
       "postNominalLetters": [],
       "title": "Staff Associate",
-      "phone": [
-        "(212) 851-4566"
-      ],
+      "phone": ["(212) 851-4566"],
       "room": "602",
       "email": "sv2490@cumc.columbia.edu"
     },
     {
-      "tags": [
-        "postdoc",
-        "fellow"
-      ],
+      "tags": ["postdoc", "fellow"],
       "labId": "jean-gautier",
       "id": "cyrstal-waters",
       "firstName": "Cyrstal",
       "lastName": "Waters",
-      "postNominalLetters": [
-        "PhD"
-      ],
+      "postNominalLetters": ["PhD"],
       "title": "Postdoctoral Research Fellow",
-      "phone": [
-        "(212) 851-4566"
-      ],
+      "phone": ["(212) 851-4566"],
       "room": "602",
       "email": "cw2395@cumc.columbia.edu"
     }

@@ -35,9 +35,11 @@ const HeaderLinks = () => {
 
   return (
     <>
-      {links.map((link, index)  => {
-        return(
-          <HeaderLink key={index} to={link.link}>{link.name}</HeaderLink>
+      {links.map((link, index) => {
+        return (
+          <HeaderLink key={index} to={link.link}>
+            {link.name}
+          </HeaderLink>
         )
       })}
     </>

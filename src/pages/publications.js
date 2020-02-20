@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, { useState } from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -15,13 +15,17 @@ const Publications = props => {
   const labMap = toLabMap(allLabs)
 
   const allPublications = flattenEdges(data.publications.edges) //sort(flatten(data.publications.edges))
-  
+
   return (
     <Layout>
       <SEO title="Publications" />
       <h1>Publications</h1>
 
-      <PubSearch labMap={labMap} peopleMap={peopleMap} allPublications={allPublications} />
+      <PubSearch
+        labMap={labMap}
+        peopleMap={peopleMap}
+        allPublications={allPublications}
+      />
     </Layout>
   )
 }
@@ -53,7 +57,9 @@ export const pageQuery = graphql`
       }
     }
 
-    publications: allPublicationsJson(sort: {fields: [year, title], order: [DESC, ASC]}) {
+    publications: allPublicationsJson(
+      sort: { fields: [year, title], order: [DESC, ASC] }
+    ) {
       edges {
         node {
           authors {
@@ -68,6 +74,8 @@ export const pageQuery = graphql`
           title
           volume
           year
+          tags
+          uri
         }
       }
     }

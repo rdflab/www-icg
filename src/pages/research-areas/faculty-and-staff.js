@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, { useState } from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
@@ -20,12 +20,16 @@ const FacultyAndStaff = props => {
     <Layout>
       <SEO title="Research Faculty and Staff" />
 
-      <Breadcrumb crumbs={ [ ['For Research Scientists','/research-areas'], ['Faculty and Staff','/research-areas/faculty-and-staff'] ] } />
-    
+      <Breadcrumb
+        crumbs={[
+          ["For Research Scientists", "/research-areas"],
+          ["Faculty and Staff", "/research-areas/faculty-and-staff"],
+        ]}
+      />
 
       <h1>Research Faculty and Staff</h1>
 
-      <PeopleSearch labMap={labMap} allPeople={allPeople}  />
+      <PeopleSearch labMap={labMap} allPeople={allPeople} />
     </Layout>
   )
 }

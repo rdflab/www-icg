@@ -9,28 +9,35 @@ import React from "react"
 import Publication from "./publication"
 import { Link } from "gatsby"
 
-const TopPublications = ({lab, publications, labMap, top}) => {
+const RecentPublications = ({ lab, publications, labMap, top }) => {
   const createPublications = publications => {
     let ret = []
 
     // Outer loop to create parent
     for (let i = 0; i < Math.min(top, publications.length); ++i) {
-      ret.push(<Publication key={i} publication={publications[i]} labMap={labMap} />)
+      ret.push(
+        <Publication key={i} publication={publications[i]} labMap={labMap} />
+      )
     }
 
     return ret
   }
 
-  return(
+  return (
     <>
       {createPublications(publications)}
-      <Link to={`/research-areas/labs/${lab.id}/publications`} className="button is-primary">More</Link>
+      <Link
+        to={`/research-areas/labs/${lab.id}/publications`}
+        className="button is-link"
+      >
+        More
+      </Link>
     </>
   )
 }
 
-TopPublications.defaultProps = {
-  top: 10
+RecentPublications.defaultProps = {
+  top: 10,
 }
 
-export default TopPublications
+export default RecentPublications
