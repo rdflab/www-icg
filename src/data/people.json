@@ -7,7 +7,7 @@
     "email": "sa3141@cumc.columbia.edu",
     "phoneNumbers": ["(212) 851-4791", "(212) 851-4792"],
     "labs": ["swarnali-acharyya"],
-    "tags": ["faculty"],
+    "tags": ["Faculty"],
     "postNominalLetters": ["PhD"],
     "room": "402B"
   },
@@ -67,7 +67,7 @@
     "email": "rb670@cumc.columbia.edu",
     "phoneNumbers": ["(212) 851-5275", "(212) 851-5267"],
     "labs": ["richard-baer"],
-    "tags": ["faculty"],
+    "tags": ["Faculty"],
     "postNominalLetters": ["PhD"],
     "room": "503A"
   },
@@ -91,7 +91,7 @@
     "email": "kb451@cumc.columbia.edu",
     "phoneNumbers": ["(212) 851-4786"],
     "labs": ["riccardo-dalla-favera"],
-    "tags": ["faculty"],
+    "tags": ["Faculty"],
     "postNominalLetters": ["PhD"],
     "room": "506"
   },
@@ -127,7 +127,7 @@
     "email": "kmc@cumc.columbia.edu",
     "phoneNumbers": ["(212) 851-4966"],
     "labs": ["christine-chio"],
-    "tags": ["staff"],
+    "tags": ["Staff"],
     "postNominalLetters": [],
     "room": "505"
   },
@@ -163,7 +163,7 @@
     "email": "ic2445@cumc.columbia.edu",
     "phoneNumbers": ["(212) 851-4966"],
     "labs": ["christine-chio"],
-    "tags": ["faculty"],
+    "tags": ["Faculty"],
     "postNominalLetters": ["PhD"],
     "room": "505"
   },
@@ -175,7 +175,7 @@
     "email": "cc3703@cumc.columbia.edu",
     "phoneNumbers": ["(212) 851-4792"],
     "labs": ["swarnali-acharyya"],
-    "tags": ["staff"],
+    "tags": ["Staff"],
     "postNominalLetters": [],
     "room": "401A"
   },
@@ -225,7 +225,7 @@
     "email": "rd10@cumc.columbia.edu",
     "phoneNumbers": ["(212) 851-5273", "(212) 851-5256"],
     "labs": ["riccardo-dalla-favera"],
-    "tags": ["faculty"],
+    "tags": ["Faculty"],
     "postNominalLetters": ["MD"],
     "room": "508A"
   },
@@ -263,7 +263,7 @@
     "email": "af2196@cumc.columbia.edu",
     "phoneNumbers": ["(212) 851-4611"],
     "labs": ["adolfo-ferrando"],
-    "tags": ["faculty"],
+    "tags": ["Faculty"],
     "postNominalLetters": ["MD", "PhD"],
     "room": "402A"
   },
@@ -302,7 +302,7 @@
     "email": "jg130@cumc.columbia.edu",
     "phoneNumbers": ["(212) 851-4564"],
     "labs": ["jean-gautier"],
-    "tags": ["faculty"],
+    "tags": ["Faculty"],
     "postNominalLetters": ["PhD"],
     "room": "603A"
   },
@@ -326,7 +326,7 @@
     "email": "wg8@cumc.columbia.edu",
     "phoneNumbers": ["(212) 851-5282", "(212) 851-5284"],
     "labs": ["wei-gu"],
-    "tags": ["faculty"],
+    "tags": ["Faculty"],
     "postNominalLetters": ["PhD"],
     "room": "609A"
   },
@@ -338,7 +338,7 @@
     "email": "",
     "phoneNumbers": [],
     "labs": ["adolfo-ferrando"],
-    "tags": ["staff"],
+    "tags": ["Staff"],
     "postNominalLetters": [],
     "room": ""
   },
@@ -350,7 +350,7 @@
     "email": "dg3043@cumc.columbia.edu",
     "phoneNumbers": ["(212) 851-5292"],
     "labs": ["adolfo-ferrando"],
-    "tags": ["staff"],
+    "tags": ["Staff"],
     "postNominalLetters": [],
     "room": "401B"
   },
@@ -410,7 +410,7 @@
     "email": "ai2102@cumc.columbia.edu",
     "phoneNumbers": ["(212) 851-5245"],
     "labs": ["anna-lasorella", "antonio-iavarone"],
-    "tags": ["faculty", "faculty"],
+    "tags": ["Faculty", "Faculty"],
     "postNominalLetters": ["MD"],
     "room": "407B"
   },
@@ -473,7 +473,7 @@
     "email": "al2179@cumc.columbia.edu",
     "phoneNumbers": ["(212) 851-5240"],
     "labs": ["anna-lasorella", "antonio-iavarone"],
-    "tags": ["faculty"],
+    "tags": ["Faculty"],
     "postNominalLetters": ["MD"],
     "room": "404"
   },
@@ -485,7 +485,7 @@
     "email": "bl2530@cumc.columbia.edu",
     "phoneNumbers": ["(212) 851-4785"],
     "labs": ["shan-zha"],
-    "tags": ["staff"],
+    "tags": ["Staff"],
     "postNominalLetters": [],
     "room": "501"
   },
@@ -497,7 +497,7 @@
     "email": "hl2977@cumc.columbia.edu",
     "phoneNumbers": [],
     "labs": ["wei-gu"],
-    "tags": ["staff"],
+    "tags": ["Staff"],
     "postNominalLetters": [],
     "room": ""
   },
@@ -533,7 +533,7 @@
     "email": "wm49@cumc.columbia.edu",
     "phoneNumbers": ["(212) 851-4792"],
     "labs": ["swarnali-acharyya"],
-    "tags": ["staff"],
+    "tags": ["Staff"],
     "postNominalLetters": [],
     "room": "401A"
   },
@@ -545,7 +545,7 @@
     "email": "alm2283@cumc.columbia.edu",
     "phoneNumbers": ["(212) 851-5292"],
     "labs": ["adolfo-ferrando"],
-    "tags": ["staff"],
+    "tags": ["Staff"],
     "postNominalLetters": [],
     "room": "401B"
   },
@@ -593,7 +593,7 @@
     "email": "tm2015@cumc.columbia.edu",
     "phoneNumbers": ["(212) 851-5270"],
     "labs": ["riccardo-dalla-favera"],
-    "tags": ["staff"],
+    "tags": ["Staff"],
     "postNominalLetters": [],
     "room": "507"
   },
@@ -641,7 +641,7 @@
     "email": "tp2151@cumc.columbia.edu",
     "phoneNumbers": ["(212) 851-4778"],
     "labs": ["adolfo-ferrando"],
-    "tags": ["faculty"],
+    "tags": ["Faculty"],
     "postNominalLetters": ["PhD"],
     "room": "401B"
   },
@@ -653,7 +653,7 @@
     "email": "lp171@cumc.columbia.edu",
     "phoneNumbers": ["(212) 851-4792"],
     "labs": ["riccardo-dalla-favera"],
-    "tags": ["faculty"],
+    "tags": ["Faculty"],
     "postNominalLetters": ["MD"],
     "room": "507B"
   },
@@ -689,7 +689,7 @@
     "email": "sv2458@cumc.columbia.edu",
     "phoneNumbers": ["(212) 851-5270"],
     "labs": ["riccardo-dalla-favera"],
-    "tags": ["staff"],
+    "tags": ["Staff"],
     "postNominalLetters": [],
     "room": "507"
   },
@@ -809,7 +809,7 @@
     "email": "qs4@cumc.columbia.edu",
     "phoneNumbers": ["(212) 851-5270"],
     "labs": ["riccardo-dalla-favera"],
-    "tags": ["staff"],
+    "tags": ["Staff"],
     "postNominalLetters": [],
     "room": "507"
   },
@@ -881,7 +881,7 @@
     "email": "ht2130@cumc.columbia.edu",
     "phoneNumbers": ["(212) 851-5270"],
     "labs": ["riccardo-dalla-favera"],
-    "tags": ["staff"],
+    "tags": ["Staff"],
     "postNominalLetters": [],
     "room": "507"
   },
@@ -905,7 +905,7 @@
     "email": "sv2490@cumc.columbia.edu",
     "phoneNumbers": ["(212) 851-4566"],
     "labs": ["jean-gautier"],
-    "tags": ["staff"],
+    "tags": ["Staff"],
     "postNominalLetters": [],
     "room": "602"
   },
@@ -917,7 +917,7 @@
     "email": "vvm2@cumc.columbia.edu",
     "phoneNumbers": ["(212) 851-4621"],
     "labs": ["murty-vundavalli"],
-    "tags": ["faculty"],
+    "tags": ["Faculty"],
     "postNominalLetters": [],
     "room": "605B"
   },
@@ -989,7 +989,7 @@
     "email": "fw110@cumc.columbia.edu",
     "phoneNumbers": ["(212) 851-5260"],
     "labs": ["richard-baer"],
-    "tags": ["staff"],
+    "tags": ["Staff"],
     "postNominalLetters": [],
     "room": "502"
   },
@@ -1001,7 +1001,7 @@
     "email": "yx30@cumc.columbia.edu",
     "phoneNumbers": ["(212) 851-5268"],
     "labs": ["riccardo-dalla-favera"],
-    "tags": ["staff"],
+    "tags": ["Staff"],
     "postNominalLetters": [],
     "room": "507"
   },
@@ -1051,7 +1051,7 @@
     "email": "sz2296@cumc.columbia.edu",
     "phoneNumbers": ["(212) 851-4779"],
     "labs": ["shan-zha"],
-    "tags": ["faculty"],
+    "tags": ["Faculty"],
     "postNominalLetters": ["MD", "PhD"],
     "room": "505A"
   },
@@ -1077,7 +1077,7 @@
     "email": "zz2401@cumc.columbia.edu",
     "phoneNumbers": ["(212) 851-4936"],
     "labs": ["zhiguo-zhang"],
-    "tags": ["faculty"],
+    "tags": ["Faculty"],
     "postNominalLetters": ["PhD"],
     "room": "851-4936"
   },
@@ -1101,7 +1101,7 @@
     "email": "hz2458@cumc.columbia.edu",
     "phoneNumbers": ["(212) 851-4937"],
     "labs": ["zhiguo-zhang"],
-    "tags": ["staff"],
+    "tags": ["Staff"],
     "postNominalLetters": [],
     "room": "407"
   }

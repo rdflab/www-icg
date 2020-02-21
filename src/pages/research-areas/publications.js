@@ -1,12 +1,12 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import flattenEdges from "../utils/flattenedges"
-import toPeopleMap from "../utils/topeoplemap"
-import toLabs from "../utils/tolabs"
-import toLabMap from "../utils/tolabmap"
-import PubSearch from "../components/pubsearch"
+import Layout from "../../components/layout"
+import SEO from "../../components/seo"
+import flattenEdges from "../../utils/flattenedges"
+import toPeopleMap from "../../utils/topeoplemap"
+import toLabs from "../../utils/tolabs"
+import toLabMap from "../../utils/tolabmap"
+import PubSearch from "../../components/pubsearch"
 
 const Publications = props => {
   const { data } = props
@@ -17,7 +17,8 @@ const Publications = props => {
   const allPublications = flattenEdges(data.publications.edges) //sort(flatten(data.publications.edges))
 
   return (
-    <Layout crumbs={[["Publications", "/publications"]]}>
+    <Layout crumbs={[
+      ["For Research Scientists", "/research-areas"],["Publications", "/publications"]]}>
       <SEO title="Publications" />
       <h1>Publications</h1>
 

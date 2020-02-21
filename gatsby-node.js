@@ -3,6 +3,7 @@ const path = require(`path`)
 const labTemplate = path.resolve(`src/templates/lab.js`)
 const labPublicationsTemplate = path.resolve(`src/templates/labpublications.js`)
 const labMembersTemplate = path.resolve(`src/templates/labmembers.js`)
+const memberTemplate = path.resolve(`src/templates/member.js`)
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
@@ -149,4 +150,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       }, // additional data can be passed via context
     })
   })
+
+  for (let person of allPeople) {
+    createPage({
+      path: `/research-areas/faculty-and-staff/${person.id}`,
+      component: memberTemplate,
+      context: {
+        person
+      }, // additional data can be passed via context
+    })
+  }
 }

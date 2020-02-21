@@ -6,14 +6,14 @@
  */
 
 import React, { useState } from "react"
-import yearFilterStyles from "./yearfilter.module.scss"
+import filterItemStyles from "./filteritem.module.scss"
 import { MdCheck } from "react-icons/md"
 
-const YearFilter = props => {
+const FilterItem = props => {
   const [selected, setSelected] = useState(false)
 
   const handleClick = e => {
-    const data = { year: props.year, selected: !selected }
+    const data = { text: props.text, selected: !selected }
 
     setSelected(data.selected)
 
@@ -23,11 +23,11 @@ const YearFilter = props => {
   return (
     <div
       onClick={handleClick}
-      className={`${yearFilterStyles.yearFilter} ${
-        selected ? yearFilterStyles.yearFilterSelected : ""
+      className={`${filterItemStyles.filter} ${
+        selected ? filterItemStyles.filterSelected : ""
       }`}
     >
-      {props.year}
+      {props.text}
 
       {selected ? (
         <div style={{ float: "right" }}>
@@ -40,4 +40,4 @@ const YearFilter = props => {
   )
 }
 
-export default YearFilter
+export default FilterItem

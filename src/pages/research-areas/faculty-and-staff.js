@@ -21,7 +21,7 @@ const FacultyAndStaff = props => {
       ["For Research Scientists", "/research-areas"],
       ["Faculty and Staff", "/research-areas/faculty-and-staff"],
     ]}>
-      <SEO title="Research Faculty and Staff" />
+      <SEO title="Faculty and Staff" />
 
       <h1>Research Faculty and Staff</h1>
 

@@ -10,7 +10,7 @@ import ICGImage from "./icgimage"
 const Header = ({ siteTitle }) => (
   <header className={headerStyles.header}>
     <div className="container">
-      <nav class="navbar is-marginless is-paddingless" role="navigation" aria-label="main navigation">
+      <nav className="navbar is-marginless is-paddingless" role="navigation" aria-label="main navigation">
         <div className="navbar-brand is-marginless is-paddingless" style={{width: "100%"}}>
           <Link to="/">
             <ICGImage style={{ width: `250px` }} />

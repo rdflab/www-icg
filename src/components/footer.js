@@ -10,14 +10,14 @@ const Footer = props => {
   return (
     <footer className={`footer ${footerStyles.footer}`}>
       <div className="container">
-        <div className="columns">
-          <div className="column">
+        <div className="columns is-vcentered">
+          <div className="column text-center">
             <FooterLinks></FooterLinks>
           </div>
           <div className="column text-center">
             <HICCCImage />
           </div>
-          <div className="column text-right">
+          <div className="column text-center">
             &copy; {new Date().getFullYear()} {siteTitle}
           </div>
         </div>

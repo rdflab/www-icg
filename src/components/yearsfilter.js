@@ -6,7 +6,7 @@
  */
 
 import React, { Component } from "react"
-import YearFilter from "./yearfilter"
+import FilterItem from "./filteritem"
 
 class YearsFilter extends Component {
   constructor(props) {
@@ -19,14 +19,14 @@ class YearsFilter extends Component {
     const selectedYears = new Set(this.state.selectedYears)
 
     if (data.selected) {
-      selectedYears.add(data.year)
+      selectedYears.add(data.text)
     } else {
-      selectedYears.delete(data.year)
+      selectedYears.delete(data.text)
     }
 
     this.setState({ selectedYears: selectedYears }, console.log(this.state))
 
-    console.log("piio", data.year, data.selected, selectedYears)
+    console.log("piio", data.text, data.selected, selectedYears)
 
     this.props.handleClick(selectedYears)
   }
@@ -47,10 +47,10 @@ class YearsFilter extends Component {
           .reverse()
           .map((year, index) => {
             return (
-              <YearFilter
+              <FilterItem
                 key={index}
                 handleClick={this.handleClick}
-                year={year}
+                text={year}
               />
             )
           })}

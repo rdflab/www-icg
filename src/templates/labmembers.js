@@ -36,7 +36,7 @@ const LabMembersTemplate = props => {
         `${faculty.firstName} ${faculty.lastName}`,
         `/research-areas/labs/${lab.id}`,
       ],
-      ["members", `/research-areas/labs/${lab.id}/members`],
+      ["Members", `/research-areas/labs/${lab.id}/members`],
     ]}>
       <SEO title={title} />
 
