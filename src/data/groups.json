@@ -1,0 +1,233 @@
+[
+  {
+    "id": "adolfo-ferrando",
+    "type": "Lab",
+    "name": "Adolfo Ferrando Lab",
+    "leaders": [
+      "adolfo-ferrando"
+    ],
+    "members": [
+      "adolfo-ferrando",
+      "robert-albero",
+      "silvia-alvarez-nanez",
+      "laura-belver-miguel",
+      "anisha-cooke",
+      "chelsea-dieck",
+      "francesca-gianni",
+      "thomas-gunning",
+      "devya-gurung",
+      "adam-mackey",
+      "christine-moon",
+      "lucia-morgado-palacin",
+      "teresa-palomero",
+      "pablo-perez-duran",
+      "aidan-stuart-quinn",
+      "marissa-rashkovan",
+      "clara-reglero-gomez",
+      "jose-rodriguez-cortes",
+      "agnieszka-wendorff"
+    ],
+    "uri": ""
+  },
+  {
+    "id": "anna-lasorella",
+    "type": "Lab",
+    "name": "Anna Lasorella Lab",
+    "leaders": [
+      "anna-lasorella"
+    ],
+    "members": [
+      "anna-lasorella",
+      "antonio-iavarone",
+      "fulvio-d'angelo",
+      "tala-fnu",
+      "luciano-garofano",
+      "aram-ko",
+      "nanfang-peng",
+      "peiguo-shi",
+      "luca-szalontay"
+    ],
+    "uri": ""
+  },
+  {
+    "id": "antonio-iavarone",
+    "type": "Lab",
+    "name": "Antonio Iavarone Lab",
+    "leaders": [
+      "antonio-iavarone"
+    ],
+    "members": [
+      "antonio-iavarone",
+      "anna-lasorella",
+      "fulvio-d'angelo",
+      "tala-fnu",
+      "luciano-garofano",
+      "aram-ko",
+      "peiguo-shi",
+      "luca-szalontay"
+    ],
+    "uri": ""
+  },
+  {
+    "id": "christine-chio",
+    "type": "Lab",
+    "name": "Christine Chio Lab",
+    "leaders": [
+      "christine-chio"
+    ],
+    "members": [
+      "christine-chio",
+      "marina-m-ayres-pereira",
+      "karina-chan",
+      "xiangyi-ke"
+    ],
+    "uri": ""
+  },
+  {
+    "id": "jean-gautier",
+    "type": "Lab",
+    "name": "Jean Gautier Lab",
+    "leaders": [
+      "jean-gautier"
+    ],
+    "members": [
+      "jean-gautier",
+      "tomas-aparicio",
+      "andrew-liebau",
+      "benjamin-schrank",
+      "gaganpreet-sidhu",
+      "yu-tao",
+      "soumini-vasan",
+      "cyrstal-waters"
+    ],
+    "uri": ""
+  },
+  {
+    "id": "murty-vundavalli",
+    "type": "Lab",
+    "name": "Murty Vundavalli Lab",
+    "leaders": [
+      "murty-vundavalli"
+    ],
+    "members": [
+      "murty-vundavalli",
+      "ishdorj-ganchimeg"
+    ],
+    "uri": ""
+  },
+  {
+    "id": "riccardo-dalla-favera",
+    "type": "Lab",
+    "name": "Riccardo Dalla-Favera Lab",
+    "leaders": [
+      "riccardo-dalla-favera"
+    ],
+    "members": [
+      "riccardo-dalla-favera",
+      "elodie-bal",
+      "katia-basso",
+      "clarissa-corinaldesi",
+      "antony-holmes",
+      "stefanie-meyer",
+      "tongwei-mo",
+      "laura-pasqualucci",
+      "sofija-powers",
+      "claudio-scuoppo",
+      "qiong-shen",
+      "hongyan-tang",
+      "yunan-xie",
+      "chuanjiang-yu"
+    ],
+    "uri": ""
+  },
+  {
+    "id": "richard-baer",
+    "type": "Lab",
+    "name": "Richard Baer Lab",
+    "leaders": [
+      "richard-baer"
+    ],
+    "members": [
+      "richard-baer",
+      "foon-wu-baer"
+    ],
+    "uri": ""
+  },
+  {
+    "id": "shan-zha",
+    "type": "Lab",
+    "name": "Shan Zha Lab",
+    "leaders": [
+      "shan-zha"
+    ],
+    "members": [
+      "shan-zha",
+      "brian-lee",
+      "demis-menolfi",
+      "maja-milanovic",
+      "zhengping-shao",
+      "xiobin-summer-wang"
+    ],
+    "uri": ""
+  },
+  {
+    "id": "swarnali-acharyya",
+    "type": "Lab",
+    "name": "Swarnali Acharyya Lab",
+    "leaders": [
+      "swarnali-acharyya"
+    ],
+    "members": [
+      "swarnali-acharyya",
+      "anup-biswas",
+      "courtney-coker",
+      "seoyoung-han",
+      "rohaan-hegde",
+      "sean-kim",
+      "wanchao-ma",
+      "rushdi-shakri",
+      "tim-zhong"
+    ],
+    "uri": ""
+  },
+  {
+    "id": "wei-gu",
+    "type": "Lab",
+    "name": "Wei Gu Lab",
+    "leaders": [
+      "wei-gu"
+    ],
+    "members": [
+      "wei-gu",
+      "delin-chen",
+      "ning-kon",
+      "huan-li",
+      "shujuan-song",
+      "zhenyi-su",
+      "donglai-wang",
+      "xingwu-wang",
+      "jingjie-yi"
+    ],
+    "uri": ""
+  },
+  {
+    "id": "zhiguo-zhang",
+    "type": "Lab",
+    "name": "Zhiguo Zhang Lab",
+    "leaders": [
+      "zhiguo-zhang"
+    ],
+    "members": [
+      "zhiguo-zhang",
+      "liang-chang",
+      "xu-hua",
+      "zhiming-li",
+      "yan-mo",
+      "albert-serra-cardona",
+      "xiaowei-xu",
+      "xu-zhang",
+      "hui-zhou"
+    ],
+    "uri": ""
+  }
+]

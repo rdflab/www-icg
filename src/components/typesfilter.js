@@ -7,8 +7,7 @@
 
 import React, { Component } from "react"
 import FilterItem from "./filteritem"
-
-const TYPES = ["Faculty", "Scientist", "Staff"]
+import { PEOPLE_TYPES } from "../constants"
 
 class TypesFilter extends Component {
   constructor(props) {
@@ -28,15 +27,13 @@ class TypesFilter extends Component {
 
     this.setState({ selectedTypes: selectedTypes }, console.log(this.state))
 
-    console.log("piio", data.text, data.selected, selectedTypes)
-
     this.props.handleClick(selectedTypes)
   }
 
   render() {
     return (
       <>
-        {TYPES.map((type, index) => {
+        {PEOPLE_TYPES.map((type, index) => {
             return (
               <FilterItem
                 key={index}

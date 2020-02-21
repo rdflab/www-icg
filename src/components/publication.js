@@ -39,7 +39,7 @@ const authorString = (authors, maxAuthors) => {
   return ret
 }
 
-const Publication = ({ publication, labMap, showLabLink, maxAuthors }) => {
+const Publication = ({ publication, labMap, peopleMap, showLabLink, maxAuthors }) => {
   const authors = authorString(publication.authors, maxAuthors)
   const labId = publication.labs[0]
 
@@ -49,7 +49,9 @@ const Publication = ({ publication, labMap, showLabLink, maxAuthors }) => {
 
   if (labMap.has(labId)) {
     const lab = labMap.get(labId)
-    name = lab.faculty.firstName + " " + lab.faculty.lastName + " Lab"
+    const pi = lab.leaders[0]
+    const person = peopleMap.get(pi)
+    name = person.firstName + " " + person.lastName + " Lab"
   } else {
     name = ""
   }

@@ -1,0 +1,1 @@
+export const PEOPLE_TYPES = ["Faculty", "Research Scientist", "Graduate Student", "Staff"]

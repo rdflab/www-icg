@@ -96,6 +96,7 @@ const PubSearch = ({ labMap, peopleMap, allPublications, showLabLink }) => {
           <PublicationYears
             publications={pagedPublications}
             labMap={labMap}
+            peopleMap={peopleMap}
             showLabLink={showLabLink}
           />
 

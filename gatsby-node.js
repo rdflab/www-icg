@@ -10,12 +10,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   
   const result = await graphql(`
     query {
-      labs: allLabsJson {
+      labs: allGroupsJson(filter: {type: {eq: "Lab"}}) {
         edges {
           node {
             id
             name
-            faculty
+            leaders
+            members
             uri
           }
         }
@@ -32,7 +33,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             titles
             postNominalLetters
             tags
-            labs
+            groups
           }
         }
       }

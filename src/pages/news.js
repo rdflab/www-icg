@@ -10,11 +10,7 @@ import PubSearch from "../components/pubsearch"
 
 const News = props => {
   const { data } = props
-  const peopleMap = toPeopleMap(flattenEdges(data.people.edges))
-  const allLabs = toLabs(flattenEdges(data.labs.edges), peopleMap)
-  const labMap = toLabMap(allLabs)
-
-  const allPublications = flattenEdges(data.publications.edges) //sort(flatten(data.publications.edges))
+  const news = flattenEdges(data.news.edges) //sort(flatten(data.publications.edges))
 
   return (
     <Layout crumbs={[["News", "/news"]]}>
@@ -22,11 +18,12 @@ const News = props => {
 
       <h1>News</h1>
 
-      <PubSearch
-        labMap={labMap}
-        peopleMap={peopleMap}
-        allPublications={allPublications}
-      />
+      {news.map((item, index) => (
+        <article>
+        <h2>{item.frontmatter.title}</h2>
+        <div>{item.frontmatter.date}</div>
+        </article>
+      ))}
     </Layout>
   )
 }
@@ -35,46 +32,16 @@ export default News
 
 export const pageQuery = graphql`
   query {
-    labs: allLabsJson {
+    news: allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}, filter: {frontmatter: {path: {regex: "/news/"}}}) {
       edges {
         node {
-          id
-          name
-          faculty
-        }
-      }
-    }
-
-    people: allPeopleJson {
-      edges {
-        node {
-          labs
-          id
-          firstName
-          lastName
-          titles
-          tags
-        }
-      }
-    }
-
-    publications: allPublicationsJson(
-      sort: { fields: [year, title], order: [DESC, ASC] }
-    ) {
-      edges {
-        node {
-          authors {
-            corresponding
-            initials
-            lastName
+          frontmatter {
+            path
+            title
+            date(formatString: "MMMM DD, YYYY")
           }
-          labs
-          journal
-          issue
-          pages
-          title
-          volume
-          year
+          excerpt(format: HTML)
+          html
         }
       }
     }

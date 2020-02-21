@@ -117,12 +117,13 @@ export default Labs
 
 export const pageQuery = graphql`
   query {
-    labs: allLabsJson {
+    labs: allGroupsJson(filter: {type: {eq: "Lab"}}) {
       edges {
         node {
           id
           name
-          faculty
+          leaders
+          members
         }
       }
     }
@@ -130,14 +131,14 @@ export const pageQuery = graphql`
     people: allPeopleJson {
       edges {
         node {
-          labs
+          groups
           id
           firstName
           lastName
           email
           titles
           postNominalLetters
-          tags
+          type
         }
       }
     }

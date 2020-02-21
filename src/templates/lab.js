@@ -30,7 +30,7 @@ const LabTemplate = props => {
   console.log(lab)
   console.log(labMap)
 
-  const faculty = peopleMap.get(lab.faculty)
+  const faculty = peopleMap.get(lab.owers[0])
 
   console.log(peopleMap)
   console.log(lab.faculty)

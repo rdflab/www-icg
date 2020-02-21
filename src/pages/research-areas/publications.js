@@ -11,7 +11,7 @@ import PubSearch from "../../components/pubsearch"
 const Publications = props => {
   const { data } = props
   const peopleMap = toPeopleMap(flattenEdges(data.people.edges))
-  const allLabs = toLabs(flattenEdges(data.labs.edges), peopleMap)
+  const allLabs = flattenEdges(data.labs.edges)
   const labMap = toLabMap(allLabs)
 
   const allPublications = flattenEdges(data.publications.edges) //sort(flatten(data.publications.edges))
@@ -35,12 +35,13 @@ export default Publications
 
 export const pageQuery = graphql`
   query {
-    labs: allLabsJson {
+    labs: allGroupsJson(filter: {type: {eq: "Lab"}}) {
       edges {
         node {
           id
           name
-          faculty
+          leaders
+          members
         }
       }
     }
@@ -48,12 +49,12 @@ export const pageQuery = graphql`
     people: allPeopleJson {
       edges {
         node {
-          labs
           id
           firstName
           lastName
           titles
-          tags
+          type
+          groups
         }
       }
     }

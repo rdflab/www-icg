@@ -6,6 +6,8 @@ import SearchCount from "./searchcount"
 import PeopleTypes from "./peopletypes"
 import TypesFilter from "./typesfilter"
 import Collapsible from "./collapsible"
+import toPeopleTypeMap from "../utils/peopletypemap"
+import { PEOPLE_TYPES } from "../constants"
 
 const EMPTY_QUERY = ""
 
@@ -76,8 +78,36 @@ const PeopleSearch = ({ labMap, allPeople, showLabLink }) => {
   }
 
   const offset = (page - 1) * recordsPerPage
-  let pagedPeople = typeFilteredPeople.slice(offset, offset + recordsPerPage)
+  //let pagedPeople = typeFilteredPeople.slice(offset, offset + recordsPerPage)
 
+
+  const peopleTypeMap = toPeopleTypeMap(typeFilteredPeople)
+
+  var c = 0
+  let typeOrderedPeople = []
+  // extract number of records
+  for (let type of PEOPLE_TYPES) {
+    let p = peopleTypeMap.get(type)
+
+    for (let person of p) {
+      if (c >= offset) {
+        typeOrderedPeople.push(person)
+        
+      }
+
+      ++c
+
+      if (typeOrderedPeople.length == recordsPerPage) {
+        break
+      }
+    }
+
+    if (typeOrderedPeople.length == recordsPerPage) {
+      break
+    }
+  }
+
+  
   return (
     <>
       <div className="columns">
@@ -96,7 +126,7 @@ const PeopleSearch = ({ labMap, allPeople, showLabLink }) => {
             Staff found
           </div>
           <PeopleTypes
-            allPeople={pagedPeople}
+            allPeople={typeOrderedPeople}
             labMap={labMap}
             showLabLink={showLabLink}
           />

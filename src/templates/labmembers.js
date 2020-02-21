@@ -14,15 +14,13 @@ const LabMembersTemplate = props => {
   const labs = toLabs([lab], peopleMap)
   const labMap = toLabMap(labs)
 
-  const faculty = peopleMap.get(lab.faculty)
+  const faculty = peopleMap.get(lab.leaders[0])
 
   const people = []
 
-  allPeople.forEach(person => {
-    if (person.labs.includes(lab.id)) {
-      people.push(person)
-    }
-  })
+  for (let member of lab.members) {
+    people.push(peopleMap.get(member))
+  }
 
   console.log("cake", people)
 
