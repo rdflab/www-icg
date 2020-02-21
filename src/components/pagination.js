@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
-import paginationStyles from "./pagination.module.scss"
+
 
 const LEFT_PAGE = "LEFT"
 const RIGHT_PAGE = "RIGHT"

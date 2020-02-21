@@ -1,7 +1,4 @@
 import React, { useState } from "react"
-import { Link, graphql } from "gatsby"
-import Layout from "./layout"
-import SEO from "./seo"
 import PublicationYears from "./publicationyears"
 import Pagination from "./pagination"
 import SearchBar from "./searchbar"

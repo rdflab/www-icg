@@ -2,13 +2,14 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
-import Breadcrumb from "../../components/breadcrumb"
 import flattenEdges from "../../utils/flattenedges"
 import toPeopleMap from "../../utils/topeoplemap"
 import toLabMap from "../../utils/tolabmap"
 import SearchBar from "../../components/searchbar"
-import { MdLibraryBooks, MdPeople, MdEmail } from "react-icons/md"
 import SearchCount from "../../components/searchcount"
+import EmailLink from "../../components/emaillink"
+import MembersLink from "../../components/memberslink"
+import PublicationsLink from "../../components/publicationslink"
 
 const EMPTY_QUERY = ""
 
@@ -44,15 +45,11 @@ const Labs = props => {
   const labs = hasSearchResults ? filteredLabs : allLabs
 
   return (
-    <Layout>
+    <Layout crumbs={[
+      ["For Research Scientists", "/research-areas"],
+      ["Labs", "/research-areas/labs"],
+    ]}>
       <SEO title="Research Labs" />
-
-      <Breadcrumb
-        crumbs={[
-          ["For Research Scientists", "/research-areas"],
-          ["Labs", "/research-areas/labs"],
-        ]}
-      />
 
       {/*in-line css for demo purposes*/}
       <h1>Research Labs</h1>
@@ -90,7 +87,7 @@ const Labs = props => {
               >
                 <main>
                   <div className="columns">
-                    <div className="column is-two-thirds">
+                    <div className="column is-7">
                       <h3>
                         <Link to={`/research-areas/labs/${lab.id}`}>
                           {name}
@@ -101,24 +98,9 @@ const Labs = props => {
                       className="column"
                       style={{ borderLeft: "solid 1px lightgray" }}
                     >
-                      <div>
-                        <MdPeople />
-                        <Link to={`/research-areas/labs/${lab.id}/members`}>
-                          View Lab Members
-                        </Link>
-                      </div>
-                      <div>
-                        <MdLibraryBooks />
-                        <Link
-                          to={`/research-areas/labs/${lab.id}/publications`}
-                        >
-                          View Publications
-                        </Link>
-                      </div>
-                      <div>
-                        <MdEmail />
-                        <a href={`mailto:${person.email}`}>{person.email}</a>
-                      </div>
+                      <MembersLink to={`/research-areas/labs/${lab.id}/members`} />
+                      <PublicationsLink to={`/research-areas/labs/${lab.id}/publications`} />
+                      <EmailLink to={person.email} />
                     </div>
                   </div>
                 </main>

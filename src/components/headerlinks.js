@@ -1,10 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
-import Img from "gatsby-image"
 import flattenEdges from "../utils/flattenedges"
 import HeaderLink from "./headerlink"
-
-import headerlinksStyles from "./headerlinks.module.scss"
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized

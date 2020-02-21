@@ -13,8 +13,9 @@ import Header from "./header"
 import "./layout.scss"
 import Helmet from "react-helmet"
 import Footer from "./footer"
+import Breadcrumb from "./breadcrumb"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, crumbs }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -37,6 +38,10 @@ const Layout = ({ children }) => {
       </Helmet>
       <Header siteTitle={data.site.siteMetadata.title} />
 
+      {crumbs.length > 0 &&
+        <Breadcrumb crumbs={crumbs} />
+      }
+
       <main>
         <div className="container">{children}</div>
       </main>
@@ -48,6 +53,10 @@ const Layout = ({ children }) => {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+}
+
+Layout.defaultProps = {
+  crumbs: []
 }
 
 export default Layout

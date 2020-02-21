@@ -1,6 +1,5 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
-import Img from "gatsby-image"
 
 const FooterLinks = () => {
   const data = useStaticQuery(graphql`

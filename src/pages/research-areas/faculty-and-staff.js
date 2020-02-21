@@ -17,15 +17,11 @@ const FacultyAndStaff = props => {
   const labMap = toLabMap(allLabs)
 
   return (
-    <Layout>
+    <Layout crumbs={[
+      ["For Research Scientists", "/research-areas"],
+      ["Faculty and Staff", "/research-areas/faculty-and-staff"],
+    ]}>
       <SEO title="Research Faculty and Staff" />
-
-      <Breadcrumb
-        crumbs={[
-          ["For Research Scientists", "/research-areas"],
-          ["Faculty and Staff", "/research-areas/faculty-and-staff"],
-        ]}
-      />
 
       <h1>Research Faculty and Staff</h1>
 

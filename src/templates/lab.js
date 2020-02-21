@@ -1,14 +1,12 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-import { MdEmail } from "react-icons/md"
 import RecentPublications from "../components/recentpublications"
 import toPeopleMap from "../utils/topeoplemap"
 import toLabs from "../utils/tolabs"
 import toLabMap from "../utils/tolabmap"
-import Breadcrumb from "../components/breadcrumb"
 import Card from "../components/card"
 import EmailLink from "../components/emaillink"
 import PhoneLink from "../components/phonelink"
@@ -29,9 +27,14 @@ const LabTemplate = props => {
   const labs = toLabs([lab], peopleMap)
   const labMap = toLabMap(labs)
 
+  console.log(lab)
   console.log(labMap)
 
   const faculty = peopleMap.get(lab.faculty)
+
+  console.log(peopleMap)
+  console.log(lab.faculty)
+
 
   const publications = []
 
@@ -41,21 +44,18 @@ const LabTemplate = props => {
     }
   })
 
+  const crumbs = [
+    ["For Research Scientists", "/research-areas"],
+    ["Labs", "/research-areas/labs"],
+    [
+      `${faculty.firstName} ${faculty.lastName}`,
+      `/research-areas/labs/${lab.id}`,
+    ],
+  ]
+
   return (
-    <Layout>
-      <SEO title={`The ${faculty.lastName} Lab`} />
-
-      <Breadcrumb
-        crumbs={[
-          ["For Research Scientists", "/research-areas"],
-          ["Labs", "/research-areas/labs"],
-          [
-            `${faculty.firstName} ${faculty.lastName}`,
-            `/research-areas/labs/${lab.id}`,
-          ],
-        ]}
-      />
-
+    <Layout crumbs={crumbs}>
+      <SEO title={`The ${faculty.lastName} Lab`}  />
       <div className="columns">
         <div className="column"></div>
         <div className="column">
@@ -95,30 +95,5 @@ const LabTemplate = props => {
     </Layout>
   )
 }
-
-export const pageQuery = graphql`
-  query {
-    publications: allPublicationsJson(
-      sort: { fields: [year, title], order: [DESC, ASC] }
-    ) {
-      edges {
-        node {
-          authors {
-            corresponding
-            initials
-            lastName
-          }
-          labs
-          journal
-          issue
-          pages
-          title
-          volume
-          year
-        }
-      }
-    }
-  }
-`
 
 export default LabTemplate

@@ -43,13 +43,15 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "build": "npm build",
+    "clean": "rm -rf node_modules", 
+    "reinstall": "npm run clean && npm install", 
+    "rebuild": "npm run clean && npm install && npm run build"
   },
   "repository": {
     "type": "git",

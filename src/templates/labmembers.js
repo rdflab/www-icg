@@ -1,5 +1,4 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -7,7 +6,6 @@ import toPeopleMap from "../utils/topeoplemap"
 import toLabs from "../utils/tolabs"
 import toLabMap from "../utils/tolabmap"
 import PeopleSearch from "../components/peoplesearch"
-import Breadcrumb from "../components/breadcrumb"
 
 const LabMembersTemplate = props => {
   const { data, pageContext } = props
@@ -31,20 +29,16 @@ const LabMembersTemplate = props => {
   const title = `The ${faculty.firstName} ${faculty.lastName} Lab Members`
 
   return (
-    <Layout>
+    <Layout crumbs={[
+      ["For Research Scientists", "/research-areas"],
+      ["Labs", "/research-areas/labs"],
+      [
+        `${faculty.firstName} ${faculty.lastName}`,
+        `/research-areas/labs/${lab.id}`,
+      ],
+      ["members", `/research-areas/labs/${lab.id}/members`],
+    ]}>
       <SEO title={title} />
-
-      <Breadcrumb
-        crumbs={[
-          ["For Research Scientists", "/research-areas"],
-          ["Labs", "/research-areas/labs"],
-          [
-            `${faculty.firstName} ${faculty.lastName}`,
-            `/research-areas/labs/${lab.id}`,
-          ],
-          ["members", `/research-areas/labs/${lab.id}/members`],
-        ]}
-      />
 
       <h1>{title}</h1>
 

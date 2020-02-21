@@ -1,11 +1,7 @@
 import React, { useState } from "react"
-import { Link, graphql } from "gatsby"
-import Layout from "./layout"
-import SEO from "./seo"
 import PeopleList from "./peoplelist"
 import Pagination from "./pagination"
 import SearchBar from "./searchbar"
-import Collapsible from "./collapsible"
 import SearchCount from "./searchcount"
 
 const EMPTY_QUERY = ""

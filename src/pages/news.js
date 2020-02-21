@@ -18,10 +18,8 @@ const News = props => {
   const allPublications = flattenEdges(data.publications.edges) //sort(flatten(data.publications.edges))
 
   return (
-    <Layout>
+    <Layout crumbs={[["News", "/news"]]}>
       <SEO title="News" />
-
-      <Breadcrumb crumbs={[["News", "/news"]]} />
 
       <h1>News</h1>
 

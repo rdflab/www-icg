@@ -1,5 +1,5 @@
-import React, { useState } from "react"
-import { Link, graphql } from "gatsby"
+import React from "react"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import flattenEdges from "../utils/flattenedges"
@@ -17,7 +17,7 @@ const Publications = props => {
   const allPublications = flattenEdges(data.publications.edges) //sort(flatten(data.publications.edges))
 
   return (
-    <Layout>
+    <Layout crumbs={[["Publications", "/publications"]]}>
       <SEO title="Publications" />
       <h1>Publications</h1>
 

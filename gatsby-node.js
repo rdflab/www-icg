@@ -1,13 +1,12 @@
 const path = require(`path`)
 
+const labTemplate = path.resolve(`src/templates/lab.js`)
+const labPublicationsTemplate = path.resolve(`src/templates/labpublications.js`)
+const labMembersTemplate = path.resolve(`src/templates/labmembers.js`)
+
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
-  const labTemplate = path.resolve(`src/templates/lab.js`)
-  const labPublicationsTemplate = path.resolve(
-    `src/templates/labpublications.js`
-  )
-  const labMembersTemplate = path.resolve(`src/templates/labmembers.js`)
-
+  
   const result = await graphql(`
     query {
       labs: allLabsJson {

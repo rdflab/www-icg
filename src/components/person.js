@@ -7,7 +7,6 @@
 
 import React from "react"
 import personStyles from "./person.module.scss"
-import { Link } from "gatsby"
 
 const Person = ({ person, labMap, showLabLink }) => {
   return (

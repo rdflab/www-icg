@@ -6,7 +6,6 @@
  */
 
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
 import Publication from "./publication"
 
 const PublicationList = ({ publications, labMap, showLabLink }) => (

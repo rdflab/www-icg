@@ -6,8 +6,6 @@ import flattenEdges from "../utils/flattenedges"
 import toPeopleMap from "../utils/topeoplemap"
 import toLabs from "../utils/tolabs"
 import toLabMap from "../utils/tolabmap"
-import PeopleSearch from "../components/peoplesearch"
-import Breadcrumb from "../components/breadcrumb"
 
 const ResearchAreas = props => {
   const { data } = props
@@ -17,10 +15,8 @@ const ResearchAreas = props => {
   const labMap = toLabMap(allLabs)
 
   return (
-    <Layout>
+    <Layout crumbs={[["For Research Scientists", "/research-areas"]]}>
       <SEO title="Research Areas" />
-
-      <Breadcrumb crumbs={[["For Research Scientists", "/research-areas"]]} />
 
       <h1>Research Areas</h1>
     </Layout>
