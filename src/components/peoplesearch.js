@@ -44,8 +44,6 @@ const PeopleSearch = ({ labMap, allPeople, showLabLink }) => {
 
   const onPageChanged = data => {
     const { currentPage } = data
-    console.log(currentPage)
-
     setPage(currentPage)
   }
 

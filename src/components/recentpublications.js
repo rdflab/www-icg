@@ -9,14 +9,19 @@ import React from "react"
 import Publication from "./publication"
 import { Link } from "gatsby"
 
-const RecentPublications = ({ lab, publications, labMap, top }) => {
+const RecentPublications = ({ lab, publications, labMap, peopleMap, top }) => {
   const createPublications = publications => {
     let ret = []
 
     // Outer loop to create parent
     for (let i = 0; i < Math.min(top, publications.length); ++i) {
       ret.push(
-        <Publication key={i} publication={publications[i]} labMap={labMap} />
+        <Publication
+          key={i}
+          publication={publications[i]}
+          labMap={labMap}
+          peopleMap={peopleMap}
+        />
       )
     }
 

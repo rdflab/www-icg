@@ -12,10 +12,10 @@ const LabPublicationsTemplate = props => {
   const { data, pageContext } = props
   const { lab, allPeople, allPublications } = pageContext
   const peopleMap = toPeopleMap(allPeople)
-  const labs = toLabs([lab], peopleMap)
+  const labs = [lab] //toLabs([lab], peopleMap)
   const labMap = toLabMap(labs)
 
-  const faculty = peopleMap.get(lab.faculty)
+  const faculty = peopleMap.get(lab.leaders[0])
 
   const publications = []
 

@@ -24,7 +24,7 @@ class NewsYearFilter extends Component {
       selectedYears.delete(data.text)
     }
 
-    this.setState({ selectedYears: selectedYears }, console.log(this.state))
+    this.setState({ selectedYears: selectedYears })
 
     this.props.handleClick(selectedYears)
   }

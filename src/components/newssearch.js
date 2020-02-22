@@ -35,8 +35,6 @@ const NewsSearch = ({ allNews }) => {
 
   const onPageChanged = data => {
     const { currentPage } = data
-    console.log(currentPage)
-
     setPage(currentPage)
   }
 

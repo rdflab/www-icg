@@ -48,9 +48,6 @@ const Publication = ({
 }) => {
   const authors = authorString(publication.authors, maxAuthors)
   const labId = publication.labs[0]
-
-  console.log(labId, labMap)
-
   let name
 
   if (labMap.has(labId)) {

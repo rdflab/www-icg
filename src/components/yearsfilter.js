@@ -24,10 +24,7 @@ class YearsFilter extends Component {
       selectedYears.delete(data.text)
     }
 
-    this.setState({ selectedYears: selectedYears }, console.log(this.state))
-
-    console.log("piio", data.text, data.selected, selectedYears)
-
+    this.setState({ selectedYears: selectedYears })
     this.props.handleClick(selectedYears)
   }
 

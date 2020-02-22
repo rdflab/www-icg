@@ -203,8 +203,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   //
 
   for (let item of allNews) {
-    console.log("news", item, item.frontmatter.title)
-
     createPage({
       path: item.frontmatter.path,
       component: newsItemTemplate,

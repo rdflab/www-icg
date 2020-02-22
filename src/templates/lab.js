@@ -24,16 +24,10 @@ const LabTemplate = props => {
 
   const peopleMap = toPeopleMap(allPeople)
 
-  const labs = toLabs([lab], peopleMap)
+  const labs = [lab] //toLabs([lab], peopleMap)
   const labMap = toLabMap(labs)
 
-  console.log(lab)
-  console.log(labMap)
-
-  const faculty = peopleMap.get(lab.owers[0])
-
-  console.log(peopleMap)
-  console.log(lab.faculty)
+  const faculty = peopleMap.get(lab.leaders[0])
 
   const publications = []
 
@@ -44,7 +38,8 @@ const LabTemplate = props => {
   })
 
   const crumbs = [
-    ["For Research Scientists", "/research-areas"],
+    ["Home", "/"],
+    ["Research Areas", "/research-areas"],
     ["Labs", "/research-areas/labs"],
     [
       `${faculty.firstName} ${faculty.lastName}`,
@@ -87,6 +82,7 @@ const LabTemplate = props => {
               lab={lab}
               publications={publications}
               labMap={labMap}
+              peopleMap={peopleMap}
             />
           </Card>
         </div>

@@ -10,8 +10,6 @@ import SearchSummary from "./searchsummary"
 const EMPTY_QUERY = ""
 
 const PubSearch = ({ labMap, peopleMap, allPublications, showLabLink }) => {
-  console.log(peopleMap.size, peopleMap)
-
   const [query, setQuery] = useState(EMPTY_QUERY)
   const [filteredPublications, setFilteredPublications] = useState([])
   const [page, setPage] = useState(1)
@@ -36,8 +34,6 @@ const PubSearch = ({ labMap, peopleMap, allPublications, showLabLink }) => {
 
   const onPageChanged = data => {
     const { currentPage } = data
-    console.log(currentPage)
-
     setPage(currentPage)
   }
 
@@ -65,15 +61,6 @@ const PubSearch = ({ labMap, peopleMap, allPublications, showLabLink }) => {
     offset + recordsPerPage
   )
 
-  console.log(
-    "slop",
-    query,
-    offset,
-    page,
-    recordsPerPage,
-    pagedPublications.length,
-    hasSearchResults
-  )
   return (
     <>
       <div className="columns">

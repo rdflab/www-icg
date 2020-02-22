@@ -25,7 +25,7 @@ class TypesFilter extends Component {
       selectedTypes.delete(data.text)
     }
 
-    this.setState({ selectedTypes: selectedTypes }, console.log(this.state))
+    this.setState({ selectedTypes: selectedTypes })
 
     this.props.handleClick(selectedTypes)
   }
