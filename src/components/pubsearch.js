@@ -5,6 +5,7 @@ import SearchBar from "./searchbar"
 import YearsFilter from "./yearsfilter"
 import Collapsible from "./collapsible"
 import SearchCount from "../components/searchcount"
+import SearchSummary from "./searchsummary"
 
 const EMPTY_QUERY = ""
 
@@ -76,7 +77,7 @@ const PubSearch = ({ labMap, peopleMap, allPublications, showLabLink }) => {
   return (
     <>
       <div className="columns">
-        <div className="column is-one-third">
+        <div className="column is-3">
           <SearchBar handleInputChange={handleInputChange} />
           <Collapsible title="Year filter" height="auto">
             <YearsFilter
@@ -86,13 +87,14 @@ const PubSearch = ({ labMap, peopleMap, allPublications, showLabLink }) => {
           </Collapsible>
         </div>
         <div className="column">
-          <div>
+          <SearchSummary>
             <SearchCount>{yearFilteredPublications.length}</SearchCount>{" "}
             {yearFilteredPublications.length === 1
               ? "Publication"
               : "Publications"}{" "}
             found
-          </div>
+          </SearchSummary>
+
           <PublicationYears
             publications={pagedPublications}
             labMap={labMap}

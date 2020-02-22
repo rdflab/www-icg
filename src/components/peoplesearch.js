@@ -7,6 +7,7 @@ import TypesFilter from "./typesfilter"
 import Collapsible from "./collapsible"
 import toPeopleTypeMap from "../utils/peopletypemap"
 import { PEOPLE_TYPES } from "../constants"
+import SearchSummary from "./searchsummary"
 
 const EMPTY_QUERY = ""
 
@@ -57,16 +58,10 @@ const PeopleSearch = ({ labMap, allPeople, showLabLink }) => {
     typeFilteredPeople = people.filter(person => {
       let keep = false
 
-      for (let tag of person.tags) {
-        for (let type of typesFilter) {
-          if (tag.includes(type)) {
-            keep = true
-            break
-          }
-
-          if (keep) {
-            break
-          }
+      for (let type of typesFilter) {
+        if (person.type.includes(type)) {
+          keep = true
+          break
         }
       }
 
@@ -107,7 +102,7 @@ const PeopleSearch = ({ labMap, allPeople, showLabLink }) => {
   return (
     <>
       <div className="columns">
-        <div className="column is-4">
+        <div className="column is-3">
           <SearchBar
             handleInputChange={handleInputChange}
             placeholder="Type to find faculty..."
@@ -117,10 +112,11 @@ const PeopleSearch = ({ labMap, allPeople, showLabLink }) => {
           </Collapsible>
         </div>
         <div className="column">
-          <div style={{ paddingBottom: "2rem" }}>
+          <SearchSummary>
             <SearchCount>{typeFilteredPeople.length}</SearchCount> Research
             Faculty and Staff found
-          </div>
+          </SearchSummary>
+
           <PeopleTypes
             allPeople={typeOrderedPeople}
             labMap={labMap}

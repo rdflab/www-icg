@@ -6,6 +6,7 @@ import NewsMonthFilter from "./newsmonthfilter"
 import Collapsible from "./collapsible"
 import SearchCount from "./searchcount"
 import NewsItems from "./newsitems"
+import SearchSummary from "./searchsummary"
 
 const EMPTY_QUERY = ""
 
@@ -63,7 +64,7 @@ const NewsSearch = ({ allNews }) => {
   return (
     <>
       <div className="columns">
-        <div className="column is-4">
+        <div className="column is-3">
           <SearchBar
             handleInputChange={handleInputChange}
             placeholder="Type to find news items"
@@ -76,10 +77,11 @@ const NewsSearch = ({ allNews }) => {
           </Collapsible>
         </div>
         <div className="column">
-          <div>
+          <SearchSummary>
             <SearchCount>{yearFilteredNews.length}</SearchCount>{" "}
             {yearFilteredNews.length === 1 ? "News Item" : "News Items"} found
-          </div>
+          </SearchSummary>
+
           <NewsItems news={pagedNews} />
 
           <Pagination
