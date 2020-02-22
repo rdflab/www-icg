@@ -1,8 +1,7 @@
 import React, { useState } from "react"
 import AnimateHeight from "react-animate-height"
-import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md"
-
 import collapsibleStyles from "./collapsible.module.scss"
+import { FaChevronUp, FaChevronDown } from "react-icons/fa"
 
 const Collapsible = props => {
   const [height, setHeight] = useState(props.height)
@@ -16,7 +15,7 @@ const Collapsible = props => {
       <button className={collapsibleStyles.collapsibleButton} onClick={toggle}>
         <div style={{ float: "left" }}>{props.title}</div>
         <div style={{ float: "right" }}>
-          {height === 0 ? <MdKeyboardArrowDown /> : <MdKeyboardArrowUp />}
+          {height === 0 ? <FaChevronDown /> : <FaChevronUp />}
         </div>
       </button>
 

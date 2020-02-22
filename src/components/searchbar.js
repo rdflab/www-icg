@@ -1,6 +1,6 @@
 import React from "react"
-import { MdSearch } from "react-icons/md"
 import searchbarStyles from "./searchbar.module.scss"
+import { FaSearch } from "react-icons/fa"
 
 const SearchBar = ({ handleInputChange, placeholder }) => (
   <div className={searchbarStyles.searchBar}>
@@ -12,7 +12,7 @@ const SearchBar = ({ handleInputChange, placeholder }) => (
       className={searchbarStyles.searchInput}
     />
     <button className={searchbarStyles.searchButton} type="submit">
-      <MdSearch />
+      <FaSearch />
     </button>
   </div>
 )

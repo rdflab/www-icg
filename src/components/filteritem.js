@@ -7,7 +7,7 @@
 
 import React, { useState } from "react"
 import filterItemStyles from "./filteritem.module.scss"
-import { MdCheck } from "react-icons/md"
+import { FaCheck } from "react-icons/fa"
 
 const FilterItem = props => {
   const [selected, setSelected] = useState(false)
@@ -31,7 +31,7 @@ const FilterItem = props => {
 
       {selected ? (
         <div style={{ float: "right" }}>
-          <MdCheck />
+          <FaCheck />
         </div>
       ) : (
         ""
