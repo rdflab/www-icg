@@ -4,7 +4,6 @@ import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import flattenEdges from "../../utils/flattenedges"
 import toPeopleMap from "../../utils/topeoplemap"
-import toLabs from "../../utils/tolabs"
 import toLabMap from "../../utils/tolabmap"
 import PubSearch from "../../components/pubsearch"
 

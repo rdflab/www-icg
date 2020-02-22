@@ -13,7 +13,7 @@ import PhoneLink from "../components/phonelink"
 import URILink from "../components/urilink"
 
 const LabTemplate = props => {
-  const { data, pageContext } = props
+  const { pageContext } = props
   const {
     lab,
     allPeople,

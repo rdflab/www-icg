@@ -4,6 +4,6 @@ date: "2020-02-20"
 path: "/news/welcome"
 ---
 
-# Welcome
+The ICG website has been updated.
 
-Welcome to the new ICG website
+<!-- endexcerpt -->

@@ -1,8 +1,9 @@
-$crumb-color: rgb(230, 230, 230);
-$crumb-hover-color: rgb(220, 220, 220);
+$crumb-background-color: rgb(240, 240, 240);
+$crumb-color: rgb(180, 180, 180);
+$crumb-hover-color: rgb(200, 200, 200);
 
 .breadcrumb-container {
-  background-color: $crumb-color
+  background-color: $crumb-background-color
 }
 
 .breadcrumb {
@@ -11,7 +12,7 @@ $crumb-hover-color: rgb(220, 220, 220);
   list-style: none;
   overflow: hidden;
   padding: 0;
-  margin: 0 0 2rem -1rem;
+  margin: 0 0 2rem 0;
 }
   
 .breadcrumb li {
@@ -33,19 +34,24 @@ $crumb-hover-color: rgb(220, 220, 220);
   padding: 0.5rem 0 0.5rem 3rem;
   font-weight: 300;
   text-decoration: none;
-  //background-color: $crumb-color;
+ 
   position: relative; 
   display: block;
   float: left;
   transition: background-color 0.5s;
 }
 
-.breadcrumb li a:hover {
+.breadcrumb li:not(:last-child) a {
+  background-color: $crumb-color;
+  color: white !important;
+}
+
+.breadcrumb li:not(:last-child) a:hover {
   background-color: $crumb-hover-color;
   text-decoration: none !important;
 }
 
-.breadcrumb li a:after { 
+.breadcrumb li:not(:last-child) a:after { 
   content: " "; 
   display: block; 
   width: 0; 
@@ -61,12 +67,12 @@ $crumb-hover-color: rgb(220, 220, 220);
   transition: border-left-color 0.5s;
 }
 
-.breadcrumb li a:hover:after {
+.breadcrumb li:not(:last-child) a:hover:after {
   border-left-color: $crumb-hover-color;
 }
 
 
-.breadcrumb li a:before { 
+.breadcrumb li:not(:last-child) a:before { 
   content: " "; 
   display: block; 
   width: 0; 
@@ -84,4 +90,8 @@ $crumb-hover-color: rgb(220, 220, 220);
 
 .breadcrumb li:first-child a {
   padding-left: 1rem;
+}
+
+.breadcrumb li:last-child a {
+  color: rgb(50, 50, 50)
 }

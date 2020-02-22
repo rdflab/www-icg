@@ -4,6 +4,8 @@ const labTemplate = path.resolve(`src/templates/lab.js`)
 const labPublicationsTemplate = path.resolve(`src/templates/labpublications.js`)
 const labMembersTemplate = path.resolve(`src/templates/labmembers.js`)
 const memberTemplate = path.resolve(`src/templates/member.js`)
+const newsItemTemplate = path.resolve(`src/templates/newsitem.js`)
+
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
@@ -89,6 +91,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const allPeople = []
   const allPublications = []
+  const allNews = []
 
   result.data.people.edges.forEach(({ node }) => {
     allPeople.push(node)
@@ -102,6 +105,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   result.data.markdown.edges.forEach(({ node }) => {
     markdownMap.set(node.frontmatter.path, node)
+
+    if (node.frontmatter.path.includes("news")) {
+      allNews.push(node)
+    }
   })
 
   result.data.labs.edges.forEach(({ node }) => {
@@ -118,8 +125,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       labExcerptHtml = markdown.excerpt
     }
 
-    console.log("make page " + `/research-areas/labs/${lab.id}`)
-
     createPage({
       path: `/research-areas/labs/${lab.id}`,
       component: labTemplate,
@@ -130,7 +135,24 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         labExcerptHtml,
         labHtml,
       }, // additional data can be passed via context
-    })
+    });
+
+    //
+    // Members
+    //
+
+    createPage({
+      path: `${path}/members`,
+      component: labMembersTemplate,
+      context: {
+        lab,
+        allPeople,
+      }, // additional data can be passed via context
+    });
+
+    //
+    // Lab publications
+    //
 
     createPage({
       path: `${path}/publications`,
@@ -140,17 +162,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         allPeople,
         allPublications,
       }, // additional data can be passed via context
-    })
+    });
+  });
 
-    createPage({
-      path: `/research-areas/labs/${lab.id}/members`,
-      component: labMembersTemplate,
-      context: {
-        lab,
-        allPeople,
-      }, // additional data can be passed via context
-    })
-  })
+
+
+  //
+  // Makes pages for each person
+  //
 
   for (let person of allPeople) {
     createPage({
@@ -159,6 +178,24 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       context: {
         person
       }, // additional data can be passed via context
-    })
-  }
+    });
+  };
+
+  //
+  // News pages
+  //
+
+  
+  for (let item of allNews) {
+    console.log("news", item, item.frontmatter.title)
+
+    createPage({
+      path: item.frontmatter.path,
+      component: newsItemTemplate,
+      context: {
+        item
+      }, // additional data can be passed via context
+    });
+  };
+
 }

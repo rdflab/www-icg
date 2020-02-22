@@ -18,12 +18,13 @@ const FacultyAndStaff = props => {
 
   return (
     <Layout crumbs={[
-      ["For Research Scientists", "/research-areas"],
+      ["Home", "/"],
+      ["Research Areas", "/research-areas"],
       ["Faculty and Staff", "/research-areas/faculty-and-staff"],
     ]}>
       <SEO title="Faculty and Staff" />
 
-      <h1>Research Faculty and Staff</h1>
+      <h1>Faculty and Staff</h1>
 
       <PeopleSearch labMap={labMap} allPeople={allPeople} />
     </Layout>

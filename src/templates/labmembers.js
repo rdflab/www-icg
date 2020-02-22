@@ -8,7 +8,7 @@ import toLabMap from "../utils/tolabmap"
 import PeopleSearch from "../components/peoplesearch"
 
 const LabMembersTemplate = props => {
-  const { data, pageContext } = props
+  const { pageContext } = props
   const { lab, allPeople } = pageContext
   const peopleMap = toPeopleMap(allPeople)
   const labs = toLabs([lab], peopleMap)
@@ -21,8 +21,6 @@ const LabMembersTemplate = props => {
   for (let member of lab.members) {
     people.push(peopleMap.get(member))
   }
-
-  console.log("cake", people)
 
   const title = `The ${faculty.firstName} ${faculty.lastName} Lab Members`
 

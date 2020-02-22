@@ -1,29 +1,21 @@
-import React, { useState } from "react"
+import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import flattenEdges from "../utils/flattenedges"
-import toPeopleMap from "../utils/topeoplemap"
-import toLabs from "../utils/tolabs"
-import toLabMap from "../utils/tolabmap"
-import PubSearch from "../components/pubsearch"
+import NewsSearch from "../components/newssearch"
 
 const News = props => {
   const { data } = props
-  const news = flattenEdges(data.news.edges) //sort(flatten(data.publications.edges))
+  const allNews = flattenEdges(data.news.edges) //sort(flatten(data.publications.edges))
 
   return (
-    <Layout crumbs={[["News", "/news"]]}>
+    <Layout crumbs={[["Home", "/"], ["News", "/news"]]}>
       <SEO title="News" />
 
       <h1>News</h1>
 
-      {news.map((item, index) => (
-        <article>
-        <h2>{item.frontmatter.title}</h2>
-        <div>{item.frontmatter.date}</div>
-        </article>
-      ))}
+      <NewsSearch allNews={allNews} />
     </Layout>
   )
 }
@@ -39,6 +31,8 @@ export const pageQuery = graphql`
             path
             title
             date(formatString: "MMMM DD, YYYY")
+            year: date(formatString: "YYYY")
+            month: date(formatString: "MMMM")
           }
           excerpt(format: HTML)
           html

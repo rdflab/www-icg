@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import PeopleList from "./peoplelist"
 import Pagination from "./pagination"
 import SearchBar from "./searchbar"
 import SearchCount from "./searchcount"
@@ -97,12 +96,12 @@ const PeopleSearch = ({ labMap, allPeople, showLabLink }) => {
 
       ++c
 
-      if (typeOrderedPeople.length == recordsPerPage) {
+      if (typeOrderedPeople.length === recordsPerPage) {
         break
       }
     }
 
-    if (typeOrderedPeople.length == recordsPerPage) {
+    if (typeOrderedPeople.length === recordsPerPage) {
       break
     }
   }

@@ -1,5 +1,5 @@
-import React, { useState } from "react"
-import { Link, graphql } from "gatsby"
+import React from "react"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import flattenEdges from "../utils/flattenedges"
@@ -12,7 +12,6 @@ const ResearchAreas = props => {
   const allPeople = flattenEdges(data.people.edges)
   const peopleMap = toPeopleMap(allPeople)
   const allLabs = toLabs(flattenEdges(data.labs.edges), peopleMap)
-  const labMap = toLabMap(allLabs)
 
   return (
     <Layout crumbs={[["For Research Scientists", "/research-areas"]]}>

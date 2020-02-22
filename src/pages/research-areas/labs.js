@@ -17,7 +17,6 @@ const Labs = props => {
   const { data } = props
   const peopleMap = toPeopleMap(flattenEdges(data.people.edges))
   const allLabs = flattenEdges(data.labs.edges)
-  const labMap = toLabMap(peopleMap)
 
   const [query, setQuery] = React.useState(EMPTY_QUERY)
   const [filteredLabs, setFilteredLabs] = React.useState([])
@@ -46,6 +45,7 @@ const Labs = props => {
 
   return (
     <Layout crumbs={[
+      ["Home", "/"],
       ["For Research Scientists", "/research-areas"],
       ["Labs", "/research-areas/labs"],
     ]}>
@@ -68,7 +68,7 @@ const Labs = props => {
           </div>
 
           {labs.map((lab, index) => {
-            const person = peopleMap.get(lab.faculty)
+            const person = peopleMap.get(lab.leaders[0])
 
             let name = person.firstName + " " + person.lastName
 
