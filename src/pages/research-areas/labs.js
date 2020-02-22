@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import flattenEdges from "../../utils/flattenedges"
@@ -18,7 +18,7 @@ const Labs = props => {
     <Layout
       crumbs={[
         ["Home", "/"],
-        ["For Research Scientists", "/research-areas"],
+        ["Research Areas", "/research-areas"],
         ["Labs", "/research-areas/labs"],
       ]}
     >

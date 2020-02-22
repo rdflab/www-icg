@@ -45,6 +45,7 @@ class YearsFilter extends Component {
         {Array.from(years)
           .sort()
           .reverse()
+          .slice(0, this.props.top)
           .map((year, index) => {
             return (
               <FilterItem
@@ -57,6 +58,10 @@ class YearsFilter extends Component {
       </>
     )
   }
+}
+
+YearsFilter.defaultProps = {
+  top: 10,
 }
 
 export default YearsFilter

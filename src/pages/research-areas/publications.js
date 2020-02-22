@@ -18,8 +18,9 @@ const Publications = props => {
   return (
     <Layout
       crumbs={[
-        ["For Research Scientists", "/research-areas"],
-        ["Publications", "/publications"],
+        ["Home", "/"],
+        ["Research Areas", "/research-areas"],
+        ["Publications", "/research-areas/publications"],
       ]}
     >
       <SEO title="Publications" />
