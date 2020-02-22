@@ -5,7 +5,10 @@ import { Link } from "gatsby"
 
 const MembersLink = ({ to }) => (
   <div>
-    <RightSideIconLink><FaUsers /></RightSideIconLink> <Link to={to}>View Lab Members</Link>
+    <RightSideIconLink>
+      <FaUsers />
+    </RightSideIconLink>{" "}
+    <Link to={to}>View Lab Members</Link>
   </div>
 )
 

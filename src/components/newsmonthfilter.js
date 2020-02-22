@@ -7,7 +7,7 @@
 
 import React, { Component } from "react"
 import FilterItem from "./filteritem"
-import { MONTHS } from "../constants" 
+import { MONTHS } from "../constants"
 
 class NewsMonthFilter extends Component {
   constructor(props) {
@@ -43,19 +43,13 @@ class NewsMonthFilter extends Component {
       const month = MONTHS[i]
 
       if (months.has(month)) {
-        ret.push(<FilterItem
-          key={i}
-          handleClick={this.handleClick}
-          text={month}
-        />)
+        ret.push(
+          <FilterItem key={i} handleClick={this.handleClick} text={month} />
+        )
       }
     }
 
-    return (
-      <>
-        {ret}
-      </>
-    )
+    return <>{ret}</>
   }
 }
 

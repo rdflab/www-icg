@@ -16,8 +16,12 @@ const Publications = props => {
   const allPublications = flattenEdges(data.publications.edges) //sort(flatten(data.publications.edges))
 
   return (
-    <Layout crumbs={[
-      ["For Research Scientists", "/research-areas"],["Publications", "/publications"]]}>
+    <Layout
+      crumbs={[
+        ["For Research Scientists", "/research-areas"],
+        ["Publications", "/publications"],
+      ]}
+    >
       <SEO title="Publications" />
       <h1>Publications</h1>
 
@@ -34,7 +38,7 @@ export default Publications
 
 export const pageQuery = graphql`
   query {
-    labs: allGroupsJson(filter: {type: {eq: "Lab"}}) {
+    labs: allGroupsJson(filter: { type: { eq: "Lab" } }) {
       edges {
         node {
           id

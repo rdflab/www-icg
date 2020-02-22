@@ -79,7 +79,6 @@ const PeopleSearch = ({ labMap, allPeople, showLabLink }) => {
   const offset = (page - 1) * recordsPerPage
   //let pagedPeople = typeFilteredPeople.slice(offset, offset + recordsPerPage)
 
-
   const peopleTypeMap = toPeopleTypeMap(typeFilteredPeople)
 
   var c = 0
@@ -91,7 +90,6 @@ const PeopleSearch = ({ labMap, allPeople, showLabLink }) => {
     for (let person of p) {
       if (c >= offset) {
         typeOrderedPeople.push(person)
-        
       }
 
       ++c
@@ -106,7 +104,6 @@ const PeopleSearch = ({ labMap, allPeople, showLabLink }) => {
     }
   }
 
-  
   return (
     <>
       <div className="columns">
@@ -120,9 +117,9 @@ const PeopleSearch = ({ labMap, allPeople, showLabLink }) => {
           </Collapsible>
         </div>
         <div className="column">
-          <div style={{paddingBottom : "2rem"}}>
-            <SearchCount>{typeFilteredPeople.length}</SearchCount> Research Faculty and
-            Staff found
+          <div style={{ paddingBottom: "2rem" }}>
+            <SearchCount>{typeFilteredPeople.length}</SearchCount> Research
+            Faculty and Staff found
           </div>
           <PeopleTypes
             allPeople={typeOrderedPeople}

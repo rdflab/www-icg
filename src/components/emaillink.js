@@ -4,7 +4,10 @@ import RightSideIconLink from "./rightsideiconlink"
 
 const EmailLink = ({ to }) => (
   <div>
-    <RightSideIconLink><FaEnvelope /></RightSideIconLink>  <a href={`mailto:${to}`}>{to}</a>
+    <RightSideIconLink>
+      <FaEnvelope />
+    </RightSideIconLink>{" "}
+    <a href={`mailto:${to}`}>{to}</a>
   </div>
 )
 

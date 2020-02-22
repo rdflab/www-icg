@@ -6,13 +6,12 @@ const labMembersTemplate = path.resolve(`src/templates/labmembers.js`)
 const memberTemplate = path.resolve(`src/templates/member.js`)
 const newsItemTemplate = path.resolve(`src/templates/newsitem.js`)
 
-
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
-  
+
   const result = await graphql(`
     query {
-      labs: allGroupsJson(filter: {type: {eq: "Lab"}}) {
+      labs: allGroupsJson(filter: { type: { eq: "Lab" } }) {
         edges {
           node {
             id
@@ -72,6 +71,26 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           }
         }
       }
+
+      news: allMarkdownRemark(
+        sort: { fields: frontmatter___date, order: DESC }
+        filter: { frontmatter: { path: { regex: "/news/" } } }
+      ) {
+        edges {
+          node {
+            html
+            frontmatter {
+              title
+              date(formatString: "MMMM DD, YYYY")
+              year: date(formatString: "YYYY")
+              month: date(formatString: "MMMM")
+              path
+              tags
+            }
+            excerpt(format: HTML)
+          }
+        }
+      }
     }
   `)
 
@@ -101,14 +120,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     allPublications.push(node)
   })
 
+  result.data.news.edges.forEach(({ node }) => {
+    allNews.push(node)
+  })
+
   const markdownMap = new Map()
 
   result.data.markdown.edges.forEach(({ node }) => {
     markdownMap.set(node.frontmatter.path, node)
-
-    if (node.frontmatter.path.includes("news")) {
-      allNews.push(node)
-    }
   })
 
   result.data.labs.edges.forEach(({ node }) => {
@@ -135,7 +154,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         labExcerptHtml,
         labHtml,
       }, // additional data can be passed via context
-    });
+    })
 
     //
     // Members
@@ -148,7 +167,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         lab,
         allPeople,
       }, // additional data can be passed via context
-    });
+    })
 
     //
     // Lab publications
@@ -162,10 +181,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         allPeople,
         allPublications,
       }, // additional data can be passed via context
-    });
-  });
-
-
+    })
+  })
 
   //
   // Makes pages for each person
@@ -176,16 +193,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       path: `/research-areas/faculty-and-staff/${person.id}`,
       component: memberTemplate,
       context: {
-        person
+        person,
       }, // additional data can be passed via context
-    });
-  };
+    })
+  }
 
   //
   // News pages
   //
 
-  
   for (let item of allNews) {
     console.log("news", item, item.frontmatter.title)
 
@@ -193,9 +209,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       path: item.frontmatter.path,
       component: newsItemTemplate,
       context: {
-        item
+        item,
+        allNews,
       }, // additional data can be passed via context
-    });
-  };
-
+    })
+  }
 }

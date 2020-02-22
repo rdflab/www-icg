@@ -1,6 +1,5 @@
 import { PEOPLE_TYPES } from "../constants"
 
-
 const toPeopleTypeMap = people => {
   const ret = new Map()
 

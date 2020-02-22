@@ -58,36 +58,27 @@ const NewsSearch = ({ allNews }) => {
   }
 
   const offset = (page - 1) * recordsPerPage
-  let pagedNews = yearFilteredNews.slice(
-    offset,
-    offset + recordsPerPage
-  )
+  let pagedNews = yearFilteredNews.slice(offset, offset + recordsPerPage)
 
   return (
     <>
       <div className="columns">
         <div className="column is-4">
-          <SearchBar handleInputChange={handleInputChange} placeholder="Type to find news items" />
+          <SearchBar
+            handleInputChange={handleInputChange}
+            placeholder="Type to find news items"
+          />
           <Collapsible title="Year filter" height="auto">
-            <NewsYearFilter 
-              news={news}
-              handleClick={handleClick}
-            />
+            <NewsYearFilter news={news} handleClick={handleClick} />
           </Collapsible>
           <Collapsible title="Month filter" height="auto">
-            <NewsMonthFilter 
-              news={news}
-              handleClick={handleClick}
-            />
+            <NewsMonthFilter news={news} handleClick={handleClick} />
           </Collapsible>
         </div>
         <div className="column">
           <div>
             <SearchCount>{yearFilteredNews.length}</SearchCount>{" "}
-            {yearFilteredNews.length === 1
-              ? "News Item"
-              : "News Items"}{" "}
-            found
+            {yearFilteredNews.length === 1 ? "News Item" : "News Items"} found
           </div>
           <NewsItems news={pagedNews} />
 

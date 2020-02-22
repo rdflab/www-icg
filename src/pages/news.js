@@ -10,7 +10,12 @@ const News = props => {
   const allNews = flattenEdges(data.news.edges) //sort(flatten(data.publications.edges))
 
   return (
-    <Layout crumbs={[["Home", "/"], ["News", "/news"]]}>
+    <Layout
+      crumbs={[
+        ["Home", "/"],
+        ["News", "/news"],
+      ]}
+    >
       <SEO title="News" />
 
       <h1>News</h1>
@@ -24,7 +29,10 @@ export default News
 
 export const pageQuery = graphql`
   query {
-    news: allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}, filter: {frontmatter: {path: {regex: "/news/"}}}) {
+    news: allMarkdownRemark(
+      sort: { fields: frontmatter___date, order: DESC }
+      filter: { frontmatter: { path: { regex: "/news/" } } }
+    ) {
       edges {
         node {
           frontmatter {

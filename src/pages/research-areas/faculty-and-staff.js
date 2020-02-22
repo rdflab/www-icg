@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
@@ -7,7 +7,6 @@ import toPeopleMap from "../../utils/topeoplemap"
 import toLabs from "../../utils/tolabs"
 import toLabMap from "../../utils/tolabmap"
 import PeopleSearch from "../../components/peoplesearch"
-import Breadcrumb from "../../components/breadcrumb"
 
 const FacultyAndStaff = props => {
   const { data } = props
@@ -17,11 +16,13 @@ const FacultyAndStaff = props => {
   const labMap = toLabMap(allLabs)
 
   return (
-    <Layout crumbs={[
-      ["Home", "/"],
-      ["Research Areas", "/research-areas"],
-      ["Faculty and Staff", "/research-areas/faculty-and-staff"],
-    ]}>
+    <Layout
+      crumbs={[
+        ["Home", "/"],
+        ["Research Areas", "/research-areas"],
+        ["Faculty and Staff", "/research-areas/faculty-and-staff"],
+      ]}
+    >
       <SEO title="Faculty and Staff" />
 
       <h1>Faculty and Staff</h1>
@@ -35,7 +36,7 @@ export default FacultyAndStaff
 
 export const pageQuery = graphql`
   query {
-    labs: allGroupsJson(filter: {type: {eq: "Lab"}}) {
+    labs: allGroupsJson(filter: { type: { eq: "Lab" } }) {
       edges {
         node {
           id

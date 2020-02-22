@@ -15,7 +15,9 @@ const Footer = props => {
             <FooterLinks></FooterLinks>
           </div>
           <div className="column text-center">
-            <HICCCImage />
+            <a href="https://cumc.columbia.edu">
+              <HICCCImage />
+            </a>
           </div>
           <div className="column text-center">
             &copy; {new Date().getFullYear()} {siteTitle}

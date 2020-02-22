@@ -3,9 +3,7 @@
     "id": "adolfo-ferrando",
     "type": "Lab",
     "name": "Adolfo Ferrando Lab",
-    "leaders": [
-      "adolfo-ferrando"
-    ],
+    "leaders": ["adolfo-ferrando"],
     "members": [
       "adolfo-ferrando",
       "robert-albero",
@@ -33,9 +31,7 @@
     "id": "anna-lasorella",
     "type": "Lab",
     "name": "Anna Lasorella Lab",
-    "leaders": [
-      "anna-lasorella"
-    ],
+    "leaders": ["anna-lasorella"],
     "members": [
       "anna-lasorella",
       "antonio-iavarone",
@@ -53,9 +49,7 @@
     "id": "antonio-iavarone",
     "type": "Lab",
     "name": "Antonio Iavarone Lab",
-    "leaders": [
-      "antonio-iavarone"
-    ],
+    "leaders": ["antonio-iavarone"],
     "members": [
       "antonio-iavarone",
       "anna-lasorella",
@@ -72,9 +66,7 @@
     "id": "christine-chio",
     "type": "Lab",
     "name": "Christine Chio Lab",
-    "leaders": [
-      "christine-chio"
-    ],
+    "leaders": ["christine-chio"],
     "members": [
       "christine-chio",
       "marina-m-ayres-pereira",
@@ -87,9 +79,7 @@
     "id": "jean-gautier",
     "type": "Lab",
     "name": "Jean Gautier Lab",
-    "leaders": [
-      "jean-gautier"
-    ],
+    "leaders": ["jean-gautier"],
     "members": [
       "jean-gautier",
       "tomas-aparicio",
@@ -106,22 +96,15 @@
     "id": "murty-vundavalli",
     "type": "Lab",
     "name": "Murty Vundavalli Lab",
-    "leaders": [
-      "murty-vundavalli"
-    ],
-    "members": [
-      "murty-vundavalli",
-      "ishdorj-ganchimeg"
-    ],
+    "leaders": ["murty-vundavalli"],
+    "members": ["murty-vundavalli", "ishdorj-ganchimeg"],
     "uri": ""
   },
   {
     "id": "riccardo-dalla-favera",
     "type": "Lab",
     "name": "Riccardo Dalla-Favera Lab",
-    "leaders": [
-      "riccardo-dalla-favera"
-    ],
+    "leaders": ["riccardo-dalla-favera"],
     "members": [
       "riccardo-dalla-favera",
       "elodie-bal",
@@ -144,22 +127,15 @@
     "id": "richard-baer",
     "type": "Lab",
     "name": "Richard Baer Lab",
-    "leaders": [
-      "richard-baer"
-    ],
-    "members": [
-      "richard-baer",
-      "foon-wu-baer"
-    ],
+    "leaders": ["richard-baer"],
+    "members": ["richard-baer", "foon-wu-baer"],
     "uri": ""
   },
   {
     "id": "shan-zha",
     "type": "Lab",
     "name": "Shan Zha Lab",
-    "leaders": [
-      "shan-zha"
-    ],
+    "leaders": ["shan-zha"],
     "members": [
       "shan-zha",
       "brian-lee",
@@ -174,9 +150,7 @@
     "id": "swarnali-acharyya",
     "type": "Lab",
     "name": "Swarnali Acharyya Lab",
-    "leaders": [
-      "swarnali-acharyya"
-    ],
+    "leaders": ["swarnali-acharyya"],
     "members": [
       "swarnali-acharyya",
       "anup-biswas",
@@ -194,9 +168,7 @@
     "id": "wei-gu",
     "type": "Lab",
     "name": "Wei Gu Lab",
-    "leaders": [
-      "wei-gu"
-    ],
+    "leaders": ["wei-gu"],
     "members": [
       "wei-gu",
       "delin-chen",
@@ -214,9 +186,7 @@
     "id": "zhiguo-zhang",
     "type": "Lab",
     "name": "Zhiguo Zhang Lab",
-    "leaders": [
-      "zhiguo-zhang"
-    ],
+    "leaders": ["zhiguo-zhang"],
     "members": [
       "zhiguo-zhang",
       "liang-chang",

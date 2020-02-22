@@ -38,9 +38,7 @@ const Layout = ({ children, crumbs }) => {
       </Helmet>
       <Header siteTitle={data.site.siteMetadata.title} />
 
-      {crumbs.length > 0 &&
-        <Breadcrumb crumbs={crumbs} />
-      }
+      {crumbs.length > 0 && <Breadcrumb crumbs={crumbs} />}
 
       <main>
         <div className="container">{children}</div>
@@ -56,7 +54,7 @@ Layout.propTypes = {
 }
 
 Layout.defaultProps = {
-  crumbs: []
+  crumbs: [],
 }
 
 export default Layout

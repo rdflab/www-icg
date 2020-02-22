@@ -6,7 +6,6 @@
  */
 
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
 import Person from "./person"
 
 const PeopleList = ({ people, labMap, showLabLink }) => (

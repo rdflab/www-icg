@@ -34,14 +34,14 @@ class TypesFilter extends Component {
     return (
       <>
         {PEOPLE_TYPES.map((type, index) => {
-            return (
-              <FilterItem
-                key={index}
-                handleClick={this.handleClick}
-                text={type}
-              />
-            )
-          })}
+          return (
+            <FilterItem
+              key={index}
+              handleClick={this.handleClick}
+              text={type}
+            />
+          )
+        })}
       </>
     )
   }

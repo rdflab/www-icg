@@ -25,15 +25,17 @@ const LabMembersTemplate = props => {
   const title = `The ${faculty.firstName} ${faculty.lastName} Lab Members`
 
   return (
-    <Layout crumbs={[
-      ["For Research Scientists", "/research-areas"],
-      ["Labs", "/research-areas/labs"],
-      [
-        `${faculty.firstName} ${faculty.lastName}`,
-        `/research-areas/labs/${lab.id}`,
-      ],
-      ["Members", `/research-areas/labs/${lab.id}/members`],
-    ]}>
+    <Layout
+      crumbs={[
+        ["For Research Scientists", "/research-areas"],
+        ["Labs", "/research-areas/labs"],
+        [
+          `${faculty.firstName} ${faculty.lastName}`,
+          `/research-areas/labs/${lab.id}`,
+        ],
+        ["Members", `/research-areas/labs/${lab.id}/members`],
+      ]}
+    >
       <SEO title={title} />
 
       <h1>{title}</h1>

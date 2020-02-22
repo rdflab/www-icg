@@ -6,15 +6,11 @@
  */
 
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Person from "./person"
 import PeopleList from "./peoplelist"
 import { PEOPLE_TYPES } from "../constants"
 import toPeopleTypeMap from "../utils/peopletypemap"
 
-
 const PeopleTypes = ({ allPeople, labMap, showLabLink }) => {
-
   const peopleMap = toPeopleTypeMap(allPeople)
 
   var elems = []
@@ -26,15 +22,18 @@ const PeopleTypes = ({ allPeople, labMap, showLabLink }) => {
 
     if (people.length > 0) {
       elems.push(<h3 key={c++}>{type}</h3>)
-      elems.push(<PeopleList key={c++} people={people} labMap={labMap} showLabLink={showLabLink} />)
+      elems.push(
+        <PeopleList
+          key={c++}
+          people={people}
+          labMap={labMap}
+          showLabLink={showLabLink}
+        />
+      )
     }
   }
-  
-  return(
-    <>
-    {elems}
-    </>
-  )
+
+  return <>{elems}</>
 }
 
 export default PeopleTypes

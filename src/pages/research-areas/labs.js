@@ -4,7 +4,6 @@ import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import flattenEdges from "../../utils/flattenedges"
 import toPeopleMap from "../../utils/topeoplemap"
-import toLabMap from "../../utils/tolabmap"
 import SearchBar from "../../components/searchbar"
 import SearchCount from "../../components/searchcount"
 import EmailLink from "../../components/emaillink"
@@ -44,18 +43,20 @@ const Labs = props => {
   const labs = hasSearchResults ? filteredLabs : allLabs
 
   return (
-    <Layout crumbs={[
-      ["Home", "/"],
-      ["For Research Scientists", "/research-areas"],
-      ["Labs", "/research-areas/labs"],
-    ]}>
+    <Layout
+      crumbs={[
+        ["Home", "/"],
+        ["For Research Scientists", "/research-areas"],
+        ["Labs", "/research-areas/labs"],
+      ]}
+    >
       <SEO title="Research Labs" />
 
       {/*in-line css for demo purposes*/}
       <h1>Research Labs</h1>
 
       <div className="columns">
-        <div className="column is-one-third">
+        <div className="column is-4">
           <SearchBar
             handleInputChange={handleInputChange}
             placeholder="Type to find faculty..."
@@ -98,8 +99,12 @@ const Labs = props => {
                       className="column"
                       style={{ borderLeft: "solid 1px lightgray" }}
                     >
-                      <MembersLink to={`/research-areas/labs/${lab.id}/members`} />
-                      <PublicationsLink to={`/research-areas/labs/${lab.id}/publications`} />
+                      <MembersLink
+                        to={`/research-areas/labs/${lab.id}/members`}
+                      />
+                      <PublicationsLink
+                        to={`/research-areas/labs/${lab.id}/publications`}
+                      />
                       <EmailLink to={person.email} />
                     </div>
                   </div>
@@ -117,7 +122,7 @@ export default Labs
 
 export const pageQuery = graphql`
   query {
-    labs: allGroupsJson(filter: {type: {eq: "Lab"}}) {
+    labs: allGroupsJson(filter: { type: { eq: "Lab" } }) {
       edges {
         node {
           id

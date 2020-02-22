@@ -6,8 +6,6 @@
  */
 
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Publication from "./publication"
 import PublicationList from "./publicationlist"
 
 const PublicationYears = ({ publications, labMap, peopleMap, showLabLink }) => {
@@ -15,7 +13,7 @@ const PublicationYears = ({ publications, labMap, peopleMap, showLabLink }) => {
 
   for (let publication of publications) {
     if (!yearMap.has(publication.year)) {
-      yearMap.set(publication.year, new Array())
+      yearMap.set(publication.year, [])
     }
 
     yearMap.get(publication.year).push(publication)

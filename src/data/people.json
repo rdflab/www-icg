@@ -3,250 +3,141 @@
     "id": "swarnali-acharyya",
     "firstName": "Swarnali",
     "lastName": "Acharyya",
-    "titles": [
-      "Assistant Professor of Pathology and Cell Biology"
-    ],
+    "titles": ["Assistant Professor of Pathology and Cell Biology"],
     "email": "sa3141@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-4791",
-      "(212) 851-4792"
-    ],
-    "tags": [
-      "Faculty"
-    ],
-    "groups": [
-      "swarnali-acharyya"
-    ],
+    "phoneNumbers": ["(212) 851-4791", "(212) 851-4792"],
+    "tags": ["Faculty"],
+    "groups": ["swarnali-acharyya"],
     "type": "Faculty",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "402B"
   },
   {
     "id": "robert-albero",
     "firstName": "Robert",
     "lastName": "Albero",
-    "titles": [
-      "Postdoctoral Research Scientist"
-    ],
+    "titles": ["Postdoctoral Research Scientist"],
     "email": "",
     "phoneNumbers": [],
-    "tags": [
-      "Research Scientist"
-    ],
-    "groups": [
-      "adolfo-ferrando"
-    ],
+    "tags": ["Research Scientist"],
+    "groups": ["adolfo-ferrando"],
     "type": "Research Scientist",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": ""
   },
   {
     "id": "silvia-alvarez-nanez",
     "firstName": "Silvia",
     "lastName": "Alvarez Nanez",
-    "titles": [
-      "Postdoctoral Research Scientist"
-    ],
+    "titles": ["Postdoctoral Research Scientist"],
     "email": "sa3358@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-5292"
-    ],
-    "tags": [
-      "Research Scientist"
-    ],
-    "groups": [
-      "adolfo-ferrando"
-    ],
+    "phoneNumbers": ["(212) 851-5292"],
+    "tags": ["Research Scientist"],
+    "groups": ["adolfo-ferrando"],
     "type": "Research Scientist",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "401B"
   },
   {
     "id": "tomas-aparicio",
     "firstName": "Tomas",
     "lastName": "Aparicio",
-    "titles": [
-      "Associate Research Scientist"
-    ],
+    "titles": ["Associate Research Scientist"],
     "email": "ta2308@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-4566"
-    ],
-    "tags": [
-      "Research Scientist"
-    ],
-    "groups": [
-      "jean-gautier"
-    ],
+    "phoneNumbers": ["(212) 851-4566"],
+    "tags": ["Research Scientist"],
+    "groups": ["jean-gautier"],
     "type": "Research Scientist",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "602"
   },
   {
     "id": "marina-m-ayres-pereira",
     "firstName": "Marina M.",
     "lastName": "Ayres Pereira",
-    "titles": [
-      "Postdoctoral Fellow"
-    ],
+    "titles": ["Postdoctoral Fellow"],
     "email": "mma2246@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-4966"
-    ],
-    "tags": [
-      "Fellow",
-      "Research Scientist"
-    ],
-    "groups": [
-      "christine-chio"
-    ],
+    "phoneNumbers": ["(212) 851-4966"],
+    "tags": ["Fellow", "Research Scientist"],
+    "groups": ["christine-chio"],
     "type": "Research Scientist",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "505"
   },
   {
     "id": "richard-baer",
     "firstName": "Richard",
     "lastName": "Baer",
-    "titles": [
-      "Professor of Pathology and Cell Biology"
-    ],
+    "titles": ["Professor of Pathology and Cell Biology"],
     "email": "rb670@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-5275",
-      "(212) 851-5267"
-    ],
-    "tags": [
-      "Faculty"
-    ],
-    "groups": [
-      "richard-baer"
-    ],
+    "phoneNumbers": ["(212) 851-5275", "(212) 851-5267"],
+    "tags": ["Faculty"],
+    "groups": ["richard-baer"],
     "type": "Faculty",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "503A"
   },
   {
     "id": "elodie-bal",
     "firstName": "Elodie",
     "lastName": "Bal",
-    "titles": [
-      "Postdoctoral Research Scientist"
-    ],
+    "titles": ["Postdoctoral Research Scientist"],
     "email": "eb3151@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-5269"
-    ],
-    "tags": [
-      "Research Scientist"
-    ],
-    "groups": [
-      "riccardo-dalla-favera"
-    ],
+    "phoneNumbers": ["(212) 851-5269"],
+    "tags": ["Research Scientist"],
+    "groups": ["riccardo-dalla-favera"],
     "type": "Research Scientist",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "507"
   },
   {
     "id": "katia-basso",
     "firstName": "Katia",
     "lastName": "Basso",
-    "titles": [
-      "Assistant Professor of Pathology and Cell Biology"
-    ],
+    "titles": ["Assistant Professor of Pathology and Cell Biology"],
     "email": "kb451@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-4786"
-    ],
-    "tags": [
-      "Faculty"
-    ],
-    "groups": [
-      "riccardo-dalla-favera"
-    ],
+    "phoneNumbers": ["(212) 851-4786"],
+    "tags": ["Faculty"],
+    "groups": ["riccardo-dalla-favera"],
     "type": "Faculty",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "506"
   },
   {
     "id": "laura-belver-miguel",
     "firstName": "Laura",
     "lastName": "Belver-Miguel",
-    "titles": [
-      "Associate Research Scientist"
-    ],
+    "titles": ["Associate Research Scientist"],
     "email": "lb2878@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-5292"
-    ],
-    "tags": [
-      "Research Scientist"
-    ],
-    "groups": [
-      "adolfo-ferrando"
-    ],
+    "phoneNumbers": ["(212) 851-5292"],
+    "tags": ["Research Scientist"],
+    "groups": ["adolfo-ferrando"],
     "type": "Research Scientist",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "401B"
   },
   {
     "id": "anup-biswas",
     "firstName": "Anup",
     "lastName": "Biswas",
-    "titles": [
-      "Associate Research Scientist"
-    ],
+    "titles": ["Associate Research Scientist"],
     "email": "akb2180@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-4792"
-    ],
-    "tags": [
-      "Research Scientist"
-    ],
-    "groups": [
-      "swarnali-acharyya"
-    ],
+    "phoneNumbers": ["(212) 851-4792"],
+    "tags": ["Research Scientist"],
+    "groups": ["swarnali-acharyya"],
     "type": "Research Scientist",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "401A"
   },
   {
     "id": "karina-chan",
     "firstName": "Karina",
     "lastName": "Chan",
-    "titles": [
-      "Technician B"
-    ],
+    "titles": ["Technician B"],
     "email": "kmc@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-4966"
-    ],
-    "tags": [
-      "Staff"
-    ],
-    "groups": [
-      "christine-chio"
-    ],
+    "phoneNumbers": ["(212) 851-4966"],
+    "tags": ["Staff"],
+    "groups": ["christine-chio"],
     "type": "Staff",
     "postNominalLetters": [],
     "room": "505"
@@ -255,19 +146,11 @@
     "id": "liang-chang",
     "firstName": "Liang",
     "lastName": "Chang",
-    "titles": [
-      ""
-    ],
+    "titles": [""],
     "email": "",
-    "phoneNumbers": [
-      "(212) 851-4937"
-    ],
-    "tags": [
-      "Staff"
-    ],
-    "groups": [
-      "zhiguo-zhang"
-    ],
+    "phoneNumbers": ["(212) 851-4937"],
+    "tags": ["Staff"],
+    "groups": ["zhiguo-zhang"],
     "type": "Staff",
     "postNominalLetters": [],
     "room": "851-4937"
@@ -276,65 +159,37 @@
     "id": "delin-chen",
     "firstName": "Delin",
     "lastName": "Chen",
-    "titles": [
-      "Associate Research Scientist"
-    ],
+    "titles": ["Associate Research Scientist"],
     "email": "dc723@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-5285"
-    ],
-    "tags": [
-      "Research Scientist"
-    ],
-    "groups": [
-      "wei-gu"
-    ],
+    "phoneNumbers": ["(212) 851-5285"],
+    "tags": ["Research Scientist"],
+    "groups": ["wei-gu"],
     "type": "Research Scientist",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "608"
   },
   {
     "id": "christine-chio",
     "firstName": "Christine",
     "lastName": "Chio",
-    "titles": [
-      "Assistant Professor of Genetics and Development"
-    ],
+    "titles": ["Assistant Professor of Genetics and Development"],
     "email": "ic2445@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-4966"
-    ],
-    "tags": [
-      "Faculty"
-    ],
-    "groups": [
-      "christine-chio"
-    ],
+    "phoneNumbers": ["(212) 851-4966"],
+    "tags": ["Faculty"],
+    "groups": ["christine-chio"],
     "type": "Faculty",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "505"
   },
   {
     "id": "courtney-coker",
     "firstName": "Courtney",
     "lastName": "Coker",
-    "titles": [
-      "Staff Associate"
-    ],
+    "titles": ["Staff Associate"],
     "email": "cc3703@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-4792"
-    ],
-    "tags": [
-      "Staff"
-    ],
-    "groups": [
-      "swarnali-acharyya"
-    ],
+    "phoneNumbers": ["(212) 851-4792"],
+    "tags": ["Staff"],
+    "groups": ["swarnali-acharyya"],
     "type": "Staff",
     "postNominalLetters": [],
     "room": "401A"
@@ -343,19 +198,11 @@
     "id": "anisha-cooke",
     "firstName": "Anisha",
     "lastName": "Cooke",
-    "titles": [
-      "Techinican B"
-    ],
+    "titles": ["Techinican B"],
     "email": "aa3276@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-5292"
-    ],
-    "tags": [
-      "Staff"
-    ],
-    "groups": [
-      "adolfo-ferrando"
-    ],
+    "phoneNumbers": ["(212) 851-5292"],
+    "tags": ["Staff"],
+    "groups": ["adolfo-ferrando"],
     "type": "Staff",
     "postNominalLetters": [],
     "room": "401B"
@@ -364,48 +211,26 @@
     "id": "clarissa-corinaldesi",
     "firstName": "Clarissa",
     "lastName": "Corinaldesi",
-    "titles": [
-      "Postdoctoral Research Scientist"
-    ],
+    "titles": ["Postdoctoral Research Scientist"],
     "email": "cc4308@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-5269"
-    ],
-    "tags": [
-      "Research Scientist"
-    ],
-    "groups": [
-      "riccardo-dalla-favera"
-    ],
+    "phoneNumbers": ["(212) 851-5269"],
+    "tags": ["Research Scientist"],
+    "groups": ["riccardo-dalla-favera"],
     "type": "Research Scientist",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "507"
   },
   {
     "id": "fulvio-d'angelo",
     "firstName": "Fulvio",
     "lastName": "D'Angelo",
-    "titles": [
-      "Postdoctoral Research Scientist"
-    ],
+    "titles": ["Postdoctoral Research Scientist"],
     "email": "fd2396@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-5287"
-    ],
-    "tags": [
-      "Research Scientist",
-      "Research Scientist"
-    ],
-    "groups": [
-      "anna-lasorella",
-      "antonio-iavarone"
-    ],
+    "phoneNumbers": ["(212) 851-5287"],
+    "tags": ["Research Scientist", "Research Scientist"],
+    "groups": ["anna-lasorella", "antonio-iavarone"],
     "type": "Research Scientist",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "403"
   },
   {
@@ -416,39 +241,22 @@
       "Professor of Pathology and Cell Biology, Genetics and Development and Microbiology and Immunology"
     ],
     "email": "rd10@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-5273",
-      "(212) 851-5256"
-    ],
-    "tags": [
-      "Faculty"
-    ],
-    "groups": [
-      "riccardo-dalla-favera"
-    ],
+    "phoneNumbers": ["(212) 851-5273", "(212) 851-5256"],
+    "tags": ["Faculty"],
+    "groups": ["riccardo-dalla-favera"],
     "type": "Faculty",
-    "postNominalLetters": [
-      "MD"
-    ],
+    "postNominalLetters": ["MD"],
     "room": "508A"
   },
   {
     "id": "chelsea-dieck",
     "firstName": "Chelsea",
     "lastName": "Dieck",
-    "titles": [
-      "Graduate Student Integrated PhD Program"
-    ],
+    "titles": ["Graduate Student Integrated PhD Program"],
     "email": "cld2151@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-5292"
-    ],
-    "tags": [
-      "Graduate Student"
-    ],
-    "groups": [
-      "adolfo-ferrando"
-    ],
+    "phoneNumbers": ["(212) 851-5292"],
+    "tags": ["Graduate Student"],
+    "groups": ["adolfo-ferrando"],
     "type": "Graduate Student",
     "postNominalLetters": [],
     "room": "401B"
@@ -457,25 +265,13 @@
     "id": "tala-fnu",
     "firstName": "Tala",
     "lastName": "FNU",
-    "titles": [
-      "Postdoctoral Research Scientist"
-    ],
+    "titles": ["Postdoctoral Research Scientist"],
     "email": "af2739@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-5287"
-    ],
-    "tags": [
-      "Research Scientist",
-      "Research Scientist"
-    ],
-    "groups": [
-      "anna-lasorella",
-      "antonio-iavarone"
-    ],
+    "phoneNumbers": ["(212) 851-5287"],
+    "tags": ["Research Scientist", "Research Scientist"],
+    "groups": ["anna-lasorella", "antonio-iavarone"],
     "type": "Research Scientist",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "403"
   },
   {
@@ -486,43 +282,24 @@
       "Associate Professor of Pediatrics and Pathology and Cell Biology"
     ],
     "email": "af2196@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-4611"
-    ],
-    "tags": [
-      "Faculty"
-    ],
-    "groups": [
-      "adolfo-ferrando"
-    ],
+    "phoneNumbers": ["(212) 851-4611"],
+    "tags": ["Faculty"],
+    "groups": ["adolfo-ferrando"],
     "type": "Faculty",
-    "postNominalLetters": [
-      "MD",
-      "PhD"
-    ],
+    "postNominalLetters": ["MD", "PhD"],
     "room": "402A"
   },
   {
     "id": "ishdorj-ganchimeg",
     "firstName": "Ishdorj",
     "lastName": "Ganchimeg",
-    "titles": [
-      "Postdoctoral Research Scientist"
-    ],
+    "titles": ["Postdoctoral Research Scientist"],
     "email": "dx2118@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-4622"
-    ],
-    "tags": [
-      "Research Scientist"
-    ],
-    "groups": [
-      "murty-vundavalli"
-    ],
+    "phoneNumbers": ["(212) 851-4622"],
+    "tags": ["Research Scientist"],
+    "groups": ["murty-vundavalli"],
     "type": "Research Scientist",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "605"
   },
   {
@@ -534,109 +311,61 @@
       "Postdoctoral Research Scientist start July/August"
     ],
     "email": "lg2485@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-5287"
-    ],
-    "tags": [
-      "Research Scientist",
-      "Research Scientist"
-    ],
-    "groups": [
-      "anna-lasorella",
-      "antonio-iavarone"
-    ],
+    "phoneNumbers": ["(212) 851-5287"],
+    "tags": ["Research Scientist", "Research Scientist"],
+    "groups": ["anna-lasorella", "antonio-iavarone"],
     "type": "Research Scientist",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "403"
   },
   {
     "id": "jean-gautier",
     "firstName": "Jean",
     "lastName": "Gautier",
-    "titles": [
-      "Professor of Genetics and Development"
-    ],
+    "titles": ["Professor of Genetics and Development"],
     "email": "jg130@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-4564"
-    ],
-    "tags": [
-      "Faculty"
-    ],
-    "groups": [
-      "jean-gautier"
-    ],
+    "phoneNumbers": ["(212) 851-4564"],
+    "tags": ["Faculty"],
+    "groups": ["jean-gautier"],
     "type": "Faculty",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "603A"
   },
   {
     "id": "francesca-gianni",
     "firstName": "Francesca",
     "lastName": "Gianni",
-    "titles": [
-      "Postdoctoral Research Fellow"
-    ],
+    "titles": ["Postdoctoral Research Fellow"],
     "email": "fg2442@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-5292"
-    ],
-    "tags": [
-      "Fellow",
-      "Research Scientist"
-    ],
-    "groups": [
-      "adolfo-ferrando"
-    ],
+    "phoneNumbers": ["(212) 851-5292"],
+    "tags": ["Fellow", "Research Scientist"],
+    "groups": ["adolfo-ferrando"],
     "type": "Research Scientist",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "401B"
   },
   {
     "id": "wei-gu",
     "firstName": "Wei",
     "lastName": "Gu",
-    "titles": [
-      "Professor of Pathology and Cell Biology"
-    ],
+    "titles": ["Professor of Pathology and Cell Biology"],
     "email": "wg8@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-5282",
-      "(212) 851-5284"
-    ],
-    "tags": [
-      "Faculty"
-    ],
-    "groups": [
-      "wei-gu"
-    ],
+    "phoneNumbers": ["(212) 851-5282", "(212) 851-5284"],
+    "tags": ["Faculty"],
+    "groups": ["wei-gu"],
     "type": "Faculty",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "609A"
   },
   {
     "id": "thomas-gunning",
     "firstName": "Thomas",
     "lastName": "Gunning",
-    "titles": [
-      "Technician B"
-    ],
+    "titles": ["Technician B"],
     "email": "",
     "phoneNumbers": [],
-    "tags": [
-      "Staff"
-    ],
-    "groups": [
-      "adolfo-ferrando"
-    ],
+    "tags": ["Staff"],
+    "groups": ["adolfo-ferrando"],
     "type": "Staff",
     "postNominalLetters": [],
     "room": ""
@@ -645,19 +374,11 @@
     "id": "devya-gurung",
     "firstName": "Devya",
     "lastName": "Gurung",
-    "titles": [
-      "Technician B"
-    ],
+    "titles": ["Technician B"],
     "email": "dg3043@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-5292"
-    ],
-    "tags": [
-      "Staff"
-    ],
-    "groups": [
-      "adolfo-ferrando"
-    ],
+    "phoneNumbers": ["(212) 851-5292"],
+    "tags": ["Staff"],
+    "groups": ["adolfo-ferrando"],
     "type": "Staff",
     "postNominalLetters": [],
     "room": "401B"
@@ -666,19 +387,11 @@
     "id": "seoyoung-han",
     "firstName": "Seoyoung",
     "lastName": "Han",
-    "titles": [
-      "Graduate student"
-    ],
+    "titles": ["Graduate student"],
     "email": "sh3844@columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-4792"
-    ],
-    "tags": [
-      "Graduate Student"
-    ],
-    "groups": [
-      "swarnali-acharyya"
-    ],
+    "phoneNumbers": ["(212) 851-4792"],
+    "tags": ["Graduate Student"],
+    "groups": ["swarnali-acharyya"],
     "type": "Graduate Student",
     "postNominalLetters": [],
     "room": "401A"
@@ -687,19 +400,11 @@
     "id": "rohaan-hegde",
     "firstName": "Rohaan",
     "lastName": "Hegde",
-    "titles": [
-      "Undergraduate student"
-    ],
+    "titles": ["Undergraduate student"],
     "email": "",
-    "phoneNumbers": [
-      "(212) 851-4792"
-    ],
-    "tags": [
-      "Graduate Student"
-    ],
-    "groups": [
-      "swarnali-acharyya"
-    ],
+    "phoneNumbers": ["(212) 851-4792"],
+    "tags": ["Graduate Student"],
+    "groups": ["swarnali-acharyya"],
     "type": "Graduate Student",
     "postNominalLetters": [],
     "room": "401A"
@@ -708,90 +413,50 @@
     "id": "antony-holmes",
     "firstName": "Antony",
     "lastName": "Holmes",
-    "titles": [
-      "Associate Research Scientist"
-    ],
+    "titles": ["Associate Research Scientist"],
     "email": "abh2138@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-5269"
-    ],
-    "tags": [
-      "Research Scientist"
-    ],
-    "groups": [
-      "riccardo-dalla-favera"
-    ],
+    "phoneNumbers": ["(212) 851-5269"],
+    "tags": ["Research Scientist"],
+    "groups": ["riccardo-dalla-favera"],
     "type": "Research Scientist",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "507"
   },
   {
     "id": "xu-hua",
     "firstName": "Xu",
     "lastName": "Hua",
-    "titles": [
-      "Postdoctoral Research Scientist"
-    ],
+    "titles": ["Postdoctoral Research Scientist"],
     "email": "xh2387@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-4937"
-    ],
-    "tags": [
-      "Research Scientist"
-    ],
-    "groups": [
-      "zhiguo-zhang"
-    ],
+    "phoneNumbers": ["(212) 851-4937"],
+    "tags": ["Research Scientist"],
+    "groups": ["zhiguo-zhang"],
     "type": "Research Scientist",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "851-4937"
   },
   {
     "id": "antonio-iavarone",
     "firstName": "Antonio",
     "lastName": "Iavarone",
-    "titles": [
-      "Professor of Neurology and Pathology and Cell Biology"
-    ],
+    "titles": ["Professor of Neurology and Pathology and Cell Biology"],
     "email": "ai2102@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-5245"
-    ],
-    "tags": [
-      "Faculty",
-      "Faculty"
-    ],
-    "groups": [
-      "anna-lasorella",
-      "antonio-iavarone"
-    ],
+    "phoneNumbers": ["(212) 851-5245"],
+    "tags": ["Faculty", "Faculty"],
+    "groups": ["anna-lasorella", "antonio-iavarone"],
     "type": "Faculty",
-    "postNominalLetters": [
-      "MD"
-    ],
+    "postNominalLetters": ["MD"],
     "room": "407B"
   },
   {
     "id": "xiangyi-ke",
     "firstName": "Xiangyi",
     "lastName": "Ke",
-    "titles": [
-      "Graduate Student"
-    ],
+    "titles": ["Graduate Student"],
     "email": "xk2138@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-4966"
-    ],
-    "tags": [
-      "Graduate Student"
-    ],
-    "groups": [
-      "christine-chio"
-    ],
+    "phoneNumbers": ["(212) 851-4966"],
+    "tags": ["Graduate Student"],
+    "groups": ["christine-chio"],
     "type": "Graduate Student",
     "postNominalLetters": [],
     "room": "505"
@@ -800,19 +465,11 @@
     "id": "sean-kim",
     "firstName": "Sean",
     "lastName": "Kim",
-    "titles": [
-      "Undergraduate student"
-    ],
+    "titles": ["Undergraduate student"],
     "email": "",
-    "phoneNumbers": [
-      "(212) 851-4792"
-    ],
-    "tags": [
-      "Graduate Student"
-    ],
-    "groups": [
-      "swarnali-acharyya"
-    ],
+    "phoneNumbers": ["(212) 851-4792"],
+    "tags": ["Graduate Student"],
+    "groups": ["swarnali-acharyya"],
     "type": "Graduate Student",
     "postNominalLetters": [],
     "room": "401A"
@@ -821,48 +478,26 @@
     "id": "aram-ko",
     "firstName": "Aram",
     "lastName": "Ko",
-    "titles": [
-      "Postdoctoral Research Scientist"
-    ],
+    "titles": ["Postdoctoral Research Scientist"],
     "email": "ak4236@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-5287"
-    ],
-    "tags": [
-      "Research Scientist",
-      "Research Scientist"
-    ],
-    "groups": [
-      "anna-lasorella",
-      "antonio-iavarone"
-    ],
+    "phoneNumbers": ["(212) 851-5287"],
+    "tags": ["Research Scientist", "Research Scientist"],
+    "groups": ["anna-lasorella", "antonio-iavarone"],
     "type": "Research Scientist",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "403"
   },
   {
     "id": "ning-kon",
     "firstName": "Ning",
     "lastName": "Kon",
-    "titles": [
-      "Associate Research Scientist"
-    ],
+    "titles": ["Associate Research Scientist"],
     "email": "nk2139@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-5285"
-    ],
-    "tags": [
-      "Research Scientist"
-    ],
-    "groups": [
-      "wei-gu"
-    ],
+    "phoneNumbers": ["(212) 851-5285"],
+    "tags": ["Research Scientist"],
+    "groups": ["wei-gu"],
     "type": "Research Scientist",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "608"
   },
   {
@@ -874,40 +509,22 @@
       "Professor of Pediatrics and Pathology and Cell Biology"
     ],
     "email": "al2179@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-5240"
-    ],
-    "tags": [
-      "Faculty",
-      "Staff"
-    ],
-    "groups": [
-      "anna-lasorella",
-      "antonio-iavarone"
-    ],
+    "phoneNumbers": ["(212) 851-5240"],
+    "tags": ["Faculty", "Staff"],
+    "groups": ["anna-lasorella", "antonio-iavarone"],
     "type": "Staff",
-    "postNominalLetters": [
-      "MD"
-    ],
+    "postNominalLetters": ["MD"],
     "room": "404"
   },
   {
     "id": "brian-lee",
     "firstName": "Brian",
     "lastName": "Lee",
-    "titles": [
-      "Technician B"
-    ],
+    "titles": ["Technician B"],
     "email": "bl2530@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-4785"
-    ],
-    "tags": [
-      "Staff"
-    ],
-    "groups": [
-      "shan-zha"
-    ],
+    "phoneNumbers": ["(212) 851-4785"],
+    "tags": ["Staff"],
+    "groups": ["shan-zha"],
     "type": "Staff",
     "postNominalLetters": [],
     "room": "501"
@@ -916,17 +533,11 @@
     "id": "huan-li",
     "firstName": "Huan",
     "lastName": "Li",
-    "titles": [
-      "Staff Associate"
-    ],
+    "titles": ["Staff Associate"],
     "email": "hl2977@cumc.columbia.edu",
     "phoneNumbers": [],
-    "tags": [
-      "Staff"
-    ],
-    "groups": [
-      "wei-gu"
-    ],
+    "tags": ["Staff"],
+    "groups": ["wei-gu"],
     "type": "Staff",
     "postNominalLetters": [],
     "room": ""
@@ -935,19 +546,11 @@
     "id": "zhiming-li",
     "firstName": "Zhiming",
     "lastName": "Li",
-    "titles": [
-      ""
-    ],
+    "titles": [""],
     "email": "",
-    "phoneNumbers": [
-      "(212) 851-4937"
-    ],
-    "tags": [
-      "Staff"
-    ],
-    "groups": [
-      "zhiguo-zhang"
-    ],
+    "phoneNumbers": ["(212) 851-4937"],
+    "tags": ["Staff"],
+    "groups": ["zhiguo-zhang"],
     "type": "Staff",
     "postNominalLetters": [],
     "room": "851-4937"
@@ -956,19 +559,11 @@
     "id": "andrew-liebau",
     "firstName": "Andrew",
     "lastName": "Liebau",
-    "titles": [
-      "Graduate Student"
-    ],
+    "titles": ["Graduate Student"],
     "email": "awl2142@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-4566"
-    ],
-    "tags": [
-      "Graduate Student"
-    ],
-    "groups": [
-      "jean-gautier"
-    ],
+    "phoneNumbers": ["(212) 851-4566"],
+    "tags": ["Graduate Student"],
+    "groups": ["jean-gautier"],
     "type": "Graduate Student",
     "postNominalLetters": [],
     "room": "602"
@@ -977,19 +572,11 @@
     "id": "wanchao-ma",
     "firstName": "Wanchao",
     "lastName": "Ma",
-    "titles": [
-      "Senior Staff Associate"
-    ],
+    "titles": ["Senior Staff Associate"],
     "email": "wm49@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-4792"
-    ],
-    "tags": [
-      "Staff"
-    ],
-    "groups": [
-      "swarnali-acharyya"
-    ],
+    "phoneNumbers": ["(212) 851-4792"],
+    "tags": ["Staff"],
+    "groups": ["swarnali-acharyya"],
     "type": "Staff",
     "postNominalLetters": [],
     "room": "401A"
@@ -998,19 +585,11 @@
     "id": "adam-mackey",
     "firstName": "Adam",
     "lastName": "Mackey",
-    "titles": [
-      "Senior Technician"
-    ],
+    "titles": ["Senior Technician"],
     "email": "alm2283@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-5292"
-    ],
-    "tags": [
-      "Staff"
-    ],
-    "groups": [
-      "adolfo-ferrando"
-    ],
+    "phoneNumbers": ["(212) 851-5292"],
+    "tags": ["Staff"],
+    "groups": ["adolfo-ferrando"],
     "type": "Staff",
     "postNominalLetters": [],
     "room": "401B"
@@ -1019,89 +598,50 @@
     "id": "demis-menolfi",
     "firstName": "Demis",
     "lastName": "Menolfi",
-    "titles": [
-      "Postdoctoral Research Scientist"
-    ],
+    "titles": ["Postdoctoral Research Scientist"],
     "email": "dm3231@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-4785"
-    ],
-    "tags": [
-      "Research Scientist"
-    ],
-    "groups": [
-      "shan-zha"
-    ],
+    "phoneNumbers": ["(212) 851-4785"],
+    "tags": ["Research Scientist"],
+    "groups": ["shan-zha"],
     "type": "Research Scientist",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "501"
   },
   {
     "id": "stefanie-meyer",
     "firstName": "Stefanie",
     "lastName": "Meyer",
-    "titles": [
-      "Postdoctoral Research Fellow"
-    ],
+    "titles": ["Postdoctoral Research Fellow"],
     "email": "snm2143@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-5269"
-    ],
-    "tags": [
-      "Fellow",
-      "Research Scientist"
-    ],
-    "groups": [
-      "riccardo-dalla-favera"
-    ],
+    "phoneNumbers": ["(212) 851-5269"],
+    "tags": ["Fellow", "Research Scientist"],
+    "groups": ["riccardo-dalla-favera"],
     "type": "Research Scientist",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "507"
   },
   {
     "id": "maja-milanovic",
     "firstName": "Maja",
     "lastName": "Milanovic",
-    "titles": [
-      "Postdoctoral Research Scientist"
-    ],
+    "titles": ["Postdoctoral Research Scientist"],
     "email": "mm4619@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-4785"
-    ],
-    "tags": [
-      "Research Scientist"
-    ],
-    "groups": [
-      "shan-zha"
-    ],
+    "phoneNumbers": ["(212) 851-4785"],
+    "tags": ["Research Scientist"],
+    "groups": ["shan-zha"],
     "type": "Research Scientist",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "501"
   },
   {
     "id": "tongwei-mo",
     "firstName": "Tongwei",
     "lastName": "Mo",
-    "titles": [
-      "Senior Research Worker"
-    ],
+    "titles": ["Senior Research Worker"],
     "email": "tm2015@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-5270"
-    ],
-    "tags": [
-      "Staff"
-    ],
-    "groups": [
-      "riccardo-dalla-favera"
-    ],
+    "phoneNumbers": ["(212) 851-5270"],
+    "tags": ["Staff"],
+    "groups": ["riccardo-dalla-favera"],
     "type": "Staff",
     "postNominalLetters": [],
     "room": "507"
@@ -1110,42 +650,24 @@
     "id": "yan-mo",
     "firstName": "Yan",
     "lastName": "Mo",
-    "titles": [
-      "Postdoctoral Research Scientist"
-    ],
+    "titles": ["Postdoctoral Research Scientist"],
     "email": "ym2667@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-4937"
-    ],
-    "tags": [
-      "Research Scientist"
-    ],
-    "groups": [
-      "zhiguo-zhang"
-    ],
+    "phoneNumbers": ["(212) 851-4937"],
+    "tags": ["Research Scientist"],
+    "groups": ["zhiguo-zhang"],
     "type": "Research Scientist",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "851-4937"
   },
   {
     "id": "christine-moon",
     "firstName": "Christine",
     "lastName": "Moon",
-    "titles": [
-      "Graduate Research Associate"
-    ],
+    "titles": ["Graduate Research Associate"],
     "email": "csk2127@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-5292"
-    ],
-    "tags": [
-      "Graduate Student"
-    ],
-    "groups": [
-      "adolfo-ferrando"
-    ],
+    "phoneNumbers": ["(212) 851-5292"],
+    "tags": ["Graduate Student"],
+    "groups": ["adolfo-ferrando"],
     "type": "Graduate Student",
     "postNominalLetters": [],
     "room": "401B"
@@ -1154,134 +676,76 @@
     "id": "lucia-morgado-palacin",
     "firstName": "Lucia",
     "lastName": "Morgado-Palacin",
-    "titles": [
-      "Postdoctoral Research Scientist"
-    ],
+    "titles": ["Postdoctoral Research Scientist"],
     "email": "lm3230@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-5292"
-    ],
-    "tags": [
-      "Research Scientist"
-    ],
-    "groups": [
-      "adolfo-ferrando"
-    ],
+    "phoneNumbers": ["(212) 851-5292"],
+    "tags": ["Research Scientist"],
+    "groups": ["adolfo-ferrando"],
     "type": "Research Scientist",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "401B"
   },
   {
     "id": "teresa-palomero",
     "firstName": "Teresa",
     "lastName": "Palomero",
-    "titles": [
-      "Associate Professor of Clinical Pathology"
-    ],
+    "titles": ["Associate Professor of Clinical Pathology"],
     "email": "tp2151@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-4778"
-    ],
-    "tags": [
-      "Faculty"
-    ],
-    "groups": [
-      "adolfo-ferrando"
-    ],
+    "phoneNumbers": ["(212) 851-4778"],
+    "tags": ["Faculty"],
+    "groups": ["adolfo-ferrando"],
     "type": "Faculty",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "401B"
   },
   {
     "id": "laura-pasqualucci",
     "firstName": "Laura",
     "lastName": "Pasqualucci",
-    "titles": [
-      "Professor of Clinical Pathology"
-    ],
+    "titles": ["Professor of Clinical Pathology"],
     "email": "lp171@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-4792"
-    ],
-    "tags": [
-      "Faculty"
-    ],
-    "groups": [
-      "riccardo-dalla-favera"
-    ],
+    "phoneNumbers": ["(212) 851-4792"],
+    "tags": ["Faculty"],
+    "groups": ["riccardo-dalla-favera"],
     "type": "Faculty",
-    "postNominalLetters": [
-      "MD"
-    ],
+    "postNominalLetters": ["MD"],
     "room": "507B"
   },
   {
     "id": "nanfang-peng",
     "firstName": "Nanfang",
     "lastName": "Peng",
-    "titles": [
-      "Postdoctoral Research Scientist"
-    ],
+    "titles": ["Postdoctoral Research Scientist"],
     "email": "np2599@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-5287"
-    ],
-    "tags": [
-      "Research Scientist"
-    ],
-    "groups": [
-      "anna-lasorella"
-    ],
+    "phoneNumbers": ["(212) 851-5287"],
+    "tags": ["Research Scientist"],
+    "groups": ["anna-lasorella"],
     "type": "Research Scientist",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "403"
   },
   {
     "id": "pablo-perez-duran",
     "firstName": "Pablo",
     "lastName": "Perez-Duran",
-    "titles": [
-      "Postdoctoral Research Scientist"
-    ],
+    "titles": ["Postdoctoral Research Scientist"],
     "email": "pp2569@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-5292"
-    ],
-    "tags": [
-      "Research Scientist"
-    ],
-    "groups": [
-      "adolfo-ferrando"
-    ],
+    "phoneNumbers": ["(212) 851-5292"],
+    "tags": ["Research Scientist"],
+    "groups": ["adolfo-ferrando"],
     "type": "Research Scientist",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "401B"
   },
   {
     "id": "sofija-powers",
     "firstName": "Sofija",
     "lastName": "Powers",
-    "titles": [
-      "Research Worker"
-    ],
+    "titles": ["Research Worker"],
     "email": "sv2458@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-5270"
-    ],
-    "tags": [
-      "Staff"
-    ],
-    "groups": [
-      "riccardo-dalla-favera"
-    ],
+    "phoneNumbers": ["(212) 851-5270"],
+    "tags": ["Staff"],
+    "groups": ["riccardo-dalla-favera"],
     "type": "Staff",
     "postNominalLetters": [],
     "room": "507"
@@ -1290,19 +754,11 @@
     "id": "aidan-stuart-quinn",
     "firstName": "Aidan Stuart",
     "lastName": "Quinn",
-    "titles": [
-      "Graduate Student"
-    ],
+    "titles": ["Graduate Student"],
     "email": "saq2106@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-5292"
-    ],
-    "tags": [
-      "Graduate Student"
-    ],
-    "groups": [
-      "adolfo-ferrando"
-    ],
+    "phoneNumbers": ["(212) 851-5292"],
+    "tags": ["Graduate Student"],
+    "groups": ["adolfo-ferrando"],
     "type": "Graduate Student",
     "postNominalLetters": [],
     "room": "401B"
@@ -1311,89 +767,50 @@
     "id": "marissa-rashkovan",
     "firstName": "Marissa",
     "lastName": "Rashkovan",
-    "titles": [
-      "Postdoctoral Research Fellow"
-    ],
+    "titles": ["Postdoctoral Research Fellow"],
     "email": "mr3694@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-5292"
-    ],
-    "tags": [
-      "Fellow",
-      "Research Scientist"
-    ],
-    "groups": [
-      "adolfo-ferrando"
-    ],
+    "phoneNumbers": ["(212) 851-5292"],
+    "tags": ["Fellow", "Research Scientist"],
+    "groups": ["adolfo-ferrando"],
     "type": "Research Scientist",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "401B"
   },
   {
     "id": "clara-reglero-gomez",
     "firstName": "Clara",
     "lastName": "Reglero Gomez",
-    "titles": [
-      "Postdoctoral Research Scientist"
-    ],
+    "titles": ["Postdoctoral Research Scientist"],
     "email": "cr3023@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-5292"
-    ],
-    "tags": [
-      "Research Scientist"
-    ],
-    "groups": [
-      "adolfo-ferrando"
-    ],
+    "phoneNumbers": ["(212) 851-5292"],
+    "tags": ["Research Scientist"],
+    "groups": ["adolfo-ferrando"],
     "type": "Research Scientist",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "401B"
   },
   {
     "id": "jose-rodriguez-cortes",
     "firstName": "Jose",
     "lastName": "Rodriguez-Cortes",
-    "titles": [
-      "Postdoctoral Research Scientist"
-    ],
+    "titles": ["Postdoctoral Research Scientist"],
     "email": "jr3434@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-5292"
-    ],
-    "tags": [
-      "Research Scientist"
-    ],
-    "groups": [
-      "adolfo-ferrando"
-    ],
+    "phoneNumbers": ["(212) 851-5292"],
+    "tags": ["Research Scientist"],
+    "groups": ["adolfo-ferrando"],
     "type": "Research Scientist",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "401B"
   },
   {
     "id": "benjamin-schrank",
     "firstName": "Benjamin",
     "lastName": "Schrank",
-    "titles": [
-      "Graduate Student"
-    ],
+    "titles": ["Graduate Student"],
     "email": "brs2144@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-4566"
-    ],
-    "tags": [
-      "Graduate Student"
-    ],
-    "groups": [
-      "jean-gautier"
-    ],
+    "phoneNumbers": ["(212) 851-4566"],
+    "tags": ["Graduate Student"],
+    "groups": ["jean-gautier"],
     "type": "Graduate Student",
     "postNominalLetters": [],
     "room": "602"
@@ -1402,113 +819,63 @@
     "id": "claudio-scuoppo",
     "firstName": "Claudio",
     "lastName": "Scuoppo",
-    "titles": [
-      "Instructor"
-    ],
+    "titles": ["Instructor"],
     "email": "cs3064@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-5270"
-    ],
-    "tags": [
-      "Research Scientist"
-    ],
-    "groups": [
-      "riccardo-dalla-favera"
-    ],
+    "phoneNumbers": ["(212) 851-5270"],
+    "tags": ["Research Scientist"],
+    "groups": ["riccardo-dalla-favera"],
     "type": "Research Scientist",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "507"
   },
   {
     "id": "albert-serra-cardona",
     "firstName": "Albert",
     "lastName": "Serra-Cardona",
-    "titles": [
-      "Postdoctoral Research Scientist"
-    ],
+    "titles": ["Postdoctoral Research Scientist"],
     "email": "as5251@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-4937"
-    ],
-    "tags": [
-      "Research Scientist"
-    ],
-    "groups": [
-      "zhiguo-zhang"
-    ],
+    "phoneNumbers": ["(212) 851-4937"],
+    "tags": ["Research Scientist"],
+    "groups": ["zhiguo-zhang"],
     "type": "Research Scientist",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "407"
   },
   {
     "id": "rushdi-shakri",
     "firstName": "Rushdi",
     "lastName": "Shakri",
-    "titles": [
-      "Postdoctoral fellow"
-    ],
+    "titles": ["Postdoctoral fellow"],
     "email": "as5797@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-4792"
-    ],
-    "tags": [
-      "Fellow",
-      "Research Scientist"
-    ],
-    "groups": [
-      "swarnali-acharyya"
-    ],
+    "phoneNumbers": ["(212) 851-4792"],
+    "tags": ["Fellow", "Research Scientist"],
+    "groups": ["swarnali-acharyya"],
     "type": "Research Scientist",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "401A"
   },
   {
     "id": "zhengping-shao",
     "firstName": "Zhengping",
     "lastName": "Shao",
-    "titles": [
-      "Postdoctoral Research Scientist"
-    ],
+    "titles": ["Postdoctoral Research Scientist"],
     "email": "zs2275@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-4785"
-    ],
-    "tags": [
-      "Research Scientist"
-    ],
-    "groups": [
-      "shan-zha"
-    ],
+    "phoneNumbers": ["(212) 851-4785"],
+    "tags": ["Research Scientist"],
+    "groups": ["shan-zha"],
     "type": "Research Scientist",
-    "postNominalLetters": [
-      "MD",
-      "PhD"
-    ],
+    "postNominalLetters": ["MD", "PhD"],
     "room": "501"
   },
   {
     "id": "qiong-shen",
     "firstName": "Qiong",
     "lastName": "Shen",
-    "titles": [
-      "Senior Staff Associate"
-    ],
+    "titles": ["Senior Staff Associate"],
     "email": "qs4@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-5270"
-    ],
-    "tags": [
-      "Staff"
-    ],
-    "groups": [
-      "riccardo-dalla-favera"
-    ],
+    "phoneNumbers": ["(212) 851-5270"],
+    "tags": ["Staff"],
+    "groups": ["riccardo-dalla-favera"],
     "type": "Staff",
     "postNominalLetters": [],
     "room": "507"
@@ -1517,140 +884,76 @@
     "id": "peiguo-shi",
     "firstName": "Peiguo",
     "lastName": "Shi",
-    "titles": [
-      "Postdoctoral Research Scientist"
-    ],
+    "titles": ["Postdoctoral Research Scientist"],
     "email": "ps3008@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-5287"
-    ],
-    "tags": [
-      "Research Scientist",
-      "Research Scientist"
-    ],
-    "groups": [
-      "anna-lasorella",
-      "antonio-iavarone"
-    ],
+    "phoneNumbers": ["(212) 851-5287"],
+    "tags": ["Research Scientist", "Research Scientist"],
+    "groups": ["anna-lasorella", "antonio-iavarone"],
     "type": "Research Scientist",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "403"
   },
   {
     "id": "gaganpreet-sidhu",
     "firstName": "Gaganpreet",
     "lastName": "Sidhu",
-    "titles": [
-      "Postdoctoral Research Scientist"
-    ],
+    "titles": ["Postdoctoral Research Scientist"],
     "email": "gs2732@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-4566"
-    ],
-    "tags": [
-      "Research Scientist"
-    ],
-    "groups": [
-      "jean-gautier"
-    ],
+    "phoneNumbers": ["(212) 851-4566"],
+    "tags": ["Research Scientist"],
+    "groups": ["jean-gautier"],
     "type": "Research Scientist",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "602"
   },
   {
     "id": "shujuan-song",
     "firstName": "Shujuan",
     "lastName": "Song",
-    "titles": [
-      "Visiting Scientist"
-    ],
+    "titles": ["Visiting Scientist"],
     "email": "ss5519@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-5285"
-    ],
-    "tags": [
-      "Staff"
-    ],
-    "groups": [
-      "wei-gu"
-    ],
+    "phoneNumbers": ["(212) 851-5285"],
+    "tags": ["Staff"],
+    "groups": ["wei-gu"],
     "type": "Staff",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "608"
   },
   {
     "id": "zhenyi-su",
     "firstName": "Zhenyi",
     "lastName": "Su",
-    "titles": [
-      "Postdoctoral Research Scientist"
-    ],
+    "titles": ["Postdoctoral Research Scientist"],
     "email": "zs2391@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-5285"
-    ],
-    "tags": [
-      "Research Scientist"
-    ],
-    "groups": [
-      "wei-gu"
-    ],
+    "phoneNumbers": ["(212) 851-5285"],
+    "tags": ["Research Scientist"],
+    "groups": ["wei-gu"],
     "type": "Research Scientist",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "608"
   },
   {
     "id": "luca-szalontay",
     "firstName": "Luca",
     "lastName": "Szalontay",
-    "titles": [
-      "Clinical Fellow NYP/CUMC"
-    ],
+    "titles": ["Clinical Fellow NYP/CUMC"],
     "email": "ls3399@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-5287"
-    ],
-    "tags": [
-      "Fellow",
-      "Research Scientist",
-      "Fellow",
-      "Research Scientist"
-    ],
-    "groups": [
-      "anna-lasorella",
-      "antonio-iavarone"
-    ],
+    "phoneNumbers": ["(212) 851-5287"],
+    "tags": ["Fellow", "Research Scientist", "Fellow", "Research Scientist"],
+    "groups": ["anna-lasorella", "antonio-iavarone"],
     "type": "Research Scientist",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "403"
   },
   {
     "id": "hongyan-tang",
     "firstName": "Hongyan",
     "lastName": "Tang",
-    "titles": [
-      "Staff Associate"
-    ],
+    "titles": ["Staff Associate"],
     "email": "ht2130@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-5270"
-    ],
-    "tags": [
-      "Staff"
-    ],
-    "groups": [
-      "riccardo-dalla-favera"
-    ],
+    "phoneNumbers": ["(212) 851-5270"],
+    "tags": ["Staff"],
+    "groups": ["riccardo-dalla-favera"],
     "type": "Staff",
     "postNominalLetters": [],
     "room": "507"
@@ -1659,40 +962,24 @@
     "id": "yu-tao",
     "firstName": "Yu",
     "lastName": "Tao",
-    "titles": [
-      "Postdoctoral Research Scientist"
-    ],
+    "titles": ["Postdoctoral Research Scientist"],
     "email": "yt2569@cumc.columbia.edu",
     "phoneNumbers": [],
-    "tags": [
-      "Research Scientist"
-    ],
-    "groups": [
-      "jean-gautier"
-    ],
+    "tags": ["Research Scientist"],
+    "groups": ["jean-gautier"],
     "type": "Research Scientist",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": ""
   },
   {
     "id": "soumini-vasan",
     "firstName": "Soumini",
     "lastName": "Vasan",
-    "titles": [
-      "Staff Associate"
-    ],
+    "titles": ["Staff Associate"],
     "email": "sv2490@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-4566"
-    ],
-    "tags": [
-      "Staff"
-    ],
-    "groups": [
-      "jean-gautier"
-    ],
+    "phoneNumbers": ["(212) 851-4566"],
+    "tags": ["Staff"],
+    "groups": ["jean-gautier"],
     "type": "Staff",
     "postNominalLetters": [],
     "room": "602"
@@ -1701,19 +988,11 @@
     "id": "murty-vundavalli",
     "firstName": "Murty",
     "lastName": "Vundavalli",
-    "titles": [
-      "Associate Professor"
-    ],
+    "titles": ["Associate Professor"],
     "email": "vvm2@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-4621"
-    ],
-    "tags": [
-      "Faculty"
-    ],
-    "groups": [
-      "murty-vundavalli"
-    ],
+    "phoneNumbers": ["(212) 851-4621"],
+    "tags": ["Faculty"],
+    "groups": ["murty-vundavalli"],
     "type": "Faculty",
     "postNominalLetters": [],
     "room": "605B"
@@ -1722,65 +1001,37 @@
     "id": "donglai-wang",
     "firstName": "Donglai",
     "lastName": "Wang",
-    "titles": [
-      "Postdoctoral Research Scientist"
-    ],
+    "titles": ["Postdoctoral Research Scientist"],
     "email": "dw2586@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-5285"
-    ],
-    "tags": [
-      "Research Scientist"
-    ],
-    "groups": [
-      "wei-gu"
-    ],
+    "phoneNumbers": ["(212) 851-5285"],
+    "tags": ["Research Scientist"],
+    "groups": ["wei-gu"],
     "type": "Research Scientist",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "608"
   },
   {
     "id": "xingwu-wang",
     "firstName": "Xingwu",
     "lastName": "Wang",
-    "titles": [
-      "Postdoctoral Research Scientist"
-    ],
+    "titles": ["Postdoctoral Research Scientist"],
     "email": "wx2519@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-5285"
-    ],
-    "tags": [
-      "Research Scientist"
-    ],
-    "groups": [
-      "wei-gu"
-    ],
+    "phoneNumbers": ["(212) 851-5285"],
+    "tags": ["Research Scientist"],
+    "groups": ["wei-gu"],
     "type": "Research Scientist",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "608"
   },
   {
     "id": "xiobin-summer-wang",
     "firstName": "Xiobin (Summer)",
     "lastName": "Wang",
-    "titles": [
-      "Graduate Student"
-    ],
+    "titles": ["Graduate Student"],
     "email": "xw2394@columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-4785"
-    ],
-    "tags": [
-      "Graduate Student"
-    ],
-    "groups": [
-      "shan-zha"
-    ],
+    "phoneNumbers": ["(212) 851-4785"],
+    "tags": ["Graduate Student"],
+    "groups": ["shan-zha"],
     "type": "Graduate Student",
     "postNominalLetters": [],
     "room": "501"
@@ -1789,66 +1040,37 @@
     "id": "cyrstal-waters",
     "firstName": "Cyrstal",
     "lastName": "Waters",
-    "titles": [
-      "Postdoctoral Research Fellow"
-    ],
+    "titles": ["Postdoctoral Research Fellow"],
     "email": "cw2395@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-4566"
-    ],
-    "tags": [
-      "Fellow",
-      "Research Scientist"
-    ],
-    "groups": [
-      "jean-gautier"
-    ],
+    "phoneNumbers": ["(212) 851-4566"],
+    "tags": ["Fellow", "Research Scientist"],
+    "groups": ["jean-gautier"],
     "type": "Research Scientist",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "602"
   },
   {
     "id": "agnieszka-wendorff",
     "firstName": "Agnieszka",
     "lastName": "Wendorff",
-    "titles": [
-      "Postdoctoral Research Scientist"
-    ],
+    "titles": ["Postdoctoral Research Scientist"],
     "email": "aw2785@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-2564"
-    ],
-    "tags": [
-      "Research Scientist"
-    ],
-    "groups": [
-      "adolfo-ferrando"
-    ],
+    "phoneNumbers": ["(212) 851-2564"],
+    "tags": ["Research Scientist"],
+    "groups": ["adolfo-ferrando"],
     "type": "Research Scientist",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "401B"
   },
   {
     "id": "foon-wu-baer",
     "firstName": "Foon",
     "lastName": "Wu-Baer",
-    "titles": [
-      "Senior Staff Associate"
-    ],
+    "titles": ["Senior Staff Associate"],
     "email": "fw110@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-5260"
-    ],
-    "tags": [
-      "Staff"
-    ],
-    "groups": [
-      "richard-baer"
-    ],
+    "phoneNumbers": ["(212) 851-5260"],
+    "tags": ["Staff"],
+    "groups": ["richard-baer"],
     "type": "Staff",
     "postNominalLetters": [],
     "room": "502"
@@ -1857,19 +1079,11 @@
     "id": "yunan-xie",
     "firstName": "Yunan",
     "lastName": "Xie",
-    "titles": [
-      "Administrative Assistant"
-    ],
+    "titles": ["Administrative Assistant"],
     "email": "yx30@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-5268"
-    ],
-    "tags": [
-      "Staff"
-    ],
-    "groups": [
-      "riccardo-dalla-favera"
-    ],
+    "phoneNumbers": ["(212) 851-5268"],
+    "tags": ["Staff"],
+    "groups": ["riccardo-dalla-favera"],
     "type": "Staff",
     "postNominalLetters": [],
     "room": "507"
@@ -1878,69 +1092,39 @@
     "id": "xiaowei-xu",
     "firstName": "Xiaowei",
     "lastName": "Xu",
-    "titles": [
-      "Postdoctoral Research Scientist"
-    ],
+    "titles": ["Postdoctoral Research Scientist"],
     "email": "xx2285@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-4937"
-    ],
-    "tags": [
-      "Research Scientist"
-    ],
-    "groups": [
-      "zhiguo-zhang"
-    ],
+    "phoneNumbers": ["(212) 851-4937"],
+    "tags": ["Research Scientist"],
+    "groups": ["zhiguo-zhang"],
     "type": "Research Scientist",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "851-4937"
   },
   {
     "id": "jingjie-yi",
     "firstName": "JIngjie",
     "lastName": "Yi",
-    "titles": [
-      "Postdoctoral Research Scientist"
-    ],
+    "titles": ["Postdoctoral Research Scientist"],
     "email": "jy2651@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-5285"
-    ],
-    "tags": [
-      "Research Scientist"
-    ],
-    "groups": [
-      "wei-gu"
-    ],
+    "phoneNumbers": ["(212) 851-5285"],
+    "tags": ["Research Scientist"],
+    "groups": ["wei-gu"],
     "type": "Research Scientist",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "608"
   },
   {
     "id": "chuanjiang-yu",
     "firstName": "Chuanjiang",
     "lastName": "Yu",
-    "titles": [
-      "Postdoctoral Research Scientist"
-    ],
+    "titles": ["Postdoctoral Research Scientist"],
     "email": "cy2491@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-5270"
-    ],
-    "tags": [
-      "Research Scientist"
-    ],
-    "groups": [
-      "riccardo-dalla-favera"
-    ],
+    "phoneNumbers": ["(212) 851-5270"],
+    "tags": ["Research Scientist"],
+    "groups": ["riccardo-dalla-favera"],
     "type": "Research Scientist",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "507"
   },
   {
@@ -1951,43 +1135,24 @@
       "Associate Professor of Pediatrics and Pathology and Cell Biology"
     ],
     "email": "sz2296@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-4779"
-    ],
-    "tags": [
-      "Faculty"
-    ],
-    "groups": [
-      "shan-zha"
-    ],
+    "phoneNumbers": ["(212) 851-4779"],
+    "tags": ["Faculty"],
+    "groups": ["shan-zha"],
     "type": "Faculty",
-    "postNominalLetters": [
-      "MD",
-      "PhD"
-    ],
+    "postNominalLetters": ["MD", "PhD"],
     "room": "505A"
   },
   {
     "id": "xu-zhang",
     "firstName": "Xu",
     "lastName": "Zhang",
-    "titles": [
-      "Postdoctoral Research Scientist"
-    ],
+    "titles": ["Postdoctoral Research Scientist"],
     "email": "xz2711@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-4937"
-    ],
-    "tags": [
-      "Research Scientist"
-    ],
-    "groups": [
-      "zhiguo-zhang"
-    ],
+    "phoneNumbers": ["(212) 851-4937"],
+    "tags": ["Research Scientist"],
+    "groups": ["zhiguo-zhang"],
     "type": "Research Scientist",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "851-4937"
   },
   {
@@ -1998,38 +1163,22 @@
       "Professor of Epigenomics and Molecular Biology;in Pediatrics, Genetics and Development"
     ],
     "email": "zz2401@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-4936"
-    ],
-    "tags": [
-      "Faculty"
-    ],
-    "groups": [
-      "zhiguo-zhang"
-    ],
+    "phoneNumbers": ["(212) 851-4936"],
+    "tags": ["Faculty"],
+    "groups": ["zhiguo-zhang"],
     "type": "Faculty",
-    "postNominalLetters": [
-      "PhD"
-    ],
+    "postNominalLetters": ["PhD"],
     "room": "851-4936"
   },
   {
     "id": "tim-zhong",
     "firstName": "Tim",
     "lastName": "Zhong",
-    "titles": [
-      "Graduate student"
-    ],
+    "titles": ["Graduate student"],
     "email": "tjz2104@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-4792"
-    ],
-    "tags": [
-      "Graduate Student"
-    ],
-    "groups": [
-      "swarnali-acharyya"
-    ],
+    "phoneNumbers": ["(212) 851-4792"],
+    "tags": ["Graduate Student"],
+    "groups": ["swarnali-acharyya"],
     "type": "Graduate Student",
     "postNominalLetters": [],
     "room": "401A"
@@ -2038,19 +1187,11 @@
     "id": "hui-zhou",
     "firstName": "Hui",
     "lastName": "Zhou",
-    "titles": [
-      "Sr. Staff Associate"
-    ],
+    "titles": ["Sr. Staff Associate"],
     "email": "hz2458@cumc.columbia.edu",
-    "phoneNumbers": [
-      "(212) 851-4937"
-    ],
-    "tags": [
-      "Staff"
-    ],
-    "groups": [
-      "zhiguo-zhang"
-    ],
+    "phoneNumbers": ["(212) 851-4937"],
+    "tags": ["Staff"],
+    "groups": ["zhiguo-zhang"],
     "type": "Staff",
     "postNominalLetters": [],
     "room": "407"

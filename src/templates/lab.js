@@ -35,7 +35,6 @@ const LabTemplate = props => {
   console.log(peopleMap)
   console.log(lab.faculty)
 
-
   const publications = []
 
   allPublications.forEach(publication => {
@@ -55,7 +54,7 @@ const LabTemplate = props => {
 
   return (
     <Layout crumbs={crumbs}>
-      <SEO title={`The ${faculty.lastName} Lab`}  />
+      <SEO title={`The ${faculty.lastName} Lab`} />
       <div className="columns">
         <div className="column"></div>
         <div className="column">

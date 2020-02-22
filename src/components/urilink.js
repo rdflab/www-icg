@@ -4,7 +4,10 @@ import RightSideIconLink from "./rightsideiconlink"
 
 const URILink = ({ to }) => (
   <div>
-    <RightSideIconLink><FaGlobeAmericas /></RightSideIconLink> <a href={`${to}`}>{to}</a>
+    <RightSideIconLink>
+      <FaGlobeAmericas />
+    </RightSideIconLink>{" "}
+    <a href={`${to}`}>{to}</a>
   </div>
 )
 
