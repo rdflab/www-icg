@@ -1,6 +1,9 @@
 @charset "utf-8";
 @import "~bulma/bulma.sass";
 
+$TRANSPARENT_COLOR : rgba(0, 0, 0, 0);
+$LINK_COLOR:  rgb(0, 102, 255);
+
 body {
   font-family: 'Lato' !important;
   font-weight: 400 !important;
@@ -27,11 +30,14 @@ h3 {
 }
 
 a {
-  color: rgb(0, 102, 255);
-  text-decoration: none !important;
-  transition: color 0.5s;
+  color: $LINK_COLOR !important;
+  text-decoration: none;
+  transition: border-bottom 0.5s;
+  border-bottom: solid 1px $TRANSPARENT_COLOR;
 }
 
 a:hover {
+  color: $LINK_COLOR !important;
   text-decoration: none !important;
+  border-bottom: solid 1px $LINK_COLOR;
 }
