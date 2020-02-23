@@ -1,14 +1,18 @@
 .headerlink {
-    color: rgba(255, 255, 255, 0.8) !important;
-    background-color: transparent !important;
+    color: rgba(28, 76, 143, 0.8) !important;
+    background: transparent !important;
     transition: 0.5s;
     text-decoration: none !important;
     margin: 0 !important;
+    padding: 0 !important;
     padding-right: 2rem !important;
-    padding-left: 0 !important;
     outline: none !important;
 }
 
 .headerlink:hover {
-    color: rgba(255, 255, 255, 1) !important;
+    color: rgba(28, 76, 143, 1) !important;
+}
+
+.headerlink-selected {
+    background-color: rgba(255, 255, 255, 0.2) !important;
 }

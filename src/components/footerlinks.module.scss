@@ -1,0 +1,27 @@
+.footer-links {
+  font-size: 0.9rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+  
+.footer-links li {
+  display: inline;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li a {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.footer-links li a:hover {
+  color: rgba(255, 255, 255, 1) !important;
+}
+
+.footer-links li:not(:last-child)::after {
+  margin-left: 0.5rem;
+  padding-left: 0.5rem;
+  border-left: solid 1px white;
+  content: "";
+}

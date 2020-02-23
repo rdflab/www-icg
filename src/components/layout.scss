@@ -25,3 +25,13 @@ h3 {
 .navbar {
   background-color: transparent;
 }
+
+a {
+  color: rgb(0, 102, 255);
+  text-decoration: none !important;
+  transition: color 0.5s;
+}
+
+a:hover {
+  text-decoration: none !important;
+}

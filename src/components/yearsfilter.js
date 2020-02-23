@@ -58,7 +58,7 @@ class YearsFilter extends Component {
 }
 
 YearsFilter.defaultProps = {
-  top: 10,
+  top: 5,
 }
 
 export default YearsFilter

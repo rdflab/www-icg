@@ -100,7 +100,7 @@ const PeopleSearch = ({ labMap, allPeople, showLabLink }) => {
   return (
     <>
       <div className="columns">
-        <div className="column is-3">
+        <div className="column is-4">
           <SearchBar
             handleInputChange={handleInputChange}
             placeholder="Type to find faculty..."

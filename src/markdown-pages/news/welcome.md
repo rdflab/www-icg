@@ -5,6 +5,6 @@ path: "/news/welcome"
 tags: ["admin"]
 ---
 
-The ICG website has been updated.
+The ICG website has been redesigned.
 
 <!-- endexcerpt -->

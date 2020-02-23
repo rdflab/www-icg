@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import NewsSideBar from "../components/newssidebar"
+import NewsItemDate from "../components/newsitemdate"
 
 const NewsItemTemplate = props => {
   const { pageContext } = props
@@ -21,7 +22,9 @@ const NewsItemTemplate = props => {
 
       <div className="columns">
         <div className="column">
-          <h1>{title}</h1>
+          <h4>{title}</h4>
+          <NewsItemDate>{item.frontmatter.date}</NewsItemDate>
+          <div dangerouslySetInnerHTML={{ __html: item.html }} />
         </div>
         <div className="column is-4">
           <NewsSideBar allNews={allNews} />

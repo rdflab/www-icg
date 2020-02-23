@@ -13,7 +13,7 @@ const Collapsible = props => {
   return (
     <div className={collapsibleStyles.collapsible}>
       <button className={collapsibleStyles.collapsibleButton} onClick={toggle}>
-        <div style={{ float: "left" }}>{props.title}</div>
+        <div style={{ float: "left", fontWeight: 600 }}>{props.title}</div>
         <div style={{ float: "right" }}>
           {height === 0 ? <FaChevronDown /> : <FaChevronUp />}
         </div>

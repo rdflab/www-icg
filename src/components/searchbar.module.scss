@@ -1,13 +1,24 @@
+.search-bar-container {
+    background: rgb(240, 240, 240);
+    padding: 1rem;
+}
 .search-bar {
     display: flex;
     align-content: stretch;
-    background-color: rgb(240, 240, 240);
+    background: white;
+    border: solid 1px rgb(200, 200, 200);
     padding: 0.5rem;
+    transition: 0.5s;
+    border-radius: 5px;
+}
+
+.search-bar:hover {
+    border: solid 1px rgba(55, 113, 200, 0.8);
 }
 
 .search-input[type=text] {
     border: none;
-    background: transparent;
+    background: white;
     width: 100%;
 }
 
@@ -18,6 +29,7 @@
     outline: none;
     cursor: pointer;
     font-size: 1rem;
+    background: white;
 }
 
 .search-button:focus {

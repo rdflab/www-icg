@@ -64,7 +64,7 @@ const PubSearch = ({ labMap, peopleMap, allPublications, showLabLink }) => {
   return (
     <>
       <div className="columns">
-        <div className="column is-3">
+        <div className="column is-4">
           <SearchBar handleInputChange={handleInputChange} />
           <Collapsible title="Year filter" height="auto">
             <YearsFilter

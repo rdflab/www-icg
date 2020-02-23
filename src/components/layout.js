@@ -15,7 +15,7 @@ import Helmet from "react-helmet"
 import Footer from "./footer"
 import Breadcrumb from "./breadcrumb"
 
-const Layout = ({ children, crumbs }) => {
+const Layout = ({ children, crumbs, selectedTab }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -36,12 +36,12 @@ const Layout = ({ children, crumbs }) => {
           crossorigin="anonymous"
         />
       </Helmet>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header siteTitle={data.site.siteMetadata.title} selected={selectedTab} />
 
       {crumbs.length > 0 && <Breadcrumb crumbs={crumbs} />}
 
       <main>
-        <div className="container">{children}</div>
+        <div className="container" style={{minHeight: "100vh"}}>{children}</div>
       </main>
 
       <Footer siteTitle={data.site.siteMetadata.title}></Footer>
@@ -55,6 +55,7 @@ Layout.propTypes = {
 
 Layout.defaultProps = {
   crumbs: [],
+  selectedTab: "",
 }
 
 export default Layout

@@ -5,12 +5,15 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const About = () => (
-  <Layout>
+  <Layout crumbs={[
+    ["Home", "/"],
+    ["About", "/about"],
+  ]}>
     <SEO title="About Us" />
+    <h1>About</h1>
     <p>Institute for Cancer Genetics website</p>
-    <p>version: 1.0.0</p>
-    <p>Developed by Antony Holmes</p>
-    <Link to="/">Go back to the homepage</Link>
+    <p>Version: 2020.02.22</p>
+    <p>Designed and developed by <a href="mailto:antony.b.holmes@gmail.com">Antony Holmes</a></p>
   </Layout>
 )
 

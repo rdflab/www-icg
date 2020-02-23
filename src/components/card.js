@@ -1,6 +1,12 @@
 import React from "react"
-import cardStyles from "./card.module.scss"
+import styled from "styled-components"
 
-const Card = ({ children }) => <div className={cardStyles.card}>{children}</div>
+const StyledDiv = styled.div`
+  border-radius: 4px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+`
+
+const Card = ({ children }) => <StyledDiv>{children}</StyledDiv>
 
 export default Card

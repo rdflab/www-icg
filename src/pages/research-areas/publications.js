@@ -22,6 +22,7 @@ const Publications = props => {
         ["Research Areas", "/research-areas"],
         ["Publications", "/research-areas/publications"],
       ]}
+      selectedTab="Publications"
     >
       <SEO title="Publications" />
       <h1>Publications</h1>
