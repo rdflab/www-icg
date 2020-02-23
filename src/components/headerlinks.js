@@ -24,7 +24,7 @@ const HeaderLinks = ({ selected }) => {
   return (
     <div
       className={`navbar-start`}
-      style={{ marginTop: "0.5rem", marginBottom: "0.5rem" }}
+      style={{ marginTop: "1rem", marginBottom: "1rem" }}
     >
       {links.map((link, index) => {
         return (

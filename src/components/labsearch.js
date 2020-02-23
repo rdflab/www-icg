@@ -79,11 +79,11 @@ const LabSearch = ({ allLabs, peopleMap }) => {
                 <main>
                   <div className="columns">
                     <div className="column is-7">
-                      <h3>
+                      <h4>
                         <Link to={`/research-areas/labs/${lab.id}`}>
                           {name}
                         </Link>
-                      </h3>
+                      </h4>
                     </div>
                     <div
                       className="column"

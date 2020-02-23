@@ -19,8 +19,8 @@ const Header = ({ siteTitle }) => (
   <StyledHeader>
     <div className="container">
       <div className="navbar-start">
-        <Link to="/">
-          <ColumbiaICGImage style={{ width: `300px` }} />
+        <Link to="/" style={{borderBottom: "none"}}>
+          <ColumbiaICGImage style={{ width: `400px` }} />
         </Link>
       </div>
       <HeaderLinks />
