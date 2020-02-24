@@ -214,6 +214,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       context: {
         lab,
         labPeople,
+        peopleMap,
       },
     })
 

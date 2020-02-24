@@ -19,8 +19,6 @@ const LabMembersTemplate = props => {
     people.push(peopleMap[pid])
   }
 
-  console.log(people)
-
   const title = `The ${faculty.firstName} ${faculty.lastName} Lab Members`
 
   return (
