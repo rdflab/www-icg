@@ -26,9 +26,11 @@ const HeaderLinks = ({ selected }) => {
     >
       {links.map((link, index) => {
         return (
-          <HeaderLink key={index} to={link.link}>
-            {link.name}
-          </HeaderLink>
+          <div class="navbar-item is-marginless is-paddingless">
+            <HeaderLink key={index} to={link.link}>
+              {link.name}
+            </HeaderLink>
+          </div>
         )
       })}
     </div>
