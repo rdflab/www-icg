@@ -2,6 +2,11 @@ import React from "react"
 import searchbarStyles from "./searchbar.module.scss"
 import { FaSearch } from "react-icons/fa"
 import { IconContext } from "react-icons"
+import styled from "styled-components"
+
+const Icon = styled(FaSearch)`
+  color: cornflowerblue;
+`
 
 const SearchBar = ({ handleInputChange, placeholder }) => (
   <div className={searchbarStyles.searchBarContainer}>
@@ -14,9 +19,7 @@ const SearchBar = ({ handleInputChange, placeholder }) => (
         className={searchbarStyles.searchInput}
       />
       <button className={searchbarStyles.searchButton} type="submit">
-        <IconContext.Provider value={{ color: "rgba(55, 113, 200, 0.8)" }}>
-          <FaSearch />
-        </IconContext.Provider>
+        <Icon />
       </button>
     </div>
   </div>

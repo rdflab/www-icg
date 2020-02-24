@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import slideMenuContainerStyles from "./slidemenucontainer.module.scss"
 import flattenEdges from "../utils/flattenedges"
-import BodyLink from "./bodylink"
+import SlideMenuLink from "./slidemenulink"
 import SlideMenuCloseButton from "./slidemenuclosebutton"
 
 // const StyledDiv = styled.div`
@@ -19,7 +19,7 @@ import SlideMenuCloseButton from "./slidemenuclosebutton"
 
 const MenuColumn = styled.div`
   margin: 0;
-  padding: 1rem;
+  padding: 0;
   background: white;
   height: 100vh;
   width: 80vw;
@@ -52,11 +52,9 @@ const SlideMenuContainer = ({ onClickHandle, visible }) => {
       <MenuColumn>
         {links.map((link, index) => {
           return (
-            <div>
-              <BodyLink key={index} to={link.link}>
-                {link.name}
-              </BodyLink>
-            </div>
+            <SlideMenuLink key={index} to={link.link}>
+              {link.name}
+            </SlideMenuLink>
           )
         })}
       </MenuColumn>
