@@ -1,18 +1,18 @@
 import { PEOPLE_TYPES } from "../constants"
 
 const toPeopleTypeMap = people => {
-  const ret = new Map()
+  const ret = {}
 
   for (let type of PEOPLE_TYPES) {
-    ret.set(type, [])
+    ret[type] = []
   }
 
   for (let person of people) {
-    if (!ret.has(person.type)) {
-      ret.set(person.type, [])
+    if (!(person.type in ret)) {
+      ret[person.type] = []
     }
 
-    ret.get(person.type).push(person)
+    ret[person.type].push(person)
   }
 
   return ret

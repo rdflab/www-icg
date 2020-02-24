@@ -2,13 +2,14 @@ import React from "react"
 import { FaUsers } from "react-icons/fa"
 import RightSideIconLink from "./rightsideiconlink"
 import { Link } from "gatsby"
+import BodyLink from "./bodylink"
 
 const MembersLink = ({ to }) => (
   <div>
     <RightSideIconLink>
       <FaUsers />
     </RightSideIconLink>{" "}
-    <Link to={to}>View Lab Members</Link>
+    <BodyLink to={to}>View Lab Members</BodyLink>
   </div>
 )
 

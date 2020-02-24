@@ -1,14 +1,14 @@
 import React from "react"
 import { FaNewspaper } from "react-icons/fa"
 import RightSideIconLink from "./rightsideiconlink"
-import { Link } from "gatsby"
+import BodyLink from "./bodylink"
 
 const PublicationsLink = ({ to }) => (
   <div>
     <RightSideIconLink>
       <FaNewspaper />
     </RightSideIconLink>{" "}
-    <Link to={to}>View Publications</Link>
+    <BodyLink to={to}>View Publications</BodyLink>
   </div>
 )
 

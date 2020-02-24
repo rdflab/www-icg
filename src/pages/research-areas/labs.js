@@ -6,6 +6,7 @@ import flattenEdges from "../../utils/flattenedges"
 import toPeopleMap from "../../utils/topeoplemap"
 
 import LabSearch from "../../components/labsearch"
+import Title from "../../components/title"
 
 const EMPTY_QUERY = ""
 
@@ -25,7 +26,7 @@ const Labs = props => {
       <SEO title="Research Labs" />
 
       {/*in-line css for demo purposes*/}
-      <h1>Research Labs</h1>
+      <Title>Research Labs</Title>
 
       <LabSearch allLabs={allLabs} peopleMap={peopleMap} />
     </Layout>

@@ -1,22 +1,22 @@
 import { Link } from "gatsby"
+import React from "react"
 import styled from "styled-components"
 
-const HeaderLink = styled(Link)`
-  color: rgba(28, 76, 143, 1);
+const FooterLink = styled(Link)`
+  color: white !important;
   background: transparent !important;
   margin: 0;
   padding: 0;
-  margin-right: 2rem;
   outline: none;
   transition: border-bottom 0.5s ease;
-  border-bottom: solid 1px white;
+  border-bottom: solid 1px rgba(255, 255, 255, 0);
   text-decoration: none;
 
   &:hover {
-    color: rgba(28, 76, 143, 0.8) !important;
-    border-bottom: solid 1px rgba(28, 76, 143, 1);
+    color: white !important;
+    border-bottom: solid 1px white;
     text-decoration: none;
   }
 `
 
-export default HeaderLink
+export default FooterLink

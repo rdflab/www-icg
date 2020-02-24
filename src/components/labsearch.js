@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import { Link } from "gatsby"
 import Pagination from "./pagination"
 import SearchBar from "./searchbar"
 import SearchCount from "./searchcount"
@@ -7,6 +6,10 @@ import SearchSummary from "./searchsummary"
 import EmailLink from "./emaillink"
 import MembersLink from "./memberslink"
 import PublicationsLink from "./publicationslink"
+import Columns from "./columns"
+import Column from "./column"
+import SideBar from "./sidebar"
+import BodyLink from "./bodylink"
 
 const EMPTY_QUERY = ""
 
@@ -44,75 +47,73 @@ const LabSearch = ({ allLabs, peopleMap }) => {
   let pagedLabs = labs.slice(offset, offset + recordsPerPage)
 
   return (
-    <>
-      <div className="columns">
-        <div className="column is-4">
+    <Columns>
+      <Column>
+        <SearchSummary>
+          <SearchCount>{labs.length}</SearchCount>{" "}
+          {labs.length === 1 ? "Lab" : "Labs"} found
+        </SearchSummary>
+
+        {pagedLabs.map((lab, index) => {
+          const person = peopleMap[lab.leaders[0]]
+
+          let name = person.firstName + " " + person.lastName
+
+          if (person.postNominalLetters.length > 0) {
+            name += ", " + person.postNominalLetters.join(" ")
+          }
+
+          return (
+            <article
+              key={index}
+              style={{
+                paddingTop: "2rem",
+                paddingBottom: "2rem",
+                borderTop: "solid 2px rgba(0, 0, 128, 0.5)",
+              }}
+            >
+              <main>
+                <Columns>
+                  <Column w={7}>
+                    <h4>
+                      <BodyLink to={`/research-areas/labs/${lab.id}`}>
+                        {name}
+                      </BodyLink>
+                    </h4>
+                  </Column>
+                  <Column style={{ borderLeft: "solid 1px lightgray" }}>
+                    <MembersLink
+                      to={`/research-areas/labs/${lab.id}/members`}
+                    />
+                    <PublicationsLink
+                      to={`/research-areas/labs/${lab.id}/publications`}
+                    />
+                    <EmailLink to={person.email} />
+                  </Column>
+                </Columns>
+              </main>
+            </article>
+          )
+        })}
+
+        <Pagination
+          page={page}
+          totalRecords={labs.length}
+          recordsPerPage={recordsPerPage}
+          pageNeighbours={1}
+          onPageChanged={onPageChanged}
+        />
+      </Column>
+      <Column w={4}>
+        <SideBar>
+          <p>Search by name:</p>
           <SearchBar
             handleInputChange={handleInputChange}
             placeholder="Type to find labs"
           />
-        </div>
-        <div className="column">
-          <SearchSummary>
-            <SearchCount>{labs.length}</SearchCount>{" "}
-            {labs.length === 1 ? "Lab" : "Labs"} found
-          </SearchSummary>
-
-          {pagedLabs.map((lab, index) => {
-            const person = peopleMap.get(lab.leaders[0])
-
-            let name = person.firstName + " " + person.lastName
-
-            if (person.postNominalLetters.length > 0) {
-              name += ", " + person.postNominalLetters.join(" ")
-            }
-
-            return (
-              <article
-                key={index}
-                style={{
-                  paddingTop: "2rem",
-                  paddingBottom: "2rem",
-                  borderTop: "solid 2px rgba(0, 0, 128, 0.5)",
-                }}
-              >
-                <main>
-                  <div className="columns">
-                    <div className="column is-7">
-                      <h4>
-                        <Link to={`/research-areas/labs/${lab.id}`}>
-                          {name}
-                        </Link>
-                      </h4>
-                    </div>
-                    <div
-                      className="column"
-                      style={{ borderLeft: "solid 1px lightgray" }}
-                    >
-                      <MembersLink
-                        to={`/research-areas/labs/${lab.id}/members`}
-                      />
-                      <PublicationsLink
-                        to={`/research-areas/labs/${lab.id}/publications`}
-                      />
-                      <EmailLink to={person.email} />
-                    </div>
-                  </div>
-                </main>
-              </article>
-            )
-          })}
-
-          <Pagination
-            page={page}
-            totalRecords={labs.length}
-            recordsPerPage={recordsPerPage}
-            pageNeighbours={1}
-            onPageChanged={onPageChanged}
-          />
-        </div>
-      </div>
-    </>
+        </SideBar>
+      </Column>
+    </Columns>
   )
 }
 

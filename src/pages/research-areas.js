@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Title from "../components/title"
 
 const ResearchAreas = props => {
   const { data } = props
@@ -15,7 +16,7 @@ const ResearchAreas = props => {
     >
       <SEO title="Research Areas" />
 
-      <h1>Research Areas</h1>
+      <Title>Research Areas</Title>
     </Layout>
   )
 }

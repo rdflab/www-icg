@@ -41,7 +41,9 @@ const Layout = ({ children, crumbs, selectedTab }) => {
       {crumbs.length > 0 && <Breadcrumb crumbs={crumbs} />}
 
       <main>
-        <div className="container" style={{minHeight: "100vh"}}>{children}</div>
+        <div className="container" style={{ minHeight: "100vh" }}>
+          {children}
+        </div>
       </main>
 
       <Footer siteTitle={data.site.siteMetadata.title}></Footer>

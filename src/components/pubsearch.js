@@ -6,6 +6,10 @@ import YearsFilter from "./yearsfilter"
 import Collapsible from "./collapsible"
 import SearchCount from "../components/searchcount"
 import SearchSummary from "./searchsummary"
+import Card from "./card"
+import SideBar from "./sidebar"
+import Columns from "./columns"
+import Column from "./column"
 
 const EMPTY_QUERY = ""
 
@@ -62,9 +66,33 @@ const PubSearch = ({ labMap, peopleMap, allPublications, showLabLink }) => {
   )
 
   return (
-    <>
-      <div className="columns">
-        <div className="column is-4">
+    <Columns>
+      <Column>
+        <SearchSummary>
+          <SearchCount>{yearFilteredPublications.length}</SearchCount>{" "}
+          {yearFilteredPublications.length === 1
+            ? "Publication"
+            : "Publications"}{" "}
+          found
+        </SearchSummary>
+
+        <PublicationYears
+          publications={pagedPublications}
+          labMap={labMap}
+          peopleMap={peopleMap}
+          showLabLink={showLabLink}
+        />
+
+        <Pagination
+          page={page}
+          totalRecords={yearFilteredPublications.length}
+          recordsPerPage={recordsPerPage}
+          pageNeighbours={1}
+          onPageChanged={onPageChanged}
+        />
+      </Column>
+      <Column w={4}>
+        <SideBar>
           <SearchBar handleInputChange={handleInputChange} />
           <Collapsible title="Year filter" height="auto">
             <YearsFilter
@@ -72,33 +100,9 @@ const PubSearch = ({ labMap, peopleMap, allPublications, showLabLink }) => {
               handleClick={handleClick}
             />
           </Collapsible>
-        </div>
-        <div className="column">
-          <SearchSummary>
-            <SearchCount>{yearFilteredPublications.length}</SearchCount>{" "}
-            {yearFilteredPublications.length === 1
-              ? "Publication"
-              : "Publications"}{" "}
-            found
-          </SearchSummary>
-
-          <PublicationYears
-            publications={pagedPublications}
-            labMap={labMap}
-            peopleMap={peopleMap}
-            showLabLink={showLabLink}
-          />
-
-          <Pagination
-            page={page}
-            totalRecords={yearFilteredPublications.length}
-            recordsPerPage={recordsPerPage}
-            pageNeighbours={1}
-            onPageChanged={onPageChanged}
-          />
-        </div>
-      </div>
-    </>
+        </SideBar>
+      </Column>
+    </Columns>
   )
 }
 

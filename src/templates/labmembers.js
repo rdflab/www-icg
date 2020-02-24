@@ -2,25 +2,24 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-import toPeopleMap from "../utils/topeoplemap"
-import toLabs from "../utils/tolabs"
 import toLabMap from "../utils/tolabmap"
 import PeopleSearch from "../components/peoplesearch"
+import Title from "../components/title"
 
 const LabMembersTemplate = props => {
   const { pageContext } = props
-  const { lab, allPeople } = pageContext
-  const peopleMap = toPeopleMap(allPeople)
-  const labs = toLabs([lab], peopleMap)
-  const labMap = toLabMap(labs)
+  const { lab, peopleMap } = pageContext
+  const labMap = toLabMap([lab])
 
-  const faculty = peopleMap.get(lab.leaders[0])
+  const faculty = peopleMap[lab.leaders[0]]
 
   const people = []
 
-  for (let member of lab.members) {
-    people.push(peopleMap.get(member))
+  for (let pid of lab.members) {
+    people.push(peopleMap[pid])
   }
+
+  console.log(people)
 
   const title = `The ${faculty.firstName} ${faculty.lastName} Lab Members`
 
@@ -38,7 +37,7 @@ const LabMembersTemplate = props => {
     >
       <SEO title={title} />
 
-      <h1>{title}</h1>
+      <Title>{title}</Title>
 
       <PeopleSearch labMap={labMap} allPeople={people} showLabLink={false} />
     </Layout>

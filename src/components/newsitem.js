@@ -1,24 +1,22 @@
 import React from "react"
 import Card from "./card"
 import newsItemStyles from "./newsitem.module.scss"
-import { Link } from "gatsby"
 import NewsItemDate from "./newsitemdate"
+import BodyLink from "./bodylink"
 
 const NewsItem = ({ item }) => (
   <article className={newsItemStyles.newsItem}>
-    <Card>
-      <NewsItemDate>{item.frontmatter.date}</NewsItemDate>
-      <div>
-        <Link
-          to={item.frontmatter.path}
-          className={newsItemStyles.newsItemTitle}
-        >
-          {item.frontmatter.title}
-        </Link>
-      </div>
+    <NewsItemDate>{item.frontmatter.date}</NewsItemDate>
+    <div>
+      <BodyLink
+        to={item.frontmatter.path}
+        className={newsItemStyles.newsItemTitle}
+      >
+        {item.frontmatter.title}
+      </BodyLink>
+    </div>
 
-      <div dangerouslySetInnerHTML={{ __html: item.excerpt }} />
-    </Card>
+    <div dangerouslySetInnerHTML={{ __html: item.excerpt }} />
   </article>
 )
 

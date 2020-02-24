@@ -10,14 +10,6 @@
   margin: 0;
 }
 
-.footer-links li a {
-  color: white !important;
-}
-
-.footer-links li a:hover {
-  border-bottom: solid 1px white;
-}
-
 .footer-links li:not(:last-child)::after {
   margin-left: 0.5rem;
   padding-left: 0.5rem;

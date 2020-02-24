@@ -2,9 +2,21 @@ const path = require(`path`)
 
 const labTemplate = path.resolve(`src/templates/lab.js`)
 const labPublicationsTemplate = path.resolve(`src/templates/labpublications.js`)
+const labOverviewTemplate = path.resolve(`src/templates/laboverview.js`)
 const labMembersTemplate = path.resolve(`src/templates/labmembers.js`)
 const memberTemplate = path.resolve(`src/templates/member.js`)
 const newsItemTemplate = path.resolve(`src/templates/newsitem.js`)
+
+const toPeopleMap = people => {
+  let ret = new Object() //new Map()
+
+  people.forEach(person => {
+    //ret.set(person.id, person)
+    ret[person.id] = person
+  })
+
+  return ret
+}
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
@@ -35,6 +47,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             postNominalLetters
             tags
             groups
+            type
           }
         }
       }
@@ -111,10 +124,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const allPeople = []
   const allPublications = []
   const allNews = []
+  const allLabs = []
 
   result.data.people.edges.forEach(({ node }) => {
     allPeople.push(node)
   })
+
+  const peopleMap = toPeopleMap(allPeople)
 
   result.data.publications.edges.forEach(({ node }) => {
     allPublications.push(node)
@@ -124,16 +140,32 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     allNews.push(node)
   })
 
+  result.data.labs.edges.forEach(({ node }) => {
+    allLabs.push(node)
+  })
+
   const markdownMap = new Map()
 
   result.data.markdown.edges.forEach(({ node }) => {
     markdownMap.set(node.frontmatter.path, node)
   })
 
-  result.data.labs.edges.forEach(({ node }) => {
-    const lab = node
-
+  for (let lab of allLabs) {
     const path = `/research-areas/labs/${lab.id}`
+
+    const labPublications = []
+
+    allPublications.forEach(publication => {
+      if (publication.labs.includes(lab.id)) {
+        labPublications.push(publication)
+      }
+    })
+
+    const labPeople = []
+
+    for (let pid of lab.members) {
+      labPeople.push(peopleMap[pid])
+    }
 
     let labHtml = ""
     let labExcerptHtml = ""
@@ -149,11 +181,27 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       component: labTemplate,
       context: {
         lab,
-        allPeople,
-        allPublications,
+        peopleMap,
+        labPublications,
         labExcerptHtml,
         labHtml,
-      }, // additional data can be passed via context
+      },
+    })
+
+    //
+    // Overview
+    //
+
+    createPage({
+      path: `/research-areas/labs/${lab.id}/overview`,
+      component: labOverviewTemplate,
+      context: {
+        lab,
+        labPeople,
+        peopleMap,
+        labPublications,
+        labHtml,
+      },
     })
 
     //
@@ -165,8 +213,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       component: labMembersTemplate,
       context: {
         lab,
-        allPeople,
-      }, // additional data can be passed via context
+        labPeople,
+      },
     })
 
     //
@@ -178,24 +226,28 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       component: labPublicationsTemplate,
       context: {
         lab,
-        allPeople,
+        peopleMap,
         allPublications,
-      }, // additional data can be passed via context
+      },
     })
-  })
 
-  //
-  // Makes pages for each person
-  //
+    //
+    // For each person
+    //
 
-  for (let person of allPeople) {
-    createPage({
-      path: `/research-areas/faculty-and-staff/${person.id}`,
-      component: memberTemplate,
-      context: {
-        person,
-      }, // additional data can be passed via context
-    })
+    for (let pid of lab.members) {
+      const person = peopleMap[pid]
+
+      createPage({
+        path: `/research-areas/faculty-and-staff/${person.id}`,
+        component: memberTemplate,
+        context: {
+          person,
+          lab,
+          labPeople,
+        },
+      })
+    }
   }
 
   //
@@ -209,7 +261,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       context: {
         item,
         allNews,
-      }, // additional data can be passed via context
+      },
     })
   }
 }

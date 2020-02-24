@@ -1,20 +1,17 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-
-import toPeopleMap from "../utils/topeoplemap"
 import toLabMap from "../utils/tolabmap"
 import PubSearch from "../components/pubsearch"
 import Breadcrumb from "../components/breadcrumb"
+import Title from "../components/title"
 
 const LabPublicationsTemplate = props => {
-  const { data, pageContext } = props
-  const { lab, allPeople, allPublications } = pageContext
-  const peopleMap = toPeopleMap(allPeople)
-  const labs = [lab] //toLabs([lab], peopleMap)
-  const labMap = toLabMap(labs)
+  const { pageContext } = props
+  const { lab, peopleMap, allPublications } = pageContext
+  const labMap = toLabMap([lab])
 
-  const faculty = peopleMap.get(lab.leaders[0])
+  const faculty = peopleMap[lab.leaders[0]]
 
   const publications = []
 
@@ -42,7 +39,7 @@ const LabPublicationsTemplate = props => {
         ]}
       />
 
-      <h1>{title}</h1>
+      <Title>{title}</Title>
 
       <PubSearch
         labMap={labMap}

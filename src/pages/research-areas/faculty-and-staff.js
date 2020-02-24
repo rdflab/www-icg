@@ -3,16 +3,14 @@ import { Link, graphql } from "gatsby"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import flattenEdges from "../../utils/flattenedges"
-import toPeopleMap from "../../utils/topeoplemap"
-import toLabs from "../../utils/tolabs"
 import toLabMap from "../../utils/tolabmap"
 import PeopleSearch from "../../components/peoplesearch"
+import Title from "../../components/title"
 
 const FacultyAndStaff = props => {
   const { data } = props
   const allPeople = flattenEdges(data.people.edges)
-  const peopleMap = toPeopleMap(allPeople)
-  const allLabs = toLabs(flattenEdges(data.labs.edges), peopleMap)
+  const allLabs = flattenEdges(data.labs.edges)
   const labMap = toLabMap(allLabs)
 
   return (
@@ -25,7 +23,7 @@ const FacultyAndStaff = props => {
     >
       <SEO title="Faculty and Staff" />
 
-      <h1>Faculty and Staff</h1>
+      <Title>Faculty and Staff</Title>
 
       <PeopleSearch labMap={labMap} allPeople={allPeople} />
     </Layout>

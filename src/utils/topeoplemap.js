@@ -1,8 +1,8 @@
 const toPeopleMap = people => {
-  let ret = new Map()
+  let ret = {}
 
   people.forEach(person => {
-    ret.set(person.id, person)
+    ret[person.id] = person
   })
 
   return ret

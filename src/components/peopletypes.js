@@ -18,7 +18,7 @@ const PeopleTypes = ({ allPeople, labMap, showLabLink }) => {
   var c = 0
 
   for (let type of PEOPLE_TYPES) {
-    const people = peopleMap.get(type)
+    const people = peopleMap[type]
 
     if (people.length > 0) {
       elems.push(<h3 key={c++}>{type}</h3>)

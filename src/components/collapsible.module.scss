@@ -1,5 +1,5 @@
 .collapsible {
-    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .collapsible-button {
@@ -8,11 +8,20 @@
     border: none;
     outline: none;
     width: 100%;
-    background-color: rgb(250, 250, 250);
-    border: solid 1px rgb(230, 230, 230);
-    padding: 0.5rem;
+    background-color: transparent;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 600;
+    //border-bottom: solid 1px rgb(230, 230, 230);
+    padding-bottom: 0.5rem;
 }
 
 .collapsible-button:focus {
     outline: none;
+}
+
+.collapsible-body {
+    //border: solid 1px rgb(200, 200, 200);
+    padding: 0.5rem;
+    //background-color: white;
+    //border-radius: 5px;
 }

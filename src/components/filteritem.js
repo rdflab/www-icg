@@ -23,8 +23,8 @@ const FilterItem = props => {
   return (
     <div
       onClick={handleClick}
-      className={`${filterItemStyles.filter} ${
-        selected ? filterItemStyles.filterSelected : ""
+      className={`${filterItemStyles.filterItem} ${
+        selected ? filterItemStyles.filterItemSelected : ""
       }`}
     >
       {props.text}

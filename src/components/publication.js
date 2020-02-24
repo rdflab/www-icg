@@ -7,7 +7,7 @@
 
 import React from "react"
 import publicationStyles from "./publication.module.scss"
-import { Link } from "gatsby"
+import BodyLink from "./bodylink"
 
 /**
  * Format author list into string.
@@ -50,10 +50,10 @@ const Publication = ({
   const labId = publication.labs[0]
   let name
 
-  if (labMap.has(labId)) {
-    const lab = labMap.get(labId)
+  if (labId in labMap) {
+    const lab = labMap[labId]
     const pi = lab.leaders[0]
-    const person = peopleMap.get(pi)
+    const person = peopleMap[pi]
     name = person.firstName + " " + person.lastName + " Lab"
   } else {
     name = ""
@@ -70,7 +70,7 @@ const Publication = ({
       </div>
 
       {name !== "" && showLabLink && (
-        <Link to={`/research-areas/labs/${labId}`}>{name}</Link>
+        <BodyLink to={`/research-areas/labs/${labId}`}>{name}</BodyLink>
       )}
     </article>
   )

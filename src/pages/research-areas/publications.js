@@ -6,6 +6,7 @@ import flattenEdges from "../../utils/flattenedges"
 import toPeopleMap from "../../utils/topeoplemap"
 import toLabMap from "../../utils/tolabmap"
 import PubSearch from "../../components/pubsearch"
+import Title from "../../components/title"
 
 const Publications = props => {
   const { data } = props
@@ -25,7 +26,7 @@ const Publications = props => {
       selectedTab="Publications"
     >
       <SEO title="Publications" />
-      <h1>Publications</h1>
+      <Title>Publications</Title>
 
       <PubSearch
         labMap={labMap}

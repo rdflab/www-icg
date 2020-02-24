@@ -20,10 +20,10 @@
 // }
 
 const toLabMap = labs => {
-  let ret = new Map()
+  let ret = {}
 
   for (let lab of labs) {
-    ret.set(lab.id, lab)
+    ret[lab.id] = lab
   }
 
   return ret

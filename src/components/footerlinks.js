@@ -1,6 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import footerLinksStyle from "./footerlinks.module.scss"
+import FooterLink from "./footerlink"
 
 const FooterLinks = () => {
   const data = useStaticQuery(graphql`
@@ -23,9 +24,9 @@ const FooterLinks = () => {
       {links.map(({ node }, index) => {
         return (
           <li>
-            <Link key={index} to={node.link}>
+            <FooterLink key={index} to={node.link}>
               {node.name}
-            </Link>
+            </FooterLink>
           </li>
         )
       })}

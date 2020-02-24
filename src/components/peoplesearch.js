@@ -8,6 +8,9 @@ import Collapsible from "./collapsible"
 import toPeopleTypeMap from "../utils/peopletypemap"
 import { PEOPLE_TYPES } from "../constants"
 import SearchSummary from "./searchsummary"
+import SideBar from "./sidebar"
+import Columns from "./columns"
+import Column from "./column"
 
 const EMPTY_QUERY = ""
 
@@ -78,7 +81,7 @@ const PeopleSearch = ({ labMap, allPeople, showLabLink }) => {
   let typeOrderedPeople = []
   // extract number of records
   for (let type of PEOPLE_TYPES) {
-    let p = peopleTypeMap.get(type)
+    let p = peopleTypeMap[type]
 
     for (let person of p) {
       if (c >= offset) {
@@ -98,9 +101,29 @@ const PeopleSearch = ({ labMap, allPeople, showLabLink }) => {
   }
 
   return (
-    <>
-      <div className="columns">
-        <div className="column is-4">
+    <Columns>
+      <Column>
+        <SearchSummary>
+          <SearchCount>{typeFilteredPeople.length}</SearchCount> Research
+          Faculty and Staff found
+        </SearchSummary>
+
+        <PeopleTypes
+          allPeople={typeOrderedPeople}
+          labMap={labMap}
+          showLabLink={showLabLink}
+        />
+
+        <Pagination
+          page={page}
+          totalRecords={typeFilteredPeople.length}
+          recordsPerPage={recordsPerPage}
+          pageNeighbours={1}
+          onPageChanged={onPageChanged}
+        />
+      </Column>
+      <Column w={4}>
+        <SideBar>
           <SearchBar
             handleInputChange={handleInputChange}
             placeholder="Type to find faculty..."
@@ -108,29 +131,9 @@ const PeopleSearch = ({ labMap, allPeople, showLabLink }) => {
           <Collapsible title="Type filter" height="auto">
             <TypesFilter handleClick={handleClick} />
           </Collapsible>
-        </div>
-        <div className="column">
-          <SearchSummary>
-            <SearchCount>{typeFilteredPeople.length}</SearchCount> Research
-            Faculty and Staff found
-          </SearchSummary>
-
-          <PeopleTypes
-            allPeople={typeOrderedPeople}
-            labMap={labMap}
-            showLabLink={showLabLink}
-          />
-
-          <Pagination
-            page={page}
-            totalRecords={typeFilteredPeople.length}
-            recordsPerPage={recordsPerPage}
-            pageNeighbours={1}
-            onPageChanged={onPageChanged}
-          />
-        </div>
-      </div>
-    </>
+        </SideBar>
+      </Column>
+    </Columns>
   )
 }
 

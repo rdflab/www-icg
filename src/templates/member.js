@@ -1,10 +1,15 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Title from "../components/title"
+import Columns from "../components/columns"
+import Column from "../components/column"
+import SideBar from "../components/sidebar"
+import SideBarMembers from "../components/sidebarmembers"
 
 const MemberTemplate = props => {
-  const { data, pageContext } = props
-  const { person } = pageContext
+  const { pageContext } = props
+  const { person, lab, labPeople } = pageContext
 
   const title = `${person.firstName} ${person.lastName}`
 
@@ -18,7 +23,16 @@ const MemberTemplate = props => {
     >
       <SEO title={title} />
 
-      <h1>{title}</h1>
+      <Title>{title}</Title>
+
+      <Columns>
+        <Column></Column>
+        <Column w={4}>
+          <SideBar>
+            <SideBarMembers lab={lab} people={labPeople} />
+          </SideBar>
+        </Column>
+      </Columns>
     </Layout>
   )
 }

@@ -7,6 +7,9 @@ import Collapsible from "./collapsible"
 import SearchCount from "./searchcount"
 import NewsItems from "./newsitems"
 import SearchSummary from "./searchsummary"
+import SideBar from "./sidebar"
+import Columns from "./columns"
+import Column from "./column"
 
 const EMPTY_QUERY = ""
 
@@ -60,9 +63,25 @@ const NewsSearch = ({ allNews }) => {
   let pagedNews = yearFilteredNews.slice(offset, offset + recordsPerPage)
 
   return (
-    <>
-      <div className="columns">
-        <div className="column is-4">
+    <Columns>
+      <Column>
+        <SearchSummary>
+          <SearchCount>{yearFilteredNews.length}</SearchCount>{" "}
+          {yearFilteredNews.length === 1 ? "News Item" : "News Items"} found
+        </SearchSummary>
+
+        <NewsItems news={pagedNews} />
+
+        <Pagination
+          page={page}
+          totalRecords={yearFilteredNews.length}
+          recordsPerPage={recordsPerPage}
+          pageNeighbours={1}
+          onPageChanged={onPageChanged}
+        />
+      </Column>
+      <Column w={4}>
+        <SideBar>
           <SearchBar
             handleInputChange={handleInputChange}
             placeholder="Type to find news items"
@@ -73,25 +92,9 @@ const NewsSearch = ({ allNews }) => {
           <Collapsible title="Month filter" height="auto">
             <NewsMonthFilter news={news} handleClick={handleClick} />
           </Collapsible>
-        </div>
-        <div className="column">
-          <SearchSummary>
-            <SearchCount>{yearFilteredNews.length}</SearchCount>{" "}
-            {yearFilteredNews.length === 1 ? "News Item" : "News Items"} found
-          </SearchSummary>
-
-          <NewsItems news={pagedNews} />
-
-          <Pagination
-            page={page}
-            totalRecords={yearFilteredNews.length}
-            recordsPerPage={recordsPerPage}
-            pageNeighbours={1}
-            onPageChanged={onPageChanged}
-          />
-        </div>
-      </div>
-    </>
+        </SideBar>
+      </Column>
+    </Columns>
   )
 }
 

@@ -4,38 +4,28 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 import RecentPublications from "../components/recentpublications"
-import toPeopleMap from "../utils/topeoplemap"
-import toLabs from "../utils/tolabs"
 import toLabMap from "../utils/tolabmap"
 import Card from "../components/card"
 import EmailLink from "../components/emaillink"
 import PhoneLink from "../components/phonelink"
 import URILink from "../components/urilink"
+import Columns from "../components/columns"
+import Column from "../components/column"
 
 const LabTemplate = props => {
   const { pageContext } = props
   const {
     lab,
-    allPeople,
-    allPublications,
+    peopleMap,
+    labPublications,
     labExcerptHtml,
     labHtml,
   } = pageContext
 
-  const peopleMap = toPeopleMap(allPeople)
-
   const labs = [lab] //toLabs([lab], peopleMap)
   const labMap = toLabMap(labs)
 
-  const faculty = peopleMap.get(lab.leaders[0])
-
-  const publications = []
-
-  allPublications.forEach(publication => {
-    if (publication.labs.includes(lab.id)) {
-      publications.push(publication)
-    }
-  })
+  const faculty = peopleMap[lab.leaders[0]]
 
   const crumbs = [
     ["Home", "/"],
@@ -54,39 +44,42 @@ const LabTemplate = props => {
         <div className="column"></div>
         <div className="column">
           <div dangerouslySetInnerHTML={{ __html: labExcerptHtml }} />
-          <Link to={"./overview"} className="btn btn-primary">
+          <Link
+            to={`/research-areas/labs/${lab.id}/overview`}
+            className="btn btn-primary"
+          >
             Learn more
           </Link>
         </div>
       </div>
 
-      <div className="columns">
-        <div className="column">
+      <Columns>
+        <Column>
           <h2>{`${faculty.firstName} ${faculty.lastName}`}</h2>
           <h3>Research Focus</h3>
           <h3>Education</h3>
-        </div>
-        <div className="column"></div>
-        <div className="column">
+        </Column>
+        <Column></Column>
+        <Column>
           <EmailLink to={faculty.email} />
           <PhoneLink phoneNumbers={faculty.phoneNumbers} />
 
           {lab.uri !== "" && <URILink to={lab.uri} />}
-        </div>
-      </div>
+        </Column>
+      </Columns>
 
-      <div className="columns">
-        <div className="column is-two-thirds">
+      <Columns>
+        <Column w={8}>
           <Card>
             <RecentPublications
               lab={lab}
-              publications={publications}
+              publications={labPublications}
               labMap={labMap}
               peopleMap={peopleMap}
             />
           </Card>
-        </div>
-      </div>
+        </Column>
+      </Columns>
     </Layout>
   )
 }

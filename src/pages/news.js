@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import flattenEdges from "../utils/flattenedges"
 import NewsSearch from "../components/newssearch"
+import Title from "../components/title"
 
 const News = props => {
   const { data } = props
@@ -18,7 +19,7 @@ const News = props => {
     >
       <SEO title="News" />
 
-      <h1>News</h1>
+      <Title>News</Title>
 
       <NewsSearch allNews={allNews} />
     </Layout>

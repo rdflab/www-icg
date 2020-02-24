@@ -3,7 +3,7 @@
 
 $TRANSPARENT_COLOR : rgba(0, 0, 0, 0);
 $LINK_COLOR:  rgb(0, 102, 255);
-$ANIMATION_TIMING: 0.3s;
+$ANIMATION_TIMING: 0.5s;
 
 body {
   font-family: 'Lato' !important;
@@ -12,18 +12,15 @@ body {
 }
 
 h1 {
-  font-family: Lato !important;
   font-weight: 300 !important;
 }
 
 h2 {
-  font-family: Montserrat !important;
-  font-weight: 200 !important;
+  font-weight: 300 !important;
 }
 
 h3 {
-  font-family: Montserrat !important;
-  font-weight: 200 !important;
+  font-weight: 300 !important;
 }
 
 .navbar {
@@ -31,14 +28,13 @@ h3 {
 }
 
 a {
-  color: $LINK_COLOR;
   text-decoration: none;
-  transition: border-bottom $ANIMATION_TIMING;
-  border-bottom: solid 1px $TRANSPARENT_COLOR;
 }
 
 a:hover {
-  color: $LINK_COLOR;
-  text-decoration: none !important;
-  border-bottom: solid 1px $LINK_COLOR;
+  text-decoration: none;
+}
+
+.bottom-spacing-1 {
+  margin-bottom: 1rem;
 }
