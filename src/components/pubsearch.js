@@ -6,7 +6,6 @@ import YearsFilter from "./yearsfilter"
 import Collapsible from "./collapsible"
 import SearchCount from "../components/searchcount"
 import SearchSummary from "./searchsummary"
-import Card from "./card"
 import SideBar from "./sidebar"
 import Columns from "./columns"
 import Column from "./column"
@@ -67,6 +66,17 @@ const PubSearch = ({ labMap, peopleMap, allPublications, showLabLink }) => {
 
   return (
     <Columns>
+      <Column w={4} className="is-hidden-tablet">
+        <SideBar>
+          <SearchBar handleInputChange={handleInputChange} />
+          <Collapsible title="Year filter" height="auto">
+            <YearsFilter
+              publications={publications}
+              handleClick={handleClick}
+            />
+          </Collapsible>
+        </SideBar>
+      </Column>
       <Column>
         <SearchSummary>
           <SearchCount>{yearFilteredPublications.length}</SearchCount>{" "}
@@ -91,7 +101,7 @@ const PubSearch = ({ labMap, peopleMap, allPublications, showLabLink }) => {
           onPageChanged={onPageChanged}
         />
       </Column>
-      <Column w={4}>
+      <Column w={4} className="is-hidden-mobile">
         <SideBar>
           <SearchBar handleInputChange={handleInputChange} />
           <Collapsible title="Year filter" height="auto">

@@ -8,8 +8,6 @@ import toPeopleMap from "../../utils/topeoplemap"
 import LabSearch from "../../components/labsearch"
 import Title from "../../components/title"
 
-const EMPTY_QUERY = ""
-
 const Labs = props => {
   const { data } = props
   const peopleMap = toPeopleMap(flattenEdges(data.people.edges))

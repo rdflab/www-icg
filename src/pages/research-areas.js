@@ -5,7 +5,7 @@ import SEO from "../components/seo"
 import Title from "../components/title"
 
 const ResearchAreas = props => {
-  const { data } = props
+  //const { data } = props
 
   return (
     <Layout

@@ -48,6 +48,15 @@ const LabSearch = ({ allLabs, peopleMap }) => {
 
   return (
     <Columns>
+      <Column w={4} className="is-hidden-tablet">
+        <SideBar>
+          <p>Search by name:</p>
+          <SearchBar
+            handleInputChange={handleInputChange}
+            placeholder="Type to find labs"
+          />
+        </SideBar>
+      </Column>
       <Column>
         <SearchSummary>
           <SearchCount>{labs.length}</SearchCount>{" "}
@@ -104,7 +113,7 @@ const LabSearch = ({ allLabs, peopleMap }) => {
           onPageChanged={onPageChanged}
         />
       </Column>
-      <Column w={4}>
+      <Column w={4} className="is-hidden-mobile">
         <SideBar>
           <p>Search by name:</p>
           <SearchBar

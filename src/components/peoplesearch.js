@@ -102,6 +102,17 @@ const PeopleSearch = ({ labMap, allPeople, showLabLink }) => {
 
   return (
     <Columns>
+      <Column w={4} className="is-hidden-tablet">
+        <SideBar>
+          <SearchBar
+            handleInputChange={handleInputChange}
+            placeholder="Type to find faculty..."
+          />
+          <Collapsible title="Type filter" height="auto">
+            <TypesFilter handleClick={handleClick} />
+          </Collapsible>
+        </SideBar>
+      </Column>
       <Column>
         <SearchSummary>
           <SearchCount>{typeFilteredPeople.length}</SearchCount> Research
@@ -122,7 +133,7 @@ const PeopleSearch = ({ labMap, allPeople, showLabLink }) => {
           onPageChanged={onPageChanged}
         />
       </Column>
-      <Column w={4}>
+      <Column w={4} className="is-hidden-mobile">
         <SideBar>
           <SearchBar
             handleInputChange={handleInputChange}

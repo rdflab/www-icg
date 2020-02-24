@@ -3,8 +3,6 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 import flattenEdges from "../utils/flattenedges"
 import HeaderLink from "./headerlink"
 
-import headerLinksStyles from "./headerlinks.module.scss"
-
 const HeaderLinks = ({ selected }) => {
   const data = useStaticQuery(graphql`
     query {
