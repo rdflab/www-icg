@@ -1,12 +1,12 @@
 import React from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import flattenEdges from "../utils/flattenedges"
 import HeaderLink from "./headerlink"
 
 const HeaderLinks = ({ selected }) => {
   const data = useStaticQuery(graphql`
     query {
-      allHeaderlinksJson {
+      links: allHeaderlinksJson {
         edges {
           node {
             name
@@ -17,7 +17,7 @@ const HeaderLinks = ({ selected }) => {
     }
   `)
 
-  const links = flattenEdges(data.allHeaderlinksJson.edges)
+  const links = flattenEdges(data.links.edges)
 
   return (
     <div

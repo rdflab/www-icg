@@ -4,6 +4,7 @@ import React from "react"
 import styled from "styled-components"
 import HeaderLinks from "./headerlinks"
 import ColumbiaICGImage from "./columbiaicgimage"
+import SlideMenu from "./slidemenu"
 
 const StyledHeader = styled.header`
   color: rgba(29, 79, 145, 0.8);
@@ -17,7 +18,20 @@ const StyledHeader = styled.header`
 
 const Header = ({ siteTitle }) => (
   <StyledHeader>
-    <div className="container">
+    <div className="container level is-mobile is-hidden-tablet">
+      <div class="level-left">
+        <div class="level-item">
+          <SlideMenu />
+        </div>
+        <div class="level-item">
+          <Link to="/" style={{ borderBottom: "none" }}>
+            <ColumbiaICGImage style={{ width: `300px` }} />
+          </Link>
+        </div>
+      </div>
+    </div>
+
+    <div className="container is-hidden-mobile">
       <div className="navbar-start">
         <Link to="/" style={{ borderBottom: "none" }}>
           <ColumbiaICGImage style={{ width: `400px` }} />

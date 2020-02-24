@@ -1,0 +1,17 @@
+.slide-menu-container {
+  position: fixed;
+  left: 0; //-100vw;
+  top: 0;
+  padding: 0;
+  margin: 0;
+  transform: translate3d(-100vw, 0, 0);
+  transition: transform .5s;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 100;
+}
+
+.slide-menu-container-visible {
+  transform: translate3d(0vw, 0, 0);
+}

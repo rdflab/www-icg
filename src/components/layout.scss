@@ -5,10 +5,20 @@ $TRANSPARENT_COLOR : rgba(0, 0, 0, 0);
 $LINK_COLOR:  rgb(0, 102, 255);
 $ANIMATION_TIMING: 0.5s;
 
+html {
+  min-height: 100%;
+  overflow-y: scroll;
+  padding: 0;
+  margin: 0;
+}
+
 body {
   font-family: 'Lato' !important;
   font-weight: 400 !important;
   font-size: 12pt;
+  min-height: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 h1 {

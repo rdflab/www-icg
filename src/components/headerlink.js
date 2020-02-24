@@ -2,7 +2,7 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 
 const HeaderLink = styled(Link)`
-  color: rgba(28, 76, 143, 1);
+  color: rgb(28, 76, 143) !important;
   background: transparent !important;
   margin: 0;
   padding: 0;
@@ -13,8 +13,8 @@ const HeaderLink = styled(Link)`
   text-decoration: none;
 
   &:hover {
-    color: rgba(28, 76, 143, 0.8) !important;
-    border-bottom: solid 1px rgba(28, 76, 143, 1);
+    color: rgb(28, 76, 143) !important;
+    border-bottom: solid 1px rgb(28, 76, 143) !important;
     text-decoration: none;
   }
 `

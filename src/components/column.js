@@ -1,7 +1,10 @@
 import React from "react"
 
-const Column = ({ children, w, className }) => (
-  <div className={`column ${w !== "" ? `is-${w}` : ""} ${className}`}>
+const Column = ({ children, w, className, onClick }) => (
+  <div
+    className={`column ${w !== "" ? `is-${w}` : ""} ${className}`}
+    onClick={onClick}
+  >
     {children}
   </div>
 )
