@@ -5,7 +5,12 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const Help = () => (
-  <Layout>
+  <Layout
+    crumbs={[
+      ["Home", "/"],
+      ["Help", "/help"],
+    ]}
+  >
     <SEO title="Help" />
     <p>Institute for Cancer Genetics website</p>
     <p>version: 1.0.0</p>
