@@ -12,7 +12,7 @@ const Footer = props => {
       <div className="container">
         <div className="columns is-vcentered">
           <div className="column text-center">
-            <FooterLinks></FooterLinks>
+            <FooterLinks />
           </div>
           <div className="column text-center">
             <a href="https://cumc.columbia.edu">
