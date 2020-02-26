@@ -13,14 +13,28 @@ const StyledEvent = styled.div`
 const CalEvent = ({ event }) => {
   return (
     <StyledEvent>
-      <Columns>
-        <Column w={2}>
-          <CalEventDate event={event} />
-        </Column>
-        <Column>
-          <CalEventDetails event={event} />
-        </Column>
-      </Columns>
+      <div className="is-hidden-tablet">
+        <Columns className="is-mobile">
+          <Column w={3}>
+            <CalEventDate event={event} />
+          </Column>
+        </Columns>
+        <Columns>
+          <Column>
+            <CalEventDetails event={event} isMobile={true} />
+          </Column>
+        </Columns>
+      </div>
+      <div className="is-hidden-mobile">
+        <Columns>
+          <Column w={2}>
+            <CalEventDate event={event} />
+          </Column>
+          <Column>
+            <CalEventDetails event={event} />
+          </Column>
+        </Columns>
+      </div>
     </StyledEvent>
   )
 }

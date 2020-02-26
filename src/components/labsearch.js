@@ -10,6 +10,14 @@ import Columns from "./columns"
 import Column from "./column"
 import SideBar from "./sidebar/sidebar"
 import BodyLink from "./bodylink"
+import H4 from "./h4"
+import styled from "styled-components"
+
+const StyledLab = styled.article`
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  border-top: solid 1px lightgray;
+`
 
 const EMPTY_QUERY = ""
 
@@ -73,35 +81,24 @@ const LabSearch = ({ allLabs, peopleMap }) => {
           }
 
           return (
-            <article
-              key={index}
-              style={{
-                paddingTop: "2rem",
-                paddingBottom: "2rem",
-                borderTop: "solid 2px rgba(0, 0, 128, 0.5)",
-              }}
-            >
-              <main>
-                <Columns>
-                  <Column w={7}>
-                    <h4>
-                      <BodyLink to={`/research-areas/labs/${lab.id}`}>
-                        {name}
-                      </BodyLink>
-                    </h4>
-                  </Column>
-                  <Column style={{ borderLeft: "solid 1px lightgray" }}>
-                    <MembersLink
-                      to={`/research-areas/labs/${lab.id}/members`}
-                    />
-                    <PublicationsLink
-                      to={`/research-areas/labs/${lab.id}/publications`}
-                    />
-                    <EmailLink to={person.email} />
-                  </Column>
-                </Columns>
-              </main>
-            </article>
+            <StyledLab>
+              <Columns>
+                <Column w={7}>
+                  <H4>
+                    <BodyLink to={`/research-areas/labs/${lab.id}`}>
+                      {name}
+                    </BodyLink>
+                  </H4>
+                </Column>
+                <Column style={{ borderLeft: "solid 1px lightgray" }}>
+                  <MembersLink to={`/research-areas/labs/${lab.id}/members`} />
+                  <PublicationsLink
+                    to={`/research-areas/labs/${lab.id}/publications`}
+                  />
+                  <EmailLink to={person.email} />
+                </Column>
+              </Columns>
+            </StyledLab>
           )
         })}
 

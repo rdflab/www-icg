@@ -7,6 +7,7 @@
 
 import React from "react"
 import PublicationList from "./publicationlist"
+import H4 from "../h4"
 
 const PublicationYears = ({ publications, labMap, peopleMap, showLabLink }) => {
   let yearMap = new Map()
@@ -27,7 +28,7 @@ const PublicationYears = ({ publications, labMap, peopleMap, showLabLink }) => {
         .map((year, index) => {
           return (
             <div key={index}>
-              <h2>{year}</h2>
+              <H4>{year}</H4>
               <PublicationList
                 publications={yearMap.get(year)}
                 labMap={labMap}

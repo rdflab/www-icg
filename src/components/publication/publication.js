@@ -8,6 +8,25 @@
 import React from "react"
 import publicationStyles from "./publication.module.scss"
 import BodyLink from "../bodylink"
+import H5 from "../h5"
+import styled from "styled-components"
+
+const StyledPub = styled.article`
+  margin-bottom: 2rem;
+`
+
+const StyledTitle = styled.div`
+  font-size: 1.2rem;
+`
+
+const StyledAuthors = styled.div`
+  font-weight: 300;
+`
+
+const StyledYear = styled.div`
+  //font-size: smaller;
+  font-weight: 300;
+`
 
 /**
  * Format author list into string.
@@ -49,30 +68,45 @@ const Publication = ({
   const authors = authorString(publication.authors, maxAuthors)
   const labId = publication.labs[0]
   let name
+  let shortName
 
   if (labId in labMap) {
     const lab = labMap[labId]
     const pi = lab.leaders[0]
     const person = peopleMap[pi]
     name = person.firstName + " " + person.lastName + " Lab"
+    shortName = person.lastName + " Lab"
   } else {
     name = ""
+    shortName = ""
   }
 
   return (
-    <article className={publicationStyles.publication}>
-      <div className={publicationStyles.publicationTitle}>
-        {publication.title}
-      </div>
-      <div>{authors}</div>
-      <div className={publicationStyles.publicationYear}>
-        {publication.year}
-      </div>
+    <StyledPub>
+      <StyledTitle>{publication.title}</StyledTitle>
+      <StyledAuthors>{authors}</StyledAuthors>
 
-      {name !== "" && showLabLink && (
-        <BodyLink to={`/research-areas/labs/${labId}`}>{name}</BodyLink>
-      )}
-    </article>
+      <div class="level is-mobile">
+        <div class="level-left">
+          {publication.journal !== "" && (
+            <StyledYear className="level-item">
+              {publication.journal}
+            </StyledYear>
+          )}
+          <StyledYear className="level-item">{publication.year}</StyledYear>
+        </div>
+
+        <div class="level-right">
+          {name !== "" && showLabLink && (
+            <div className="level-item">
+              <BodyLink to={`/research-areas/labs/${labId}`}>
+                {shortName}
+              </BodyLink>
+            </div>
+          )}
+        </div>
+      </div>
+    </StyledPub>
   )
 }
 

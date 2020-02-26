@@ -9,6 +9,7 @@ import React from "react"
 import PeopleList from "./peoplelist"
 import { PEOPLE_TYPES } from "../../constants"
 import toPeopleTypeMap from "../../utils/peopletypemap"
+import H3 from "../h3"
 
 const PeopleTypes = ({ allPeople, labMap, showLabLink }) => {
   const peopleMap = toPeopleTypeMap(allPeople)
@@ -21,7 +22,7 @@ const PeopleTypes = ({ allPeople, labMap, showLabLink }) => {
     const people = peopleMap[type]
 
     if (people.length > 0) {
-      elems.push(<h3 key={c++}>{type}</h3>)
+      elems.push(<H3 key={c++}>{type}</H3>)
       elems.push(
         <PeopleList
           key={c++}

@@ -302,7 +302,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   //
 
   for (let calEvent of allCalEvents) {
-    const path = `events/${
+    const path = `/events/${
       calEvent.frontmatter.start.split("T")[0]
     }-${calEvent.frontmatter.title.toLowerCase().replace(" ", "-")}`
 
@@ -314,7 +314,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       context: {
         calEvent,
         allCalEvents,
-        path,
       },
     })
   }
