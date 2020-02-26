@@ -1,7 +1,8 @@
+import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
-const HeaderLink = styled(Link)`
+const StyledLink = styled(Link)`
   color: rgb(28, 76, 143) !important;
   background: transparent !important;
   margin: 0;
@@ -18,5 +19,11 @@ const HeaderLink = styled(Link)`
     text-decoration: none;
   }
 `
+const HeaderLink = props => (
+  <StyledLink
+    {...props}
+    activeStyle={{ borderBottom: "solid 1px rgb(28, 76, 143)" }}
+  />
+)
 
 export default HeaderLink

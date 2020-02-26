@@ -10,9 +10,8 @@ const About = () => (
       ["Home", "/"],
       ["About", "/about"],
     ]}
+    title="About Us"
   >
-    <SEO title="About Us" />
-    <h1>About</h1>
     <p>Institute for Cancer Genetics website</p>
     <p>Version: 2020.02.22</p>
     <p>

@@ -2,8 +2,14 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import flattenEdges from "../utils/flattenedges"
 import HeaderLink from "./headerlink"
+import styled from "styled-components"
 
-const HeaderLinks = ({ selected }) => {
+const StyledDiv = styled.div`
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+`
+
+const HeaderLinks = () => {
   const data = useStaticQuery(graphql`
     query {
       links: allHeaderlinksJson {
@@ -20,10 +26,7 @@ const HeaderLinks = ({ selected }) => {
   const links = flattenEdges(data.links.edges)
 
   return (
-    <div
-      className={`navbar-start`}
-      style={{ marginTop: "1rem", marginBottom: "1rem" }}
-    >
+    <StyledDiv className="navbar-start">
       {links.map((link, index) => {
         return (
           <div key={index} class="navbar-item is-marginless is-paddingless">
@@ -31,12 +34,8 @@ const HeaderLinks = ({ selected }) => {
           </div>
         )
       })}
-    </div>
+    </StyledDiv>
   )
-}
-
-HeaderLinks.defaultProps = {
-  selected: "",
 }
 
 export default HeaderLinks

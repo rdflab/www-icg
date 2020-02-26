@@ -17,7 +17,7 @@ import Breadcrumb from "./breadcrumb"
 import Title from "./title"
 import SEO from "./seo"
 
-const Layout = ({ title, children, crumbs, selectedTab }) => {
+const Layout = ({ title, children, crumbs }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -41,7 +41,7 @@ const Layout = ({ title, children, crumbs, selectedTab }) => {
 
       {title !== "" && <SEO title={title} />}
 
-      <Header siteTitle={data.site.siteMetadata.title} selected={selectedTab} />
+      <Header siteTitle={data.site.siteMetadata.title} />
 
       {crumbs.length > 0 && <Breadcrumb crumbs={crumbs} />}
 

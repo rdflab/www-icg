@@ -18,6 +18,7 @@ export function getEvents(callback) {
         end: e.end.date || e.end.dateTime,
         title: e.summary,
         location: e.location,
+        notes: e.notes,
       })
     })
 

@@ -1,11 +1,9 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../../components/layout"
-import SEO from "../../components/seo"
 import flattenEdges from "../../utils/flattenedges"
 import toLabMap from "../../utils/tolabmap"
 import PeopleSearch from "../../components/peoplesearch"
-import Title from "../../components/title"
 
 const FacultyAndStaff = props => {
   const { data } = props
@@ -20,11 +18,8 @@ const FacultyAndStaff = props => {
         ["Research Areas", "/research-areas"],
         ["Faculty and Staff", "/research-areas/faculty-and-staff"],
       ]}
+      title="Faculty and Staff"
     >
-      <SEO title="Faculty and Staff" />
-
-      <Title>Faculty and Staff</Title>
-
       <PeopleSearch labMap={labMap} allPeople={allPeople} />
     </Layout>
   )

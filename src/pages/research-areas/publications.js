@@ -1,12 +1,10 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../../components/layout"
-import SEO from "../../components/seo"
 import flattenEdges from "../../utils/flattenedges"
 import toPeopleMap from "../../utils/topeoplemap"
 import toLabMap from "../../utils/tolabmap"
 import PubSearch from "../../components/pubsearch"
-import Title from "../../components/title"
 
 const Publications = props => {
   const { data } = props
@@ -24,10 +22,8 @@ const Publications = props => {
         ["Publications", "/research-areas/publications"],
       ]}
       selectedTab="Publications"
+      title="Publications"
     >
-      <SEO title="Publications" />
-      <Title>Publications</Title>
-
       <PubSearch
         labMap={labMap}
         peopleMap={peopleMap}

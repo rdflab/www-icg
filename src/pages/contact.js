@@ -13,9 +13,8 @@ const Contact = () => (
       ["Home", "/"],
       ["Contact", "/contact"],
     ]}
+    title="Contact"
   >
-    <SEO title="Contact" />
-    <h1>Contact</h1>
     <Columns>
       <Column w={6}>
         <Card>

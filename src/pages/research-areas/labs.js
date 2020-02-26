@@ -1,12 +1,10 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../../components/layout"
-import SEO from "../../components/seo"
 import flattenEdges from "../../utils/flattenedges"
 import toPeopleMap from "../../utils/topeoplemap"
 
 import LabSearch from "../../components/labsearch"
-import Title from "../../components/title"
 
 const Labs = props => {
   const { data } = props
@@ -20,12 +18,8 @@ const Labs = props => {
         ["Research Areas", "/research-areas"],
         ["Labs", "/research-areas/labs"],
       ]}
+      title="Research Labs"
     >
-      <SEO title="Research Labs" />
-
-      {/*in-line css for demo purposes*/}
-      <Title>Research Labs</Title>
-
       <LabSearch allLabs={allLabs} peopleMap={peopleMap} />
     </Layout>
   )
