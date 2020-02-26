@@ -26,7 +26,7 @@ const StyledHeader = styled.header`
 const Header = ({ siteTitle }) => (
   <>
     <StyledMobileHeader className="is-hidden-tablet">
-      <div className="container level is-mobile is-hidden-tablet">
+      <div className="container level is-mobile">
         <div className="level-left">
           <div className="level-item">
             <SlideMenu />
