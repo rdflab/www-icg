@@ -104,6 +104,26 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           }
         }
       }
+
+      events: allMarkdownRemark(
+        sort: { fields: frontmatter___start, order: DESC }
+        filter: { frontmatter: { tags: { regex: "/event/" } } }
+      ) {
+        edges {
+          node {
+            html
+            frontmatter {
+              title
+              location
+              start
+              end
+              url
+              tags
+            }
+            excerpt(format: HTML)
+          }
+        }
+      }
     }
   `)
 
@@ -125,6 +145,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const allPublications = []
   const allNews = []
   const allLabs = []
+  const allEvents = []
 
   result.data.people.edges.forEach(({ node }) => {
     allPeople.push(node)
@@ -142,6 +163,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   result.data.labs.edges.forEach(({ node }) => {
     allLabs.push(node)
+  })
+
+  result.data.events.edges.forEach(({ node }) => {
+    allEvents.push(node)
   })
 
   const markdownMap = new Map()

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import { getEvents } from "../utils/gcal"
 import CalEvent from "../components/calendar/calevent"
@@ -8,8 +9,12 @@ import DayPicker, { DateUtils } from "react-day-picker"
 import "../components/calendar/calendar.scss"
 import SideBar from "../components/sidebar/sidebar"
 import SearchBar from "../components/searchbar"
+import flattenEdges from "../utils/flattenedges"
 
-const Events = () => {
+const Events = props => {
+  const { data } = props
+  const allEvents = flattenEdges(data.events.edges)
+
   const [events, setEvents] = useState([])
   const [selectedDays, setSelectedDays] = useState([])
 
@@ -40,6 +45,8 @@ const Events = () => {
   events.map((e, index) => {
     ret.push(<CalEvent key={index} event={e} />)
   })
+
+  console.log(allEvents)
 
   return (
     <Layout
@@ -85,3 +92,27 @@ const Events = () => {
 }
 
 export default Events
+
+export const pageQuery = graphql`
+  query {
+    events: allMarkdownRemark(
+      sort: { fields: frontmatter___start, order: ASC }
+      filter: { frontmatter: { tags: { regex: "/event/" } } }
+    ) {
+      edges {
+        node {
+          html
+          frontmatter {
+            title
+            location
+            start
+            end
+            url
+            tags
+          }
+          excerpt(format: HTML)
+        }
+      }
+    }
+  }
+`
