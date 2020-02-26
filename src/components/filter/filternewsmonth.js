@@ -7,9 +7,9 @@
 
 import React, { Component } from "react"
 import FilterItem from "./filteritem"
-import { MONTHS } from "../constants"
+import { MONTHS } from "../../constants"
 
-class NewsMonthFilter extends Component {
+class FilterNewsMonth extends Component {
   constructor(props) {
     super(props)
 
@@ -53,4 +53,4 @@ class NewsMonthFilter extends Component {
   }
 }
 
-export default NewsMonthFilter
+export default FilterNewsMonth

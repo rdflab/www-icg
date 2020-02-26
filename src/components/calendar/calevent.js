@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import Columns from "./columns"
-import Column from "./column"
+import Columns from "../columns"
+import Column from "../column"
 import CalEventDate from "./caleventdate"
 import CalEventDetails from "./caleventdetails"
 

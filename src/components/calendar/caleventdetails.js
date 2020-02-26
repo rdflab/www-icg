@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import Columns from "./columns"
-import Column from "./column"
+import Columns from "../columns"
+import Column from "../column"
 import { FaRegClock, FaMapMarkerAlt } from "react-icons/fa"
 
 const StyledTitle = styled.div`

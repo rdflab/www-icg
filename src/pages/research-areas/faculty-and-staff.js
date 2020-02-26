@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby"
 import Layout from "../../components/layout"
 import flattenEdges from "../../utils/flattenedges"
 import toLabMap from "../../utils/tolabmap"
-import PeopleSearch from "../../components/peoplesearch"
+import PeopleSearch from "../../components/person/peoplesearch"
 
 const FacultyAndStaff = props => {
   const { data } = props

@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react"
 import Layout from "../components/layout"
 import { getEvents } from "../utils/gcal"
-import CalEvent from "../components/calevent"
+import CalEvent from "../components/calendar/calevent"
 import Columns from "../components/columns"
 import Column from "../components/column"
 import DayPicker, { DateUtils } from "react-day-picker"
-import "../components/calendar.scss"
-import SideBar from "../components/sidebar"
+import "../components/calendar/calendar.scss"
+import SideBar from "../components/sidebar/sidebar"
 import SearchBar from "../components/searchbar"
 
 const Events = () => {

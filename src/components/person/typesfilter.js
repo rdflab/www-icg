@@ -6,8 +6,8 @@
  */
 
 import React, { Component } from "react"
-import FilterItem from "./filteritem"
-import { PEOPLE_TYPES } from "../constants"
+import FilterItem from "../filter/filteritem"
+import { PEOPLE_TYPES } from "../../constants"
 
 class TypesFilter extends Component {
   constructor(props) {

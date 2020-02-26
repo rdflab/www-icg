@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import HICCCImage from "./hicccimage"
+import HICCCImage from "../hicccimage"
 
 import footerStyles from "./footer.module.scss"
 import FooterLinks from "./footerlinks"

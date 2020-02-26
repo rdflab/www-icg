@@ -1,10 +1,11 @@
 import React from "react"
+import Card from "../card"
 import newsItemStyles from "./newsitem.module.scss"
 import NewsItemDate from "./newsitemdate"
-import BodyLink from "./bodylink"
+import BodyLink from "../bodylink"
 
-const SideBarNewsItem = ({ item }) => (
-  <article className={newsItemStyles.newsSideBarItem}>
+const NewsItem = ({ item }) => (
+  <article className={newsItemStyles.newsItem}>
     <NewsItemDate>{item.frontmatter.date}</NewsItemDate>
     <div>
       <BodyLink
@@ -14,7 +15,9 @@ const SideBarNewsItem = ({ item }) => (
         {item.frontmatter.title}
       </BodyLink>
     </div>
+
+    <div dangerouslySetInnerHTML={{ __html: item.excerpt }} />
   </article>
 )
 
-export default SideBarNewsItem
+export default NewsItem

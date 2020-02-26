@@ -3,8 +3,8 @@ import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
 import HeaderLinks from "./headerlinks"
-import ColumbiaICGImage from "./columbiaicgimage"
-import SlideMenu from "./slidemenu"
+import ColumbiaICGImage from "../columbiaicgimage"
+import SlideMenu from "../slidemenu/slidemenu"
 
 const StyledMobileHeader = styled.div`
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);

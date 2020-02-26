@@ -6,9 +6,9 @@
  */
 
 import React, { Component } from "react"
-import FilterItem from "./filteritem"
+import FilterItem from "../filter/filteritem"
 
-class YearsFilter extends Component {
+class NewsYearFilter extends Component {
   constructor(props) {
     super(props)
 
@@ -25,16 +25,15 @@ class YearsFilter extends Component {
     }
 
     this.setState({ selectedYears: selectedYears })
+
     this.props.handleClick(selectedYears)
   }
 
   render() {
     let years = new Set()
 
-    for (let publication of this.props.publications) {
-      if (publication.year !== -1) {
-        years.add(publication.year)
-      }
+    for (let item of this.props.news) {
+      years.add(item.frontmatter.year)
     }
 
     return (
@@ -42,7 +41,6 @@ class YearsFilter extends Component {
         {Array.from(years)
           .sort()
           .reverse()
-          .slice(0, this.props.top)
           .map((year, index) => {
             return (
               <FilterItem
@@ -57,8 +55,4 @@ class YearsFilter extends Component {
   }
 }
 
-YearsFilter.defaultProps = {
-  top: 5,
-}
-
-export default YearsFilter
+export default NewsYearFilter

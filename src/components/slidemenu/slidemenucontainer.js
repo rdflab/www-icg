@@ -2,7 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import slideMenuContainerStyles from "./slidemenucontainer.module.scss"
-import flattenEdges from "../utils/flattenedges"
+import flattenEdges from "../../utils/flattenedges"
 import SlideMenuLink from "./slidemenulink"
 import SlideMenuCloseButton from "./slidemenuclosebutton"
 

@@ -1,8 +1,8 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import SideBarNews from "../components/sidebarnews"
-import NewsItemDate from "../components/newsitemdate"
+import SideBarNews from "../components/news/sidebarnews"
+import NewsItemDate from "../components/news/newsitemdate"
 
 const NewsItemTemplate = props => {
   const { pageContext } = props

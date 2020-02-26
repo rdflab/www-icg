@@ -1,6 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import flattenEdges from "../utils/flattenedges"
+import flattenEdges from "../../utils/flattenedges"
 import HeaderLink from "./headerlink"
 import styled from "styled-components"
 

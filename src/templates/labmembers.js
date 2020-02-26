@@ -1,10 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
-
 import toLabMap from "../utils/tolabmap"
-import PeopleSearch from "../components/peoplesearch"
-import Title from "../components/title"
+import PeopleSearch from "../components/person/peoplesearch"
 
 const LabMembersTemplate = props => {
   const { pageContext } = props
@@ -32,11 +29,8 @@ const LabMembersTemplate = props => {
         ],
         ["Members", `/research-areas/labs/${lab.id}/members`],
       ]}
+      title={title}
     >
-      <SEO title={title} />
-
-      <Title>{title}</Title>
-
       <PeopleSearch labMap={labMap} allPeople={people} showLabLink={false} />
     </Layout>
   )

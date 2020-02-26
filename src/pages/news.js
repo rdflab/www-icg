@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import flattenEdges from "../utils/flattenedges"
-import NewsSearch from "../components/newssearch"
+import NewsSearch from "../components/news/newssearch"
 
 const News = props => {
   const { data } = props

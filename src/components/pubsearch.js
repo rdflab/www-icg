@@ -1,12 +1,12 @@
 import React, { useState } from "react"
-import PublicationYears from "./publicationyears"
+import PublicationYears from "./publication/publicationyears"
 import Pagination from "./pagination"
 import SearchBar from "./searchbar"
-import YearsFilter from "./yearsfilter"
+import FilterYears from "./filter/filteryears"
 import Collapsible from "./collapsible"
 import SearchCount from "../components/searchcount"
 import SearchSummary from "./searchsummary"
-import SideBar from "./sidebar"
+import SideBar from "./sidebar/sidebar"
 import Columns from "./columns"
 import Column from "./column"
 
@@ -17,7 +17,7 @@ const PubSearch = ({ labMap, peopleMap, allPublications, showLabLink }) => {
   const [filteredPublications, setFilteredPublications] = useState([])
   const [page, setPage] = useState(1)
   const [recordsPerPage, setRecordsPerPage] = useState(20)
-  const [yearsFilter, setYearsFilter] = useState(new Set())
+  const [FilterYears, setFilterYears] = useState(new Set())
 
   const handleInputChange = e => {
     const q = e.target.value
@@ -41,7 +41,7 @@ const PubSearch = ({ labMap, peopleMap, allPublications, showLabLink }) => {
   }
 
   const handleClick = data => {
-    setYearsFilter(data)
+    setFilterYears(data)
     setPage(1)
   }
 
@@ -50,9 +50,9 @@ const PubSearch = ({ labMap, peopleMap, allPublications, showLabLink }) => {
 
   let yearFilteredPublications
 
-  if (yearsFilter.size > 0) {
+  if (FilterYears.size > 0) {
     yearFilteredPublications = publications.filter(publication => {
-      return yearsFilter.has(publication.year)
+      return FilterYears.has(publication.year)
     })
   } else {
     yearFilteredPublications = publications
@@ -70,7 +70,7 @@ const PubSearch = ({ labMap, peopleMap, allPublications, showLabLink }) => {
         <SideBar>
           <SearchBar handleInputChange={handleInputChange} />
           <Collapsible title="Year filter" height="auto">
-            <YearsFilter
+            <FilterYears
               publications={publications}
               handleClick={handleClick}
             />
@@ -105,7 +105,7 @@ const PubSearch = ({ labMap, peopleMap, allPublications, showLabLink }) => {
         <SideBar>
           <SearchBar handleInputChange={handleInputChange} />
           <Collapsible title="Year filter" height="auto">
-            <YearsFilter
+            <FilterYears
               publications={publications}
               handleClick={handleClick}
             />

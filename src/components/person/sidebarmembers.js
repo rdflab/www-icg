@@ -1,6 +1,6 @@
 import React from "react"
-import SideBarLink from "./sidebarlink"
-import Collapsible from "./collapsible"
+import SideBarLink from "../sidebar/sidebarlink"
+import Collapsible from "../collapsible"
 
 const SideBarMembers = ({ lab, people }) => (
   <Collapsible title="Lab Members" height="auto">

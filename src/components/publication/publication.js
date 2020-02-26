@@ -7,7 +7,7 @@
 
 import React from "react"
 import publicationStyles from "./publication.module.scss"
-import BodyLink from "./bodylink"
+import BodyLink from "../bodylink"
 
 /**
  * Format author list into string.

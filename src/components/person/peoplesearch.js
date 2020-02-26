@@ -1,16 +1,16 @@
 import React, { useState } from "react"
-import Pagination from "./pagination"
-import SearchBar from "./searchbar"
-import SearchCount from "./searchcount"
+import Pagination from "../pagination"
+import SearchBar from "../searchbar"
+import SearchCount from "../searchcount"
 import PeopleTypes from "./peopletypes"
 import TypesFilter from "./typesfilter"
-import Collapsible from "./collapsible"
-import toPeopleTypeMap from "../utils/peopletypemap"
-import { PEOPLE_TYPES } from "../constants"
-import SearchSummary from "./searchsummary"
-import SideBar from "./sidebar"
-import Columns from "./columns"
-import Column from "./column"
+import Collapsible from "../collapsible"
+import toPeopleTypeMap from "../../utils/peopletypemap"
+import { PEOPLE_TYPES } from "../../constants"
+import SearchSummary from "../searchsummary"
+import SideBar from "../sidebar/sidebar"
+import Columns from "../columns"
+import Column from "../column"
 
 const EMPTY_QUERY = ""
 
@@ -19,7 +19,7 @@ const PeopleSearch = ({ labMap, allPeople, showLabLink }) => {
   const [filteredPeople, setFilteredPeople] = useState([])
   const [page, setPage] = useState(1)
   const [recordsPerPage, setRecordsPerPage] = useState(20)
-  const [typesFilter, setTypesFilter] = useState(new Set())
+  const [TypesFilter, setTypesFilter] = useState(new Set())
 
   const handleInputChange = e => {
     const q = e.target.value
@@ -55,11 +55,11 @@ const PeopleSearch = ({ labMap, allPeople, showLabLink }) => {
 
   let typeFilteredPeople
 
-  if (typesFilter.size > 0) {
+  if (TypesFilter.size > 0) {
     typeFilteredPeople = people.filter(person => {
       let keep = false
 
-      for (let type of typesFilter) {
+      for (let type of TypesFilter) {
         if (person.type.includes(type)) {
           keep = true
           break

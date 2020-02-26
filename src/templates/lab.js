@@ -1,9 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
 
-import RecentPublications from "../components/recentpublications"
+import RecentPublications from "../components/publication/recentpublications"
 import toLabMap from "../utils/tolabmap"
 import Card from "../components/card"
 import EmailLink from "../components/emaillink"
@@ -38,8 +37,7 @@ const LabTemplate = props => {
   ]
 
   return (
-    <Layout crumbs={crumbs}>
-      <SEO title={`The ${faculty.lastName} Lab`} />
+    <Layout crumbs={crumbs} title={`The ${faculty.lastName} Lab`}>
       <div className="columns">
         <div className="column"></div>
         <div className="column">

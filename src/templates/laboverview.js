@@ -1,11 +1,10 @@
 import React from "react"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
 
 import Columns from "../components/columns"
 import Column from "../components/column"
-import SideBar from "../components/sidebar"
-import SideBarMembers from "../components/sidebarmembers"
+import SideBar from "../components/sidebar/sidebar"
+import SideBarMembers from "../components/person/sidebarmembers"
 
 const LabOverviewTemplate = props => {
   const { pageContext } = props
@@ -28,8 +27,7 @@ const LabOverviewTemplate = props => {
   ]
 
   return (
-    <Layout crumbs={crumbs}>
-      <SEO title={`The ${faculty.lastName} Lab Overview`} />
+    <Layout crumbs={crumbs} title={`The ${faculty.lastName} Lab Overview`}>
       <Columns>
         <Column>
           <div dangerouslySetInnerHTML={{ __html: labHtml }} />

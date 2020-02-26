@@ -1,7 +1,7 @@
 import React from "react"
 import { FaNewspaper } from "react-icons/fa"
-import RightSideIconLink from "./rightsideiconlink"
-import BodyLink from "./bodylink"
+import RightSideIconLink from "../rightsideiconlink"
+import BodyLink from "../bodylink"
 
 const PublicationsLink = ({ to }) => (
   <div>

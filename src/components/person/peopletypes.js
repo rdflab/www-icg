@@ -7,8 +7,8 @@
 
 import React from "react"
 import PeopleList from "./peoplelist"
-import { PEOPLE_TYPES } from "../constants"
-import toPeopleTypeMap from "../utils/peopletypemap"
+import { PEOPLE_TYPES } from "../../constants"
+import toPeopleTypeMap from "../../utils/peopletypemap"
 
 const PeopleTypes = ({ allPeople, labMap, showLabLink }) => {
   const peopleMap = toPeopleTypeMap(allPeople)

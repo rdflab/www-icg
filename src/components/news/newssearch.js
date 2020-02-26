@@ -1,15 +1,15 @@
 import React, { useState } from "react"
-import Pagination from "./pagination"
-import SearchBar from "./searchbar"
+import Pagination from "../pagination"
+import SearchBar from "../searchbar"
 import NewsYearFilter from "./newsyearfilter"
-import NewsMonthFilter from "./newsmonthfilter"
-import Collapsible from "./collapsible"
-import SearchCount from "./searchcount"
+import FilterNewsMonth from "../filter/filternewsmonth"
+import Collapsible from "../collapsible"
+import SearchCount from "../searchcount"
 import NewsItems from "./newsitems"
-import SearchSummary from "./searchsummary"
-import SideBar from "./sidebar"
-import Columns from "./columns"
-import Column from "./column"
+import SearchSummary from "../searchsummary"
+import SideBar from "../sidebar/sidebar"
+import Columns from "../columns"
+import Column from "../column"
 
 const EMPTY_QUERY = ""
 
@@ -18,7 +18,7 @@ const NewsSearch = ({ allNews }) => {
   const [filteredNews, setFilteredNews] = useState([])
   const [page, setPage] = useState(1)
   const [recordsPerPage, setRecordsPerPage] = useState(20)
-  const [yearsFilter, setYearsFilter] = useState(new Set())
+  const [FilterYears, setFilterYears] = useState(new Set())
 
   const handleInputChange = e => {
     const q = e.target.value
@@ -42,7 +42,7 @@ const NewsSearch = ({ allNews }) => {
   }
 
   const handleClick = data => {
-    setYearsFilter(data)
+    setFilterYears(data)
     setPage(1)
   }
 
@@ -51,9 +51,9 @@ const NewsSearch = ({ allNews }) => {
 
   let yearFilteredNews
 
-  if (yearsFilter.size > 0) {
+  if (FilterYears.size > 0) {
     yearFilteredNews = news.filter(item => {
-      return yearsFilter.has(item.frontmatter.year)
+      return FilterYears.has(item.frontmatter.year)
     })
   } else {
     yearFilteredNews = news
@@ -74,7 +74,7 @@ const NewsSearch = ({ allNews }) => {
             <NewsYearFilter news={news} handleClick={handleClick} />
           </Collapsible>
           <Collapsible title="Month filter" height="auto">
-            <NewsMonthFilter news={news} handleClick={handleClick} />
+            <FilterNewsMonth news={news} handleClick={handleClick} />
           </Collapsible>
         </SideBar>
       </Column>
@@ -104,7 +104,7 @@ const NewsSearch = ({ allNews }) => {
             <NewsYearFilter news={news} handleClick={handleClick} />
           </Collapsible>
           <Collapsible title="Month filter" height="auto">
-            <NewsMonthFilter news={news} handleClick={handleClick} />
+            <FilterNewsMonth news={news} handleClick={handleClick} />
           </Collapsible>
         </SideBar>
       </Column>

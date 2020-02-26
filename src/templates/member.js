@@ -4,8 +4,8 @@ import SEO from "../components/seo"
 import Title from "../components/title"
 import Columns from "../components/columns"
 import Column from "../components/column"
-import SideBar from "../components/sidebar"
-import SideBarMembers from "../components/sidebarmembers"
+import SideBar from "../components/sidebar/sidebar"
+import SideBarMembers from "../components/person/sidebarmembers"
 
 const MemberTemplate = props => {
   const { pageContext } = props
