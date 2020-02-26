@@ -1,10 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
 import flattenEdges from "../utils/flattenedges"
 import NewsSearch from "../components/newssearch"
-import Title from "../components/title"
 
 const News = props => {
   const { data } = props
@@ -16,11 +14,8 @@ const News = props => {
         ["Home", "/"],
         ["News", "/news"],
       ]}
+      title="News"
     >
-      <SEO title="News" />
-
-      <Title>News</Title>
-
       <NewsSearch allNews={allNews} />
     </Layout>
   )

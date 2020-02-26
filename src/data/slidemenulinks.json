@@ -14,5 +14,9 @@
   {
     "name": "News",
     "link": "/news"
+  },
+  {
+    "name": "Events",
+    "link": "/events"
   }
 ]

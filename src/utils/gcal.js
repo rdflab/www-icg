@@ -1,11 +1,11 @@
 const axios = require("axios")
 
 const CALENDAR_ID = "t3n1b5bkpmtgf546khvpq6oglc@group.calendar.google.com"
-const API_KEY = "AIzaSyBj1KBwlLU7jrY2eFkhsYg9DHV2dqqzadA "
+const API_KEY = "AIzaSyBj1KBwlLU7jrY2eFkhsYg9DHV2dqqzadA"
 let url = `https://www.googleapis.com/calendar/v3/calendars/${CALENDAR_ID}/events?key=${API_KEY}`
 
 export function getEvents(callback) {
-  //console.log(url)
+  console.log(url)
 
   axios.get(url).then(resp => {
     console.log(resp.data)
@@ -17,6 +17,7 @@ export function getEvents(callback) {
         start: e.start.date || e.start.dateTime,
         end: e.end.date || e.end.dateTime,
         title: e.summary,
+        location: e.location,
       })
     })
 

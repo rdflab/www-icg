@@ -38,13 +38,18 @@ h3 {
 }
 
 a {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 a:hover {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 .bottom-spacing-1 {
   margin-bottom: 1rem;
+}
+
+.is-vert-centered {
+  display: flex;
+  align-items: center;
 }

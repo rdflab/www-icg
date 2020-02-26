@@ -14,8 +14,10 @@ import "./layout.scss"
 import Helmet from "react-helmet"
 import Footer from "./footer"
 import Breadcrumb from "./breadcrumb"
+import Title from "./title"
+import SEO from "./seo"
 
-const Layout = ({ children, crumbs, selectedTab }) => {
+const Layout = ({ title, children, crumbs, selectedTab }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -36,12 +38,17 @@ const Layout = ({ children, crumbs, selectedTab }) => {
           crossorigin="anonymous"
         />
       </Helmet>
+
+      {title !== "" && <SEO title={title} />}
+
       <Header siteTitle={data.site.siteMetadata.title} selected={selectedTab} />
 
       {crumbs.length > 0 && <Breadcrumb crumbs={crumbs} />}
 
       <main>
         <div className="container" style={{ minHeight: "100vh" }}>
+          {title !== "" && <Title>{title}</Title>}
+
           {children}
         </div>
       </main>
@@ -58,6 +65,7 @@ Layout.propTypes = {
 Layout.defaultProps = {
   crumbs: [],
   selectedTab: "",
+  title: "",
 }
 
 export default Layout
