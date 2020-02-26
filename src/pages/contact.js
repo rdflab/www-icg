@@ -1,8 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
-
 import Layout from "../components/layout"
-import SEO from "../components/seo"
 import Card from "../components/card"
 import Columns from "../components/columns"
 import Column from "../components/column"

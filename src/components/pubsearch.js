@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import PublicationYears from "./publication/publicationyears"
 import Pagination from "./pagination"
 import SearchBar from "./searchbar"
-import FilterYears from "./filter/filteryears"
+import YearsFilter from "./publication/yearsfilter"
 import Collapsible from "./collapsible"
 import SearchCount from "../components/searchcount"
 import SearchSummary from "./searchsummary"
@@ -17,7 +17,7 @@ const PubSearch = ({ labMap, peopleMap, allPublications, showLabLink }) => {
   const [filteredPublications, setFilteredPublications] = useState([])
   const [page, setPage] = useState(1)
   const [recordsPerPage, setRecordsPerPage] = useState(20)
-  const [FilterYears, setFilterYears] = useState(new Set())
+  const [filterYears, setFilterYears] = useState(new Set())
 
   const handleInputChange = e => {
     const q = e.target.value
@@ -50,9 +50,9 @@ const PubSearch = ({ labMap, peopleMap, allPublications, showLabLink }) => {
 
   let yearFilteredPublications
 
-  if (FilterYears.size > 0) {
+  if (YearsFilter.size > 0) {
     yearFilteredPublications = publications.filter(publication => {
-      return FilterYears.has(publication.year)
+      return filterYears.has(publication.year)
     })
   } else {
     yearFilteredPublications = publications
@@ -70,7 +70,7 @@ const PubSearch = ({ labMap, peopleMap, allPublications, showLabLink }) => {
         <SideBar>
           <SearchBar handleInputChange={handleInputChange} />
           <Collapsible title="Year filter" height="auto">
-            <FilterYears
+            <YearsFilter
               publications={publications}
               handleClick={handleClick}
             />
@@ -105,7 +105,7 @@ const PubSearch = ({ labMap, peopleMap, allPublications, showLabLink }) => {
         <SideBar>
           <SearchBar handleInputChange={handleInputChange} />
           <Collapsible title="Year filter" height="auto">
-            <FilterYears
+            <YearsFilter
               publications={publications}
               handleClick={handleClick}
             />

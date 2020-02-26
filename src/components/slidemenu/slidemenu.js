@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import SlideMenuButton from "./slidemenubutton"
 import SlideMenuContainer from "./slidemenucontainer"
-import styled from "styled-components"
 
 const SlideMenu = () => {
   const [visible, setVisible] = useState(false)

@@ -7,7 +7,6 @@
 
 import React from "react"
 import personStyles from "./person.module.scss"
-import { Link } from "gatsby"
 import Columns from "../columns"
 import Column from "../column"
 import EmailLink from "../emaillink"

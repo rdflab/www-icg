@@ -1,7 +1,6 @@
 import React from "react"
 import searchbarStyles from "./searchbar.module.scss"
 import { FaSearch } from "react-icons/fa"
-import { IconContext } from "react-icons"
 import styled from "styled-components"
 
 const Icon = styled(FaSearch)`

@@ -6,9 +6,9 @@
  */
 
 import React, { Component } from "react"
-import FilterItem from "./filteritem"
+import FilterItem from "../filter/filteritem"
 
-class FilterYears extends Component {
+class YearsFilter extends Component {
   constructor(props) {
     super(props)
 
@@ -57,8 +57,8 @@ class FilterYears extends Component {
   }
 }
 
-FilterYears.defaultProps = {
+YearsFilter.defaultProps = {
   top: 5,
 }
 
-export default FilterYears
+export default YearsFilter
