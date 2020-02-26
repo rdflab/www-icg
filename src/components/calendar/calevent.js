@@ -11,8 +11,8 @@ const StyledEvent = styled.div`
 `
 
 const CalEvent = ({ event }) => {
-  let startDate = new Date(event.start)
-  let endDate = new Date(event.end)
+  let startDate = new Date(event.frontmatter.start)
+  let endDate = new Date(event.frontmatter.end)
 
   return (
     <StyledEvent>

@@ -5,16 +5,12 @@ import Column from "../column"
 import { FaRegClock, FaMapMarkerAlt } from "react-icons/fa"
 
 const StyledTitle = styled.div`
+  color: rgba(28, 76, 143, 0.9);
   font-size: x-large;
   margin-bottom: 1rem;
 `
-
-const ClockIcon = styled(FaRegClock)`
-  color: lightgray;
-`
-
-const MapIcon = styled(FaMapMarkerAlt)`
-  color: lightgray;
+const StyledDetails = styled.div`
+  color: gray;
 `
 
 const CalEventDetails = ({ event, startDate, endDate }) => {
@@ -31,19 +27,27 @@ const CalEventDetails = ({ event, startDate, endDate }) => {
 
   return (
     <>
-      <StyledTitle>{event.title}</StyledTitle>
+      <StyledTitle>{event.frontmatter.title}</StyledTitle>
       <Columns>
         <Column w={1}>
-          <ClockIcon size={28} />
+          <StyledDetails>
+            <FaRegClock size={28} />
+          </StyledDetails>
         </Column>
 
         <Column w={5}>
-          {st} - {et}
+          <StyledDetails>
+            {st} - {et}
+          </StyledDetails>
         </Column>
         <Column w={1}>
-          <MapIcon size={28} />
+          <StyledDetails>
+            <FaMapMarkerAlt size={28} />
+          </StyledDetails>
         </Column>
-        <Column w={5}>{event.location}</Column>
+        <Column w={5}>
+          <StyledDetails>{event.frontmatter.location}</StyledDetails>
+        </Column>
       </Columns>
     </>
   )

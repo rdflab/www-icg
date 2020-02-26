@@ -4,6 +4,7 @@ import styled from "styled-components"
 const StyledDate = styled.div`
   text-align: center;
   margin-bottom: 1rem;
+  color: rgba(28, 76, 143, 0.9);
 `
 
 const StyledMonth = styled.div`
@@ -19,7 +20,7 @@ const StyledDay = styled.div`
 const StyledDayName = styled.div`
   text-transform: uppercase;
   font-size: smaller;
-  background: rgba(28, 76, 143, 0.8);
+  background: rgba(28, 76, 143, 0.9);
   padding: 0.2rem;
   color: white;
   padding-left: 0.5rem;

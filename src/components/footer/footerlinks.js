@@ -23,10 +23,8 @@ const FooterLinks = () => {
     <ul className={footerLinksStyle.footerLinks}>
       {links.map(({ node }, index) => {
         return (
-          <li>
-            <FooterLink key={index} to={node.link}>
-              {node.name}
-            </FooterLink>
+          <li key={index}>
+            <FooterLink to={node.link}>{node.name}</FooterLink>
           </li>
         )
       })}

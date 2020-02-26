@@ -29,7 +29,7 @@ const HeaderLinks = () => {
     <StyledDiv className="navbar-start">
       {links.map((link, index) => {
         return (
-          <div key={index} class="navbar-item is-marginless is-paddingless">
+          <div key={index} className="navbar-item is-marginless is-paddingless">
             <HeaderLink to={link.link}>{link.name}</HeaderLink>
           </div>
         )
