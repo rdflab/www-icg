@@ -9,6 +9,13 @@ const Events = props => {
   const { data } = props
   const allCalEvents = flattenEdges(data.events.edges)
 
+  for (let calEvent of allCalEvents) {
+    calEvent.start = new Date(calEvent.frontmatter.start)
+    calEvent.end = new Date(calEvent.frontmatter.end)
+  }
+
+  console.log(allCalEvents)
+
   return (
     <Layout
       crumbs={[

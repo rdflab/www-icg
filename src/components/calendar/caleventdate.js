@@ -27,15 +27,17 @@ const StyledDayName = styled.div`
   padding-right: 0.5rem;
 `
 
-const CalEventDate = ({ event, date }) => {
+const CalEventDate = ({ event }) => {
   return (
     <StyledDate>
       <StyledMonth>
-        {date.toLocaleString("default", { month: "short" })}
+        {event.start.toLocaleString("default", { month: "short" })}
       </StyledMonth>
-      <StyledDay>{date.getDay()}</StyledDay>
+      <StyledDay>
+        {event.start.toLocaleString("default", { day: "numeric" })}
+      </StyledDay>
       <StyledDayName>
-        {date.toLocaleString("default", { weekday: "short" })}
+        {event.start.toLocaleString("default", { weekday: "short" })}
       </StyledDayName>
     </StyledDate>
   )

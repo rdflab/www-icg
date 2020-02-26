@@ -144,11 +144,7 @@ class Pagination extends Component {
 
     return (
       <>
-        <nav
-          className="pagination"
-          aria-label="Pagination"
-          style={{ textAlign: "center" }}
-        >
+        <nav className="pagination" aria-label="Pagination">
           <ul className="pagination-list">
             {pages.map((page, index) => {
               if (page === LEFT_PAGE)

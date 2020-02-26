@@ -19,7 +19,7 @@ const PeopleSearch = ({ labMap, allPeople, showLabLink }) => {
   const [filteredPeople, setFilteredPeople] = useState([])
   const [page, setPage] = useState(1)
   const [recordsPerPage, setRecordsPerPage] = useState(20)
-  const [TypesFilter, setTypesFilter] = useState(new Set())
+  const [types, setTypes] = useState(new Set())
 
   const handleInputChange = e => {
     const q = e.target.value
@@ -41,7 +41,7 @@ const PeopleSearch = ({ labMap, allPeople, showLabLink }) => {
   }
 
   const handleClick = data => {
-    setTypesFilter(data)
+    setTypes(data)
     setPage(1)
   }
 
@@ -55,11 +55,11 @@ const PeopleSearch = ({ labMap, allPeople, showLabLink }) => {
 
   let typeFilteredPeople
 
-  if (TypesFilter.size > 0) {
+  if (types.size > 0) {
     typeFilteredPeople = people.filter(person => {
       let keep = false
 
-      for (let type of TypesFilter) {
+      for (let type of types) {
         if (person.type.includes(type)) {
           keep = true
           break
@@ -124,14 +124,15 @@ const PeopleSearch = ({ labMap, allPeople, showLabLink }) => {
           labMap={labMap}
           showLabLink={showLabLink}
         />
-
-        <Pagination
-          page={page}
-          totalRecords={typeFilteredPeople.length}
-          recordsPerPage={recordsPerPage}
-          pageNeighbours={1}
-          onPageChanged={onPageChanged}
-        />
+        <div className="has-text-centered">
+          <Pagination
+            page={page}
+            totalRecords={typeFilteredPeople.length}
+            recordsPerPage={recordsPerPage}
+            pageNeighbours={1}
+            onPageChanged={onPageChanged}
+          />
+        </div>
       </Column>
       <Column w={4} className="is-hidden-mobile">
         <SideBar>

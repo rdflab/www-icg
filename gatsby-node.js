@@ -6,6 +6,7 @@ const labOverviewTemplate = path.resolve(`src/templates/laboverview.js`)
 const labMembersTemplate = path.resolve(`src/templates/labmembers.js`)
 const memberTemplate = path.resolve(`src/templates/member.js`)
 const newsItemTemplate = path.resolve(`src/templates/newsitem.js`)
+const calEventTemplate = path.resolve(`src/templates/calevent.js`)
 
 const toPeopleMap = people => {
   let ret = new Object() //new Map()
@@ -145,7 +146,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const allPublications = []
   const allNews = []
   const allLabs = []
-  const allEvents = []
+  const allCalEvents = []
 
   result.data.people.edges.forEach(({ node }) => {
     allPeople.push(node)
@@ -166,7 +167,12 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   })
 
   result.data.events.edges.forEach(({ node }) => {
-    allEvents.push(node)
+    const calEvent = node
+
+    calEvent.start = new Date(calEvent.frontmatter.start)
+    calEvent.end = new Date(calEvent.frontmatter.end)
+
+    allCalEvents.push(calEvent)
   })
 
   const markdownMap = new Map()
@@ -287,6 +293,28 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       context: {
         item,
         allNews,
+      },
+    })
+  }
+
+  //
+  // Events pages
+  //
+
+  for (let calEvent of allCalEvents) {
+    const path = `events/${
+      calEvent.frontmatter.start.split("T")[0]
+    }-${calEvent.frontmatter.title.toLowerCase().replace(" ", "-")}`
+
+    console.log(path)
+
+    createPage({
+      path: path,
+      component: calEventTemplate,
+      context: {
+        calEvent,
+        allCalEvents,
+        path,
       },
     })
   }

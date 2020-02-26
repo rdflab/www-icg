@@ -11,21 +11,14 @@ const StyledEvent = styled.div`
 `
 
 const CalEvent = ({ event }) => {
-  let startDate = new Date(event.frontmatter.start)
-  let endDate = new Date(event.frontmatter.end)
-
   return (
     <StyledEvent>
       <Columns>
         <Column w={2}>
-          <CalEventDate event={event} date={startDate} />
+          <CalEventDate event={event} />
         </Column>
         <Column>
-          <CalEventDetails
-            event={event}
-            startDate={startDate}
-            endDate={endDate}
-          />
+          <CalEventDetails event={event} />
         </Column>
       </Columns>
     </StyledEvent>

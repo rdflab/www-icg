@@ -47,8 +47,10 @@ const CalSearch = ({ allCalEvents }) => {
     //   selectedDays.push(day);
     // }
 
-    setSelectedDays([day])
+    setSelectedDays(selected ? [] : [day])
   }
+
+  console.log(selectedDays)
 
   const onPageChanged = data => {
     const { currentPage } = data
@@ -58,8 +60,19 @@ const CalSearch = ({ allCalEvents }) => {
   const hasSearchResults = query !== EMPTY_QUERY
   let calEvents = hasSearchResults ? filteredCalEvents : allCalEvents
 
+  let dayFilteredEvents = []
+
+  if (selectedDays.length > 0) {
+    dayFilteredEvents = calEvents.filter(e => {
+      console.log(selectedDays[0], e.start)
+      return DateUtils.isSameDay(selectedDays[0], e.start)
+    })
+  } else {
+    dayFilteredEvents = calEvents
+  }
+
   const offset = (page - 1) * recordsPerPage
-  let pagedEvents = calEvents.slice(offset, offset + recordsPerPage)
+  let pagedEvents = dayFilteredEvents.slice(offset, offset + recordsPerPage)
 
   return (
     <Columns>
@@ -79,11 +92,11 @@ const CalSearch = ({ allCalEvents }) => {
       </Column>
       <Column>
         <SearchSummary>
-          <SearchCount>{calEvents.length}</SearchCount>{" "}
-          {calEvents.length === 1 ? "Event" : "Events"} found
+          <SearchCount>{dayFilteredEvents.length}</SearchCount>{" "}
+          {dayFilteredEvents.length === 1 ? "Event" : "Events"} found
         </SearchSummary>
 
-        <CalEvents calEvents={calEvents} />
+        <CalEvents calEvents={dayFilteredEvents} />
 
         <Pagination
           page={page}

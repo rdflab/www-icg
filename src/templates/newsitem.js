@@ -1,6 +1,5 @@
 import React from "react"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
 import SideBarNews from "../components/news/sidebarnews"
 import NewsItemDate from "../components/news/newsitemdate"
 
@@ -15,11 +14,9 @@ const NewsItemTemplate = props => {
       crumbs={[
         ["Home", "/"],
         ["News", "/news"],
-        [title, item.frontmatter.path],
       ]}
+      title={title}
     >
-      <SEO title={title} />
-
       <div className="columns">
         <div className="column">
           <h4>{title}</h4>
