@@ -79,7 +79,7 @@ export const pageQuery = graphql`
           volume
           year
           tags
-          uri
+          url
         }
       }
     }

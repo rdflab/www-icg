@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import H2 from "./h2"
+import H2 from "./headings/h2"
 
 const StyledHeader = styled(H2)`
   font-weight: 400 !important;

@@ -7,7 +7,7 @@
 
 import React from "react"
 import PublicationList from "./publicationlist"
-import H4 from "../h4"
+import H4 from "../headings/h4"
 
 const PublicationYears = ({ publications, labMap, peopleMap, showLabLink }) => {
   let yearMap = new Map()

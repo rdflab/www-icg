@@ -3,7 +3,7 @@ import Card from "../card"
 import newsItemStyles from "./newsitem.module.scss"
 import NewsItemDate from "./newsitemdate"
 import BodyLink from "../bodylink"
-import H5 from "../h5"
+import H5 from "../headings/h5"
 import styled from "styled-components"
 
 const StyledNews = styled.article`

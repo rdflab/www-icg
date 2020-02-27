@@ -8,6 +8,7 @@ import CalEventDetails from "./caleventdetails"
 const StyledEvent = styled.div`
   border-bottom: solid 1px lightgray;
   margin-bottom: 1rem;
+  padding-bottom: 1rem;
 `
 
 const CalEvent = ({ event }) => {

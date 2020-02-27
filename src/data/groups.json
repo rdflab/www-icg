@@ -25,7 +25,7 @@
       "jose-rodriguez-cortes",
       "agnieszka-wendorff"
     ],
-    "uri": ""
+    "url": ""
   },
   {
     "id": "anna-lasorella",
@@ -43,7 +43,7 @@
       "peiguo-shi",
       "luca-szalontay"
     ],
-    "uri": ""
+    "url": ""
   },
   {
     "id": "antonio-iavarone",
@@ -60,7 +60,7 @@
       "peiguo-shi",
       "luca-szalontay"
     ],
-    "uri": ""
+    "url": ""
   },
   {
     "id": "christine-chio",
@@ -73,7 +73,7 @@
       "karina-chan",
       "xiangyi-ke"
     ],
-    "uri": ""
+    "url": ""
   },
   {
     "id": "jean-gautier",
@@ -90,7 +90,7 @@
       "soumini-vasan",
       "cyrstal-waters"
     ],
-    "uri": ""
+    "url": ""
   },
   {
     "id": "murty-vundavalli",
@@ -98,7 +98,7 @@
     "name": "Murty Vundavalli Lab",
     "leaders": ["murty-vundavalli"],
     "members": ["murty-vundavalli", "ishdorj-ganchimeg"],
-    "uri": ""
+    "url": ""
   },
   {
     "id": "riccardo-dalla-favera",
@@ -121,7 +121,7 @@
       "yunan-xie",
       "chuanjiang-yu"
     ],
-    "uri": ""
+    "url": ""
   },
   {
     "id": "richard-baer",
@@ -129,7 +129,7 @@
     "name": "Richard Baer Lab",
     "leaders": ["richard-baer"],
     "members": ["richard-baer", "foon-wu-baer"],
-    "uri": ""
+    "url": ""
   },
   {
     "id": "shan-zha",
@@ -144,7 +144,7 @@
       "zhengping-shao",
       "xiobin-summer-wang"
     ],
-    "uri": ""
+    "url": ""
   },
   {
     "id": "swarnali-acharyya",
@@ -162,7 +162,7 @@
       "rushdi-shakri",
       "tim-zhong"
     ],
-    "uri": ""
+    "url": ""
   },
   {
     "id": "wei-gu",
@@ -180,7 +180,7 @@
       "xingwu-wang",
       "jingjie-yi"
     ],
-    "uri": ""
+    "url": ""
   },
   {
     "id": "zhiguo-zhang",
@@ -198,6 +198,6 @@
       "xu-zhang",
       "hui-zhou"
     ],
-    "uri": ""
+    "url": ""
   }
 ]

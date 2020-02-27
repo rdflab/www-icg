@@ -31,7 +31,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             name
             leaders
             members
-            uri
+            url
           }
         }
       }
@@ -49,6 +49,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             tags
             groups
             type
+            url
           }
         }
       }
@@ -69,7 +70,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             volume
             year
             tags
-            uri
+            url
           }
         }
       }
@@ -100,6 +101,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               month: date(formatString: "MMMM")
               path
               tags
+              url
             }
             excerpt(format: HTML)
           }
@@ -167,7 +169,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   })
 
   result.data.events.edges.forEach(({ node }) => {
-    const calEvent = node
+    let calEvent = node
 
     calEvent.start = new Date(calEvent.frontmatter.start)
     calEvent.end = new Date(calEvent.frontmatter.end)
@@ -306,7 +308,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       calEvent.frontmatter.start.split("T")[0]
     }-${calEvent.frontmatter.title.toLowerCase().replace(" ", "-")}`
 
-    console.log(path)
+    console.log(path, calEvent.start)
 
     createPage({
       path: path,

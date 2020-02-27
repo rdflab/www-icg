@@ -4,7 +4,8 @@ import Columns from "../columns"
 import Column from "../column"
 import { FaRegClock, FaMapMarkerAlt } from "react-icons/fa"
 import BodyLink from "../bodylink"
-import H4 from "../h4"
+import H4 from "../headings/h4"
+import CalEventLocation from "./caleventlocation"
 
 const StyledTitle = styled.div`
   color: rgba(28, 76, 143, 0.9);
@@ -31,65 +32,14 @@ const CalEventDetails = ({ event, isMobile }) => {
     event.frontmatter.start.split("T")[0]
   }-${event.frontmatter.title.toLowerCase().replace(" ", "-")}`
 
-  if (isMobile) {
-    return (
-      <>
-        <H4>
-          <BodyLink to={path}>{event.frontmatter.title}</BodyLink>
-        </H4>
-        <Columns className="is-mobile">
-          <Column w={2}>
-            <StyledDetails>
-              <FaRegClock size={28} />
-            </StyledDetails>
-          </Column>
-
-          <Column>
-            <StyledDetails>
-              {st} - {et}
-            </StyledDetails>
-          </Column>
-        </Columns>
-        <Columns className="is-mobile">
-          <Column w={2}>
-            <StyledDetails>
-              <FaMapMarkerAlt size={28} />
-            </StyledDetails>
-          </Column>
-          <Column>
-            <StyledDetails>{event.frontmatter.location}</StyledDetails>
-          </Column>
-        </Columns>
-      </>
-    )
-  } else {
-    return (
-      <>
+  return (
+    <>
+      <H4>
         <BodyLink to={path}>{event.frontmatter.title}</BodyLink>
-        <Columns>
-          <Column w={1}>
-            <StyledDetails>
-              <FaRegClock size={28} />
-            </StyledDetails>
-          </Column>
-
-          <Column>
-            <StyledDetails>
-              {st} - {et}
-            </StyledDetails>
-          </Column>
-          <Column w={1}>
-            <StyledDetails>
-              <FaMapMarkerAlt size={28} />
-            </StyledDetails>
-          </Column>
-          <Column>
-            <StyledDetails>{event.frontmatter.location}</StyledDetails>
-          </Column>
-        </Columns>
-      </>
-    )
-  }
+      </H4>
+      <CalEventLocation event={event} isMobile={isMobile} />
+    </>
+  )
 }
 
 export default CalEventDetails

@@ -9,7 +9,7 @@ import React from "react"
 import PeopleList from "./peoplelist"
 import { PEOPLE_TYPES } from "../../constants"
 import toPeopleTypeMap from "../../utils/peopletypemap"
-import H3 from "../h3"
+import H3 from "../headings/h3"
 
 const PeopleTypes = ({ allPeople, labMap, showLabLink }) => {
   const peopleMap = toPeopleTypeMap(allPeople)

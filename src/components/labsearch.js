@@ -10,7 +10,7 @@ import Columns from "./columns"
 import Column from "./column"
 import SideBar from "./sidebar/sidebar"
 import BodyLink from "./bodylink"
-import H4 from "./h4"
+import H4 from "./headings/h4"
 import styled from "styled-components"
 
 const StyledLab = styled.article`

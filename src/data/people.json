@@ -9,6 +9,7 @@
     "tags": ["Faculty"],
     "groups": ["swarnali-acharyya"],
     "type": "Faculty",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "402B"
   },
@@ -22,6 +23,7 @@
     "tags": ["Research Scientist"],
     "groups": ["adolfo-ferrando"],
     "type": "Research Scientist",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": ""
   },
@@ -35,6 +37,7 @@
     "tags": ["Research Scientist"],
     "groups": ["adolfo-ferrando"],
     "type": "Research Scientist",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "401B"
   },
@@ -48,6 +51,7 @@
     "tags": ["Research Scientist"],
     "groups": ["jean-gautier"],
     "type": "Research Scientist",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "602"
   },
@@ -61,6 +65,7 @@
     "tags": ["Fellow", "Research Scientist"],
     "groups": ["christine-chio"],
     "type": "Research Scientist",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "505"
   },
@@ -74,6 +79,7 @@
     "tags": ["Faculty"],
     "groups": ["richard-baer"],
     "type": "Faculty",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "503A"
   },
@@ -87,6 +93,7 @@
     "tags": ["Research Scientist"],
     "groups": ["riccardo-dalla-favera"],
     "type": "Research Scientist",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "507"
   },
@@ -100,6 +107,7 @@
     "tags": ["Faculty"],
     "groups": ["riccardo-dalla-favera"],
     "type": "Faculty",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "506"
   },
@@ -113,6 +121,7 @@
     "tags": ["Research Scientist"],
     "groups": ["adolfo-ferrando"],
     "type": "Research Scientist",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "401B"
   },
@@ -126,6 +135,7 @@
     "tags": ["Research Scientist"],
     "groups": ["swarnali-acharyya"],
     "type": "Research Scientist",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "401A"
   },
@@ -139,6 +149,7 @@
     "tags": ["Staff"],
     "groups": ["christine-chio"],
     "type": "Staff",
+    "url": "",
     "postNominalLetters": [],
     "room": "505"
   },
@@ -152,6 +163,7 @@
     "tags": ["Staff"],
     "groups": ["zhiguo-zhang"],
     "type": "Staff",
+    "url": "",
     "postNominalLetters": [],
     "room": "851-4937"
   },
@@ -165,6 +177,7 @@
     "tags": ["Research Scientist"],
     "groups": ["wei-gu"],
     "type": "Research Scientist",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "608"
   },
@@ -178,6 +191,7 @@
     "tags": ["Faculty"],
     "groups": ["christine-chio"],
     "type": "Faculty",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "505"
   },
@@ -191,6 +205,7 @@
     "tags": ["Staff"],
     "groups": ["swarnali-acharyya"],
     "type": "Staff",
+    "url": "",
     "postNominalLetters": [],
     "room": "401A"
   },
@@ -204,6 +219,7 @@
     "tags": ["Staff"],
     "groups": ["adolfo-ferrando"],
     "type": "Staff",
+    "url": "",
     "postNominalLetters": [],
     "room": "401B"
   },
@@ -217,6 +233,7 @@
     "tags": ["Research Scientist"],
     "groups": ["riccardo-dalla-favera"],
     "type": "Research Scientist",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "507"
   },
@@ -230,6 +247,7 @@
     "tags": ["Research Scientist", "Research Scientist"],
     "groups": ["anna-lasorella", "antonio-iavarone"],
     "type": "Research Scientist",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "403"
   },
@@ -245,6 +263,7 @@
     "tags": ["Faculty"],
     "groups": ["riccardo-dalla-favera"],
     "type": "Faculty",
+    "url": "",
     "postNominalLetters": ["MD"],
     "room": "508A"
   },
@@ -258,6 +277,7 @@
     "tags": ["Graduate Student"],
     "groups": ["adolfo-ferrando"],
     "type": "Graduate Student",
+    "url": "",
     "postNominalLetters": [],
     "room": "401B"
   },
@@ -271,6 +291,7 @@
     "tags": ["Research Scientist", "Research Scientist"],
     "groups": ["anna-lasorella", "antonio-iavarone"],
     "type": "Research Scientist",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "403"
   },
@@ -286,6 +307,7 @@
     "tags": ["Faculty"],
     "groups": ["adolfo-ferrando"],
     "type": "Faculty",
+    "url": "",
     "postNominalLetters": ["MD", "PhD"],
     "room": "402A"
   },
@@ -299,6 +321,7 @@
     "tags": ["Research Scientist"],
     "groups": ["murty-vundavalli"],
     "type": "Research Scientist",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "605"
   },
@@ -315,6 +338,7 @@
     "tags": ["Research Scientist", "Research Scientist"],
     "groups": ["anna-lasorella", "antonio-iavarone"],
     "type": "Research Scientist",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "403"
   },
@@ -328,6 +352,7 @@
     "tags": ["Faculty"],
     "groups": ["jean-gautier"],
     "type": "Faculty",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "603A"
   },
@@ -341,6 +366,7 @@
     "tags": ["Fellow", "Research Scientist"],
     "groups": ["adolfo-ferrando"],
     "type": "Research Scientist",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "401B"
   },
@@ -354,6 +380,7 @@
     "tags": ["Faculty"],
     "groups": ["wei-gu"],
     "type": "Faculty",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "609A"
   },
@@ -367,6 +394,7 @@
     "tags": ["Staff"],
     "groups": ["adolfo-ferrando"],
     "type": "Staff",
+    "url": "",
     "postNominalLetters": [],
     "room": ""
   },
@@ -380,6 +408,7 @@
     "tags": ["Staff"],
     "groups": ["adolfo-ferrando"],
     "type": "Staff",
+    "url": "",
     "postNominalLetters": [],
     "room": "401B"
   },
@@ -393,6 +422,7 @@
     "tags": ["Graduate Student"],
     "groups": ["swarnali-acharyya"],
     "type": "Graduate Student",
+    "url": "",
     "postNominalLetters": [],
     "room": "401A"
   },
@@ -406,6 +436,7 @@
     "tags": ["Graduate Student"],
     "groups": ["swarnali-acharyya"],
     "type": "Graduate Student",
+    "url": "",
     "postNominalLetters": [],
     "room": "401A"
   },
@@ -419,6 +450,7 @@
     "tags": ["Research Scientist"],
     "groups": ["riccardo-dalla-favera"],
     "type": "Research Scientist",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "507"
   },
@@ -432,6 +464,7 @@
     "tags": ["Research Scientist"],
     "groups": ["zhiguo-zhang"],
     "type": "Research Scientist",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "851-4937"
   },
@@ -445,6 +478,7 @@
     "tags": ["Faculty", "Faculty"],
     "groups": ["anna-lasorella", "antonio-iavarone"],
     "type": "Faculty",
+    "url": "",
     "postNominalLetters": ["MD"],
     "room": "407B"
   },
@@ -458,6 +492,7 @@
     "tags": ["Graduate Student"],
     "groups": ["christine-chio"],
     "type": "Graduate Student",
+    "url": "",
     "postNominalLetters": [],
     "room": "505"
   },
@@ -471,6 +506,7 @@
     "tags": ["Graduate Student"],
     "groups": ["swarnali-acharyya"],
     "type": "Graduate Student",
+    "url": "",
     "postNominalLetters": [],
     "room": "401A"
   },
@@ -484,6 +520,7 @@
     "tags": ["Research Scientist", "Research Scientist"],
     "groups": ["anna-lasorella", "antonio-iavarone"],
     "type": "Research Scientist",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "403"
   },
@@ -497,6 +534,7 @@
     "tags": ["Research Scientist"],
     "groups": ["wei-gu"],
     "type": "Research Scientist",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "608"
   },
@@ -513,6 +551,7 @@
     "tags": ["Faculty", "Staff"],
     "groups": ["anna-lasorella", "antonio-iavarone"],
     "type": "Staff",
+    "url": "",
     "postNominalLetters": ["MD"],
     "room": "404"
   },
@@ -526,6 +565,7 @@
     "tags": ["Staff"],
     "groups": ["shan-zha"],
     "type": "Staff",
+    "url": "",
     "postNominalLetters": [],
     "room": "501"
   },
@@ -539,6 +579,7 @@
     "tags": ["Staff"],
     "groups": ["wei-gu"],
     "type": "Staff",
+    "url": "",
     "postNominalLetters": [],
     "room": ""
   },
@@ -552,6 +593,7 @@
     "tags": ["Staff"],
     "groups": ["zhiguo-zhang"],
     "type": "Staff",
+    "url": "",
     "postNominalLetters": [],
     "room": "851-4937"
   },
@@ -565,6 +607,7 @@
     "tags": ["Graduate Student"],
     "groups": ["jean-gautier"],
     "type": "Graduate Student",
+    "url": "",
     "postNominalLetters": [],
     "room": "602"
   },
@@ -578,6 +621,7 @@
     "tags": ["Staff"],
     "groups": ["swarnali-acharyya"],
     "type": "Staff",
+    "url": "",
     "postNominalLetters": [],
     "room": "401A"
   },
@@ -591,6 +635,7 @@
     "tags": ["Staff"],
     "groups": ["adolfo-ferrando"],
     "type": "Staff",
+    "url": "",
     "postNominalLetters": [],
     "room": "401B"
   },
@@ -604,6 +649,7 @@
     "tags": ["Research Scientist"],
     "groups": ["shan-zha"],
     "type": "Research Scientist",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "501"
   },
@@ -617,6 +663,7 @@
     "tags": ["Fellow", "Research Scientist"],
     "groups": ["riccardo-dalla-favera"],
     "type": "Research Scientist",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "507"
   },
@@ -630,6 +677,7 @@
     "tags": ["Research Scientist"],
     "groups": ["shan-zha"],
     "type": "Research Scientist",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "501"
   },
@@ -643,6 +691,7 @@
     "tags": ["Staff"],
     "groups": ["riccardo-dalla-favera"],
     "type": "Staff",
+    "url": "",
     "postNominalLetters": [],
     "room": "507"
   },
@@ -656,6 +705,7 @@
     "tags": ["Research Scientist"],
     "groups": ["zhiguo-zhang"],
     "type": "Research Scientist",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "851-4937"
   },
@@ -669,6 +719,7 @@
     "tags": ["Graduate Student"],
     "groups": ["adolfo-ferrando"],
     "type": "Graduate Student",
+    "url": "",
     "postNominalLetters": [],
     "room": "401B"
   },
@@ -682,6 +733,7 @@
     "tags": ["Research Scientist"],
     "groups": ["adolfo-ferrando"],
     "type": "Research Scientist",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "401B"
   },
@@ -695,6 +747,7 @@
     "tags": ["Faculty"],
     "groups": ["adolfo-ferrando"],
     "type": "Faculty",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "401B"
   },
@@ -708,6 +761,7 @@
     "tags": ["Faculty"],
     "groups": ["riccardo-dalla-favera"],
     "type": "Faculty",
+    "url": "",
     "postNominalLetters": ["MD"],
     "room": "507B"
   },
@@ -721,6 +775,7 @@
     "tags": ["Research Scientist"],
     "groups": ["anna-lasorella"],
     "type": "Research Scientist",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "403"
   },
@@ -734,6 +789,7 @@
     "tags": ["Research Scientist"],
     "groups": ["adolfo-ferrando"],
     "type": "Research Scientist",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "401B"
   },
@@ -747,6 +803,7 @@
     "tags": ["Staff"],
     "groups": ["riccardo-dalla-favera"],
     "type": "Staff",
+    "url": "",
     "postNominalLetters": [],
     "room": "507"
   },
@@ -760,6 +817,7 @@
     "tags": ["Graduate Student"],
     "groups": ["adolfo-ferrando"],
     "type": "Graduate Student",
+    "url": "",
     "postNominalLetters": [],
     "room": "401B"
   },
@@ -773,6 +831,7 @@
     "tags": ["Fellow", "Research Scientist"],
     "groups": ["adolfo-ferrando"],
     "type": "Research Scientist",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "401B"
   },
@@ -786,6 +845,7 @@
     "tags": ["Research Scientist"],
     "groups": ["adolfo-ferrando"],
     "type": "Research Scientist",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "401B"
   },
@@ -799,6 +859,7 @@
     "tags": ["Research Scientist"],
     "groups": ["adolfo-ferrando"],
     "type": "Research Scientist",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "401B"
   },
@@ -812,6 +873,7 @@
     "tags": ["Graduate Student"],
     "groups": ["jean-gautier"],
     "type": "Graduate Student",
+    "url": "",
     "postNominalLetters": [],
     "room": "602"
   },
@@ -825,6 +887,7 @@
     "tags": ["Research Scientist"],
     "groups": ["riccardo-dalla-favera"],
     "type": "Research Scientist",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "507"
   },
@@ -838,6 +901,7 @@
     "tags": ["Research Scientist"],
     "groups": ["zhiguo-zhang"],
     "type": "Research Scientist",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "407"
   },
@@ -851,6 +915,7 @@
     "tags": ["Fellow", "Research Scientist"],
     "groups": ["swarnali-acharyya"],
     "type": "Research Scientist",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "401A"
   },
@@ -864,6 +929,7 @@
     "tags": ["Research Scientist"],
     "groups": ["shan-zha"],
     "type": "Research Scientist",
+    "url": "",
     "postNominalLetters": ["MD", "PhD"],
     "room": "501"
   },
@@ -877,6 +943,7 @@
     "tags": ["Staff"],
     "groups": ["riccardo-dalla-favera"],
     "type": "Staff",
+    "url": "",
     "postNominalLetters": [],
     "room": "507"
   },
@@ -890,6 +957,7 @@
     "tags": ["Research Scientist", "Research Scientist"],
     "groups": ["anna-lasorella", "antonio-iavarone"],
     "type": "Research Scientist",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "403"
   },
@@ -903,6 +971,7 @@
     "tags": ["Research Scientist"],
     "groups": ["jean-gautier"],
     "type": "Research Scientist",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "602"
   },
@@ -916,6 +985,7 @@
     "tags": ["Staff"],
     "groups": ["wei-gu"],
     "type": "Staff",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "608"
   },
@@ -929,6 +999,7 @@
     "tags": ["Research Scientist"],
     "groups": ["wei-gu"],
     "type": "Research Scientist",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "608"
   },
@@ -942,6 +1013,7 @@
     "tags": ["Fellow", "Research Scientist", "Fellow", "Research Scientist"],
     "groups": ["anna-lasorella", "antonio-iavarone"],
     "type": "Research Scientist",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "403"
   },
@@ -955,6 +1027,7 @@
     "tags": ["Staff"],
     "groups": ["riccardo-dalla-favera"],
     "type": "Staff",
+    "url": "",
     "postNominalLetters": [],
     "room": "507"
   },
@@ -968,6 +1041,7 @@
     "tags": ["Research Scientist"],
     "groups": ["jean-gautier"],
     "type": "Research Scientist",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": ""
   },
@@ -981,6 +1055,7 @@
     "tags": ["Staff"],
     "groups": ["jean-gautier"],
     "type": "Staff",
+    "url": "",
     "postNominalLetters": [],
     "room": "602"
   },
@@ -994,6 +1069,7 @@
     "tags": ["Faculty"],
     "groups": ["murty-vundavalli"],
     "type": "Faculty",
+    "url": "",
     "postNominalLetters": [],
     "room": "605B"
   },
@@ -1007,6 +1083,7 @@
     "tags": ["Research Scientist"],
     "groups": ["wei-gu"],
     "type": "Research Scientist",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "608"
   },
@@ -1020,6 +1097,7 @@
     "tags": ["Research Scientist"],
     "groups": ["wei-gu"],
     "type": "Research Scientist",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "608"
   },
@@ -1033,6 +1111,7 @@
     "tags": ["Graduate Student"],
     "groups": ["shan-zha"],
     "type": "Graduate Student",
+    "url": "",
     "postNominalLetters": [],
     "room": "501"
   },
@@ -1046,6 +1125,7 @@
     "tags": ["Fellow", "Research Scientist"],
     "groups": ["jean-gautier"],
     "type": "Research Scientist",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "602"
   },
@@ -1059,6 +1139,7 @@
     "tags": ["Research Scientist"],
     "groups": ["adolfo-ferrando"],
     "type": "Research Scientist",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "401B"
   },
@@ -1072,6 +1153,7 @@
     "tags": ["Staff"],
     "groups": ["richard-baer"],
     "type": "Staff",
+    "url": "",
     "postNominalLetters": [],
     "room": "502"
   },
@@ -1085,6 +1167,7 @@
     "tags": ["Staff"],
     "groups": ["riccardo-dalla-favera"],
     "type": "Staff",
+    "url": "",
     "postNominalLetters": [],
     "room": "507"
   },
@@ -1098,6 +1181,7 @@
     "tags": ["Research Scientist"],
     "groups": ["zhiguo-zhang"],
     "type": "Research Scientist",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "851-4937"
   },
@@ -1111,6 +1195,7 @@
     "tags": ["Research Scientist"],
     "groups": ["wei-gu"],
     "type": "Research Scientist",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "608"
   },
@@ -1124,6 +1209,7 @@
     "tags": ["Research Scientist"],
     "groups": ["riccardo-dalla-favera"],
     "type": "Research Scientist",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "507"
   },
@@ -1139,6 +1225,7 @@
     "tags": ["Faculty"],
     "groups": ["shan-zha"],
     "type": "Faculty",
+    "url": "",
     "postNominalLetters": ["MD", "PhD"],
     "room": "505A"
   },
@@ -1152,6 +1239,7 @@
     "tags": ["Research Scientist"],
     "groups": ["zhiguo-zhang"],
     "type": "Research Scientist",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "851-4937"
   },
@@ -1167,6 +1255,7 @@
     "tags": ["Faculty"],
     "groups": ["zhiguo-zhang"],
     "type": "Faculty",
+    "url": "",
     "postNominalLetters": ["PhD"],
     "room": "851-4936"
   },
@@ -1180,6 +1269,7 @@
     "tags": ["Graduate Student"],
     "groups": ["swarnali-acharyya"],
     "type": "Graduate Student",
+    "url": "",
     "postNominalLetters": [],
     "room": "401A"
   },
@@ -1193,6 +1283,7 @@
     "tags": ["Staff"],
     "groups": ["zhiguo-zhang"],
     "type": "Staff",
+    "url": "",
     "postNominalLetters": [],
     "room": "407"
   }

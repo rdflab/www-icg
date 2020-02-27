@@ -8,7 +8,7 @@
 import React from "react"
 import publicationStyles from "./publication.module.scss"
 import BodyLink from "../bodylink"
-import H5 from "../h5"
+import H5 from "../headings/h5"
 import styled from "styled-components"
 
 const StyledPub = styled.article`
