@@ -25,7 +25,7 @@
       "jose-rodriguez-cortes",
       "agnieszka-wendorff"
     ],
-    "url": ""
+    "urls": []
   },
   {
     "id": "anna-lasorella",
@@ -35,7 +35,7 @@
     "members": [
       "anna-lasorella",
       "antonio-iavarone",
-      "fulvio-d'angelo",
+      "fulvio-dangelo",
       "tala-fnu",
       "luciano-garofano",
       "aram-ko",
@@ -43,7 +43,7 @@
       "peiguo-shi",
       "luca-szalontay"
     ],
-    "url": ""
+    "urls": []
   },
   {
     "id": "antonio-iavarone",
@@ -53,14 +53,14 @@
     "members": [
       "antonio-iavarone",
       "anna-lasorella",
-      "fulvio-d'angelo",
+      "fulvio-dangelo",
       "tala-fnu",
       "luciano-garofano",
       "aram-ko",
       "peiguo-shi",
       "luca-szalontay"
     ],
-    "url": ""
+    "urls": []
   },
   {
     "id": "christine-chio",
@@ -73,7 +73,7 @@
       "karina-chan",
       "xiangyi-ke"
     ],
-    "url": ""
+    "urls": []
   },
   {
     "id": "jean-gautier",
@@ -90,7 +90,7 @@
       "soumini-vasan",
       "cyrstal-waters"
     ],
-    "url": ""
+    "urls": []
   },
   {
     "id": "murty-vundavalli",
@@ -98,7 +98,7 @@
     "name": "Murty Vundavalli Lab",
     "leaders": ["murty-vundavalli"],
     "members": ["murty-vundavalli", "ishdorj-ganchimeg"],
-    "url": ""
+    "urls": []
   },
   {
     "id": "riccardo-dalla-favera",
@@ -121,7 +121,7 @@
       "yunan-xie",
       "chuanjiang-yu"
     ],
-    "url": ""
+    "urls": []
   },
   {
     "id": "richard-baer",
@@ -129,7 +129,7 @@
     "name": "Richard Baer Lab",
     "leaders": ["richard-baer"],
     "members": ["richard-baer", "foon-wu-baer"],
-    "url": ""
+    "urls": []
   },
   {
     "id": "shan-zha",
@@ -144,7 +144,7 @@
       "zhengping-shao",
       "xiobin-summer-wang"
     ],
-    "url": ""
+    "urls": []
   },
   {
     "id": "swarnali-acharyya",
@@ -162,7 +162,7 @@
       "rushdi-shakri",
       "tim-zhong"
     ],
-    "url": ""
+    "urls": []
   },
   {
     "id": "wei-gu",
@@ -180,7 +180,7 @@
       "xingwu-wang",
       "jingjie-yi"
     ],
-    "url": ""
+    "urls": []
   },
   {
     "id": "zhiguo-zhang",
@@ -198,6 +198,6 @@
       "xu-zhang",
       "hui-zhou"
     ],
-    "url": ""
+    "urls": []
   }
 ]

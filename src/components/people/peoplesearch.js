@@ -25,12 +25,12 @@ const PeopleSearch = ({ labMap, allPeople, showLabLink }) => {
     const q = e.target.value
     let ret = []
 
-    for (let people of allPeople) {
+    for (let person of allPeople) {
       if (
-        people.firstName.toLowerCase().includes(q.toLowerCase()) ||
-        people.lastName.toLowerCase().includes(q.toLowerCase())
+        person.frontmatter.firstName.toLowerCase().includes(q.toLowerCase()) ||
+        person.frontmatter.lastName.toLowerCase().includes(q.toLowerCase())
       ) {
-        ret.push(people)
+        ret.push(person)
       }
     }
 
@@ -60,7 +60,7 @@ const PeopleSearch = ({ labMap, allPeople, showLabLink }) => {
       let keep = false
 
       for (let type of types) {
-        if (person.type.includes(type)) {
+        if (person.frontmatter.type.includes(type)) {
           keep = true
           break
         }

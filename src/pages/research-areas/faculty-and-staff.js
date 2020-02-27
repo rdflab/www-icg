@@ -40,18 +40,45 @@ export const pageQuery = graphql`
       }
     }
 
-    people: allPeopleJson {
+    people: allMarkdownRemark(
+      sort: {
+        fields: [frontmatter___lastName, frontmatter___firstName]
+        order: [ASC, ASC]
+      }
+      filter: { frontmatter: { tags: { regex: "/People/" } } }
+    ) {
       edges {
         node {
-          id
-          firstName
-          lastName
-          email
-          titles
-          type
-          groups
+          frontmatter {
+            id
+            firstName
+            lastName
+            titles
+            type
+            email
+            phone
+            researchAreas
+            tags
+            urls
+          }
+          excerpt(format: HTML)
+          html
         }
       }
     }
   }
 `
+
+// people: allPeopleJson {
+//   edges {
+//     node {
+//       id
+//       firstName
+//       lastName
+//       email
+//       titles
+//       type
+//       groups
+//     }
+//   }
+// }

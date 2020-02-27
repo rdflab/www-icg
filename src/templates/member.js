@@ -10,18 +10,21 @@ const MemberTemplate = props => {
   const { pageContext } = props
   const { person, lab, labPeople } = pageContext
 
-  const title = `${person.firstName} ${person.lastName}`
+  const title = `${person.frontmatter.firstName} ${person.frontmatter.lastName}`
 
   return (
     <Layout
       crumbs={[
         ["For Research Scientists", "/research-areas"],
         ["Faculty and Staff", "/research-areas/faculty-and-staff"],
-        [`${title}`, `/research-areas/faculty-and-staff/${person.id}`],
+        [
+          `${title}`,
+          `/research-areas/faculty-and-staff/${person.frontmatter.id}`,
+        ],
       ]}
       title={title}
     >
-      <H4>{person.titles[0]}</H4>
+      <H4>{person.frontmatter.titles[0]}</H4>
 
       <Columns>
         <Column></Column>

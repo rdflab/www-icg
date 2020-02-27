@@ -27,7 +27,7 @@ export const pageQuery = graphql`
   query {
     news: allMarkdownRemark(
       sort: { fields: frontmatter___date, order: DESC }
-      filter: { frontmatter: { path: { regex: "/news/" } } }
+      filter: { frontmatter: { tags: { regex: "/News/" } } }
     ) {
       edges {
         node {

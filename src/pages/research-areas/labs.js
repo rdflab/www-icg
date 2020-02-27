@@ -36,21 +36,32 @@ export const pageQuery = graphql`
           name
           leaders
           members
+          urls
         }
       }
     }
 
-    people: allPeopleJson {
+    people: allMarkdownRemark(
+      sort: {
+        fields: [frontmatter___lastName, frontmatter___firstName]
+        order: [ASC, ASC]
+      }
+      filter: { frontmatter: { tags: { regex: "/People/" } } }
+    ) {
       edges {
         node {
-          groups
-          id
-          firstName
-          lastName
-          email
-          titles
-          postNominalLetters
-          type
+          frontmatter {
+            id
+            firstName
+            lastName
+            email
+            phone
+            researchAreas
+            tags
+            urls
+          }
+          excerpt(format: HTML)
+          html
         }
       }
     }

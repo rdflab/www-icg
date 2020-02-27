@@ -1,0 +1,12 @@
+---
+id: "aidan-stuart-quinn"
+firstName: "Aidan Stuart"
+lastName: "Quinn"
+type: "Graduate Student"
+titles: ["Graduate Student"]
+email: ["saq2106@cumc.columbia.edu"]
+phone: ["(212) 851-5292"]
+researchAreas: []
+tags: ["People", "Graduate Student"]
+urls: []
+---

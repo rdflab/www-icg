@@ -24,14 +24,18 @@ const Person = ({ person, labMap, showLabLink }) => {
       <Columns>
         <Column>
           <div>
-            <Link to={`/research-areas/faculty-and-staff/${person.id}`}>
-              {person.firstName} {person.lastName}
+            <Link
+              to={`/research-areas/faculty-and-staff/${person.frontmatter.id}`}
+            >
+              {person.frontmatter.firstName} {person.frontmatter.lastName}
             </Link>
           </div>
-          <div style={{ color: "gray" }}>{person.titles[0]}</div>
+          <div style={{ color: "gray" }}>{person.frontmatter.titles[0]}</div>
         </Column>
         <Column w={5}>
-          {person.email !== "" && <EmailLink to={person.email} />}
+          {person.frontmatter.email.length > 0 !== "" && (
+            <EmailLink to={person.frontmatter.email[0]} />
+          )}
         </Column>
       </Columns>
     </PersonDiv>

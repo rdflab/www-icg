@@ -1,8 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Title from "../components/title"
 
 const ResearchAreas = props => {
   //const { data } = props
@@ -13,11 +11,8 @@ const ResearchAreas = props => {
         ["Home", "/"],
         ["For Research Scientists", "/research-areas"],
       ]}
-    >
-      <SEO title="Research Areas" />
-
-      <Title>Research Areas</Title>
-    </Layout>
+      title="Research Areas"
+    ></Layout>
   )
 }
 
@@ -32,20 +27,6 @@ export const pageQuery = graphql`
           name
           leaders
           members
-        }
-      }
-    }
-
-    people: allPeopleJson {
-      edges {
-        node {
-          groups
-          id
-          firstName
-          lastName
-          email
-          titles
-          tags
         }
       }
     }

@@ -16,11 +16,13 @@ const SideBarMembers = ({ lab, people }) => (
     {people.map((person, index) => (
       <div style={{ marginBottom: "1rem" }}>
         <div>
-          <SideBarLink to={`/research-areas/faculty-and-staff/${person.id}`}>
-            {person.firstName} {person.lastName}
+          <SideBarLink
+            to={`/research-areas/faculty-and-staff/${person.frontmatter.id}`}
+          >
+            {person.frontmatter.firstName} {person.frontmatter.lastName}
           </SideBarLink>
         </div>
-        <div style={{ fontWeight: 300 }}>{person.titles[0]}</div>
+        <div style={{ fontWeight: 300 }}>{person.frontmatter.titles[0]}</div>
       </div>
     ))}
   </Collapsible>

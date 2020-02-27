@@ -13,10 +13,33 @@ const toPeopleMap = people => {
 
   people.forEach(person => {
     //ret.set(person.id, person)
-    ret[person.id] = person
+    ret[person.frontmatter.id] = person
   })
 
   return ret
+}
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions
+  const typeDefs = `
+    type GroupsJson implements Node {
+      urls: [String!]!
+    }
+
+    type MarkdownRemark implements Node {
+      frontmatter: Frontmatter
+    }
+
+    type Frontmatter {
+      titles: [String!]!
+      phone: [String!]!
+      email: [String!]!
+      tags: [String!]!
+      urls: [String!]!
+      researchAreas: [String!]!
+    }
+  `
+  createTypes(typeDefs)
 }
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
@@ -31,25 +54,34 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             name
             leaders
             members
-            url
+            urls
           }
         }
       }
 
-      people: allPeopleJson {
+      people: allMarkdownRemark(
+        sort: {
+          fields: [frontmatter___lastName, frontmatter___firstName]
+          order: [ASC, ASC]
+        }
+        filter: { frontmatter: { tags: { regex: "/People/" } } }
+      ) {
         edges {
           node {
-            id
-            firstName
-            lastName
-            email
-            phoneNumbers
-            titles
-            postNominalLetters
-            tags
-            groups
-            type
-            url
+            frontmatter {
+              id
+              firstName
+              lastName
+              titles
+              type
+              email
+              phone
+              researchAreas
+              tags
+              urls
+            }
+            excerpt(format: HTML)
+            html
           }
         }
       }
@@ -273,7 +305,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       const person = peopleMap[pid]
 
       createPage({
-        path: `/research-areas/faculty-and-staff/${person.id}`,
+        path: `/research-areas/faculty-and-staff/${person.frontmatter.id}`,
         component: memberTemplate,
         context: {
           person,
@@ -307,8 +339,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     const path = `/events/${
       calEvent.frontmatter.start.split("T")[0]
     }-${calEvent.frontmatter.title.toLowerCase().replace(" ", "-")}`
-
-    console.log(path, calEvent.start)
 
     createPage({
       path: path,
