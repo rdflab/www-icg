@@ -9,18 +9,16 @@ const StyledButton = styled.button`
   border: none;
   background: transparent;
   cursor: pointer;
+  color: white;
 
   &:hover {
     outline: none;
   }
 `
-const Icon = styled(FaBars)`
-  color: rgb(28, 76, 143);
-`
 
 const SlideMenuButton = ({ onClickHandle }) => (
   <StyledButton onClick={onClickHandle}>
-    <Icon />
+    <FaBars />
   </StyledButton>
 )
 

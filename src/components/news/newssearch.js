@@ -79,10 +79,11 @@ const NewsSearch = ({ allNews }) => {
         </SideBar>
       </Column>
       <Column>
-        <SearchSummary>
-          <SearchCount>{yearFilteredNews.length}</SearchCount>{" "}
-          {yearFilteredNews.length === 1 ? "News Item" : "News Items"} found
-        </SearchSummary>
+        <SearchSummary
+          count={yearFilteredNews.length}
+          single="News Item"
+          plural="News Items"
+        />
 
         <NewsItems news={pagedNews} />
 

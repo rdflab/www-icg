@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import toLabMap from "../utils/tolabmap"
-import PeopleSearch from "../components/person/peoplesearch"
+import PeopleSearch from "../components/people/peoplesearch"
 
 const LabMembersTemplate = props => {
   const { pageContext } = props

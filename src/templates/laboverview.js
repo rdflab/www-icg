@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import Columns from "../components/columns"
 import Column from "../components/column"
 import SideBar from "../components/sidebar/sidebar"
-import SideBarMembers from "../components/person/sidebarmembers"
+import SideBarMembers from "../components/people/sidebarmembers"
 
 const LabOverviewTemplate = props => {
   const { pageContext } = props

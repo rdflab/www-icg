@@ -1,14 +1,15 @@
 import React from "react"
 import { FaEnvelope } from "react-icons/fa"
 import RightSideIconLink from "./rightsideiconlink"
+import LinkBlock from "./linkblock"
 
 const EmailLink = ({ to }) => (
-  <div>
+  <LinkBlock>
     <RightSideIconLink>
       <FaEnvelope />
-    </RightSideIconLink>{" "}
+    </RightSideIconLink>
     <a href={`mailto:${to}`}>{to}</a>
-  </div>
+  </LinkBlock>
 )
 
 export default EmailLink

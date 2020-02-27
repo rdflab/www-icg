@@ -35,10 +35,18 @@ body {
 }
 
 a {
+  color: $COLUMBIA_BLUE_90 !important;
+  transition: 0.4s;
+  border-bottom: solid 1px $TRANSPARENT_COLOR;
   text-decoration: none !important;
+  margin: 0;
+  padding: 0;
+  outline: none;
 }
 
 a:hover {
+  color: $COLUMBIA_BLUE_90 !important;
+  border-bottom: solid 1px $COLUMBIA_BLUE_90;
   text-decoration: none !important;
 }
 
@@ -49,4 +57,12 @@ a:hover {
 .is-vert-centered {
   display: flex;
   align-items: center;
+}
+
+.is-current {
+  color: white !important;
+}
+
+.title {
+  font-weight: 400;
 }

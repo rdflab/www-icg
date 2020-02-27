@@ -4,12 +4,13 @@ import Layout from "../components/layout"
 
 import RecentPublications from "../components/publication/recentpublications"
 import toLabMap from "../utils/tolabmap"
-import Card from "../components/card"
 import EmailLink from "../components/emaillink"
 import PhoneLink from "../components/phonelink"
 import URILink from "../components/urilink"
 import Columns from "../components/columns"
 import Column from "../components/column"
+import Button from "../components/button"
+import SideBar from "../components/sidebar/sidebar"
 
 const LabTemplate = props => {
   const { pageContext } = props
@@ -38,44 +39,41 @@ const LabTemplate = props => {
 
   return (
     <Layout crumbs={crumbs} title={`The ${faculty.lastName} Lab`}>
-      <div className="columns">
-        <div className="column"></div>
-        <div className="column">
-          <div dangerouslySetInnerHTML={{ __html: labExcerptHtml }} />
-          <Link
-            to={`/research-areas/labs/${lab.id}/overview`}
-            className="btn btn-primary"
-          >
-            Learn more
-          </Link>
-        </div>
-      </div>
-
       <Columns>
-        <Column>
+        <Column className="is-hidden-tablet">
+          <SideBar>
+            <EmailLink to={faculty.email} />
+            <PhoneLink phoneNumbers={faculty.phoneNumbers} />
+
+            {lab.url !== "" && <URILink to={lab.url} />}
+          </SideBar>
+        </Column>
+        <Column w={8}>
+          <div dangerouslySetInnerHTML={{ __html: labExcerptHtml }} />
+
+          <div className="has-text-centered">
+            <Button to={`/research-areas/labs/${lab.id}/overview`}>
+              Learn more
+            </Button>
+          </div>
+
           <h2>{`${faculty.firstName} ${faculty.lastName}`}</h2>
           <h3>Research Focus</h3>
           <h3>Education</h3>
+          <RecentPublications
+            lab={lab}
+            publications={labPublications}
+            labMap={labMap}
+            peopleMap={peopleMap}
+          />
         </Column>
-        <Column></Column>
-        <Column>
-          <EmailLink to={faculty.email} />
-          <PhoneLink phoneNumbers={faculty.phoneNumbers} />
+        <Column className="is-hidden-mobile">
+          <SideBar>
+            <EmailLink to={faculty.email} />
+            <PhoneLink phoneNumbers={faculty.phoneNumbers} />
 
-          {lab.uri !== "" && <URILink to={lab.uri} />}
-        </Column>
-      </Columns>
-
-      <Columns>
-        <Column w={8}>
-          <Card>
-            <RecentPublications
-              lab={lab}
-              publications={labPublications}
-              labMap={labMap}
-              peopleMap={peopleMap}
-            />
-          </Card>
+            {lab.url !== "" && <URILink to={lab.url} />}
+          </SideBar>
         </Column>
       </Columns>
     </Layout>

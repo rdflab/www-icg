@@ -7,7 +7,7 @@ const BodyLink = styled(Link)`
   margin: 0;
   padding: 0;
   outline: none;
-  transition: border-bottom 0.4s ease;
+  transition: border-bottom 0.4s;
   border-bottom: solid 1px white;
   text-decoration: none;
 

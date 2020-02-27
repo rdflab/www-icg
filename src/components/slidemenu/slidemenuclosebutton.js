@@ -10,8 +10,11 @@ const StyledButton = styled.button`
   background: transparent;
   cursor: pointer;
   float: left;
+  color: rgba(255, 255, 255, 0.8);
+  transition: 0.4s;
 
   &:hover {
+    color: rgba(255, 255, 255, 1);
     outline: none;
   }
 `
@@ -22,7 +25,7 @@ const Icon = styled(FaTimes)`
 
 const SlideMenuCloseButton = ({ onClickHandle }) => (
   <StyledButton onClick={onClickHandle}>
-    <Icon size={28} />
+    <FaTimes size={28} />
   </StyledButton>
 )
 

@@ -1,14 +1,14 @@
 import React, { useState } from "react"
-import PublicationYears from "./publication/publicationyears"
-import Pagination from "./pagination"
-import SearchBar from "./searchbar"
-import YearsFilter from "./publication/yearsfilter"
-import Collapsible from "./collapsible"
-import SearchCount from "../components/searchcount"
-import SearchSummary from "./searchsummary"
-import SideBar from "./sidebar/sidebar"
-import Columns from "./columns"
-import Column from "./column"
+import PublicationYears from "./publicationyears"
+import Pagination from "../pagination"
+import SearchBar from "../searchbar"
+import YearsFilter from "./yearsfilter"
+import Collapsible from "../collapsible"
+import SearchCount from "../searchcount"
+import SearchSummary from "../searchsummary"
+import SideBar from "../sidebar/sidebar"
+import Columns from "../columns"
+import Column from "../column"
 
 const EMPTY_QUERY = ""
 
@@ -78,13 +78,11 @@ const PubSearch = ({ labMap, peopleMap, allPublications, showLabLink }) => {
         </SideBar>
       </Column>
       <Column>
-        <SearchSummary>
-          <SearchCount>{yearFilteredPublications.length}</SearchCount>{" "}
-          {yearFilteredPublications.length === 1
-            ? "Publication"
-            : "Publications"}{" "}
-          found
-        </SearchSummary>
+        <SearchSummary
+          count={yearFilteredPublications.length}
+          single="Publication"
+          plural="Publications"
+        />
 
         <PublicationYears
           publications={pagedPublications}

@@ -1,14 +1,15 @@
 import React from "react"
 import { FaPhone } from "react-icons/fa"
 import RightSideIconLink from "./rightsideiconlink"
+import LinkBlock from "./linkblock"
 
 const PhoneLink = ({ phoneNumbers }) => (
-  <div>
+  <LinkBlock>
     <RightSideIconLink>
       <FaPhone />
-    </RightSideIconLink>{" "}
+    </RightSideIconLink>
     <a href={`tel:${phoneNumbers[0]}`}>{phoneNumbers[0]}</a>
-  </div>
+  </LinkBlock>
 )
 
 export default PhoneLink

@@ -91,10 +91,11 @@ const CalSearch = ({ allCalEvents }) => {
         </SideBar>
       </Column>
       <Column>
-        <SearchSummary>
-          <SearchCount>{dayFilteredEvents.length}</SearchCount>{" "}
-          {dayFilteredEvents.length === 1 ? "Event" : "Events"} found
-        </SearchSummary>
+        <SearchSummary
+          count={dayFilteredEvents.length}
+          single="Event"
+          plural="Events"
+        />
 
         <CalEvents calEvents={dayFilteredEvents} />
 

@@ -10,25 +10,31 @@ import personStyles from "./person.module.scss"
 import Columns from "../columns"
 import Column from "../column"
 import EmailLink from "../emaillink"
-import BodyLink from "../bodylink"
+import { Link } from "gatsby"
+import styled from "styled-components"
+
+const PersonDiv = styled.div`
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+`
 
 const Person = ({ person, labMap, showLabLink }) => {
   return (
-    <div className={personStyles.person}>
+    <PersonDiv>
       <Columns>
         <Column>
           <div>
-            <BodyLink to={`/research-areas/faculty-and-staff/${person.id}`}>
+            <Link to={`/research-areas/faculty-and-staff/${person.id}`}>
               {person.firstName} {person.lastName}
-            </BodyLink>
+            </Link>
           </div>
-          <div>{person.titles[0]}</div>
+          <div style={{ color: "gray" }}>{person.titles[0]}</div>
         </Column>
         <Column w={5}>
           {person.email !== "" && <EmailLink to={person.email} />}
         </Column>
       </Columns>
-    </div>
+    </PersonDiv>
   )
 }
 

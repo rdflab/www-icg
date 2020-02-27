@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-import BodyLink from "../bodylink"
 import H4 from "../headings/h4"
 import CalEventLocation from "./caleventlocation"
+import { Link } from "gatsby"
 
 const StyledTitle = styled.div`
   color: rgba(28, 76, 143, 0.9);
@@ -18,7 +18,7 @@ const CalEventDetails = ({ event, isMobile }) => {
   return (
     <>
       <H4>
-        <BodyLink to={path}>{event.frontmatter.title}</BodyLink>
+        <Link to={path}>{event.frontmatter.title}</Link>
       </H4>
       <CalEventLocation event={event} isMobile={isMobile} />
     </>

@@ -114,10 +114,11 @@ const PeopleSearch = ({ labMap, allPeople, showLabLink }) => {
         </SideBar>
       </Column>
       <Column>
-        <SearchSummary>
-          <SearchCount>{typeFilteredPeople.length}</SearchCount> Research
-          Faculty and Staff found
-        </SearchSummary>
+        <SearchSummary
+          count={typeFilteredPeople.length}
+          single="Member"
+          plural="Members"
+        />
 
         <PeopleTypes
           allPeople={typeOrderedPeople}

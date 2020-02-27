@@ -1,10 +1,13 @@
 import React from "react"
 import { IconContext } from "react-icons"
+import styled from "styled-components"
 
-const RightSideIconLink = ({ children }) => (
-  <IconContext.Provider value={{ size: 20, color: "rgba(0, 0, 0, 0.8)" }}>
-    <span style={{ paddingRight: "0.5rem" }}>{children}</span>
-  </IconContext.Provider>
-)
+const StyledSpan = styled.span`
+  color: rgb(100, 100, 100);
+  padding: 0.5rem;
+  padding-right: 1rem;
+`
+
+const RightSideIconLink = ({ children }) => <StyledSpan>{children}</StyledSpan>
 
 export default RightSideIconLink

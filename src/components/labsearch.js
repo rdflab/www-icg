@@ -12,6 +12,7 @@ import SideBar from "./sidebar/sidebar"
 import BodyLink from "./bodylink"
 import H4 from "./headings/h4"
 import styled from "styled-components"
+import { Link } from "gatsby"
 
 const StyledLab = styled.article`
   padding-top: 1rem;
@@ -66,10 +67,7 @@ const LabSearch = ({ allLabs, peopleMap }) => {
         </SideBar>
       </Column>
       <Column>
-        <SearchSummary>
-          <SearchCount>{labs.length}</SearchCount>{" "}
-          {labs.length === 1 ? "Lab" : "Labs"} found
-        </SearchSummary>
+        <SearchSummary count={labs.length} single="Lab" plural="Labs" />
 
         {pagedLabs.map((lab, index) => {
           const person = peopleMap[lab.leaders[0]]
@@ -85,9 +83,7 @@ const LabSearch = ({ allLabs, peopleMap }) => {
               <Columns>
                 <Column w={7}>
                   <H4>
-                    <BodyLink to={`/research-areas/labs/${lab.id}`}>
-                      {name}
-                    </BodyLink>
+                    <Link to={`/research-areas/labs/${lab.id}`}>{name}</Link>
                   </H4>
                 </Column>
                 <Column style={{ borderLeft: "solid 1px lightgray" }}>

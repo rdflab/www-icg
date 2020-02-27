@@ -1,6 +1,10 @@
 @import "../../../node_modules/react-day-picker/lib/style";
-
+@import "../../assets/variables.scss";
 
 .DayPicker-Day {
     border-radius: 5px;
+}
+
+.DayPicker-Day--today {
+    color: $COLUMBIA_BLUE_90;
 }

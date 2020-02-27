@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import toLabMap from "../utils/tolabmap"
-import PubSearch from "../components/pubsearch"
+import PubSearch from "../components/publication/pubsearch"
 
 const LabPublicationsTemplate = props => {
   const { pageContext } = props

@@ -1,15 +1,16 @@
 import React from "react"
 import { FaNewspaper } from "react-icons/fa"
 import RightSideIconLink from "../rightsideiconlink"
-import BodyLink from "../bodylink"
+import { Link } from "gatsby"
+import LinkBlock from "../linkblock"
 
 const PublicationsLink = ({ to }) => (
-  <div>
+  <LinkBlock>
     <RightSideIconLink>
       <FaNewspaper />
-    </RightSideIconLink>{" "}
-    <BodyLink to={to}>View Publications</BodyLink>
-  </div>
+    </RightSideIconLink>
+    <Link to={to}>View Publications</Link>
+  </LinkBlock>
 )
 
 export default PublicationsLink

@@ -6,8 +6,8 @@
  */
 
 import React from "react"
-import BodyLink from "../bodylink"
 import styled from "styled-components"
+import { Link } from "gatsby"
 
 const StyledPub = styled.article`
   margin-bottom: 2rem;
@@ -97,9 +97,7 @@ const Publication = ({
         <div class="level-right">
           {name !== "" && showLabLink && (
             <div className="level-item">
-              <BodyLink to={`/research-areas/labs/${labId}`}>
-                {shortName}
-              </BodyLink>
+              <Link to={`/research-areas/labs/${labId}`}>{shortName}</Link>
             </div>
           )}
         </div>

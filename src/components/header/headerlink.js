@@ -9,7 +9,7 @@ const StyledLink = styled(Link)`
   padding: 0;
   margin-right: 2rem;
   outline: none;
-  transition: border-bottom 0.4s ease;
+  transition: border-bottom 0.4s;
   border-bottom: solid 1px white;
   text-decoration: none;
 

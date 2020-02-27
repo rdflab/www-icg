@@ -4,7 +4,7 @@ import Layout from "../../components/layout"
 import flattenEdges from "../../utils/flattenedges"
 import toPeopleMap from "../../utils/topeoplemap"
 import toLabMap from "../../utils/tolabmap"
-import PubSearch from "../../components/pubsearch"
+import PubSearch from "../../components/publication/pubsearch"
 
 const Publications = props => {
   const { data } = props
