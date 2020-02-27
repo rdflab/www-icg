@@ -35,7 +35,7 @@ export const pageQuery = graphql`
   query {
     events: allMarkdownRemark(
       sort: { fields: frontmatter___start, order: ASC }
-      filter: { frontmatter: { tags: { regex: "/event/" } } }
+      filter: { frontmatter: { tags: { regex: "/Event/" } } }
     ) {
       edges {
         node {

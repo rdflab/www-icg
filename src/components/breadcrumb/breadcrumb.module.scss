@@ -36,7 +36,7 @@ $crumb-hover-color: rgb(200, 200, 200);
   position: relative; 
   display: block;
   float: left;
-  transition: background-color 0.5s;
+  transition: background-color 0.4s;
   border-bottom: none !important;
   color: rgb(100, 100, 100) !important;
 }
@@ -64,7 +64,7 @@ $crumb-hover-color: rgb(200, 200, 200);
   margin-top: -50px; 
   left: 100%;
   z-index: 2;
-  transition: border-left-color 0.5s;
+  transition: border-left-color 0.4s;
 }
 
 .breadcrumb li:not(:last-child) a:hover:after {

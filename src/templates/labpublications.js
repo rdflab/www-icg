@@ -29,7 +29,7 @@ const LabPublicationsTemplate = props => {
           `${faculty.firstName} ${faculty.lastName}`,
           `/research-areas/labs/${lab.id}`,
         ],
-        ["publications", `/research-areas/labs/${lab.id}/publications`],
+        ["Publications", `/research-areas/labs/${lab.id}/publications`],
       ]}
       title={title}
     >

@@ -20,10 +20,7 @@ const LabOverviewTemplate = props => {
       `${faculty.firstName} ${faculty.lastName}`,
       `/research-areas/labs/${lab.id}`,
     ],
-    [
-      `${faculty.firstName} ${faculty.lastName} Overview`,
-      `/research-areas/labs/${lab.id}/overview`,
-    ],
+    [`Overview`, `/research-areas/labs/${lab.id}/overview`],
   ]
 
   return (

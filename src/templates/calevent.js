@@ -2,6 +2,16 @@ import React from "react"
 import Layout from "../components/layout"
 import NewsItemDate from "../components/news/newsitemdate"
 import CalEventLocation from "../components/calendar/caleventlocation"
+import H4 from "../components/headings/h4"
+import styled from "styled-components"
+
+const LocDiv = styled.div`
+  margin-top: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-top: solid 1px lightgray;
+  border-bottom: solid 1px lightgray;
+`
 
 const CalEventTemplate = props => {
   const { pageContext } = props
@@ -9,21 +19,27 @@ const CalEventTemplate = props => {
 
   const title = calEvent.frontmatter.title
 
+  calEvent.start = new Date(calEvent.frontmatter.start)
+  calEvent.end = new Date(calEvent.frontmatter.end)
+
+  console.log(allCalEvents)
+
   return (
     <Layout
       crumbs={[
         ["Home", "/"],
-        ["News", "/news"],
+        ["Events", "/events"],
       ]}
-      title={title}
+      title="Events"
     >
       <div className="columns">
         <div className="column">
-          <h4>{title}</h4>
-          <NewsItemDate>{calEvent.start}</NewsItemDate>
+          <H4>{title}</H4>
           <div dangerouslySetInnerHTML={{ __html: calEvent.html }} />
 
-          <CalEventLocation event={calEvent} />
+          <LocDiv>
+            <CalEventLocation event={calEvent} showDate={true} />
+          </LocDiv>
         </div>
         <div className="column is-4"></div>
       </div>

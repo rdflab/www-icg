@@ -8,7 +8,7 @@ const StyledDetails = styled.div`
   color: gray;
 `
 
-const CalEventLocation = ({ event, isMobile }) => {
+const CalEventLocation = ({ event, showDate, isMobile }) => {
   const st = event.start.toLocaleString("en-US", {
     hour: "numeric",
     minute: "numeric",
@@ -20,9 +20,17 @@ const CalEventLocation = ({ event, isMobile }) => {
     hour12: true,
   })
 
-  const path = `/events/${
-    event.frontmatter.start.split("T")[0]
-  }-${event.frontmatter.title.toLowerCase().replace(" ", "-")}`
+  let date
+
+  if (showDate) {
+    date = `${event.start.toLocaleString("default", {
+      month: "long",
+    })} ${event.start.toLocaleString("default", {
+      day: "numeric",
+    })}, ${event.start.toLocaleString("default", { year: "numeric" })}`
+  } else {
+    date = ""
+  }
 
   if (isMobile) {
     return (
@@ -35,6 +43,7 @@ const CalEventLocation = ({ event, isMobile }) => {
           </Column>
 
           <Column>
+            {showDate && <StyledDetails>{date}</StyledDetails>}
             <StyledDetails>
               {st} - {et}
             </StyledDetails>
@@ -62,6 +71,7 @@ const CalEventLocation = ({ event, isMobile }) => {
             </StyledDetails>
           </Column>
           <Column>
+            {showDate && <StyledDetails>{date}</StyledDetails>}
             <StyledDetails>
               {st} - {et}
             </StyledDetails>
@@ -83,5 +93,6 @@ const CalEventLocation = ({ event, isMobile }) => {
 export default CalEventLocation
 
 CalEventLocation.defaultProps = {
+  showDate: false,
   isMobile: false,
 }

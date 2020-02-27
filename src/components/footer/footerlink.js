@@ -8,7 +8,7 @@ const FooterLink = styled(Link)`
   margin: 0;
   padding: 0;
   outline: none;
-  transition: border-bottom 0.5s ease;
+  transition: border-bottom 0.4s ease;
   border-bottom: solid 1px rgba(255, 255, 255, 0);
   text-decoration: none;
 

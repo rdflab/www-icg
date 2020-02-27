@@ -12,7 +12,7 @@ const SlideMenuLink = styled(Link)`
   text-decoration: none;
   display: block;
   width: 100%;
-  transition: background-color 0.5s ease;
+  transition: background-color 0.4s ease;
 
   &:hover {
     color: rgba(28, 76, 143, 0.8) !important;

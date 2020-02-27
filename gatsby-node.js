@@ -110,7 +110,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
       events: allMarkdownRemark(
         sort: { fields: frontmatter___start, order: DESC }
-        filter: { frontmatter: { tags: { regex: "/event/" } } }
+        filter: { frontmatter: { tags: { regex: "/Event/" } } }
       ) {
         edges {
           node {
@@ -169,10 +169,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   })
 
   result.data.events.edges.forEach(({ node }) => {
-    let calEvent = node
+    const calEvent = node
 
-    calEvent.start = new Date(calEvent.frontmatter.start)
-    calEvent.end = new Date(calEvent.frontmatter.end)
+    //calEvent.start = new Date(calEvent.frontmatter.start)
+    //calEvent.end = new Date(calEvent.frontmatter.end)
 
     allCalEvents.push(calEvent)
   })

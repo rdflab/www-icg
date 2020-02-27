@@ -1,6 +1,4 @@
 import React from "react"
-import Card from "../card"
-import newsItemStyles from "./newsitem.module.scss"
 import NewsItemDate from "./newsitemdate"
 import BodyLink from "../bodylink"
 import H5 from "../headings/h5"

@@ -1,11 +1,10 @@
 import React from "react"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Title from "../components/title"
 import Columns from "../components/columns"
 import Column from "../components/column"
 import SideBar from "../components/sidebar/sidebar"
 import SideBarMembers from "../components/person/sidebarmembers"
+import H4 from "../components/headings/h4"
 
 const MemberTemplate = props => {
   const { pageContext } = props
@@ -20,10 +19,9 @@ const MemberTemplate = props => {
         ["Faculty and Staff", "/research-areas/faculty-and-staff"],
         [`${title}`, `/research-areas/faculty-and-staff/${person.id}`],
       ]}
+      title={title}
     >
-      <SEO title={title} />
-
-      <Title>{title}</Title>
+      <H4>{person.titles[0]}</H4>
 
       <Columns>
         <Column></Column>
