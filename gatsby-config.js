@@ -5,6 +5,7 @@ module.exports = {
     author: `Antony B Holmes <antony@antonyholmes.com>`,
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
