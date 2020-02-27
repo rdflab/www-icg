@@ -3,6 +3,7 @@ module.exports = {
     title: `Institute for Cancer Genetics`,
     description: `Institute for Cancer Genetics website`,
     author: `Antony B Holmes <antony@antonyholmes.com>`,
+    siteUrl: `https://icg.cpmc.columbia.edu`,
   },
   plugins: [
     `gatsby-plugin-sitemap`,
