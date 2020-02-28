@@ -56,13 +56,10 @@ const LabSearch = ({ allLabs, peopleMap }) => {
   return (
     <Columns>
       <Column w={4} className="is-hidden-tablet">
-        <SideBar>
-          <p>Search by name:</p>
-          <SearchBar
-            handleInputChange={handleInputChange}
-            placeholder="Type to find labs"
-          />
-        </SideBar>
+        <SearchBar
+          handleInputChange={handleInputChange}
+          placeholder="Type to find labs"
+        />
       </Column>
       <Column>
         <SearchSummary count={labs.length} single="Lab" plural="Labs" />
@@ -107,7 +104,6 @@ const LabSearch = ({ allLabs, peopleMap }) => {
       </Column>
       <Column w={4} className="is-hidden-mobile">
         <SideBar>
-          <p>Search by name:</p>
           <SearchBar
             handleInputChange={handleInputChange}
             placeholder="Type to find labs"

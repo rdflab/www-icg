@@ -4,7 +4,6 @@ import styled from "styled-components"
 
 const StyledSpan = styled.span`
   color: rgb(100, 100, 100);
-  padding: 0.5rem;
   padding-right: 1rem;
 `
 

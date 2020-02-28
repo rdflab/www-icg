@@ -103,15 +103,13 @@ const PeopleSearch = ({ labMap, allPeople, showLabLink }) => {
   return (
     <Columns>
       <Column w={4} className="is-hidden-tablet">
-        <SideBar>
-          <SearchBar
-            handleInputChange={handleInputChange}
-            placeholder="Type to find faculty..."
-          />
-          <Collapsible title="Type filter" height="auto">
+        <SearchBar
+          handleInputChange={handleInputChange}
+          placeholder="Type to find faculty..."
+        />
+        {/* <Collapsible title="Type filter" height="auto">
             <TypesFilter handleClick={handleClick} />
-          </Collapsible>
-        </SideBar>
+          </Collapsible> */}
       </Column>
       <Column>
         <SearchSummary

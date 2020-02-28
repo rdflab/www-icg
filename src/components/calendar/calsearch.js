@@ -77,18 +77,13 @@ const CalSearch = ({ allCalEvents }) => {
   return (
     <Columns>
       <Column w={4} className="is-hidden-tablet">
-        <SideBar>
-          <SearchBar
-            handleInputChange={handleInputChange}
-            placeholder="Type to find events"
-          />
-          <div className="has-text-centered">
-            <DayPicker
-              selectedDays={selectedDays}
-              onDayClick={handleDayClick}
-            />
-          </div>
-        </SideBar>
+        <SearchBar
+          handleInputChange={handleInputChange}
+          placeholder="Type to find events"
+        />
+        <div className="has-text-centered">
+          <DayPicker selectedDays={selectedDays} onDayClick={handleDayClick} />
+        </div>
       </Column>
       <Column>
         <SearchSummary

@@ -12,8 +12,6 @@ const ResearchAreasTemplate = props => {
     raMap[ra.name] = ra.id
   })
 
-  console.log(raMap)
-
   return (
     <Layout
       crumbs={[

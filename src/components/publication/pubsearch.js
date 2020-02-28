@@ -67,15 +67,13 @@ const PubSearch = ({ labMap, peopleMap, allPublications, showLabLink }) => {
   return (
     <Columns>
       <Column w={4} className="is-hidden-tablet">
-        <SideBar>
-          <SearchBar handleInputChange={handleInputChange} />
-          <Collapsible title="Year filter" height="auto">
+        <SearchBar handleInputChange={handleInputChange} />
+        {/* <Collapsible title="Year filter" height="auto">
             <YearsFilter
               publications={publications}
               handleClick={handleClick}
             />
-          </Collapsible>
-        </SideBar>
+          </Collapsible> */}
       </Column>
       <Column>
         <SearchSummary

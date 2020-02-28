@@ -65,18 +65,10 @@ const NewsSearch = ({ allNews }) => {
   return (
     <Columns>
       <Column w={4} className="is-hidden-tablet">
-        <SideBar>
-          <SearchBar
-            handleInputChange={handleInputChange}
-            placeholder="Type to find news items"
-          />
-          <Collapsible title="Year filter" height="auto">
-            <NewsYearFilter news={news} handleClick={handleClick} />
-          </Collapsible>
-          <Collapsible title="Month filter" height="auto">
-            <FilterNewsMonth news={news} handleClick={handleClick} />
-          </Collapsible>
-        </SideBar>
+        <SearchBar
+          handleInputChange={handleInputChange}
+          placeholder="Type to find news items"
+        />
       </Column>
       <Column>
         <SearchSummary

@@ -1,14 +1,15 @@
 import React from "react"
 import { FaGlobeAmericas } from "react-icons/fa"
 import RightSideIconLink from "./rightsideiconlink"
+import LinkBlock from "./linkblock"
 
 const URLLink = ({ urls }) => (
-  <div>
+  <LinkBlock>
     <RightSideIconLink>
       <FaGlobeAmericas />
     </RightSideIconLink>{" "}
     <a href={`${urls[0]}`}>{urls[0]}</a>
-  </div>
+  </LinkBlock>
 )
 
 export default URLLink

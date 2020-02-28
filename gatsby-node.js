@@ -350,6 +350,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           person: person,
           lab: lab,
           labPeople: labPeople,
+          researchAreasMap: researchAreasMap,
         },
       })
     }
