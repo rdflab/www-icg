@@ -423,8 +423,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     },
   })
 
-  console.log(allResearchAreas)
-
   createPage({
     path: "/research-areas",
     component: researchAreasTemplate,

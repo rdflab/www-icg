@@ -32,20 +32,23 @@ const LabTemplate = props => {
     ["Research Areas", "/research-areas"],
     ["Labs", "/research-areas/labs"],
     [
-      `${faculty.firstName} ${faculty.lastName}`,
+      `${faculty.frontmatter.firstName} ${faculty.frontmatter.lastName}`,
       `/research-areas/labs/${lab.id}`,
     ],
   ]
 
   return (
-    <Layout crumbs={crumbs} title={`The ${faculty.lastName} Lab`}>
+    <Layout crumbs={crumbs} title={`The ${faculty.frontmatter.lastName} Lab`}>
       <Columns>
         <Column className="is-hidden-tablet">
           <SideBar>
-            <EmailLink to={faculty.email} />
-            <PhoneLink phoneNumbers={faculty.phoneNumbers} />
-
-            {lab.url !== "" && <URLLink to={lab.url} />}
+            {faculty.frontmatter.email.length > 0 && (
+              <EmailLink to={faculty.frontmatter.email} />
+            )}
+            {faculty.frontmatter.phone.length > 0 && (
+              <PhoneLink numbers={faculty.frontmatter.phone} />
+            )}
+            {lab.urls.length > 0 && <URLLink urls={lab.urls} />}
           </SideBar>
         </Column>
         <Column w={8}>
@@ -69,10 +72,13 @@ const LabTemplate = props => {
         </Column>
         <Column className="is-hidden-mobile">
           <SideBar>
-            <EmailLink to={faculty.email} />
-            <PhoneLink phoneNumbers={faculty.phoneNumbers} />
-
-            {lab.url !== "" && <URLLink to={lab.url} />}
+            {faculty.frontmatter.email.length > 0 && (
+              <EmailLink to={faculty.frontmatter.email} />
+            )}
+            {faculty.frontmatter.phone.length > 0 && (
+              <PhoneLink numbers={faculty.frontmatter.phone} />
+            )}
+            {lab.urls.length > 0 && <URLLink urls={lab.urls} />}
           </SideBar>
         </Column>
       </Columns>
