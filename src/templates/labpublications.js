@@ -23,7 +23,8 @@ const LabPublicationsTemplate = props => {
   return (
     <Layout
       crumbs={[
-        ["For Research Scientists", "/research-areas"],
+        ["Home", "/"],
+        ["Research Areas", "/research-areas"],
         ["Labs", "/research-areas/labs"],
         [
           `${faculty.firstName} ${faculty.lastName}`,

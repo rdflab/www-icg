@@ -7,7 +7,7 @@ const SlideMenuLink = styled(Link)`
   margin: 0;
   outline: none;
   padding: 1rem;
-  border-bottom: solid 1px lightgray; //rgba(28, 76, 143, 0.4);
+  border-bottom: solid 1px lightgray !important; //rgba(28, 76, 143, 0.4);
   font-weight: 600;
   text-decoration: none;
   display: block;
@@ -16,7 +16,7 @@ const SlideMenuLink = styled(Link)`
 
   &:hover {
     color: rgba(28, 76, 143, 0.8) !important;
-    background-color: rgba(28, 76, 143, 0.1);
+    background-color: rgba(28, 76, 143, 0.2);
     text-decoration: none;
   }
 `

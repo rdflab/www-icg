@@ -1,0 +1,11 @@
+[
+  {
+    "id": "cancer-biology",
+    "name": "Cancer Biology",
+    "link": "/news"
+  },
+  {
+    "id": "data-science",
+    "name": "Data Science"
+  }
+]

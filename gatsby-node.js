@@ -12,6 +12,8 @@ const memberTemplate = path.resolve(`src/templates/member.js`)
 const newsItemTemplate = path.resolve(`src/templates/newsitem.js`)
 const calEventTemplate = path.resolve(`src/templates/calevent.js`)
 const publicationsTemplate = path.resolve(`src/templates/publications.js`)
+const researchAreasTemplate = path.resolve(`src/templates/research-areas.js`)
+const researchAreaTemplate = path.resolve(`src/templates/research-area.js`)
 
 const toPeopleMap = people => {
   let ret = new Object() //new Map()
@@ -20,6 +22,16 @@ const toPeopleMap = people => {
     //ret.set(person.id, person)
     ret[person.frontmatter.id] = person
   })
+
+  return ret
+}
+
+const toLabMap = labs => {
+  let ret = {}
+
+  for (let lab of labs) {
+    ret[lab.id] = lab
+  }
 
   return ret
 }
@@ -116,6 +128,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         }
       }
 
+      researchAreas: allResearchAreasJson {
+        edges {
+          node {
+            id
+            name
+          }
+        }
+      }
+
       markdown: allMarkdownRemark {
         edges {
           node {
@@ -190,6 +211,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const allNews = []
   const allLabs = []
   const allCalEvents = []
+  const allResearchAreas = []
+  const researchAreasMap = {}
 
   result.data.people.edges.forEach(({ node }) => {
     allPeople.push(node)
@@ -209,6 +232,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     allLabs.push(node)
   })
 
+  const labMap = toLabMap(allLabs)
+
   result.data.events.edges.forEach(({ node }) => {
     const calEvent = node
 
@@ -216,6 +241,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     //calEvent.end = new Date(calEvent.frontmatter.end)
 
     allCalEvents.push(calEvent)
+  })
+
+  result.data.researchAreas.edges.forEach(({ node }) => {
+    allResearchAreas.push(node)
+    researchAreasMap[node.id] = node
   })
 
   const markdownMap = new Map()
@@ -392,4 +422,26 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       allPublications: allPublications,
     },
   })
+
+  console.log(allResearchAreas)
+
+  createPage({
+    path: "/research-areas",
+    component: researchAreasTemplate,
+    context: {
+      allResearchAreas: allResearchAreas,
+    },
+  })
+
+  for (let researchArea of allResearchAreas) {
+    createPage({
+      path: `/research-areas/${researchArea.id}`,
+      component: researchAreaTemplate,
+      context: {
+        labMap: labMap,
+        allPeople: allPeople,
+        researchArea: researchArea,
+      },
+    })
+  }
 }
