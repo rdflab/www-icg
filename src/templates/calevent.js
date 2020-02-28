@@ -22,8 +22,6 @@ const CalEventTemplate = props => {
   calEvent.start = new Date(calEvent.frontmatter.start)
   calEvent.end = new Date(calEvent.frontmatter.end)
 
-  console.log(allCalEvents)
-
   return (
     <Layout
       crumbs={[

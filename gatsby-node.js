@@ -1,12 +1,17 @@
 const path = require(`path`)
 
 const labTemplate = path.resolve(`src/templates/lab.js`)
+const labsTemplate = path.resolve(`src/templates/labs.js`)
+const facultyAndStaffTemplate = path.resolve(
+  `src/templates/faculty-and-staff.js`
+)
 const labPublicationsTemplate = path.resolve(`src/templates/labpublications.js`)
 const labOverviewTemplate = path.resolve(`src/templates/laboverview.js`)
 const labMembersTemplate = path.resolve(`src/templates/labmembers.js`)
 const memberTemplate = path.resolve(`src/templates/member.js`)
 const newsItemTemplate = path.resolve(`src/templates/newsitem.js`)
 const calEventTemplate = path.resolve(`src/templates/calevent.js`)
+const publicationsTemplate = path.resolve(`src/templates/publications.js`)
 
 const toPeopleMap = people => {
   let ret = new Object() //new Map()
@@ -34,9 +39,12 @@ exports.createSchemaCustomization = ({ actions }) => {
       titles: [String!]!
       phone: [String!]!
       email: [String!]!
+      letters: [String!]!
       tags: [String!]!
       urls: [String!]!
       researchAreas: [String!]!
+      start: Date
+      end: Date
     }
   `
   createTypes(typeDefs)
@@ -73,6 +81,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               firstName
               lastName
               titles
+              letters
               type
               email
               phone
@@ -245,11 +254,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       path: `/research-areas/labs/${lab.id}`,
       component: labTemplate,
       context: {
-        lab,
-        peopleMap,
-        labPublications,
-        labExcerptHtml,
-        labHtml,
+        lab: lab,
+        peopleMap: peopleMap,
+        labPublications: labPublications,
+        labExcerptHtml: labExcerptHtml,
+        labHtml: labHtml,
       },
     })
 
@@ -261,11 +270,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       path: `/research-areas/labs/${lab.id}/overview`,
       component: labOverviewTemplate,
       context: {
-        lab,
-        labPeople,
-        peopleMap,
-        labPublications,
-        labHtml,
+        lab: lab,
+        labPeople: labPeople,
+        peopleMap: peopleMap,
+        labPublications: labPublications,
+        labHtml: labHtml,
       },
     })
 
@@ -277,9 +286,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       path: `${path}/members`,
       component: labMembersTemplate,
       context: {
-        lab,
-        labPeople,
-        peopleMap,
+        lab: lab,
+        labPeople: labPeople,
+        peopleMap: peopleMap,
       },
     })
 
@@ -291,9 +300,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       path: `${path}/publications`,
       component: labPublicationsTemplate,
       context: {
-        lab,
-        peopleMap,
-        allPublications,
+        lab: lab,
+        peopleMap: peopleMap,
+        allPublications: allPublications,
       },
     })
 
@@ -308,9 +317,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         path: `/research-areas/faculty-and-staff/${person.frontmatter.id}`,
         component: memberTemplate,
         context: {
-          person,
-          lab,
-          labPeople,
+          person: person,
+          lab: lab,
+          labPeople: labPeople,
         },
       })
     }
@@ -325,8 +334,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       path: item.frontmatter.path,
       component: newsItemTemplate,
       context: {
-        item,
-        allNews,
+        item: item,
+        allNews: allNews,
       },
     })
   }
@@ -344,9 +353,43 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       path: path,
       component: calEventTemplate,
       context: {
-        calEvent,
-        allCalEvents,
+        calEvent: calEvent,
+        allCalEvents: allCalEvents,
       },
     })
   }
+
+  // Labs page
+
+  createPage({
+    path: "/research-areas/labs",
+    component: labsTemplate,
+    context: {
+      allLabs: allLabs,
+      peopleMap: peopleMap,
+    },
+  })
+
+  // Faculty and Staff page
+
+  createPage({
+    path: "/research-areas/faculty-and-staff",
+    component: facultyAndStaffTemplate,
+    context: {
+      allLabs: allLabs,
+      allPeople: allPeople,
+    },
+  })
+
+  // Pubs page
+
+  createPage({
+    path: "/research-areas/publications",
+    component: publicationsTemplate,
+    context: {
+      allLabs: allLabs,
+      peopleMap: peopleMap,
+      allPublications: allPublications,
+    },
+  })
 }

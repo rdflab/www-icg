@@ -11,9 +11,6 @@ const SlideMenu = () => {
 
   const onClickHandle = e => {
     toggleMenu()
-
-    console.log("clicked")
-    //e.stopPropagation();
   }
 
   return (

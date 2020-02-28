@@ -8,8 +8,6 @@ export function getEvents(callback) {
   console.log(url)
 
   axios.get(url).then(resp => {
-    console.log(resp.data)
-
     const events = []
 
     resp.data.items.map(e => {

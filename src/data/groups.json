@@ -1,8 +1,9 @@
 [
   {
-    "id": "adolfo-ferrando",
+    "id": "adolfo-ferrando-lab",
     "type": "Lab",
     "name": "Adolfo Ferrando Lab",
+    "photo": "",
     "leaders": ["adolfo-ferrando"],
     "members": [
       "adolfo-ferrando",
@@ -25,12 +26,15 @@
       "jose-rodriguez-cortes",
       "agnieszka-wendorff"
     ],
+    "email": [],
+    "phone": [],
     "urls": []
   },
   {
-    "id": "anna-lasorella",
+    "id": "anna-lasorella-lab",
     "type": "Lab",
     "name": "Anna Lasorella Lab",
+    "photo": "",
     "leaders": ["anna-lasorella"],
     "members": [
       "anna-lasorella",
@@ -43,12 +47,15 @@
       "peiguo-shi",
       "luca-szalontay"
     ],
+    "email": [],
+    "phone": [],
     "urls": []
   },
   {
-    "id": "antonio-iavarone",
+    "id": "antonio-iavarone-lab",
     "type": "Lab",
     "name": "Antonio Iavarone Lab",
+    "photo": "",
     "leaders": ["antonio-iavarone"],
     "members": [
       "antonio-iavarone",
@@ -60,12 +67,15 @@
       "peiguo-shi",
       "luca-szalontay"
     ],
+    "email": [],
+    "phone": [],
     "urls": []
   },
   {
-    "id": "christine-chio",
+    "id": "christine-chio-lab",
     "type": "Lab",
     "name": "Christine Chio Lab",
+    "photo": "",
     "leaders": ["christine-chio"],
     "members": [
       "christine-chio",
@@ -73,12 +83,15 @@
       "karina-chan",
       "xiangyi-ke"
     ],
+    "email": [],
+    "phone": [],
     "urls": []
   },
   {
-    "id": "jean-gautier",
+    "id": "jean-gautier-lab",
     "type": "Lab",
     "name": "Jean Gautier Lab",
+    "photo": "",
     "leaders": ["jean-gautier"],
     "members": [
       "jean-gautier",
@@ -90,20 +103,26 @@
       "soumini-vasan",
       "cyrstal-waters"
     ],
+    "email": [],
+    "phone": [],
     "urls": []
   },
   {
-    "id": "murty-vundavalli",
+    "id": "murty-vundavalli-lab",
     "type": "Lab",
     "name": "Murty Vundavalli Lab",
+    "photo": "",
     "leaders": ["murty-vundavalli"],
     "members": ["murty-vundavalli", "ishdorj-ganchimeg"],
+    "email": [],
+    "phone": [],
     "urls": []
   },
   {
-    "id": "riccardo-dalla-favera",
+    "id": "riccardo-dalla-favera-lab",
     "type": "Lab",
     "name": "Riccardo Dalla-Favera Lab",
+    "photo": "",
     "leaders": ["riccardo-dalla-favera"],
     "members": [
       "riccardo-dalla-favera",
@@ -121,20 +140,26 @@
       "yunan-xie",
       "chuanjiang-yu"
     ],
+    "email": [],
+    "phone": [],
     "urls": []
   },
   {
-    "id": "richard-baer",
+    "id": "richard-baer-lab",
     "type": "Lab",
     "name": "Richard Baer Lab",
+    "photo": "",
     "leaders": ["richard-baer"],
     "members": ["richard-baer", "foon-wu-baer"],
+    "email": [],
+    "phone": [],
     "urls": []
   },
   {
-    "id": "shan-zha",
+    "id": "shan-zha-lab",
     "type": "Lab",
     "name": "Shan Zha Lab",
+    "photo": "",
     "leaders": ["shan-zha"],
     "members": [
       "shan-zha",
@@ -144,12 +169,15 @@
       "zhengping-shao",
       "xiobin-summer-wang"
     ],
+    "email": [],
+    "phone": [],
     "urls": []
   },
   {
-    "id": "swarnali-acharyya",
+    "id": "swarnali-acharyya-lab",
     "type": "Lab",
     "name": "Swarnali Acharyya Lab",
+    "photo": "",
     "leaders": ["swarnali-acharyya"],
     "members": [
       "swarnali-acharyya",
@@ -162,12 +190,15 @@
       "rushdi-shakri",
       "tim-zhong"
     ],
+    "email": [],
+    "phone": [],
     "urls": []
   },
   {
-    "id": "wei-gu",
+    "id": "wei-gu-lab",
     "type": "Lab",
     "name": "Wei Gu Lab",
+    "photo": "",
     "leaders": ["wei-gu"],
     "members": [
       "wei-gu",
@@ -180,12 +211,15 @@
       "xingwu-wang",
       "jingjie-yi"
     ],
+    "email": [],
+    "phone": [],
     "urls": []
   },
   {
-    "id": "zhiguo-zhang",
+    "id": "zhiguo-zhang-lab",
     "type": "Lab",
     "name": "Zhiguo Zhang Lab",
+    "photo": "",
     "leaders": ["zhiguo-zhang"],
     "members": [
       "zhiguo-zhang",
@@ -198,6 +232,8 @@
       "xu-zhang",
       "hui-zhou"
     ],
+    "email": [],
+    "phone": [],
     "urls": []
   }
 ]

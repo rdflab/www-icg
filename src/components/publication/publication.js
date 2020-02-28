@@ -72,8 +72,9 @@ const Publication = ({
     const lab = labMap[labId]
     const pi = lab.leaders[0]
     const person = peopleMap[pi]
-    name = person.firstName + " " + person.lastName + " Lab"
-    shortName = person.lastName + " Lab"
+    name =
+      person.frontmatter.firstName + " " + person.frontmatter.lastName + " Lab"
+    shortName = person.frontmatter.lastName + " Lab"
   } else {
     name = ""
     shortName = ""
@@ -84,8 +85,8 @@ const Publication = ({
       <StyledTitle>{publication.title}</StyledTitle>
       <StyledAuthors>{authors}</StyledAuthors>
 
-      <div class="level is-mobile">
-        <div class="level-left">
+      <div className="level is-mobile">
+        <div className="level-left">
           {publication.journal !== "" && (
             <StyledYear className="level-item">
               {publication.journal}
@@ -94,7 +95,7 @@ const Publication = ({
           <StyledYear className="level-item">{publication.year}</StyledYear>
         </div>
 
-        <div class="level-right">
+        <div className="level-right">
           {name !== "" && showLabLink && (
             <div className="level-item">
               <Link to={`/research-areas/labs/${labId}`}>{shortName}</Link>

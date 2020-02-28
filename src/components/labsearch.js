@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import Pagination from "./pagination"
 import SearchBar from "./searchbar"
-import SearchCount from "./searchcount"
 import SearchSummary from "./searchsummary"
 import EmailLink from "./emaillink"
 import MembersLink from "./memberslink"
@@ -9,7 +8,6 @@ import PublicationsLink from "./publication/publicationslink"
 import Columns from "./columns"
 import Column from "./column"
 import SideBar from "./sidebar/sidebar"
-import BodyLink from "./bodylink"
 import H4 from "./headings/h4"
 import styled from "styled-components"
 import { Link } from "gatsby"
@@ -72,14 +70,15 @@ const LabSearch = ({ allLabs, peopleMap }) => {
         {pagedLabs.map((lab, index) => {
           const person = peopleMap[lab.leaders[0]]
 
-          let name = person.firstName + " " + person.lastName
+          let name =
+            person.frontmatter.firstName + " " + person.frontmatter.lastName
 
-          if (person.postNominalLetters.length > 0) {
-            name += ", " + person.postNominalLetters.join(" ")
+          if (person.frontmatter.letters.length > 0) {
+            name += ", " + person.frontmatter.letters.join(" ")
           }
 
           return (
-            <StyledLab>
+            <StyledLab key={index}>
               <Columns>
                 <Column w={7}>
                   <H4>
@@ -91,7 +90,7 @@ const LabSearch = ({ allLabs, peopleMap }) => {
                   <PublicationsLink
                     to={`/research-areas/labs/${lab.id}/publications`}
                   />
-                  <EmailLink to={person.email} />
+                  <EmailLink to={person.frontmatter.email[0]} />
                 </Column>
               </Columns>
             </StyledLab>

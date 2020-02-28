@@ -1,31 +1,31 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../../components/layout"
-import flattenEdges from "../../utils/flattenedges"
-import toLabMap from "../../utils/tolabmap"
-import PeopleSearch from "../../components/people/peoplesearch"
+import Layout from "../src/components/layout"
+import flattenEdges from "../src/utils/flattenedges"
+import toPeopleMap from "../src/utils/topeoplemap"
 
-const FacultyAndStaff = props => {
+import LabSearch from "../src/components/labsearch"
+
+const Labs = props => {
   const { data } = props
-  const allPeople = flattenEdges(data.people.edges)
+  const peopleMap = toPeopleMap(flattenEdges(data.people.edges))
   const allLabs = flattenEdges(data.labs.edges)
-  const labMap = toLabMap(allLabs)
 
   return (
     <Layout
       crumbs={[
         ["Home", "/"],
         ["Research Areas", "/research-areas"],
-        ["Faculty and Staff", "/research-areas/faculty-and-staff"],
+        ["Labs", "/research-areas/labs"],
       ]}
-      title="Faculty and Staff"
+      title="Research Labs"
     >
-      <PeopleSearch labMap={labMap} allPeople={allPeople} />
+      <LabSearch allLabs={allLabs} peopleMap={peopleMap} />
     </Layout>
   )
 }
 
-export default FacultyAndStaff
+export default Labs
 
 export const pageQuery = graphql`
   query {
@@ -36,6 +36,7 @@ export const pageQuery = graphql`
           name
           leaders
           members
+          urls
         }
       }
     }
@@ -53,8 +54,6 @@ export const pageQuery = graphql`
             id
             firstName
             lastName
-            titles
-            type
             email
             phone
             researchAreas
@@ -68,17 +67,3 @@ export const pageQuery = graphql`
     }
   }
 `
-
-// people: allPeopleJson {
-//   edges {
-//     node {
-//       id
-//       firstName
-//       lastName
-//       email
-//       titles
-//       type
-//       groups
-//     }
-//   }
-// }

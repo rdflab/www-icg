@@ -6,7 +6,7 @@ import RecentPublications from "../components/publication/recentpublications"
 import toLabMap from "../utils/tolabmap"
 import EmailLink from "../components/emaillink"
 import PhoneLink from "../components/phonelink"
-import URILink from "../components/urilink"
+import URLLink from "../components/urllink"
 import Columns from "../components/columns"
 import Column from "../components/column"
 import Button from "../components/button"
@@ -45,7 +45,7 @@ const LabTemplate = props => {
             <EmailLink to={faculty.email} />
             <PhoneLink phoneNumbers={faculty.phoneNumbers} />
 
-            {lab.url !== "" && <URILink to={lab.url} />}
+            {lab.url !== "" && <URLLink to={lab.url} />}
           </SideBar>
         </Column>
         <Column w={8}>
@@ -72,7 +72,7 @@ const LabTemplate = props => {
             <EmailLink to={faculty.email} />
             <PhoneLink phoneNumbers={faculty.phoneNumbers} />
 
-            {lab.url !== "" && <URILink to={lab.url} />}
+            {lab.url !== "" && <URLLink to={lab.url} />}
           </SideBar>
         </Column>
       </Columns>

@@ -3,12 +3,12 @@ import { FaPhone } from "react-icons/fa"
 import RightSideIconLink from "./rightsideiconlink"
 import LinkBlock from "./linkblock"
 
-const PhoneLink = ({ phoneNumbers }) => (
+const PhoneLink = ({ numbers }) => (
   <LinkBlock>
     <RightSideIconLink>
       <FaPhone />
     </RightSideIconLink>
-    <a href={`tel:${phoneNumbers[0]}`}>{phoneNumbers[0]}</a>
+    <a href={`tel:${numbers[0]}`}>{numbers[0]}</a>
   </LinkBlock>
 )
 

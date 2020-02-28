@@ -9,7 +9,7 @@ const toPeopleTypeMap = people => {
 
   for (let person of people) {
     const t = person.frontmatter.type
-    console.log(person)
+
     if (!(t in ret)) {
       ret[this] = []
     }
