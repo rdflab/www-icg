@@ -29,21 +29,13 @@ const StyledInterestLink = styled(Link)`
   font-size: large;
 `
 
-const interests = (person, researchAreasMap) => {
-  let items = {}
-
-  for (let i = 0; i < person.frontmatter.researchAreas.length; ++i) {
-    const researchArea = researchAreasMap[person.frontmatter.researchAreas[i]]
-
-    items[researchArea.name] = researchArea
-  }
-
-  let keys = Object.keys(items).sort()
+const interests = person => {
+  const n = person.researchAreas.length
 
   let ret = []
 
-  for (let i = 0; i < keys.length; ++i) {
-    const researchArea = items[keys[i]]
+  for (let i = 0; i < n; ++i) {
+    const researchArea = person.researchAreas[i]
 
     ret.push(
       <StyledInterestLink key={i} to={`/research-areas/${researchArea.id}`}>
@@ -51,7 +43,7 @@ const interests = (person, researchAreasMap) => {
       </StyledInterestLink>
     )
 
-    if (i < keys.length - 1) {
+    if (i < n - 1) {
       ret.push(", ")
     }
   }

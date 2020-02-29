@@ -16,7 +16,7 @@ const SideBarMembers = ({ lab, people }) => (
     </div> */}
 
       {people.map((person, index) => (
-        <div style={{ marginBottom: "1rem" }}>
+        <div key={index} style={{ marginBottom: "1rem" }}>
           <div>
             <SideBarLink
               to={`/research-areas/faculty-and-staff/${person.frontmatter.id}`}

@@ -218,8 +218,29 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const allResearchAreas = []
   const researchAreasMap = {}
 
+  result.data.researchAreas.edges.forEach(({ node }) => {
+    allResearchAreas.push(node)
+    researchAreasMap[node.id] = node
+  })
+
   result.data.people.edges.forEach(({ node }) => {
-    allPeople.push(node)
+    const person = node
+
+    let ras = {}
+
+    for (let ra of person.frontmatter.researchAreas) {
+      if (ra in researchAreasMap) {
+        ras[researchAreasMap[ra].name] = researchAreasMap[ra]
+      }
+    }
+
+    person.researchAreas = Object.keys(ras)
+      .sort()
+      .map(key => {
+        return ras[key]
+      })
+
+    allPeople.push(person)
   })
 
   const peopleMap = toPeopleMap(allPeople)
@@ -245,11 +266,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     //calEvent.end = new Date(calEvent.frontmatter.end)
 
     allCalEvents.push(calEvent)
-  })
-
-  result.data.researchAreas.edges.forEach(({ node }) => {
-    allResearchAreas.push(node)
-    researchAreasMap[node.id] = node
   })
 
   const markdownMap = new Map()
