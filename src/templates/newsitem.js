@@ -26,7 +26,7 @@ const NewsItemTemplate = props => {
           <NewsItemDate>{item.frontmatter.date}</NewsItemDate>
           <div dangerouslySetInnerHTML={{ __html: item.html }} />
         </Column>
-        <Column w={4}>
+        <Column w="1/3">
           <SideBarNews allNews={allNews} />
         </Column>
       </Columns>

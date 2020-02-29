@@ -14,9 +14,9 @@ const StyledEvent = styled.div`
 const CalEvent = ({ event }) => {
   return (
     <StyledEvent>
-      <div className="is-hidden-tablet">
-        <Columns className="is-mobile">
-          <Column w={3}>
+      <div className="sm:hidden">
+        <Columns>
+          <Column w="1/4">
             <CalEventDate event={event} />
           </Column>
         </Columns>
@@ -26,12 +26,12 @@ const CalEvent = ({ event }) => {
           </Column>
         </Columns>
       </div>
-      <div className="is-hidden-mobile">
+      <div className="hidden sm:block">
         <Columns>
-          <Column w={2}>
+          <Column w="2/12" className="mr-2">
             <CalEventDate event={event} />
           </Column>
-          <Column>
+          <Column w="10/12">
             <CalEventDetails event={event} />
           </Column>
         </Columns>

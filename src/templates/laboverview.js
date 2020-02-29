@@ -2,9 +2,10 @@ import React from "react"
 import CrumbLayout from "../components/crumblayout"
 
 import Columns from "../components/columns"
-import Column from "../components/column"
 import SideBar from "../components/sidebar/sidebar"
 import SideBarMembers from "../components/people/sidebarmembers"
+import SideColumn from "../components/sidecolumn"
+import MainColumn from "../components/maincolumn"
 
 const LabOverviewTemplate = props => {
   const { pageContext } = props
@@ -17,23 +18,26 @@ const LabOverviewTemplate = props => {
     ["Research Areas", "/research-areas"],
     ["Labs", "/research-areas/labs"],
     [
-      `${faculty.firstName} ${faculty.lastName}`,
+      `${faculty.frontmatter.firstName} ${faculty.frontmatter.lastName}`,
       `/research-areas/labs/${lab.id}`,
     ],
     [`Overview`, `/research-areas/labs/${lab.id}/overview`],
   ]
 
   return (
-    <CrumbLayout crumbs={crumbs} title={`The ${faculty.lastName} Lab Overview`}>
+    <CrumbLayout
+      crumbs={crumbs}
+      title={`The ${faculty.frontmatter.lastName} Lab Overview`}
+    >
       <Columns>
-        <Column>
+        <MainColumn>
           <div dangerouslySetInnerHTML={{ __html: labHtml }} />
-        </Column>
-        <Column w={4}>
+        </MainColumn>
+        <SideColumn>
           <SideBar>
             <SideBarMembers lab={lab} people={labPeople} />
           </SideBar>
-        </Column>
+        </SideColumn>
       </Columns>
     </CrumbLayout>
   )

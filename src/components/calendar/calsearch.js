@@ -10,6 +10,9 @@ import Column from "../column"
 import DayPicker, { DateUtils } from "react-day-picker"
 import "./calendar.scss"
 import CalEvents from "./calevents"
+import SmallColumn from "../smallcolumn"
+import MainColumn from "../maincolumn"
+import SideColumn from "../sidecolumn"
 
 const EMPTY_QUERY = ""
 
@@ -76,16 +79,16 @@ const CalSearch = ({ allCalEvents }) => {
 
   return (
     <Columns>
-      <Column w={4} className="is-hidden-tablet">
+      <SmallColumn>
         <SearchBar
           handleInputChange={handleInputChange}
-          placeholder="Type to find events"
+          placeholder="Type to find events..."
         />
-        <div className="has-text-centered">
+        <div className="text-center">
           <DayPicker selectedDays={selectedDays} onDayClick={handleDayClick} />
         </div>
-      </Column>
-      <Column>
+      </SmallColumn>
+      <MainColumn>
         <SearchSummary
           count={dayFilteredEvents.length}
           single="Event"
@@ -101,15 +104,15 @@ const CalSearch = ({ allCalEvents }) => {
           pageNeighbours={1}
           onPageChanged={onPageChanged}
         />
-      </Column>
-      <Column w={4} className="is-hidden-mobile">
+      </MainColumn>
+      <SideColumn>
         <SideBar>
           <SearchBar
             handleInputChange={handleInputChange}
-            placeholder="Type to find events"
+            placeholder="Type to find events..."
           />
           <Collapsible title="Date" height="auto">
-            <div className="has-text-centered">
+            <div className="text-center">
               <DayPicker
                 selectedDays={selectedDays}
                 onDayClick={handleDayClick}
@@ -117,7 +120,7 @@ const CalSearch = ({ allCalEvents }) => {
             </div>
           </Collapsible>
         </SideBar>
-      </Column>
+      </SideColumn>
     </Columns>
   )
 }

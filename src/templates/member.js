@@ -1,7 +1,6 @@
 import React from "react"
 import CrumbLayout from "../components/crumblayout"
 import Columns from "../components/columns"
-import Column from "../components/column"
 import SideBar from "../components/sidebar/sidebar"
 import SideBarMembers from "../components/people/sidebarmembers"
 import H5 from "../components/headings/h5"
@@ -10,6 +9,9 @@ import styled from "styled-components"
 import EmailLink from "../components/emaillink"
 import PhoneLink from "../components/phonelink"
 import URLLink from "../components/urllink"
+import SmallColumn from "../components/smallcolumn"
+import MainColumn from "../components/maincolumn"
+import SideColumn from "../components/sidecolumn"
 
 const StyledInterest = styled.div`
   border-top: solid 1px lightgray;
@@ -77,7 +79,7 @@ const MemberTemplate = props => {
       title={title}
     >
       <Columns>
-        <Column w={4} className="is-hidden-tablet">
+        <SmallColumn>
           <H5>{person.frontmatter.titles[0]}</H5>
           {person.frontmatter.email.length > 0 && (
             <EmailLink to={person.frontmatter.email[0]} />
@@ -88,8 +90,8 @@ const MemberTemplate = props => {
           {person.frontmatter.urls.length > 0 && (
             <URLLink urls={person.frontmatter.urls} />
           )}
-        </Column>
-        <Column>
+        </SmallColumn>
+        <MainColumn>
           {person.frontmatter.researchAreas.length > 0 && (
             <StyledInterest>
               <StyledInterestHeader>Research Interests</StyledInterestHeader>
@@ -97,8 +99,8 @@ const MemberTemplate = props => {
               {interests(person, researchAreasMap)}
             </StyledInterest>
           )}
-        </Column>
-        <Column w={4} className="is-hidden-mobile">
+        </MainColumn>
+        <SideColumn>
           <SideBar>
             <H5>{person.frontmatter.titles[0]}</H5>
             {person.frontmatter.email.length > 0 && (
@@ -113,7 +115,7 @@ const MemberTemplate = props => {
           </SideBar>
 
           <SideBarMembers lab={lab} people={labPeople} />
-        </Column>
+        </SideColumn>
       </Columns>
     </CrumbLayout>
   )

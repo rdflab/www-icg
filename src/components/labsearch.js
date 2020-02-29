@@ -11,6 +11,9 @@ import SideBar from "./sidebar/sidebar"
 import H4 from "./headings/h4"
 import styled from "styled-components"
 import { Link } from "gatsby"
+import SmallColumn from "./smallcolumn"
+import SideColumn from "./sidecolumn"
+import MainColumn from "./maincolumn"
 
 const StyledLab = styled.article`
   padding-top: 1rem;
@@ -55,13 +58,13 @@ const LabSearch = ({ allLabs, peopleMap }) => {
 
   return (
     <Columns>
-      <Column w={4} className="is-hidden-tablet">
+      <SmallColumn>
         <SearchBar
           handleInputChange={handleInputChange}
           placeholder="Type to find labs"
         />
-      </Column>
-      <Column>
+      </SmallColumn>
+      <MainColumn>
         <SearchSummary count={labs.length} single="Lab" plural="Labs" />
 
         {pagedLabs.map((lab, index) => {
@@ -77,12 +80,12 @@ const LabSearch = ({ allLabs, peopleMap }) => {
           return (
             <StyledLab key={index}>
               <Columns>
-                <Column w={7}>
+                <Column w="1/2">
                   <H4>
                     <Link to={`/research-areas/labs/${lab.id}`}>{name}</Link>
                   </H4>
                 </Column>
-                <Column style={{ borderLeft: "solid 1px lightgray" }}>
+                <Column w="1/2" style={{ borderLeft: "solid 1px lightgray" }}>
                   <MembersLink to={`/research-areas/labs/${lab.id}/members`} />
                   <PublicationsLink
                     to={`/research-areas/labs/${lab.id}/publications`}
@@ -101,15 +104,15 @@ const LabSearch = ({ allLabs, peopleMap }) => {
           pageNeighbours={1}
           onPageChanged={onPageChanged}
         />
-      </Column>
-      <Column w={4} className="is-hidden-mobile">
+      </MainColumn>
+      <SideColumn>
         <SideBar>
           <SearchBar
             handleInputChange={handleInputChange}
             placeholder="Type to find labs"
           />
         </SideBar>
-      </Column>
+      </SideColumn>
     </Columns>
   )
 }

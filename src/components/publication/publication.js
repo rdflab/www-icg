@@ -85,17 +85,17 @@ const Publication = ({
       <StyledTitle>{publication.title}</StyledTitle>
       <StyledAuthors>{authors}</StyledAuthors>
 
-      <div className="level is-mobile">
-        <div className="level-left">
+      <div className="flex flex-row justify-between">
+        <div className="flex flex-row">
           {publication.journal !== "" && (
             <StyledYear className="level-item">
               {publication.journal}
             </StyledYear>
           )}
-          <StyledYear className="level-item">{publication.year}</StyledYear>
+          <StyledYear className="ml-4">{publication.year}</StyledYear>
         </div>
 
-        <div className="level-right">
+        <div className="flex flex-row">
           {name !== "" && showLabLink && (
             <div className="level-item">
               <Link to={`/research-areas/labs/${labId}`}>{shortName}</Link>

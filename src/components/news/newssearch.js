@@ -9,6 +9,9 @@ import SearchSummary from "../searchsummary"
 import SideBar from "../sidebar/sidebar"
 import Columns from "../columns"
 import Column from "../column"
+import SmallColumn from "../smallcolumn"
+import MainColumn from "../maincolumn"
+import SideColumn from "../sidecolumn"
 
 const EMPTY_QUERY = ""
 
@@ -63,13 +66,13 @@ const NewsSearch = ({ allNews }) => {
 
   return (
     <Columns>
-      <Column w={4} className="is-hidden-tablet">
+      <SmallColumn>
         <SearchBar
           handleInputChange={handleInputChange}
           placeholder="Type to find news items"
         />
-      </Column>
-      <Column>
+      </SmallColumn>
+      <MainColumn>
         <SearchSummary
           count={yearFilteredNews.length}
           single="News Item"
@@ -85,8 +88,8 @@ const NewsSearch = ({ allNews }) => {
           pageNeighbours={1}
           onPageChanged={onPageChanged}
         />
-      </Column>
-      <Column w={4} className="is-hidden-mobile">
+      </MainColumn>
+      <SideColumn>
         <SideBar>
           <SearchBar
             handleInputChange={handleInputChange}
@@ -99,7 +102,7 @@ const NewsSearch = ({ allNews }) => {
             <FilterNewsMonth news={news} handleClick={handleClick} />
           </Collapsible>
         </SideBar>
-      </Column>
+      </SideColumn>
     </Columns>
   )
 }

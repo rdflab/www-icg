@@ -22,8 +22,8 @@ const PersonDiv = styled.div`
 const Person = ({ person, labMap, showLabLink }) => {
   return (
     <PersonDiv>
-      <Columns className="is-vcentered">
-        <Column w="4/6">
+      <Columns>
+        <Column w="1/2">
           <div>
             <Link
               to={`/research-areas/faculty-and-staff/${person.frontmatter.id}`}
@@ -33,7 +33,7 @@ const Person = ({ person, labMap, showLabLink }) => {
           </div>
           <div style={{ color: "gray" }}>{person.frontmatter.titles[0]}</div>
         </Column>
-        <Column w="2/6">
+        <Column w="1/2">
           {person.frontmatter.email.length > 0 && (
             <EmailLink to={person.frontmatter.email[0]} />
           )}

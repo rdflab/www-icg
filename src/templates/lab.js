@@ -7,11 +7,13 @@ import EmailLink from "../components/emaillink"
 import PhoneLink from "../components/phonelink"
 import URLLink from "../components/urllink"
 import Columns from "../components/columns"
-import Column from "../components/column"
 import Button from "../components/button"
 import SideBar from "../components/sidebar/sidebar"
 import SideBarNews from "../components/news/sidebarnews"
 import H4 from "../components/headings/h4"
+import SmallColumn from "../components/smallcolumn"
+import MainColumn from "../components/maincolumn"
+import SideColumn from "../components/sidecolumn"
 
 const LabTemplate = props => {
   const { pageContext } = props
@@ -45,7 +47,7 @@ const LabTemplate = props => {
       title={`The ${faculty.frontmatter.lastName} Lab`}
     >
       <Columns>
-        <Column className="is-hidden-tablet">
+        <SmallColumn>
           <SideBar>
             {faculty.frontmatter.email.length > 0 && (
               <EmailLink to={faculty.frontmatter.email} />
@@ -55,8 +57,8 @@ const LabTemplate = props => {
             )}
             {lab.urls.length > 0 && <URLLink urls={lab.urls} />}
           </SideBar>
-        </Column>
-        <Column w={8}>
+        </SmallColumn>
+        <MainColumn>
           <div dangerouslySetInnerHTML={{ __html: labExcerptHtml }} />
 
           <div className="has-text-centered">
@@ -74,8 +76,8 @@ const LabTemplate = props => {
             labMap={labMap}
             peopleMap={peopleMap}
           />
-        </Column>
-        <Column className="is-hidden-mobile">
+        </MainColumn>
+        <SideColumn>
           <SideBar>
             {faculty.frontmatter.email.length > 0 && (
               <EmailLink to={faculty.frontmatter.email} />
@@ -88,7 +90,7 @@ const LabTemplate = props => {
 
           <H4>News</H4>
           <SideBarNews allNews={labNews} />
-        </Column>
+        </SideColumn>
       </Columns>
     </CrumbLayout>
   )

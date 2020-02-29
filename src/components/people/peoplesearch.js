@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import Pagination from "../pagination"
 import SearchBar from "../searchbar"
-import SearchCount from "../searchcount"
 import PeopleTypes from "./peopletypes"
 import TypesFilter from "./typesfilter"
 import Collapsible from "../collapsible"
@@ -10,7 +9,9 @@ import { PEOPLE_TYPES } from "../../constants"
 import SearchSummary from "../searchsummary"
 import SideBar from "../sidebar/sidebar"
 import Columns from "../columns"
-import Column from "../column"
+import SmallColumn from "../smallcolumn"
+import MainColumn from "../maincolumn"
+import SideColumn from "../sidecolumn"
 
 const EMPTY_QUERY = ""
 
@@ -102,16 +103,13 @@ const PeopleSearch = ({ labMap, allPeople, showLabLink }) => {
 
   return (
     <Columns>
-      <Column w={"1/3"} className="sm:hidden">
+      <SmallColumn>
         <SearchBar
           handleInputChange={handleInputChange}
           placeholder="Type to find faculty..."
         />
-        {/* <Collapsible title="Type filter" height="auto">
-            <TypesFilter handleClick={handleClick} />
-          </Collapsible> */}
-      </Column>
-      <Column w={"2/3"}>
+      </SmallColumn>
+      <MainColumn>
         <SearchSummary
           count={typeFilteredPeople.length}
           single="Member"
@@ -132,8 +130,8 @@ const PeopleSearch = ({ labMap, allPeople, showLabLink }) => {
             onPageChanged={onPageChanged}
           />
         </div>
-      </Column>
-      <Column w={"1/3"} className="hidden sm:block">
+      </MainColumn>
+      <SideColumn>
         <SideBar>
           <SearchBar
             handleInputChange={handleInputChange}
@@ -143,7 +141,7 @@ const PeopleSearch = ({ labMap, allPeople, showLabLink }) => {
             <TypesFilter handleClick={handleClick} />
           </Collapsible>
         </SideBar>
-      </Column>
+      </SideColumn>
     </Columns>
   )
 }

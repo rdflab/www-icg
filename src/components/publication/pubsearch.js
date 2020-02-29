@@ -4,11 +4,12 @@ import Pagination from "../pagination"
 import SearchBar from "../searchbar"
 import YearsFilter from "./yearsfilter"
 import Collapsible from "../collapsible"
-import SearchCount from "../searchcount"
 import SearchSummary from "../searchsummary"
 import SideBar from "../sidebar/sidebar"
 import Columns from "../columns"
-import Column from "../column"
+import SideColumn from "../sidecolumn"
+import MainColumn from "../maincolumn"
+import SmallColumn from "../smallcolumn"
 
 const EMPTY_QUERY = ""
 
@@ -50,7 +51,7 @@ const PubSearch = ({ labMap, peopleMap, allPublications, showLabLink }) => {
 
   let yearFilteredPublications
 
-  if (YearsFilter.size > 0) {
+  if (filterYears.size > 0) {
     yearFilteredPublications = publications.filter(publication => {
       return filterYears.has(publication.year)
     })
@@ -66,16 +67,10 @@ const PubSearch = ({ labMap, peopleMap, allPublications, showLabLink }) => {
 
   return (
     <Columns>
-      <Column w={4} className="is-hidden-tablet">
+      <SmallColumn>
         <SearchBar handleInputChange={handleInputChange} />
-        {/* <Collapsible title="Year filter" height="auto">
-            <YearsFilter
-              publications={publications}
-              handleClick={handleClick}
-            />
-          </Collapsible> */}
-      </Column>
-      <Column>
+      </SmallColumn>
+      <MainColumn>
         <SearchSummary
           count={yearFilteredPublications.length}
           single="Publication"
@@ -96,8 +91,8 @@ const PubSearch = ({ labMap, peopleMap, allPublications, showLabLink }) => {
           pageNeighbours={1}
           onPageChanged={onPageChanged}
         />
-      </Column>
-      <Column w={4} className="is-hidden-mobile">
+      </MainColumn>
+      <SideColumn>
         <SideBar>
           <SearchBar handleInputChange={handleInputChange} />
           <Collapsible title="Year filter" height="auto">
@@ -107,7 +102,7 @@ const PubSearch = ({ labMap, peopleMap, allPublications, showLabLink }) => {
             />
           </Collapsible>
         </SideBar>
-      </Column>
+      </SideColumn>
     </Columns>
   )
 }
