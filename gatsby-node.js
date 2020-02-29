@@ -54,6 +54,8 @@ exports.createSchemaCustomization = ({ actions }) => {
       letters: [String!]!
       tags: [String!]!
       urls: [String!]!
+      groups: [String!]!
+      people: [String!]!
       researchAreas: [String!]!
       start: Date
       end: Date
@@ -161,6 +163,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               date(formatString: "MMMM DD, YYYY")
               year: date(formatString: "YYYY")
               month: date(formatString: "MMMM")
+              groups
+              people
               path
               tags
               url
@@ -271,6 +275,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       labPeople.push(peopleMap[pid])
     }
 
+    const labNews = []
+
+    for (item of allNews) {
+      if (item.frontmatter.groups.includes(lab.id)) {
+        labNews.push(item)
+      }
+    }
+
     let labHtml = ""
     let labExcerptHtml = ""
 
@@ -287,6 +299,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         lab: lab,
         peopleMap: peopleMap,
         labPublications: labPublications,
+        labNews: labNews,
         labExcerptHtml: labExcerptHtml,
         labHtml: labHtml,
       },
@@ -350,7 +363,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           person: person,
           lab: lab,
           labPeople: labPeople,
-          researchAreasMap: researchAreasMap,
         },
       })
     }
@@ -423,6 +435,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       allPublications: allPublications,
     },
   })
+
+  //
+  // Research areas
+  //
 
   createPage({
     path: "/research-areas",

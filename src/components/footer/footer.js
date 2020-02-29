@@ -1,30 +1,40 @@
 import React from "react"
-import { Link } from "gatsby"
 import HICCCImage from "../hicccimage"
 
 import footerStyles from "./footer.module.scss"
 import FooterLinks from "./footerlinks"
+import Container from "../container"
+import Column from "../column"
+import Columns from "../columns"
+import styled from "styled-components"
+
+const StyledFooter = styled.div`
+  color: white;
+  background: rgba(28, 76, 143, 0.8);
+  height: 200px;
+  font-size: smaller;
+`
 
 const Footer = props => {
   const { siteTitle } = props
   return (
-    <footer className={`footer ${footerStyles.footer}`}>
-      <div className="container">
-        <div className="columns is-vcentered">
-          <div className="column text-center">
+    <StyledFooter className="sm:p-8 md:p-16">
+      <Container>
+        <Columns>
+          <Column w="1/3" className="text-center">
             <FooterLinks />
-          </div>
-          <div className="column text-center">
+          </Column>
+          <Column w="1/3" className="text-center">
             <a href="https://cumc.columbia.edu">
               <HICCCImage />
             </a>
-          </div>
-          <div className="column text-center">
+          </Column>
+          <Column w="1/3" className="text-center">
             &copy; {new Date().getFullYear()} {siteTitle}
-          </div>
-        </div>
-      </div>
-    </footer>
+          </Column>
+        </Columns>
+      </Container>
+    </StyledFooter>
   )
 }
 

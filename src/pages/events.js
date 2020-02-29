@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
+import CrumbLayout from "../components/crumblayout"
 import "../components/calendar/calendar.scss"
 import flattenEdges from "../utils/flattenedges"
 import CalSearch from "../components/calendar/calsearch"
@@ -15,7 +15,7 @@ const Events = props => {
   }
 
   return (
-    <Layout
+    <CrumbLayout
       crumbs={[
         ["Home", "/"],
         ["Events", "/events"],
@@ -23,7 +23,7 @@ const Events = props => {
       title="Events"
     >
       <CalSearch allCalEvents={allCalEvents} />
-    </Layout>
+    </CrumbLayout>
   )
 }
 

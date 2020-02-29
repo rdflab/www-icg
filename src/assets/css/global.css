@@ -1,6 +1,7 @@
-@charset "utf-8";
-@import "~bulma/bulma.sass";
-@import "../assets/variables.scss";
+@tailwind base;
+
+@tailwind components;
+
 
 html {
   min-height: 100%;
@@ -18,26 +19,14 @@ body {
   margin: 0;
 }
 
-// h1 {
-//   font-weight: 300 !important;
-// }
-
-// h2 {
-//   font-weight: 300 !important;
-// }
-
-// h3 {
-//   font-weight: 300 !important;
-// }
-
 .navbar {
   background-color: transparent;
 }
 
 a {
-  color: $COLUMBIA_BLUE_90 !important;
+  color: rgba(28, 76, 143, 0.9);
   transition: 0.4s;
-  border-bottom: solid 1px $TRANSPARENT_COLOR;
+  border-bottom: solid 1px rgba(0, 0, 0, 0);
   text-decoration: none !important;
   margin: 0;
   padding: 0;
@@ -45,9 +34,9 @@ a {
 }
 
 a:hover {
-  color: $COLUMBIA_BLUE_90 !important;
-  border-bottom: solid 1px $COLUMBIA_BLUE_90;
-  text-decoration: none !important;
+  color: rgba(28, 76, 143, 0.9);
+  border-bottom: solid 1px rgba(28, 76, 143, 0.9);
+  text-decoration: none;
 }
 
 .bottom-spacing-1 {
@@ -66,3 +55,10 @@ a:hover {
 .title {
   font-weight: 400;
 }
+
+.pagination {
+  @apply flex flex-row;
+}
+
+
+@tailwind utilities;

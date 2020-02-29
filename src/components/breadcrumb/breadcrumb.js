@@ -1,12 +1,13 @@
 import React from "react"
 import { Link } from "gatsby"
 import breadcrumbStyles from "./breadcrumb.module.scss"
+import Container from "../container"
 //import BreadcrumbLink from "./breadcrumblink"
 
 const Breadcrumb = props => {
   return (
-    <div className={`${breadcrumbStyles.breadcrumbContainer} is-hidden-mobile`}>
-      <div className="container">
+    <div className={`${breadcrumbStyles.breadcrumbContainer} hidden sm:block`}>
+      <Container>
         <ul className={breadcrumbStyles.breadcrumb}>
           {props.crumbs.map((crumb, index) => (
             <li key={index}>
@@ -14,7 +15,7 @@ const Breadcrumb = props => {
             </li>
           ))}
         </ul>
-      </div>
+      </Container>
     </div>
   )
 }

@@ -1,5 +1,5 @@
 /**
- * Layout component that queries for data
+ * CrumbLayout component that queries for data
  * with Gatsby's useStaticQuery component
  *
  * See: https://www.gatsbyjs.org/docs/use-static-query/
@@ -10,11 +10,8 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header/header"
-import "./layout.scss"
 import Helmet from "react-helmet"
 import Footer from "./footer/footer"
-import Breadcrumb from "./breadcrumb/breadcrumb"
-import Title from "./title"
 import SEO from "./seo"
 
 const Layout = ({ title, children, crumbs }) => {
@@ -43,15 +40,7 @@ const Layout = ({ title, children, crumbs }) => {
 
       <Header siteTitle={data.site.siteMetadata.title} />
 
-      {crumbs.length > 0 && <Breadcrumb crumbs={crumbs} />}
-
-      <main>
-        <div className="container" style={{ minHeight: "100vh" }}>
-          {title !== "" && <Title>{title}</Title>}
-
-          {children}
-        </div>
-      </main>
+      <main>{children}</main>
 
       <Footer siteTitle={data.site.siteMetadata.title}></Footer>
     </>

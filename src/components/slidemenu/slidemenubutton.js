@@ -17,7 +17,7 @@ const StyledButton = styled.button`
 `
 
 const SlideMenuButton = ({ onClickHandle }) => (
-  <StyledButton onClick={onClickHandle}>
+  <StyledButton onClick={onClickHandle} className="mr-3">
     <FaBars />
   </StyledButton>
 )

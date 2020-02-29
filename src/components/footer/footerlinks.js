@@ -1,7 +1,25 @@
 import React from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
-import footerLinksStyle from "./footerlinks.module.scss"
+import { useStaticQuery, graphql } from "gatsby"
 import FooterLink from "./footerlink"
+import styled from "styled-components"
+
+const LinksList = styled.ul`
+  list-style: none;
+  padding: 0;
+  margin: 0;
+`
+
+const LinkItem = styled.li`
+  display: inline;
+  padding: 0;
+  margin: 0;
+
+  &:not(:last-child)::after {
+    margin-left: 0.5rem;
+    padding-left: 0.5rem;
+    border-left: solid 1px white;
+    content: "";
+`
 
 const FooterLinks = () => {
   const data = useStaticQuery(graphql`
@@ -20,15 +38,15 @@ const FooterLinks = () => {
   const links = data.allFooterlinksJson.edges
 
   return (
-    <ul className={footerLinksStyle.footerLinks}>
+    <LinksList>
       {links.map(({ node }, index) => {
         return (
-          <li key={index}>
+          <LinkItem key={index}>
             <FooterLink to={node.link}>{node.name}</FooterLink>
-          </li>
+          </LinkItem>
         )
       })}
-    </ul>
+    </LinksList>
   )
 }
 

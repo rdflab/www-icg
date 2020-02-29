@@ -1,5 +1,5 @@
 import React from "react"
-import Layout from "../components/layout"
+import CrumbLayout from "../components/crumblayout"
 
 import Columns from "../components/columns"
 import Column from "../components/column"
@@ -24,7 +24,7 @@ const LabOverviewTemplate = props => {
   ]
 
   return (
-    <Layout crumbs={crumbs} title={`The ${faculty.lastName} Lab Overview`}>
+    <CrumbLayout crumbs={crumbs} title={`The ${faculty.lastName} Lab Overview`}>
       <Columns>
         <Column>
           <div dangerouslySetInnerHTML={{ __html: labHtml }} />
@@ -35,7 +35,7 @@ const LabOverviewTemplate = props => {
           </SideBar>
         </Column>
       </Columns>
-    </Layout>
+    </CrumbLayout>
   )
 }
 

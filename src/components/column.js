@@ -2,7 +2,7 @@ import React from "react"
 
 const Column = ({ children, w, className, onClick }) => (
   <div
-    className={`column ${w !== "" ? `is-${w}` : ""} ${className}`}
+    className={`w-full ${w !== "" ? `md:w-${w}` : ""} ${className}`}
     onClick={onClick}
   >
     {children}

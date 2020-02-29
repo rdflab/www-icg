@@ -6,6 +6,7 @@ import HeaderLinks from "./headerlinks"
 import ColumbiaICGImage from "../columbiaicgimage"
 import ColumbiaICGWhiteImage from "../columbiaicgwhiteimage"
 import SlideMenu from "../slidemenu/slidemenu"
+import Container from "../container"
 
 const StyledHeader = styled.header`
   color: rgba(29, 79, 145, 0.8);
@@ -29,30 +30,22 @@ const StyledMobileHeader = styled(StyledHeader)`
 
 const Header = ({ siteTitle }) => (
   <>
-    <StyledMobileHeader className="is-hidden-tablet">
-      <div className="container level is-mobile">
-        <div className="level-left">
-          <div className="level-item">
-            <SlideMenu />
-          </div>
-          <div className="level-item">
-            <Link to="/" style={{ borderBottom: "none" }}>
-              <ColumbiaICGWhiteImage style={{ width: `300px` }} />
-            </Link>
-          </div>
-        </div>
-      </div>
+    <StyledMobileHeader className="sm:hidden flex flex-row self-center px-3">
+      <SlideMenu />
+      <Link to="/" style={{ borderBottom: "none" }}>
+        <ColumbiaICGWhiteImage style={{ width: `300px` }} />
+      </Link>
     </StyledMobileHeader>
 
-    <StyledHeader className="is-hidden-mobile">
-      <div className="container">
-        <div className="navbar-start">
+    <StyledHeader className="hidden sm:block flex flex-row">
+      <Container className="flex-col">
+        <div className="flex flex-row self-center">
           <Link to="/" style={{ borderBottom: "none" }}>
             <ColumbiaICGImage style={{ width: `400px` }} />
           </Link>
         </div>
         <HeaderLinks />
-      </div>
+      </Container>
     </StyledHeader>
   </>
 )

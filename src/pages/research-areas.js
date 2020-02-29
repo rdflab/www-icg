@@ -1,18 +1,18 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
+import CrumbLayout from "../components/crumblayout"
 
 const ResearchAreas = props => {
   //const { data } = props
 
   return (
-    <Layout
+    <CrumbLayout
       crumbs={[
         ["Home", "/"],
         ["For Research Scientists", "/research-areas"],
       ]}
       title="Research Areas"
-    ></Layout>
+    ></CrumbLayout>
   )
 }
 

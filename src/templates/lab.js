@@ -1,5 +1,5 @@
 import React from "react"
-import Layout from "../components/layout"
+import CrumbLayout from "../components/crumblayout"
 
 import RecentPublications from "../components/publication/recentpublications"
 import toLabMap from "../utils/tolabmap"
@@ -10,6 +10,8 @@ import Columns from "../components/columns"
 import Column from "../components/column"
 import Button from "../components/button"
 import SideBar from "../components/sidebar/sidebar"
+import SideBarNews from "../components/news/sidebarnews"
+import H4 from "../components/headings/h4"
 
 const LabTemplate = props => {
   const { pageContext } = props
@@ -17,6 +19,7 @@ const LabTemplate = props => {
     lab,
     peopleMap,
     labPublications,
+    labNews,
     labExcerptHtml,
     labHtml,
   } = pageContext
@@ -37,7 +40,10 @@ const LabTemplate = props => {
   ]
 
   return (
-    <Layout crumbs={crumbs} title={`The ${faculty.frontmatter.lastName} Lab`}>
+    <CrumbLayout
+      crumbs={crumbs}
+      title={`The ${faculty.frontmatter.lastName} Lab`}
+    >
       <Columns>
         <Column className="is-hidden-tablet">
           <SideBar>
@@ -59,7 +65,7 @@ const LabTemplate = props => {
             </Button>
           </div>
 
-          <h2>{`${faculty.firstName} ${faculty.lastName}`}</h2>
+          <h2>{`${faculty.frontmatter.firstName} ${faculty.frontmatter.lastName}`}</h2>
           <h3>Research Focus</h3>
           <h3>Education</h3>
           <RecentPublications
@@ -79,9 +85,12 @@ const LabTemplate = props => {
             )}
             {lab.urls.length > 0 && <URLLink urls={lab.urls} />}
           </SideBar>
+
+          <H4>News</H4>
+          <SideBarNews allNews={labNews} />
         </Column>
       </Columns>
-    </Layout>
+    </CrumbLayout>
   )
 }
 

@@ -26,7 +26,7 @@ const HeaderLinks = () => {
   const links = flattenEdges(data.links.edges)
 
   return (
-    <StyledDiv className="navbar-start">
+    <StyledDiv className="flex flex-row self-center">
       {links.map((link, index) => {
         return (
           <div key={index} className="navbar-item is-marginless is-paddingless">

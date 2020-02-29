@@ -1,5 +1,5 @@
 import React from "react"
-import Layout from "../components/layout"
+import CrumbLayout from "../components/crumblayout"
 import LabSearch from "../components/labsearch"
 
 const LabsTemplate = props => {
@@ -7,7 +7,7 @@ const LabsTemplate = props => {
   const { allLabs, peopleMap } = pageContext
 
   return (
-    <Layout
+    <CrumbLayout
       crumbs={[
         ["Home", "/"],
         ["Research Areas", "/research-areas"],
@@ -16,7 +16,7 @@ const LabsTemplate = props => {
       title="Research Labs"
     >
       <LabSearch allLabs={allLabs} peopleMap={peopleMap} />
-    </Layout>
+    </CrumbLayout>
   )
 }
 

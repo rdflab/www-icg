@@ -1,5 +1,5 @@
 import React from "react"
-import Layout from "../components/layout"
+import CrumbLayout from "../components/crumblayout"
 import toLabMap from "../utils/tolabmap"
 import PubSearch from "../components/publication/pubsearch"
 
@@ -9,7 +9,7 @@ const PublicationsTemplate = props => {
   const labMap = toLabMap(allLabs)
 
   return (
-    <Layout
+    <CrumbLayout
       crumbs={[
         ["Home", "/"],
         ["Research Areas", "/research-areas"],
@@ -23,7 +23,7 @@ const PublicationsTemplate = props => {
         peopleMap={peopleMap}
         allPublications={allPublications}
       />
-    </Layout>
+    </CrumbLayout>
   )
 }
 

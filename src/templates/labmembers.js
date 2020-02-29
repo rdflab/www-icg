@@ -1,5 +1,5 @@
 import React from "react"
-import Layout from "../components/layout"
+import CrumbLayout from "../components/crumblayout"
 import toLabMap from "../utils/tolabmap"
 import PeopleSearch from "../components/people/peoplesearch"
 
@@ -19,7 +19,7 @@ const LabMembersTemplate = props => {
   const title = `The ${faculty.firstName} ${faculty.lastName} Lab Members`
 
   return (
-    <Layout
+    <CrumbLayout
       crumbs={[
         ["Home", "/"],
         ["Research Areas", "/research-areas"],
@@ -33,7 +33,7 @@ const LabMembersTemplate = props => {
       title={title}
     >
       <PeopleSearch labMap={labMap} allPeople={people} showLabLink={false} />
-    </Layout>
+    </CrumbLayout>
   )
 }
 

@@ -1,8 +1,8 @@
 import React from "react"
-import Layout from "../components/layout"
+import CrumbLayout from "../components/crumblayout"
 
 const About = () => (
-  <Layout
+  <CrumbLayout
     crumbs={[
       ["Home", "/"],
       ["About", "/about"],
@@ -15,7 +15,7 @@ const About = () => (
       Designed and developed by{" "}
       <a href="mailto:antony.b.holmes@gmail.com">Antony Holmes</a>
     </p>
-  </Layout>
+  </CrumbLayout>
 )
 
 export default About

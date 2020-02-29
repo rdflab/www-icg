@@ -1,5 +1,5 @@
 import React from "react"
-import Layout from "../components/layout"
+import CrumbLayout from "../components/crumblayout"
 import { Link } from "gatsby"
 
 const ResearchAreasTemplate = props => {
@@ -13,7 +13,7 @@ const ResearchAreasTemplate = props => {
   })
 
   return (
-    <Layout
+    <CrumbLayout
       crumbs={[
         ["Home", "/"],
         ["Research Areas", "/research-areas"],
@@ -27,7 +27,7 @@ const ResearchAreasTemplate = props => {
             <Link to={`/research-areas/${raMap[name]}`}>{name}</Link>
           </div>
         ))}
-    </Layout>
+    </CrumbLayout>
   )
 }
 

@@ -1,11 +1,11 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import Layout from "../components/layout"
+import CrumbLayout from "../components/crumblayout"
 import SEO from "../components/seo"
 
 const Pressroom = () => (
-  <Layout>
+  <CrumbLayout>
     <SEO title="Pressroom" />
     <h1>Pressroom</h1>
     <h2>Trending Topics</h2>
@@ -13,7 +13,7 @@ const Pressroom = () => (
     <p>version: 1.0.0</p>
     <p>Developed by Antony Holmes</p>
     <Link to="/">Go back to the homepage</Link>
-  </Layout>
+  </CrumbLayout>
 )
 
 export default Pressroom

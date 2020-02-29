@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
+import CrumbLayout from "../components/crumblayout"
 import flattenEdges from "../utils/flattenedges"
 import NewsSearch from "../components/news/newssearch"
 
@@ -9,7 +9,7 @@ const News = props => {
   const allNews = flattenEdges(data.news.edges) //sort(flatten(data.publications.edges))
 
   return (
-    <Layout
+    <CrumbLayout
       crumbs={[
         ["Home", "/"],
         ["News", "/news"],
@@ -17,7 +17,7 @@ const News = props => {
       title="News"
     >
       <NewsSearch allNews={allNews} />
-    </Layout>
+    </CrumbLayout>
   )
 }
 

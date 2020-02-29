@@ -1,7 +1,10 @@
 import React from "react"
-import Layout from "../components/layout"
+import CrumbLayout from "../components/crumblayout"
 import SideBarNews from "../components/news/sidebarnews"
 import NewsItemDate from "../components/news/newsitemdate"
+import H4 from "../components/headings/h4"
+import Columns from "../components/columns"
+import Column from "../components/column"
 
 const NewsItemTemplate = props => {
   const { pageContext } = props
@@ -10,24 +13,24 @@ const NewsItemTemplate = props => {
   const title = item.frontmatter.title
 
   return (
-    <Layout
+    <CrumbLayout
       crumbs={[
         ["Home", "/"],
         ["News", "/news"],
       ]}
       title={title}
     >
-      <div className="columns">
-        <div className="column">
-          <h4>{title}</h4>
+      <Columns>
+        <Column>
+          <H4>{title}</H4>
           <NewsItemDate>{item.frontmatter.date}</NewsItemDate>
           <div dangerouslySetInnerHTML={{ __html: item.html }} />
-        </div>
-        <div className="column is-4">
+        </Column>
+        <Column w={4}>
           <SideBarNews allNews={allNews} />
-        </div>
-      </div>
-    </Layout>
+        </Column>
+      </Columns>
+    </CrumbLayout>
   )
 }
 

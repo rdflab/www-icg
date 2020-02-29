@@ -1,5 +1,5 @@
 import React from "react"
-import Layout from "../components/layout"
+import CrumbLayout from "../components/crumblayout"
 import NewsItemDate from "../components/news/newsitemdate"
 import CalEventLocation from "../components/calendar/caleventlocation"
 import H4 from "../components/headings/h4"
@@ -23,7 +23,7 @@ const CalEventTemplate = props => {
   calEvent.end = new Date(calEvent.frontmatter.end)
 
   return (
-    <Layout
+    <CrumbLayout
       crumbs={[
         ["Home", "/"],
         ["Events", "/events"],
@@ -41,7 +41,7 @@ const CalEventTemplate = props => {
         </div>
         <div className="column is-4"></div>
       </div>
-    </Layout>
+    </CrumbLayout>
   )
 }
 

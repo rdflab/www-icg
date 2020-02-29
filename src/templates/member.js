@@ -1,5 +1,5 @@
 import React from "react"
-import Layout from "../components/layout"
+import CrumbLayout from "../components/crumblayout"
 import Columns from "../components/columns"
 import Column from "../components/column"
 import SideBar from "../components/sidebar/sidebar"
@@ -64,7 +64,7 @@ const MemberTemplate = props => {
   const title = `${person.frontmatter.firstName} ${person.frontmatter.lastName}`
 
   return (
-    <Layout
+    <CrumbLayout
       crumbs={[
         ["Home", "/"],
         ["Research Areas", "/research-areas"],
@@ -115,7 +115,7 @@ const MemberTemplate = props => {
           <SideBarMembers lab={lab} people={labPeople} />
         </Column>
       </Columns>
-    </Layout>
+    </CrumbLayout>
   )
 }
 

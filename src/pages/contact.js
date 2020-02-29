@@ -1,11 +1,11 @@
 import React from "react"
-import Layout from "../components/layout"
+import CrumbLayout from "../components/crumblayout"
 import Card from "../components/card"
 import Columns from "../components/columns"
 import Column from "../components/column"
 
 const Contact = () => (
-  <Layout
+  <CrumbLayout
     crumbs={[
       ["Home", "/"],
       ["Contact", "/contact"],
@@ -41,7 +41,7 @@ const Contact = () => (
         </Card>
       </Column>
     </Columns>
-  </Layout>
+  </CrumbLayout>
 )
 
 export default Contact

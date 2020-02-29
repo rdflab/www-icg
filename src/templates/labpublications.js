@@ -1,5 +1,5 @@
 import React from "react"
-import Layout from "../components/layout"
+import CrumbLayout from "../components/crumblayout"
 import toLabMap from "../utils/tolabmap"
 import PubSearch from "../components/publication/pubsearch"
 
@@ -21,7 +21,7 @@ const LabPublicationsTemplate = props => {
   const title = `The ${faculty.firstName} ${faculty.lastName} Lab Publications`
 
   return (
-    <Layout
+    <CrumbLayout
       crumbs={[
         ["Home", "/"],
         ["Research Areas", "/research-areas"],
@@ -40,7 +40,7 @@ const LabPublicationsTemplate = props => {
         allPublications={publications}
         showLabLink={false}
       />
-    </Layout>
+    </CrumbLayout>
   )
 }
 

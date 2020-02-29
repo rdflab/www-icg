@@ -2,6 +2,8 @@
 title: "Welcome to the new ICG website"
 date: "2020-02-20"
 path: "/news/welcome"
+groups: []
+people: []
 tags: ["News"]
 urls: []
 ---
