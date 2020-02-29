@@ -56,9 +56,12 @@ a:hover {
   font-weight: 400;
 }
 
+.color-ani {
+  @apply transition-colors duration-300;
+}
 
 .btn {
-  @apply transition-colors duration-300 font-bold py-2 px-4 rounded;
+  @apply color-ani font-bold py-2 px-4 rounded;
 }
 
 .btn-blue {
@@ -69,6 +72,24 @@ a:hover {
   @apply bg-blue-700;
 }
 
+.trans-ani {
+  @apply transition-transform duration-300;
+}
 
+.slide-menu-container {
+  @apply fixed m-0 p-0 top-0 left-0 w-screen h-screen opacity-0 z-50 trans-ani;
+  transform: translate3d(-100vw, 0, 0);
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.slide-menu-container-visible {
+  @apply opacity-100;
+  transform: translate3d(0vw, 0, 0);
+}
+
+.menu-column {
+  @apply float-left m-0 p-0 bg-white h-screen;
+  width: 80vw;
+}
 
 @tailwind utilities;
