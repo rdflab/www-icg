@@ -2,12 +2,6 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import flattenEdges from "../../utils/flattenedges"
 import HeaderLink from "./headerlink"
-import styled from "styled-components"
-
-const StyledDiv = styled.div`
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-`
 
 const HeaderLinks = () => {
   const data = useStaticQuery(graphql`
@@ -26,15 +20,11 @@ const HeaderLinks = () => {
   const links = flattenEdges(data.links.edges)
 
   return (
-    <StyledDiv className="flex flex-row self-center">
+    <div className="mt-2">
       {links.map((link, index) => {
-        return (
-          <div key={index} className="navbar-item is-marginless is-paddingless">
-            <HeaderLink to={link.link}>{link.name}</HeaderLink>
-          </div>
-        )
+        return <HeaderLink to={link.link}>{link.name}</HeaderLink>
       })}
-    </StyledDiv>
+    </div>
   )
 }
 

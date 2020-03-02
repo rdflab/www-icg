@@ -1,30 +1,19 @@
 import React from "react"
-import styled from "styled-components"
 import Columns from "../columns"
 import Column from "../column"
 import CalEventDate from "./caleventdate"
 import CalEventDetails from "./caleventdetails"
 
-const StyledEvent = styled.div`
-  border-bottom: solid 1px lightgray;
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
-`
-
 const CalEvent = ({ event }) => {
   return (
-    <StyledEvent>
+    <div className="border-b border-solid border-gray-400 mb-4 pb-4">
       <div className="sm:hidden">
-        <Columns>
-          <Column w="1/4">
+        <Columns isMobile={true}>
+          <Column w="3/12" isMobile={true}>
             <CalEventDate event={event} />
           </Column>
         </Columns>
-        <Columns>
-          <Column>
-            <CalEventDetails event={event} isMobile={true} />
-          </Column>
-        </Columns>
+        <CalEventDetails event={event} isMobile={true} />
       </div>
       <div className="hidden sm:block">
         <Columns>
@@ -36,7 +25,7 @@ const CalEvent = ({ event }) => {
           </Column>
         </Columns>
       </div>
-    </StyledEvent>
+    </div>
   )
 }
 

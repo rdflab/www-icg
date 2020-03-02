@@ -35,27 +35,26 @@ const CalEventLocation = ({ event, showDate, isMobile }) => {
   if (isMobile) {
     return (
       <>
-        <Columns>
-          <Column w="1/4" className="text-center">
+        <Columns isMobile={isMobile}>
+          <Column w="2/12" isMobile={true} className="text-center">
             <StyledDetails>
               <FaRegClock size={28} />
             </StyledDetails>
           </Column>
-
-          <Column w="3/4">
+          <Column isMobile={isMobile} w="10/12">
             {showDate && <StyledDetails>{date}</StyledDetails>}
             <StyledDetails>
               {st} - {et}
             </StyledDetails>
           </Column>
         </Columns>
-        <Columns className="is-mobile is-vcentered">
-          <Column w={2} className="has-text-centered">
+        <Columns isMobile={isMobile} className="mt-2">
+          <Column w="2/12" isMobile={true} className="text-center">
             <StyledDetails>
               <FaMapMarkerAlt size={28} />
             </StyledDetails>
           </Column>
-          <Column>
+          <Column isMobile={true} w="10/12">
             <StyledDetails>{event.frontmatter.location}</StyledDetails>
           </Column>
         </Columns>

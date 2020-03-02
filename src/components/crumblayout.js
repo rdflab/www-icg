@@ -16,7 +16,7 @@ const CrumbLayout = ({ title, children, crumbs }) => {
     <Layout title={title}>
       {crumbs.length > 0 && <Breadcrumb crumbs={crumbs} />}
 
-      <Container style={{ minHeight: "100vh" }}>
+      <Container className="min-h-screen mt-4">
         {title !== "" && <Title>{title}</Title>}
 
         {children}

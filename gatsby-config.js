@@ -103,6 +103,13 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: "gatsby-background-image-es5",
+      options: {
+        // add your own characters to escape, replacing the default ':/'
+        specialChars: "/:",
+      },
+    },
     `gatsby-plugin-postcss`,
     // Add after these plugins if used
     {

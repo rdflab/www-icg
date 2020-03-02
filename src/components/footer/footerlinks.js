@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import FooterLink from "./footerlink"
 import styled from "styled-components"
+import WhiteLink from "../whitelink"
 
 const LinksList = styled.ul`
   list-style: none;
@@ -42,7 +42,7 @@ const FooterLinks = () => {
       {links.map(({ node }, index) => {
         return (
           <LinkItem key={index}>
-            <FooterLink to={node.link}>{node.name}</FooterLink>
+            <WhiteLink to={node.link}>{node.name}</WhiteLink>
           </LinkItem>
         )
       })}

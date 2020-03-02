@@ -32,7 +32,7 @@ class TypesFilter extends Component {
 
   render() {
     return (
-      <>
+      <div className="col">
         {PEOPLE_TYPES.map((type, index) => {
           return (
             <FilterItem
@@ -42,7 +42,7 @@ class TypesFilter extends Component {
             />
           )
         })}
-      </>
+      </div>
     )
   }
 }

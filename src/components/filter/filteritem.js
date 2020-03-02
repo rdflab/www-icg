@@ -6,7 +6,6 @@
  */
 
 import React, { useState } from "react"
-import filterItemStyles from "./filteritem.module.scss"
 import { FaCheck } from "react-icons/fa"
 
 const FilterItem = props => {
@@ -21,21 +20,16 @@ const FilterItem = props => {
   }
 
   return (
-    <div
-      onClick={handleClick}
-      className={`${filterItemStyles.filterItem} ${
-        selected ? filterItemStyles.filterItemSelected : ""
-      }`}
-    >
-      {props.text}
+    <div className="row items-center cursor-pointer my-1" onClick={handleClick}>
+      <div
+        className={`border border-solid border-red-500 trans-ani text-white rounded p-1 mr-2 ${
+          selected ? "bg-blue-400 border-blue-400" : "bg-white border-red-500"
+        }`}
+      >
+        <FaCheck className={selected ? "visible" : "invisible"} />
+      </div>
 
-      {selected ? (
-        <div style={{ float: "right" }}>
-          <FaCheck />
-        </div>
-      ) : (
-        ""
-      )}
+      <div>{props.text}</div>
     </div>
   )
 }

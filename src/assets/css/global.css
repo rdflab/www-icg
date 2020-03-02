@@ -23,21 +23,7 @@ body {
   background-color: transparent;
 }
 
-a {
-  color: rgba(28, 76, 143, 0.9);
-  transition: 0.4s;
-  border-bottom: solid 1px rgba(0, 0, 0, 0);
-  text-decoration: none !important;
-  margin: 0;
-  padding: 0;
-  outline: none;
-}
 
-a:hover {
-  color: rgba(28, 76, 143, 0.9);
-  border-bottom: solid 1px rgba(28, 76, 143, 0.9);
-  text-decoration: none;
-}
 
 .bottom-spacing-1 {
   margin-bottom: 1rem;
@@ -72,8 +58,73 @@ a:hover {
   @apply bg-blue-700;
 }
 
+.no-padding {
+  @apply m-0 p-0 border-none outline-none;
+}
+
+.row {
+  @apply flex flex-row;
+}
+
+.col {
+  @apply flex flex-col;
+}
+
 .trans-ani {
-  @apply transition-transform duration-300;
+  @apply transition duration-300;
+}
+
+a {
+  @apply no-padding text-blue-700 no-underline border-b border-solid border-transparent pb-1 trans-ani;
+}
+
+a:hover {
+  @apply text-blue-700 no-underline border-b border-solid border-blue-700;
+}
+
+.footer {
+  @apply text-white text-sm h-64 p-8;
+  background: rgba(28, 76, 143, 0.8);
+}
+
+.blue {
+  @apply text-blue-700;
+}
+
+.white {
+  @apply text-white;
+}
+
+.blue-bg {
+  @apply bg-blue-700;
+}
+
+.blue-border {
+  @apply border-blue-700;
+}
+
+.link {
+  @apply no-padding no-underline border-b border-solid border-transparent pb-1 mb-1 trans-ani; 
+}
+
+.link-hover {
+  @apply no-underline border-b border-solid;
+}
+
+.blue-link {
+  @apply link blue; 
+}
+
+.blue-link:hover {
+  @apply link-hover blue blue-border;
+}
+
+.white-link {
+  @apply link text-white;
+}
+
+.white-link:hover {
+  @apply link-hover text-white border-white;
 }
 
 .slide-menu-container {
@@ -91,5 +142,35 @@ a:hover {
   @apply float-left m-0 p-0 bg-white h-screen;
   width: 80vw;
 }
+
+.search-bar {
+  @apply row p-2 trans-ani border border-solid border-gray-500 rounded items-center bg-white mb-4;
+}
+
+.search-bar:hover {
+  @apply border-blue-500;
+}
+
+.search-input[type=text] {
+  @apply border-none w-full;
+}
+
+.header-link {
+  @apply no-padding trans-ani mr-8 no-underline;
+  color: rgb(28, 76, 143) !important;
+  border-bottom: solid 1px white;
+}
+
+.header-link:hover {
+  @apply no-underline;
+  color: rgb(28, 76, 143) !important;
+  border-bottom: solid 1px rgb(28, 76, 143) !important;
+}
+
+.mobile-header {
+  @apply row text-white p-3;
+  background: rgba(29, 79, 145, 0.8);
+}
+
 
 @tailwind utilities;

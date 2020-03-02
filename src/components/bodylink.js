@@ -1,21 +1,6 @@
-import { Link } from "gatsby"
-import styled from "styled-components"
+import React from "react"
+import BlueLink from "./bluelink"
 
-const BodyLink = styled(Link)`
-  color: cornflowerblue !important;
-  background: transparent !important;
-  margin: 0;
-  padding: 0;
-  outline: none;
-  transition: border-bottom 0.4s;
-  border-bottom: solid 1px white;
-  text-decoration: none;
-
-  &:hover {
-    color: cornflowerblue !important;
-    border-bottom: solid 1px cornflowerblue;
-    text-decoration: none;
-  }
-`
+const BodyLink = ({ to, children }) => <BlueLink to={to}>{children}</BlueLink>
 
 export default BodyLink

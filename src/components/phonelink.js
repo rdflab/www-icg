@@ -1,15 +1,16 @@
 import React from "react"
 import { FaPhone } from "react-icons/fa"
-import RightSideIconLink from "./rightsideiconlink"
-import LinkBlock from "./linkblock"
+import IconLink from "./iconlink"
 
 const PhoneLink = ({ numbers }) => (
-  <LinkBlock>
-    <RightSideIconLink>
-      <FaPhone />
-    </RightSideIconLink>
-    <a href={`tel:${numbers[0]}`}>{numbers[0]}</a>
-  </LinkBlock>
+  <IconLink
+    icon={<FaPhone className="text-gray-600" />}
+    content={
+      <a href={`tel:${numbers[0]}`} className="blue-link">
+        {numbers[0]}
+      </a>
+    }
+  />
 )
 
 export default PhoneLink

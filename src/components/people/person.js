@@ -13,6 +13,7 @@ import PhoneLink from "../phonelink"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import URLLink from "../urllink"
+import BlueLink from "../bluelink"
 
 const PersonDiv = styled.div`
   padding-top: 1rem;
@@ -23,17 +24,17 @@ const Person = ({ person, labMap, showLabLink }) => {
   return (
     <PersonDiv>
       <Columns>
-        <Column w="1/2">
+        <Column w="7/12">
           <div>
-            <Link
+            <BlueLink
               to={`/research-areas/faculty-and-staff/${person.frontmatter.id}`}
             >
               {person.frontmatter.firstName} {person.frontmatter.lastName}
-            </Link>
+            </BlueLink>
           </div>
           <div style={{ color: "gray" }}>{person.frontmatter.titles[0]}</div>
         </Column>
-        <Column w="1/2">
+        <Column w="5/12">
           {person.frontmatter.email.length > 0 && (
             <EmailLink to={person.frontmatter.email[0]} />
           )}

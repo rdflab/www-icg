@@ -1,13 +1,19 @@
 import React from "react"
 
-const Columns = ({ children, className, onClick }) => (
-  <div className={`flex flex-col md:flex-row  ${className}`} onClick={onClick}>
+const Columns = ({ children, className, isMobile, onClick }) => (
+  <div
+    className={`flex ${
+      isMobile ? "flex-row" : "flex-col sm:flex-row"
+    }  ${className}`}
+    onClick={onClick}
+  >
     {children}
   </div>
 )
 
 Columns.defaultProps = {
   className: "",
+  isMobile: false,
 }
 
 export default Columns
