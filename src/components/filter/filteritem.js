@@ -22,8 +22,8 @@ const FilterItem = props => {
   return (
     <div className="row items-center cursor-pointer my-1" onClick={handleClick}>
       <div
-        className={`border border-solid border-red-500 trans-ani text-white rounded p-1 mr-2 ${
-          selected ? "bg-blue-400 border-blue-400" : "bg-white border-red-500"
+        className={`border border-solid border-gray-500 trans-ani text-white rounded p-1 mr-2 ${
+          selected ? "bg-blue-400 border-blue-400" : "bg-white"
         }`}
       >
         <FaCheck className={selected ? "visible" : "invisible"} />

@@ -7,6 +7,36 @@ import Column from "../components/column"
 import BlueIndexLink from "../components/blueindexlink"
 import WhiteIndexLink from "../components/whiteindexlink"
 
+const Section = ({ title, subTitle, text, links, alt }) => {
+  return (
+    <div class={`text-center p-16 ${alt ? "blue-bg text-white" : ""}`}>
+      <span
+        className={`uppercase tracking-wide border-t-2 p-2 mx-auto ${
+          alt ? "border-white" : "blue-border"
+        }`}
+      >
+        {title}
+      </span>
+      <h2 className="mt-4">{subTitle}</h2>
+      <p>{text}</p>
+
+      {links.map((link, index) => (
+        <div className="mt-2">
+          {alt ? (
+            <WhiteIndexLink to={link.url}>{link.text}</WhiteIndexLink>
+          ) : (
+            <BlueIndexLink to={link.url}>{link.text}</BlueIndexLink>
+          )}
+        </div>
+      ))}
+    </div>
+  )
+}
+
+Section.defaultProps = {
+  alt: false,
+}
+
 const IndexPage = () => (
   <Layout crumbs={[["Home", "/"]]} title="Home">
     <NYCBgSection>
@@ -16,7 +46,7 @@ const IndexPage = () => (
             w="7/12"
             className="bg-blue-700 opacity-75 float-left text-white p-8"
           >
-            <h2>Institute For Cancer Genetics</h2>
+            <h1>Institute For Cancer Genetics</h1>
 
             <p>
               The Institute for Cancer Genetics was founded in 1999 as part of a
@@ -30,45 +60,32 @@ const IndexPage = () => (
       </Container>
     </NYCBgSection>
 
-    <div class="text-center p-16">
-      <span className="uppercase tracking-wide border-t-2 border-blue-500 p-2 mx-auto">
-        Expertise
-      </span>
-      <h2 className="mt-4">Find Out Who We Are</h2>
-      <p>
-        Our world-class researchers study all aspects of cancer. Explore what
-        they are doing.
-      </p>
-      <BlueIndexLink to="/research-area/labs">Labs</BlueIndexLink>
-    </div>
+    <Section
+      title="Expertise"
+      subTitle="Find Out Who We Are"
+      text="Our world-class researchers study all aspects of cancer. Explore what
+        they are doing."
+      links={[{ text: "Labs", url: "/research-area/labs" }]}
+    />
 
-    <div class="text-center p-16 blue-bg text-white">
-      <span className="uppercase tracking-wide border-t-2 border-white p-2 mx-auto">
-        News & Events
-      </span>
-      <h2 className="mt-4">Discover What's Happening Now</h2>
-      <p>Follow our latest cancer news, viewpoints, and research.</p>
-      <div>
-        <WhiteIndexLink to="/news">News</WhiteIndexLink>
-      </div>
-      <div>
-        <WhiteIndexLink to="/events">See upcoming events</WhiteIndexLink>
-      </div>
-    </div>
+    <Section
+      title="News & Events"
+      subTitle="Discover What's Happening Now"
+      text="Follow our latest cancer news, viewpoints, and research."
+      links={[
+        { text: "News", url: "/news" },
+        { text: "See upcoming events", url: "/events" },
+      ]}
+      alt={true}
+    />
 
-    <div class="text-center p-16">
-      <span className="uppercase tracking-wide border-t-2 border-blue-500 p-2 mx-auto">
-        Publications
-      </span>
-      <h2 className="mt-4">Read About Our Pioneering Work</h2>
-      <p>
-        Our research is published in world renowed journals with high impact
-        factors.
-      </p>
-      <BlueIndexLink to="/research-areas/publications">
-        Publications
-      </BlueIndexLink>
-    </div>
+    <Section
+      title="Publications"
+      subTitle="Read About Our Pioneering Work"
+      text="Our research is published in world renowed journals with high impact
+      factors."
+      links={[{ text: "Publications", url: "/research-areas/publications" }]}
+    />
   </Layout>
 )
 

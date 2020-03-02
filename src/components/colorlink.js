@@ -1,10 +1,19 @@
 import React from "react"
 import { Link } from "gatsby"
 
-const ColorLink = ({ color, to, children }) => (
-  <Link to={to} className={`${color}-link`}>
+const ColorLink = ({ color, to, children, className, activeClassName }) => (
+  <Link
+    to={to}
+    className={`${color}-link ${className}`}
+    activeClassName={activeClassName}
+  >
     {children}
   </Link>
 )
+
+ColorLink.defaultProps = {
+  className: "",
+  activeClassName: "",
+}
 
 export default ColorLink

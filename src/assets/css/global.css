@@ -11,13 +11,25 @@ html {
 }
 
 body {
-  font-family: 'Lato' !important;
-  font-weight: 400 !important;
-  font-size: 12pt;
+  /* font-family: 'Spartan' !important; */
+  /* font-weight: 400 !important; */
+  /* font-size: 12pt; */
   min-height: 100%;
   padding: 0;
   margin: 0;
 }
+
+h1 {
+  @apply text-2xl;
+}
+
+h2 {
+  @apply text-xl;
+}
+h3 {
+  @apply text-lg;
+}
+
 
 .navbar {
   background-color: transparent;
@@ -104,7 +116,7 @@ a:hover {
 }
 
 .link {
-  @apply no-padding no-underline border-b border-solid border-transparent pb-1 mb-1 trans-ani; 
+  @apply no-padding no-underline border-b border-solid border-transparent pb-1 trans-ani; 
 }
 
 .link-hover {
@@ -155,21 +167,22 @@ a:hover {
   @apply border-none w-full;
 }
 
-.header-link {
-  @apply no-padding trans-ani mr-8 no-underline;
-  color: rgb(28, 76, 143) !important;
-  border-bottom: solid 1px white;
-}
-
-.header-link:hover {
-  @apply no-underline;
-  color: rgb(28, 76, 143) !important;
-  border-bottom: solid 1px rgb(28, 76, 143) !important;
+.header-link-active {
+  @apply border-b border-solid blue-border;
 }
 
 .mobile-header {
   @apply row text-white p-3;
   background: rgba(29, 79, 145, 0.8);
+}
+
+
+.slide-menu-link {
+  @apply bg-white no-padding p-4 blue font-semibold w-full border-b border-solid border-gray-500 block no-underline trans-ani;
+}
+
+.slide-menu-link:hover {
+  @apply blue-bg text-white no-underline;
 }
 
 

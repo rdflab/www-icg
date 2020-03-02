@@ -96,20 +96,26 @@ module.exports = {
           //   family: `Source Sans Pro`,
           //   variants: [`300`, `400`, `700`]
           // },
-          {
-            family: `Quicksand`,
-            variants: [`300`, `400`, `700`],
-          },
+          // {
+          //   family: `Source Sans Pro`,
+          //   variants: [`300`, `400`, `700`],
+          // },
         ],
       },
     },
     {
-      resolve: "gatsby-background-image-es5",
+      resolve: "gatsby-background-image",
       options: {
         // add your own characters to escape, replacing the default ':/'
         specialChars: "/:",
       },
     },
+    // {
+    //   resolve: `gatsby-plugin-typography`,
+    //   options: {
+    //     pathToConfigModule: `src/utils/typography`,
+    //   },
+    // },
     `gatsby-plugin-postcss`,
     // Add after these plugins if used
     {

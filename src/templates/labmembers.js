@@ -16,7 +16,7 @@ const LabMembersTemplate = props => {
     people.push(peopleMap[pid])
   }
 
-  const title = `The ${faculty.firstName} ${faculty.lastName} Lab Members`
+  const title = `The ${faculty.frontmatter.lastName} Lab Members`
 
   return (
     <CrumbLayout
@@ -25,7 +25,7 @@ const LabMembersTemplate = props => {
         ["Research Areas", "/research-areas"],
         ["Labs", "/research-areas/labs"],
         [
-          `${faculty.firstName} ${faculty.lastName}`,
+          `${faculty.frontmatter.firstName} ${faculty.frontmatter.lastName}`,
           `/research-areas/labs/${lab.id}`,
         ],
         ["Members", `/research-areas/labs/${lab.id}/members`],
