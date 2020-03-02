@@ -1,3 +1,4 @@
+/* purgecss start ignore */
 @tailwind base;
 
 @tailwind components;
@@ -184,5 +185,6 @@ a:hover {
   @apply blue-bg text-white no-underline;
 }
 
+/* purgecss end ignore */
 
 @tailwind utilities;

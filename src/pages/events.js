@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import { graphql } from "gatsby"
 import CrumbLayout from "../components/crumblayout"
-import "../components/calendar/calendar.scss"
 import flattenEdges from "../utils/flattenedges"
 import CalSearch from "../components/calendar/calsearch"
 
