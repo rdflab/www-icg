@@ -19,10 +19,6 @@ const StyledButton = styled.button`
   }
 `
 
-const Icon = styled(FaTimes)`
-  color: white;
-`
-
 const SlideMenuCloseButton = ({ onClickHandle }) => (
   <StyledButton onClick={onClickHandle}>
     <FaTimes size={28} />

@@ -176,7 +176,6 @@ a:hover {
   background: rgba(29, 79, 145, 0.8);
 }
 
-
 .slide-menu-link {
   @apply bg-white no-padding p-4 blue font-semibold w-full border-b border-solid border-gray-500 block no-underline trans-ani;
 }
