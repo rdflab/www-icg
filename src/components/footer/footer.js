@@ -14,15 +14,15 @@ const Footer = props => {
           <Column w="1/3" className="pb-4">
             <FooterLinks />
           </Column>
-          <Column w="1/3" className="hidden sm:block sm:text-center pb-4">
+          <Column w="1/3" className="hidden sm:block text-center pb-4">
             <a href="https://cumc.columbia.edu">
               <HICCCImage />
             </a>
           </Column>
-          <Column w="1/3" className="sm:text-right pb-4">
+          <Column w="1/3" className="text-center pb-4">
             &copy; {new Date().getFullYear()} {siteTitle}
           </Column>
-          <Column w="1/3" className="sm:hidden pb-4">
+          <Column w="1/3" className="sm:hidden text-center pb-4">
             <a href="https://cumc.columbia.edu">
               <HICCCImage />
             </a>

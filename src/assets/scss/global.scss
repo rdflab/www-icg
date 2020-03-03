@@ -1,0 +1,120 @@
+@charset "utf-8";
+@import "~bulma/bulma.sass";
+@import "./colors.scss";
+@import "./size.scss";
+@import "./margin.scss";
+@import "./padding.scss";
+@import "./border.scss";
+@import "./position.scss";
+@import "./display.scss";
+@import "./text.scss";
+@import "./animation.scss";
+@import "./cursors.scss";
+
+html {
+  min-height: 100%;
+  overflow-y: scroll;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  /* font-family: 'Spartan' !important; */
+  /* font-weight: 400 !important; */
+  /* font-size: 12pt; */
+  min-height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.row {
+  @extend .flex, .flex-row;
+}
+
+.col {
+  @extend .flex, .flex-col;
+}
+
+.outline-none {
+  outline: 0;
+}
+
+.no-padding {
+  @extend .m-0, .p-0, .border-none, .outline-none;
+}
+
+.trans-ani {
+  @extend .transition, .duration-300;
+}
+
+.footer {
+  @extend .bg-blue-columbia, .text-white, .text-sm, .h-64, .p-8;
+}
+a {
+  @extend .no-padding, .no-underline, .border-b, .border-solid, .border-transparent, .pb-1, .trans-ani;
+}
+
+a:hover {
+  @extend .no-underline, .border-b, .border-solid;
+}
+
+.blue-link {
+  @extend a, .text-blue-columbia; 
+}
+
+.blue-link:hover {
+  @extend a:hover, .text-blue-columbia, .border-blue-columbia;
+}
+
+.blue-link-active {
+  @extend .border-b, .border-solid, .border-blue-columbia;
+}
+
+.white-link {
+  @extend a, .text-white;
+}
+
+.white-link:hover {
+  @extend a:hover, .text-white, .border-white;
+}
+
+
+.slide-menu-container {
+  @extend .fixed, .m-0, .p-0, .top-0, .left-0, .w-screen, .h-screen, .opacity-0, .z-50, .trans-ani;
+  transform: translate3d(-100vw, 0, 0);
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.slide-menu-container-visible {
+  @extend .opacity-100;
+  transform: translate3d(0vw, 0, 0);
+}
+
+.menu-column {
+  @extend .float-left, .m-0, .p-0, .bg-white, .h-screen;
+  width: 80vw;
+}
+
+.slide-menu-link {
+  @extend .bg-white, .no-padding, .p-4, .text-blue-columbia, .font-semibold, .w-full, .border-b, .border-solid, .border-gray-500, .no-underline, .block, .trans-ani;
+}
+
+.slide-menu-link:hover {
+  @extend .bg-blue-columbia-60, .text-white, .no-underline;
+}
+
+.mobile-header {
+  @extend .row, .bg-blue-columbia, .text-white, .p-3;
+}
+
+.search-bar {
+  @extend .row, .p-2, .trans-ani, .border, .border-solid, .border-gray-300, .rounded, .items-center, .bg-white, .mb-4;
+}
+
+.search-bar:hover {
+  @extend .border-blue-columbia-90;
+}
+
+.search-input[type=text] {
+  @extend .border-none, .w-full;
+}

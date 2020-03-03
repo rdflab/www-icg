@@ -2,7 +2,7 @@ import React from "react"
 import IndexLink from "./indexlink"
 
 const BlueIndexLink = ({ to, children }) => (
-  <IndexLink color="blue" to={to}>
+  <IndexLink color="blue-link" to={to}>
     {children}
   </IndexLink>
 )

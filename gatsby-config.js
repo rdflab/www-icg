@@ -49,7 +49,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sass`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -116,18 +115,29 @@ module.exports = {
     //     pathToConfigModule: `src/utils/typography`,
     //   },
     // },
-    `gatsby-plugin-postcss`,
-    // {
-    //   resolve: `gatsby-plugin-purgecss`,
-    //   options: {
-    //     printRejected: true, // Print removed selectors and processed file names
-    //     // develop: true, // Enable while using `gatsby develop`
-    //     tailwind: true, // Enable tailwindcss support
-    //     // whitelist: ['whitelist'], // Don't remove this selector
-    //     // ignore: ['/ignored.css', 'prismjs/', 'docsearch.js/'], // Ignore files/folders
-    //     //purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        // Configure SASS to process Tailwind
+        postCssPlugins: [
+          require("tailwindcss"),
+          require("./tailwind.config.js"),
+        ],
+      },
+    },
+    // `gatsby-plugin-postcss`,
+    {
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        printRejected: true, // Print removed selectors and processed file names
+        // develop: true, // Enable while using `gatsby develop`
+        tailwind: true, // Enable tailwindcss support
+        // whitelist: ['whitelist'], // Don't remove this selector
+        ignore: ["react-day-picker/"], // Ignore files/folders
+        whitelistPatterns: [/^w-/, /DayPicker/],
+        //purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
+      },
+    },
     // {
     //   resolve: `gatsby-plugin-typography`,
     //   options: {

@@ -1,28 +1,13 @@
 import React from "react"
-import styled from "styled-components"
 import { FaTimes } from "react-icons/fa"
 
-const StyledButton = styled.button`
-  padding: 1rem;
-  margin: 0;
-  outline: none;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  float: left;
-  color: rgba(255, 255, 255, 0.8);
-  transition: 0.4s;
-
-  &:hover {
-    color: rgba(255, 255, 255, 1);
-    outline: none;
-  }
-`
-
 const SlideMenuCloseButton = ({ onClickHandle }) => (
-  <StyledButton onClick={onClickHandle}>
+  <button
+    className="p-4 m-0 no-padding bg-transparent text-white opacity-75 hover:opacity-100 float-left cursor-pointer trans-ani"
+    onClick={onClickHandle}
+  >
     <FaTimes size={28} />
-  </StyledButton>
+  </button>
 )
 
 export default SlideMenuCloseButton

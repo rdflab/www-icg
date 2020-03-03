@@ -7,62 +7,62 @@ import Column from "../components/column"
 import BlueIndexLink from "../components/blueindexlink"
 import WhiteIndexLink from "../components/whiteindexlink"
 
-// const Section = ({ title, subTitle, text, links, alt }) => {
-//   return (
-//     <div class={`text-center p-16 ${alt ? "blue-bg text-white" : ""}`}>
-//       <span
-//         className={`uppercase tracking-wide border-t-2 p-2 mx-auto ${
-//           alt ? "border-white" : "blue-border"
-//         }`}
-//       >
-//         {title}
-//       </span>
-//       <h2 className="mt-4">{subTitle}</h2>
-//       <p>{text}</p>
+const HomeSection = ({ title, subTitle, text, links, alt }) => {
+  return (
+    <div class={`text-center p-16 ${alt ? "blue-bg text-white" : ""}`}>
+      <span
+        className={`uppercase tracking-wide border-t-2 p-2 mx-auto ${
+          alt ? "border-white" : "blue-border"
+        }`}
+      >
+        {title}
+      </span>
+      <h2 className="mt-4">{subTitle}</h2>
+      <p>{text}</p>
 
-//       {links.map((link, index) => (
-//         <div className="mt-2">
-//           {alt ? (
-//             <WhiteIndexLink to={link.url}>{link.text}</WhiteIndexLink>
-//           ) : (
-//             <BlueIndexLink to={link.url}>{link.text}</BlueIndexLink>
-//           )}
-//         </div>
-//       ))}
-//     </div>
-//   )
-// }
+      {links.map((link, index) => (
+        <div className="mt-2">
+          {alt ? (
+            <WhiteIndexLink to={link.url}>{link.text}</WhiteIndexLink>
+          ) : (
+            <BlueIndexLink to={link.url}>{link.text}</BlueIndexLink>
+          )}
+        </div>
+      ))}
+    </div>
+  )
+}
 
-// Section.defaultProps = {
-//   alt: false,
-// }
+HomeSection.defaultProps = {
+  alt: false,
+}
 
 const IndexPage = () => (
   <Layout crumbs={[["Home", "/"]]} title="Home">
-    {/* <NYCBgSection> */}
-    <Container className="h-full py-16">
-      <Columns className="h-full p-16">
-        <Column
-          w="7"
-          className="bg-blue-columbia opacity-75 float-left text-white p-8"
-        >
-          <h2 className="title is-2 text-white">
-            Institute For Cancer Genetics
-          </h2>
+    <NYCBgSection>
+      <Container className="h-full py-8 sm:py-16">
+        <Columns className="h-full p-8 sm:p-16">
+          <Column
+            w="7"
+            className="bg-blue-columbia opacity-75 float-left text-white p-8"
+          >
+            <h2 className="title is-2 text-white">
+              Institute For Cancer Genetics
+            </h2>
 
-          <p>
-            The Institute for Cancer Genetics was founded in 1999 as part of a
-            commitment by Columbia University to examine the molecular
-            mechanisms and pathogenesis of cancer.
-          </p>
+            <p>
+              The Institute for Cancer Genetics was founded in 1999 as part of a
+              commitment by Columbia University to examine the molecular
+              mechanisms and pathogenesis of cancer.
+            </p>
 
-          <WhiteIndexLink to="/about">More</WhiteIndexLink>
-        </Column>
-      </Columns>
-    </Container>
-    {/* </NYCBgSection> */}
+            <WhiteIndexLink to="/about">More</WhiteIndexLink>
+          </Column>
+        </Columns>
+      </Container>
+    </NYCBgSection>
 
-    {/* <Section
+    <HomeSection
       title="Expertise"
       subTitle="Find Out Who We Are"
       text="Our world-class researchers study all aspects of cancer. Explore what
@@ -70,7 +70,7 @@ const IndexPage = () => (
       links={[{ text: "Labs", url: "/research-area/labs" }]}
     />
 
-    <Section
+    <HomeSection
       title="News & Events"
       subTitle="Discover What's Happening Now"
       text="Follow our latest cancer news, viewpoints, and research."
@@ -81,13 +81,13 @@ const IndexPage = () => (
       alt={true}
     />
 
-    <Section
+    <HomeSection
       title="Publications"
       subTitle="Read About Our Pioneering Work"
       text="Our research is published in world renowed journals with high impact
       factors."
       links={[{ text: "Publications", url: "/research-areas/publications" }]}
-    /> */}
+    />
   </Layout>
 )
 
