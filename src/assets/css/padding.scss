@@ -1,0 +1,71 @@
+.p-0 {
+  padding: 0;
+}
+
+@mixin p($x) {
+  padding: $x !important;
+}
+
+.p-1 {
+  @include p(0.25rem);
+}
+
+.p-2 {
+  @include p(0.5rem);
+}
+
+.p-3 {
+  @include p(0.75rem);
+}
+
+.p-4 {
+  @include p(1rem);
+}
+
+.p-8 {
+  @include p(2rem);
+}
+
+@mixin px($x) {
+  padding-left: $x;
+  padding-right: $x;
+}
+
+.px-0 {
+  @include px(0);
+}
+
+.px-4 {
+  @include px(1rem);
+}
+
+@mixin py($x) {
+  padding-top: $x;
+  padding-bottom: $x;
+}
+
+.py-0 {
+  @include py(0);
+}
+
+.py-2 {
+  @include py(0.5rem);
+}
+
+.py-4 {
+  @include py(1rem);
+}
+
+.py-16 {
+  @include py(4rem);
+}
+
+@mixin pb($x) {
+  padding: 0;
+  padding-bottom: $x;
+}
+
+.pb-1 {
+  @include pb(0.25rem);
+}
+

@@ -1,3 +1,4 @@
+
 /* purgecss start ignore */
 @tailwind base;
 
@@ -87,13 +88,7 @@ h3 {
   @apply transition duration-300;
 }
 
-a {
-  @apply no-padding text-blue-700 no-underline border-b border-solid border-transparent pb-1 trans-ani;
-}
 
-a:hover {
-  @apply text-blue-700 no-underline border-b border-solid border-blue-700;
-}
 
 .footer {
   @apply text-white text-sm h-64 p-8;
@@ -114,6 +109,14 @@ a:hover {
 
 .blue-border {
   @apply border-blue-700;
+}
+
+a {
+  @apply no-padding text-blue-700 no-underline border-b border-solid border-transparent pb-1 trans-ani;
+}
+
+a:hover {
+  @apply text-blue-700 no-underline border-b border-solid border-blue-700;
 }
 
 .link {

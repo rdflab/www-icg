@@ -1,0 +1,69 @@
+.m-0 {
+  margin: 0;
+}
+
+@mixin mt($x) {
+  margin-top: $x;
+}
+
+.mt-2 {
+  @include mt(0.5rem);
+}
+
+.mt-4 {
+  @include mt(1rem);
+}
+
+@mixin mb($x) {
+  margin-bottom: $x !important;
+}
+
+.mb-2 {
+  @include mb(0.5rem);
+}
+
+.mb-4 {
+  @include mb(1rem);
+}
+
+@mixin my($x) {
+  margin-top: $x;
+  margin-bottom: $x;
+}
+
+.my-1 {
+  @include my(0.25rem);
+}
+
+.my-2 {
+  @include my(0.5rem);
+}
+
+.my-4 {
+  @include my(1rem);
+}
+
+@mixin mr($x) {
+  margin-right: $x;
+}
+
+.mr-2 {
+  @include mr(0.5rem);
+}
+
+.mr-4 {
+  @include mr(1rem);
+}
+
+.mr-3 {
+  @include mr(0.75rem);
+}
+
+.mr-6 {
+  @include mr(1.5rem);
+}
+
+.mx-auto {
+  margin-right: auto;
+  margin-left: auto;
+}

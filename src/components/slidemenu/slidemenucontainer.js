@@ -41,9 +41,11 @@ const SlideMenuContainer = ({ onClickHandle, visible }) => {
       <div className="menu-column">
         {links.map((link, index) => {
           return (
-            <SlideMenuLink key={index} to={link.link}>
-              {link.name}
-            </SlideMenuLink>
+            <div key={index}>
+              <SlideMenuLink key={index} to={link.link}>
+                {link.name}
+              </SlideMenuLink>
+            </div>
           )
         })}
       </div>

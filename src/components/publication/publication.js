@@ -8,6 +8,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
+import BlueLink from "../bluelink"
 
 const StyledPub = styled.article`
   margin-bottom: 2rem;
@@ -85,20 +86,29 @@ const Publication = ({
       <StyledTitle>{publication.title}</StyledTitle>
       <StyledAuthors>{authors}</StyledAuthors>
 
-      <div className="flex flex-row justify-between">
-        <div className="flex flex-row">
+      <div className="level">
+        <div className="level-left">
           {publication.journal !== "" && (
-            <StyledYear className="level-item">
-              {publication.journal}
-            </StyledYear>
+            <div className="level-item">
+              <StyledYear className="level-item">
+                {publication.journal}
+              </StyledYear>
+            </div>
           )}
-          <StyledYear className="ml-4">{publication.year}</StyledYear>
+
+          {publication.year !== "-1" && (
+            <div className="level-item">
+              <StyledYear className="ml-4">{publication.year}</StyledYear>
+            </div>
+          )}
         </div>
 
-        <div className="flex flex-row">
+        <div className="level-right">
           {name !== "" && showLabLink && (
             <div className="level-item">
-              <Link to={`/research-areas/labs/${labId}`}>{shortName}</Link>
+              <BlueLink to={`/research-areas/labs/${labId}`}>
+                {shortName}
+              </BlueLink>
             </div>
           )}
         </div>

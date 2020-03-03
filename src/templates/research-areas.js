@@ -1,6 +1,6 @@
 import React from "react"
 import CrumbLayout from "../components/crumblayout"
-import { Link } from "gatsby"
+import BlueLink from "../components/bluelink"
 
 const ResearchAreasTemplate = props => {
   const { pageContext } = props
@@ -24,7 +24,7 @@ const ResearchAreasTemplate = props => {
         .sort()
         .map((name, index) => (
           <div key={index}>
-            <Link to={`/research-areas/${raMap[name]}`}>{name}</Link>
+            <BlueLink to={`/research-areas/${raMap[name]}`}>{name}</BlueLink>
           </div>
         ))}
     </CrumbLayout>

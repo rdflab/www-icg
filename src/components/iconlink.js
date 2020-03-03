@@ -3,8 +3,8 @@ import Columns from "./columns"
 import Column from "./column"
 
 const IconLink = ({ icon, content }) => (
-  <Columns isMobile={true} className="items-center mb-2">
-    <Column isMobile={true} w="1/12">
+  <Columns isMobile={true} isVCentered={true} className="mb-2">
+    <Column isMobile={true} w="1">
       {icon}
     </Column>
     <Column isMobile={true}>{content}</Column>

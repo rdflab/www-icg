@@ -10,16 +10,16 @@ const Footer = props => {
   return (
     <footer className="footer">
       <Container>
-        <Columns className="items-center">
-          <Column w="1/3" className="text-center">
+        <Columns className="is-vcentered">
+          <Column className="text-center">
             <FooterLinks />
           </Column>
-          <Column w="1/3" className="text-center py-4">
+          <Column className="text-center py-4">
             <a href="https://cumc.columbia.edu">
               <HICCCImage />
             </a>
           </Column>
-          <Column w="1/3" className="text-center">
+          <Column className="text-center">
             &copy; {new Date().getFullYear()} {siteTitle}
           </Column>
         </Columns>

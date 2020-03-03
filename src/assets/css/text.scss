@@ -1,0 +1,25 @@
+@import "./colors.scss";
+
+.text-blue-columbia {
+  color: $columbia-blue-color !important;
+}
+
+.text-white {
+  color: white !important;
+}
+
+.text-sm {
+  font-size: smaller;
+}
+
+.no-underline {
+  text-decoration: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.font-semibold {
+  font-weight: 600;
+}

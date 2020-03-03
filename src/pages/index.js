@@ -40,13 +40,15 @@ Section.defaultProps = {
 const IndexPage = () => (
   <Layout crumbs={[["Home", "/"]]} title="Home">
     <NYCBgSection>
-      <Container className="h-full">
-        <Columns className="h-full py-16">
+      <Container className="h-full py-16">
+        <Columns className="h-full p-16">
           <Column
-            w="7/12"
-            className="bg-blue-700 opacity-75 float-left text-white p-8"
+            w="7"
+            className="bg-blue-columbia opacity-75 float-left text-white p-8"
           >
-            <h1>Institute For Cancer Genetics</h1>
+            <h2 className="title is-2 text-white">
+              Institute For Cancer Genetics
+            </h2>
 
             <p>
               The Institute for Cancer Genetics was founded in 1999 as part of a

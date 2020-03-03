@@ -4,7 +4,7 @@ import { FaBars } from "react-icons/fa"
 const SlideMenuButton = ({ onClickHandle }) => (
   <button
     onClick={onClickHandle}
-    className="mr-3 outline-none focus:outline-none"
+    className="mr-3 border-none outline-none cursor-pointer bg-transparent text-white"
   >
     <FaBars />
   </button>

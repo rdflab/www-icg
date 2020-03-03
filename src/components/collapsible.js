@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import AnimateHeight from "react-animate-height"
-import collapsibleStyles from "./collapsible.module.scss"
 import { FaChevronUp, FaChevronDown } from "react-icons/fa"
 
 const Collapsible = props => {
@@ -11,13 +10,17 @@ const Collapsible = props => {
   }
 
   return (
-    <div className={collapsibleStyles.collapsible}>
-      <button className={collapsibleStyles.collapsibleButton} onClick={toggle}>
-        <div style={{ float: "left" }}>{props.title}</div>
-        <div style={{ float: "right" }}>
-          {height === 0 ? <FaChevronDown /> : <FaChevronUp />}
+    <div className="my-4">
+      <div className="level" onClick={toggle}>
+        <div className="level-left">
+          <div className="level-item">
+            <h5 className="title is-5">{props.title}</h5>
+          </div>
         </div>
-      </button>
+        <div className="level-right">
+          <div>{height === 0 ? <FaChevronDown /> : <FaChevronUp />}</div>
+        </div>
+      </div>
 
       <AnimateHeight duration={250} height={height}>
         {props.children}

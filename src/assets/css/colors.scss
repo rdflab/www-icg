@@ -1,0 +1,65 @@
+$transparent-color : rgba(0, 0, 0, 0);
+$animation-duration-ms: 300ms;
+$columbia-blue-color: rgb(28, 76, 143);
+$columbia-blue-90-color: rgba($columbia-blue-color, 0.9);
+$columbia-blue-50-color: rgba($columbia-blue-color, 0.5);
+$columbia-blue-60-color: rgba($columbia-blue-color, 0.6);
+
+$blue-300: #90cdf4;
+$blue-400: #63b3ed;
+
+$gray-200: #edf2f7;
+$gray-300: #e2e8f0;
+$gray-500: #a0aec0;
+
+.bg-transparent {
+  background-color: transparent;
+}
+
+.bg-blue-columbia {
+  background-color: $columbia-blue-90-color;
+}
+
+.bg-blue-columbia-50 {
+  background-color: $columbia-blue-50-color;
+}
+
+.bg-blue-columbia-60 {
+  background-color: $columbia-blue-60-color;
+}
+
+.bg-blue-300 {
+  background-color: $blue-300;
+}
+
+.bg-blue-400 {
+  background-color: $blue-400;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.bg-gray-200 {
+  background-color: $gray-200;
+}
+
+.text-white {
+  color: white;
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+.opacity-75 {
+  opacity: 0.75;
+}
+
+.opacity-50 {
+  opacity: 0.5;
+}
+
+.opacity-100 {
+  opacity: 1;
+}
