@@ -116,7 +116,7 @@ module.exports = {
     //     pathToConfigModule: `src/utils/typography`,
     //   },
     // },
-    //`gatsby-plugin-postcss`,
+    `gatsby-plugin-postcss`,
     // {
     //   resolve: `gatsby-plugin-purgecss`,
     //   options: {

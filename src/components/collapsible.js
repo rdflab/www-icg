@@ -11,14 +11,13 @@ const Collapsible = props => {
 
   return (
     <div className="my-4">
-      <div className="level" onClick={toggle}>
-        <div className="level-left">
-          <div className="level-item">
-            <h5 className="title is-5">{props.title}</h5>
-          </div>
-        </div>
-        <div className="level-right">
-          <div>{height === 0 ? <FaChevronDown /> : <FaChevronUp />}</div>
+      <div
+        className="row items-center mb-2 cursor-pointer text-gray-700"
+        onClick={toggle}
+      >
+        <h1 className="text-lg">{props.title}</h1>
+        <div className="ml-auto">
+          {height === 0 ? <FaChevronDown /> : <FaChevronUp />}
         </div>
       </div>
 

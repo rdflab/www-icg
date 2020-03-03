@@ -22,7 +22,7 @@ const FilterItem = props => {
   return (
     <div className="row items-center cursor-pointer my-1" onClick={handleClick}>
       <div
-        className={`row items-center w-6 h-6 border border-solid border-gray-300 trans-ani text-white rounded p-1 mr-2 ${
+        className={`row items-center w-6 h-6 border border-solid border-gray-400 trans-ani text-white rounded p-1 mr-2 ${
           selected ? "bg-blue-300 border-blue-300" : "bg-white"
         }`}
       >

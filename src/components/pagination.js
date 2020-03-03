@@ -143,57 +143,64 @@ class Pagination extends Component {
     const pages = this.fetchPageNumbers()
 
     return (
-      <>
-        <nav className="pagination" aria-label="Pagination">
-          <ul className="pagination-list">
-            {pages.map((page, index) => {
-              if (page === LEFT_PAGE)
-                return (
-                  <li key={index}>
-                    <a
-                      className="pagination-link"
-                      href="#"
-                      aria-label="Previous"
-                      onClick={this.handleMoveLeft}
-                    >
-                      <span aria-hidden="true">&laquo;</span>
-                      <span className="sr-only">Previous</span>
-                    </a>
-                  </li>
-                )
-
-              if (page === RIGHT_PAGE)
-                return (
-                  <li key={index}>
-                    <a
-                      className="pagination-link"
-                      href="#"
-                      aria-label="Next"
-                      onClick={this.handleMoveRight}
-                    >
-                      <span aria-hidden="true">&raquo;</span>
-                      <span className="sr-only">Next</span>
-                    </a>
-                  </li>
-                )
-
-              return (
-                <li key={index}>
+      <div className="row" aria-label="Pagination">
+        {pages.map((page, index) => {
+          if (page === LEFT_PAGE)
+            return (
+              <div key={index} className="pagination-block">
+                <div>
                   <a
-                    className={`pagination-link ${
-                      currentPage === page ? "is-current" : ""
-                    }`}
+                    className="pagination-link"
                     href="#"
-                    onClick={this.handleClick(page)}
+                    aria-label="Previous"
+                    onClick={this.handleMoveLeft}
                   >
-                    {page}
+                    <span aria-hidden="true">&laquo;</span>
+                    <span className="sr-only">Previous</span>
                   </a>
-                </li>
-              )
-            })}
-          </ul>
-        </nav>
-      </>
+                </div>
+              </div>
+            )
+
+          if (page === RIGHT_PAGE)
+            return (
+              <div key={index} className="pagination-block">
+                <div>
+                  <a
+                    className="pagination-link"
+                    href="#"
+                    aria-label="Next"
+                    onClick={this.handleMoveRight}
+                  >
+                    <span aria-hidden="true">&raquo;</span>
+                    <span className="sr-only">Next</span>
+                  </a>
+                </div>
+              </div>
+            )
+
+          return (
+            <div
+              key={index}
+              className={`pagination-block ${
+                currentPage === page ? "is-current" : ""
+              }`}
+            >
+              <div>
+                <a
+                  className={`pagination-link ${
+                    currentPage === page ? "is-current" : ""
+                  }`}
+                  href="#"
+                  onClick={this.handleClick(page)}
+                >
+                  {page}
+                </a>
+              </div>
+            </div>
+          )
+        })}
+      </div>
     )
   }
 }

@@ -6,26 +6,9 @@
  */
 
 import React from "react"
-import styled from "styled-components"
-import { Link } from "gatsby"
 import BlueLink from "../bluelink"
-
-const StyledPub = styled.article`
-  margin-bottom: 2rem;
-`
-
-const StyledTitle = styled.div`
-  font-size: 1.2rem;
-`
-
-const StyledAuthors = styled.div`
-  font-weight: 300;
-`
-
-const StyledYear = styled.div`
-  //font-size: smaller;
-  font-weight: 300;
-`
+import Columns from "../columns"
+import Column from "../column"
 
 /**
  * Format author list into string.
@@ -82,38 +65,26 @@ const Publication = ({
   }
 
   return (
-    <StyledPub>
-      <StyledTitle>{publication.title}</StyledTitle>
-      <StyledAuthors>{authors}</StyledAuthors>
+    <div className="mb-8">
+      <div className="text-xl">{publication.title}</div>
+      <div className="font-light">{authors}</div>
 
-      <div className="level">
-        <div className="level-left">
-          {publication.journal !== "" && (
-            <div className="level-item">
-              <StyledYear className="level-item">
-                {publication.journal}
-              </StyledYear>
-            </div>
-          )}
-
-          {publication.year !== "-1" && (
-            <div className="level-item">
-              <StyledYear className="ml-4">{publication.year}</StyledYear>
-            </div>
-          )}
-        </div>
-
-        <div className="level-right">
+      <Columns>
+        <Column w="1/2">
+          {publication.journal !== "" && <>{publication.journal}</>}
+          {publication.year !== "-1" && <>, {publication.year}</>}
+        </Column>
+        <Column w="1/2">
           {name !== "" && showLabLink && (
-            <div className="level-item">
+            <div className="md:text-right">
               <BlueLink to={`/research-areas/labs/${labId}`}>
                 {shortName}
               </BlueLink>
             </div>
           )}
-        </div>
-      </div>
-    </StyledPub>
+        </Column>
+      </Columns>
+    </div>
   )
 }
 

@@ -1,11 +1,7 @@
 import React from "react"
-import styled from "styled-components"
 
-const StyledDiv = styled.div`
-  padding: 1rem;
-  background-color: rgb(245, 245, 245);
-`
-
-const SideBar = ({ children }) => <StyledDiv>{children}</StyledDiv>
+const SideBar = ({ children }) => (
+  <div className="p-4 bg-gray-100">{children}</div>
+)
 
 export default SideBar

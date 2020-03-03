@@ -112,11 +112,11 @@ h3 {
 }
 
 a {
-  @apply no-padding text-blue-700 no-underline border-b border-solid border-transparent pb-1 trans-ani;
+  @apply no-padding text-blue-700 no-underline trans-ani;
 }
 
 a:hover {
-  @apply text-blue-700 no-underline border-b border-solid border-blue-700;
+  @apply text-blue-700 no-underline;
 }
 
 .link {
@@ -160,7 +160,7 @@ a:hover {
 }
 
 .search-bar {
-  @apply row p-2 trans-ani border border-solid border-gray-500 rounded items-center bg-white mb-4;
+  @apply row p-2 trans-ani border border-solid border-gray-400 rounded items-center bg-white mb-4;
 }
 
 .search-bar:hover {
@@ -186,6 +186,31 @@ a:hover {
 
 .slide-menu-link:hover {
   @apply blue-bg text-white no-underline;
+}
+
+.pagination-block {
+  @apply row w-8 h-8 border border-solid border-gray-500 rounded justify-center items-center text-center m-2;
+}
+
+.pagination-link {
+  @apply blue-link;
+}
+
+.is-current {
+  @apply bg-blue-600 text-white;
+}
+
+.links-list {
+  @apply row m-0 p-0 w-full;
+}
+
+.link-item {
+  @apply m-0 p-0;
+}
+
+.link-item:not(:last-child)::after {
+  @apply ml-2 pl-2 border-l border-solid border-white;
+  content: "";
 }
 
 /* purgecss end ignore */
