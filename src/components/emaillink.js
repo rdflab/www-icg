@@ -1,15 +1,12 @@
 import React from "react"
 import { FaEnvelope } from "react-icons/fa"
 import IconLink from "./iconlink"
+import BlueLinkExt from "./bluelinkext"
 
 const EmailLink = ({ to }) => (
   <IconLink
-    icon={<FaEnvelope className="text-gray-600" />}
-    content={
-      <a href={`mailto:${to}`} className="blue-link">
-        {to}
-      </a>
-    }
+    icon={<FaEnvelope className="text-gray-600" size={24} />}
+    content={<BlueLinkExt to={`mailto:${to}`}>{to}</BlueLinkExt>}
   />
 )
 

@@ -1,12 +1,12 @@
 import React from "react"
 import { FaNewspaper } from "react-icons/fa"
-import { Link } from "gatsby"
 import IconLink from "../iconlink"
+import BlueLink from "../bluelink"
 
 const PublicationsLink = ({ to }) => (
   <IconLink
-    icon={<FaNewspaper className="text-gray-600" />}
-    content={<Link to={to}>View Publications</Link>}
+    icon={<FaNewspaper className="text-gray-600" size={24} />}
+    content={<BlueLink to={to}>View Publications</BlueLink>}
   />
 )
 

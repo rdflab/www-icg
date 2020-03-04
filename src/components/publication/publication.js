@@ -10,6 +10,7 @@ import BlueLink from "../bluelink"
 import Columns from "../columns"
 import Column from "../column"
 import { FaExternalLinkAlt } from "react-icons/fa"
+import BlueLinkExt from "../bluelinkext"
 
 /**
  * Format author list into string.
@@ -79,26 +80,24 @@ const Publication = ({
           {publication.pubmed !== "" && (
             <div className="row blue items-center">
               <div>
-                <a
-                  className="blue-link"
+                <BlueLinkExt
                   target="_blank"
-                  href={`https://www.ncbi.nlm.nih.gov/pubmed/?term=${publication.pubmed}`}
+                  to={`https://www.ncbi.nlm.nih.gov/pubmed/?term=${publication.pubmed}`}
                 >
                   PubMed
-                </a>
+                </BlueLinkExt>
               </div>
               <div className="ml-1">
                 <FaExternalLinkAlt />
               </div>
 
               <div className="ml-4">
-                <a
-                  className="blue-link"
+                <BlueLinkExt
                   target="_blank"
-                  href={`https://scholar.google.com/scholar?hl=en&as_sdt=0%2C33&q=${publication.title}`}
+                  to={`https://scholar.google.com/scholar?hl=en&as_sdt=0%2C33&q=${publication.title}`}
                 >
                   Google Scholar
-                </a>
+                </BlueLinkExt>
               </div>
 
               <div className="ml-1">
