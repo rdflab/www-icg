@@ -78,7 +78,7 @@ const Publication = ({
         </Column>
         <Column w="1/3">
           {publication.pubmed !== "" && (
-            <div className="row blue sm:items-center sm:text-center sm:justify-center">
+            <div className="row blue md:items-center md:text-center md:justify-center">
               <div>
                 <BlueLinkExt
                   target="_blank"
