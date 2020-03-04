@@ -1,45 +1,18 @@
 import React from "react"
-import styled from "styled-components"
-
-const StyledDate = styled.div`
-  text-align: center;
-  margin-bottom: 1rem;
-  color: rgba(28, 76, 143, 0.9);
-`
-
-const StyledMonth = styled.div`
-  text-transform: uppercase;
-  font-size: smaller;
-`
-
-const StyledDay = styled.div`
-  text-transform: uppercase;
-  font-size: xx-large;
-`
-
-const StyledDayName = styled.div`
-  text-transform: uppercase;
-  font-size: smaller;
-  background: rgba(28, 76, 143, 0.9);
-  padding: 0.2rem;
-  color: white;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-`
 
 const CalEventDate = ({ event }) => {
   return (
-    <StyledDate>
-      <StyledMonth>
+    <div className="text-center text-blue-columbia mb-4">
+      <div className="uppercase text-sm">
         {event.start.toLocaleString("default", { month: "short" })}
-      </StyledMonth>
-      <StyledDay>
+      </div>
+      <div className="uppercase font-light text-3xl">
         {event.start.toLocaleString("default", { day: "numeric" })}
-      </StyledDay>
-      <StyledDayName>
+      </div>
+      <div className="uppercase text-sm bg-blue-columbia text-white px-2">
         {event.start.toLocaleString("default", { weekday: "short" })}
-      </StyledDayName>
-    </StyledDate>
+      </div>
+    </div>
   )
 }
 

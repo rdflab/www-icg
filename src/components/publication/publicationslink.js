@@ -5,7 +5,7 @@ import BlueLink from "../bluelink"
 
 const PublicationsLink = ({ to }) => (
   <IconLink
-    icon={<FaNewspaper className="text-gray-600" size={24} />}
+    icon={<FaNewspaper className="text-gray-600" size={20} />}
     content={<BlueLink to={to}>View Publications</BlueLink>}
   />
 )

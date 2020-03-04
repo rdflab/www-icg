@@ -1,0 +1,30 @@
+@import "../../assets/css/colors.scss";
+
+.DayPicker-Day {
+    width: 2rem !important;
+    height: 2rem !important;
+    max-width: 2rem !important;
+    max-height: 2rem !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: none !important;
+    color: black !important;
+    font-weight: 400 !important;
+    border: none;
+    border-top: solid 1px transparent;
+    border-bottom: solid 1px transparent;
+    border-radius: 0 !important;
+}
+
+.DayPicker-Day--today {
+    border-bottom: solid 1px $columbia-blue-70-color;
+    border-top: solid 1px $columbia-blue-70-color;
+    color: $columbia-blue-70-color !important;
+    background-color: $columbia-blue-10-color !important;
+}
+
+.DayPicker-Day--selected {
+    border-bottom: solid 1px $columbia-blue-50-color;
+    border-top: solid 1px $columbia-blue-50-color;
+    color: $columbia-blue-50-color !important;
+}

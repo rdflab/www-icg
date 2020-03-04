@@ -1,5 +1,4 @@
 import React from "react"
-import styled from "styled-components"
 import Columns from "../columns"
 import Column from "../column"
 import { FaRegClock, FaMapMarkerAlt } from "react-icons/fa"
@@ -31,7 +30,7 @@ const CalEventLocation = ({ event, showDate, isMobile }) => {
 
   return (
     <>
-      <div className="sm:hidden text-gray-500">
+      <div className="sm:hidden gray">
         <Row className="items-center">
           <div className="mr-4">
             <FaRegClock size={28} />
@@ -52,7 +51,7 @@ const CalEventLocation = ({ event, showDate, isMobile }) => {
       </div>
 
       <div className="hidden sm:block">
-        <Columns className="text-gray-500 items-center">
+        <Columns className="gray items-center">
           <Column w="1/12">
             <FaRegClock size={28} />
           </Column>

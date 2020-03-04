@@ -7,7 +7,7 @@ import Collapsible from "../collapsible"
 import toPeopleTypeMap from "../../utils/peopletypemap"
 import { PEOPLE_TYPES } from "../../constants"
 import SearchSummary from "../searchsummary"
-import SideBar from "../sidebar/sidebar"
+//import SideBar from "../sidebar/sidebar"
 import Columns from "../columns"
 import SmallColumn from "../smallcolumn"
 import MainColumn from "../maincolumn"
@@ -132,15 +132,15 @@ const PeopleSearch = ({ labMap, allPeople, showLabLink }) => {
         </div>
       </MainColumn>
       <SideColumn>
-        <SideBar>
-          <SearchBar
-            handleInputChange={handleInputChange}
-            placeholder="Type to find faculty..."
-          />
-          <Collapsible title="Type filter" height="auto">
-            <TypesFilter handleClick={handleClick} />
-          </Collapsible>
-        </SideBar>
+        {/* <SideBar> */}
+        <SearchBar
+          handleInputChange={handleInputChange}
+          placeholder="Type to find faculty..."
+        />
+        <Collapsible title="Filter By" height="auto">
+          <TypesFilter handleClick={handleClick} />
+        </Collapsible>
+        {/* </SideBar> */}
       </SideColumn>
     </Columns>
   )

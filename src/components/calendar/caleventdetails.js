@@ -1,7 +1,6 @@
 import React from "react"
-import H4 from "../headings/h4"
 import CalEventLocation from "./caleventlocation"
-import { Link } from "gatsby"
+import BlueLink from "../bluelink"
 
 const CalEventDetails = ({ event, isMobile }) => {
   const path = `/events/${
@@ -10,9 +9,9 @@ const CalEventDetails = ({ event, isMobile }) => {
 
   return (
     <>
-      <H4>
-        <Link to={path}>{event.frontmatter.title}</Link>
-      </H4>
+      <h2>
+        <BlueLink to={path}>{event.frontmatter.title}</BlueLink>
+      </h2>
       <CalEventLocation event={event} isMobile={isMobile} />
     </>
   )

@@ -2,7 +2,7 @@ import React from "react"
 import CrumbLayout from "../components/crumblayout"
 
 import Columns from "../components/columns"
-import SideBar from "../components/sidebar/sidebar"
+//import SideBar from "../components/sidebar/sidebar"
 import SideBarMembers from "../components/people/sidebarmembers"
 import SideColumn from "../components/sidecolumn"
 import MainColumn from "../components/maincolumn"
@@ -34,9 +34,9 @@ const LabOverviewTemplate = props => {
           <div dangerouslySetInnerHTML={{ __html: labHtml }} />
         </MainColumn>
         <SideColumn>
-          <SideBar>
-            <SideBarMembers lab={lab} people={labPeople} />
-          </SideBar>
+          {/* <SideBar> */}
+          <SideBarMembers lab={lab} people={labPeople} />
+          {/* </SideBar> */}
         </SideColumn>
       </Columns>
     </CrumbLayout>

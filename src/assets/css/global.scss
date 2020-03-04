@@ -7,19 +7,11 @@
 @import "./colors.scss";
 
 html {
-  min-height: 100%;
-  overflow-y: scroll;
-  padding: 0;
-  margin: 0;
+  @apply p-0 m-0 overflow-y-scroll min-h-full;
 }
 
 body {
-  /* font-family: 'Spartan' !important; */
-  /* font-weight: 400 !important; */
-  /* font-size: 12pt; */
-  min-height: 100%;
-  padding: 0;
-  margin: 0;
+  @apply p-0 m-0 text-gray-800 min-h-full;
 }
 
 h1 {
@@ -29,6 +21,7 @@ h1 {
 h2 {
   @apply text-xl;
 }
+
 h3 {
   @apply text-lg;
 }
@@ -89,15 +82,17 @@ h3 {
   @apply transition duration-300;
 }
 
-
-
 .footer {
   @apply text-white text-sm h-64 p-8;
   background: rgba(28, 76, 143, 0.8);
 }
 
 .blue {
-  @apply text-blue-columbia; //text-blue-700;
+  @apply text-blue-600; //text-blue-columbia; //text-blue-700;
+}
+
+.gray {
+  @apply text-gray-600;
 }
 
 .white {
@@ -109,19 +104,27 @@ h3 {
 }
 
 .blue-border {
-  @apply border-blue-columbia;
+  @apply border-blue-600; //border-blue-columbia;
+}
+
+.gray-border {
+  @apply border-gray-500;
 }
 
 a {
   @apply no-padding no-underline trans-ani;
 }
 
-a:hover {
+.a-hover {
   @apply no-underline;
 }
 
+a:hover {
+  @apply a-hover;
+}
+
 .link {
-  @apply no-padding no-underline border-b border-solid border-transparent pb-1 trans-ani; 
+  @apply no-padding no-underline border-b border-solid border-transparent trans-ani; 
 }
 
 .link-hover {
@@ -137,7 +140,7 @@ a:hover {
 }
 
 .blue-link-active {
-  @apply border-b border-solid border-blue-columbia;
+  @apply border-blue-columbia;
 }
 
 .white-link {
@@ -146,6 +149,14 @@ a:hover {
 
 .white-link:hover {
   @apply link-hover text-white border-white;
+}
+
+.gray-link {
+  @apply link gray;
+}
+
+.gray-link:hover {
+  @apply link-hover gray gray-border;
 }
 
 .slide-menu-container {
@@ -177,15 +188,15 @@ a:hover {
 }
 
 .header-link {
-  @apply link text-gray-600 mr-8 py-3;
+  @apply link text-gray-600 mr-8 py-2;
 }
 
 .header-link:hover {
-  @apply text-blue-500;
+  @apply blue;
 }
 
 .header-link-active {
-  @apply text-blue-500;
+  @apply blue;
 }
 
 .mobile-header {

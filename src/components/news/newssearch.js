@@ -6,7 +6,7 @@ import FilterNewsMonth from "../filter/filternewsmonth"
 import Collapsible from "../collapsible"
 import NewsItems from "./newsitems"
 import SearchSummary from "../searchsummary"
-import SideBar from "../sidebar/sidebar"
+//import SideBar from "../sidebar/sidebar"
 import Columns from "../columns"
 import Column from "../column"
 import SmallColumn from "../smallcolumn"
@@ -90,18 +90,18 @@ const NewsSearch = ({ allNews }) => {
         />
       </MainColumn>
       <SideColumn>
-        <SideBar>
-          <SearchBar
-            handleInputChange={handleInputChange}
-            placeholder="Type to find news items"
-          />
-          <Collapsible title="Year filter" height="auto">
-            <NewsYearFilter news={news} handleClick={handleClick} />
-          </Collapsible>
-          <Collapsible title="Month filter" height="auto">
-            <FilterNewsMonth news={news} handleClick={handleClick} />
-          </Collapsible>
-        </SideBar>
+        {/* <SideBar> */}
+        <SearchBar
+          handleInputChange={handleInputChange}
+          placeholder="Type to find news items"
+        />
+        <Collapsible title="Filter By Year" height="auto">
+          <NewsYearFilter news={news} handleClick={handleClick} />
+        </Collapsible>
+        <Collapsible title="Filter By Month" height="auto">
+          <FilterNewsMonth news={news} handleClick={handleClick} />
+        </Collapsible>
+        {/* </SideBar> */}
       </SideColumn>
     </Columns>
   )

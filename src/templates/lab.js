@@ -8,7 +8,7 @@ import PhoneLink from "../components/phonelink"
 import URLLink from "../components/urllink"
 import Columns from "../components/columns"
 import Button from "../components/button"
-import SideBar from "../components/sidebar/sidebar"
+//import SideBar from "../components/sidebar/sidebar"
 import SideBarNews from "../components/news/sidebarnews"
 import H4 from "../components/headings/h4"
 import SmallColumn from "../components/smallcolumn"
@@ -48,15 +48,13 @@ const LabTemplate = props => {
     >
       <Columns>
         <SmallColumn>
-          <SideBar>
-            {faculty.frontmatter.email.length > 0 && (
-              <EmailLink to={faculty.frontmatter.email} />
-            )}
-            {faculty.frontmatter.phone.length > 0 && (
-              <PhoneLink numbers={faculty.frontmatter.phone} />
-            )}
-            {lab.urls.length > 0 && <URLLink urls={lab.urls} />}
-          </SideBar>
+          {faculty.frontmatter.email.length > 0 && (
+            <EmailLink to={faculty.frontmatter.email} />
+          )}
+          {faculty.frontmatter.phone.length > 0 && (
+            <PhoneLink numbers={faculty.frontmatter.phone} />
+          )}
+          {lab.urls.length > 0 && <URLLink urls={lab.urls} />}
         </SmallColumn>
         <MainColumn>
           <div dangerouslySetInnerHTML={{ __html: labExcerptHtml }} />
@@ -78,15 +76,15 @@ const LabTemplate = props => {
           />
         </MainColumn>
         <SideColumn>
-          <SideBar>
-            {faculty.frontmatter.email.length > 0 && (
-              <EmailLink to={faculty.frontmatter.email} />
-            )}
-            {faculty.frontmatter.phone.length > 0 && (
-              <PhoneLink numbers={faculty.frontmatter.phone} />
-            )}
-            {lab.urls.length > 0 && <URLLink urls={lab.urls} />}
-          </SideBar>
+          {/* <SideBar> */}
+          {faculty.frontmatter.email.length > 0 && (
+            <EmailLink to={faculty.frontmatter.email} />
+          )}
+          {faculty.frontmatter.phone.length > 0 && (
+            <PhoneLink numbers={faculty.frontmatter.phone} />
+          )}
+          {lab.urls.length > 0 && <URLLink urls={lab.urls} />}
+          {/* </SideBar> */}
 
           <H4>News</H4>
           <SideBarNews allNews={labNews} />

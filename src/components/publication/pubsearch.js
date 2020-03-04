@@ -5,7 +5,7 @@ import SearchBar from "../searchbar"
 import YearsFilter from "./yearsfilter"
 import Collapsible from "../collapsible"
 import SearchSummary from "../searchsummary"
-import SideBar from "../sidebar/sidebar"
+//import SideBar from "../sidebar/sidebar"
 import Columns from "../columns"
 import SideColumn from "../sidecolumn"
 import MainColumn from "../maincolumn"
@@ -93,15 +93,12 @@ const PubSearch = ({ labMap, peopleMap, allPublications, showLabLink }) => {
         />
       </MainColumn>
       <SideColumn>
-        <SideBar>
-          <SearchBar handleInputChange={handleInputChange} />
-          <Collapsible title="Year filter" height="auto">
-            <YearsFilter
-              publications={publications}
-              handleClick={handleClick}
-            />
-          </Collapsible>
-        </SideBar>
+        {/* <SideBar> */}
+        <SearchBar handleInputChange={handleInputChange} />
+        <Collapsible title="Year filter" height="auto">
+          <YearsFilter publications={publications} handleClick={handleClick} />
+        </Collapsible>
+        {/* </SideBar> */}
       </SideColumn>
     </Columns>
   )

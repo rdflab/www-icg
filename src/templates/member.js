@@ -1,7 +1,7 @@
 import React from "react"
 import CrumbLayout from "../components/crumblayout"
 import Columns from "../components/columns"
-import SideBar from "../components/sidebar/sidebar"
+//import SideBar from "../components/sidebar/sidebar"
 import SideBarMembers from "../components/people/sidebarmembers"
 import EmailLink from "../components/emaillink"
 import PhoneLink from "../components/phonelink"
@@ -75,8 +75,10 @@ const MemberTemplate = props => {
           )}
         </MainColumn>
         <SideColumn>
-          <SideBar>
-            <h1>{person.frontmatter.titles[0]}</h1>
+          {/* <SideBar> */}
+          <h1 className="text-blue-columbia">{person.frontmatter.titles[0]}</h1>
+
+          <div className="mt-4">
             {person.frontmatter.email.length > 0 && (
               <EmailLink to={person.frontmatter.email[0]} />
             )}
@@ -86,7 +88,16 @@ const MemberTemplate = props => {
             {person.frontmatter.urls.length > 0 && (
               <URLLink urls={person.frontmatter.urls} />
             )}
-          </SideBar>
+          </div>
+          {/* </SideBar> */}
+
+          {person.frontmatter.researchAreas.length > 0 && (
+            <div className="mt-4">
+              <h2>Research Interests</h2>
+
+              {interests(person, researchAreasMap)}
+            </div>
+          )}
 
           <SideBarMembers lab={lab} people={labPeople} />
         </SideColumn>

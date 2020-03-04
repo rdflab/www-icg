@@ -7,7 +7,7 @@ import MembersLink from "./memberslink"
 import PublicationsLink from "./publication/publicationslink"
 import Columns from "./columns"
 import Column from "./column"
-import SideBar from "./sidebar/sidebar"
+//import SideBar from "./sidebar/sidebar"
 import H4 from "./headings/h4"
 import SmallColumn from "./smallcolumn"
 import SideColumn from "./sidecolumn"
@@ -104,12 +104,12 @@ const LabSearch = ({ allLabs, peopleMap }) => {
         />
       </MainColumn>
       <SideColumn>
-        <SideBar>
-          <SearchBar
-            handleInputChange={handleInputChange}
-            placeholder="Type to find labs"
-          />
-        </SideBar>
+        {/* <SideBar> */}
+        <SearchBar
+          handleInputChange={handleInputChange}
+          placeholder="Type to find labs"
+        />
+        {/* </SideBar> */}
       </SideColumn>
     </Columns>
   )

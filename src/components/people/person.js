@@ -10,7 +10,8 @@ import Columns from "../columns"
 import Column from "../column"
 import EmailLink from "../emaillink"
 import PhoneLink from "../phonelink"
-import { Link } from "gatsby"
+import MainColumn from "../maincolumn"
+import SideColumn from "../sidecolumn"
 import styled from "styled-components"
 import URLLink from "../urllink"
 import BlueLink from "../bluelink"
@@ -24,7 +25,7 @@ const Person = ({ person, labMap, showLabLink }) => {
   return (
     <PersonDiv>
       <Columns>
-        <Column w="7/12">
+        <MainColumn w="7/12">
           <div>
             <BlueLink
               to={`/research-areas/faculty-and-staff/${person.frontmatter.id}`}
@@ -33,8 +34,8 @@ const Person = ({ person, labMap, showLabLink }) => {
             </BlueLink>
           </div>
           <div style={{ color: "gray" }}>{person.frontmatter.titles[0]}</div>
-        </Column>
-        <Column w="5/12">
+        </MainColumn>
+        <SideColumn w="5/12">
           {person.frontmatter.email.length > 0 && (
             <EmailLink to={person.frontmatter.email[0]} />
           )}
@@ -44,7 +45,7 @@ const Person = ({ person, labMap, showLabLink }) => {
           {person.frontmatter.urls.length > 0 && (
             <URLLink urls={person.frontmatter.urls} />
           )}
-        </Column>
+        </SideColumn>
       </Columns>
     </PersonDiv>
   )

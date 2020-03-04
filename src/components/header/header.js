@@ -20,11 +20,11 @@ const Header = ({ siteTitle }) => (
     </div>
 
     <div className="hidden sm:block">
-      <div className="blue-bg p-3">
+      <div className="p-3">
         <Container className="hidden sm:block">
           <Row>
             <Link to="/" style={{ borderBottom: "none" }}>
-              <ColumbiaICGWhiteImage style={{ width: `400px` }} />
+              <ColumbiaICGImage style={{ width: `400px` }} />
             </Link>
           </Row>
         </Container>

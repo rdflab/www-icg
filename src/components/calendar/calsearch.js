@@ -3,11 +3,11 @@ import Pagination from "../pagination"
 import SearchBar from "../searchbar"
 import Collapsible from "../collapsible"
 import SearchSummary from "../searchsummary"
-import SideBar from "../sidebar/sidebar"
+//import SideBar from "../sidebar/sidebar"
 import Columns from "../columns"
 import DayPicker, { DateUtils } from "react-day-picker"
 import "../../../node_modules/react-day-picker/lib/style.css"
-import "./calendar.css"
+import "./calendar.scss"
 import CalEvents from "./calevents"
 import SmallColumn from "../smallcolumn"
 import MainColumn from "../maincolumn"
@@ -105,20 +105,20 @@ const CalSearch = ({ allCalEvents }) => {
         />
       </MainColumn>
       <SideColumn>
-        <SideBar>
-          <SearchBar
-            handleInputChange={handleInputChange}
-            placeholder="Type to find events..."
-          />
-          <Collapsible title="Date" height="auto">
-            <div className="text-center">
-              <DayPicker
-                selectedDays={selectedDays}
-                onDayClick={handleDayClick}
-              />
-            </div>
-          </Collapsible>
-        </SideBar>
+        {/* <SideBar> */}
+        <SearchBar
+          handleInputChange={handleInputChange}
+          placeholder="Type to find events..."
+        />
+        <Collapsible title="Filter By Date" height="auto">
+          <div className="text-center">
+            <DayPicker
+              selectedDays={selectedDays}
+              onDayClick={handleDayClick}
+            />
+          </div>
+        </Collapsible>
+        {/* </SideBar> */}
       </SideColumn>
     </Columns>
   )

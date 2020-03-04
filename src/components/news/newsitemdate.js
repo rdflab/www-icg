@@ -1,12 +1,7 @@
 import React from "react"
-import styled from "styled-components"
 
-const StyledDiv = styled.div`
-  font-weight: 300;
-  text-transform: uppercase;
-  color: rgb(100, 100, 100);
-`
-
-const NewsItemDate = ({ children }) => <StyledDiv>{children}</StyledDiv>
+const NewsItemDate = ({ children }) => (
+  <div className="font-light uppercase gray">{children}</div>
+)
 
 export default NewsItemDate

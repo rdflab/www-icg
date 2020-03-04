@@ -5,7 +5,7 @@ import BlueLink from "./bluelink"
 
 const MembersLink = ({ to }) => (
   <IconLink
-    icon={<FaUsers className="text-gray-600" size={24} />}
+    icon={<FaUsers className="text-gray-600" size={20} />}
     content={<BlueLink to={to}>View Lab Members</BlueLink>}
   />
 )

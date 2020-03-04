@@ -20,6 +20,19 @@ const range = (from, to, step = 1) => {
   return range
 }
 
+const PaginationBlockDiv = ({ key, children, className }) => (
+  <div
+    key={key}
+    className={`row w-8 h-8 justify-center items-center text-center ${className}`}
+  >
+    {children}
+  </div>
+)
+
+PaginationBlockDiv.defaultProps = {
+  className: "",
+}
+
 class Pagination extends Component {
   /**
    * Let's say we have 10 pages and we set pageNeighbours to 2
@@ -143,14 +156,17 @@ class Pagination extends Component {
     const pages = this.fetchPageNumbers()
 
     return (
-      <div className="row" aria-label="Pagination">
+      <div
+        className="row justify-center items center my-8"
+        aria-label="Pagination"
+      >
         {pages.map((page, index) => {
           if (page === LEFT_PAGE)
             return (
-              <div key={index} className="pagination-block">
+              <PaginationBlockDiv key={index}>
                 <div>
                   <a
-                    className="pagination-link"
+                    className="gray-link"
                     href="#"
                     aria-label="Previous"
                     onClick={this.handleMoveLeft}
@@ -159,15 +175,15 @@ class Pagination extends Component {
                     <span className="sr-only">Previous</span>
                   </a>
                 </div>
-              </div>
+              </PaginationBlockDiv>
             )
 
           if (page === RIGHT_PAGE)
             return (
-              <div key={index} className="pagination-block">
+              <PaginationBlockDiv key={index}>
                 <div>
                   <a
-                    className="pagination-link"
+                    className="gray-link"
                     href="#"
                     aria-label="Next"
                     onClick={this.handleMoveRight}
@@ -176,28 +192,21 @@ class Pagination extends Component {
                     <span className="sr-only">Next</span>
                   </a>
                 </div>
-              </div>
+              </PaginationBlockDiv>
             )
 
           return (
-            <div
-              key={index}
-              className={`pagination-block ${
-                currentPage === page ? "is-current" : ""
-              }`}
-            >
+            <PaginationBlockDiv key={index}>
               <div>
                 <a
-                  className={`pagination-link ${
-                    currentPage === page ? "is-current" : ""
-                  }`}
+                  className={currentPage === page ? "blue-link" : "gray-link"}
                   href="#"
                   onClick={this.handleClick(page)}
                 >
                   {page}
                 </a>
               </div>
-            </div>
+            </PaginationBlockDiv>
           )
         })}
       </div>

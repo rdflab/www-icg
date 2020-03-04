@@ -6,7 +6,7 @@ import CalEventDetails from "./caleventdetails"
 
 const CalEvent = ({ event }) => {
   return (
-    <div className="border-b border-solid border-gray-400 mb-4 pb-4">
+    <div className="border-b border-solid gray-border mb-4 pb-4">
       <div className="sm:hidden">
         <Columns isMobile={true}>
           <Column w="3/12" isMobile={true}>

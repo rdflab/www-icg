@@ -29,7 +29,7 @@ const FilterItem = props => {
         <FaCheck className={`mx-auto ${selected ? "visible" : "invisible"}`} />
       </div>
 
-      <div>{props.text}</div>
+      <div className="text-gray-700">{props.text}</div>
     </div>
   )
 }
