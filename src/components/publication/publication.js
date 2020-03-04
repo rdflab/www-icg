@@ -68,7 +68,7 @@ const Publication = ({
 
   return (
     <div className="mb-8">
-      <div className="text-xl">{publication.title}</div>
+      <h3>{publication.title}</h3>
       <div className="font-light">{authors}</div>
 
       <Columns>

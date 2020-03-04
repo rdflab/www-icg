@@ -9,7 +9,9 @@ const labPublicationsTemplate = path.resolve(`src/templates/labpublications.js`)
 const labOverviewTemplate = path.resolve(`src/templates/laboverview.js`)
 const labMembersTemplate = path.resolve(`src/templates/labmembers.js`)
 const memberTemplate = path.resolve(`src/templates/member.js`)
+const newsTemplate = path.resolve(`src/templates/news.js`)
 const newsItemTemplate = path.resolve(`src/templates/newsitem.js`)
+const calEventsTemplate = path.resolve(`src/templates/calevents.js`)
 const calEventTemplate = path.resolve(`src/templates/calevent.js`)
 const publicationsTemplate = path.resolve(`src/templates/publications.js`)
 const researchAreasTemplate = path.resolve(`src/templates/research-areas.js`)
@@ -168,7 +170,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               people
               path
               tags
-              url
+              urls
             }
             excerpt(format: HTML)
           }
@@ -187,7 +189,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               location
               start
               end
-              url
+              urls
               tags
             }
             excerpt(format: HTML)
@@ -389,6 +391,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   // News pages
   //
 
+  createPage({
+    path: `/news`,
+    component: newsTemplate,
+    context: {
+      allNews: allNews,
+    },
+  })
+
   for (let item of allNews) {
     createPage({
       path: item.frontmatter.path,
@@ -403,6 +413,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   //
   // Events pages
   //
+
+  createPage({
+    path: "/events",
+    component: calEventsTemplate,
+    context: {
+      allCalEvents: allCalEvents,
+    },
+  })
 
   for (let calEvent of allCalEvents) {
     const path = `/events/${

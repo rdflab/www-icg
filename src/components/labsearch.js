@@ -8,7 +8,6 @@ import PublicationsLink from "./publication/publicationslink"
 import Columns from "./columns"
 import Column from "./column"
 //import SideBar from "./sidebar/sidebar"
-import H4 from "./headings/h4"
 import SmallColumn from "./smallcolumn"
 import SideColumn from "./sidecolumn"
 import MainColumn from "./maincolumn"
@@ -77,11 +76,11 @@ const LabSearch = ({ allLabs, peopleMap }) => {
             >
               <Columns>
                 <Column w="1/2">
-                  <H4>
+                  <h3>
                     <BlueLink to={`/research-areas/labs/${lab.id}`}>
                       {name}
                     </BlueLink>
-                  </H4>
+                  </h3>
                 </Column>
                 <Column w="1/2" style={{ borderLeft: "solid 1px lightgray" }}>
                   <MembersLink to={`/research-areas/labs/${lab.id}/members`} />

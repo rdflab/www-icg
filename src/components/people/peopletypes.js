@@ -9,7 +9,6 @@ import React from "react"
 import PeopleList from "./peoplelist"
 import { PEOPLE_TYPES } from "../../constants"
 import toPeopleTypeMap from "../../utils/peopletypemap"
-import H3 from "../headings/h3"
 import styled from "styled-components"
 
 const StyledDiv = styled.div`
@@ -30,7 +29,7 @@ const PeopleTypes = ({ allPeople, labMap, showLabLink }) => {
     if (people.length > 0) {
       elems.push(
         <StyledDiv key={c++}>
-          <H3>{type}</H3>
+          <h2>{type}</h2>
         </StyledDiv>
       )
       elems.push(

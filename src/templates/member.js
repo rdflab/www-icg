@@ -10,6 +10,7 @@ import SmallColumn from "../components/smallcolumn"
 import MainColumn from "../components/maincolumn"
 import SideColumn from "../components/sidecolumn"
 import BlueLink from "../components/bluelink"
+import ContactInfo from "../components/people/contactinfo"
 
 const interests = person => {
   const n = person.researchAreas.length
@@ -78,17 +79,7 @@ const MemberTemplate = props => {
           {/* <SideBar> */}
           <h1 className="text-blue-columbia">{person.frontmatter.titles[0]}</h1>
 
-          <div className="mt-4">
-            {person.frontmatter.email.length > 0 && (
-              <EmailLink to={person.frontmatter.email[0]} />
-            )}
-            {person.frontmatter.phone.length > 0 && (
-              <PhoneLink numbers={person.frontmatter.phone} />
-            )}
-            {person.frontmatter.urls.length > 0 && (
-              <URLLink urls={person.frontmatter.urls} />
-            )}
-          </div>
+          <ContactInfo person={person} />
           {/* </SideBar> */}
 
           {person.frontmatter.researchAreas.length > 0 && (

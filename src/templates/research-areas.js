@@ -24,7 +24,9 @@ const ResearchAreasTemplate = props => {
         .sort()
         .map((name, index) => (
           <div key={index}>
-            <BlueLink to={`/research-areas/${raMap[name]}`}>{name}</BlueLink>
+            <h2>
+              <BlueLink to={`/research-areas/${raMap[name]}`}>{name}</BlueLink>
+            </h2>
           </div>
         ))}
     </CrumbLayout>

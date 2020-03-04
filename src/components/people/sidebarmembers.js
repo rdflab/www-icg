@@ -1,10 +1,9 @@
 import React from "react"
 import SideBarLink from "../sidebar/sidebarlink"
 import Collapsible from "../collapsible"
-import VT2 from "../vt2"
 
 const SideBarMembers = ({ lab, people }) => (
-  <VT2>
+  <div className="mt-8">
     <Collapsible title="Lab Members" height="auto">
       {/* <div className="bottom-spacing-1">
       <SideBarLink
@@ -28,7 +27,7 @@ const SideBarMembers = ({ lab, people }) => (
         </div>
       ))}
     </Collapsible>
-  </VT2>
+  </div>
 )
 
 export default SideBarMembers

@@ -15,6 +15,7 @@ import SideColumn from "../sidecolumn"
 import styled from "styled-components"
 import URLLink from "../urllink"
 import BlueLink from "../bluelink"
+import ContactInfo from "./contactinfo"
 
 const PersonDiv = styled.div`
   padding-top: 1rem;
@@ -27,24 +28,18 @@ const Person = ({ person, labMap, showLabLink }) => {
       <Columns>
         <MainColumn w="7/12">
           <div>
-            <BlueLink
-              to={`/research-areas/faculty-and-staff/${person.frontmatter.id}`}
-            >
-              {person.frontmatter.firstName} {person.frontmatter.lastName}
-            </BlueLink>
+            <h3>
+              <BlueLink
+                to={`/research-areas/faculty-and-staff/${person.frontmatter.id}`}
+              >
+                {person.frontmatter.firstName} {person.frontmatter.lastName}
+              </BlueLink>
+            </h3>
           </div>
-          <div style={{ color: "gray" }}>{person.frontmatter.titles[0]}</div>
+          <div className="gray">{person.frontmatter.titles[0]}</div>
         </MainColumn>
         <SideColumn w="5/12">
-          {person.frontmatter.email.length > 0 && (
-            <EmailLink to={person.frontmatter.email[0]} />
-          )}
-          {person.frontmatter.phone.length > 0 && (
-            <PhoneLink numbers={person.frontmatter.phone} />
-          )}
-          {person.frontmatter.urls.length > 0 && (
-            <URLLink urls={person.frontmatter.urls} />
-          )}
+          <ContactInfo person={person} />
         </SideColumn>
       </Columns>
     </PersonDiv>

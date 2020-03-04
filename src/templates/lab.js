@@ -10,10 +10,12 @@ import Columns from "../components/columns"
 import Button from "../components/button"
 //import SideBar from "../components/sidebar/sidebar"
 import SideBarNews from "../components/news/sidebarnews"
-import H4 from "../components/headings/h4"
 import SmallColumn from "../components/smallcolumn"
 import MainColumn from "../components/maincolumn"
 import SideColumn from "../components/sidecolumn"
+import Card from "../components/card"
+import ContactInfo from "../components/people/contactinfo"
+import HTMLDiv from "../components/htmldiv"
 
 const LabTemplate = props => {
   const { pageContext } = props
@@ -48,18 +50,12 @@ const LabTemplate = props => {
     >
       <Columns>
         <SmallColumn>
-          {faculty.frontmatter.email.length > 0 && (
-            <EmailLink to={faculty.frontmatter.email} />
-          )}
-          {faculty.frontmatter.phone.length > 0 && (
-            <PhoneLink numbers={faculty.frontmatter.phone} />
-          )}
-          {lab.urls.length > 0 && <URLLink urls={lab.urls} />}
+          <ContactInfo person={faculty} urls={lab.urls} />
         </SmallColumn>
         <MainColumn>
-          <div dangerouslySetInnerHTML={{ __html: labExcerptHtml }} />
+          <HTMLDiv html={labExcerptHtml} />
 
-          <div className="has-text-centered">
+          <div className="text-center">
             <Button to={`/research-areas/labs/${lab.id}/overview`}>
               Learn more
             </Button>
@@ -68,25 +64,24 @@ const LabTemplate = props => {
           <h2>{`${faculty.frontmatter.firstName} ${faculty.frontmatter.lastName}`}</h2>
           <h3>Research Focus</h3>
           <h3>Education</h3>
-          <RecentPublications
-            lab={lab}
-            publications={labPublications}
-            labMap={labMap}
-            peopleMap={peopleMap}
-          />
+
+          {labPublications.length > 0 && (
+            <Card className="mt-8">
+              <RecentPublications
+                lab={lab}
+                publications={labPublications}
+                labMap={labMap}
+                peopleMap={peopleMap}
+              />
+            </Card>
+          )}
         </MainColumn>
         <SideColumn>
           {/* <SideBar> */}
-          {faculty.frontmatter.email.length > 0 && (
-            <EmailLink to={faculty.frontmatter.email} />
-          )}
-          {faculty.frontmatter.phone.length > 0 && (
-            <PhoneLink numbers={faculty.frontmatter.phone} />
-          )}
-          {lab.urls.length > 0 && <URLLink urls={lab.urls} />}
+          <ContactInfo person={faculty} urls={lab.urls} />
           {/* </SideBar> */}
 
-          <H4>News</H4>
+          <h3>News</h3>
           <SideBarNews allNews={labNews} />
         </SideColumn>
       </Columns>

@@ -1,12 +1,11 @@
 import React from "react"
-import styled from "styled-components"
 
-const StyledDiv = styled.div`
-  border-radius: 4px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding: 1.5rem;
-`
+const Card = ({ children, className }) => (
+  <div class={`shadow-lg rounded p-4 ${className}`}>{children}</div>
+)
 
-const Card = ({ children }) => <StyledDiv>{children}</StyledDiv>
+Card.defaultProps = {
+  className: "",
+}
 
 export default Card

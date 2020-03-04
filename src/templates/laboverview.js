@@ -6,6 +6,7 @@ import Columns from "../components/columns"
 import SideBarMembers from "../components/people/sidebarmembers"
 import SideColumn from "../components/sidecolumn"
 import MainColumn from "../components/maincolumn"
+import HTMLDiv from "../components/htmldiv"
 
 const LabOverviewTemplate = props => {
   const { pageContext } = props
@@ -31,7 +32,7 @@ const LabOverviewTemplate = props => {
     >
       <Columns>
         <MainColumn>
-          <div dangerouslySetInnerHTML={{ __html: labHtml }} />
+          <HTMLDiv html={labHtml} />
         </MainColumn>
         <SideColumn>
           {/* <SideBar> */}

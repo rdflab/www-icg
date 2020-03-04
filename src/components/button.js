@@ -1,10 +1,6 @@
 import React from "react"
-import { Link } from "gatsby"
+import BlueButton from "./bluebutton"
 
-const Button = ({ to, children }) => (
-  <Link to={to} className="btn btn-blue">
-    {children}
-  </Link>
-)
+const Button = ({ to, children }) => <BlueButton to={to}>{children}</BlueButton>
 
 export default Button
