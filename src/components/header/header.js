@@ -2,10 +2,11 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import HeaderLinks from "./headerlinks"
-import ColumbiaICGImage from "../columbiaicgimage"
-import ColumbiaICGWhiteImage from "../columbiaicgwhiteimage"
+import ColumbiaICGImage from "../images/columbiaicgimage"
+import ColumbiaICGWhiteImage from "../images/columbiaicgwhiteimage"
 import SlideMenu from "../slidemenu/slidemenu"
 import Container from "../container"
+import Row from "../row"
 
 const Header = ({ siteTitle }) => (
   <>
@@ -18,16 +19,22 @@ const Header = ({ siteTitle }) => (
       </div>
     </div>
 
-    <Container className="hidden sm:block my-2">
-      <div className="col items-start p-0">
-        <Link to="/" style={{ borderBottom: "none" }}>
-          <ColumbiaICGImage style={{ width: `400px` }} />
-        </Link>
-        <div>
-          <HeaderLinks />
-        </div>
+    <div className="hidden sm:block">
+      <div className="blue-bg p-3">
+        <Container className="hidden sm:block">
+          <Row>
+            <Link to="/" style={{ borderBottom: "none" }}>
+              <ColumbiaICGWhiteImage style={{ width: `400px` }} />
+            </Link>
+          </Row>
+        </Container>
       </div>
-    </Container>
+      <Container>
+        <Row className="items-center">
+          <HeaderLinks />
+        </Row>
+      </Container>
+    </div>
   </>
 )
 

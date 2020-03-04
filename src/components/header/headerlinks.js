@@ -20,11 +20,11 @@ const HeaderLinks = () => {
   const links = flattenEdges(data.links.edges)
 
   return (
-    <div className="mt-2">
+    <>
       {links.map((link, index) => {
         return <HeaderLink to={link.link}>{link.name}</HeaderLink>
       })}
-    </div>
+    </>
   )
 }
 

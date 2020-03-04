@@ -9,17 +9,10 @@ import Columns from "./columns"
 import Column from "./column"
 import SideBar from "./sidebar/sidebar"
 import H4 from "./headings/h4"
-import styled from "styled-components"
-import { Link } from "gatsby"
 import SmallColumn from "./smallcolumn"
 import SideColumn from "./sidecolumn"
 import MainColumn from "./maincolumn"
-
-const StyledLab = styled.article`
-  padding-top: 1rem;
-  padding-bottom: 2rem;
-  border-top: solid 1px lightgray;
-`
+import BlueLink from "./bluelink"
 
 const EMPTY_QUERY = ""
 
@@ -78,11 +71,16 @@ const LabSearch = ({ allLabs, peopleMap }) => {
           }
 
           return (
-            <StyledLab key={index}>
+            <div
+              className="pt-4 pb-8 border-t border-solid border-gray-300"
+              key={index}
+            >
               <Columns>
                 <Column w="1/2">
                   <H4>
-                    <Link to={`/research-areas/labs/${lab.id}`}>{name}</Link>
+                    <BlueLink to={`/research-areas/labs/${lab.id}`}>
+                      {name}
+                    </BlueLink>
                   </H4>
                 </Column>
                 <Column w="1/2" style={{ borderLeft: "solid 1px lightgray" }}>
@@ -93,7 +91,7 @@ const LabSearch = ({ allLabs, peopleMap }) => {
                   <EmailLink to={person.frontmatter.email[0]} />
                 </Column>
               </Columns>
-            </StyledLab>
+            </div>
           )
         })}
 

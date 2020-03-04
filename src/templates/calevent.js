@@ -4,6 +4,10 @@ import NewsItemDate from "../components/news/newsitemdate"
 import CalEventLocation from "../components/calendar/caleventlocation"
 import H4 from "../components/headings/h4"
 import styled from "styled-components"
+import Columns from "../components/columns"
+import Column from "../components/column"
+import MainColumn from "../components/maincolumn"
+import SideColumn from "../components/sidecolumn"
 
 const LocDiv = styled.div`
   margin-top: 1rem;
@@ -28,19 +32,18 @@ const CalEventTemplate = props => {
         ["Home", "/"],
         ["Events", "/events"],
       ]}
-      title="Events"
+      title={title}
     >
-      <div className="columns">
-        <div className="column">
-          <H4>{title}</H4>
+      <Columns>
+        <MainColumn>
           <div dangerouslySetInnerHTML={{ __html: calEvent.html }} />
 
           <LocDiv>
             <CalEventLocation event={calEvent} showDate={true} />
           </LocDiv>
-        </div>
-        <div className="column is-4"></div>
-      </div>
+        </MainColumn>
+        <SideColumn></SideColumn>
+      </Columns>
     </CrumbLayout>
   )
 }

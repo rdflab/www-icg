@@ -3,10 +3,7 @@ import styled from "styled-components"
 import Columns from "../columns"
 import Column from "../column"
 import { FaRegClock, FaMapMarkerAlt } from "react-icons/fa"
-
-const StyledDetails = styled.div`
-  color: gray;
-`
+import Row from "../row"
 
 const CalEventLocation = ({ event, showDate, isMobile }) => {
   const st = event.start.toLocaleString("en-US", {
@@ -32,61 +29,49 @@ const CalEventLocation = ({ event, showDate, isMobile }) => {
     date = ""
   }
 
-  if (isMobile) {
-    return (
-      <>
-        <Columns isMobile={isMobile}>
-          <Column w="2/12" isMobile={true} className="text-center">
-            <StyledDetails>
-              <FaRegClock size={28} />
-            </StyledDetails>
-          </Column>
-          <Column isMobile={isMobile} w="10/12">
-            {showDate && <StyledDetails>{date}</StyledDetails>}
-            <StyledDetails>
+  return (
+    <>
+      <div className="sm:hidden text-gray-500">
+        <Row className="items-center">
+          <div className="mr-4">
+            <FaRegClock size={28} />
+          </div>
+          <div>
+            {showDate && <div>{date}</div>}
+            <div>
               {st} - {et}
-            </StyledDetails>
-          </Column>
-        </Columns>
-        <Columns isMobile={isMobile} className="mt-2">
-          <Column w="2/12" isMobile={true} className="text-center">
-            <StyledDetails>
-              <FaMapMarkerAlt size={28} />
-            </StyledDetails>
-          </Column>
-          <Column isMobile={true} w="10/12">
-            <StyledDetails>{event.frontmatter.location}</StyledDetails>
-          </Column>
-        </Columns>
-      </>
-    )
-  } else {
-    return (
-      <>
-        <Columns>
-          <Column w="1/12" className="text-center">
-            <StyledDetails>
-              <FaRegClock size={28} />
-            </StyledDetails>
+            </div>
+          </div>
+        </Row>
+        <Row className="items-center mt-4">
+          <div className="mr-4">
+            <FaMapMarkerAlt size={28} />
+          </div>
+          <div>{event.frontmatter.location}</div>
+        </Row>
+      </div>
+
+      <div className="hidden sm:block">
+        <Columns className="text-gray-500 items-center">
+          <Column w="1/12">
+            <FaRegClock size={28} />
           </Column>
           <Column w="5/12">
-            {showDate && <StyledDetails>{date}</StyledDetails>}
-            <StyledDetails>
+            {showDate && <div>{date}</div>}
+            <div>
               {st} - {et}
-            </StyledDetails>
+            </div>
           </Column>
-          <Column w="1/12" className="text-center">
-            <StyledDetails>
-              <FaMapMarkerAlt size={28} />
-            </StyledDetails>
+          <Column w="1/12">
+            <FaMapMarkerAlt size={28} />
           </Column>
-          <Column w="5/12">
-            <StyledDetails>{event.frontmatter.location}</StyledDetails>
+          <Column isMobile={true} w="5/12">
+            {event.frontmatter.location}
           </Column>
         </Columns>
-      </>
-    )
-  }
+      </div>
+    </>
+  )
 }
 
 export default CalEventLocation

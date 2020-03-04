@@ -1,8 +1,12 @@
 import React from "react"
-import BlueLink from "../bluelink"
+import { Link } from "gatsby"
 
 const HeaderLink = props => (
-  <BlueLink className="mr-6" activeClassName="blue-link-active" {...props} />
+  <Link
+    className="header-link"
+    activeClassName="header-link-active"
+    {...props}
+  />
 )
 
 export default HeaderLink

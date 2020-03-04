@@ -1,11 +1,13 @@
 import React from "react"
 import Layout from "../components/layout"
-import NYCBgSection from "../components/nycbg"
+import NYCBgSection from "../components/images/nycbg"
 import Container from "../components/container"
 import Columns from "../components/columns"
 import Column from "../components/column"
 import BlueIndexLink from "../components/blueindexlink"
 import WhiteIndexLink from "../components/whiteindexlink"
+import MicroscopeSection from "../components/images/microscope"
+import TestTubesSection from "../components/images/testtubes"
 
 const HomeSection = ({ title, subTitle, text, links, alt }) => {
   return (
@@ -39,7 +41,7 @@ HomeSection.defaultProps = {
 
 const IndexPage = () => (
   <Layout crumbs={[["Home", "/"]]} title="Home">
-    <NYCBgSection>
+    <TestTubesSection>
       <Container className="h-full py-8 sm:py-16">
         <Columns className="h-full p-8 sm:p-16">
           <Column
@@ -60,7 +62,7 @@ const IndexPage = () => (
           </Column>
         </Columns>
       </Container>
-    </NYCBgSection>
+    </TestTubesSection>
 
     <HomeSection
       title="Expertise"
