@@ -1,0 +1,284 @@
+title	pubmed
+A CXCL1 paracrine network links cancer chemoresistance and metastasis	22770218
+A Critical Role for Noncoding 5S rRNA in Regulating Mdmx Stability	21925390
+A Cul4 E3 ubiquitin ligase regulates histone hand-off during nucleosome assembly	24209620
+A NOTCH1-driven MYC enhancer promotes T cell development, transformation and acute lymphoblastic leukemia	25194570
+A Signaling Pathway Mediating Downregulation of BCL6 in Germinal Center B Cells Is Blocked by BCL6 Gene Alterations in B Cell Lymphoma	17785208
+A mechanism for preventing asymmetric histone segregation onto replicating DNA strands	30115745
+A metabolic function of FGFR3-TACC3 gene fusions in cancer	29323298
+A novel TLR2-triggered signalling crosstalk synergistically intensifies TNF-mediated IL-6 induction	24758719
+A novel enhancer regulates MGMT expression and promotes temozolomide resistance in glioblastoma	30054476
+A novel role for histone chaperones CAF-1 and Rtt106p in heterochromatin silencing	17410207
+A recurrent point mutation in PRKCA is a hallmark of chordoid gliomas	29915258
+A role for Gcn5 in replication-coupled nucleosome assembly	20188666
+A signaling pathway mediating downregulation of BCL6 in germinal center B cells is blocked by BCL6 gene alterations in B cell lymphoma	17785208
+AID is required for germinal center derived lymphomagenesis	18066064
+ARF-BP1 is a critical mediator of the ARF tumor suppressor	15989956
+Aberrant TCRδ rearrangement underlies the T cell lymphocytopenia and t(12;14) translocation associated with ATM deficiency	25721125
+Acetylation Is Crucial for p53-Mediated Ferroptosis and Tumor Suppression	27705786
+Acetylation of histone H3 lysine 56 regulates replication-coupled nucleosome assembly	18662540
+Acetylation-regulated interaction between p53 and SET reveals a widespread regulatory mode	27626385
+Actionable perturbations of damage responses by TCL1/ATM and epigenetic lesions form the basis of T-PLL	29449575
+Activating mutations in the NT5C2 nucleotidase gene drive chemotherapy resistance in relapsed ALL	23377281
+Activation of DSB processing requires phosphorylation of CtIP by ATR	23273981
+Alobeid B, Bhagat G	32117895
+An ATR- and Cdc7-dependent checkpoint that inhibits initiation of DNA replication	12535533
+An ID2-dependent mechanism for VHL inactivation in cancer	26735018
+An aberrant microRNA signature in childhood T-cell lymphoblastic lymphoma affecting CDKN1B expression, NOTCH1 and growth factor signaling pathways	24727675
+An analysis of the relationship between metastases and cachexia in lung cancer patients	27485414
+An anatomic transcriptional atlas of human glioblastoma	29748285
+Arresting supporters: targeting neutrophils in metastasis	26823207
+Asf1a resolves bivalent chromatin domains for the induction of lineage-specific genes during mouse embryonic stem cell differentiation	29915027
+Assembling nuclear domains: Lessons from DNA repair	31324649
+Ataxia telangiectasia-mutated protein and DNA-dependent protein kinase have complementary V(D)J recombination functions	21245310
+BCL6 master regulator of the germinal center reaction and key oncogene in B cell lymphomagenesis	20510734
+BCL6 positevely regulates AID and germinal center gene expression via repression of miR-155	23166356
+BCL6 suppression of BCL2 via Miz1 and its disruption in diffuse large B cell lymphoma	19549844
+BLIMP1 is a tumor suppressor gene frequently disrupted in activated B-cell like diffuse large B cell lymphoma	21156281
+BRCA1 ubiquitinates its phosphorylation-dependent binding partner CtIP	16818604
+BRCA1-CtIP interaction in the repair of DNA double-strand breaks	27652321
+Breast cancer cells produce tenascin-C as a metastatic niche component to colonize the lungs	21706029
+CHAF1B Overexpression: A Brake for the Differentiation of Leukemia Cells	30423290
+Cancer Cachexia Signaling pathways continue to emerge yet much still points to the proteasome	17332276
+Cancer Cell.	32119254
+Cancer cachexia is regulated by selective targeting of skeletal muscle gene products	15286803
+Cdc45 is a critical effector of Myc-dependent DNA replication stress	23643534
+Cdk1 uncouples CtIP-dependent resection and Rad51 filament formation during M-phase double-strand break repair	21893598
+Characterization of a novel fusion gene EML4-NTRK3 in a case of recurrent congenital fibrosarcoma	27148571
+Checkpoint signaling from a single DNA interstrand crosslink	19748363
+Chromatin Assembly Factor 1 (CAF-1) facilitates the establishment of facultative heterochromatin during pluripotency exit	31586391
+Chronic lymphocytic leaukaemia: from genetics to treatment	31278397
+Clinical impact of miR-223 expression in pediatric T-cell lymphoblastic lymphoma	29296210
+Clonal evolution in leukemia	31844143
+Clonal evolution mechanisms in NT5C2 mutant-relapsed acute lymphoblastic leukaemia	29342136
+Clonal evolution of glioblastoma under therapy	27270107
+Combined Genetic Inactivation of Beta2-Microglobulin and CD58 Reveals Frequent Escape from Immune Recognition in Diffuse Large B-cell Lymphoma	22137796
+Combined deficiency for MAP kinase-interacting kinase 1 and 2 (Mnk1 and Mnk2) delays tumor development	20679220
+Common nonmutational NOTCH1 activation in chronic lymphocytic leukemia	28314854
+Control of chromosome stability by the beta‐TrCP‐REST‐Mad2 axis	18354482
+Creation and characterization of BAC-transgenic mice with physiological overexpression of epitope-tagged RCAN1 (DSCR1)	23096997
+Cross-Cohort Analysis Identifies a TEAD4-MYCN Positive Feedback Loop as the Core Regulatory Element of High-Risk Neuroblastoma	29510988
+Crystal structure of a UBP-family deubiquiting enzyme: in isolation and in complex with ubiquitin aldehyde	12507430
+CtIP is essential for early B cell proliferation and development in mice	31097467
+Cytogenetic analysis of 130 renal oncocytomas identify three distinct and mutually exclusive diagnostic classes of chromosome aberrations	31112346
+Cytogenetic analysis of adult T-Cell leukemia/lymphoma	30481077
+D-2-hydroxyglutarate produced by mutant IDH1 perturbs collagen maturation and basement membrane function	22925884
+DNA double-strand break repair pathway choice and cancer	24746645
+Deacetylation of p53 modulates its effect on cell growth and apoptosis	11099047
+Degradation of Id2 by the Anaphase Promoting Complex couples cell cycle exit and axonal growth	16810178
+Detection, Characterization, and Inhibition of FGFR-TACC Fusions in IDH Wild-type Glioma	25609060
+Disruption of KMT2D perturbs germinal center B cell development and promotes lymphomagenesis	26366712
+Distinct populations of inflammatory fibroblasts and myofibroblasts in pancreatic cancer	28232471
+Diverse factors are involved in maintaining X chromosome inactivation	21940502
+Dystrophin glycoprotein complex dysfunction: a regulatory link between muscular dystrophy and cancer cachexia	16286249
+E protein transcription factors are required for the development of CD4(+) lineage T cells	22425249
+E proteins and Id2 converge on p57Kip2 to regulate cell cycle in neural cells	16705184
+ETV6 mutations in early immature human T-cell leukemias	22162831
+Early B-cell Specific Inactivation of ATM Synergizes with Ectopic CyclinD1 Expression to Promote Pre-germinal center B-cell Lymphomas in Mice	25676421
+Effect of DNA damage on a BRCA1 complex	11689934
+Epigenetic inactivation of TRAIL decoy receptors at 8p12-21.3 commonly deleted region confers sensitivity to Apo2L/trail-Cisplatin combination therapy in cervical cancer	26542757
+FACT Remodels the Tetranucleosomal Unit of Chromatin Fibers for Gene Transcription	27666592
+FBXO11 inactivation leads to abnormal germinal-center formation and lymphoproliferative disease	27166359
+FGFR-TACC gene fusions in human glioma	27852792
+Ferroptosis as a p53-mediated activity during tumour suppression	25799988
+Flotillin-2 deficiency leads to reduced lung metastases in a mouse breast cancer model	23146906
+FoxO1 protects against pancreatic beta cell failure through NeuroD and MafA induction	16154098
+Functional dissection of protein complexes involved in yeast chromosome biology using a genetic interaction map	17314980
+Genetic landscape of T- and NK-cell post-transplant lymphoproliferative disorders	27203213
+Genetic lesions associated with chronic lymphocytic leukemia transformation to Richter syndrome	24127483
+Genetic loss of SH2B3 in acute lymphoblastic leukemia	23908464
+Genetics of Follicular Lymphoma Transformation	24388756
+Genetics of diffuse large B-cell lymphoma	30070100
+Genetics of follicular lymphoma transformation	24388756
+Genome-wide Mapping and Characterization of Notch-Regulated Long Noncoding RNAs in Acute Leukemia	25083870
+Genomic instability during reprogramming by nuclear transfer is DNA replication dependent	28263958
+Genotoxic stress regulates expression of the BCL6 proto-oncogene in germinal-center B cells	17828269
+Germinal Centres and B cell lymphomagenesis	25712152
+Germinal centers and B cell lymphomagenesis	17587238
+H3.3K27M mutant proteins reprogram epigenome by sequestering the PRC2 complex to poised enhancers	29932419
+HAUSP deubiquitinates and stabilizes N-Myc in neuroblastoma	27618649
+Haploinsufficiency of Bcl11b suppresses the progression of ATM-deficient T cell lymphomas	26219558
+Hematopoietic stem cell dysfunction underlies the progressive lymphocytopenia in XLF/Cernunnos deficiency	25075129
+Histone chaperones in nucleosome assembly and human disease	23288364
+Histone-modifying enzymes, histone modifications and histone chaperones in nucleosome assembly: Lessons learned from Rtt109 histone acetyltransferases	25365782
+How does SIRT1 affect metabolism, senescence and cancer?	19132007
+Huwe1 Sustains Normal Ovarian Epithelial Cell Transformation and Tumor Growth through the Histone H1.3-H19 Cascade	28687618
+Hyperphosphorylation of the BARD1 tumor suppressor in mitotic cells	15855157
+Id family of helix‐loop‐helix proteins in cancer	16034366
+Id proteins synchronize stemness and anchorage to the niche of neural stem cells	22522171
+Id2 drives differentiation and suppresses tumor formation in the intestinal epithelium	15492237
+Id2 is a target of the retinoblastoma protein and mediates signalling by Myc oncoproteins	11034201
+Id2 mediates tumor initiation, proliferation and angiogenesis in Rb mutant mice	15831462
+Id2 promotes tumor cell migration and invasion through transcriptional repression of Semaphorin 3F	20388805
+Id2 reinforces TH1 differentiation and inhibits E2A to repress TFH differentiation	27213691
+Identification of Copy Number Gain and Overexpressed Genes on Chromosome Arm 20q by an Integrative Genomic Approach in Cervical Cancer	18506748
+Identification of a RING protein that can interact in vivo with the BRCA1 gene product	8944023
+Identification of resistance pathways specific to malignancy using organoid models of pancreatic cancer	31492749
+Identification of the human mature B cell miRNome	19446474
+Idh1 protects murine hepatocytes from endotoxin-induced oxidative stress by regulating the intracellular NADP(+)/NADPH ratio	25882048
+Inactivating mutations of acetyltransferase genes in B-cell lymphoma	21390126
+Integrated biochemical and computational approach identifies BCL6 direct target genes controlling multiple pathways in normal germinal-center B cells	19965633
+Integrative genomic approaches in cervical cancer	21062161
+Integrative genomics analysis of chromosome 5p gain in cervical cancer reveals target over-expressed genes, including Drosha	18559093
+Interactions between E2F1 and SirT1 regulate apoptotic response to DNA damage	16892051
+Interactome analysis identifies a new paralogue of XRCC4 in non-homologous end joining DNA repair pathway	25670504
+Involvement of a chromatin remodeling complex in damage tolerance during DNA replication	19855395
+Kinase-Dead ATM protein causes genomic instability and early embryonic lethality in mice	22869596
+Kinase-dead ATM protein is highly oncogenic and can be preferentially targeted by Topo-isomerase I inhibitors	27304073
+Kinase-dead ATR differs from ATR loss by limiting the dynamic exchange of ATR and RPA	30559436
+Kinase-dependent structural role of DNA-PKcs during immunoglobulin class switch recombination	30072430
+L	32120278
+LMO2 as a Biomarker for hypersensitivity to genotoxic therapy	31526755
+Leukaemogenesis induced by an activating β-catenin mutation in osteoblasts	24429522
+Live-cell single-molecule dynamics of PcG proteins imposed by the DIPG H3.3K27M mutation	29802243
+Loss of p53-mediated cell-cycle arrest, senescence and apoptosis promotes genomic instability and premature aging	26943586
+Luring BRCA1 to the scene of the crime	23680142
+Lymphocyte-Specific Compensation For XLF/Cernunnos End-Joining Functions In V(D)J Recombination	18775323
+Lymphoid follicle colonization by Bcl-2(bright+)CD10(+) B-cells ("follicular lymphoma in situ") at nodal and extranodal sites can be a manifestation of follicular homing of lymphoma	23363648
+MAX-ing out MYC: a novel small molecule inhibitor against MYC-dependent tumors	25430851
+MEF2B Instructs Germinal Center Development and Acts as an Oncogene in B Cell Lymphomagenesis	30205047
+MEF2B mutations lead to deregulated expression of the BCL6 oncogene in diffuse large B cell lymphoma	23974956
+MEF2B mutations lead to deregulated expression of the oncogene BCL6 in diffuse large B cell lymphoma	23974956
+MRI Is a DNA Damage Response Adaptor during Classical Non-homologous End Joining	30017584
+MYC is a critical target of FBXW7	25669969
+Mammalian SIRT1 represses forkhead transcription factors	14980222
+Mesenchymal high-grade glioma is maintained by the ID-RAP1 axis	23241957
+Metabolic reprogramming induces resistance to anti-NOTCH1 therapies in acute lymphoblastic leukemia	26390244
+Metastatic cancers promote cachexia through ZIP14 upregulation in skeletal muscle	29875463
+Modes of p53 regulation	19450511
+Molecular genetics of aggressive B-cell lymphoma	28591417
+Monitoring Metastasis and Cachexia in a Patient with Breast Cancer: A Case Study	27660506
+More Tasks for Dna2 in S-phase	23159855
+Mule Regulates the Intestinal Stem Cell Niche via the Wnt Pathway and Targets EphB3 for Proteasomal and Lysosomal Degradation	27184401
+Mule/Huwe1/Arf-BP1 suppresses Ras-driven tumorigenesis by preventing c-Myc/Miz1-mediated down-regulation of p21 and p15	23699408
+Mutational landscape, clonal evolution patterns, and role of RAS mutations in relapsed acute lymphoblastic leukemia	27655895
+Mutational loss of PTEN induces resistance to NOTCH1 inhibition in T-cell leukemia	17873882
+Mutations of the BCL6 proto-oncogene disrupt its negative autoregulation in diffuse large B-cell lymphoma	12515714
+Myc and differentiation: going against the current	24614276
+NOTCH1 directly regulates c-MYC and activates a feed-forward-loop transcriptional network promoting leukemic cell growth	17114293
+NOTCH1 extracellular juxtamembrane expansion mutations in T-ALL	18411416
+NPM-ALK expression levels identify two distinct subtypes of paediatric anaplastic large cell lymphoma	27773932
+NRF2 is a major target of ARF in p53-independent tumor suppression	28985506
+Negative Regulation of the Sirt1 deacetylase by DBC1	18235502
+New diagnosis of atypical ataxia-telangiectasia in a 17-year-old boy with T-cell acute lymphoblastic leukemia and a novel ATM mutation	28123174
+Non-transcriptional control of DNA replication by c-Myc	17597761
+Non-transcriptional control of DNA replication by c-myc	17597761
+Nuclear ARP2/3 drives DNA break clustering for homology-directed repair	29925947
+Nuclear localization and cell cycle-specific expression of CtIP, a protein that associates with the BRCA1 tumor suppressor	10764811
+Oncogenic hijacking of the stress response machinery in T cell acute lymphoblastic leukemia	30038221
+Overlapping functions between XLF repair protein and 53BP1 DNA damage response factor in end joining and lymphocyte development	22355127
+PAXX promotes KU accumulation at DNA breaks and is essential for end-joining in XLF-deficient mice	28051062
+PCDH10 promoter hypermethylation is frequent in most histologic subtypes of mature lymphoid malignancies and occurs early in lymphomagenesis	23929756
+PCDH10, a novel p53 transcriptional target in regulating cell migration	25590240
+PCNA connects DNA replication to epigenetic inheritance in yeast	11089978
+PHF6 mutations in T-cell acute lymphoblastic leukemia	28747286
+PHF6 mutations in adult acute myeloid leukemia	21030981
+PTEN Regulates Glutamine Flux to Pyrimidine Synthesis and Sensitivity to Dihydroorotate Dehydrogenase Inhibition	28255082
+Pak2 kinase promotes cellular senescence and organismal aging	31209047
+Parc: a cytoplasmic anchor for p53	12526791
+Pegasus: a comprehensive annotation and prediction tool for detection of driver gene fusions in cancer	25183062
+Pharmacogenomic landscape of patient-derived tumor cells informs precision oncology therapy	30262818
+Pharmacologic inhibition of histone demethylation as a therapy for pediatric brainstem glioma	25401693
+Phf6 loss enhances HSC self-renewal driving tumor initiation and leukemia stem cell activity in T-ALL	30567843
+Phosphorylation at S2053 in Murine (S2056 in Human) DNA-PKcs is despensable for lymphocyte development and class switch recombination	31101667
+Phosphorylation of H4 Ser 47 promotes HIRA-mediated nucleosome assembly	21724829
+Phosphorylation of Tip60 by GSK-3 Determines the Induction of PUMA and Apoptosis by p53	21658600
+Proatherogenic Abnormalities of Lipid Metabolism in SirT1 Transgenic Mice Are Mediated through Creb Deacetylation	22078933
+Proc Natl Acad Sci USA	30587568
+Prognostic relevance of integrated genetic profiling in adult T-cell acute lymphoblastic leukemia	23687089
+Promoter Methylation-Mediated Inactivation of PCDH10 in Acute Lymphoblastic Leukemia Contributes to Chemotherapy Resistance	21960365
+Protocadherin PCDH10, involved in tumor progression, is a frequent and early target of promoter hypermethylation in cervical cancer	19681120
+RHPN2 drives mesenchymal transformation in malignant glioma by triggering RhoA activation	23774217
+ROS in Cancer: The Burning Question	28427863
+ROS in translation: chink in the armor	27636545
+RPA interacts with HIRA and regulates H3.3 deposition at gene regulatory elements in mammalian cells	28107649
+Reconstitution of an ATM-dependent checkpoint that inhibits chromosomal DNA replication following DNA damage	11030344
+Recurrent mutations in epigenetic regulators, RHOA and FYN kinase in peripheral T cell lymphomas	24413734
+Regulation of the DNA Damage Response by DNA-PKcs Inhibitory Phosphorylation of ATM	27939942
+Replication-Coupled Nucleosome Assembly in the Passage of Epigenetic Information and Cell Identity	29292063
+Repurposing dasatinib for diffuse large B cell lymphoma	31383760
+Retinoblastoma promotes definitive erythropoiesis by repressing Id2 in fetal liver macrophages	15616565
+Reverse engineering of TLX oncogenic transcriptional networks identifies RUNX1 as tumor suppressor in T-ALL	22366949
+Role of Fluorescent In Situ Hybridization, Cholangioscopic Biopsies, and EUS-FNA in the Evaluation of Biliary Strictures	29353443
+Rtt106p is a histone chaperone involved in heterochromatin-mediated silencing	16157874
+Rtt109 acetylates histone H3 lysine 56 and functions in DNA replication	17272723
+Self‐renewal does not predict tumor growth potential in mouse models of high‐grade glioma	32105676
+Sensing and Processing of DNA interstrand crosslinks by the mismatch repair pathway	29091773
+Single-cell transcriptome analysis of lineage diversity in high-grade glioma	30041684
+Singling out the out-of-tune in lymphoma	30104632
+SirT1 gain of function increases energy efficiency and prevents diabetes in mice	18840364
+Site-specific recombination of the tal-1 gene is a common occurrence in human T cell leukemia	2209547
+Spatiotemporal genomic architecture informs precision oncology in glioblastoma	28263318
+Specific in vivo association between the bHLH and LIM proteins implicated in human T cell leukemia	7957052
+Strand-specific analysis shows protein binding at replication forks and PCNA unloading from lagging strands when forks stall	25449133
+Structural basis for recognition of H3K56-acetylated histone H3-H4 by the chaperone Rtt106	22307274
+Structural requirements for the BARD1 tumor suppressor in chromosomal stability and homology-directed DNA repair	17848578
+Structure and mechanisms of NT5C2 mutations driving thiopurine resistance in relapsed lymphoblastic leukemia	29990496
+Structure of the variant histone H3.3-H4 heterodimer in complex with its chaperone DAXX	23142979
+Suppression of	32120353
+Synergistic antileukemic therapies in NOTCH1-induced T-ALL	28174276
+T-cell lymphoblastic lymphoma shows differences and similarities with T-cell acute lymphoblastic leukemia by genomic and gene expression analyses	21987448
+TAL2, a helix-loop-helix gene activated by the (7;9)(q34;q32) translocation in human T cell leukemia	1763056
+TNF inhibits Notch-1 in skeletal muscle by Ezh2 and DNA methylation mediated repression: implications in Duchenne muscular dystrophy	20814569
+TRADD contributes to tumour suppression by regulating ULF-dependent p19Arf ubiquitylation	22561347
+Targeted cellular immunotherapy for T cell malignancies	29216040
+The BCL11B tumor suppressor is mutated across the major molecular subtypes of T-cell acute lymphoblastic leukemia	21878675
+The BRCA1/BARD1 heterodimer assembles polyubiquitin chains through an unconventional linkage involving lysine residue K6 of ubiquitin	12890688
+The BRCT Domains of the BRCA1 and BARD1 Tumor Suppressors Differentially Regulate Homology-Directed Repair and Stalled Fork Protection	30244837
+The CREBBP Acetyltransferase is a haploinsufficient tumor suppressor in B-cell lymphoma	28069569
+The DLEU2/miR-15a/16-1 cluster controls B-cell proliferation and its deletion leads to chronic lymphocytic leukemia	20060366
+The DNA resection protein CtIP promotes mammary tumorigenesis	27058754
+The E3 ubiquitin ligase activity of BRCA1 is not essential for mammalian cell viability or homology-directed repair of double-strand DNA breaks	29568381
+The FOXO1 Transcription Factor Instructs the Germinal Center Dark Zone Program	26620759
+The FOXO1 transcription factor instructs the germinal center dark zone program	26620759
+The HECT‐domain ubiquitin ligase Huwe1 controls neural differentiation and proliferation by destabilizing the N‐Myc oncoprotein	18488021
+The HECT‐domain ubiquitin ligase Huwe1 controls neural differentiation and proliferation by destabilizing the N‐Myconcoprotein	18488021
+The Huwe1 ubiquitin ligase is essential to synchronize neuronal and glial differentiation in the developing cerebellum	20231446
+The ID proteins: master regulators of cancer stem cells and tumour aggressiveness	24442143
+The MRN-CtIP pathway is required for metaphase chromosome alignment	23434370
+The Mcm2-Ctf4-Polα Axis Facilitates Parental Histone H3-H4 Transfer to Lagging Strands	30244834
+The NOTCH1-MYC highway toward T-cell acute lymphoblastic leukemia	28115368
+The TLX1 oncogene drives aneuploidy in T-cell transformation	20972433
+The UBXN1 protein associates with autoubiquitinated forms of the BRCA1 tumor suppressor and inhibits its enzymatic function	20351172
+The combination of neoantigen quality and T lymphocyte infiltrates identifies glioblastomas with the longest survival	31044160
+The deubiquitylase OTUB1 mediates ferroptosis via stabilization of SCL7A11	30709928
+The differences between ICL repair during and outside of S phase	23830640
+The etiology and impact of muscle wasting in metastatic cancer	31615873
+The genetic landscape of dural marginal zone lymphomas	27248180
+The genetics and mechanisms of T cell acute lymphoblastic leukaemia	27451956
+The histone H3.3K27M mutation in pediatric glioma reprograms H3K27 methylation and gene expression	23603901
+The histone H3.3K36M mutation reprograms the epigenome of chondroblastomas	27229140
+The integrated landscape of driver genomic alterations in glioblastoma	23917401
+The interaction between CtIP and BRCA1 is not essential for resection-mediated DNA repair or tumor suppression	32093270
+The molecular landscape of glioma in patients with Neurofibromatosis 1	30531922
+The molecular pathogenesis of chronic lymphocytic leukaemia	31364161
+The proto-oncogene MYC is required for selection in the germinal center and cyclic reentry	23001145
+The role of chromosome translocations in T cell acute leukemia	8573309
+The tal gene undergoes chromosome translocation in T cell leukemia and potentially encodes a helix-loop-helix protein	2303035
+The ubiquitin ligase Huwe1 regulates the maintenance and lymphoid commitment of hematopoietic stem cells	27668798
+Therapeutic targeting of HES1 transcriptional programs in T-ALL	25784680
+Tip60-dependent acetylation of p53 modulates the decision between cell cycle arrest and apoptosis	17189186
+Toward a systems biology approach to investigate cellular networks in normal and malignant B cells	19194469
+Transcription factor ID2 prevents E proteins from enforcing a naïve T lymphocyte gene program during NK cell development	29703840
+Transforming fusions of FGFR and TACC genes in human glioblastoma	22837387
+Tumor Suppressor HIC1 Directly Regulates SIRT1 to Modulate p53-Dependent DNA-Damage Responses	16269335
+Tumor self-seeding by circulating cancer cells	20064377
+Tumor suppression in the absence of p53-mediated cell cycle arrest, apoptosis, and senescence	22682249
+Tumor suppression in the absence of p53-mediated cell-cycle arrest, apoptosis, and senescence	22682249
+Two-step activation of ATM by DNA and the Mre11-Rad50-Nbs1 complex	16622404
+Ubiquitylation of FACT by the cullin-E3 ligase Rtt101 connects FACT to DNA replication	20634314
+Unique and shared epigenetic programs of the CREBBP and EP300 Acetyltransferases in germinal center B cells reveal targetable dependencies in lymphoma	31519498
+Upregulation of ZIP14 and Altered Zinc Homeostasis in Muscles in Pancreatic Cancer Cachexia	31861290
+Vitamin C selectively kills KRAS and BRAF mutant colorectal cancer cells by targeting GAPDH	26541605
+WT1 mutations in T-ALL	19494353
+and Califano, A	8353567
+and Dalla-Favera, R	32119082
+and Falini, B	32119287
+and Gautier J	28402077
+and Gu W	27808393
+and Pasqualucci, L	32120278
+microRNA 28 controls cell proliferation and is down-regulated in B-cell lymphomas	24843176
+p53 modifications: exquisite decorations of the powerful guardian	31282934
+p53 mutations change phosphatidylinositol acyl chain composition	25543136
+t-RNA-derived microRNA modulates proliferation and DNA damage response and is down-regulated in B cell lymphoma	23297232
+tRNA-derived microRNA modulates proliferation and the DNA damage response and is down-regulated in B cell lymphoma	23297232

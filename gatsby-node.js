@@ -125,6 +125,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             volume
             year
             tags
+            pubmed
             url
           }
         }

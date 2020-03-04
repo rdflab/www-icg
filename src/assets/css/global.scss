@@ -136,6 +136,10 @@ a:hover {
   @apply link-hover blue blue-border;
 }
 
+.blue-link-active {
+  @apply border-b border-solid border-blue-columbia;
+}
+
 .white-link {
   @apply link text-white;
 }
