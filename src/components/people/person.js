@@ -7,15 +7,12 @@
 
 import React from "react"
 import Columns from "../columns"
-import Column from "../column"
-import EmailLink from "../emaillink"
-import PhoneLink from "../phonelink"
 import MainColumn from "../maincolumn"
 import SideColumn from "../sidecolumn"
 import styled from "styled-components"
-import URLLink from "../urllink"
 import BlueLink from "../bluelink"
 import ContactInfo from "./contactinfo"
+import Column from "../column"
 
 const PersonDiv = styled.div`
   padding-top: 1rem;
@@ -26,7 +23,7 @@ const Person = ({ person, labMap, showLabLink }) => {
   return (
     <PersonDiv>
       <Columns>
-        <MainColumn w="7/12">
+        <MainColumn w="7/12" className="mb-4">
           <div>
             <h3>
               <BlueLink
@@ -38,9 +35,9 @@ const Person = ({ person, labMap, showLabLink }) => {
           </div>
           <div className="gray">{person.frontmatter.titles[0]}</div>
         </MainColumn>
-        <SideColumn w="5/12">
+        <Column w="5/12">
           <ContactInfo person={person} />
-        </SideColumn>
+        </Column>
       </Columns>
     </PersonDiv>
   )

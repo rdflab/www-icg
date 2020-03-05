@@ -1,7 +1,6 @@
 import React from "react"
 import ColorLink from "./colorlink"
 import { FaChevronRight } from "react-icons/fa"
-import Row from "./row"
 
 const IndexLink = ({ color, to, children }) => (
   <>

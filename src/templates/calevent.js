@@ -1,10 +1,8 @@
 import React from "react"
 import CrumbLayout from "../components/crumblayout"
-import NewsItemDate from "../components/news/newsitemdate"
 import CalEventLocation from "../components/calendar/caleventlocation"
 import styled from "styled-components"
 import Columns from "../components/columns"
-import Column from "../components/column"
 import MainColumn from "../components/maincolumn"
 import SideColumn from "../components/sidecolumn"
 

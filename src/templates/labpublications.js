@@ -18,7 +18,7 @@ const LabPublicationsTemplate = props => {
     }
   })
 
-  const title = `The ${faculty.firstName} ${faculty.lastName} Lab Publications`
+  const title = `The ${faculty.frontmatter.lastName} Lab Publications`
 
   return (
     <CrumbLayout

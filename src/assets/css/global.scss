@@ -188,15 +188,19 @@ a:hover {
 }
 
 .header-link {
-  @apply link text-gray-600 mr-8 py-2;
+  @apply link text-white opacity-50 mr-6; // border-b-2 border-solid border-transparent;
 }
 
 .header-link:hover {
-  @apply blue;
+  @apply opacity-75;
 }
 
 .header-link-active {
-  @apply blue;
+  @apply opacity-100; //blue border-b-2 border-solid border-blue-500;
+}
+
+.header-link-active:hover {
+  @apply opacity-100; //blue border-b-2 border-solid border-blue-500;
 }
 
 .mobile-header {

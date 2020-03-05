@@ -6,12 +6,8 @@ const ResearchAreaTemplate = props => {
   const { pageContext } = props
   const { labMap, allPeople, researchArea } = pageContext
 
-  const people = []
-
-  allPeople.map(person => {
-    if (person.frontmatter.researchAreas.includes(researchArea.id)) {
-      people.push(person)
-    }
+  const people = allPeople.filter(person => {
+    return person.frontmatter.researchAreas.includes(researchArea.id)
   })
 
   return (

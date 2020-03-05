@@ -3,13 +3,13 @@ import EmailLink from "../emaillink"
 import PhoneLink from "../phonelink"
 import URLLink from "../urllink"
 
-const ContactInfo = ({ person, urls }) => {
+const ContactInfo = ({ person, urls, className }) => {
   if (urls.length === 0 && person.frontmatter.urls.length > 0) {
     urls = person.frontmatter.urls
   }
 
   return (
-    <div className={`mt-4 {className}`}>
+    <div className={className}>
       {person.frontmatter.email.length > 0 && (
         <EmailLink to={person.frontmatter.email[0]} />
       )}

@@ -9,7 +9,14 @@ import React from "react"
 import Publication from "./publication"
 import Button from "../../components/button"
 
-const RecentPublications = ({ lab, publications, labMap, peopleMap, top }) => {
+const RecentPublications = ({
+  lab,
+  publications,
+  labMap,
+  peopleMap,
+  top,
+  className,
+}) => {
   const createPublications = publications => {
     let ret = []
 
@@ -29,18 +36,19 @@ const RecentPublications = ({ lab, publications, labMap, peopleMap, top }) => {
   }
 
   return (
-    <>
+    <div className={`mb-4 ${className}`}>
       <h2>Recent Publications</h2>
-      {createPublications(publications)}
-      <div className="has-text-centered">
+      <div className="mt-4">{createPublications(publications)}</div>
+      <div className="text-center">
         <Button to={`/research-areas/labs/${lab.id}/publications`}>More</Button>
       </div>
-    </>
+    </div>
   )
 }
 
 RecentPublications.defaultProps = {
   top: 5,
+  className: "",
 }
 
 export default RecentPublications

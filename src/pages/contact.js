@@ -32,6 +32,7 @@ const Contact = () => (
           height="300"
           frameborder="0"
           allowfullscreen=""
+          title="Small map"
         ></iframe>
         <iframe
           className="hidden sm:block"
@@ -40,6 +41,7 @@ const Contact = () => (
           height="450"
           frameborder="0"
           allowfullscreen=""
+          title="Large map"
         ></iframe>
 
         {/* <br />

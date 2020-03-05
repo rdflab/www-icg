@@ -13,7 +13,7 @@ const Header = ({ siteTitle }) => (
     <div className="sm:hidden">
       <div className="mobile-header">
         <SlideMenu />
-        <Link to="/" style={{ borderBottom: "none" }}>
+        <Link to="/">
           <ColumbiaICGWhiteImage style={{ width: `300px` }} />
         </Link>
       </div>
@@ -21,19 +21,22 @@ const Header = ({ siteTitle }) => (
 
     <div className="hidden sm:block">
       <div className="p-3">
-        <Container className="hidden sm:block">
+        <Container>
           <Row>
-            <Link to="/" style={{ borderBottom: "none" }}>
+            <Link to="/">
               <ColumbiaICGImage style={{ width: `400px` }} />
             </Link>
           </Row>
         </Container>
       </div>
-      <Container>
-        <Row className="items-center">
-          <HeaderLinks />
-        </Row>
-      </Container>
+
+      <div className="bg-blue-columbia py-3">
+        <Container>
+          <Row className="items-center">
+            <HeaderLinks />
+          </Row>
+        </Container>
+      </div>
     </div>
   </>
 )

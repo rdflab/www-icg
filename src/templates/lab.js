@@ -3,9 +3,6 @@ import CrumbLayout from "../components/crumblayout"
 
 import RecentPublications from "../components/publication/recentpublications"
 import toLabMap from "../utils/tolabmap"
-import EmailLink from "../components/emaillink"
-import PhoneLink from "../components/phonelink"
-import URLLink from "../components/urllink"
 import Columns from "../components/columns"
 import Button from "../components/button"
 //import SideBar from "../components/sidebar/sidebar"
@@ -25,7 +22,6 @@ const LabTemplate = props => {
     labPublications,
     labNews,
     labExcerptHtml,
-    labHtml,
   } = pageContext
 
   const labs = [lab] //toLabs([lab], peopleMap)
@@ -46,7 +42,7 @@ const LabTemplate = props => {
   return (
     <CrumbLayout
       crumbs={crumbs}
-      title={`The ${faculty.frontmatter.lastName} Lab`}
+      title={`The ${faculty.frontmatter.firstName} ${faculty.frontmatter.lastName} Lab`}
     >
       <Columns>
         <SmallColumn>
@@ -61,19 +57,27 @@ const LabTemplate = props => {
             </Button>
           </div>
 
-          <h2>{`${faculty.frontmatter.firstName} ${faculty.frontmatter.lastName}`}</h2>
           <h3>Research Focus</h3>
           <h3>Education</h3>
 
           {labPublications.length > 0 && (
-            <Card className="mt-8">
+            <div className="my-8">
               <RecentPublications
+                className="sm:hidden"
                 lab={lab}
                 publications={labPublications}
                 labMap={labMap}
                 peopleMap={peopleMap}
               />
-            </Card>
+              <Card className="hidden sm:block">
+                <RecentPublications
+                  lab={lab}
+                  publications={labPublications}
+                  labMap={labMap}
+                  peopleMap={peopleMap}
+                />
+              </Card>
+            </div>
           )}
         </MainColumn>
         <SideColumn>
@@ -81,8 +85,12 @@ const LabTemplate = props => {
           <ContactInfo person={faculty} urls={lab.urls} />
           {/* </SideBar> */}
 
-          <h3>News</h3>
-          <SideBarNews allNews={labNews} />
+          {labNews.length > 0 && (
+            <div className="mt-4">
+              <h3>News</h3>
+              <SideBarNews allNews={labNews} />
+            </div>
+          )}
         </SideColumn>
       </Columns>
     </CrumbLayout>

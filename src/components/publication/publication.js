@@ -72,41 +72,12 @@ const Publication = ({
       <div className="font-light">{authors}</div>
 
       <Columns>
-        <Column w="1/3">
+        <Column w="1/2">
           {publication.journal !== "" && <>{publication.journal}</>}
           {publication.year !== "-1" && <>, {publication.year}</>}
         </Column>
-        <Column w="1/3">
-          {publication.pubmed !== "" && (
-            <div className="row blue md:items-center md:text-center md:justify-center">
-              <div>
-                <BlueLinkExt
-                  target="_blank"
-                  to={`https://www.ncbi.nlm.nih.gov/pubmed/?term=${publication.pubmed}`}
-                >
-                  PubMed
-                </BlueLinkExt>
-              </div>
-              <div className="ml-1">
-                <FaExternalLinkAlt />
-              </div>
 
-              <div className="ml-4">
-                <BlueLinkExt
-                  target="_blank"
-                  to={`https://scholar.google.com/scholar?hl=en&as_sdt=0%2C33&q=${publication.title}`}
-                >
-                  Google Scholar
-                </BlueLinkExt>
-              </div>
-
-              <div className="ml-1">
-                <FaExternalLinkAlt />
-              </div>
-            </div>
-          )}
-        </Column>
-        <Column w="1/3">
+        <Column w="1/2">
           {name !== "" && showLabLink && (
             <div className="md:text-right">
               <BlueLink to={`/research-areas/labs/${labId}`}>
@@ -116,6 +87,35 @@ const Publication = ({
           )}
         </Column>
       </Columns>
+
+      {publication.pubmed !== "" && (
+        <div className="row blue items-center">
+          <div>
+            <BlueLinkExt
+              target="_blank"
+              to={`https://www.ncbi.nlm.nih.gov/pubmed/?term=${publication.pubmed}`}
+            >
+              PubMed
+            </BlueLinkExt>
+          </div>
+          <div className="ml-1">
+            <FaExternalLinkAlt />
+          </div>
+
+          <div className="ml-4">
+            <BlueLinkExt
+              target="_blank"
+              to={`https://scholar.google.com/scholar?hl=en&as_sdt=0%2C33&q=${publication.title}`}
+            >
+              Google Scholar
+            </BlueLinkExt>
+          </div>
+
+          <div className="ml-1">
+            <FaExternalLinkAlt />
+          </div>
+        </div>
+      )}
     </div>
   )
 }
