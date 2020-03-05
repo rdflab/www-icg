@@ -66,11 +66,14 @@ const CalSearch = ({ allCalEvents }) => {
 
   if (selectedDays.length > 0) {
     dayFilteredEvents = calEvents.filter(e => {
-      console.log(selectedDays[0], e.start)
       return DateUtils.isSameDay(selectedDays[0], e.start)
     })
   } else {
-    dayFilteredEvents = calEvents
+    const now = Date.now()
+
+    dayFilteredEvents = calEvents.filter(e => {
+      return e.start >= now
+    })
   }
 
   const offset = (page - 1) * recordsPerPage

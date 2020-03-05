@@ -14,22 +14,18 @@ const LabOverviewTemplate = props => {
 
   const faculty = peopleMap[lab.leaders[0]]
 
+  const title = `The ${faculty.frontmatter.lastName} Lab`
+
   const crumbs = [
     ["Home", "/"],
     ["Research Areas", "/research-areas"],
     ["Labs", "/research-areas/labs"],
-    [
-      `${faculty.frontmatter.firstName} ${faculty.frontmatter.lastName}`,
-      `/research-areas/labs/${lab.id}`,
-    ],
+    [title, `/research-areas/labs/${lab.id}`],
     [`Overview`, `/research-areas/labs/${lab.id}/overview`],
   ]
 
   return (
-    <CrumbLayout
-      crumbs={crumbs}
-      title={`The ${faculty.frontmatter.lastName} Lab Overview`}
-    >
+    <CrumbLayout crumbs={crumbs} title={`${title} Overview`}>
       <Columns>
         <MainColumn>
           <HTMLDiv html={labHtml} />
