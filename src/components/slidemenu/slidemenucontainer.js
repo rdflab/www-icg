@@ -33,23 +33,38 @@ const SlideMenuContainer = ({ onClickHandle, visible }) => {
 
   return (
     <div
-      className={`slide-menu-container ${
-        visible ? "slide-menu-container-visible" : ""
+      className={`slide-menu-container-2 ${
+        visible ? "slide-menu-container-2-visible" : ""
       }`}
       onClick={onClickHandle}
     >
-      <div className="menu-column">
-        {links.map((link, index) => {
-          return (
-            <div key={index}>
-              <SlideMenuLink key={index} to={link.link}>
-                {link.name}
-              </SlideMenuLink>
-            </div>
-          )
-        })}
+      <div
+        className={`fixed col shadow-md rounded-md bg-white`}
+        style={{
+          margin: 0,
+          padding: 0,
+          top: "50vh",
+          left: "50vw",
+          transform: "translate(-50%, -50%)",
+          width: "95vw",
+          height: "95vh",
+        }}
+      >
+        <div className="row justify-end p-4">
+          <SlideMenuCloseButton />
+        </div>
+        <div>
+          {links.map((link, index) => {
+            return (
+              <div key={index}>
+                <SlideMenuLink key={index} to={link.link}>
+                  {link.name}
+                </SlideMenuLink>
+              </div>
+            )
+          })}
+        </div>
       </div>
-      <SlideMenuCloseButton />
     </div>
   )
 }

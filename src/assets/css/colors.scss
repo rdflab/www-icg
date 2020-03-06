@@ -3,6 +3,7 @@ $columbia-blue-10-color: rgba($columbia-blue-color, 0.1);
 $columbia-blue-50-color: rgba($columbia-blue-color, 0.5);
 $columbia-blue-60-color: rgba($columbia-blue-color, 0.6);
 $columbia-blue-70-color: rgba($columbia-blue-color, 0.7);
+$columbia-blue-80-color: rgba($columbia-blue-color, 0.8);
 $columbia-blue-90-color: rgba($columbia-blue-color, 0.9);
 
 .bg-blue-columbia {
@@ -19,6 +20,10 @@ $columbia-blue-90-color: rgba($columbia-blue-color, 0.9);
 
 .bg-blue-columbia-70 {
   background-color: $columbia-blue-70-color;
+}
+
+.bg-blue-columbia-80 {
+  background-color: $columbia-blue-80-color;
 }
 
 .border-blue-columbia {

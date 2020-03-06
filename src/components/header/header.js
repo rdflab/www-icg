@@ -10,14 +10,15 @@ import Row from "../row"
 
 const Header = ({ siteTitle }) => (
   <>
-    <div className="sm:hidden">
-      <div className="mobile-header">
-        <SlideMenu />
-        <Link to="/">
-          <ColumbiaICGWhiteImage style={{ width: `300px` }} />
-        </Link>
-      </div>
-    </div>
+    <nav
+      aria-label="Navigation"
+      className="row text-white p-3 bg-blue-columbia-80"
+    >
+      <SlideMenu />
+      <Link to="/">
+        <ColumbiaICGWhiteImage style={{ width: `300px` }} />
+      </Link>
+    </nav>
 
     <div className="hidden sm:block">
       <div className="p-3">
@@ -30,13 +31,13 @@ const Header = ({ siteTitle }) => (
         </Container>
       </div>
 
-      <div className="bg-blue-columbia py-3">
+      <nav aria-label="Navigation" className="bg-blue-columbia-80 py-3">
         <Container>
           <Row className="items-center">
             <HeaderLinks />
           </Row>
         </Container>
-      </div>
+      </nav>
     </div>
   </>
 )

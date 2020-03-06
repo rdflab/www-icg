@@ -3,10 +3,11 @@ import { FaTimes } from "react-icons/fa"
 
 const SlideMenuCloseButton = ({ onClickHandle }) => (
   <button
-    className="p-4 m-0 no-padding bg-transparent text-white opacity-75 hover:opacity-100 float-left cursor-pointer trans-ani"
+    aria-label="Close"
+    className="p-1 m-0 no-padding bg-gray-400 rounded-full text-white hover:bg-gray-500 cursor-pointer trans-ani"
     onClick={onClickHandle}
   >
-    <FaTimes size={28} />
+    <FaTimes size={16} />
   </button>
 )
 

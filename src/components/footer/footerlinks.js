@@ -23,7 +23,9 @@ const FooterLinks = () => {
       {links.map(({ node }, index) => {
         return (
           <div className="link-item" key={index}>
-            <WhiteLink to={node.link}>{node.name}</WhiteLink>
+            <WhiteLink aria-label={`Goto ${node.name}`} to={node.link}>
+              {node.name}
+            </WhiteLink>
           </div>
         )
       })}
