@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import flattenEdges from "../../utils/flattenedges"
 import SlideMenuLink from "./slidemenulink"
 import SlideMenuCloseButton from "./slidemenuclosebutton"
+import ColumbiaICGWhiteImage from "../images/columbiaicgwhiteimage"
 
 // const StyledDiv = styled.div`
 //   position: fixed;
@@ -39,7 +40,7 @@ const SlideMenuContainer = ({ onClickHandle, visible }) => {
       onClick={onClickHandle}
     >
       <div
-        className={`fixed col shadow-lg rounded-lg bg-white`}
+        className={`fixed col shadow-xl rounded-lg bg-white overflow-hidden`}
         style={{
           margin: 0,
           padding: 0,
@@ -50,10 +51,16 @@ const SlideMenuContainer = ({ onClickHandle, visible }) => {
           height: "95vh",
         }}
       >
-        <div className="row items-center justify-end p-4">
-          <SlideMenuCloseButton />
+        <div className="row items-center justify-between p-4 bg-blue-columbia-80 w-full">
+          <div></div>
+          <div>
+            <ColumbiaICGWhiteImage style={{ width: `200px` }} />
+          </div>
+          <div className="text-right">
+            <SlideMenuCloseButton />
+          </div>
         </div>
-        <div className="border-t border-solid border-gray-300">
+        <div>
           {links.map((link, index) => {
             return (
               <div key={index}>
