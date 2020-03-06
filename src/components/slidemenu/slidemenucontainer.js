@@ -50,7 +50,7 @@ const SlideMenuContainer = ({ onClickHandle, visible }) => {
           height: "95vh",
         }}
       >
-        <div className="row justify-end p-4">
+        <div className="row items-center justify-end p-4">
           <SlideMenuCloseButton />
         </div>
         <div>
