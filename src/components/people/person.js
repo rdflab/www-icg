@@ -13,6 +13,7 @@ import styled from "styled-components"
 import BlueLink from "../bluelink"
 import ContactInfo from "./contactinfo"
 import Column from "../column"
+import TextLink from "../textlink"
 
 const PersonDiv = styled.div`
   padding-top: 1rem;
@@ -26,11 +27,11 @@ const Person = ({ person, labMap, showLabLink }) => {
         <MainColumn w="7/12" className="mb-4">
           <div>
             <h3>
-              <BlueLink
+              <TextLink
                 to={`/research-areas/faculty-and-staff/${person.frontmatter.id}`}
               >
                 {person.frontmatter.firstName} {person.frontmatter.lastName}
-              </BlueLink>
+              </TextLink>
             </h3>
           </div>
           <div className="gray">{person.frontmatter.titles[0]}</div>

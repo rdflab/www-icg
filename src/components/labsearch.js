@@ -12,6 +12,7 @@ import SmallColumn from "./smallcolumn"
 import SideColumn from "./sidecolumn"
 import MainColumn from "./maincolumn"
 import BlueLink from "./bluelink"
+import TextLink from "./textlink"
 
 const EMPTY_QUERY = ""
 
@@ -77,9 +78,9 @@ const LabSearch = ({ allLabs, peopleMap }) => {
               <Columns>
                 <Column w="1/2">
                   <h3>
-                    <BlueLink to={`/research-areas/labs/${lab.id}`}>
+                    <TextLink to={`/research-areas/labs/${lab.id}`}>
                       {name}
-                    </BlueLink>
+                    </TextLink>
                   </h3>
                 </Column>
                 <Column w="1/2" style={{ borderLeft: "solid 1px lightgray" }}>

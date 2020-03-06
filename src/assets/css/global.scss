@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  @apply relative p-0 m-0 text-gray-800 min-h-full;
+  @apply relative p-0 m-0 text min-h-full;
 }
 
 h1 {
@@ -123,6 +123,18 @@ a:hover {
   @apply link-hover border-b border-solid;
 }
 
+.text-link {
+  @apply underline-link; 
+}
+
+.text-link:hover {
+  @apply underline-link-hover border-b border-solid border-gray-800;
+}
+
+.blue-link-active {
+  @apply border-blue-columbia;
+}
+
 .blue-link {
   @apply underline-link blue; 
 }
@@ -183,19 +195,19 @@ a:hover {
 
 
 .slide-menu-link {
-  @apply link text-blue-columbia font-semibold py-3 px-5 rounded-md block;
+  @apply link text font-semibold m-0 py-3 px-5 border-2 border-solid border-transparent rounded-md block;
 }
 
 .slide-menu-link:hover {
-  @apply link-hover bg-blue-columbia-30;
+  @apply link-hover border-2 border-solid border-gray-300;
 }
 
 .slide-menu-link-active {
-  @apply text-white bg-blue-columbia-50;
+  @apply text bg-gray-300 border-gray-300;
 }
 
 .slide-menu-link-active:hover {
-  @apply link-hover bg-blue-columbia-50;
+  @apply link-hover bg-gray-300 border-gray-300;
 }
 
 .slide-menu-link-active:focus {
