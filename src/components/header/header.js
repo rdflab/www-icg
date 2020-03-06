@@ -12,7 +12,7 @@ const Header = ({ siteTitle }) => (
   <>
     <nav
       aria-label="Navigation"
-      className="row text-white p-3 bg-blue-columbia-80"
+      className="row text-white p-3 bg-blue-columbia-80 sm:hidden"
     >
       <SlideMenu />
       <Link to="/">
