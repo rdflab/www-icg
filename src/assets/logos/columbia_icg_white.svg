@@ -8,8 +8,8 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="159.91104mm"
-   height="20.904837mm"
-   viewBox="0 0 453.29115 59.257809"
+   height="22.904837mm"
+   viewBox="0 0 453.29115 64.927101"
    version="1.2"
    id="svg93"
    sodipodi:docname="columbia_icg_white.svg"
@@ -25,7 +25,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -44,13 +44,13 @@
      showgrid="false"
      inkscape:measure-start="0,0"
      inkscape:measure-end="0,0"
-     fit-margin-top="0"
+     fit-margin-top="1"
      fit-margin-left="1"
      fit-margin-right="1"
-     fit-margin-bottom="0"
-     inkscape:zoom="0.84085511"
-     inkscape:cx="234.04967"
-     inkscape:cy="185.32599"
+     fit-margin-bottom="1"
+     inkscape:zoom="1.6817102"
+     inkscape:cx="285.74373"
+     inkscape:cy="106.54103"
      inkscape:window-x="-9"
      inkscape:window-y="-9"
      inkscape:window-maximized="1"
@@ -75,7 +75,7 @@
   </defs>
   <g
      id="surface40"
-     transform="translate(-1.6079797,-782.74219)">
+     transform="translate(-1.6079798,-779.90754)">
     <g
        clip-path="url(#clip1)"
        id="g12"
