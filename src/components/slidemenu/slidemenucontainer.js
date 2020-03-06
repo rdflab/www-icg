@@ -3,20 +3,9 @@ import { useStaticQuery, graphql } from "gatsby"
 import flattenEdges from "../../utils/flattenedges"
 import SlideMenuLink from "./slidemenulink"
 import SlideMenuCloseButton from "./slidemenuclosebutton"
-import ColumbiaICGWhiteImage from "../images/columbiaicgwhiteimage"
+import ColumbiaICGImage from "../images/columbiaicgimage"
 
-// const StyledDiv = styled.div`
-//   position: fixed;
-//   left: 0;
-//   top: 0;
-//   transform: translate3d(-100vw, 0, 0);
-//   transition: transform .5s
-//   width: 100vw;
-//   height: 100vh;
-//   background: rba(0, 0, 0, 0.7);
-// `
-
-const SlideMenuContainer = ({ onClickHandle, visible }) => {
+const SlideMenuContainer = ({ title, onClickHandle, visible }) => {
   const data = useStaticQuery(graphql`
     query {
       links: allSlidemenulinksJson {
@@ -51,20 +40,30 @@ const SlideMenuContainer = ({ onClickHandle, visible }) => {
           height: "80vh",
         }}
       >
-        <div className="row items-center justify-between p-4 bg-blue-columbia-80 w-full">
+        <div className="row items-center justify-between p-4 mb-4 w-full border-b border-solid border-gray-300">
           <div></div>
           <div>
-            <ColumbiaICGWhiteImage style={{ width: `200px` }} />
+            <ColumbiaICGImage style={{ width: `200px` }} />
           </div>
           <div className="text-right">
-            <SlideMenuCloseButton />
+            {/* <SlideMenuCloseButton onClick={onClickHandle} /> */}
+            <button
+              className="text-blue-columbia focus:outline-none"
+              onClick={onClickHandle}
+            >
+              Done
+            </button>
           </div>
         </div>
-        <div>
+        <div className="px-4">
           {links.map((link, index) => {
             return (
               <div key={index}>
-                <SlideMenuLink key={index} to={link.link}>
+                <SlideMenuLink
+                  key={index}
+                  to={link.link}
+                  active={link.name === title}
+                >
                   {link.name}
                 </SlideMenuLink>
               </div>

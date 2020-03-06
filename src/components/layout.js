@@ -31,7 +31,7 @@ const Layout = ({ title, children, crumbs }) => {
     <>
       {title !== "" && <SEO title={title} />}
 
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header title={title} />
 
       <main>{children}</main>
 

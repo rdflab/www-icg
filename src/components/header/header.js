@@ -8,13 +8,13 @@ import SlideMenu from "../slidemenu/slidemenu"
 import Container from "../container"
 import Row from "../row"
 
-const Header = ({ siteTitle }) => (
+const Header = ({ title }) => (
   <>
     <nav
       aria-label="Navigation"
       className="row text-white p-3 bg-blue-columbia-80 sm:hidden"
     >
-      <SlideMenu />
+      <SlideMenu title={title} />
       <Link to="/">
         <ColumbiaICGWhiteImage style={{ width: `300px` }} />
       </Link>
@@ -43,11 +43,11 @@ const Header = ({ siteTitle }) => (
 )
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
+  title: PropTypes.string,
 }
 
 Header.defaultProps = {
-  siteTitle: ``,
+  title: "",
 }
 
 export default Header

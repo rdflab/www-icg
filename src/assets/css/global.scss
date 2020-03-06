@@ -96,7 +96,7 @@ h3 {
 }
 
 a {
-  @apply no-padding no-underline trans-ani;
+  @apply no-padding no-underline;
 }
 
 .a-hover {
@@ -108,7 +108,7 @@ a:hover {
 }
 
 .link {
-  @apply no-padding no-underline trans-ani; 
+  @apply no-padding no-underline; 
 }
 
 .link-hover {
@@ -116,7 +116,7 @@ a:hover {
 }
 
 .underline-link {
-  @apply link border-b border-solid border-transparent; 
+  @apply link border-b border-solid border-transparent trans-ani; 
 }
 
 .underline-link-hover {
@@ -162,27 +162,45 @@ a:hover {
   transform: translate3d(0vw, 0, 0);
 }
 
-.slide-menu-container-2 {
-  @apply fixed m-0 p-0 top-0 left-0 w-full h-screen z-50 opacity-0 transition duration-500;
-  transform: translate3d(0, -100vh, 0);
+.slide-menu-canvas {
+  @apply fixed m-0 p-0 top-0 left-0 w-full h-screen -z-40 opacity-0 trans-ani;
   background: rgba(0, 0, 0, 0.5);
 }
 
+.slide-menu-canvas-visible {
+  @apply z-40 opacity-100;
+}
+
+.slide-menu-container-2 {
+  @apply fixed m-0 p-0 top-0 left-0 w-full h-screen z-50 bg-transparent trans-ani;
+  transform: translate3d(0, -100vh, 0);
+}
+
 .slide-menu-container-2-visible {
-  @apply opacity-100 m-0 p-0;
+  @apply opacity-100;
   transform: translate3d(0, 0vh, 0);
 }
 
 
 .slide-menu-link {
-  @apply link bg-white blue font-semibold py-4 px-6 border-b border-solid border-gray-300 block;
+  @apply link text-blue-columbia font-semibold py-3 px-5 rounded-md block;
 }
 
 .slide-menu-link:hover {
-  @apply link-hover bg-blue-columbia-60 text-white;
+  @apply link-hover bg-blue-columbia-30;
 }
 
+.slide-menu-link-active {
+  @apply text-white bg-blue-columbia-50;
+}
 
+.slide-menu-link-active:hover {
+  @apply link-hover bg-blue-columbia-50;
+}
+
+.slide-menu-link-active:focus {
+  @apply bg-blue-columbia-50;
+}
 
 .menu-column {
   @apply float-left m-0 p-0 bg-white;
@@ -202,11 +220,11 @@ a:hover {
 }
 
 .header-link {
-  @apply link text-white opacity-50 mr-6; // border-b-2 border-solid border-transparent;
+  @apply link text-white opacity-50 mr-6 trans-ani; // border-b-2 border-solid border-transparent;
 }
 
 .header-link:hover {
-  @apply opacity-75;
+  @apply opacity-90;
 }
 
 .header-link-active {

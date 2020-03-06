@@ -1,8 +1,9 @@
 import React, { useState } from "react"
 import SlideMenuButton from "./slidemenubutton"
 import SlideMenuContainer from "./slidemenucontainer"
+import SlideMenuCanvas from "./slidemenucanvas"
 
-const SlideMenu = () => {
+const SlideMenu = ({ title }) => {
   const [visible, setVisible] = useState(false)
 
   const toggleMenu = () => {
@@ -16,7 +17,12 @@ const SlideMenu = () => {
   return (
     <>
       <SlideMenuButton onClickHandle={onClickHandle} />
-      <SlideMenuContainer onClickHandle={onClickHandle} visible={visible} />
+      <SlideMenuCanvas onClickHandle={onClickHandle} visible={visible} />
+      <SlideMenuContainer
+        title={title}
+        onClickHandle={onClickHandle}
+        visible={visible}
+      />
     </>
   )
 }
