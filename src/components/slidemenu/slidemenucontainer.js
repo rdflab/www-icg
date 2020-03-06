@@ -46,9 +46,9 @@ const SlideMenuContainer = ({ onClickHandle, visible }) => {
           padding: 0,
           top: "50vh",
           left: "50%",
-          transform: "translate(-50%, -50%)",
-          width: "95%",
-          height: "95vh",
+          transform: "translate(-50%, -53%)",
+          width: "90%",
+          height: "90vh",
         }}
       >
         <div className="row items-center justify-between p-4 bg-blue-columbia-80 w-full">
