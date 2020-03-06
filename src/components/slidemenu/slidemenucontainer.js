@@ -39,21 +39,21 @@ const SlideMenuContainer = ({ onClickHandle, visible }) => {
       onClick={onClickHandle}
     >
       <div
-        className={`fixed col shadow-md rounded-md bg-white`}
+        className={`fixed col shadow-lg rounded-lg bg-white`}
         style={{
           margin: 0,
           padding: 0,
           top: "50vh",
-          left: "50vw",
+          left: "50%",
           transform: "translate(-50%, -50%)",
-          width: "95vw",
+          width: "95%",
           height: "95vh",
         }}
       >
         <div className="row items-center justify-end p-4">
           <SlideMenuCloseButton />
         </div>
-        <div>
+        <div className="border-t border-solid border-gray-300">
           {links.map((link, index) => {
             return (
               <div key={index}>

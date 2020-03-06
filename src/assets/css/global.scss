@@ -163,7 +163,7 @@ a:hover {
 }
 
 .slide-menu-container-2 {
-  @apply fixed m-0 p-0 top-0 left-0 w-screen h-screen z-50 opacity-0 transition duration-500;
+  @apply fixed m-0 p-0 top-0 left-0 w-full h-screen z-50 opacity-0 transition duration-500;
   transform: translate3d(0, -100vh, 0);
   background: rgba(255, 255, 255, 0.9);
 }
@@ -175,7 +175,7 @@ a:hover {
 
 
 .slide-menu-link {
-  @apply link bg-white blue font-semibold p-4 block;
+  @apply link bg-white blue font-semibold py-4 px-8 border-b border-solid border-gray-300 block;
 }
 
 .slide-menu-link:hover {
