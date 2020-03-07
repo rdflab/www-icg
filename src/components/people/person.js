@@ -8,38 +8,49 @@
 import React from "react"
 import Columns from "../columns"
 import MainColumn from "../maincolumn"
-import styled from "styled-components"
 import ContactInfo from "./contactinfo"
 import Column from "../column"
 import TextLink from "../textlink"
+import Img from "gatsby-image"
 
-const PersonDiv = styled.div`
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-`
-
-const Person = ({ person, groupMap, showLabLink }) => {
+const Person = ({ person, groupMap, showLabLink, image }) => {
   return (
-    <PersonDiv>
+    <div className="my-4">
       <Columns>
         <MainColumn w="7/12" className="mb-4">
-          <div>
-            <h3>
-              <TextLink
-                to={`/research-areas/faculty-and-staff/${person.frontmatter.id}`}
-              >
-                {person.frontmatter.firstName} {person.frontmatter.lastName}
-              </TextLink>
-            </h3>
-          </div>
-          <div className="gray">{person.frontmatter.titles[0]}</div>
+          <Columns>
+            <Column w="2/12" className="mr-2">
+              {image !== null && (
+                <Img
+                  fluid={image.childImageSharp.fluid}
+                  className="w-full shadow rounded"
+                />
+              )}
+            </Column>
+            <Column w="10/12">
+              <div>
+                <h3>
+                  <TextLink
+                    to={`/research-areas/faculty-and-staff/${person.frontmatter.id}`}
+                  >
+                    {person.frontmatter.firstName} {person.frontmatter.lastName}
+                  </TextLink>
+                </h3>
+              </div>
+              <div className="gray">{person.frontmatter.titles[0]}</div>
+            </Column>
+          </Columns>
         </MainColumn>
         <Column w="5/12">
           <ContactInfo person={person} />
         </Column>
       </Columns>
-    </PersonDiv>
+    </div>
   )
+}
+
+Person.defaultProps = {
+  image: null,
 }
 
 export default Person

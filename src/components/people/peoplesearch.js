@@ -15,7 +15,7 @@ import SideColumn from "../sidecolumn"
 
 const EMPTY_QUERY = ""
 
-const PeopleSearch = ({ groupMap, allPeople, showLabLink }) => {
+const PeopleSearch = ({ groupMap, allPeople, showLabLink, imageMap }) => {
   const [query, setQuery] = useState(EMPTY_QUERY)
   const [filteredPeople, setFilteredPeople] = useState([])
   const [page, setPage] = useState(1)
@@ -117,6 +117,7 @@ const PeopleSearch = ({ groupMap, allPeople, showLabLink }) => {
         />
 
         <PeopleTypes
+          imageMap={imageMap}
           allPeople={typeOrderedPeople}
           groupMap={groupMap}
           showLabLink={showLabLink}
@@ -148,6 +149,7 @@ const PeopleSearch = ({ groupMap, allPeople, showLabLink }) => {
 
 PeopleSearch.defaultProps = {
   showLabLink: true,
+  imageMap: {},
 }
 
 export default PeopleSearch

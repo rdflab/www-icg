@@ -19,12 +19,12 @@
 //   return ret
 // }
 
-const toImageMap = labs => {
+const toImageMap = files => {
   let ret = {}
 
-  for (let lab of labs) {
-    ret[lab.id] = lab
-  }
+  files.edges.map(({ node }) => {
+    ret[node.name] = node
+  })
 
   return ret
 }

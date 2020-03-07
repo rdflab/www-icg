@@ -8,7 +8,7 @@
 import React from "react"
 import Person from "./person"
 
-const PeopleList = ({ people, groupMap: groupMap, showLabLink }) => (
+const PeopleList = ({ people, groupMap: groupMap, showLabLink, imageMap }) => (
   <>
     {people.map((person, index) => (
       <Person
@@ -16,9 +16,19 @@ const PeopleList = ({ people, groupMap: groupMap, showLabLink }) => (
         person={person}
         groupMap={groupMap}
         showLabLink={showLabLink}
+        image={
+          person.frontmatter.id in imageMap
+            ? imageMap[person.frontmatter.id]
+            : null
+        }
       />
     ))}
   </>
 )
+
+PeopleList.defaultProps = {
+  showLabLink: true,
+  imageMap: {},
+}
 
 export default PeopleList

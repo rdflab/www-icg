@@ -16,7 +16,7 @@ const StyledDiv = styled.div`
   border-bottom: solid 1px lightgray;
 `
 
-const PeopleTypes = ({ allPeople, groupMap, showLabLink }) => {
+const PeopleTypes = ({ allPeople, groupMap, showLabLink, imageMap }) => {
   const peopleMap = toPeopleTypeMap(allPeople)
 
   var elems = []
@@ -35,6 +35,7 @@ const PeopleTypes = ({ allPeople, groupMap, showLabLink }) => {
       elems.push(
         <PeopleList
           key={c++}
+          imageMap={imageMap}
           people={people}
           groupMap={groupMap}
           showLabLink={showLabLink}
@@ -44,6 +45,11 @@ const PeopleTypes = ({ allPeople, groupMap, showLabLink }) => {
   }
 
   return <>{elems}</>
+}
+
+PeopleTypes.defaultProps = {
+  showLabLink: true,
+  imageMap: {},
 }
 
 export default PeopleTypes

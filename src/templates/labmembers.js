@@ -1,16 +1,17 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Img from "gatsby-image"
 import CrumbLayout from "../components/crumblayout"
 import PeopleSearch from "../components/people/peoplesearch"
+import toImageMap from "../utils/toimagemap"
 
-const LabMembersTemplate = props => {
-  const { pageContext } = props
+const LabMembersTemplate = ({ pageContext, data }) => {
   const { group, groupMap, peopleMap } = pageContext
 
   const faculty = peopleMap[group.leaders[0]]
 
   const people = []
+
+  const imageMap = toImageMap(data.files)
 
   for (let pid of group.members) {
     people.push(peopleMap[pid])
@@ -33,6 +34,7 @@ const LabMembersTemplate = props => {
       title={title}
     >
       <PeopleSearch
+        imageMap={imageMap}
         groupMap={groupMap}
         allPeople={people}
         showLabLink={false}
@@ -43,15 +45,25 @@ const LabMembersTemplate = props => {
 
 export default LabMembersTemplate
 
-// export const query = graphql`
-//   query($id: String!) {
-//     files(absolutePath: { regex: "/images/people/" }) {
-//       relativePath
-//       childImageSharp {
-//         fluid(maxWidth: 500) {
-//           ...GatsbyImageSharpFluid
-//         }
-//       }
-//     }
-//   }
-// `
+export const query = graphql`
+  query {
+    files: allFile(
+      filter: {
+        absolutePath: { regex: "/images/people/" }
+        ext: { eq: ".jpg" }
+      }
+    ) {
+      edges {
+        node {
+          name
+          relativePath
+          childImageSharp {
+            fluid(maxWidth: 500) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+  }
+`
