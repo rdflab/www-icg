@@ -4,7 +4,7 @@ import PeopleSearch from "../components/people/peoplesearch"
 
 const ResearchAreaTemplate = props => {
   const { pageContext } = props
-  const { labMap, allPeople, researchArea } = pageContext
+  const { groupMap, allPeople, researchArea } = pageContext
 
   const people = allPeople.filter(person => {
     return person.frontmatter.researchAreas.includes(researchArea.id)
@@ -19,7 +19,7 @@ const ResearchAreaTemplate = props => {
       ]}
       title={researchArea.name}
     >
-      <PeopleSearch labMap={labMap} allPeople={people} />
+      <PeopleSearch groupMap={groupMap} allPeople={people} />
     </CrumbLayout>
   )
 }

@@ -18,7 +18,7 @@ const PersonDiv = styled.div`
   padding-bottom: 1rem;
 `
 
-const Person = ({ person, labMap, showLabLink }) => {
+const Person = ({ person, groupMap, showLabLink }) => {
   return (
     <PersonDiv>
       <Columns>

@@ -15,7 +15,7 @@ import SideColumn from "../sidecolumn"
 
 const EMPTY_QUERY = ""
 
-const PeopleSearch = ({ labMap, allPeople, showLabLink }) => {
+const PeopleSearch = ({ groupMap, allPeople, showLabLink }) => {
   const [query, setQuery] = useState(EMPTY_QUERY)
   const [filteredPeople, setFilteredPeople] = useState([])
   const [page, setPage] = useState(1)
@@ -118,7 +118,7 @@ const PeopleSearch = ({ labMap, allPeople, showLabLink }) => {
 
         <PeopleTypes
           allPeople={typeOrderedPeople}
-          labMap={labMap}
+          groupMap={groupMap}
           showLabLink={showLabLink}
         />
         <div className="has-text-centered">

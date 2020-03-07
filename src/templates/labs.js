@@ -4,7 +4,7 @@ import LabSearch from "../components/labsearch"
 
 const LabsTemplate = props => {
   const { pageContext } = props
-  const { allLabs, peopleMap } = pageContext
+  const { groups, peopleMap } = pageContext
 
   return (
     <CrumbLayout
@@ -15,7 +15,7 @@ const LabsTemplate = props => {
       ]}
       title="Research Labs"
     >
-      <LabSearch allLabs={allLabs} peopleMap={peopleMap} />
+      <LabSearch allGroups={groups} peopleMap={peopleMap} />
     </CrumbLayout>
   )
 }

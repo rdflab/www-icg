@@ -2,12 +2,12 @@ import React from "react"
 import SideBarLink from "../sidebar/sidebarlink"
 import Collapsible from "../collapsible"
 
-const SideBarMembers = ({ lab, people }) => (
+const SideBarMembers = ({ group, people }) => (
   <div className="mt-8">
     <Collapsible title="Lab Members" height="auto">
       {/* <div className="bottom-spacing-1">
       <SideBarLink
-        to={`/research-areas/labs/${lab.id}/members`}
+        to={`/research-areas/labs/${group.id}/members`}
         style={{ marginBottom: "1rem" }}
       >
         Overview

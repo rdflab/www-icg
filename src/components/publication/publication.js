@@ -44,19 +44,19 @@ const authorString = (authors, maxAuthors) => {
 
 const Publication = ({
   publication,
-  labMap,
+  groupMap,
   peopleMap,
   showLabLink,
   maxAuthors,
 }) => {
   const authors = authorString(publication.authors, maxAuthors)
-  const labId = publication.labs[0]
+  const groupId = publication.groups[0]
   let name
   let shortName
 
-  if (labId in labMap) {
-    const lab = labMap[labId]
-    const pi = lab.leaders[0]
+  if (groupId in groupMap) {
+    const group = groupMap[groupId]
+    const pi = group.leaders[0]
     const person = peopleMap[pi]
     name =
       person.frontmatter.firstName + " " + person.frontmatter.lastName + " Lab"
@@ -81,7 +81,7 @@ const Publication = ({
         <Column w="1/2">
           {name !== "" && showLabLink && (
             <div className="md:text-right">
-              <BlueLink to={`/research-areas/labs/${labId}`}>
+              <BlueLink to={`/research-areas/labs/${groupId}`}>
                 {shortName}
               </BlueLink>
             </div>

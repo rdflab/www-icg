@@ -39,8 +39,8 @@ const MemberTemplate = ({ pageContext, data }) => {
   const {
     id,
     person,
-    lab,
-    labMap,
+    group,
+    groupMap,
     labPeople,
     peopleMap,
     publications,
@@ -85,7 +85,7 @@ const MemberTemplate = ({ pageContext, data }) => {
               <h2>Publications</h2>
 
               <SimplePubSearch
-                labMap={labMap}
+                groupMap={groupMap}
                 peopleMap={peopleMap}
                 allPublications={publications}
                 showLabLink={false}
@@ -109,7 +109,7 @@ const MemberTemplate = ({ pageContext, data }) => {
               </div>
             )}
           </SideBar>
-          <SideBarMembers lab={lab} people={labPeople} />
+          <SideBarMembers group={group} people={labPeople} />
         </SideColumn>
       </Columns>
     </CrumbLayout>

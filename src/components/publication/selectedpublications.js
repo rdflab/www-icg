@@ -9,7 +9,7 @@ import React from "react"
 import Publication from "./publication"
 import { Link } from "gatsby"
 
-const SelectedPublications = ({ lab, publications, labMap, top }) => {
+const SelectedPublications = ({ lab, publications, groupMap, top }) => {
   const createPublications = publications => {
     let ret = []
 
@@ -19,7 +19,7 @@ const SelectedPublications = ({ lab, publications, labMap, top }) => {
     for (let publication of publications) {
       if (publication.tags.includes("selected")) {
         ret.push(
-          <Publication key={i} publication={publication} labMap={labMap} />
+          <Publication key={i} publication={publication} groupMap={groupMap} />
         )
         ++c
       }

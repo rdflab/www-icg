@@ -10,9 +10,9 @@ import HTMLDiv from "../components/htmldiv"
 
 const LabOverviewTemplate = props => {
   const { pageContext } = props
-  const { lab, labPeople, peopleMap, labPublications, labHtml } = pageContext
+  const { group, labPeople, peopleMap, labPublications, labHtml } = pageContext
 
-  const faculty = peopleMap[lab.leaders[0]]
+  const faculty = peopleMap[group.leaders[0]]
 
   const title = `The ${faculty.frontmatter.lastName} Lab`
 
@@ -20,8 +20,8 @@ const LabOverviewTemplate = props => {
     ["Home", "/"],
     ["Research Areas", "/research-areas"],
     ["Labs", "/research-areas/labs"],
-    [title, `/research-areas/labs/${lab.id}`],
-    [`Overview`, `/research-areas/labs/${lab.id}/overview`],
+    [title, `/research-areas/labs/${group.id}`],
+    [`Overview`, `/research-areas/labs/${group.id}/overview`],
   ]
 
   return (
@@ -32,7 +32,7 @@ const LabOverviewTemplate = props => {
         </MainColumn>
         <SideColumn>
           {/* <SideBar> */}
-          <SideBarMembers lab={lab} people={labPeople} />
+          <SideBarMembers group={group} people={labPeople} />
           {/* </SideBar> */}
         </SideColumn>
       </Columns>

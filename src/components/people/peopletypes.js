@@ -16,7 +16,7 @@ const StyledDiv = styled.div`
   border-bottom: solid 1px lightgray;
 `
 
-const PeopleTypes = ({ allPeople, labMap, showLabLink }) => {
+const PeopleTypes = ({ allPeople, groupMap, showLabLink }) => {
   const peopleMap = toPeopleTypeMap(allPeople)
 
   var elems = []
@@ -36,7 +36,7 @@ const PeopleTypes = ({ allPeople, labMap, showLabLink }) => {
         <PeopleList
           key={c++}
           people={people}
-          labMap={labMap}
+          groupMap={groupMap}
           showLabLink={showLabLink}
         />
       )

@@ -1,19 +1,19 @@
 import React from "react"
 import CrumbLayout from "../components/crumblayout"
-import toLabMap from "../utils/tolabmap"
+import toGroupMap from "../utils/togroupmap"
 import PubSearch from "../components/publication/pubsearch"
 
 const LabPublicationsTemplate = props => {
   const { pageContext } = props
-  const { lab, peopleMap, allPublications } = pageContext
-  const labMap = toLabMap([lab])
+  const { group, peopleMap, allPublications } = pageContext
+  const groupMap = toGroupMap([group])
 
-  const faculty = peopleMap[lab.leaders[0]]
+  const faculty = peopleMap[group.leaders[0]]
 
   const publications = []
 
   allPublications.forEach(publication => {
-    if (publication.labs.includes(lab.id)) {
+    if (publication.groups.includes(group.id)) {
       publications.push(publication)
     }
   })
@@ -28,14 +28,14 @@ const LabPublicationsTemplate = props => {
         ["Labs", "/research-areas/labs"],
         [
           `${faculty.firstName} ${faculty.lastName}`,
-          `/research-areas/labs/${lab.id}`,
+          `/research-areas/labs/${group.id}`,
         ],
-        ["Publications", `/research-areas/labs/${lab.id}/publications`],
+        ["Publications", `/research-areas/labs/${group.id}/publications`],
       ]}
       title={title}
     >
       <PubSearch
-        labMap={labMap}
+        groupMap={groupMap}
         peopleMap={peopleMap}
         allPublications={publications}
         showLabLink={false}

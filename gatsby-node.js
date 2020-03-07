@@ -28,11 +28,11 @@ const toPeopleMap = people => {
   return ret
 }
 
-const toLabMap = labs => {
+const toGroupMap = groups => {
   let ret = {}
 
-  for (let lab of labs) {
-    ret[lab.id] = lab
+  for (let group of groups) {
+    ret[group.id] = group
   }
 
   return ret
@@ -71,7 +71,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const result = await graphql(`
     query {
-      labs: allGroupsJson(filter: { type: { eq: "Lab" } }) {
+      labGroups: allGroupsJson(filter: { type: { eq: "Lab" } }) {
         edges {
           node {
             id
@@ -119,7 +119,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               initials
               lastName
             }
-            labs
+            groups
             people
             journal
             issue
@@ -217,7 +217,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const allPeople = []
   const allPublications = []
   const allNews = []
-  const allLabs = []
+  const allLabGroups = []
   const allCalEvents = []
   const allResearchAreas = []
   const researchAreasMap = {}
@@ -257,11 +257,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     allNews.push(node)
   })
 
-  result.data.labs.edges.forEach(({ node }) => {
-    allLabs.push(node)
+  result.data.labGroups.edges.forEach(({ node }) => {
+    allLabGroups.push(node)
   })
 
-  const labMap = toLabMap(allLabs)
+  const groupMap = toGroupMap(allLabGroups)
 
   result.data.events.edges.forEach(({ node }) => {
     const calEvent = node
@@ -278,27 +278,27 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     markdownMap[node.frontmatter.path] = node
   })
 
-  for (let lab of allLabs) {
-    const path = `/research-areas/labs/${lab.id}`
+  for (let group of allLabGroups) {
+    const path = `/research-areas/labs/${group.id}`
 
     const labPublications = []
 
     allPublications.forEach(publication => {
-      if (publication.labs.includes(lab.id)) {
+      if (publication.groups.includes(group.id)) {
         labPublications.push(publication)
       }
     })
 
     const labPeople = []
 
-    for (let pid of lab.members) {
+    for (let pid of group.members) {
       labPeople.push(peopleMap[pid])
     }
 
     const labNews = []
 
     for (item of allNews) {
-      if (item.frontmatter.groups.includes(lab.id)) {
+      if (item.frontmatter.groups.includes(group.id)) {
         labNews.push(item)
       }
     }
@@ -313,10 +313,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
 
     createPage({
-      path: `/research-areas/labs/${lab.id}`,
+      path: `/research-areas/labs/${group.id}`,
       component: labTemplate,
       context: {
-        lab: lab,
+        group: group,
+        groupMap: groupMap,
         peopleMap: peopleMap,
         labPublications: labPublications,
         labNews: labNews,
@@ -330,10 +331,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     //
 
     createPage({
-      path: `/research-areas/labs/${lab.id}/overview`,
+      path: `/research-areas/labs/${group.id}/overview`,
       component: labOverviewTemplate,
       context: {
-        lab: lab,
+        group: group,
         labPeople: labPeople,
         peopleMap: peopleMap,
         labPublications: labPublications,
@@ -349,7 +350,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       path: `${path}/members`,
       component: labMembersTemplate,
       context: {
-        lab: lab,
+        group: group,
         labPeople: labPeople,
         peopleMap: peopleMap,
       },
@@ -363,7 +364,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       path: `${path}/publications`,
       component: labPublicationsTemplate,
       context: {
-        lab: lab,
+        group: group,
         peopleMap: peopleMap,
         allPublications: allPublications,
       },
@@ -373,7 +374,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     // For each person
     //
 
-    for (let pid of lab.members) {
+    for (let pid of group.members) {
       const person = peopleMap[pid]
 
       const personPublications = []
@@ -390,8 +391,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         context: {
           id: person.frontmatter.id,
           person: person,
-          lab: lab,
-          labMap: labMap,
+          group: group,
+          groupMap: groupMap,
           labPeople: labPeople,
           peopleMap: peopleMap,
           publications: personPublications,
@@ -456,7 +457,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     path: "/research-areas/labs",
     component: labsTemplate,
     context: {
-      allLabs: allLabs,
+      groups: allLabGroups,
       peopleMap: peopleMap,
     },
   })
@@ -467,7 +468,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     path: "/research-areas/faculty-and-staff",
     component: facultyAndStaffTemplate,
     context: {
-      allLabs: allLabs,
+      groupMap: groupMap,
       allPeople: allPeople,
     },
   })
@@ -478,7 +479,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     path: "/research-areas/publications",
     component: publicationsTemplate,
     context: {
-      allLabs: allLabs,
+      groupMap: groupMap,
       peopleMap: peopleMap,
       allPublications: allPublications,
     },
@@ -501,7 +502,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       path: `/research-areas/${researchArea.id}`,
       component: researchAreaTemplate,
       context: {
-        labMap: labMap,
+        groupMap: groupMap,
         allPeople: allPeople,
         researchArea: researchArea,
       },

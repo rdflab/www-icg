@@ -10,9 +10,9 @@ import Publication from "./publication"
 import Button from "../../components/button"
 
 const RecentPublications = ({
-  lab,
+  group,
   publications,
-  labMap,
+  groupMap,
   peopleMap,
   top,
   className,
@@ -26,7 +26,7 @@ const RecentPublications = ({
         <Publication
           key={i}
           publication={publications[i]}
-          labMap={labMap}
+          groupMap={groupMap}
           peopleMap={peopleMap}
         />
       )
@@ -40,7 +40,9 @@ const RecentPublications = ({
       <h2>Recent Publications</h2>
       <div className="mt-4">{createPublications(publications)}</div>
       <div className="text-center">
-        <Button to={`/research-areas/labs/${lab.id}/publications`}>More</Button>
+        <Button to={`/research-areas/labs/${group.id}/publications`}>
+          More
+        </Button>
       </div>
     </div>
   )

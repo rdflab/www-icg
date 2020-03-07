@@ -13,7 +13,7 @@ import SmallColumn from "../smallcolumn"
 
 const EMPTY_QUERY = ""
 
-const PubSearch = ({ labMap, peopleMap, allPublications, showLabLink }) => {
+const PubSearch = ({ groupMap, peopleMap, allPublications, showLabLink }) => {
   const [query, setQuery] = useState(EMPTY_QUERY)
   const [filteredPublications, setFilteredPublications] = useState([])
   const [page, setPage] = useState(1)
@@ -79,7 +79,7 @@ const PubSearch = ({ labMap, peopleMap, allPublications, showLabLink }) => {
 
         <PublicationYears
           publications={pagedPublications}
-          labMap={labMap}
+          groupMap={groupMap}
           peopleMap={peopleMap}
           showLabLink={showLabLink}
         />

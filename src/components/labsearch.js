@@ -11,14 +11,13 @@ import Column from "./column"
 import SmallColumn from "./smallcolumn"
 import SideColumn from "./sidecolumn"
 import MainColumn from "./maincolumn"
-import BlueLink from "./bluelink"
 import TextLink from "./textlink"
 
 const EMPTY_QUERY = ""
 
-const LabSearch = ({ allLabs, peopleMap }) => {
+const LabSearch = ({ allGroups, peopleMap }) => {
   const [query, setQuery] = useState(EMPTY_QUERY)
-  const [filteredLabs, setFilteredLabs] = useState([])
+  const [filteredGroups, setFilteredGroups] = useState([])
   const [page, setPage] = useState(1)
   const [recordsPerPage, setRecordsPerPage] = useState(20)
 
@@ -26,15 +25,15 @@ const LabSearch = ({ allLabs, peopleMap }) => {
     const q = e.target.value
     let ret = []
 
-    for (let lab of allLabs) {
-      if (lab.name.toLowerCase().includes(q.toLowerCase())) {
-        ret.push(lab)
+    for (let group of allGroups) {
+      if (group.name.toLowerCase().includes(q.toLowerCase())) {
+        ret.push(group)
       }
     }
 
     // update state according to the latest query and results
     setQuery(q)
-    setFilteredLabs(ret)
+    setFilteredGroups(ret)
     setPage(1)
   }
 
@@ -44,24 +43,24 @@ const LabSearch = ({ allLabs, peopleMap }) => {
   }
 
   const hasSearchResults = query !== EMPTY_QUERY
-  let labs = hasSearchResults ? filteredLabs : allLabs
+  let groups = hasSearchResults ? filteredGroups : allGroups
 
   const offset = (page - 1) * recordsPerPage
-  let pagedLabs = labs.slice(offset, offset + recordsPerPage)
+  let pagedGroups = groups.slice(offset, offset + recordsPerPage)
 
   return (
     <Columns>
       <SmallColumn>
         <SearchBar
           handleInputChange={handleInputChange}
-          placeholder="Type to find labs"
+          placeholder="Type to find labs..."
         />
       </SmallColumn>
       <MainColumn>
-        <SearchSummary count={labs.length} single="Lab" plural="Labs" />
+        <SearchSummary count={groups.length} single="Lab" plural="Labs" />
 
-        {pagedLabs.map((lab, index) => {
-          const person = peopleMap[lab.leaders[0]]
+        {pagedGroups.map((group, index) => {
+          const person = peopleMap[group.leaders[0]]
 
           let name =
             person.frontmatter.firstName + " " + person.frontmatter.lastName
@@ -78,15 +77,17 @@ const LabSearch = ({ allLabs, peopleMap }) => {
               <Columns>
                 <Column w="1/2">
                   <h3>
-                    <TextLink to={`/research-areas/labs/${lab.id}`}>
+                    <TextLink to={`/research-areas/labs/${group.id}`}>
                       {name}
                     </TextLink>
                   </h3>
                 </Column>
                 <Column w="1/2" style={{ borderLeft: "solid 1px lightgray" }}>
-                  <MembersLink to={`/research-areas/labs/${lab.id}/members`} />
+                  <MembersLink
+                    to={`/research-areas/labs/${group.id}/members`}
+                  />
                   <PublicationsLink
-                    to={`/research-areas/labs/${lab.id}/publications`}
+                    to={`/research-areas/labs/${group.id}/publications`}
                   />
                   <EmailLink to={person.frontmatter.email[0]} />
                 </Column>
@@ -97,7 +98,7 @@ const LabSearch = ({ allLabs, peopleMap }) => {
 
         <Pagination
           page={page}
-          totalRecords={labs.length}
+          totalRecords={groups.length}
           recordsPerPage={recordsPerPage}
           pageNeighbours={1}
           onPageChanged={onPageChanged}

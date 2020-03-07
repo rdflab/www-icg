@@ -19,7 +19,7 @@
 //   return ret
 // }
 
-const toLabMap = labs => {
+const toImageMap = labs => {
   let ret = {}
 
   for (let lab of labs) {
@@ -29,4 +29,4 @@ const toLabMap = labs => {
   return ret
 }
 
-export default toLabMap
+export default toImageMap

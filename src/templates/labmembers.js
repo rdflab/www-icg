@@ -1,18 +1,18 @@
 import React from "react"
+import { graphql } from "gatsby"
+import Img from "gatsby-image"
 import CrumbLayout from "../components/crumblayout"
-import toLabMap from "../utils/tolabmap"
 import PeopleSearch from "../components/people/peoplesearch"
 
 const LabMembersTemplate = props => {
   const { pageContext } = props
-  const { lab, peopleMap } = pageContext
-  const labMap = toLabMap([lab])
+  const { group, groupMap, peopleMap } = pageContext
 
-  const faculty = peopleMap[lab.leaders[0]]
+  const faculty = peopleMap[group.leaders[0]]
 
   const people = []
 
-  for (let pid of lab.members) {
+  for (let pid of group.members) {
     people.push(peopleMap[pid])
   }
 
@@ -26,15 +26,32 @@ const LabMembersTemplate = props => {
         ["Labs", "/research-areas/labs"],
         [
           `${faculty.frontmatter.firstName} ${faculty.frontmatter.lastName}`,
-          `/research-areas/labs/${lab.id}`,
+          `/research-areas/labs/${group.id}`,
         ],
-        ["Members", `/research-areas/labs/${lab.id}/members`],
+        ["Members", `/research-areas/labs/${group.id}/members`],
       ]}
       title={title}
     >
-      <PeopleSearch labMap={labMap} allPeople={people} showLabLink={false} />
+      <PeopleSearch
+        groupMap={groupMap}
+        allPeople={people}
+        showLabLink={false}
+      />
     </CrumbLayout>
   )
 }
 
 export default LabMembersTemplate
+
+// export const query = graphql`
+//   query($id: String!) {
+//     files(absolutePath: { regex: "/images/people/" }) {
+//       relativePath
+//       childImageSharp {
+//         fluid(maxWidth: 500) {
+//           ...GatsbyImageSharpFluid
+//         }
+//       }
+//     }
+//   }
+// `

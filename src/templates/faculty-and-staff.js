@@ -1,12 +1,10 @@
 import React from "react"
 import CrumbLayout from "../components/crumblayout"
-import toLabMap from "../utils/tolabmap"
 import PeopleSearch from "../components/people/peoplesearch"
 
 const FacultyAndStaffTemplate = props => {
   const { pageContext } = props
-  const { allLabs, allPeople } = pageContext
-  const labMap = toLabMap(allLabs)
+  const { groupMap, allPeople } = pageContext
 
   return (
     <CrumbLayout
@@ -17,7 +15,7 @@ const FacultyAndStaffTemplate = props => {
       ]}
       title="Faculty and Staff"
     >
-      <PeopleSearch labMap={labMap} allPeople={allPeople} />
+      <PeopleSearch groupMap={groupMap} allPeople={allPeople} />
     </CrumbLayout>
   )
 }

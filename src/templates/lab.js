@@ -2,7 +2,7 @@ import React from "react"
 import CrumbLayout from "../components/crumblayout"
 
 import RecentPublications from "../components/publication/recentpublications"
-import toLabMap from "../utils/tolabmap"
+import toGroupMap from "../utils/togroupmap"
 import Columns from "../components/columns"
 import Button from "../components/button"
 //import SideBar from "../components/sidebar/sidebar"
@@ -17,17 +17,16 @@ import HTMLDiv from "../components/htmldiv"
 const LabTemplate = props => {
   const { pageContext } = props
   const {
-    lab,
+    group,
     peopleMap,
     labPublications,
     labNews,
     labExcerptHtml,
   } = pageContext
 
-  const labs = [lab] //toLabs([lab], peopleMap)
-  const labMap = toLabMap(labs)
+  const groupMap = toGroupMap([group])
 
-  const faculty = peopleMap[lab.leaders[0]]
+  const faculty = peopleMap[group.leaders[0]]
 
   const title = `The ${faculty.frontmatter.lastName} Lab`
 
@@ -35,20 +34,20 @@ const LabTemplate = props => {
     ["Home", "/"],
     ["Research Areas", "/research-areas"],
     ["Labs", "/research-areas/labs"],
-    [title, `/research-areas/labs/${lab.id}`],
+    [title, `/research-areas/labs/${group.id}`],
   ]
 
   return (
     <CrumbLayout crumbs={crumbs} title={title}>
       <Columns>
         <SmallColumn>
-          <ContactInfo person={faculty} urls={lab.urls} />
+          <ContactInfo person={faculty} urls={group.urls} />
         </SmallColumn>
         <MainColumn>
           <HTMLDiv html={labExcerptHtml} />
 
           <div className="text-center">
-            <Button to={`/research-areas/labs/${lab.id}/overview`}>
+            <Button to={`/research-areas/labs/${group.id}/overview`}>
               Learn more
             </Button>
           </div>
@@ -60,16 +59,16 @@ const LabTemplate = props => {
             <div className="my-8">
               <RecentPublications
                 className="sm:hidden"
-                lab={lab}
+                group={group}
                 publications={labPublications}
-                labMap={labMap}
+                groupMap={groupMap}
                 peopleMap={peopleMap}
               />
               <Card className="hidden sm:block">
                 <RecentPublications
-                  lab={lab}
+                  group={group}
                   publications={labPublications}
-                  labMap={labMap}
+                  groupMap={groupMap}
                   peopleMap={peopleMap}
                 />
               </Card>
@@ -78,7 +77,7 @@ const LabTemplate = props => {
         </MainColumn>
         <SideColumn>
           {/* <SideBar> */}
-          <ContactInfo person={faculty} urls={lab.urls} />
+          <ContactInfo person={faculty} urls={group.urls} />
           {/* </SideBar> */}
 
           {labNews.length > 0 && (

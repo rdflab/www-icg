@@ -7,7 +7,7 @@ import SearchSummary from "../searchsummary"
 const EMPTY_QUERY = ""
 
 const SimplePubSearch = ({
-  labMap,
+  groupMap,
   peopleMap,
   allPublications,
   showLabLink,
@@ -75,7 +75,7 @@ const SimplePubSearch = ({
 
       <PublicationYears
         publications={pagedPublications}
-        labMap={labMap}
+        groupMap={groupMap}
         peopleMap={peopleMap}
         showLabLink={showLabLink}
       />

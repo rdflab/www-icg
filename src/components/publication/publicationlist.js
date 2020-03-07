@@ -8,13 +8,18 @@
 import React from "react"
 import Publication from "./publication"
 
-const PublicationList = ({ publications, labMap, peopleMap, showLabLink }) => (
+const PublicationList = ({
+  publications,
+  groupMap,
+  peopleMap,
+  showLabLink,
+}) => (
   <>
     {publications.map((publication, index) => (
       <Publication
         key={index}
         publication={publication}
-        labMap={labMap}
+        groupMap={groupMap}
         peopleMap={peopleMap}
         showLabLink={showLabLink}
       />
