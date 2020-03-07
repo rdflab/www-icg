@@ -36,7 +36,7 @@ const SlideMenuContainer = ({ title, onClickHandle, visible }) => {
           top: "50vh",
           left: "50%",
           transform: "translate(-50%, -60%)",
-          width: "90%",
+          width: "92%",
           height: "80vh",
         }}
       >
