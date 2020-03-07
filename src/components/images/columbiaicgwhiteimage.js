@@ -16,7 +16,7 @@ import Img from "gatsby-image"
 const ColumbiaICGWhiteImage = ({ style }) => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "columbia_icg_white.png" }) {
+      file(relativePath: { eq: "columbia_icg_white.png" }) {
         childImageSharp {
           fluid(maxWidth: 500) {
             ...GatsbyImageSharpFluid
@@ -26,9 +26,7 @@ const ColumbiaICGWhiteImage = ({ style }) => {
     }
   `)
 
-  return (
-    <Img fluid={data.placeholderImage.childImageSharp.fluid} style={style} />
-  )
+  return <Img fluid={data.file.childImageSharp.fluid} style={style} />
 }
 
 export default ColumbiaICGWhiteImage

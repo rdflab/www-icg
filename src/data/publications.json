@@ -2,6 +2,7 @@
   {
     "title": "Phf6 loss enhances HSC self-renewal driving tumor initiation and leukemia stem cell activity in T-ALL",
     "labs": ["adolfo-ferrando-lab"],
+    "people": ["adolfo-ferrando"],
     "authors": [
       {
         "initials": "AA",
@@ -92,6 +93,7 @@
   {
     "title": "Oncogenic hijacking of the stress response machinery in T cell acute lymphoblastic leukemia",
     "labs": ["adolfo-ferrando-lab"],
+    "people": ["adolfo-ferrando"],
     "authors": [
       {
         "initials": "N",
@@ -202,6 +204,7 @@
   {
     "title": "Structure and mechanisms of NT5C2 mutations driving thiopurine resistance in relapsed lymphoblastic leukemia",
     "labs": ["adolfo-ferrando-lab"],
+    "people": ["adolfo-ferrando"],
     "authors": [
       {
         "initials": "CL",
@@ -272,6 +275,7 @@
   {
     "title": "Clonal evolution mechanisms in NT5C2 mutant-relapsed acute lymphoblastic leukaemia",
     "labs": ["adolfo-ferrando-lab"],
+    "people": ["adolfo-ferrando"],
     "authors": [
       {
         "initials": "G",
@@ -392,6 +396,7 @@
   {
     "title": "Targeted cellular immunotherapy for T cell malignancies",
     "labs": ["adolfo-ferrando-lab"],
+    "people": ["adolfo-ferrando"],
     "authors": [
       {
         "initials": "T",
@@ -417,6 +422,7 @@
   {
     "title": "Clonal evolution in leukemia",
     "labs": ["adolfo-ferrando-lab"],
+    "people": ["adolfo-ferrando"],
     "authors": [
       {
         "initials": "AA",
@@ -442,6 +448,7 @@
   {
     "title": "Synergistic antileukemic therapies in NOTCH1-induced T-ALL",
     "labs": ["adolfo-ferrando-lab"],
+    "people": ["adolfo-ferrando"],
     "authors": [
       {
         "initials": "M",
@@ -517,6 +524,7 @@
   {
     "title": "The NOTCH1-MYC highway toward T-cell acute lymphoblastic leukemia",
     "labs": ["adolfo-ferrando-lab"],
+    "people": ["adolfo-ferrando"],
     "authors": [
       {
         "initials": "M",
@@ -542,6 +550,7 @@
   {
     "title": "Mutational landscape, clonal evolution patterns, and role of RAS mutations in relapsed acute lymphoblastic leukemia",
     "labs": ["adolfo-ferrando-lab"],
+    "people": ["adolfo-ferrando"],
     "authors": [
       {
         "initials": "K",
@@ -682,6 +691,7 @@
   {
     "title": "The genetics and mechanisms of T cell acute lymphoblastic leukaemia",
     "labs": ["adolfo-ferrando-lab"],
+    "people": ["adolfo-ferrando"],
     "authors": [
       {
         "initials": "L",
@@ -707,6 +717,7 @@
   {
     "title": "The mutational landscape of CTCL and Szary syndrome",
     "labs": ["adolfo-ferrando-lab"],
+    "people": ["adolfo-ferrando"],
     "authors": [
       {
         "initials": "Silva",
@@ -772,6 +783,7 @@
   {
     "title": "Metabolic reprogramming induces resistance to anti-NOTCH1 therapies in acute lymphoblastic leukemia",
     "labs": ["adolfo-ferrando-lab"],
+    "people": ["adolfo-ferrando"],
     "authors": [
       {
         "initials": "D",
@@ -872,6 +884,7 @@
   {
     "title": "Therapeutic targeting of HES1 transcriptional programs in T-ALL",
     "labs": ["adolfo-ferrando-lab"],
+    "people": ["adolfo-ferrando"],
     "authors": [
       {
         "initials": "SA",
@@ -927,6 +940,7 @@
   {
     "title": "A NOTCH1-driven MYC enhancer promotes T cell development, transformation and acute lymphoblastic leukemia",
     "labs": ["adolfo-ferrando-lab"],
+    "people": ["adolfo-ferrando"],
     "authors": [
       {
         "initials": "D",
@@ -1007,6 +1021,7 @@
   {
     "title": "Recurrent mutations in epigenetic regulators, RHOA and FYN kinase in peripheral T cell lymphomas",
     "labs": ["adolfo-ferrando-lab"],
+    "people": ["adolfo-ferrando"],
     "authors": [
       {
         "initials": "T",
@@ -1109,11 +1124,11 @@
         "corresponding": true
       }
     ],
-    "journal": "Nat Genet.2014 46:166-70",
-    "year": -1,
-    "volume": "",
+    "journal": "Nat Genet",
+    "year": 2014,
+    "volume": "46",
     "issue": "",
-    "pages": "",
+    "pages": "166-70",
     "pubmed": "24413734",
     "tags": ["Article"],
     "abstract": "",
@@ -1122,6 +1137,7 @@
   {
     "title": "Direct reversal of glucocorticoid resistance by AKT inhibition in T-ALL",
     "labs": ["adolfo-ferrando-lab"],
+    "people": ["adolfo-ferrando"],
     "authors": [
       {
         "initials": "E",
@@ -1232,6 +1248,7 @@
   {
     "title": "Genetic loss of SH2B3 in acute lymphoblastic leukemia",
     "labs": ["adolfo-ferrando-lab"],
+    "people": ["adolfo-ferrando"],
     "authors": [
       {
         "initials": "A",
@@ -1327,6 +1344,7 @@
   {
     "title": "Prognostic relevance of integrated genetic profiling in adult T-cell acute lymphoblastic leukemia",
     "labs": ["adolfo-ferrando-lab"],
+    "people": ["adolfo-ferrando"],
     "authors": [
       {
         "initials": "Vlierberghe",
@@ -1392,6 +1410,7 @@
   {
     "title": "Activating mutations in the NT5C2 nucleotidase gene drive chemotherapy resistance in relapsed ALL",
     "labs": ["adolfo-ferrando-lab"],
+    "people": ["adolfo-ferrando"],
     "authors": [
       {
         "initials": "G",
@@ -1492,6 +1511,7 @@
   {
     "title": "Reverse engineering of TLX oncogenic transcriptional networks identifies RUNX1 as tumor suppressor in T-ALL",
     "labs": ["adolfo-ferrando-lab"],
+    "people": ["adolfo-ferrando"],
     "authors": [
       {
         "initials": "Gatta",
@@ -1587,6 +1607,7 @@
   {
     "title": "Genetic inactivation of the Polycomb complex PRC2 in T cell acute lymphoblastic leukemia",
     "labs": ["adolfo-ferrando-lab"],
+    "people": ["adolfo-ferrando"],
     "authors": [
       {
         "initials": "P",
@@ -1742,6 +1763,7 @@
   {
     "title": "ETV6 mutations in early immature human T-cell leukemias",
     "labs": ["adolfo-ferrando-lab"],
+    "people": ["adolfo-ferrando"],
     "authors": [
       {
         "initials": "Vlierberghe",
@@ -1827,6 +1849,7 @@
   {
     "title": "PHF6 mutations in adult acute myeloid leukemia",
     "labs": ["adolfo-ferrando-lab"],
+    "people": ["adolfo-ferrando"],
     "authors": [
       {
         "initials": "Vlierberghe",
@@ -1932,6 +1955,7 @@
   {
     "title": "The TLX1 oncogene drives aneuploidy in T-cell transformation",
     "labs": ["adolfo-ferrando-lab"],
+    "people": ["adolfo-ferrando"],
     "authors": [
       {
         "initials": "K",
@@ -2117,6 +2141,7 @@
   {
     "title": "PHF6 mutations in T-cell acute lymphoblastic leukemia",
     "labs": ["adolfo-ferrando-lab"],
+    "people": ["adolfo-ferrando"],
     "authors": [
       {
         "initials": "Vlierberghe",
@@ -2297,6 +2322,7 @@
   {
     "title": "WT1 mutations in T-ALL",
     "labs": ["adolfo-ferrando-lab"],
+    "people": ["adolfo-ferrando"],
     "authors": [
       {
         "initials": "V",
@@ -2427,6 +2453,7 @@
   {
     "title": "Gamma-secretase inhibitors reverse glucocorticoid resistance in T-ALL",
     "labs": ["adolfo-ferrando-lab"],
+    "people": ["adolfo-ferrando"],
     "authors": [
       {
         "initials": "P",
@@ -2522,6 +2549,7 @@
   {
     "title": "NOTCH1 extracellular juxtamembrane expansion mutations in T-ALL",
     "labs": ["adolfo-ferrando-lab"],
+    "people": ["adolfo-ferrando"],
     "authors": [
       {
         "initials": "ML",
@@ -2587,6 +2615,7 @@
   {
     "title": "Mutational loss of PTEN induces resistance to NOTCH1 inhibition in T-cell leukemia",
     "labs": ["adolfo-ferrando-lab"],
+    "people": ["adolfo-ferrando"],
     "authors": [
       {
         "initials": "T",
@@ -2702,6 +2731,7 @@
   {
     "title": "NOTCH1 directly regulates c-MYC and activates a feed-forward-loop transcriptional network promoting leukemic cell growth",
     "labs": ["adolfo-ferrando-lab"],
+    "people": ["adolfo-ferrando"],
     "authors": [
       {
         "initials": "T",
@@ -2801,7 +2831,8 @@
   },
   {
     "title": "The combination of neoantigen quality and T lymphocyte infiltrates identifies glioblastomas with the longest survival",
-    "labs": ["anna-lasorella-lab"],
+    "labs": ["anna-lasorella-lab", "antonio-iavarone-lab"],
+    "people": ["anna-lasorella"],
     "authors": [
       {
         "initials": "J",
@@ -2861,7 +2892,8 @@
   },
   {
     "title": "The molecular landscape of glioma in patients with Neurofibromatosis 1",
-    "labs": ["anna-lasorella-lab"],
+    "labs": ["anna-lasorella-lab", "antonio-iavarone-lab"],
+    "people": ["anna-lasorella"],
     "authors": [
       {
         "initials": "F",
@@ -3111,7 +3143,8 @@
   },
   {
     "title": "Single-cell transcriptome analysis of lineage diversity in high-grade glioma",
-    "labs": ["anna-lasorella-lab"],
+    "labs": ["anna-lasorella-lab", "antonio-iavarone-lab"],
+    "people": ["anna-lasorella"],
     "authors": [
       {
         "initials": "J",
@@ -3196,7 +3229,8 @@
   },
   {
     "title": "A recurrent point mutation in PRKCA is a hallmark of chordoid gliomas",
-    "labs": ["anna-lasorella-lab"],
+    "labs": ["anna-lasorella-lab", "antonio-iavarone-lab"],
+    "people": ["anna-lasorella"],
     "authors": [
       {
         "initials": "S",
@@ -3342,6 +3376,7 @@
   {
     "title": "Transcription factor ID2 prevents E proteins from enforcing a na\u00efve T lymphocyte gene program during NK cell development",
     "labs": ["anna-lasorella-lab"],
+    "people": ["anna-lasorella"],
     "authors": [
       {
         "initials": "EC",
@@ -3411,7 +3446,8 @@
   },
   {
     "title": "Cross-Cohort Analysis Identifies a TEAD4-MYCN Positive Feedback Loop as the Core Regulatory Element of High-Risk Neuroblastoma",
-    "labs": ["anna-lasorella-lab"],
+    "labs": ["anna-lasorella-lab", "antonio-iavarone-lab"],
+    "people": ["anna-lasorella"],
     "authors": [
       {
         "initials": "P",
@@ -3577,6 +3613,7 @@
   {
     "title": "Frattini V, Pagnotta SM, Tala A, Fan JJ, Russo MV, Lee SB, Garofano L, Zhang J, Shi P, Lewis G, Sanson H, Frederick V, Castano AM, Cerulo L, Rolland DCM, Mall R, Mokhtari K, Elenitoba-Johnson KSJ, Sanson M, Huang X, Ceccarelli M, Lasorella A, Iavarone A",
     "labs": ["anna-lasorella-lab"],
+    "people": ["anna-lasorella"],
     "authors": [
       {
         "initials": "metabolic",
@@ -3597,6 +3634,7 @@
   {
     "title": "Huwe1 Sustains Normal Ovarian Epithelial Cell Transformation and Tumor Growth through the Histone H1.3-H19 Cascade",
     "labs": ["anna-lasorella-lab"],
+    "people": ["anna-lasorella"],
     "authors": [
       {
         "initials": "D",
@@ -3681,7 +3719,8 @@
   },
   {
     "title": "FGFR-TACC gene fusions in human glioma",
-    "labs": ["anna-lasorella-lab"],
+    "labs": ["anna-lasorella-lab", "antonio-iavarone-lab"],
+    "people": ["anna-lasorella"],
     "authors": [
       {
         "initials": "A",
@@ -3712,6 +3751,7 @@
   {
     "title": "The ubiquitin ligase Huwe1 regulates the maintenance and lymphoid commitment of hematopoietic stem cells",
     "labs": ["anna-lasorella-lab"],
+    "people": ["anna-lasorella"],
     "authors": [
       {
         "initials": "B",
@@ -3781,7 +3821,8 @@
   },
   {
     "title": "Clonal evolution of glioblastoma under therapy",
-    "labs": ["anna-lasorella-lab"],
+    "labs": ["anna-lasorella-lab", "antonio-iavarone-lab"],
+    "people": ["anna-lasorella"],
     "authors": [
       {
         "initials": "J",
@@ -3897,6 +3938,7 @@
   {
     "title": "Id2 reinforces TH1 differentiation and inhibits E2A to repress TFH differentiation",
     "labs": ["anna-lasorella-lab"],
+    "people": ["anna-lasorella"],
     "authors": [
       {
         "initials": "LA",
@@ -3966,7 +4008,8 @@
   },
   {
     "title": "An ID2-dependent mechanism for VHL inactivation in cancer",
-    "labs": ["anna-lasorella-lab"],
+    "labs": ["anna-lasorella-lab", "antonio-iavarone-lab"],
+    "people": ["anna-lasorella"],
     "authors": [
       {
         "initials": "SB",
@@ -4041,7 +4084,8 @@
   },
   {
     "title": "Detection, Characterization, and Inhibition of FGFR-TACC Fusions in IDH Wild-type Glioma",
-    "labs": ["anna-lasorella-lab"],
+    "labs": ["anna-lasorella-lab", "antonio-iavarone-lab"],
+    "people": ["anna-lasorella"],
     "authors": [
       {
         "initials": "Stefano",
@@ -4197,6 +4241,7 @@
   {
     "title": "Pegasus: a comprehensive annotation and prediction tool for detection of driver gene fusions in cancer",
     "labs": ["anna-lasorella-lab"],
+    "people": ["anna-lasorella"],
     "authors": [
       {
         "initials": "F",
@@ -4261,7 +4306,8 @@
   },
   {
     "title": "Myc and differentiation: going against the current",
-    "labs": ["anna-lasorella-lab"],
+    "labs": ["anna-lasorella-lab", "antonio-iavarone-lab"],
+    "people": ["anna-lasorella"],
     "authors": [
       {
         "initials": "A",
@@ -4286,7 +4332,8 @@
   },
   {
     "title": "The ID proteins: master regulators of cancer stem cells and tumour aggressiveness",
-    "labs": ["anna-lasorella-lab"],
+    "labs": ["anna-lasorella-lab", "antonio-iavarone-lab"],
+    "people": ["anna-lasorella"],
     "authors": [
       {
         "initials": "A",
@@ -4317,6 +4364,7 @@
   {
     "title": "RHPN2 drives mesenchymal transformation in malignant glioma by triggering RhoA activation",
     "labs": ["anna-lasorella-lab"],
+    "people": ["anna-lasorella"],
     "authors": [
       {
         "initials": "C",
@@ -4367,6 +4415,7 @@
   {
     "title": "Mesenchymal high-grade glioma is maintained by the ID-RAP1 axis",
     "labs": ["anna-lasorella-lab"],
+    "people": ["anna-lasorella"],
     "authors": [
       {
         "initials": "F",
@@ -4461,7 +4510,8 @@
   },
   {
     "title": "Id proteins synchronize stemness and anchorage to the niche of neural stem cells",
-    "labs": ["anna-lasorella-lab"],
+    "labs": ["anna-lasorella-lab", "antonio-iavarone-lab"],
+    "people": ["anna-lasorella"],
     "authors": [
       {
         "initials": "F",
@@ -4536,7 +4586,8 @@
   },
   {
     "title": "Transforming fusions of FGFR and TACC genes in human glioblastoma",
-    "labs": ["anna-lasorella-lab"],
+    "labs": ["anna-lasorella-lab", "antonio-iavarone-lab"],
+    "people": ["anna-lasorella"],
     "authors": [
       {
         "initials": "D",
@@ -4660,7 +4711,7 @@
       }
     ],
     "journal": "Science",
-    "year": -1,
+    "year": 2012,
     "volume": "",
     "issue": "",
     "pages": "",
@@ -4671,7 +4722,8 @@
   },
   {
     "title": "E protein transcription factors are required for the development of CD4(+) lineage T cells",
-    "labs": ["anna-lasorella-lab"],
+    "labs": ["anna-lasorella-lab", "antonio-iavarone-lab"],
+    "people": ["anna-lasorella"],
     "authors": [
       {
         "initials": "ME",
@@ -4716,7 +4768,8 @@
   },
   {
     "title": "Id2 promotes tumor cell migration and invasion through transcriptional repression of Semaphorin 3F",
-    "labs": ["anna-lasorella-lab"],
+    "labs": ["anna-lasorella-lab", "antonio-iavarone-lab"],
+    "people": ["anna-lasorella"],
     "authors": [
       {
         "initials": "S",
@@ -4761,7 +4814,8 @@
   },
   {
     "title": "The Huwe1 ubiquitin ligase is essential to synchronize neuronal and glial differentiation in the developing cerebellum",
-    "labs": ["anna-lasorella-lab"],
+    "labs": ["anna-lasorella-lab", "antonio-iavarone-lab"],
+    "people": ["anna-lasorella"],
     "authors": [
       {
         "initials": "D",
@@ -4806,7 +4860,8 @@
   },
   {
     "title": "L, Doetsch F, Colman H, Lasorella A, Aldape K, Califano A, Iavarone A",
-    "labs": ["anna-lasorella-lab"],
+    "labs": ["anna-lasorella-lab", "antonio-iavarone-lab"],
+    "people": ["anna-lasorella"],
     "authors": [
       {
         "initials": "MS",
@@ -4861,7 +4916,8 @@
   },
   {
     "title": "S, Ludwig T, Guillemot F, Aldape K, Califano A, Iavarone A, and Lasorella A",
-    "labs": ["anna-lasorella-lab"],
+    "labs": ["anna-lasorella-lab", "antonio-iavarone-lab"],
+    "people": ["anna-lasorella"],
     "authors": [
       {
         "initials": "X",
@@ -4902,6 +4958,7 @@
   {
     "title": "The HECT\u2010domain ubiquitin ligase Huwe1 controls neural differentiation and proliferation by destabilizing the N\u2010Myconcoprotein",
     "labs": ["anna-lasorella-lab"],
+    "people": ["anna-lasorella"],
     "authors": [
       {
         "initials": "X",
@@ -4956,7 +5013,8 @@
   },
   {
     "title": "Control of chromosome stability by the beta\u2010TrCP\u2010REST\u2010Mad2 axis",
-    "labs": ["anna-lasorella-lab"],
+    "labs": ["anna-lasorella-lab", "antonio-iavarone-lab"],
+    "people": ["anna-lasorella"],
     "authors": [
       {
         "initials": "D",
@@ -5026,7 +5084,8 @@
   },
   {
     "title": "Degradation of Id2 by the Anaphase Promoting Complex couples cell cycle exit and axonal growth",
-    "labs": ["anna-lasorella-lab"],
+    "labs": ["anna-lasorella-lab", "antonio-iavarone-lab"],
+    "people": ["anna-lasorella"],
     "authors": [
       {
         "initials": "A",
@@ -5091,7 +5150,8 @@
   },
   {
     "title": "E proteins and Id2 converge on p57Kip2 to regulate cell cycle in neural cells",
-    "labs": ["anna-lasorella-lab"],
+    "labs": ["anna-lasorella-lab", "antonio-iavarone-lab"],
+    "people": ["anna-lasorella"],
     "authors": [
       {
         "initials": "G",
@@ -5126,7 +5186,8 @@
   },
   {
     "title": "Id2 mediates tumor initiation, proliferation and angiogenesis in Rb mutant mice",
-    "labs": ["anna-lasorella-lab"],
+    "labs": ["anna-lasorella-lab", "antonio-iavarone-lab"],
+    "people": ["anna-lasorella"],
     "authors": [
       {
         "initials": "A",
@@ -5166,7 +5227,8 @@
   },
   {
     "title": "Retinoblastoma promotes definitive erythropoiesis by repressing Id2 in fetal liver macrophages",
-    "labs": ["anna-lasorella-lab"],
+    "labs": ["anna-lasorella-lab", "antonio-iavarone-lab"],
+    "people": ["anna-lasorella"],
     "authors": [
       {
         "initials": "A",
@@ -5211,7 +5273,8 @@
   },
   {
     "title": "Id2 is a target of the retinoblastoma protein and mediates signalling by Myc oncoproteins",
-    "labs": ["anna-lasorella-lab"],
+    "labs": ["anna-lasorella-lab", "antonio-iavarone-lab"],
+    "people": ["anna-lasorella"],
     "authors": [
       {
         "initials": "A",
@@ -5245,318 +5308,9 @@
     "url": ""
   },
   {
-    "title": "The combination of neoantigen quality and T lymphocyte infiltrates identifies glioblastomas with the longest survival",
-    "labs": ["antonio-iavarone-lab"],
-    "authors": [
-      {
-        "initials": "J",
-        "lastName": "Zhang",
-        "corresponding": false
-      },
-      {
-        "initials": "FP",
-        "lastName": "Caruso",
-        "corresponding": false
-      },
-      {
-        "initials": "JK",
-        "lastName": "Sa",
-        "corresponding": false
-      },
-      {
-        "initials": "S",
-        "lastName": "Justesen",
-        "corresponding": false
-      },
-      {
-        "initials": "DH",
-        "lastName": "Nam",
-        "corresponding": false
-      },
-      {
-        "initials": "P",
-        "lastName": "Sims",
-        "corresponding": false
-      },
-      {
-        "initials": "M",
-        "lastName": "Ceccarelli",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Lasorella",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Iavarone",
-        "corresponding": false
-      }
-    ],
-    "journal": "Commun Biol",
-    "year": 2019,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "pubmed": "31044160",
-    "tags": ["Article"],
-    "abstract": "",
-    "url": ""
-  },
-  {
-    "title": "The molecular landscape of glioma in patients with Neurofibromatosis 1",
-    "labs": ["antonio-iavarone-lab"],
-    "authors": [
-      {
-        "initials": "F",
-        "lastName": "D'Angelo",
-        "corresponding": false
-      },
-      {
-        "initials": "M",
-        "lastName": "Ceccarelli",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Tala",
-        "corresponding": false
-      },
-      {
-        "initials": "L",
-        "lastName": "Garofano",
-        "corresponding": false
-      },
-      {
-        "initials": "J",
-        "lastName": "Zhang",
-        "corresponding": false
-      },
-      {
-        "initials": "V",
-        "lastName": "Frattini",
-        "corresponding": false
-      },
-      {
-        "initials": "FP",
-        "lastName": "Caruso",
-        "corresponding": false
-      },
-      {
-        "initials": "G",
-        "lastName": "Lewis",
-        "corresponding": false
-      },
-      {
-        "initials": "KD",
-        "lastName": "Alfaro",
-        "corresponding": false
-      },
-      {
-        "initials": "L",
-        "lastName": "Bauchet",
-        "corresponding": false
-      },
-      {
-        "initials": "G",
-        "lastName": "Berzero",
-        "corresponding": false
-      },
-      {
-        "initials": "D",
-        "lastName": "Cachia",
-        "corresponding": false
-      },
-      {
-        "initials": "M",
-        "lastName": "Cangiano",
-        "corresponding": false
-      },
-      {
-        "initials": "L",
-        "lastName": "Capelle",
-        "corresponding": false
-      },
-      {
-        "initials": "Groot",
-        "lastName": "de",
-        "corresponding": false
-      },
-      {
-        "initials": "F",
-        "lastName": "DiMeco",
-        "corresponding": false
-      },
-      {
-        "initials": "F",
-        "lastName": "Ducray",
-        "corresponding": false
-      },
-      {
-        "initials": "W",
-        "lastName": "Farah",
-        "corresponding": false
-      },
-      {
-        "initials": "G",
-        "lastName": "Finocchiaro",
-        "corresponding": false
-      },
-      {
-        "initials": "S",
-        "lastName": "Goutagny",
-        "corresponding": false
-      },
-      {
-        "initials": "C",
-        "lastName": "Kamiya-Matsuoka",
-        "corresponding": false
-      },
-      {
-        "initials": "C",
-        "lastName": "Lavarino",
-        "corresponding": false
-      },
-      {
-        "initials": "H",
-        "lastName": "Loiseau",
-        "corresponding": false
-      },
-      {
-        "initials": "V",
-        "lastName": "Lorgis",
-        "corresponding": false
-      },
-      {
-        "initials": "CE",
-        "lastName": "Marras",
-        "corresponding": false
-      },
-      {
-        "initials": "I",
-        "lastName": "McCutcheon",
-        "corresponding": false
-      },
-      {
-        "initials": "DH",
-        "lastName": "Nam",
-        "corresponding": false
-      },
-      {
-        "initials": "S",
-        "lastName": "Ronchi",
-        "corresponding": false
-      },
-      {
-        "initials": "V",
-        "lastName": "Saletti",
-        "corresponding": false
-      },
-      {
-        "initials": "R",
-        "lastName": "Seizeur",
-        "corresponding": false
-      },
-      {
-        "initials": "J",
-        "lastName": "Slopis",
-        "corresponding": false
-      },
-      {
-        "initials": "M",
-        "lastName": "Su\u00f1ol",
-        "corresponding": false
-      },
-      {
-        "initials": "F",
-        "lastName": "Vandenbos",
-        "corresponding": false
-      },
-      {
-        "initials": "P",
-        "lastName": "Varlet",
-        "corresponding": false
-      },
-      {
-        "initials": "D",
-        "lastName": "Vidaud",
-        "corresponding": false
-      },
-      {
-        "initials": "C",
-        "lastName": "Watts",
-        "corresponding": false
-      },
-      {
-        "initials": "V",
-        "lastName": "Tabar",
-        "corresponding": false
-      },
-      {
-        "initials": "DE",
-        "lastName": "Reuss",
-        "corresponding": false
-      },
-      {
-        "initials": "SK",
-        "lastName": "Kim",
-        "corresponding": false
-      },
-      {
-        "initials": "D",
-        "lastName": "Meyronet",
-        "corresponding": false
-      },
-      {
-        "initials": "K",
-        "lastName": "Mokhtari",
-        "corresponding": false
-      },
-      {
-        "initials": "H",
-        "lastName": "Salvador",
-        "corresponding": false
-      },
-      {
-        "initials": "KP",
-        "lastName": "Bhat",
-        "corresponding": false
-      },
-      {
-        "initials": "M",
-        "lastName": "Eoli",
-        "corresponding": false
-      },
-      {
-        "initials": "M",
-        "lastName": "Sanson",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Lasorella",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Iavarone",
-        "corresponding": false
-      }
-    ],
-    "journal": "Nat Med",
-    "year": 2019,
-    "volume": "25",
-    "issue": "1",
-    "pages": "176-187",
-    "pubmed": "30531922",
-    "tags": ["Article"],
-    "abstract": "",
-    "url": ""
-  },
-  {
     "title": "Pharmacogenomic landscape of patient-derived tumor cells informs precision oncology therapy",
     "labs": ["antonio-iavarone-lab"],
+    "people": ["antonio-iavarone"],
     "authors": [
       {
         "initials": "JK",
@@ -5840,238 +5594,9 @@
     "url": ""
   },
   {
-    "title": "Single-cell transcriptome analysis of lineage diversity in high-grade glioma",
-    "labs": ["antonio-iavarone-lab"],
-    "authors": [
-      {
-        "initials": "J",
-        "lastName": "Yuan",
-        "corresponding": false
-      },
-      {
-        "initials": "HM",
-        "lastName": "Levitin",
-        "corresponding": false
-      },
-      {
-        "initials": "V",
-        "lastName": "Frattini",
-        "corresponding": false
-      },
-      {
-        "initials": "EC",
-        "lastName": "Bush",
-        "corresponding": false
-      },
-      {
-        "initials": "DM",
-        "lastName": "Boyett",
-        "corresponding": false
-      },
-      {
-        "initials": "J",
-        "lastName": "Samanamud",
-        "corresponding": false
-      },
-      {
-        "initials": "M",
-        "lastName": "Ceccarelli",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Dovas",
-        "corresponding": false
-      },
-      {
-        "initials": "G",
-        "lastName": "Zanazzi",
-        "corresponding": false
-      },
-      {
-        "initials": "P",
-        "lastName": "Canoll",
-        "corresponding": false
-      },
-      {
-        "initials": "JN",
-        "lastName": "Bruce",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Lasorella",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Iavarone",
-        "corresponding": false
-      },
-      {
-        "initials": "PA",
-        "lastName": "Sims",
-        "corresponding": false
-      }
-    ],
-    "journal": "Genome Med",
-    "year": 2018,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "pubmed": "30041684",
-    "tags": ["Article"],
-    "abstract": "",
-    "url": ""
-  },
-  {
-    "title": "A recurrent point mutation in PRKCA is a hallmark of chordoid gliomas",
-    "labs": ["antonio-iavarone-lab"],
-    "authors": [
-      {
-        "initials": "S",
-        "lastName": "Rosenberg",
-        "corresponding": false
-      },
-      {
-        "initials": "I",
-        "lastName": "Simeonova",
-        "corresponding": false
-      },
-      {
-        "initials": "F",
-        "lastName": "Bielle",
-        "corresponding": false
-      },
-      {
-        "initials": "M",
-        "lastName": "Verreault",
-        "corresponding": false
-      },
-      {
-        "initials": "B",
-        "lastName": "Bance",
-        "corresponding": false
-      },
-      {
-        "initials": "Roux",
-        "lastName": "Le",
-        "corresponding": false
-      },
-      {
-        "initials": "M",
-        "lastName": "Daniau",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Nadaradjane",
-        "corresponding": false
-      },
-      {
-        "initials": "V",
-        "lastName": "Gleize",
-        "corresponding": false
-      },
-      {
-        "initials": "S",
-        "lastName": "Paris",
-        "corresponding": false
-      },
-      {
-        "initials": "Y",
-        "lastName": "Marie",
-        "corresponding": false
-      },
-      {
-        "initials": "M",
-        "lastName": "Giry",
-        "corresponding": false
-      },
-      {
-        "initials": "M",
-        "lastName": "Polivka",
-        "corresponding": false
-      },
-      {
-        "initials": "D",
-        "lastName": "Figarella-Branger",
-        "corresponding": false
-      },
-      {
-        "initials": "MH",
-        "lastName": "Aubriot-Lorton",
-        "corresponding": false
-      },
-      {
-        "initials": "C",
-        "lastName": "Villa",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Vasiljevic",
-        "corresponding": false
-      },
-      {
-        "initials": "E",
-        "lastName": "Lechapt-Zalcman",
-        "corresponding": false
-      },
-      {
-        "initials": "M",
-        "lastName": "Kalamarides",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Sharif",
-        "corresponding": false
-      },
-      {
-        "initials": "K",
-        "lastName": "Mokhtari",
-        "corresponding": false
-      },
-      {
-        "initials": "SM",
-        "lastName": "Pagnotta",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Iavarone",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Lasorella",
-        "corresponding": false
-      },
-      {
-        "initials": "E",
-        "lastName": "Huillard",
-        "corresponding": false
-      },
-      {
-        "initials": "M",
-        "lastName": "Sanson",
-        "corresponding": false
-      }
-    ],
-    "journal": "Nat Commun",
-    "year": 2018,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "pubmed": "29915258",
-    "tags": ["Article"],
-    "abstract": "",
-    "url": ""
-  },
-  {
     "title": "An anatomic transcriptional atlas of human glioblastoma",
     "labs": ["antonio-iavarone-lab"],
+    "people": ["antonio-iavarone"],
     "authors": [
       {
         "initials": "RB",
@@ -6485,173 +6010,9 @@
     "url": ""
   },
   {
-    "title": "Cross-Cohort Analysis Identifies a TEAD4-MYCN Positive Feedback Loop as the Core Regulatory Element of High-Risk Neuroblastoma",
-    "labs": ["antonio-iavarone-lab"],
-    "authors": [
-      {
-        "initials": "P",
-        "lastName": "Rajbhandari",
-        "corresponding": false
-      },
-      {
-        "initials": "G",
-        "lastName": "Lopez",
-        "corresponding": false
-      },
-      {
-        "initials": "C",
-        "lastName": "Capdevila",
-        "corresponding": false
-      },
-      {
-        "initials": "B",
-        "lastName": "Salvatori",
-        "corresponding": false
-      },
-      {
-        "initials": "J",
-        "lastName": "Yu",
-        "corresponding": false
-      },
-      {
-        "initials": "R",
-        "lastName": "Rodriguez-Barrueco",
-        "corresponding": false
-      },
-      {
-        "initials": "D",
-        "lastName": "Martinez",
-        "corresponding": false
-      },
-      {
-        "initials": "M",
-        "lastName": "Yarmarkovich",
-        "corresponding": false
-      },
-      {
-        "initials": "N",
-        "lastName": "Weichert-Leahey",
-        "corresponding": false
-      },
-      {
-        "initials": "BJ",
-        "lastName": "Abraham",
-        "corresponding": false
-      },
-      {
-        "initials": "MJ",
-        "lastName": "Alvarez",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Iyer",
-        "corresponding": false
-      },
-      {
-        "initials": "JL",
-        "lastName": "Harenza",
-        "corresponding": false
-      },
-      {
-        "initials": "D",
-        "lastName": "Oldridge",
-        "corresponding": false
-      },
-      {
-        "initials": "Preter",
-        "lastName": "De",
-        "corresponding": false
-      },
-      {
-        "initials": "J",
-        "lastName": "Koster",
-        "corresponding": false
-      },
-      {
-        "initials": "S",
-        "lastName": "Asgharzadeh",
-        "corresponding": false
-      },
-      {
-        "initials": "RC",
-        "lastName": "Seeger",
-        "corresponding": false
-      },
-      {
-        "initials": "JS",
-        "lastName": "Wei",
-        "corresponding": false
-      },
-      {
-        "initials": "J",
-        "lastName": "Khan",
-        "corresponding": false
-      },
-      {
-        "initials": "J",
-        "lastName": "Vandesompele",
-        "corresponding": false
-      },
-      {
-        "initials": "P",
-        "lastName": "Mestdagh",
-        "corresponding": false
-      },
-      {
-        "initials": "R",
-        "lastName": "Versteeg",
-        "corresponding": false
-      },
-      {
-        "initials": "AT",
-        "lastName": "Look",
-        "corresponding": false
-      },
-      {
-        "initials": "RA",
-        "lastName": "Young",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Iavarone",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Lasorella",
-        "corresponding": false
-      },
-      {
-        "initials": "JM",
-        "lastName": "Silva",
-        "corresponding": false
-      },
-      {
-        "initials": "JM",
-        "lastName": "Maris",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Califano",
-        "corresponding": false
-      }
-    ],
-    "journal": "Cancer Discov",
-    "year": 2018,
-    "volume": "8",
-    "issue": "5",
-    "pages": "582-599",
-    "pubmed": "29510988",
-    "tags": ["Article"],
-    "abstract": "",
-    "url": ""
-  },
-  {
     "title": "A metabolic function of FGFR3-TACC3 gene fusions in cancer",
     "labs": ["antonio-iavarone-lab"],
+    "people": ["antonio-iavarone"],
     "authors": [
       {
         "initials": "V",
@@ -6782,6 +6143,7 @@
   {
     "title": "Spatiotemporal genomic architecture informs precision oncology in glioblastoma",
     "labs": ["antonio-iavarone-lab"],
+    "people": ["antonio-iavarone"],
     "authors": [
       {
         "initials": "JK",
@@ -6940,438 +6302,9 @@
     "url": ""
   },
   {
-    "title": "FGFR-TACC gene fusions in human glioma",
-    "labs": ["antonio-iavarone-lab"],
-    "authors": [
-      {
-        "initials": "A",
-        "lastName": "Lasorella",
-        "corresponding": false
-      },
-      {
-        "initials": "M",
-        "lastName": "Sanson",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Iavarone",
-        "corresponding": false
-      }
-    ],
-    "journal": "Neuro Oncol",
-    "year": 2017,
-    "volume": "19",
-    "issue": "4",
-    "pages": "475-483",
-    "pubmed": "27852792",
-    "tags": ["Article"],
-    "abstract": "",
-    "url": ""
-  },
-  {
-    "title": "Clonal evolution of glioblastoma under therapy",
-    "labs": ["antonio-iavarone-lab"],
-    "authors": [
-      {
-        "initials": "J",
-        "lastName": "Wang",
-        "corresponding": false
-      },
-      {
-        "initials": "E",
-        "lastName": "Cazzato",
-        "corresponding": false
-      },
-      {
-        "initials": "E",
-        "lastName": "Ladewig",
-        "corresponding": false
-      },
-      {
-        "initials": "V",
-        "lastName": "Frattini",
-        "corresponding": false
-      },
-      {
-        "initials": "DI",
-        "lastName": "Rosenbloom",
-        "corresponding": false
-      },
-      {
-        "initials": "S",
-        "lastName": "Zairis",
-        "corresponding": false
-      },
-      {
-        "initials": "F",
-        "lastName": "Abate",
-        "corresponding": false
-      },
-      {
-        "initials": "Z",
-        "lastName": "Liu",
-        "corresponding": false
-      },
-      {
-        "initials": "O",
-        "lastName": "Elliott",
-        "corresponding": false
-      },
-      {
-        "initials": "YJ",
-        "lastName": "Shin",
-        "corresponding": false
-      },
-      {
-        "initials": "JK",
-        "lastName": "Lee",
-        "corresponding": false
-      },
-      {
-        "initials": "IH",
-        "lastName": "Lee",
-        "corresponding": false
-      },
-      {
-        "initials": "WY",
-        "lastName": "Park",
-        "corresponding": false
-      },
-      {
-        "initials": "M",
-        "lastName": "Eoli",
-        "corresponding": false
-      },
-      {
-        "initials": "AJ",
-        "lastName": "Blumberg",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Lasorella",
-        "corresponding": false
-      },
-      {
-        "initials": "DH",
-        "lastName": "Nam",
-        "corresponding": false
-      },
-      {
-        "initials": "G",
-        "lastName": "Finocchiaro",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Iavarone",
-        "corresponding": false
-      },
-      {
-        "initials": "R",
-        "lastName": "Rabadan",
-        "corresponding": false
-      }
-    ],
-    "journal": "Nat Genet",
-    "year": 2016,
-    "volume": "48",
-    "issue": "7",
-    "pages": "768-76",
-    "pubmed": "27270107",
-    "tags": ["Article"],
-    "abstract": "",
-    "url": ""
-  },
-  {
-    "title": "An ID2-dependent mechanism for VHL inactivation in cancer",
-    "labs": ["antonio-iavarone-lab"],
-    "authors": [
-      {
-        "initials": "SB",
-        "lastName": "Lee",
-        "corresponding": false
-      },
-      {
-        "initials": "V",
-        "lastName": "Frattini",
-        "corresponding": false
-      },
-      {
-        "initials": "M",
-        "lastName": "Bansal",
-        "corresponding": false
-      },
-      {
-        "initials": "AM",
-        "lastName": "Castano",
-        "corresponding": false
-      },
-      {
-        "initials": "D",
-        "lastName": "Sherman",
-        "corresponding": false
-      },
-      {
-        "initials": "K",
-        "lastName": "Hutchinson",
-        "corresponding": false
-      },
-      {
-        "initials": "JN",
-        "lastName": "Bruce",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Califano",
-        "corresponding": false
-      },
-      {
-        "initials": "G",
-        "lastName": "Liu",
-        "corresponding": false
-      },
-      {
-        "initials": "T",
-        "lastName": "Cardozo",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Iavarone",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Lasorella",
-        "corresponding": false
-      }
-    ],
-    "journal": "Nature",
-    "year": 2016,
-    "volume": "529",
-    "issue": "7585",
-    "pages": "172-7",
-    "pubmed": "26735018",
-    "tags": ["Article"],
-    "abstract": "",
-    "url": ""
-  },
-  {
-    "title": "Detection, Characterization, and Inhibition of FGFR-TACC Fusions in IDH Wild-type Glioma",
-    "labs": ["antonio-iavarone-lab"],
-    "authors": [
-      {
-        "initials": "Stefano",
-        "lastName": "Di",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Fucci",
-        "corresponding": false
-      },
-      {
-        "initials": "V",
-        "lastName": "Frattini",
-        "corresponding": false
-      },
-      {
-        "initials": "M",
-        "lastName": "Labussiere",
-        "corresponding": false
-      },
-      {
-        "initials": "K",
-        "lastName": "Mokhtari",
-        "corresponding": false
-      },
-      {
-        "initials": "P",
-        "lastName": "Zoppoli",
-        "corresponding": false
-      },
-      {
-        "initials": "Y",
-        "lastName": "Marie",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Bruno",
-        "corresponding": false
-      },
-      {
-        "initials": "B",
-        "lastName": "Boisselier",
-        "corresponding": false
-      },
-      {
-        "initials": "M",
-        "lastName": "Giry",
-        "corresponding": false
-      },
-      {
-        "initials": "J",
-        "lastName": "Savatovsky",
-        "corresponding": false
-      },
-      {
-        "initials": "M",
-        "lastName": "Touat",
-        "corresponding": false
-      },
-      {
-        "initials": "H",
-        "lastName": "Belaid",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Kamoun",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Idbaih",
-        "corresponding": false
-      },
-      {
-        "initials": "C",
-        "lastName": "Houillier",
-        "corresponding": false
-      },
-      {
-        "initials": "FR",
-        "lastName": "Luo",
-        "corresponding": false
-      },
-      {
-        "initials": "JC",
-        "lastName": "Soria",
-        "corresponding": false
-      },
-      {
-        "initials": "J",
-        "lastName": "Tabernero",
-        "corresponding": false
-      },
-      {
-        "initials": "M",
-        "lastName": "Eoli",
-        "corresponding": false
-      },
-      {
-        "initials": "R",
-        "lastName": "Paterra",
-        "corresponding": false
-      },
-      {
-        "initials": "S",
-        "lastName": "Yip",
-        "corresponding": false
-      },
-      {
-        "initials": "K",
-        "lastName": "Petrecca",
-        "corresponding": false
-      },
-      {
-        "initials": "JA",
-        "lastName": "Chan",
-        "corresponding": false
-      },
-      {
-        "initials": "G",
-        "lastName": "Finocchiaro",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Lasorella",
-        "corresponding": false
-      },
-      {
-        "initials": "M",
-        "lastName": "Sanson",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Iavarone",
-        "corresponding": false
-      }
-    ],
-    "journal": "Clin",
-    "year": 2015,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "pubmed": "25609060",
-    "tags": ["Article"],
-    "abstract": "",
-    "url": ""
-  },
-  {
-    "title": "Myc and differentiation: going against the current",
-    "labs": ["antonio-iavarone-lab"],
-    "authors": [
-      {
-        "initials": "A",
-        "lastName": "Iavarone",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Lasorella",
-        "corresponding": false
-      }
-    ],
-    "journal": "EMBO Rep",
-    "year": 2014,
-    "volume": "15",
-    "issue": "4",
-    "pages": "324-5",
-    "pubmed": "24614276",
-    "tags": ["Article"],
-    "abstract": "",
-    "url": ""
-  },
-  {
-    "title": "The ID proteins: master regulators of cancer stem cells and tumour aggressiveness",
-    "labs": ["antonio-iavarone-lab"],
-    "authors": [
-      {
-        "initials": "A",
-        "lastName": "Lasorella",
-        "corresponding": false
-      },
-      {
-        "initials": "R",
-        "lastName": "Benezra",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Iavarone",
-        "corresponding": false
-      }
-    ],
-    "journal": "Nat Rev Cancer",
-    "year": 2014,
-    "volume": "14",
-    "issue": "2",
-    "pages": "77-91",
-    "pubmed": "24442143",
-    "tags": ["Article"],
-    "abstract": "",
-    "url": ""
-  },
-  {
     "title": "The integrated landscape of driver genomic alterations in glioblastoma",
     "labs": ["antonio-iavarone-lab"],
+    "people": ["antonio-iavarone"],
     "authors": [
       {
         "initials": "V",
@@ -7530,218 +6463,9 @@
     "url": ""
   },
   {
-    "title": "Transforming fusions of FGFR and TACC genes in human glioblastoma",
-    "labs": ["antonio-iavarone-lab"],
-    "authors": [
-      {
-        "initials": "D",
-        "lastName": "Singh",
-        "corresponding": false
-      },
-      {
-        "initials": "JM",
-        "lastName": "Chan",
-        "corresponding": false
-      },
-      {
-        "initials": "P",
-        "lastName": "Zoppoli",
-        "corresponding": false
-      },
-      {
-        "initials": "F",
-        "lastName": "Niola",
-        "corresponding": false
-      },
-      {
-        "initials": "R",
-        "lastName": "Sullivan",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Castano",
-        "corresponding": false
-      },
-      {
-        "initials": "EM",
-        "lastName": "Liu",
-        "corresponding": false
-      },
-      {
-        "initials": "J",
-        "lastName": "Reichel",
-        "corresponding": false
-      },
-      {
-        "initials": "P",
-        "lastName": "Porrati",
-        "corresponding": false
-      },
-      {
-        "initials": "S",
-        "lastName": "Pellegatta",
-        "corresponding": false
-      },
-      {
-        "initials": "K",
-        "lastName": "Qiu",
-        "corresponding": false
-      },
-      {
-        "initials": "Z",
-        "lastName": "Gao",
-        "corresponding": false
-      },
-      {
-        "initials": "M",
-        "lastName": "Ceccarelli",
-        "corresponding": false
-      },
-      {
-        "initials": "R",
-        "lastName": "Riccardi",
-        "corresponding": false
-      },
-      {
-        "initials": "DJ",
-        "lastName": "Brat",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Guha",
-        "corresponding": false
-      },
-      {
-        "initials": "K",
-        "lastName": "Aldape",
-        "corresponding": false
-      },
-      {
-        "initials": "JG",
-        "lastName": "Golfinos",
-        "corresponding": false
-      },
-      {
-        "initials": "D",
-        "lastName": "Zagzag",
-        "corresponding": false
-      },
-      {
-        "initials": "T",
-        "lastName": "Mikkelsen",
-        "corresponding": false
-      },
-      {
-        "initials": "G",
-        "lastName": "Finocchiaro",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Lasorella",
-        "corresponding": false
-      },
-      {
-        "initials": "R",
-        "lastName": "Rabadan",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Iavarone",
-        "corresponding": false
-      }
-    ],
-    "journal": "Science",
-    "year": 2012,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "pubmed": "22837387",
-    "tags": ["Article"],
-    "abstract": "",
-    "url": ""
-  },
-  {
-    "title": "Id proteins synchronize stemness and anchorage to the niche of neural stem cells",
-    "labs": ["antonio-iavarone-lab"],
-    "authors": [
-      {
-        "initials": "F",
-        "lastName": "Niola",
-        "corresponding": false
-      },
-      {
-        "initials": "X",
-        "lastName": "Zhao",
-        "corresponding": false
-      },
-      {
-        "initials": "D",
-        "lastName": "Singh",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Castano",
-        "corresponding": false
-      },
-      {
-        "initials": "R",
-        "lastName": "Sullivan",
-        "corresponding": false
-      },
-      {
-        "initials": "M",
-        "lastName": "Lauria",
-        "corresponding": false
-      },
-      {
-        "initials": "HS",
-        "lastName": "Nam",
-        "corresponding": false
-      },
-      {
-        "initials": "Y",
-        "lastName": "Zhuang",
-        "corresponding": false
-      },
-      {
-        "initials": "R",
-        "lastName": "Benezra",
-        "corresponding": false
-      },
-      {
-        "initials": "Bernardo",
-        "lastName": "Di",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Iavarone",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Lasorella",
-        "corresponding": false
-      }
-    ],
-    "journal": "Nature Cell Biology",
-    "year": 2012,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "pubmed": "22522171",
-    "tags": ["Article"],
-    "abstract": "",
-    "url": ""
-  },
-  {
     "title": "Self\u2010renewal does not predict tumor growth potential in mouse models of high\u2010grade glioma",
     "labs": ["antonio-iavarone-lab"],
+    "people": ["antonio-iavarone"],
     "authors": [
       {
         "initials": "LE",
@@ -7795,238 +6519,9 @@
     "url": ""
   },
   {
-    "title": "E protein transcription factors are required for the development of CD4(+) lineage T cells",
-    "labs": ["antonio-iavarone-lab"],
-    "authors": [
-      {
-        "initials": "ME",
-        "lastName": "Jones\u2010Mason",
-        "corresponding": false
-      },
-      {
-        "initials": "X",
-        "lastName": "Zhao",
-        "corresponding": false
-      },
-      {
-        "initials": "D",
-        "lastName": "Kappes",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Lasorella",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Iavarone",
-        "corresponding": false
-      },
-      {
-        "initials": "Y",
-        "lastName": "Zhuang",
-        "corresponding": false
-      }
-    ],
-    "journal": "Immunity",
-    "year": 2012,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "pubmed": "22425249",
-    "tags": ["Article"],
-    "abstract": "",
-    "url": ""
-  },
-  {
-    "title": "Id2 promotes tumor cell migration and invasion through transcriptional repression of Semaphorin 3F",
-    "labs": ["antonio-iavarone-lab"],
-    "authors": [
-      {
-        "initials": "S",
-        "lastName": "Coma",
-        "corresponding": false
-      },
-      {
-        "initials": "DN",
-        "lastName": "Amin",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Shimizu",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Lasorella",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Iavarone",
-        "corresponding": false
-      },
-      {
-        "initials": "M",
-        "lastName": "Klagsbrun",
-        "corresponding": false
-      }
-    ],
-    "journal": "Cancer Res",
-    "year": 2010,
-    "volume": "70",
-    "issue": "9",
-    "pages": "3823-32",
-    "pubmed": "20388805",
-    "tags": ["Article"],
-    "abstract": "",
-    "url": ""
-  },
-  {
-    "title": "The Huwe1 ubiquitin ligase is essential to synchronize neuronal and glial differentiation in the developing cerebellum",
-    "labs": ["antonio-iavarone-lab"],
-    "authors": [
-      {
-        "initials": "D",
-        "lastName": "D'Arca",
-        "corresponding": false
-      },
-      {
-        "initials": "X",
-        "lastName": "Zhao",
-        "corresponding": false
-      },
-      {
-        "initials": "W",
-        "lastName": "Xu",
-        "corresponding": false
-      },
-      {
-        "initials": "N",
-        "lastName": "Ramirez\u2010Martinez",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Iavarone",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Lasorella",
-        "corresponding": false
-      }
-    ],
-    "journal": "Proc Natl Acad Sci USA",
-    "year": 2010,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "pubmed": "20231446",
-    "tags": ["Article"],
-    "abstract": "",
-    "url": ""
-  },
-  {
-    "title": "L, Doetsch F, Colman H, Lasorella A, Aldape K, Califano A, Iavarone A",
-    "labs": ["antonio-iavarone-lab"],
-    "authors": [
-      {
-        "initials": "MS",
-        "lastName": "Carro",
-        "corresponding": false
-      },
-      {
-        "initials": "WK",
-        "lastName": "Lim",
-        "corresponding": false
-      },
-      {
-        "initials": "MJ",
-        "lastName": "Alvarez",
-        "corresponding": false
-      },
-      {
-        "initials": "RJ",
-        "lastName": "Bollo",
-        "corresponding": false
-      },
-      {
-        "initials": "X",
-        "lastName": "Zhao",
-        "corresponding": false
-      },
-      {
-        "initials": "EY",
-        "lastName": "Snyder",
-        "corresponding": false
-      },
-      {
-        "initials": "EP",
-        "lastName": "Sulman",
-        "corresponding": false
-      },
-      {
-        "initials": "S",
-        "lastName": "Anne",
-        "corresponding": false
-      }
-    ],
-    "journal": "A transcriptional module synergistically initiates and maintains mesenchymal transformation in the brain",
-    "year": 2010,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "pubmed": "",
-    "tags": ["Article"],
-    "abstract": "",
-    "url": ""
-  },
-  {
-    "title": "S, Ludwig T, Guillemot F, Aldape K, Califano A, Iavarone A, and Lasorella A",
-    "labs": ["antonio-iavarone-lab"],
-    "authors": [
-      {
-        "initials": "X",
-        "lastName": "Zhao",
-        "corresponding": false
-      },
-      {
-        "initials": "D",
-        "lastName": "D'Arca",
-        "corresponding": false
-      },
-      {
-        "initials": "WK",
-        "lastName": "Lim",
-        "corresponding": false
-      },
-      {
-        "initials": "M",
-        "lastName": "Brahmachary",
-        "corresponding": false
-      },
-      {
-        "initials": "M",
-        "lastName": "Carro",
-        "corresponding": false
-      }
-    ],
-    "journal": "The N\u2010Myc\u2010DLL3 cascade is suppressed by the ubiquitin ligase Huwe1 to inhibit proliferation and promote neurogenesis in the developing brain",
-    "year": 2009,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "pubmed": "",
-    "tags": ["Article"],
-    "abstract": "",
-    "url": ""
-  },
-  {
     "title": "The HECT\u2010domain ubiquitin ligase Huwe1 controls neural differentiation and proliferation by destabilizing the N\u2010Myc oncoprotein",
     "labs": ["antonio-iavarone-lab"],
+    "people": ["antonio-iavarone"],
     "authors": [
       {
         "initials": "X",
@@ -8080,218 +6575,9 @@
     "url": ""
   },
   {
-    "title": "Control of chromosome stability by the beta\u2010TrCP\u2010REST\u2010Mad2 axis",
-    "labs": ["antonio-iavarone-lab"],
-    "authors": [
-      {
-        "initials": "D",
-        "lastName": "Guardavaccaro",
-        "corresponding": false
-      },
-      {
-        "initials": "D",
-        "lastName": "Frescas",
-        "corresponding": false
-      },
-      {
-        "initials": "NV",
-        "lastName": "Dorrello",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Peschiaroli",
-        "corresponding": false
-      },
-      {
-        "initials": "AS",
-        "lastName": "Multani",
-        "corresponding": false
-      },
-      {
-        "initials": "T",
-        "lastName": "Cardozo",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Lasorella",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Iavarone",
-        "corresponding": false
-      },
-      {
-        "initials": "S",
-        "lastName": "Chang",
-        "corresponding": false
-      },
-      {
-        "initials": "E",
-        "lastName": "Hernando",
-        "corresponding": false
-      },
-      {
-        "initials": "M",
-        "lastName": "Pagano",
-        "corresponding": false
-      }
-    ],
-    "journal": "Nature",
-    "year": 2008,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "pubmed": "18354482",
-    "tags": ["Article"],
-    "abstract": "",
-    "url": ""
-  },
-  {
-    "title": "Degradation of Id2 by the Anaphase Promoting Complex couples cell cycle exit and axonal growth",
-    "labs": ["antonio-iavarone-lab"],
-    "authors": [
-      {
-        "initials": "A",
-        "lastName": "Lasorella",
-        "corresponding": false
-      },
-      {
-        "initials": "J",
-        "lastName": "Stegm\u00fcller",
-        "corresponding": false
-      },
-      {
-        "initials": "D",
-        "lastName": "Guardavaccaro",
-        "corresponding": false
-      },
-      {
-        "initials": "G",
-        "lastName": "Liu",
-        "corresponding": false
-      },
-      {
-        "initials": "MS",
-        "lastName": "Carro",
-        "corresponding": false
-      },
-      {
-        "initials": "G",
-        "lastName": "Rothschild",
-        "corresponding": false
-      },
-      {
-        "initials": "la",
-        "lastName": "de",
-        "corresponding": false
-      },
-      {
-        "initials": "M",
-        "lastName": "Pagano",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Bonni",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Iavarone",
-        "corresponding": false
-      }
-    ],
-    "journal": "Nature",
-    "year": 2006,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "pubmed": "16810178",
-    "tags": ["Article"],
-    "abstract": "",
-    "url": ""
-  },
-  {
-    "title": "E proteins and Id2 converge on p57Kip2 to regulate cell cycle in neural cells",
-    "labs": ["antonio-iavarone-lab"],
-    "authors": [
-      {
-        "initials": "G",
-        "lastName": "Rothschild",
-        "corresponding": false
-      },
-      {
-        "initials": "X",
-        "lastName": "Zhao",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Iavarone",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Lasorella",
-        "corresponding": false
-      }
-    ],
-    "journal": "Mol Cell Biol",
-    "year": 2006,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "pubmed": "16705184",
-    "tags": ["Article"],
-    "abstract": "",
-    "url": ""
-  },
-  {
-    "title": "Id2 mediates tumor initiation, proliferation and angiogenesis in Rb mutant mice",
-    "labs": ["antonio-iavarone-lab"],
-    "authors": [
-      {
-        "initials": "A",
-        "lastName": "Lasorella",
-        "corresponding": false
-      },
-      {
-        "initials": "G",
-        "lastName": "Rothschild",
-        "corresponding": false
-      },
-      {
-        "initials": "Y",
-        "lastName": "Yokota",
-        "corresponding": false
-      },
-      {
-        "initials": "RG",
-        "lastName": "Russell",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Iavarone",
-        "corresponding": false
-      }
-    ],
-    "journal": "Mol Cell Biol",
-    "year": 2005,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "pubmed": "15831462",
-    "tags": ["Article"],
-    "abstract": "",
-    "url": ""
-  },
-  {
     "title": "Id family of helix\u2010loop\u2010helix proteins in cancer",
     "labs": ["antonio-iavarone-lab"],
+    "people": ["antonio-iavarone"],
     "authors": [
       {
         "initials": "J",
@@ -8320,53 +6606,9 @@
     "url": ""
   },
   {
-    "title": "Retinoblastoma promotes definitive erythropoiesis by repressing Id2 in fetal liver macrophages",
-    "labs": ["antonio-iavarone-lab"],
-    "authors": [
-      {
-        "initials": "A",
-        "lastName": "Iavarone",
-        "corresponding": false
-      },
-      {
-        "initials": "ER",
-        "lastName": "King",
-        "corresponding": false
-      },
-      {
-        "initials": "Dai",
-        "lastName": "Xu\u2010Ming",
-        "corresponding": false
-      },
-      {
-        "initials": "G",
-        "lastName": "Leone",
-        "corresponding": false
-      },
-      {
-        "initials": "ER",
-        "lastName": "Stanley",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Lasorella",
-        "corresponding": false
-      }
-    ],
-    "journal": "Nature",
-    "year": 2004,
-    "volume": "432",
-    "issue": "",
-    "pages": "1040-1045",
-    "pubmed": "15616565",
-    "tags": ["Article"],
-    "abstract": "",
-    "url": ""
-  },
-  {
     "title": "Id2 drives differentiation and suppresses tumor formation in the intestinal epithelium",
     "labs": ["antonio-iavarone-lab"],
+    "people": ["antonio-iavarone"],
     "authors": [
       {
         "initials": "RG",
@@ -8400,43 +6642,9 @@
     "url": ""
   },
   {
-    "title": "Id2 is a target of the retinoblastoma protein and mediates signalling by Myc oncoproteins",
-    "labs": ["antonio-iavarone-lab"],
-    "authors": [
-      {
-        "initials": "A",
-        "lastName": "Lasorella",
-        "corresponding": false
-      },
-      {
-        "initials": "M",
-        "lastName": "Noseda",
-        "corresponding": false
-      },
-      {
-        "initials": "M",
-        "lastName": "Beyna",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Iavarone",
-        "corresponding": false
-      }
-    ],
-    "journal": "Nature",
-    "year": 2000,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "pubmed": "11034201",
-    "tags": ["Article"],
-    "abstract": "",
-    "url": ""
-  },
-  {
     "title": "eIF4A-dependent translational control of central carbon metabolism in pancreatic ductal adenocarcinoma",
     "labs": ["christine-chio-lab"],
+    "people": ["christine-chio"],
     "authors": [
       {
         "initials": "KM",
@@ -8542,6 +6750,7 @@
   {
     "title": "Metastasis in Pancreatic Cancer: advances in the field and methodologies",
     "labs": ["christine-chio-lab"],
+    "people": ["christine-chio"],
     "authors": [
       {
         "initials": "Pereira",
@@ -8560,13 +6769,14 @@
     "issue": "",
     "pages": "",
     "pubmed": "",
-    "tags": ["Article"],
+    "tags": ["Article", "In Press"],
     "abstract": "",
     "url": ""
   },
   {
     "title": "ROS in Cancer: The Burning Question",
     "labs": ["christine-chio-lab"],
+    "people": ["christine-chio"],
     "authors": [
       {
         "initials": "II",
@@ -8592,6 +6802,7 @@
   {
     "title": "ROS in translation: chink in the armor",
     "labs": ["christine-chio-lab"],
+    "people": ["christine-chio"],
     "authors": [
       {
         "initials": "II",
@@ -8617,6 +6828,7 @@
   {
     "title": "Jafarnejad SM, Ponz-Sarvise M, Park Y, Rivera K, Palm W, Wilson J, Sangar V, Hao Y, Ohlund D, Wright K, Filippini D, Lee EJ, Da Silva B, Schoepfer C, Wilkinson JE, Buscaglia JM, DeNicola GM, Tiriac H, Hammell M, Crawford HC, Schmidt EE, Thompson CB, Pappin DJ, Sonenberg N, Tuveson DA",
     "labs": ["christine-chio-lab"],
+    "people": ["christine-chio"],
     "authors": [
       {
         "initials": "II,",
@@ -8637,6 +6849,7 @@
   {
     "title": "MAX-ing out MYC: a novel small molecule inhibitor against MYC-dependent tumors",
     "labs": ["christine-chio-lab"],
+    "people": ["christine-chio"],
     "authors": [
       {
         "initials": "II",
@@ -8667,6 +6880,7 @@
   {
     "title": "TRADD contributes to tumour suppression by regulating ULF-dependent p19Arf ubiquitylation",
     "labs": ["christine-chio-lab"],
+    "people": ["christine-chio"],
     "authors": [
       {
         "initials": "II",
@@ -8732,6 +6946,7 @@
   {
     "title": "Identification of resistance pathways specific to malignancy using organoid models of pancreatic cancer",
     "labs": ["christine-chio-lab"],
+    "people": ["christine-chio"],
     "authors": [
       {
         "initials": "M",
@@ -8842,6 +7057,7 @@
   {
     "title": "Bioactivationof napabucasintriggersreactive oxygen species-mediated killing of cancer cells",
     "labs": ["christine-chio-lab"],
+    "people": ["christine-chio"],
     "authors": [
       {
         "initials": "F",
@@ -8882,6 +7098,7 @@
   {
     "title": "Tuveson DA",
     "labs": ["christine-chio-lab"],
+    "people": ["christine-chio"],
     "authors": [
       {
         "initials": "C",
@@ -8907,6 +7124,7 @@
   {
     "title": "Selective targeting of the Warburge ffect and precision medicine from metabolic control analysis",
     "labs": ["christine-chio-lab"],
+    "people": ["christine-chio"],
     "authors": [
       {
         "initials": "MV",
@@ -8999,7 +7217,7 @@
         "corresponding": false
       }
     ],
-    "journal": "Cell Metabolism",
+    "journal": "Cell Metab.olism",
     "year": 2017,
     "volume": "",
     "issue": "",
@@ -9012,6 +7230,7 @@
   {
     "title": "Distinct populations of inflammatory fibroblasts and myofibroblasts in pancreatic cancer",
     "labs": ["christine-chio-lab"],
+    "people": ["christine-chio"],
     "authors": [
       {
         "initials": "D",
@@ -9132,6 +7351,7 @@
   {
     "title": "Mule Regulates the Intestinal Stem Cell Niche via the Wnt Pathway and Targets EphB3 for Proteasomal and Lysosomal Degradation",
     "labs": ["christine-chio-lab"],
+    "people": ["christine-chio"],
     "authors": [
       {
         "initials": "C",
@@ -9272,6 +7492,7 @@
   {
     "title": "Vitamin C selectively kills KRAS and BRAF mutant colorectal cancer cells by targeting GAPDH",
     "labs": ["christine-chio-lab"],
+    "people": ["christine-chio"],
     "authors": [
       {
         "initials": "J",
@@ -9387,6 +7608,7 @@
   {
     "title": "Idh1 protects murine hepatocytes from endotoxin-induced oxidative stress by regulating the intracellular NADP(+)/NADPH ratio",
     "labs": ["christine-chio-lab"],
+    "people": ["christine-chio"],
     "authors": [
       {
         "initials": "M",
@@ -9522,6 +7744,7 @@
   {
     "title": "p53 mutations change phosphatidylinositol acyl chain composition",
     "labs": ["christine-chio-lab"],
+    "people": ["christine-chio"],
     "authors": [
       {
         "initials": "A",
@@ -9587,6 +7810,7 @@
   {
     "title": "A novel TLR2-triggered signalling crosstalk synergistically intensifies TNF-mediated IL-6 induction",
     "labs": ["christine-chio-lab"],
+    "people": ["christine-chio"],
     "authors": [
       {
         "initials": "YL",
@@ -9672,6 +7896,7 @@
   {
     "title": "Mule/Huwe1/Arf-BP1 suppresses Ras-driven tumorigenesis by preventing c-Myc/Miz1-mediated down-regulation of p21 and p15",
     "labs": ["christine-chio-lab"],
+    "people": ["christine-chio"],
     "authors": [
       {
         "initials": "S",
@@ -9807,6 +8032,7 @@
   {
     "title": "Flotillin-2 deficiency leads to reduced lung metastases in a mouse breast cancer model",
     "labs": ["christine-chio-lab"],
+    "people": ["christine-chio"],
     "authors": [
       {
         "initials": "T",
@@ -9882,6 +8108,7 @@
   {
     "title": "D-2-hydroxyglutarate produced by mutant IDH1 perturbs collagen maturation and basement membrane function",
     "labs": ["christine-chio-lab"],
+    "people": ["christine-chio"],
     "authors": [
       {
         "initials": "M",
@@ -9997,6 +8224,7 @@
   {
     "title": "Chen NJ, Brustle A, Li WY, Mak TW",
     "labs": ["christine-chio-lab"],
+    "people": ["christine-chio"],
     "authors": [
       {
         "initials": "WJ",
@@ -10037,6 +8265,7 @@
   {
     "title": "Combined deficiency for MAP kinase-interacting kinase 1 and 2 (Mnk1 and Mnk2) delays tumor development",
     "labs": ["christine-chio-lab"],
+    "people": ["christine-chio"],
     "authors": [
       {
         "initials": "T",
@@ -10087,6 +8316,7 @@
   {
     "title": "Reconstitution of an ATM-dependent checkpoint that inhibits chromosomal DNA replication following DNA damage",
     "labs": ["jean-gautier-lab"],
+    "people": ["jean-gautier"],
     "authors": [
       {
         "initials": "V",
@@ -10141,7 +8371,13 @@
   },
   {
     "title": "",
-    "labs": ["jean-gautier-lab"],
+    "labs": [
+      "jean-gautier-lab",
+      "jean-gautier-lab",
+      "jean-gautier-lab",
+      "jean-gautier-lab"
+    ],
+    "people": ["jean-gautier"],
     "authors": [
       {
         "initials": "V",
@@ -10197,6 +8433,7 @@
   {
     "title": "An ATR- and Cdc7-dependent checkpoint that inhibits initiation of DNA replication",
     "labs": ["jean-gautier-lab"],
+    "people": ["jean-gautier"],
     "authors": [
       {
         "initials": "V",
@@ -10241,7 +8478,8 @@
   },
   {
     "title": "and Gautier J",
-    "labs": ["jean-gautier-lab"],
+    "labs": ["jean-gautier-lab", "jean-gautier-lab", "jean-gautier-lab"],
+    "people": ["jean-gautier"],
     "authors": [
       {
         "initials": "D",
@@ -10265,28 +8503,9 @@
     "url": ""
   },
   {
-    "title": "and Gautier J",
-    "labs": ["jean-gautier-lab"],
-    "authors": [
-      {
-        "initials": "C",
-        "lastName": "Ying",
-        "corresponding": false
-      }
-    ],
-    "journal": "(2005)",
-    "year": 2005,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "pubmed": "28402077",
-    "tags": ["Article"],
-    "abstract": "",
-    "url": ""
-  },
-  {
     "title": "Two-step activation of ATM by DNA and the Mre11-Rad50-Nbs1 complex",
     "labs": ["jean-gautier-lab"],
+    "people": ["jean-gautier"],
     "authors": [
       {
         "initials": "A",
@@ -10317,6 +8536,7 @@
   {
     "title": "Non-transcriptional control of DNA replication by c-Myc",
     "labs": ["jean-gautier-lab"],
+    "people": ["jean-gautier"],
     "authors": [
       {
         "initials": "D",
@@ -10375,78 +8595,9 @@
     "url": ""
   },
   {
-    "title": "",
-    "labs": ["jean-gautier-lab"],
-    "authors": [
-      {
-        "initials": "A",
-        "lastName": "Dupre",
-        "corresponding": false
-      },
-      {
-        "initials": "L",
-        "lastName": "Boyer-Chatenet",
-        "corresponding": false
-      },
-      {
-        "initials": "RM",
-        "lastName": "Sattler",
-        "corresponding": false
-      },
-      {
-        "initials": "A",
-        "lastName": "Modi",
-        "corresponding": false
-      },
-      {
-        "initials": "JH",
-        "lastName": "Lee",
-        "corresponding": false
-      },
-      {
-        "initials": "M",
-        "lastName": "Nicolette",
-        "corresponding": false
-      },
-      {
-        "initials": "L",
-        "lastName": "Kopelovich",
-        "corresponding": false
-      },
-      {
-        "initials": "M",
-        "lastName": "Jasin",
-        "corresponding": false
-      },
-      {
-        "initials": "R",
-        "lastName": "Baer",
-        "corresponding": false
-      },
-      {
-        "initials": "T",
-        "lastName": "Paull",
-        "corresponding": false
-      },
-      {
-        "initials": "J",
-        "lastName": "Gautier",
-        "corresponding": true
-      }
-    ],
-    "journal": "A forward chemical genetic screen reveals an inhibitor of the Mre11-RAD50-Nbs1 complex",
-    "year": 2008,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "pubmed": "",
-    "tags": ["Article"],
-    "abstract": "",
-    "url": ""
-  },
-  {
     "title": "Evolutionary conserved single stranded DNA binding protein \u2018hSSB1' is critical for genomic stability",
     "labs": ["jean-gautier-lab"],
+    "people": ["jean-gautier"],
     "authors": [
       {
         "initials": "D",
@@ -10552,6 +8703,7 @@
   {
     "title": "Checkpoint signaling from a single DNA interstrand crosslink",
     "labs": ["jean-gautier-lab"],
+    "people": ["jean-gautier"],
     "authors": [
       {
         "initials": "M",
@@ -10595,53 +8747,9 @@
     "url": ""
   },
   {
-    "title": "",
-    "labs": ["jean-gautier-lab"],
-    "authors": [
-      {
-        "initials": "LC",
-        "lastName": "Wang",
-        "corresponding": false
-      },
-      {
-        "initials": "J",
-        "lastName": "Gautier",
-        "corresponding": true
-      }
-    ],
-    "journal": "The Fanconi anemia pathway and ICL repair: implications for cancer therapy",
-    "year": 2010,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "pubmed": "",
-    "tags": ["Article"],
-    "abstract": "",
-    "url": ""
-  },
-  {
-    "title": "and Gautier J",
-    "labs": ["jean-gautier-lab"],
-    "authors": [
-      {
-        "initials": "L",
-        "lastName": "Symington",
-        "corresponding": false
-      }
-    ],
-    "journal": "(2011)",
-    "year": 2011,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "pubmed": "28402077",
-    "tags": ["Article"],
-    "abstract": "",
-    "url": ""
-  },
-  {
     "title": "Cdk1 uncouples CtIP-dependent resection and Rad51 filament formation during M-phase double-strand break repair",
-    "labs": ["jean-gautier-lab"],
+    "labs": ["jean-gautier-lab", "richard-baer-lab"],
+    "people": ["jean-gautier"],
     "authors": [
       {
         "initials": "S",
@@ -10685,38 +8793,9 @@
     "url": ""
   },
   {
-    "title": "",
-    "labs": ["jean-gautier-lab"],
-    "authors": [
-      {
-        "initials": "H",
-        "lastName": "Williams",
-        "corresponding": false
-      },
-      {
-        "initials": "ME",
-        "lastName": "Gottesman",
-        "corresponding": false
-      },
-      {
-        "initials": "J",
-        "lastName": "Gautier",
-        "corresponding": true
-      }
-    ],
-    "journal": "Mechanism of replication-independent interstrand crosslink repair",
-    "year": 2012,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "pubmed": "",
-    "tags": ["Article"],
-    "abstract": "",
-    "url": ""
-  },
-  {
     "title": "More Tasks for Dna2 in S-phase",
     "labs": ["jean-gautier-lab"],
+    "people": ["jean-gautier"],
     "authors": [
       {
         "initials": "T",
@@ -10742,6 +8821,7 @@
   {
     "title": "The MRN-CtIP pathway is required for metaphase chromosome alignment",
     "labs": ["jean-gautier-lab"],
+    "people": ["jean-gautier"],
     "authors": [
       {
         "initials": "L",
@@ -10792,6 +8872,7 @@
   {
     "title": "Cdc45 is a critical effector of Myc-dependent DNA replication stress",
     "labs": ["jean-gautier-lab"],
+    "people": ["jean-gautier"],
     "authors": [
       {
         "initials": "SV",
@@ -10832,6 +8913,7 @@
   {
     "title": "The differences between ICL repair during and outside of S phase",
     "labs": ["jean-gautier-lab"],
+    "people": ["jean-gautier"],
     "authors": [
       {
         "initials": "HL",
@@ -10861,7 +8943,8 @@
   },
   {
     "title": "DNA double-strand break repair pathway choice and cancer",
-    "labs": ["jean-gautier-lab"],
+    "labs": ["jean-gautier-lab", "richard-baer-lab"],
+    "people": ["jean-gautier"],
     "authors": [
       {
         "initials": "T",
@@ -10892,6 +8975,7 @@
   {
     "title": "MYC is a critical target of FBXW7",
     "labs": ["jean-gautier-lab"],
+    "people": ["jean-gautier"],
     "authors": [
       {
         "initials": "M",
@@ -10936,7 +9020,8 @@
   },
   {
     "title": "BRCA1-CtIP interaction in the repair of DNA double-strand breaks",
-    "labs": ["jean-gautier-lab"],
+    "labs": ["jean-gautier-lab", "jean-gautier-lab"],
+    "people": ["jean-gautier"],
     "authors": [
       {
         "initials": "T",
@@ -10970,33 +9055,9 @@
     "url": ""
   },
   {
-    "title": "BRCA1-CtIP interaction in the repair of DNA double-strand breaks",
-    "labs": ["jean-gautier-lab"],
-    "authors": [
-      {
-        "initials": "T",
-        "lastName": "Aparicio",
-        "corresponding": false
-      },
-      {
-        "initials": "J",
-        "lastName": "Gautier",
-        "corresponding": true
-      }
-    ],
-    "journal": "Mol Cell Oncol",
-    "year": 2016,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "pubmed": "27652321",
-    "tags": ["Article"],
-    "abstract": "",
-    "url": ""
-  },
-  {
     "title": "Sensing and Processing of DNA interstrand crosslinks by the mismatch repair pathway",
     "labs": ["jean-gautier-lab"],
+    "people": ["jean-gautier"],
     "authors": [
       {
         "initials": "N",
@@ -11072,6 +9133,7 @@
   {
     "title": "Nuclear ARP2/3 drives DNA break clustering for homology-directed repair",
     "labs": ["jean-gautier-lab"],
+    "people": ["jean-gautier"],
     "authors": [
       {
         "initials": "BR",
@@ -11127,6 +9189,7 @@
   {
     "title": "Assembling nuclear domains: Lessons from DNA repair",
     "labs": ["jean-gautier-lab"],
+    "people": ["jean-gautier"],
     "authors": [
       {
         "initials": "B",
@@ -11151,7 +9214,8 @@
   },
   {
     "title": "MEF2B Instructs Germinal Center Development and Acts as an Oncogene in B Cell Lymphomagenesis",
-    "labs": ["katia-basso-lab"],
+    "labs": ["katia-basso-lab", "riccardo-dalla-favera-lab"],
+    "people": ["antony-holmes", "katia-basso"],
     "authors": [
       {
         "initials": "P",
@@ -11195,10 +9259,10 @@
       }
     ],
     "journal": "Cancer Cell",
-    "year": 2018,
-    "volume": "",
-    "issue": "",
-    "pages": "",
+    "year": 2019,
+    "volume": "34",
+    "issue": "3",
+    "pages": "453-465",
     "pubmed": "30205047",
     "tags": ["Article"],
     "abstract": "",
@@ -11207,6 +9271,7 @@
   {
     "title": "Singling out the out-of-tune in lymphoma",
     "labs": ["katia-basso-lab"],
+    "people": ["katia-basso"],
     "authors": [
       {
         "initials": "K",
@@ -11227,6 +9292,7 @@
   {
     "title": "Clinical impact of miR-223 expression in pediatric T-cell lymphoblastic lymphoma",
     "labs": ["katia-basso-lab"],
+    "people": ["katia-basso"],
     "authors": [
       {
         "initials": "E",
@@ -11312,6 +9378,7 @@
   {
     "title": "The CREBBP Acetyltransferase is a haploinsufficient tumor suppressor in B-cell lymphoma",
     "labs": ["katia-basso-lab"],
+    "people": ["antony-holmes", "katia-basso"],
     "authors": [
       {
         "initials": "J",
@@ -11392,6 +9459,7 @@
   {
     "title": "NPM-ALK expression levels identify two distinct subtypes of paediatric anaplastic large cell lymphoma",
     "labs": ["katia-basso-lab"],
+    "people": ["katia-basso"],
     "authors": [
       {
         "initials": "E",
@@ -11462,6 +9530,7 @@
   {
     "title": "FBXO11 inactivation leads to abnormal germinal-center formation and lymphoproliferative disease",
     "labs": ["katia-basso-lab"],
+    "people": ["katia-basso"],
     "authors": [
       {
         "initials": "C",
@@ -11537,6 +9606,7 @@
   {
     "title": "The FOXO1 transcription factor instructs the germinal center dark zone program",
     "labs": ["katia-basso-lab"],
+    "people": ["antony-holmes", "katia-basso"],
     "authors": [
       {
         "initials": "D",
@@ -11586,7 +9656,8 @@
   },
   {
     "title": "Disruption of KMT2D perturbs germinal center B cell development and promotes lymphomagenesis",
-    "labs": ["katia-basso-lab"],
+    "labs": ["katia-basso-lab", "riccardo-dalla-favera-lab"],
+    "people": ["antony-holmes", "katia-basso"],
     "authors": [
       {
         "initials": "J",
@@ -11610,7 +9681,7 @@
       },
       {
         "initials": "AB",
-        "lastName": "Holems",
+        "lastName": "Holmes",
         "corresponding": false
       },
       {
@@ -11667,6 +9738,7 @@
   {
     "title": "microRNA 28 controls cell proliferation and is down-regulated in B-cell lymphomas",
     "labs": ["katia-basso-lab"],
+    "people": ["antony-holmes", "katia-basso"],
     "authors": [
       {
         "initials": "C",
@@ -11727,6 +9799,7 @@
   {
     "title": "An aberrant microRNA signature in childhood T-cell lymphoblastic lymphoma affecting CDKN1B expression, NOTCH1 and growth factor signaling pathways",
     "labs": ["katia-basso-lab"],
+    "people": ["antony-holmes", "katia-basso"],
     "authors": [
       {
         "initials": "L",
@@ -11787,6 +9860,7 @@
   {
     "title": "MEF2B mutations lead to deregulated expression of the oncogene BCL6 in diffuse large B cell lymphoma",
     "labs": ["katia-basso-lab"],
+    "people": ["katia-basso"],
     "authors": [
       {
         "initials": "CY",
@@ -11852,6 +9926,7 @@
   {
     "title": "t-RNA-derived microRNA modulates proliferation and DNA damage response and is down-regulated in B cell lymphoma",
     "labs": ["katia-basso-lab"],
+    "people": ["antony-holmes", "katia-basso"],
     "authors": [
       {
         "initials": "RL",
@@ -11869,7 +9944,7 @@
         "corresponding": false
       },
       {
-        "initials": "A",
+        "initials": "AB",
         "lastName": "Holmes",
         "corresponding": false
       },
@@ -11902,6 +9977,7 @@
   {
     "title": "BCL6 positevely regulates AID and germinal center gene expression via repression of miR-155",
     "labs": ["katia-basso-lab"],
+    "people": ["antony-holmes", "katia-basso"],
     "authors": [
       {
         "initials": "K",
@@ -11950,8 +10026,9 @@
     "url": ""
   },
   {
-    "title": "Falini B, Basso K",
+    "title": "A microRNA signature specific for hairy cell leukemia and associated with modulation of the MAPK-JNK pathways",
     "labs": ["katia-basso-lab"],
+    "people": ["katia-basso"],
     "authors": [
       {
         "initials": "Y",
@@ -11972,9 +10049,19 @@
         "initials": "R",
         "lastName": "Dalla-Favera",
         "corresponding": false
+      },
+      {
+        "initials": "B",
+        "lastName": "Falini",
+        "corresponding": false
+      },
+      {
+        "initials": "K",
+        "lastName": "Basso",
+        "corresponding": true
       }
     ],
-    "journal": "A microRNA signature specific for hairy cell leukemia and associated with modulation of the MAPK-JNK pathways",
+    "journal": "Leukemia",
     "year": 2012,
     "volume": "",
     "issue": "",
@@ -11987,6 +10074,7 @@
   {
     "title": "T-cell lymphoblastic lymphoma shows differences and similarities with T-cell acute lymphoblastic leukemia by genomic and gene expression analyses",
     "labs": ["katia-basso-lab"],
+    "people": ["katia-basso"],
     "authors": [
       {
         "initials": "K",
@@ -12052,6 +10140,7 @@
   {
     "title": "Integrated biochemical and computational approach identifies BCL6 direct target genes controlling multiple pathways in normal germinal-center B cells",
     "labs": ["katia-basso-lab"],
+    "people": ["katia-basso"],
     "authors": [
       {
         "initials": "K",
@@ -12122,6 +10211,7 @@
   {
     "title": "BCL6 suppression of BCL2 via Miz1 and its disruption in diffuse large B cell lymphoma",
     "labs": ["katia-basso-lab"],
+    "people": ["katia-basso"],
     "authors": [
       {
         "initials": "M",
@@ -12202,6 +10292,7 @@
   {
     "title": "Identification of the human mature B cell miRNome",
     "labs": ["katia-basso-lab"],
+    "people": ["katia-basso"],
     "authors": [
       {
         "initials": "K",
@@ -12272,6 +10363,7 @@
   {
     "title": "A signaling pathway mediating downregulation of BCL6 in germinal center B cells is blocked by BCL6 gene alterations in B cell lymphoma",
     "labs": ["katia-basso-lab"],
+    "people": ["katia-basso"],
     "authors": [
       {
         "initials": "M",
@@ -12325,8 +10417,9 @@
     "url": ""
   },
   {
-    "title": "and Dalla-Favera, R",
+    "title": "BCL6 interacts with the transcription factor Miz-1 to suppress the cyclin-dependent kinase inhibitor p21 and cell cycle arrest in germinal center B cells",
     "labs": ["katia-basso-lab"],
+    "people": ["katia-basso"],
     "authors": [
       {
         "initials": "RT",
@@ -12347,26 +10440,32 @@
         "initials": "H",
         "lastName": "Niu",
         "corresponding": false
+      },
+      {
+        "initials": "R",
+        "lastName": "Dalla-Favera",
+        "corresponding": false
       }
     ],
-    "journal": "BCL6 interacts with the transcription factor Miz-1 to suppress the cyclin-dependent kinase inhibitor p21 and cell cycle arrest in germinal center B cells",
+    "journal": "Nat Immunol",
     "year": 2005,
     "volume": "",
     "issue": "",
     "pages": "",
-    "pubmed": "32119082",
+    "pubmed": "",
     "tags": ["Article"],
     "abstract": "",
     "url": ""
   },
   {
-    "title": "and Califano, A",
+    "title": "Reverse engineering of regulatory networks in human B cells",
     "labs": ["katia-basso-lab"],
+    "people": ["katia-basso"],
     "authors": [
       {
         "initials": "K",
         "lastName": "Basso",
-        "corresponding": true
+        "corresponding": false
       },
       {
         "initials": "AA",
@@ -12387,21 +10486,27 @@
         "initials": "R",
         "lastName": "Dalla-Favera",
         "corresponding": false
+      },
+      {
+        "initials": "A",
+        "lastName": "Califano",
+        "corresponding": false
       }
     ],
-    "journal": "Reverse engineering of regulatory networks in human B cells",
+    "journal": "Nat Genet",
     "year": 2005,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "pubmed": "8353567",
+    "volume": "37",
+    "issue": "4",
+    "pages": "382-90",
+    "pubmed": "",
     "tags": ["Article"],
     "abstract": "",
     "url": ""
   },
   {
-    "title": "and Dalla-Favera, R",
+    "title": "and Dalla-Favera R",
     "labs": ["katia-basso-lab"],
+    "people": ["katia-basso"],
     "authors": [
       {
         "initials": "K",
@@ -12444,14 +10549,15 @@
     "volume": "",
     "issue": "",
     "pages": "",
-    "pubmed": "32119082",
+    "pubmed": "",
     "tags": ["Article"],
     "abstract": "",
     "url": ""
   },
   {
-    "title": "and Falini, B",
+    "title": "Gene expression profiling of hairy cell leukemia reveals a phenotype related to memory B cells with altered expression of chemokine and adhesion receptors",
     "labs": ["katia-basso-lab"],
+    "people": ["katia-basso"],
     "authors": [
       {
         "initials": "K",
@@ -12507,14 +10613,19 @@
         "initials": "R",
         "lastName": "Dalla-Favera",
         "corresponding": false
+      },
+      {
+        "initials": "B",
+        "lastName": "Falini",
+        "corresponding": false
       }
     ],
-    "journal": "Gene expression profiling of hairy cell leukemia reveals a phenotype related to memory B cells with altered expression of chemokine and adhesion receptors",
+    "journal": "JEM",
     "year": 2004,
     "volume": "",
     "issue": "",
     "pages": "",
-    "pubmed": "32119287",
+    "pubmed": "",
     "tags": ["Article"],
     "abstract": "",
     "url": ""
@@ -12522,6 +10633,7 @@
   {
     "title": "Mutations of the BCL6 proto-oncogene disrupt its negative autoregulation in diffuse large B-cell lymphoma",
     "labs": ["katia-basso-lab"],
+    "people": ["katia-basso"],
     "authors": [
       {
         "initials": "L",
@@ -12567,6 +10679,7 @@
   {
     "title": "Germinal centers and B cell lymphomagenesis",
     "labs": ["katia-basso-lab"],
+    "people": ["katia-basso"],
     "authors": [
       {
         "initials": "K",
@@ -12590,8 +10703,9 @@
     "url": ""
   },
   {
-    "title": "and Basso K",
+    "title": "RNA with multiple personalities",
     "labs": ["katia-basso-lab"],
+    "people": ["katia-basso"],
     "authors": [
       {
         "initials": "RL",
@@ -12602,13 +10716,18 @@
         "initials": "R",
         "lastName": "Dalla-Favera",
         "corresponding": false
+      },
+      {
+        "initials": "K",
+        "lastName": "Basso",
+        "corresponding": true
       }
     ],
-    "journal": "RNA with multiple personalities",
+    "journal": "Wiley Interdiscip Rev RNA",
     "year": 2014,
-    "volume": "",
-    "issue": "",
-    "pages": "",
+    "volume": "5",
+    "issue": "1",
+    "pages": "1-13",
     "pubmed": "",
     "tags": ["Article"],
     "abstract": "",
@@ -12617,6 +10736,7 @@
   {
     "title": "Role of BCL6 in normal and transformed germinal center B cells",
     "labs": ["katia-basso-lab"],
+    "people": ["katia-basso"],
     "authors": [
       {
         "initials": "K",
@@ -12642,6 +10762,7 @@
   {
     "title": "BCL6 master regulator of the germinal center reaction and key oncogene in B cell lymphomagenesis",
     "labs": ["katia-basso-lab"],
+    "people": ["katia-basso"],
     "authors": [
       {
         "initials": "K",
@@ -12667,6 +10788,7 @@
   {
     "title": "Toward a systems biology approach to investigate cellular networks in normal and malignant B cells",
     "labs": ["katia-basso-lab"],
+    "people": ["katia-basso"],
     "authors": [
       {
         "initials": "K",
@@ -12687,6 +10809,7 @@
   {
     "title": "Cytogenetic analysis of 130 renal oncocytomas identify three distinct and mutually exclusive diagnostic classes of chromosome aberrations",
     "labs": ["murty-vundavalli-lab"],
+    "people": ["murty-vundavalli"],
     "authors": [
       {
         "initials": "CB",
@@ -12757,6 +10880,7 @@
   {
     "title": "Cytogenetic analysis of adult T-Cell leukemia/lymphoma",
     "labs": ["murty-vundavalli-lab"],
+    "people": ["murty-vundavalli"],
     "authors": [
       {
         "initials": "Y",
@@ -12812,6 +10936,7 @@
   {
     "title": "Role of Fluorescent In Situ Hybridization, Cholangioscopic Biopsies, and EUS-FNA in the Evaluation of Biliary Strictures",
     "labs": ["murty-vundavalli-lab"],
+    "people": ["murty-vundavalli"],
     "authors": [
       {
         "initials": "C",
@@ -12897,6 +11022,7 @@
   {
     "title": "PTEN Regulates Glutamine Flux to Pyrimidine Synthesis and Sensitivity to Dihydroorotate Dehydrogenase Inhibition",
     "labs": ["murty-vundavalli-lab"],
+    "people": ["murty-vundavalli"],
     "authors": [
       {
         "initials": "D",
@@ -12966,87 +11092,8 @@
   },
   {
     "title": "Genetic landscape of T- and NK-cell post-transplant lymphoproliferative disorders",
-    "labs": ["murty-vundavalli-lab"],
-    "authors": [
-      {
-        "initials": "E",
-        "lastName": "Margolskee",
-        "corresponding": false
-      },
-      {
-        "initials": "V",
-        "lastName": "Jobanputra",
-        "corresponding": false
-      },
-      {
-        "initials": "P",
-        "lastName": "Jain",
-        "corresponding": false
-      },
-      {
-        "initials": "J",
-        "lastName": "Chen",
-        "corresponding": false
-      },
-      {
-        "initials": "K",
-        "lastName": "Ganapathi",
-        "corresponding": false
-      },
-      {
-        "initials": "O",
-        "lastName": "Nahum",
-        "corresponding": false
-      },
-      {
-        "initials": "B",
-        "lastName": "Levy",
-        "corresponding": false
-      },
-      {
-        "initials": "J",
-        "lastName": "Morscio",
-        "corresponding": false
-      },
-      {
-        "initials": "V",
-        "lastName": "Murty",
-        "corresponding": true
-      },
-      {
-        "initials": "T",
-        "lastName": "Tousseyn",
-        "corresponding": false
-      },
-      {
-        "initials": "B",
-        "lastName": "Alobeid",
-        "corresponding": false
-      },
-      {
-        "initials": "M",
-        "lastName": "Mansukhani",
-        "corresponding": false
-      },
-      {
-        "initials": "G",
-        "lastName": "Bhagat",
-        "corresponding": false
-      }
-    ],
-    "journal": "Oncotarget",
-    "year": 2016,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "pubmed": "27203213",
-    "tags": ["Article"],
-    "abstract": "",
-    "url": ""
-  },
-  {
-    "title": "Genetic landscape of T- and NK-cell post-transplant lymphoproliferative disorders",
-    "labs": ["murty-vundavalli-lab"],
+    "labs": ["murty-vundavalli-lab", "murty-vundavalli-lab"],
+    "people": ["murty-vundavalli"],
     "authors": [
       {
         "initials": "E",
@@ -13127,6 +11174,7 @@
   {
     "title": "The genetic landscape of dural marginal zone lymphomas",
     "labs": ["murty-vundavalli-lab"],
+    "people": ["murty-vundavalli"],
     "authors": [
       {
         "initials": "KA",
@@ -13232,6 +11280,7 @@
   {
     "title": "Characterization of a novel fusion gene EML4-NTRK3 in a case of recurrent congenital fibrosarcoma",
     "labs": ["murty-vundavalli-lab"],
+    "people": ["murty-vundavalli"],
     "authors": [
       {
         "initials": "S",
@@ -13312,6 +11361,7 @@
   {
     "title": "Epigenetic inactivation of TRAIL decoy receptors at 8p12-21.3 commonly deleted region confers sensitivity to Apo2L/trail-Cisplatin combination therapy in cervical cancer",
     "labs": ["murty-vundavalli-lab"],
+    "people": ["murty-vundavalli"],
     "authors": [
       {
         "initials": "G",
@@ -13382,6 +11432,7 @@
   {
     "title": "PCDH10, a novel p53 transcriptional target in regulating cell migration",
     "labs": ["murty-vundavalli-lab"],
+    "people": ["murty-vundavalli"],
     "authors": [
       {
         "initials": "D",
@@ -13412,6 +11463,7 @@
   {
     "title": "Alobeid B, Bhagat G",
     "labs": ["murty-vundavalli-lab"],
+    "people": ["murty-vundavalli"],
     "authors": [
       {
         "initials": "T",
@@ -13437,6 +11489,7 @@
   {
     "title": "Bachoo R, Burma S",
     "labs": ["murty-vundavalli-lab"],
+    "people": ["murty-vundavalli"],
     "authors": [
       {
         "initials": "CV",
@@ -13516,7 +11569,8 @@
   },
   {
     "title": "PCDH10 promoter hypermethylation is frequent in most histologic subtypes of mature lymphoid malignancies and occurs early in lymphomagenesis",
-    "labs": ["murty-vundavalli-lab"],
+    "labs": ["murty-vundavalli-lab", "murty-vundavalli-lab"],
+    "people": ["murty-vundavalli"],
     "authors": [
       {
         "initials": "G",
@@ -13617,6 +11671,7 @@
   {
     "title": "Leukaemogenesis induced by an activating \u03b2-catenin mutation in osteoblasts",
     "labs": ["murty-vundavalli-lab"],
+    "people": ["murty-vundavalli"],
     "authors": [
       {
         "initials": "A",
@@ -13727,6 +11782,7 @@
   {
     "title": "Genetics of follicular lymphoma transformation",
     "labs": ["murty-vundavalli-lab"],
+    "people": ["antony-holmes", "murty-vundavalli"],
     "authors": [
       {
         "initials": "L",
@@ -13835,108 +11891,9 @@
     "url": ""
   },
   {
-    "title": "PCDH10 promoter hypermethylation is frequent in most histologic subtypes of mature lymphoid malignancies and occurs early in lymphomagenesis",
-    "labs": ["murty-vundavalli-lab"],
-    "authors": [
-      {
-        "initials": "G",
-        "lastName": "Narayan",
-        "corresponding": false
-      },
-      {
-        "initials": "D",
-        "lastName": "Xie",
-        "corresponding": false
-      },
-      {
-        "initials": "AJ",
-        "lastName": "Freddy",
-        "corresponding": false
-      },
-      {
-        "initials": "G",
-        "lastName": "Ishdorj",
-        "corresponding": false
-      },
-      {
-        "initials": "C",
-        "lastName": "Do",
-        "corresponding": false
-      },
-      {
-        "initials": "P",
-        "lastName": "Satwani",
-        "corresponding": false
-      },
-      {
-        "initials": "H",
-        "lastName": "Liyanage",
-        "corresponding": false
-      },
-      {
-        "initials": "L",
-        "lastName": "Clark",
-        "corresponding": false
-      },
-      {
-        "initials": "S",
-        "lastName": "Kisselev",
-        "corresponding": false
-      },
-      {
-        "initials": "SV",
-        "lastName": "Nandula",
-        "corresponding": false
-      },
-      {
-        "initials": "L",
-        "lastName": "Scotto",
-        "corresponding": false
-      },
-      {
-        "initials": "B",
-        "lastName": "Alobeid",
-        "corresponding": false
-      },
-      {
-        "initials": "D",
-        "lastName": "Savage",
-        "corresponding": false
-      },
-      {
-        "initials": "B",
-        "lastName": "Tycko",
-        "corresponding": false
-      },
-      {
-        "initials": "OA",
-        "lastName": "O'Connor",
-        "corresponding": false
-      },
-      {
-        "initials": "G",
-        "lastName": "Bhagat",
-        "corresponding": false
-      },
-      {
-        "initials": "VV",
-        "lastName": "Murty",
-        "corresponding": true
-      }
-    ],
-    "journal": "Genes Chromosomes Cancer",
-    "year": 2013,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "pubmed": "23929756",
-    "tags": ["Article"],
-    "abstract": "",
-    "url": ""
-  },
-  {
     "title": "Lymphoid follicle colonization by Bcl-2(bright+)CD10(+) B-cells (\"follicular lymphoma in situ\") at nodal and extranodal sites can be a manifestation of follicular homing of lymphoma",
     "labs": ["murty-vundavalli-lab"],
+    "people": ["murty-vundavalli"],
     "authors": [
       {
         "initials": "JC",
@@ -13987,6 +11944,7 @@
   {
     "title": "Creation and characterization of BAC-transgenic mice with physiological overexpression of epitope-tagged RCAN1 (DSCR1)",
     "labs": ["murty-vundavalli-lab"],
+    "people": ["murty-vundavalli"],
     "authors": [
       {
         "initials": "L",
@@ -14052,6 +12010,7 @@
   {
     "title": "Promoter Methylation-Mediated Inactivation of PCDH10 in Acute Lymphoblastic Leukemia Contributes to Chemotherapy Resistance",
     "labs": ["murty-vundavalli-lab"],
+    "people": ["murty-vundavalli"],
     "authors": [
       {
         "initials": "G",
@@ -14142,6 +12101,7 @@
   {
     "title": "Integrative genomic approaches in cervical cancer",
     "labs": ["murty-vundavalli-lab"],
+    "people": ["murty-vundavalli"],
     "authors": [
       {
         "initials": "G",
@@ -14167,6 +12127,7 @@
   {
     "title": "Protocadherin PCDH10, involved in tumor progression, is a frequent and early target of promoter hypermethylation in cervical cancer",
     "labs": ["murty-vundavalli-lab"],
+    "people": ["murty-vundavalli"],
     "authors": [
       {
         "initials": "G",
@@ -14252,6 +12213,7 @@
   {
     "title": "Integrative genomics analysis of chromosome 5p gain in cervical cancer reveals target over-expressed genes, including Drosha",
     "labs": ["murty-vundavalli-lab"],
+    "people": ["murty-vundavalli"],
     "authors": [
       {
         "initials": "L",
@@ -14322,6 +12284,7 @@
   {
     "title": "Identification of Copy Number Gain and Overexpressed Genes on Chromosome Arm 20q by an Integrative Genomic Approach in Cervical Cancer",
     "labs": ["murty-vundavalli-lab"],
+    "people": ["murty-vundavalli"],
     "authors": [
       {
         "initials": "L",
@@ -14392,6 +12355,7 @@
   {
     "title": "Woodson K, Adams L, Gonzalez N, Martinez A, Narayan G, Kirsch I, Franklin W, Hirsch F, Birrer M, Cuttitta F",
     "labs": ["murty-vundavalli-lab"],
+    "people": ["murty-vundavalli"],
     "authors": [
       {
         "initials": "E",
@@ -14422,6 +12386,7 @@
   {
     "title": "Non-transcriptional control of DNA replication by c-myc",
     "labs": ["riccardo-dalla-favera-lab"],
+    "people": ["riccardo-dalla-favera"],
     "authors": [
       {
         "initials": "D",
@@ -14482,6 +12447,7 @@
   {
     "title": "A Signaling Pathway Mediating Downregulation of BCL6 in Germinal Center B Cells Is Blocked by BCL6 Gene Alterations in B Cell Lymphoma",
     "labs": ["riccardo-dalla-favera-lab"],
+    "people": ["riccardo-dalla-favera"],
     "authors": [
       {
         "initials": "M",
@@ -14532,6 +12498,7 @@
   {
     "title": "Genotoxic stress regulates expression of the BCL6 proto-oncogene in germinal-center B cells",
     "labs": ["riccardo-dalla-favera-lab"],
+    "people": ["riccardo-dalla-favera"],
     "authors": [
       {
         "initials": "RT",
@@ -14572,6 +12539,7 @@
   {
     "title": "AID is required for germinal center derived lymphomagenesis",
     "labs": ["riccardo-dalla-favera-lab"],
+    "people": ["riccardo-dalla-favera"],
     "authors": [
       {
         "initials": "L",
@@ -14627,6 +12595,7 @@
   {
     "title": "Jr, Chen CZ, Califano A, Dalla-Favera R",
     "labs": ["riccardo-dalla-favera-lab"],
+    "people": ["riccardo-dalla-favera"],
     "authors": [
       {
         "initials": "K",
@@ -14682,6 +12651,7 @@
   {
     "title": "and Pasqualucci, L",
     "labs": ["riccardo-dalla-favera-lab"],
+    "people": ["riccardo-dalla-favera"],
     "authors": [
       {
         "initials": "M",
@@ -14762,6 +12732,7 @@
   {
     "title": "The DLEU2/miR-15a/16-1 cluster controls B-cell proliferation and its deletion leads to chronic lymphocytic leukemia",
     "labs": ["riccardo-dalla-favera-lab"],
+    "people": ["riccardo-dalla-favera"],
     "authors": [
       {
         "initials": "U",
@@ -14832,6 +12803,7 @@
   {
     "title": "BLIMP1 is a tumor suppressor gene frequently disrupted in activated B-cell like diffuse large B cell lymphoma",
     "labs": ["riccardo-dalla-favera-lab"],
+    "people": ["riccardo-dalla-favera"],
     "authors": [
       {
         "initials": "J",
@@ -14902,6 +12874,7 @@
   {
     "title": "Inactivating mutations of acetyltransferase genes in B-cell lymphoma",
     "labs": ["riccardo-dalla-favera-lab"],
+    "people": ["riccardo-dalla-favera"],
     "authors": [
       {
         "initials": "L",
@@ -15007,6 +12980,7 @@
   {
     "title": "Trifonov V, Fabbri G, Ma J, Rossi D, Chiarenza A, Wells VA, Grunn A, Messina M, Elliot O, Chan J, Bhagat G, Chadburn A, Gaidano G, Mullighan, C",
     "labs": ["riccardo-dalla-favera-lab"],
+    "people": ["riccardo-dalla-favera"],
     "authors": [
       {
         "initials": "L",
@@ -15027,6 +13001,7 @@
   {
     "title": "Combined Genetic Inactivation of Beta2-Microglobulin and CD58 Reveals Frequent Escape from Immune Recognition in Diffuse Large B-cell Lymphoma",
     "labs": ["riccardo-dalla-favera-lab"],
+    "people": ["antony-holmes", "riccardo-dalla-favera"],
     "authors": [
       {
         "initials": "M",
@@ -15087,6 +13062,7 @@
   {
     "title": "The proto-oncogene MYC is required for selection in the germinal center and cyclic reentry",
     "labs": ["riccardo-dalla-favera-lab"],
+    "people": ["riccardo-dalla-favera"],
     "authors": [
       {
         "initials": "D",
@@ -15137,6 +13113,7 @@
   {
     "title": "tRNA-derived microRNA modulates proliferation and the DNA damage response and is down-regulated in B cell lymphoma",
     "labs": ["riccardo-dalla-favera-lab"],
+    "people": ["antony-holmes", "riccardo-dalla-favera"],
     "authors": [
       {
         "initials": "RL",
@@ -15187,6 +13164,7 @@
   {
     "title": "MEF2B mutations lead to deregulated expression of the BCL6 oncogene in diffuse large B cell lymphoma",
     "labs": ["riccardo-dalla-favera-lab"],
+    "people": ["riccardo-dalla-favera"],
     "authors": [
       {
         "initials": "CY",
@@ -15252,6 +13230,7 @@
   {
     "title": "Genetic lesions associated with chronic lymphocytic leukemia transformation to Richter syndrome",
     "labs": ["riccardo-dalla-favera-lab"],
+    "people": ["antony-holmes", "riccardo-dalla-favera"],
     "authors": [
       {
         "initials": "G",
@@ -15312,6 +13291,7 @@
   {
     "title": "Genetics of Follicular Lymphoma Transformation",
     "labs": ["riccardo-dalla-favera-lab"],
+    "people": ["antony-holmes", "riccardo-dalla-favera"],
     "authors": [
       {
         "initials": "L",
@@ -15422,6 +13402,7 @@
   {
     "title": "Genome-wide Mapping and Characterization of Notch-Regulated Long Noncoding RNAs in Acute Leukemia",
     "labs": ["riccardo-dalla-favera-lab"],
+    "people": ["riccardo-dalla-favera"],
     "authors": [
       {
         "initials": "T",
@@ -15470,138 +13451,9 @@
     "url": ""
   },
   {
-    "title": "Disruption of KMT2D perturbs germinal center B cell development and promotes lymphomagenesis",
-    "labs": ["riccardo-dalla-favera-lab"],
-    "authors": [
-      {
-        "initials": "J",
-        "lastName": "Zhang",
-        "corresponding": false
-      },
-      {
-        "initials": "D",
-        "lastName": "Dominguez-Sola",
-        "corresponding": false
-      },
-      {
-        "initials": "S",
-        "lastName": "Hussein",
-        "corresponding": false
-      },
-      {
-        "initials": "JE",
-        "lastName": "Lee",
-        "corresponding": false
-      },
-      {
-        "initials": "AB",
-        "lastName": "Holmes",
-        "corresponding": false
-      },
-      {
-        "initials": "M",
-        "lastName": "Bansal",
-        "corresponding": false
-      },
-      {
-        "initials": "S",
-        "lastName": "Vlasevska",
-        "corresponding": false
-      },
-      {
-        "initials": "T",
-        "lastName": "Mo",
-        "corresponding": false
-      },
-      {
-        "initials": "H",
-        "lastName": "Tang",
-        "corresponding": false
-      },
-      {
-        "initials": "K",
-        "lastName": "Basso",
-        "corresponding": false
-      },
-      {
-        "initials": "K",
-        "lastName": "Ge",
-        "corresponding": false
-      },
-      {
-        "initials": "R",
-        "lastName": "Dalla-Favera",
-        "corresponding": false
-      },
-      {
-        "initials": "L",
-        "lastName": "Pasqualucci",
-        "corresponding": false
-      }
-    ],
-    "journal": "",
-    "year": 2015,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "pubmed": "26366712",
-    "tags": ["Article"],
-    "abstract": "",
-    "url": "http://www.ncbi.nlm.nih.gov/pubmed/26366712"
-  },
-  {
-    "title": "The FOXO1 Transcription Factor Instructs the Germinal Center Dark Zone Program",
-    "labs": ["riccardo-dalla-favera-lab"],
-    "authors": [
-      {
-        "initials": "D",
-        "lastName": "Dominguez-Sola",
-        "corresponding": false
-      },
-      {
-        "initials": "J",
-        "lastName": "Kung",
-        "corresponding": false
-      },
-      {
-        "initials": "AB",
-        "lastName": "Holmes",
-        "corresponding": false
-      },
-      {
-        "initials": "VA",
-        "lastName": "Wells",
-        "corresponding": false
-      },
-      {
-        "initials": "T",
-        "lastName": "Mo",
-        "corresponding": false
-      },
-      {
-        "initials": "K",
-        "lastName": "Basso",
-        "corresponding": false
-      },
-      {
-        "initials": "Dalla-Favera",
-        "lastName": "",
-        "corresponding": false
-      }
-    ],
-    "journal": "Immunity",
-    "year": -1,
-    "volume": "43",
-    "issue": "6",
-    "pages": "1064-74",
-    "pubmed": "26620759",
-    "tags": ["Article"],
-    "abstract": "",
-    "url": ""
-  },
-  {
     "title": "Germinal Centres and B cell lymphomagenesis",
     "labs": ["riccardo-dalla-favera-lab"],
+    "people": ["riccardo-dalla-favera"],
     "authors": [
       {
         "initials": "K",
@@ -15627,6 +13479,7 @@
   {
     "title": "The molecular pathogenesis of chronic lymphocytic leukaemia",
     "labs": ["riccardo-dalla-favera-lab"],
+    "people": ["riccardo-dalla-favera"],
     "authors": [
       {
         "initials": "G",
@@ -15652,6 +13505,7 @@
   {
     "title": "FBXO11 inactivation leads to abnormal germinal-center formation and lymphoproliferative diseases",
     "labs": ["riccardo-dalla-favera-lab"],
+    "people": ["riccardo-dalla-favera"],
     "authors": [
       {
         "initials": "C",
@@ -15727,6 +13581,7 @@
   {
     "title": "Common nonmutational NOTCH1 activation in chronic lymphocytic leukemia",
     "labs": ["riccardo-dalla-favera-lab"],
+    "people": ["antony-holmes", "riccardo-dalla-favera"],
     "authors": [
       {
         "initials": "G",
@@ -15807,6 +13662,7 @@
   {
     "title": "Molecular genetics of aggressive B-cell lymphoma",
     "labs": ["riccardo-dalla-favera-lab"],
+    "people": ["riccardo-dalla-favera"],
     "authors": [
       {
         "initials": "R",
@@ -15827,6 +13683,7 @@
   {
     "title": "Genetics of diffuse large B-cell lymphoma",
     "labs": ["riccardo-dalla-favera-lab"],
+    "people": ["riccardo-dalla-favera"],
     "authors": [
       {
         "initials": "L",
@@ -15850,68 +13707,9 @@
     "url": ""
   },
   {
-    "title": "Cancer Cell.",
-    "labs": ["riccardo-dalla-favera-lab"],
-    "authors": [
-      {
-        "initials": "P",
-        "lastName": "Brescia",
-        "corresponding": false
-      },
-      {
-        "initials": "C",
-        "lastName": "Schneider",
-        "corresponding": false
-      },
-      {
-        "initials": "AB",
-        "lastName": "Holmes",
-        "corresponding": false
-      },
-      {
-        "initials": "Q",
-        "lastName": "Shen",
-        "corresponding": false
-      },
-      {
-        "initials": "S",
-        "lastName": "Hussein",
-        "corresponding": false
-      },
-      {
-        "initials": "L",
-        "lastName": "Pasqualucci",
-        "corresponding": false
-      },
-      {
-        "initials": "K",
-        "lastName": "Basso",
-        "corresponding": false
-      },
-      {
-        "initials": "RMEF2B",
-        "lastName": "Dalla-Favera",
-        "corresponding": false
-      },
-      {
-        "initials": "as",
-        "lastName": "Acts",
-        "corresponding": true
-      }
-    ],
-    "journal": "10;.e9",
-    "year": 2018,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "pubmed": "32119254",
-    "tags": ["Article"],
-    "abstract": "",
-    "url": ""
-  },
-  {
     "title": "Chronic lymphocytic leaukaemia: from genetics to treatment",
     "labs": ["riccardo-dalla-favera-lab"],
+    "people": ["riccardo-dalla-favera"],
     "authors": [
       {
         "initials": "F",
@@ -15936,7 +13734,8 @@
   },
   {
     "title": "Repurposing dasatinib for diffuse large B cell lymphoma",
-    "labs": ["riccardo-dalla-favera-lab"],
+    "labs": ["riccardo-dalla-favera-lab", "riccardo-dalla-favera-lab"],
+    "people": ["riccardo-dalla-favera"],
     "authors": [
       {
         "initials": "C",
@@ -16002,6 +13801,7 @@
   {
     "title": "Unique and shared epigenetic programs of the CREBBP and EP300 Acetyltransferases in germinal center B cells reveal targetable dependencies in lymphoma",
     "labs": ["riccardo-dalla-favera-lab"],
+    "people": ["antony-holmes", "riccardo-dalla-favera"],
     "authors": [
       {
         "initials": "SN",
@@ -16085,78 +13885,9 @@
     "url": ""
   },
   {
-    "title": "Repurposing dasatinib for diffuse large B cell lymphoma",
-    "labs": ["riccardo-dalla-favera-lab"],
-    "authors": [
-      {
-        "initials": "C",
-        "lastName": "Scuoppo",
-        "corresponding": false
-      },
-      {
-        "initials": "J",
-        "lastName": "Wang",
-        "corresponding": false
-      },
-      {
-        "initials": "M",
-        "lastName": "Persaud",
-        "corresponding": false
-      },
-      {
-        "initials": "SK",
-        "lastName": "Mittan",
-        "corresponding": false
-      },
-      {
-        "initials": "K",
-        "lastName": "Basso",
-        "corresponding": false
-      },
-      {
-        "initials": "L",
-        "lastName": "Pasqualucci",
-        "corresponding": false
-      },
-      {
-        "initials": "R",
-        "lastName": "Rabadan",
-        "corresponding": false
-      },
-      {
-        "initials": "G",
-        "lastName": "Inghirami",
-        "corresponding": false
-      },
-      {
-        "initials": "C",
-        "lastName": "Grandori",
-        "corresponding": false
-      },
-      {
-        "initials": "F",
-        "lastName": "Bosch",
-        "corresponding": false
-      },
-      {
-        "initials": "R",
-        "lastName": "Dalla-Favera",
-        "corresponding": false
-      }
-    ],
-    "journal": "Proc Natl Acad Sci USA",
-    "year": 2019,
-    "volume": "116",
-    "issue": "34",
-    "pages": "16981-16986",
-    "pubmed": "31383760",
-    "tags": ["Article"],
-    "abstract": "",
-    "url": ""
-  },
-  {
     "title": "The tal gene undergoes chromosome translocation in T cell leukemia and potentially encodes a helix-loop-helix protein",
     "labs": ["richard-baer-lab"],
+    "people": ["richard-baer"],
     "authors": [
       {
         "initials": "Q",
@@ -16222,6 +13953,7 @@
   {
     "title": "Site-specific recombination of the tal-1 gene is a common occurrence in human T cell leukemia",
     "labs": ["richard-baer-lab"],
+    "people": ["richard-baer"],
     "authors": [
       {
         "initials": "L",
@@ -16272,6 +14004,7 @@
   {
     "title": "TAL2, a helix-loop-helix gene activated by the (7;9)(q34;q32) translocation in human T cell leukemia",
     "labs": ["richard-baer-lab"],
+    "people": ["richard-baer"],
     "authors": [
       {
         "initials": "Y",
@@ -16327,6 +14060,7 @@
   {
     "title": "Specific in vivo association between the bHLH and LIM proteins implicated in human T cell leukemia",
     "labs": ["richard-baer-lab"],
+    "people": ["richard-baer"],
     "authors": [
       {
         "initials": "I",
@@ -16377,6 +14111,7 @@
   {
     "title": "The role of chromosome translocations in T cell acute leukemia",
     "labs": ["richard-baer-lab"],
+    "people": ["richard-baer"],
     "authors": [
       {
         "initials": "L-Y",
@@ -16402,6 +14137,7 @@
   {
     "title": "Identification of a RING protein that can interact in vivo with the BRCA1 gene product",
     "labs": ["richard-baer-lab"],
+    "people": ["richard-baer"],
     "authors": [
       {
         "initials": "LC",
@@ -16467,6 +14203,7 @@
   {
     "title": "The carboxy-terminal (BRCT) domains of BRCA1 interact in vivo with CtIP, a protein implicated in the CtBP pathway of transcriptional repression",
     "labs": ["richard-baer-lab"],
+    "people": ["richard-baer"],
     "authors": [
       {
         "initials": "X",
@@ -16499,7 +14236,7 @@
     "volume": "273",
     "issue": "",
     "pages": "25388-25392",
-    "pubmed": "",
+    "pubmed": "9738006",
     "tags": ["Article"],
     "abstract": "",
     "url": ""
@@ -16507,6 +14244,7 @@
   {
     "title": "Nuclear localization and cell cycle-specific expression of CtIP, a protein that associates with the BRCA1 tumor suppressor",
     "labs": ["richard-baer-lab"],
+    "people": ["richard-baer"],
     "authors": [
       {
         "initials": "X",
@@ -16532,6 +14270,7 @@
   {
     "title": "Effect of DNA damage on a BRCA1 complex",
     "labs": ["richard-baer-lab"],
+    "people": ["richard-baer"],
     "authors": [
       {
         "initials": "F",
@@ -16557,6 +14296,7 @@
   {
     "title": "The BRCA1/BARD1 heterodimer assembles polyubiquitin chains through an unconventional linkage involving lysine residue K6 of ubiquitin",
     "labs": ["richard-baer-lab"],
+    "people": ["richard-baer"],
     "authors": [
       {
         "initials": "F",
@@ -16592,6 +14332,7 @@
   {
     "title": "Hyperphosphorylation of the BARD1 tumor suppressor in mitotic cells",
     "labs": ["richard-baer-lab"],
+    "people": ["richard-baer"],
     "authors": [
       {
         "initials": "AD",
@@ -16637,6 +14378,7 @@
   {
     "title": "BRCA1 ubiquitinates its phosphorylation-dependent binding partner CtIP",
     "labs": ["richard-baer-lab"],
+    "people": ["richard-baer"],
     "authors": [
       {
         "initials": "X",
@@ -16677,6 +14419,7 @@
   {
     "title": "Structural requirements for the BARD1 tumor suppressor in chromosomal stability and homology-directed DNA repair",
     "labs": ["richard-baer-lab"],
+    "people": ["richard-baer"],
     "authors": [
       {
         "initials": "M",
@@ -16732,6 +14475,7 @@
   {
     "title": "CtIP cooperates with the MRE11 complex to promote DNA end resection",
     "labs": ["richard-baer-lab"],
+    "people": ["richard-baer"],
     "authors": [
       {
         "initials": "AA",
@@ -16782,6 +14526,7 @@
   {
     "title": "Identification and characterization of an inhibitor of the MRE11-RAD50-NBS1 complex",
     "labs": ["richard-baer-lab"],
+    "people": ["richard-baer"],
     "authors": [
       {
         "initials": "A",
@@ -16852,6 +14597,7 @@
   {
     "title": "A common basal-like phenotype for mammary carcinomas induced by conditional inactivation of the BARD1 and BRCA1 tumor suppressors",
     "labs": ["richard-baer-lab"],
+    "people": ["richard-baer"],
     "authors": [
       {
         "initials": "R",
@@ -16912,6 +14658,7 @@
   {
     "title": "The E3 ubiquitin ligase activity of BRCA1 is not essential for mammalian cell viability or homology-directed repair of double-strand DNA breaks",
     "labs": ["richard-baer-lab"],
+    "people": ["richard-baer"],
     "authors": [
       {
         "initials": "LJ",
@@ -16967,6 +14714,7 @@
   {
     "title": "The UBXN1 protein associates with autoubiquitinated forms of the BRCA1 tumor suppressor and inhibits its enzymatic function",
     "labs": ["richard-baer-lab"],
+    "people": ["richard-baer"],
     "authors": [
       {
         "initials": "F",
@@ -16995,53 +14743,9 @@
     "url": ""
   },
   {
-    "title": "Cdk1 uncouples CtIP-dependent resection and Rad51 filament formation during M-phase double-strand break repair",
-    "labs": ["richard-baer-lab"],
-    "authors": [
-      {
-        "initials": "SE",
-        "lastName": "Peterson",
-        "corresponding": false
-      },
-      {
-        "initials": "Y",
-        "lastName": "Li",
-        "corresponding": false
-      },
-      {
-        "initials": "BT",
-        "lastName": "Chait",
-        "corresponding": false
-      },
-      {
-        "initials": "ME",
-        "lastName": "Gottesman",
-        "corresponding": false
-      },
-      {
-        "initials": "R",
-        "lastName": "Baer",
-        "corresponding": false
-      },
-      {
-        "initials": "J",
-        "lastName": "Gautier",
-        "corresponding": false
-      }
-    ],
-    "journal": "J Cell Biol",
-    "year": 2011,
-    "volume": "194",
-    "issue": "",
-    "pages": "705-720",
-    "pubmed": "21893598",
-    "tags": ["Article"],
-    "abstract": "",
-    "url": ""
-  },
-  {
     "title": "BRCA1 tumor suppression depends on BRCT phosphoprotein binding, but not its E3 ligase activity",
     "labs": ["richard-baer-lab"],
+    "people": ["richard-baer"],
     "authors": [
       {
         "initials": "R",
@@ -17127,6 +14831,7 @@
   {
     "title": "Tumor suppression in the absence of p53-mediated cell-cycle arrest, apoptosis, and senescence",
     "labs": ["richard-baer-lab"],
+    "people": ["richard-baer"],
     "authors": [
       {
         "initials": "T",
@@ -17182,6 +14887,7 @@
   {
     "title": "Activation of DSB processing requires phosphorylation of CtIP by ATR",
     "labs": ["richard-baer-lab"],
+    "people": ["richard-baer"],
     "authors": [
       {
         "initials": "SE",
@@ -17237,6 +14943,7 @@
   {
     "title": "Luring BRCA1 to the scene of the crime",
     "labs": ["richard-baer-lab"],
+    "people": ["richard-baer"],
     "authors": [
       {
         "initials": "R",
@@ -17257,6 +14964,7 @@
   {
     "title": "The interaction between CtIP and BRCA1 is not essential for resection-mediated DNA repair or tumor suppression",
     "labs": ["richard-baer-lab"],
+    "people": ["richard-baer"],
     "authors": [
       {
         "initials": "CR",
@@ -17295,38 +15003,9 @@
     "url": ""
   },
   {
-    "title": "DNA double-strand break repair pathway choice and cancer",
-    "labs": ["richard-baer-lab"],
-    "authors": [
-      {
-        "initials": "T",
-        "lastName": "Aparicio",
-        "corresponding": false
-      },
-      {
-        "initials": "R",
-        "lastName": "Baer",
-        "corresponding": false
-      },
-      {
-        "initials": "J",
-        "lastName": "Gautier",
-        "corresponding": false
-      }
-    ],
-    "journal": "DNA Repair (Amst)",
-    "year": 2014,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "pubmed": "24746645",
-    "tags": ["Article"],
-    "abstract": "",
-    "url": ""
-  },
-  {
     "title": "Ferroptosis as a p53-mediated activity during tumour suppression",
     "labs": ["richard-baer-lab"],
+    "people": ["richard-baer"],
     "authors": [
       {
         "initials": "L",
@@ -17382,6 +15061,7 @@
   {
     "title": "The DNA resection protein CtIP promotes mammary tumorigenesis",
     "labs": ["richard-baer-lab"],
+    "people": ["richard-baer"],
     "authors": [
       {
         "initials": "CR",
@@ -17427,6 +15107,7 @@
   {
     "title": "Genomic instability during reprogramming by nuclear transfer is DNA replication dependent",
     "labs": ["richard-baer-lab"],
+    "people": ["richard-baer"],
     "authors": [
       {
         "initials": "G",
@@ -17481,7 +15162,8 @@
   },
   {
     "title": "NRF2 is a major target of ARF in p53-independent tumor suppression",
-    "labs": ["richard-baer-lab"],
+    "labs": ["richard-baer-lab", "wei-gu-lab"],
+    "people": ["richard-baer"],
     "authors": [
       {
         "initials": "D",
@@ -17532,6 +15214,7 @@
   {
     "title": "The BRCT Domains of the BRCA1 and BARD1 Tumor Suppressors Differentially Regulate Homology-Directed Repair and Stalled Fork Protection",
     "labs": ["richard-baer-lab"],
+    "people": ["richard-baer"],
     "authors": [
       {
         "initials": "D",
@@ -17607,6 +15290,7 @@
   {
     "title": "LMO2 as a Biomarker for hypersensitivity to genotoxic therapy",
     "labs": ["shan-zha-lab"],
+    "people": ["shan-zha"],
     "authors": [
       {
         "initials": "C",
@@ -17632,6 +15316,7 @@
   {
     "title": "Phosphorylation at S2053 in Murine (S2056 in Human) DNA-PKcs is despensable for lymphocyte development and class switch recombination",
     "labs": ["shan-zha-lab"],
+    "people": ["shan-zha"],
     "authors": [
       {
         "initials": "W",
@@ -17675,7 +15360,7 @@
       }
     ],
     "journal": "J Immunol",
-    "year": -1,
+    "year": 2019,
     "volume": "203",
     "issue": "1",
     "pages": "178-187",
@@ -17687,6 +15372,7 @@
   {
     "title": "CtIP is essential for early B cell proliferation and development in mice",
     "labs": ["shan-zha-lab"],
+    "people": ["shan-zha"],
     "authors": [
       {
         "initials": "X",
@@ -17740,7 +15426,7 @@
       }
     ],
     "journal": "J Exp Med",
-    "year": -1,
+    "year": 2019,
     "volume": "216",
     "issue": "7",
     "pages": "1648-1663",
@@ -17752,6 +15438,7 @@
   {
     "title": "Kinase-dead ATR differs from ATR loss by limiting the dynamic exchange of ATR and RPA",
     "labs": ["shan-zha-lab"],
+    "people": ["shan-zha"],
     "authors": [
       {
         "initials": "D",
@@ -17812,6 +15499,7 @@
   {
     "title": "Kinase-dependent structural role of DNA-PKcs during immunoglobulin class switch recombination",
     "labs": ["shan-zha-lab"],
+    "people": ["shan-zha"],
     "authors": [
       {
         "initials": "JL",
@@ -17872,6 +15560,7 @@
   {
     "title": "MRI Is a DNA Damage Response Adaptor during Classical Non-homologous End Joining",
     "labs": ["shan-zha-lab"],
+    "people": ["shan-zha"],
     "authors": [
       {
         "initials": "PJ",
@@ -17992,6 +15681,7 @@
   {
     "title": "Actionable perturbations of damage responses by TCL1/ATM and epigenetic lesions form the basis of T-PLL",
     "labs": ["shan-zha-lab"],
+    "people": ["shan-zha"],
     "authors": [
       {
         "initials": "A",
@@ -18187,6 +15877,7 @@
   {
     "title": "New diagnosis of atypical ataxia-telangiectasia in a 17-year-old boy with T-cell acute lymphoblastic leukemia and a novel ATM mutation",
     "labs": ["shan-zha-lab"],
+    "people": ["shan-zha"],
     "authors": [
       {
         "initials": "J",
@@ -18247,6 +15938,7 @@
   {
     "title": "PAXX promotes KU accumulation at DNA breaks and is essential for end-joining in XLF-deficient mice",
     "labs": ["shan-zha-lab"],
+    "people": ["shan-zha"],
     "authors": [
       {
         "initials": "X",
@@ -18287,6 +15979,7 @@
   {
     "title": "Regulation of the DNA Damage Response by DNA-PKcs Inhibitory Phosphorylation of ATM",
     "labs": ["shan-zha-lab"],
+    "people": ["shan-zha"],
     "authors": [
       {
         "initials": "Y",
@@ -18332,6 +16025,7 @@
   {
     "title": "Kinase-dead ATM protein is highly oncogenic and can be preferentially targeted by Topo-isomerase I inhibitors",
     "labs": ["shan-zha-lab"],
+    "people": ["shan-zha"],
     "authors": [
       {
         "initials": "K",
@@ -18412,6 +16106,7 @@
   {
     "title": "Loss of p53-mediated cell-cycle arrest, senescence and apoptosis promotes genomic instability and premature aging",
     "labs": ["shan-zha-lab"],
+    "people": ["shan-zha"],
     "authors": [
       {
         "initials": "T",
@@ -18457,6 +16152,7 @@
   {
     "title": "Haploinsufficiency of Bcl11b suppresses the progression of ATM-deficient T cell lymphomas",
     "labs": ["shan-zha-lab"],
+    "people": ["shan-zha"],
     "authors": [
       {
         "initials": "KA",
@@ -18507,6 +16203,7 @@
   {
     "title": "Early B-cell Specific Inactivation of ATM Synergizes with Ectopic CyclinD1 Expression to Promote Pre-germinal center B-cell Lymphomas in Mice",
     "labs": ["shan-zha-lab"],
+    "people": ["shan-zha"],
     "authors": [
       {
         "initials": "K",
@@ -18557,6 +16254,7 @@
   {
     "title": "Aberrant TCR\u03b4 rearrangement underlies the T cell lymphocytopenia and t(12;14) translocation associated with ATM deficiency",
     "labs": ["shan-zha-lab"],
+    "people": ["shan-zha"],
     "authors": [
       {
         "initials": "W",
@@ -18607,6 +16305,7 @@
   {
     "title": "Differential phosphorylation of DNA-PKcs regulates the interplay between end-processing and end-ligation during non-homologous end-joining",
     "labs": ["shan-zha-lab"],
+    "people": ["shan-zha"],
     "authors": [
       {
         "initials": "W",
@@ -18682,6 +16381,7 @@
   {
     "title": "Interactome analysis identifies a new paralogue of XRCC4 in non-homologous end joining DNA repair pathway",
     "labs": ["shan-zha-lab"],
+    "people": ["shan-zha"],
     "authors": [
       {
         "initials": "M",
@@ -18792,6 +16492,7 @@
   {
     "title": "Hematopoietic stem cell dysfunction underlies the progressive lymphocytopenia in XLF/Cernunnos deficiency",
     "labs": ["shan-zha-lab"],
+    "people": ["shan-zha"],
     "authors": [
       {
         "initials": "S",
@@ -18852,6 +16553,7 @@
   {
     "title": "Kinase-Dead ATM protein causes genomic instability and early embryonic lethality in mice",
     "labs": ["shan-zha-lab"],
+    "people": ["shan-zha"],
     "authors": [
       {
         "initials": "K",
@@ -18907,6 +16609,7 @@
   {
     "title": "Overlapping functions between XLF repair protein and 53BP1 DNA damage response factor in end joining and lymphocyte development",
     "labs": ["shan-zha-lab"],
+    "people": ["shan-zha"],
     "authors": [
       {
         "initials": "X",
@@ -18952,6 +16655,7 @@
   {
     "title": "The BCL11B tumor suppressor is mutated across the major molecular subtypes of T-cell acute lymphoblastic leukemia",
     "labs": ["shan-zha-lab"],
+    "people": ["shan-zha"],
     "authors": [
       {
         "initials": "A",
@@ -19062,6 +16766,7 @@
   {
     "title": "Ataxia telangiectasia-mutated protein and DNA-dependent protein kinase have complementary V(D)J recombination functions",
     "labs": ["shan-zha-lab"],
+    "people": ["shan-zha"],
     "authors": [
       {
         "initials": "S",
@@ -19117,6 +16822,7 @@
   {
     "title": "XLF Has Functional Redundancy with ATM and H2AX in Non-homologous DNA End-joining",
     "labs": ["shan-zha-lab"],
+    "people": ["shan-zha"],
     "authors": [
       {
         "initials": "S",
@@ -19192,6 +16898,7 @@
   {
     "title": "ATM-Deficient Thymic Lymphoma Is Associated With Aberrant TCR Rearrangement And Gene Amplification",
     "labs": ["shan-zha-lab"],
+    "people": ["shan-zha"],
     "authors": [
       {
         "initials": "S",
@@ -19244,7 +16951,7 @@
     "volume": "",
     "issue": "",
     "pages": "",
-    "pubmed": "",
+    "pubmed": "20566716",
     "tags": ["Article"],
     "abstract": "",
     "url": ""
@@ -19252,6 +16959,7 @@
   {
     "title": "Lymphocyte-Specific Compensation For XLF/Cernunnos End-Joining Functions In V(D)J Recombination",
     "labs": ["shan-zha-lab"],
+    "people": ["shan-zha"],
     "authors": [
       {
         "initials": "G",
@@ -19312,6 +17020,7 @@
   {
     "title": "Upregulation of ZIP14 and Altered Zinc Homeostasis in Muscles in Pancreatic Cancer Cachexia",
     "labs": ["swarnali-acharyya-lab"],
+    "people": ["swarnali-acharyya"],
     "authors": [
       {
         "initials": "AR",
@@ -19407,6 +17116,7 @@
   {
     "title": "The etiology and impact of muscle wasting in metastatic cancer",
     "labs": ["swarnali-acharyya-lab"],
+    "people": ["swarnali-acharyya"],
     "authors": [
       {
         "initials": "AK",
@@ -19432,6 +17142,7 @@
   {
     "title": "Metastatic cancers promote cachexia through ZIP14 upregulation in skeletal muscle",
     "labs": ["swarnali-acharyya-lab"],
+    "people": ["swarnali-acharyya"],
     "authors": [
       {
         "initials": "G",
@@ -19537,6 +17248,7 @@
   {
     "title": "Monitoring Metastasis and Cachexia in a Patient with Breast Cancer: A Case Study",
     "labs": ["swarnali-acharyya-lab"],
+    "people": ["swarnali-acharyya"],
     "authors": [
       {
         "initials": "N",
@@ -19592,6 +17304,7 @@
   {
     "title": "An analysis of the relationship between metastases and cachexia in lung cancer patients",
     "labs": ["swarnali-acharyya-lab"],
+    "people": ["swarnali-acharyya"],
     "authors": [
       {
         "initials": "M",
@@ -19697,6 +17410,7 @@
   {
     "title": "Arresting supporters: targeting neutrophils in metastasis",
     "labs": ["swarnali-acharyya-lab"],
+    "people": ["swarnali-acharyya"],
     "authors": [
       {
         "initials": "S",
@@ -19722,6 +17436,7 @@
   {
     "title": "A CXCL1 paracrine network links cancer chemoresistance and metastasis",
     "labs": ["swarnali-acharyya-lab"],
+    "people": ["swarnali-acharyya"],
     "authors": [
       {
         "initials": "S",
@@ -19802,6 +17517,7 @@
   {
     "title": "Breast cancer cells produce tenascin-C as a metastatic niche component to colonize the lungs",
     "labs": ["swarnali-acharyya-lab"],
+    "people": ["swarnali-acharyya"],
     "authors": [
       {
         "initials": "T",
@@ -19867,6 +17583,7 @@
   {
     "title": "TNF inhibits Notch-1 in skeletal muscle by Ezh2 and DNA methylation mediated repression: implications in Duchenne muscular dystrophy",
     "labs": ["swarnali-acharyya-lab"],
+    "people": ["swarnali-acharyya"],
     "authors": [
       {
         "initials": "S",
@@ -19927,6 +17644,7 @@
   {
     "title": "Tumor self-seeding by circulating cancer cells",
     "labs": ["swarnali-acharyya-lab"],
+    "people": ["swarnali-acharyya"],
     "authors": [
       {
         "initials": "MY",
@@ -19977,6 +17695,7 @@
   {
     "title": "Chemotherapy-induced muscle wasting: association with NF-kB and cancer cachexia",
     "labs": ["swarnali-acharyya-lab"],
+    "people": ["swarnali-acharyya"],
     "authors": [
       {
         "initials": "J",
@@ -20022,6 +17741,7 @@
   {
     "title": "ID genes mediate tumor re-initiation during breast cancer metastasis",
     "labs": ["swarnali-acharyya-lab"],
+    "people": ["swarnali-acharyya"],
     "authors": [
       {
         "initials": "GP",
@@ -20087,6 +17807,7 @@
   {
     "title": "Cancer Cachexia Signaling pathways continue to emerge yet much still points to the proteasome",
     "labs": ["swarnali-acharyya-lab"],
+    "people": ["swarnali-acharyya"],
     "authors": [
       {
         "initials": "S",
@@ -20112,6 +17833,7 @@
   {
     "title": "IKK/NF-kB Signaling Interplay in Macrophages and Myofibers Promotes Muscle Wasting in Duchenne Muscular Dystrophy",
     "labs": ["swarnali-acharyya-lab"],
+    "people": ["swarnali-acharyya"],
     "authors": [
       {
         "initials": "S",
@@ -20212,6 +17934,7 @@
   {
     "title": "Dystrophin glycoprotein complex dysfunction: a regulatory link between muscular dystrophy and cancer cachexia",
     "labs": ["swarnali-acharyya-lab"],
+    "people": ["swarnali-acharyya"],
     "authors": [
       {
         "initials": "S",
@@ -20297,6 +18020,7 @@
   {
     "title": "Cancer cachexia is regulated by selective targeting of skeletal muscle gene products",
     "labs": ["swarnali-acharyya-lab"],
+    "people": ["swarnali-acharyya"],
     "authors": [
       {
         "initials": "S",
@@ -20347,6 +18071,7 @@
   {
     "title": "Deacetylation of p53 modulates its effect on cell growth and apoptosis",
     "labs": ["wei-gu-lab"],
+    "people": ["wei-gu"],
     "authors": [
       {
         "initials": "J",
@@ -20387,6 +18112,7 @@
   {
     "title": "Role of PML in p53-dependent apoptosis",
     "labs": ["wei-gu-lab"],
+    "people": ["wei-gu"],
     "authors": [
       {
         "initials": "A",
@@ -20437,6 +18163,7 @@
   {
     "title": "Negative control of p53 by Sir2a promotes cell survival under stress",
     "labs": ["wei-gu-lab"],
+    "people": ["wei-gu"],
     "authors": [
       {
         "initials": "J",
@@ -20492,6 +18219,7 @@
   {
     "title": "Y, Qin J, and Gu",
     "labs": ["wei-gu-lab"],
+    "people": ["wei-gu"],
     "authors": [
       {
         "initials": "M",
@@ -20532,6 +18260,7 @@
   {
     "title": "Crystal structure of a UBP-family deubiquiting enzyme: in isolation and in complex with ubiquitin aldehyde",
     "labs": ["wei-gu-lab"],
+    "people": ["wei-gu"],
     "authors": [
       {
         "initials": "M",
@@ -20581,9 +18310,9 @@
     ],
     "journal": "Cell",
     "year": 2002,
-    "volume": "111",
+    "volume": "",
     "issue": "",
-    "pages": "1041-1054",
+    "pages": "",
     "pubmed": "12507430",
     "tags": ["Article"],
     "abstract": "",
@@ -20592,6 +18321,7 @@
   {
     "title": "Parc: a cytoplasmic anchor for p53",
     "labs": ["wei-gu-lab"],
+    "people": ["wei-gu"],
     "authors": [
       {
         "initials": "AY",
@@ -20630,8 +18360,9 @@
     "url": ""
   },
   {
-    "title": "",
+    "title": "Mono- versus polyubiquitination: differential control of p53 fate by Mdm2",
     "labs": ["wei-gu-lab"],
+    "people": ["wei-gu"],
     "authors": [
       {
         "initials": "M",
@@ -20664,11 +18395,11 @@
         "corresponding": true
       }
     ],
-    "journal": "Mono- versus polyubiquitination: differential control of p53 fate by Mdm2",
+    "journal": "Science",
     "year": 2003,
-    "volume": "",
+    "volume": "302",
     "issue": "",
-    "pages": "",
+    "pages": "1972-5",
     "pubmed": "",
     "tags": ["Article"],
     "abstract": "",
@@ -20677,6 +18408,7 @@
   {
     "title": "Mammalian SIRT1 represses forkhead transcription factors",
     "labs": ["wei-gu-lab"],
+    "people": ["wei-gu"],
     "authors": [
       {
         "initials": "MC",
@@ -20735,8 +18467,9 @@
     "url": ""
   },
   {
-    "title": "",
+    "title": "A Dynamic Role of HAUSP in the p53-Mdm2 Pathway",
     "labs": ["wei-gu-lab"],
+    "people": ["wei-gu"],
     "authors": [
       {
         "initials": "M",
@@ -20759,11 +18492,11 @@
         "corresponding": true
       }
     ],
-    "journal": "A Dynamic Role of HAUSP in the p53-Mdm2 Pathway",
+    "journal": "Mol Cell",
     "year": 2004,
-    "volume": "",
+    "volume": "13",
     "issue": "",
-    "pages": "",
+    "pages": "879-86",
     "pubmed": "",
     "tags": ["Article"],
     "abstract": "",
@@ -20772,6 +18505,7 @@
   {
     "title": "FoxO1 protects against pancreatic beta cell failure through NeuroD and MafA induction",
     "labs": ["wei-gu-lab"],
+    "people": ["wei-gu"],
     "authors": [
       {
         "initials": "YI",
@@ -20822,6 +18556,7 @@
   {
     "title": "ARF-BP1 is a critical mediator of the ARF tumor suppressor",
     "labs": ["wei-gu-lab"],
+    "people": ["wei-gu"],
     "authors": [
       {
         "initials": "D",
@@ -20867,6 +18602,7 @@
   {
     "title": "Tumor Suppressor HIC1 Directly Regulates SIRT1 to Modulate p53-Dependent DNA-Damage Responses",
     "labs": ["wei-gu-lab"],
+    "people": ["wei-gu"],
     "authors": [
       {
         "initials": "WY",
@@ -20912,6 +18648,7 @@
   {
     "title": "L",
     "labs": ["wei-gu-lab"],
+    "people": ["wei-gu"],
     "authors": [
       {
         "initials": "C",
@@ -20932,6 +18669,7 @@
   {
     "title": "Interactions between E2F1 and SirT1 regulate apoptotic response to DNA damage",
     "labs": ["wei-gu-lab"],
+    "people": ["wei-gu"],
     "authors": [
       {
         "initials": "C",
@@ -20990,7 +18728,7 @@
       }
     ],
     "journal": "Nat Cell Biol",
-    "year": -1,
+    "year": 2006,
     "volume": "8",
     "issue": "",
     "pages": "1025-31",
@@ -21002,6 +18740,7 @@
   {
     "title": "Tip60-dependent acetylation of p53 modulates the decision between cell cycle arrest and apoptosis",
     "labs": ["wei-gu-lab"],
+    "people": ["wei-gu"],
     "authors": [
       {
         "initials": "Y",
@@ -21037,6 +18776,7 @@
   {
     "title": "and Dalla-Favera, R",
     "labs": ["wei-gu-lab"],
+    "people": ["wei-gu"],
     "authors": [
       {
         "initials": "D",
@@ -21064,7 +18804,7 @@
         "corresponding": false
       }
     ],
-    "journal": "(2007) Non-transcriptional control of DNA replication by C-Myc",
+    "journal": "Non-transcriptional control of DNA replication by C-Myc",
     "year": 2007,
     "volume": "",
     "issue": "",
@@ -21077,6 +18817,7 @@
   {
     "title": "Negative Regulation of the Sirt1 deacetylase by DBC1",
     "labs": ["wei-gu-lab"],
+    "people": ["wei-gu"],
     "authors": [
       {
         "initials": "W",
@@ -21121,7 +18862,8 @@
   },
   {
     "title": "and Gu W",
-    "labs": ["wei-gu-lab"],
+    "labs": ["wei-gu-lab", "wei-gu-lab"],
+    "people": ["wei-gu"],
     "authors": [
       {
         "initials": "JP",
@@ -21129,7 +18871,7 @@
         "corresponding": false
       }
     ],
-    "journal": "(2008) Snapshot: p53 post-translational modifications",
+    "journal": "Snapshot: p53 post-translational modifications",
     "year": 2008,
     "volume": "",
     "issue": "",
@@ -21142,6 +18884,7 @@
   {
     "title": "Acetylation is indispensible for p53 activation",
     "labs": ["wei-gu-lab"],
+    "people": ["wei-gu"],
     "authors": [
       {
         "initials": "Y",
@@ -21182,6 +18925,7 @@
   {
     "title": "SirT1 gain of function increases energy efficiency and prevents diabetes in mice",
     "labs": ["wei-gu-lab"],
+    "people": ["wei-gu"],
     "authors": [
       {
         "initials": "AS",
@@ -21219,11 +18963,11 @@
         "corresponding": false
       }
     ],
-    "journal": "Cell Metab.8:333-41",
-    "year": -1,
-    "volume": "",
+    "journal": "Cell Metab",
+    "year": 2008,
+    "volume": "8",
     "issue": "",
-    "pages": "",
+    "pages": "333-41",
     "pubmed": "18840364",
     "tags": ["Article"],
     "abstract": "",
@@ -21232,6 +18976,7 @@
   {
     "title": "How does SIRT1 affect metabolism, senescence and cancer?",
     "labs": ["wei-gu-lab"],
+    "people": ["wei-gu"],
     "authors": [
       {
         "initials": "C",
@@ -21257,6 +19002,7 @@
   {
     "title": "Modes of p53 regulation",
     "labs": ["wei-gu-lab"],
+    "people": ["wei-gu"],
     "authors": [
       {
         "initials": "JP",
@@ -21282,6 +19028,7 @@
   {
     "title": "Suppression of",
     "labs": ["wei-gu-lab"],
+    "people": ["wei-gu"],
     "authors": [
       {
         "initials": "J",
@@ -21310,43 +19057,9 @@
     "url": ""
   },
   {
-    "title": "and Gu W",
-    "labs": ["wei-gu-lab"],
-    "authors": [
-      {
-        "initials": "D",
-        "lastName": "Chen",
-        "corresponding": false
-      },
-      {
-        "initials": "J",
-        "lastName": "Shan",
-        "corresponding": false
-      },
-      {
-        "initials": "W",
-        "lastName": "Zhu",
-        "corresponding": false
-      },
-      {
-        "initials": "J",
-        "lastName": "Qin",
-        "corresponding": false
-      }
-    ],
-    "journal": "(2010) Transcription-independent ARF regulation in oncogenic stress-mediated p53 responses",
-    "year": 2010,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "pubmed": "27808393",
-    "tags": ["Article"],
-    "abstract": "",
-    "url": ""
-  },
-  {
     "title": "Phosphorylation of Tip60 by GSK-3 Determines the Induction of PUMA and Apoptosis by p53",
     "labs": ["wei-gu-lab"],
+    "people": ["wei-gu"],
     "authors": [
       {
         "initials": "C",
@@ -21437,6 +19150,7 @@
   {
     "title": "Proatherogenic Abnormalities of Lipid Metabolism in SirT1 Transgenic Mice Are Mediated through Creb Deacetylation",
     "labs": ["wei-gu-lab"],
+    "people": ["wei-gu"],
     "authors": [
       {
         "initials": "L",
@@ -21482,6 +19196,7 @@
   {
     "title": "A Critical Role for Noncoding 5S rRNA in Regulating Mdmx Stability",
     "labs": ["wei-gu-lab"],
+    "people": ["wei-gu"],
     "authors": [
       {
         "initials": "M",
@@ -21505,8 +19220,9 @@
     "url": "http://www.ncbi.nlm.nih.gov/pubmed/21925390"
   },
   {
-    "title": "Gu W, Accili, D",
+    "title": "Brown Remodeling of White Adipose Tissue by SirT1-Dependent Deacetylation of PPAR",
     "labs": ["wei-gu-lab"],
+    "people": ["wei-gu"],
     "authors": [
       {
         "initials": "L",
@@ -21537,14 +19253,24 @@
         "initials": "AR",
         "lastName": "Tall",
         "corresponding": false
+      },
+      {
+        "initials": "W",
+        "lastName": "Gu",
+        "corresponding": true
+      },
+      {
+        "initials": "D",
+        "lastName": "Accili",
+        "corresponding": false
       }
     ],
-    "journal": "(2012) Brown Remodeling of White Adipose Tissue by SirT1-Dependent Deacetylation of PPAR",
+    "journal": "Cell",
     "year": 2012,
-    "volume": "",
+    "volume": "150",
     "issue": "",
-    "pages": "",
-    "pubmed": "",
+    "pages": "620-632",
+    "pubmed": "22863012",
     "tags": ["Article"],
     "abstract": "",
     "url": ""
@@ -21552,6 +19278,7 @@
   {
     "title": "Tumor suppression in the absence of p53-mediated cell cycle arrest, apoptosis, and senescence",
     "labs": ["wei-gu-lab"],
+    "people": ["wei-gu"],
     "authors": [
       {
         "initials": "T",
@@ -21607,6 +19334,7 @@
   {
     "title": "Differential effects on ARF stability by normal vs",
     "labs": ["wei-gu-lab"],
+    "people": ["wei-gu"],
     "authors": [
       {
         "initials": "D",
@@ -21652,6 +19380,7 @@
   {
     "title": "Ferroptosis as a p53-mediated activity during tumor suppression",
     "labs": ["wei-gu-lab"],
+    "people": ["wei-gu"],
     "authors": [
       {
         "initials": "L",
@@ -21689,13 +19418,13 @@
         "corresponding": false
       },
       {
-        "initials": "W(2015)",
+        "initials": "W",
         "lastName": "Gu",
         "corresponding": true
       }
     ],
     "journal": "Nature",
-    "year": -1,
+    "year": 2015,
     "volume": "520",
     "issue": "",
     "pages": "57-62",
@@ -21705,8 +19434,9 @@
     "url": ""
   },
   {
-    "title": "Proc Natl Acad Sci USA",
+    "title": "Activation of SAT1 engages polyamine metabolism with p53-mediated ferroptotic responses",
     "labs": ["wei-gu-lab"],
+    "people": ["wei-gu"],
     "authors": [
       {
         "initials": "Y",
@@ -21729,17 +19459,17 @@
         "corresponding": false
       },
       {
-        "initials": "W.(2016)",
+        "initials": "W",
         "lastName": "Gu",
         "corresponding": true
       }
     ],
-    "journal": "113(44):E6806-E6812",
-    "year": -1,
+    "journal": "Proc Natl Acad Sci USA",
+    "year": 2016,
     "volume": "",
     "issue": "",
     "pages": "",
-    "pubmed": "30587568",
+    "pubmed": "27698118",
     "tags": ["Article"],
     "abstract": "",
     "url": "https://www.ncbi.nlm.nih.gov/pubmed/27698118"
@@ -21747,6 +19477,7 @@
   {
     "title": "Acetylation Is Crucial for p53-Mediated Ferroptosis and Tumor Suppression",
     "labs": ["wei-gu-lab"],
+    "people": ["wei-gu"],
     "authors": [
       {
         "initials": "SJ",
@@ -21797,6 +19528,7 @@
   {
     "title": "Acetylation-regulated interaction between p53 and SET reveals a widespread regulatory mode",
     "labs": ["wei-gu-lab"],
+    "people": ["wei-gu"],
     "authors": [
       {
         "initials": "D",
@@ -21857,6 +19589,7 @@
   {
     "title": "HAUSP deubiquitinates and stabilizes N-Myc in neuroblastoma",
     "labs": ["wei-gu-lab"],
+    "people": ["wei-gu"],
     "authors": [
       {
         "initials": "O",
@@ -21927,6 +19660,7 @@
   {
     "title": "Zhu WG, Zhao Y",
     "labs": ["wei-gu-lab"],
+    "people": ["wei-gu"],
     "authors": [
       {
         "initials": "Y",
@@ -21984,69 +19718,20 @@
         "corresponding": true
       }
     ],
-    "journal": "(2016) Autophagy Regulates Chromatin Ubiquitination in DNA Damage Response through Elimination of SQSTM1/p62",
+    "journal": "Autophagy Regulates Chromatin Ubiquitination in DNA Damage Response through Elimination of SQSTM1/p62",
     "year": 2016,
     "volume": "",
     "issue": "",
     "pages": "",
-    "pubmed": "",
+    "pubmed": "27345151",
     "tags": ["Article"],
     "abstract": "",
     "url": "https://www.ncbi.nlm.nih.gov/pubmed/27345151"
   },
   {
-    "title": "NRF2 is a major target of ARF in p53-independent tumor suppression",
-    "labs": ["wei-gu-lab"],
-    "authors": [
-      {
-        "initials": "D",
-        "lastName": "Chen",
-        "corresponding": false
-      },
-      {
-        "initials": "Tavana",
-        "lastName": "Omid",
-        "corresponding": false
-      },
-      {
-        "initials": "Chu",
-        "lastName": "Bo",
-        "corresponding": false
-      },
-      {
-        "initials": "Erber",
-        "lastName": "Luke",
-        "corresponding": false
-      },
-      {
-        "initials": "Chen",
-        "lastName": "Yue",
-        "corresponding": false
-      },
-      {
-        "initials": "Baer",
-        "lastName": "Richard",
-        "corresponding": false
-      },
-      {
-        "initials": "W",
-        "lastName": "Gu",
-        "corresponding": true
-      }
-    ],
-    "journal": "Mol Cell",
-    "year": 2017,
-    "volume": "68",
-    "issue": "1",
-    "pages": "224-232",
-    "pubmed": "28985506",
-    "tags": ["Article"],
-    "abstract": "",
-    "url": ""
-  },
-  {
     "title": "The deubiquitylase OTUB1 mediates ferroptosis via stabilization of SCL7A11",
     "labs": ["wei-gu-lab"],
+    "people": ["wei-gu"],
     "authors": [
       {
         "initials": "T",
@@ -22080,8 +19765,175 @@
     "url": ""
   },
   {
+    "title": "CD8+ T cells regulate tumour ferroptosis during cancer immunotherapy",
+    "labs": ["wei-gu-lab"],
+    "people": ["wei-gu"],
+    "authors": [
+      {
+        "initials": "W",
+        "lastName": "Wang",
+        "corresponding": false
+      },
+      {
+        "initials": "M",
+        "lastName": "Green",
+        "corresponding": false
+      },
+      {
+        "initials": "JE",
+        "lastName": "Choi",
+        "corresponding": false
+      },
+      {
+        "initials": "M",
+        "lastName": "Gij\u00f3n",
+        "corresponding": false
+      },
+      {
+        "initials": "PD",
+        "lastName": "Kennedy",
+        "corresponding": false
+      },
+      {
+        "initials": "JK",
+        "lastName": "Johnson",
+        "corresponding": false
+      },
+      {
+        "initials": "P",
+        "lastName": "Liao",
+        "corresponding": false
+      },
+      {
+        "initials": "X",
+        "lastName": "Lang",
+        "corresponding": false
+      },
+      {
+        "initials": "I",
+        "lastName": "Kryczek",
+        "corresponding": false
+      },
+      {
+        "initials": "A",
+        "lastName": "Sell",
+        "corresponding": false
+      },
+      {
+        "initials": "H",
+        "lastName": "Xia",
+        "corresponding": false
+      },
+      {
+        "initials": "J",
+        "lastName": "Zhou",
+        "corresponding": false
+      },
+      {
+        "initials": "G",
+        "lastName": "Li",
+        "corresponding": false
+      },
+      {
+        "initials": "J",
+        "lastName": "Li",
+        "corresponding": false
+      },
+      {
+        "initials": "W",
+        "lastName": "Li",
+        "corresponding": false
+      },
+      {
+        "initials": "S",
+        "lastName": "Wei",
+        "corresponding": false
+      },
+      {
+        "initials": "L",
+        "lastName": "Vatan",
+        "corresponding": false
+      },
+      {
+        "initials": "H",
+        "lastName": "Zhang",
+        "corresponding": false
+      },
+      {
+        "initials": "W",
+        "lastName": "Szeliga",
+        "corresponding": false
+      },
+      {
+        "initials": "W",
+        "lastName": "Gu",
+        "corresponding": true
+      },
+      {
+        "initials": "R",
+        "lastName": "Liu",
+        "corresponding": false
+      },
+      {
+        "initials": "TS",
+        "lastName": "Lawrence",
+        "corresponding": false
+      },
+      {
+        "initials": "C",
+        "lastName": "Lamb",
+        "corresponding": false
+      },
+      {
+        "initials": "Y",
+        "lastName": "Tanno",
+        "corresponding": false
+      },
+      {
+        "initials": "M",
+        "lastName": "Cieslik",
+        "corresponding": false
+      },
+      {
+        "initials": "E",
+        "lastName": "Stone",
+        "corresponding": false
+      },
+      {
+        "initials": "G",
+        "lastName": "Georgiou",
+        "corresponding": false
+      },
+      {
+        "initials": "TA",
+        "lastName": "Chan",
+        "corresponding": false
+      },
+      {
+        "initials": "A",
+        "lastName": "Chinnaiyan",
+        "corresponding": false
+      },
+      {
+        "initials": "W",
+        "lastName": "Zou",
+        "corresponding": false
+      }
+    ],
+    "journal": "Nature",
+    "year": 2019,
+    "volume": "569",
+    "issue": "7755",
+    "pages": "270-274",
+    "pubmed": "",
+    "tags": ["Article"],
+    "abstract": "",
+    "url": ""
+  },
+  {
     "title": "ALOX12 is required for p53-mediated tumor suppression through a distinct ferroptosis pathway",
     "labs": ["wei-gu-lab"],
+    "people": ["wei-gu"],
     "authors": [
       {
         "initials": "B",
@@ -22142,6 +19994,7 @@
   {
     "title": "p53 modifications: exquisite decorations of the powerful guardian",
     "labs": ["wei-gu-lab"],
+    "people": ["wei-gu"],
     "authors": [
       {
         "initials": "Y",
@@ -22172,6 +20025,7 @@
   {
     "title": "Chromatin Assembly Factor 1 (CAF-1) facilitates the establishment of facultative heterochromatin during pluripotency exit",
     "labs": ["zhiguo-zhang-lab"],
+    "people": ["zhiguo-zhang"],
     "authors": [
       {
         "initials": "L",
@@ -22237,6 +20091,7 @@
   {
     "title": "Pak2 kinase promotes cellular senescence and organismal aging",
     "labs": ["zhiguo-zhang-lab"],
+    "people": ["zhiguo-zhang"],
     "authors": [
       {
         "initials": "JS",
@@ -22287,6 +20142,7 @@
   {
     "title": "CHAF1B Overexpression: A Brake for the Differentiation of Leukemia Cells",
     "labs": ["zhiguo-zhang-lab"],
+    "people": ["zhiguo-zhang"],
     "authors": [
       {
         "initials": "Q",
@@ -22317,6 +20173,7 @@
   {
     "title": "The Mcm2-Ctf4-Pol\u03b1 Axis Facilitates Parental Histone H3-H4 Transfer to Lagging Strands",
     "labs": ["zhiguo-zhang-lab"],
+    "people": ["zhiguo-zhang"],
     "authors": [
       {
         "initials": "H",
@@ -22367,6 +20224,7 @@
   {
     "title": "A mechanism for preventing asymmetric histone segregation onto replicating DNA strands",
     "labs": ["zhiguo-zhang-lab"],
+    "people": ["zhiguo-zhang"],
     "authors": [
       {
         "initials": "C",
@@ -22432,6 +20290,7 @@
   {
     "title": "A novel enhancer regulates MGMT expression and promotes temozolomide resistance in glioblastoma",
     "labs": ["zhiguo-zhang-lab"],
+    "people": ["zhiguo-zhang"],
     "authors": [
       {
         "initials": "X",
@@ -22517,6 +20376,7 @@
   {
     "title": "H3.3K27M mutant proteins reprogram epigenome by sequestering the PRC2 complex to poised enhancers",
     "labs": ["zhiguo-zhang-lab"],
+    "people": ["zhiguo-zhang"],
     "authors": [
       {
         "initials": "D",
@@ -22572,6 +20432,7 @@
   {
     "title": "Asf1a resolves bivalent chromatin domains for the induction of lineage-specific genes during mouse embryonic stem cell differentiation",
     "labs": ["zhiguo-zhang-lab"],
+    "people": ["zhiguo-zhang"],
     "authors": [
       {
         "initials": "Y",
@@ -22606,7 +20467,8 @@
   },
   {
     "title": "Replication-Coupled Nucleosome Assembly in the Passage of Epigenetic Information and Cell Identity",
-    "labs": ["zhiguo-zhang-lab"],
+    "labs": ["zhiguo-zhang-lab", "zhiguo-zhang-lab"],
+    "people": ["zhiguo-zhang"],
     "authors": [
       {
         "initials": "A",
@@ -22632,6 +20494,7 @@
   {
     "title": "Live-cell single-molecule dynamics of PcG proteins imposed by the DIPG H3.3K27M mutation",
     "labs": ["zhiguo-zhang-lab"],
+    "people": ["zhiguo-zhang"],
     "authors": [
       {
         "initials": "R",
@@ -22705,33 +20568,9 @@
     "url": ""
   },
   {
-    "title": "Replication-Coupled Nucleosome Assembly in the Passage of Epigenetic Information and Cell Identity",
-    "labs": ["zhiguo-zhang-lab"],
-    "authors": [
-      {
-        "initials": "A",
-        "lastName": "Serra-Cardona",
-        "corresponding": false
-      },
-      {
-        "initials": "Z",
-        "lastName": "Zhang",
-        "corresponding": true
-      }
-    ],
-    "journal": "Trends Biochem Sci",
-    "year": 2018,
-    "volume": "43",
-    "issue": "2",
-    "pages": "136-148",
-    "pubmed": "29292063",
-    "tags": ["Article"],
-    "abstract": "",
-    "url": ""
-  },
-  {
     "title": "RPA interacts with HIRA and regulates H3.3 deposition at gene regulatory elements in mammalian cells",
     "labs": ["zhiguo-zhang-lab"],
+    "people": ["zhiguo-zhang"],
     "authors": [
       {
         "initials": "H",
@@ -22792,6 +20631,7 @@
   {
     "title": "FACT Remodels the Tetranucleosomal Unit of Chromatin Fibers for Gene Transcription",
     "labs": ["zhiguo-zhang-lab"],
+    "people": ["zhiguo-zhang"],
     "authors": [
       {
         "initials": "Li",
@@ -22867,6 +20707,7 @@
   {
     "title": "The histone H3.3K36M mutation reprograms the epigenome of chondroblastomas",
     "labs": ["zhiguo-zhang-lab"],
+    "people": ["zhiguo-zhang"],
     "authors": [
       {
         "initials": "D",
@@ -23002,6 +20843,7 @@
   {
     "title": "USP51 deubiquitylates histone H2AK15ub and regulates DNA damage response",
     "labs": ["zhiguo-zhang-lab"],
+    "people": ["zhiguo-zhang"],
     "authors": [
       {
         "initials": "Z",
@@ -23062,6 +20904,7 @@
   {
     "title": "Histone-modifying enzymes, histone modifications and histone chaperones in nucleosome assembly: Lessons learned from Rtt109 histone acetyltransferases",
     "labs": ["zhiguo-zhang-lab"],
+    "people": ["zhiguo-zhang"],
     "authors": [
       {
         "initials": "JL",
@@ -23097,6 +20940,7 @@
   {
     "title": "Pharmacologic inhibition of histone demethylation as a therapy for pediatric brainstem glioma",
     "labs": ["zhiguo-zhang-lab"],
+    "people": ["zhiguo-zhang"],
     "authors": [
       {
         "initials": "R",
@@ -23202,6 +21046,7 @@
   {
     "title": "Strand-specific analysis shows protein binding at replication forks and PCNA unloading from lagging strands when forks stall",
     "labs": ["zhiguo-zhang-lab"],
+    "people": ["zhiguo-zhang"],
     "authors": [
       {
         "initials": "C",
@@ -23262,6 +21107,7 @@
   {
     "title": "A Cul4 E3 ubiquitin ligase regulates histone hand-off during nucleosome assembly",
     "labs": ["zhiguo-zhang-lab"],
+    "people": ["zhiguo-zhang"],
     "authors": [
       {
         "initials": "J",
@@ -23307,6 +21153,7 @@
   {
     "title": "The histone H3.3K27M mutation in pediatric glioma reprograms H3K27 methylation and gene expression",
     "labs": ["zhiguo-zhang-lab"],
+    "people": ["zhiguo-zhang"],
     "authors": [
       {
         "initials": "KM",
@@ -23382,6 +21229,7 @@
   {
     "title": "Histone chaperones in nucleosome assembly and human disease",
     "labs": ["zhiguo-zhang-lab"],
+    "people": ["zhiguo-zhang"],
     "authors": [
       {
         "initials": "RJ",
@@ -23407,6 +21255,7 @@
   {
     "title": "Structure of the variant histone H3.3-H4 heterodimer in complex with its chaperone DAXX",
     "labs": ["zhiguo-zhang-lab"],
+    "people": ["zhiguo-zhang"],
     "authors": [
       {
         "initials": "CP",
@@ -23467,6 +21316,7 @@
   {
     "title": "Structural basis for recognition of H3K56-acetylated histone H3-H4 by the chaperone Rtt106",
     "labs": ["zhiguo-zhang-lab"],
+    "people": ["zhiguo-zhang"],
     "authors": [
       {
         "initials": "D",
@@ -23532,6 +21382,7 @@
   {
     "title": "Diverse factors are involved in maintaining X chromosome inactivation",
     "labs": ["zhiguo-zhang-lab"],
+    "people": ["zhiguo-zhang"],
     "authors": [
       {
         "initials": "KM",
@@ -23572,6 +21423,7 @@
   {
     "title": "Phosphorylation of H4 Ser 47 promotes HIRA-mediated nucleosome assembly",
     "labs": ["zhiguo-zhang-lab"],
+    "people": ["zhiguo-zhang"],
     "authors": [
       {
         "initials": "B",
@@ -23627,6 +21479,7 @@
   {
     "title": "Ubiquitylation of FACT by the cullin-E3 ligase Rtt101 connects FACT to DNA replication",
     "labs": ["zhiguo-zhang-lab"],
+    "people": ["zhiguo-zhang"],
     "authors": [
       {
         "initials": "J",
@@ -23672,6 +21525,7 @@
   {
     "title": "A role for Gcn5 in replication-coupled nucleosome assembly",
     "labs": ["zhiguo-zhang-lab"],
+    "people": ["zhiguo-zhang"],
     "authors": [
       {
         "initials": "RJ",
@@ -23707,6 +21561,7 @@
   {
     "title": "Involvement of a chromatin remodeling complex in damage tolerance during DNA replication",
     "labs": ["zhiguo-zhang-lab"],
+    "people": ["zhiguo-zhang"],
     "authors": [
       {
         "initials": "KB",
@@ -23787,6 +21642,7 @@
   {
     "title": "Acetylation of histone H3 lysine 56 regulates replication-coupled nucleosome assembly",
     "labs": ["zhiguo-zhang-lab"],
+    "people": ["zhiguo-zhang"],
     "authors": [
       {
         "initials": "Q",
@@ -23837,6 +21693,7 @@
   {
     "title": "A novel role for histone chaperones CAF-1 and Rtt106p in heterochromatin silencing",
     "labs": ["zhiguo-zhang-lab"],
+    "people": ["zhiguo-zhang"],
     "authors": [
       {
         "initials": "S",
@@ -23872,6 +21729,7 @@
   {
     "title": "Functional dissection of protein complexes involved in yeast chromosome biology using a genetic interaction map",
     "labs": ["zhiguo-zhang-lab"],
+    "people": ["zhiguo-zhang"],
     "authors": [
       {
         "initials": "SR",
@@ -24027,6 +21885,7 @@
   {
     "title": "Rtt109 acetylates histone H3 lysine 56 and functions in DNA replication",
     "labs": ["zhiguo-zhang-lab"],
+    "people": ["zhiguo-zhang"],
     "authors": [
       {
         "initials": "J",
@@ -24072,6 +21931,7 @@
   {
     "title": "Rtt106p is a histone chaperone involved in heterochromatin-mediated silencing",
     "labs": ["zhiguo-zhang-lab"],
+    "people": ["zhiguo-zhang"],
     "authors": [
       {
         "initials": "S",
@@ -24117,6 +21977,7 @@
   {
     "title": "PCNA connects DNA replication to epigenetic inheritance in yeast",
     "labs": ["zhiguo-zhang-lab"],
+    "people": ["zhiguo-zhang"],
     "authors": [
       {
         "initials": "Z",

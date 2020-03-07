@@ -73,8 +73,9 @@ const Publication = ({
 
       <Columns>
         <Column w="1/2">
-          {publication.journal !== "" && <>{publication.journal}</>}
-          {publication.year !== "-1" && <>, {publication.year}</>}
+          {publication.journal !== "" && <>{publication.journal}.</>}
+          {publication.year !== -1 && <> {publication.year}.</>}
+          {publication.tags.includes("In Press") && <> In Press.</>}
         </Column>
 
         <Column w="1/2">

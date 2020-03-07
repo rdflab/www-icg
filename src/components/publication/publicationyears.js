@@ -26,8 +26,13 @@ const PublicationYears = ({ publications, labMap, peopleMap, showLabLink }) => {
         .reverse()
         .map((year, index) => {
           return (
-            <div key={index}>
-              <h3>{year}</h3>
+            <div key={index} className="mt-8">
+              {year !== -1 && (
+                // <div class="row justify-center items-center">
+                <div className="text-xl text-blue-300 mb-4">{year}</div>
+              )
+              // </div>
+              }
               <PublicationList
                 publications={yearMap.get(year)}
                 labMap={labMap}

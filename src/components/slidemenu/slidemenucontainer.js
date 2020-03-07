@@ -46,13 +46,13 @@ const SlideMenuContainer = ({ title, onClickHandle, visible }) => {
             <ColumbiaICGImage style={{ width: `200px` }} />
           </div>
           <div className="text-right">
-            {/* <SlideMenuCloseButton onClick={onClickHandle} /> */}
-            <button
+            <SlideMenuCloseButton onClick={onClickHandle} />
+            {/* <button
               className="text-blue-columbia focus:outline-none"
               onClick={onClickHandle}
             >
               Done
-            </button>
+            </button> */}
           </div>
         </div>
         <div className="px-4">

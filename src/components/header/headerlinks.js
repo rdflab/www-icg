@@ -23,7 +23,11 @@ const HeaderLinks = () => {
     <>
       {links.map((link, index) => {
         return (
-          <HeaderLink aria-label={`Goto ${link.name}`} to={link.link}>
+          <HeaderLink
+            key={index}
+            aria-label={`Goto ${link.name}`}
+            to={link.link}
+          >
             {link.name}
           </HeaderLink>
         )

@@ -120,6 +120,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               lastName
             }
             labs
+            people
             journal
             issue
             pages
@@ -271,10 +272,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     allCalEvents.push(calEvent)
   })
 
-  const markdownMap = new Map()
+  const markdownMap = {}
 
   result.data.markdown.edges.forEach(({ node }) => {
-    markdownMap.set(node.frontmatter.path, node)
+    markdownMap[node.frontmatter.path] = node
   })
 
   for (let lab of allLabs) {
@@ -305,8 +306,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     let labHtml = ""
     let labExcerptHtml = ""
 
-    if (markdownMap.has(path)) {
-      const markdown = markdownMap.get(path)
+    if (path in markdownMap) {
+      const markdown = markdownMap[path]
       labHtml = markdown.html
       labExcerptHtml = markdown.excerpt
     }
@@ -375,13 +376,25 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     for (let pid of lab.members) {
       const person = peopleMap[pid]
 
+      const personPublications = []
+
+      allPublications.forEach(publication => {
+        if (publication.people.includes(person.frontmatter.id)) {
+          personPublications.push(publication)
+        }
+      })
+
       createPage({
         path: `/research-areas/faculty-and-staff/${person.frontmatter.id}`,
         component: memberTemplate,
         context: {
+          id: person.frontmatter.id,
           person: person,
           lab: lab,
+          labMap: labMap,
           labPeople: labPeople,
+          peopleMap: peopleMap,
+          publications: personPublications,
         },
       })
     }
