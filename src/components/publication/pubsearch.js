@@ -10,6 +10,7 @@ import Columns from "../columns"
 import SideColumn from "../sidecolumn"
 import MainColumn from "../maincolumn"
 import SmallColumn from "../smallcolumn"
+import PubSearchResults from "./pubsearchresults"
 
 const EMPTY_QUERY = ""
 
@@ -71,25 +72,14 @@ const PubSearch = ({ groupMap, peopleMap, allPublications, showLabLink }) => {
         <SearchBar handleInputChange={handleInputChange} />
       </SmallColumn>
       <MainColumn>
-        <SearchSummary
-          count={yearFilteredPublications.length}
-          single="Publication"
-          plural="Publications"
-        />
-
-        <PublicationYears
-          publications={pagedPublications}
+        <PubSearchResults
+          publications={yearFilteredPublications}
+          pagedPublications={pagedPublications}
           groupMap={groupMap}
           peopleMap={peopleMap}
-          showLabLink={showLabLink}
-        />
-
-        <Pagination
           page={page}
-          totalRecords={yearFilteredPublications.length}
           recordsPerPage={recordsPerPage}
-          pageNeighbours={1}
-          onPageChanged={onPageChanged}
+          showLabLink={showLabLink}
         />
       </MainColumn>
       <SideColumn>

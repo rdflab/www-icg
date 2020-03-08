@@ -5,10 +5,9 @@ import Container from "../container"
 import Column from "../column"
 import Columns from "../columns"
 
-const Footer = props => {
-  const { siteTitle } = props
+const Footer = ({ siteTitle }) => {
   return (
-    <footer className="footer">
+    <footer className="text-white text-sm h-48 p-8 mt-8 bg-blue-columbia-80">
       <Container>
         <Columns isVCentered={true}>
           <Column w="1/3" className="pb-4">

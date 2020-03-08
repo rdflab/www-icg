@@ -9,6 +9,7 @@ import SearchBar from "../components/searchbar"
 //import TypesFilter from "../components/people/typesfilter"
 import TypeSelector from "../components/people/typeselector"
 import HideSmall from "../components/hidesmall"
+import SearchSummary from "../components/searchsummary"
 
 const EMPTY_QUERY = ""
 
@@ -116,6 +117,13 @@ const FacultyAndStaffExtTemplate = ({ data, pageContext }) => {
             text={query}
           />
         </HideSmall>
+      }
+      titleComponent={
+        <SearchSummary
+          count={typeFilteredPeople.length}
+          single="Member"
+          plural="Members"
+        />
       }
     >
       {/* <TypesFilter handleClick={handleClick} /> */}

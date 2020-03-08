@@ -6,7 +6,7 @@
  */
 
 import React, { Component } from "react"
-import FilterItem from "./filteritem"
+import FilterItem from "../filter/filteritem"
 import { MONTHS } from "../../constants"
 
 class FilterNewsMonth extends Component {

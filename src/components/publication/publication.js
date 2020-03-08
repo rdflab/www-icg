@@ -51,20 +51,18 @@ const Publication = ({
 }) => {
   const authors = authorString(publication.authors, maxAuthors)
   const groupId = publication.groups[0]
-  let name
-  let shortName
+  let groups = []
 
-  if (groupId in groupMap) {
-    const group = groupMap[groupId]
-    const pi = group.leaders[0]
-    const person = peopleMap[pi]
-    name =
-      person.frontmatter.firstName + " " + person.frontmatter.lastName + " Lab"
-    shortName = person.frontmatter.lastName + " Lab"
-  } else {
-    name = ""
-    shortName = ""
+  for (let groupId of publication.groups) {
+    if (groupId in groupMap) {
+      const group = groupMap[groupId]
+      const pi = group.leaders[0]
+      const person = peopleMap[pi]
+      groups.push([groupId, person.frontmatter.lastName + " Lab"])
+    }
   }
+
+  console.log(groupId)
 
   return (
     <div className="mb-8">
@@ -79,10 +77,10 @@ const Publication = ({
         </Column>
 
         <Column w="1/2">
-          {name !== "" && showLabLink && (
+          {groups.length > 0 && showLabLink && (
             <div className="md:text-right">
-              <BlueLink to={`/research-areas/labs/${groupId}`}>
-                {shortName}
+              <BlueLink to={`/research-areas/labs/${groups[0][0]}`}>
+                {groups[0][1]}
               </BlueLink>
             </div>
           )}

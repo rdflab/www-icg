@@ -12,29 +12,27 @@ const PeopleSearchResults = ({
   imageMap,
   showLabLink,
   onPageChanged,
-}) => {
-  return (
-    <div className="mt-8">
-      <SearchSummary count={people.length} single="Member" plural="Members" />
+}) => (
+  <div className="mt-8">
+    {/* <SearchSummary count={people.length} single="Member" plural="Members" /> */}
 
-      <PeopleTypes
-        imageMap={imageMap}
-        allPeople={pagedPeople}
-        groupMap={groupMap}
-        showLabLink={showLabLink}
+    <PeopleTypes
+      imageMap={imageMap}
+      allPeople={pagedPeople}
+      groupMap={groupMap}
+      showLabLink={showLabLink}
+    />
+    <div className="has-text-centered">
+      <Pagination
+        page={page}
+        totalRecords={people.length}
+        recordsPerPage={recordsPerPage}
+        pageNeighbours={1}
+        onPageChanged={onPageChanged}
       />
-      <div className="has-text-centered">
-        <Pagination
-          page={page}
-          totalRecords={people.length}
-          recordsPerPage={recordsPerPage}
-          pageNeighbours={1}
-          onPageChanged={onPageChanged}
-        />
-      </div>
     </div>
-  )
-}
+  </div>
+)
 
 PeopleSearchResults.defaultProps = {
   showLabLink: true,

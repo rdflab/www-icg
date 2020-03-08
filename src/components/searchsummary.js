@@ -1,15 +1,9 @@
 import React from "react"
-import styled from "styled-components"
-
-const StyledDiv = styled.div`
-  color: gray;
-  margin-bottom: 2rem;
-`
 
 const SearchSummary = ({ count, single, plural }) => (
-  <StyledDiv>
+  <div className="text-gray-500">
     {count} {count === 1 ? single : plural} found
-  </StyledDiv>
+  </div>
 )
 
 export default SearchSummary

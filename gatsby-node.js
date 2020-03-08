@@ -13,7 +13,9 @@ const newsTemplate = path.resolve(`src/templates/news.js`)
 const newsItemTemplate = path.resolve(`src/templates/newsitem.js`)
 const calEventsTemplate = path.resolve(`src/templates/calevents.js`)
 const calEventTemplate = path.resolve(`src/templates/calevent.js`)
-const publicationsTemplate = path.resolve(`src/templates/publications.js`)
+const publicationsExtTemplate = path.resolve(
+  `src/templates/publications-ext.js`
+)
 const researchAreasTemplate = path.resolve(`src/templates/research-areas.js`)
 const researchAreaTemplate = path.resolve(`src/templates/research-area.js`)
 
@@ -111,7 +113,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         }
       }
 
-      publications: allPublicationsJson {
+      publications: allPublicationsJson(sort: { fields: year, order: DESC }) {
         edges {
           node {
             authors {
@@ -477,7 +479,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   createPage({
     path: "/research-areas/publications",
-    component: publicationsTemplate,
+    component: publicationsExtTemplate,
     context: {
       groupMap: groupMap,
       peopleMap: peopleMap,
