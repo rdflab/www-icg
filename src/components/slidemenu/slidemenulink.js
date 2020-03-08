@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import { FaChevronRight } from "react-icons/fa"
+//import { FaChevronRight } from "react-icons/fa"
 
 const SlideMenuLink = ({ to, children, active }) => (
   <Link

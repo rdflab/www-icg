@@ -6,7 +6,7 @@ import PeopleSearchResults from "../components/people/peoplesearchresults"
 import { PEOPLE_TYPES } from "../constants"
 import toPeopleTypeMap from "../utils/peopletypemap"
 import SearchBar from "../components/searchbar"
-import TypesFilter from "../components/people/typesfilter"
+//import TypesFilter from "../components/people/typesfilter"
 import TypeSelector from "../components/people/typeselector"
 import HideSmall from "../components/hidesmall"
 
@@ -127,7 +127,9 @@ const FacultyAndStaffExtTemplate = ({ data, pageContext }) => {
         text={query}
       />
 
-      <TypeSelector onClick={handleClick} />
+      <HideSmall>
+        <TypeSelector onClick={handleClick} />
+      </HideSmall>
 
       <PeopleSearchResults
         people={typeFilteredPeople}

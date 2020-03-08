@@ -14,7 +14,7 @@ const PeopleSearchResults = ({
   onPageChanged,
 }) => {
   return (
-    <>
+    <div className="mt-8">
       <SearchSummary count={people.length} single="Member" plural="Members" />
 
       <PeopleTypes
@@ -32,7 +32,7 @@ const PeopleSearchResults = ({
           onPageChanged={onPageChanged}
         />
       </div>
-    </>
+    </div>
   )
 }
 

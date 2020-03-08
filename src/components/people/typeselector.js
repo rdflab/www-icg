@@ -44,7 +44,7 @@ const TypeSelector = ({ onClick }) => {
   }
 
   return (
-    <div className="row justify-center my-4">
+    <div className="row justify-center">
       <div className="row items-center rounded-md border-2 border-solid border-gray-300 cursor-pointer overflow-hidden">
         <AllType
           onClick={_handleClick}
