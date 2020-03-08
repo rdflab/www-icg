@@ -17,7 +17,7 @@ const Person = ({ person, groupMap, showLabLink, image }) => {
   return (
     <div className="my-4">
       <Columns>
-        <Column w="2/12" className="mr-4">
+        <Column w="1/12" className="mr-4">
           {image !== null && (
             <Img
               fluid={image.childImageSharp.fluid}
@@ -25,7 +25,7 @@ const Person = ({ person, groupMap, showLabLink, image }) => {
             />
           )}
         </Column>
-        <MainColumn w="6/12">
+        <MainColumn w="5/12">
           <div>
             <h3>
               <TextLink
@@ -37,7 +37,7 @@ const Person = ({ person, groupMap, showLabLink, image }) => {
           </div>
           <div className="gray">{person.frontmatter.titles[0]}</div>
         </MainColumn>
-        <Column w="4/12">
+        <Column w="5/12">
           <ContactInfo person={person} />
         </Column>
       </Columns>
