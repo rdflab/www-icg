@@ -39,8 +39,6 @@ const TypeSelector = ({ onClick }) => {
     setSelectedTypes(types)
 
     onClick(types)
-
-    console.log("cake", types)
   }
 
   return (
