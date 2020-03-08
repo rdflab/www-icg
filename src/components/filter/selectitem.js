@@ -15,11 +15,9 @@ const SelectItem = ({
   onClick,
   children,
 }) => {
+  
   const handleClick = e => {
     const data = { text: text, selected: true }
-
-    console.log(data)
-
     onClick(data)
   }
 
