@@ -17,31 +17,27 @@ const Person = ({ person, groupMap, showLabLink, image }) => {
   return (
     <div className="my-4">
       <Columns>
-        <MainColumn w="7/12" className="mb-4">
-          <Columns>
-            <Column w="2/12" className="mr-2">
-              {image !== null && (
-                <Img
-                  fluid={image.childImageSharp.fluid}
-                  className="w-full shadow rounded"
-                />
-              )}
-            </Column>
-            <Column w="10/12">
-              <div>
-                <h3>
-                  <TextLink
-                    to={`/research-areas/faculty-and-staff/${person.frontmatter.id}`}
-                  >
-                    {person.frontmatter.firstName} {person.frontmatter.lastName}
-                  </TextLink>
-                </h3>
-              </div>
-              <div className="gray">{person.frontmatter.titles[0]}</div>
-            </Column>
-          </Columns>
+        <Column w="2/12" className="mr-4">
+          {image !== null && (
+            <Img
+              fluid={image.childImageSharp.fluid}
+              className="w-full shadow rounded"
+            />
+          )}
+        </Column>
+        <MainColumn w="6/12">
+          <div>
+            <h3>
+              <TextLink
+                to={`/research-areas/faculty-and-staff/${person.frontmatter.id}`}
+              >
+                {person.frontmatter.firstName} {person.frontmatter.lastName}
+              </TextLink>
+            </h3>
+          </div>
+          <div className="gray">{person.frontmatter.titles[0]}</div>
         </MainColumn>
-        <Column w="5/12">
+        <Column w="4/12">
           <ContactInfo person={person} />
         </Column>
       </Columns>

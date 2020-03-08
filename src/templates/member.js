@@ -94,21 +94,21 @@ const MemberTemplate = ({ pageContext, data }) => {
           )}
         </MainColumn>
         <SideColumn>
-          <SideBar>
-            <h1 className="text-blue-columbia mb-4">
-              {person.frontmatter.titles[0]}
-            </h1>
+          {/* <SideBar> */}
+          <h1 className="text-blue-columbia mb-4">
+            {person.frontmatter.titles[0]}
+          </h1>
 
-            <ContactInfo person={person} />
+          <ContactInfo person={person} />
 
-            {person.frontmatter.researchAreas.length > 0 && (
-              <div className="mt-4">
-                <h2>Research Interests</h2>
+          {person.frontmatter.researchAreas.length > 0 && (
+            <div className="mt-4">
+              <h2>Research Interests</h2>
 
-                {interests(person, researchAreasMap)}
-              </div>
-            )}
-          </SideBar>
+              {interests(person, researchAreasMap)}
+            </div>
+          )}
+          {/* </SideBar> */}
           <SideBarMembers group={group} people={labPeople} />
         </SideColumn>
       </Columns>

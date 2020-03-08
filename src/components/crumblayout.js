@@ -11,14 +11,24 @@ import Title from "./title"
 import Layout from "./layout"
 import Container from "./container"
 
-const CrumbLayout = ({ title, children, crumbs }) => {
+const CrumbLayout = ({
+  title,
+  titleComponent,
+  headerComponent,
+  children,
+  crumbs,
+}) => {
   return (
-    <Layout title={title}>
+    <Layout title={title} headerComponent={headerComponent}>
       {crumbs.length > 0 && <Breadcrumb crumbs={crumbs} />}
 
       <Container className="min-h-screen mt-4">
-        {title !== "" && <Title>{title}</Title>}
-
+        <div className="row items-center justify-between">
+          <div>
+            <Title>{title}</Title>
+          </div>
+          {titleComponent !== null ? titleComponent : ""}
+        </div>
         {children}
       </Container>
     </Layout>
@@ -29,6 +39,8 @@ CrumbLayout.defaultProps = {
   crumbs: [],
   selectedTab: "",
   title: "",
+  titleComponent: null,
+  headerComponent: null,
 }
 
 export default CrumbLayout

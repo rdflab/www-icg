@@ -2,8 +2,8 @@ const path = require(`path`)
 
 const labTemplate = path.resolve(`src/templates/lab.js`)
 const labsTemplate = path.resolve(`src/templates/labs.js`)
-const facultyAndStaffTemplate = path.resolve(
-  `src/templates/faculty-and-staff.js`
+const FacultyAndStaffExtTemplate = path.resolve(
+  `src/templates/faculty-and-staff-ext.js`
 )
 const labPublicationsTemplate = path.resolve(`src/templates/labpublications.js`)
 const labOverviewTemplate = path.resolve(`src/templates/laboverview.js`)
@@ -466,7 +466,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   createPage({
     path: "/research-areas/faculty-and-staff",
-    component: facultyAndStaffTemplate,
+    component: FacultyAndStaffExtTemplate,
     context: {
       groupMap: groupMap,
       allPeople: allPeople,

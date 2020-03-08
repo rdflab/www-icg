@@ -7,8 +7,9 @@ import ColumbiaICGWhiteImage from "../images/columbiaicgwhiteimage"
 import SlideMenu from "../slidemenu/slidemenu"
 import Container from "../container"
 import Row from "../row"
+import HideSmall from "../hidesmall"
 
-const Header = ({ title }) => (
+const Header = ({ title, content }) => (
   <>
     <nav
       aria-label="Navigation"
@@ -20,13 +21,15 @@ const Header = ({ title }) => (
       </Link>
     </nav>
 
-    <div className="hidden sm:block">
+    <HideSmall>
       <div className="p-3">
         <Container>
-          <Row>
-            <Link to="/">
+          <Row className="justify-between items-center">
+            <Link to="/" className="mr-8">
               <ColumbiaICGImage style={{ width: `400px` }} />
             </Link>
+
+            {content !== null && content}
           </Row>
         </Container>
       </div>
@@ -38,7 +41,7 @@ const Header = ({ title }) => (
           </Row>
         </Container>
       </nav>
-    </div>
+    </HideSmall>
   </>
 )
 
@@ -48,6 +51,7 @@ Header.propTypes = {
 
 Header.defaultProps = {
   title: "",
+  content: null,
 }
 
 export default Header

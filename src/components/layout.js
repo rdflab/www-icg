@@ -16,7 +16,7 @@ import Header from "./header/header"
 import Footer from "./footer/footer"
 import SEO from "./seo"
 
-const Layout = ({ title, children, crumbs }) => {
+const Layout = ({ title, children, crumbs, headerComponent }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -31,7 +31,7 @@ const Layout = ({ title, children, crumbs }) => {
     <>
       {title !== "" && <SEO title={title} />}
 
-      <Header title={title} />
+      <Header title={title} content={headerComponent} />
 
       <main>{children}</main>
 
@@ -48,6 +48,7 @@ Layout.defaultProps = {
   crumbs: [],
   selectedTab: "",
   title: "",
+  headerComponent: null,
 }
 
 export default Layout

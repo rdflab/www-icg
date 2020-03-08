@@ -1,17 +1,15 @@
 import React, { useState } from "react"
-import Pagination from "../pagination"
 import SearchBar from "../searchbar"
-import PeopleTypes from "./peopletypes"
 import TypesFilter from "./typesfilter"
 import Collapsible from "../collapsible"
 import toPeopleTypeMap from "../../utils/peopletypemap"
 import { PEOPLE_TYPES } from "../../constants"
-import SearchSummary from "../searchsummary"
 //import SideBar from "../sidebar/sidebar"
 import Columns from "../columns"
 import SmallColumn from "../smallcolumn"
 import MainColumn from "../maincolumn"
 import SideColumn from "../sidecolumn"
+import PeopleSearchResults from "./peoplesearchresults"
 
 const EMPTY_QUERY = ""
 
@@ -110,27 +108,16 @@ const PeopleSearch = ({ groupMap, allPeople, showLabLink, imageMap }) => {
         />
       </SmallColumn>
       <MainColumn>
-        <SearchSummary
-          count={typeFilteredPeople.length}
-          single="Member"
-          plural="Members"
-        />
-
-        <PeopleTypes
-          imageMap={imageMap}
-          allPeople={typeOrderedPeople}
+        <PeopleSearchResults
+          people={typeFilteredPeople}
+          pagedPeople={typeOrderedPeople}
+          page={page}
+          recordsPerPage={recordsPerPage}
           groupMap={groupMap}
+          imageMap={imageMap}
           showLabLink={showLabLink}
+          onPageChanged={onPageChanged}
         />
-        <div className="has-text-centered">
-          <Pagination
-            page={page}
-            totalRecords={typeFilteredPeople.length}
-            recordsPerPage={recordsPerPage}
-            pageNeighbours={1}
-            onPageChanged={onPageChanged}
-          />
-        </div>
       </MainColumn>
       <SideColumn>
         {/* <SideBar> */}
