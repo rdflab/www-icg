@@ -55,7 +55,8 @@
     "build": "npm build",
     "clean": "rm -rf node_modules",
     "reinstall": "npm run clean && npm install",
-    "rebuild": "npm run clean && npm install && npm run build"
+    "rebuild": "npm run clean && npm install && npm run build",
+    "deploy": "gatsby build && netlify deploy --prod"
   },
   "repository": {
     "type": "git",
