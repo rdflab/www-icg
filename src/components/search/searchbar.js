@@ -21,8 +21,8 @@ const SearchBar = ({
   return (
     <div
       className={`row z-40 px-4 py-2 trans-ani border border-solid ${
-        hover ? "border-blue-500" : borderColor
-      } rounded-full items-center bg-white ${className}`}
+        hover ? "shadow" : borderColor
+      } rounded-md items-center bg-white ${className}`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
@@ -36,7 +36,7 @@ const SearchBar = ({
       />
       <FaSearch
         className={`${
-          hover ? "text-blue-500" : "text-gray-500"
+          hover ? "text-blue-400" : "text-gray-500"
         } trans-ani ml-2`}
       />
     </div>

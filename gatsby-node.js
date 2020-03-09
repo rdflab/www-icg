@@ -9,7 +9,7 @@ const PEOPLE_TYPES = [
 
 const labTemplate = path.resolve(`src/templates/lab.js`)
 const labsTemplate = path.resolve(`src/templates/labs.js`)
-const FacultyAndStaffTemplate = path.resolve(`src/templates/facultyandstaff.js`)
+const peopleTemplate = path.resolve(`src/templates/people.js`)
 //const labPublicationsTemplate = path.resolve(`src/templates/labpublications.js`)
 const labOverviewTemplate = path.resolve(`src/templates/laboverview.js`)
 const labMembersTemplate = path.resolve(`src/templates/labmembers.js`)
@@ -524,11 +524,21 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
     createPage({
       path: `${path}/members`,
-      component: labMembersTemplate,
+      component: peopleTemplate,
       context: {
-        group: group,
-        labPeople: labPeople,
-        peopleMap: peopleMap,
+        title: `The ${group.frontmatter.name} Lab Members`,
+        crumbs: [
+          ["Home", "/"],
+          ["Research Areas", "/research-areas"],
+          ["Labs", "/research-areas/labs"],
+          [
+            group.frontmatter.name,
+            `/research-areas/labs/${group.frontmatter.id}`,
+          ],
+          ["Members", `/research-areas/labs/${group.frontmatter.id}/members`],
+        ],
+        groupMap: groupMap,
+        allPeople: labPeople,
         searchData: searchData,
       },
     })
@@ -541,7 +551,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       path: `${path}/publications`,
       component: publicationsTemplate,
       context: {
-        title: "Publications",
+        title: `${group.frontmatter.name} Lab Publications`,
         crumbs: [
           ["Home", "/"],
           ["Research Areas", "/research-areas"],
@@ -667,8 +677,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   createPage({
     path: "/research-areas/faculty-and-staff",
-    component: FacultyAndStaffTemplate,
+    component: peopleTemplate,
     context: {
+      crumbs: [
+        ["Home", "/"],
+        ["Research Areas", "/research-areas"],
+        ["Faculty and Staff", "/research-areas/faculty-and-staff"],
+      ],
+      title: "Faculty and Staff",
       groupMap: groupMap,
       allPeople: allPeople,
       searchData: searchData,

@@ -14,8 +14,8 @@ import SiteSearch from "../components/search/sitesearch"
 
 const EMPTY_QUERY = ""
 
-const FacultyAndStaffTemplate = ({ data, pageContext }) => {
-  const { groupMap, allPeople, searchData } = pageContext
+const PeopleTemplate = ({ data, pageContext }) => {
+  const { title, crumbs, groupMap, allPeople, searchData } = pageContext
 
   const [query, setQuery] = useState(EMPTY_QUERY)
   const [filteredPeople, setFilteredPeople] = useState([])
@@ -104,12 +104,8 @@ const FacultyAndStaffTemplate = ({ data, pageContext }) => {
 
   return (
     <CrumbLayout
-      crumbs={[
-        ["Home", "/"],
-        ["Research Areas", "/research-areas"],
-        ["Faculty and Staff", "/research-areas/faculty-and-staff"],
-      ]}
-      title="Faculty and Staff"
+      crumbs={crumbs}
+      title={title}
       headerComponent={<SiteSearch searchData={searchData} />}
       titleComponent={
         <SearchSummary
@@ -146,7 +142,7 @@ const FacultyAndStaffTemplate = ({ data, pageContext }) => {
   )
 }
 
-export default FacultyAndStaffTemplate
+export default PeopleTemplate
 
 export const query = graphql`
   query {

@@ -90,7 +90,7 @@ const PublicationsTemplate = ({ pageContext }) => {
       {showSearch && (
         <div>
           <SearchBar
-            className="my-4 sm:w-1/2 mx-auto"
+            className="my-4 sm:w-5/12 mx-auto"
             handleInputChange={handleInputChange}
             placeholder="Type to find publications..."
             text={query}
