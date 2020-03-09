@@ -1,8 +1,8 @@
 import React, { useState } from "react"
 import PublicationYears from "./publicationyears"
 import Pagination from "../pagination"
-import SearchBar from "../searchbar"
-import SearchSummary from "../searchsummary"
+import SearchBar from "../search/searchbar"
+import SearchSummary from "../search/searchsummary"
 
 const EMPTY_QUERY = ""
 

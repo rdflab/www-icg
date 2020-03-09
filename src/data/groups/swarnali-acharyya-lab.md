@@ -1,6 +1,6 @@
 ---
 id: "swarnali-acharyya-lab"
-name: "Swarnali Acharyya Lab"
+name: "Swarnali Acharyya"
 type: "Lab"
 photo: ""
 leaders: ["swarnali-acharyya"]

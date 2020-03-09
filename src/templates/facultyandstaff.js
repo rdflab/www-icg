@@ -29,7 +29,7 @@ const FacultyAndStaffTemplate = ({ data, pageContext }) => {
 
 export default FacultyAndStaffTemplate
 
-export const query = graphql`
+const query = graphql`
   query {
     files: allFile(
       filter: {

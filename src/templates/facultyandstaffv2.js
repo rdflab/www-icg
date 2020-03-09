@@ -5,16 +5,17 @@ import toImageMap from "../utils/toimagemap"
 import PeopleSearchResults from "../components/people/peoplesearchresults"
 import { PEOPLE_TYPES } from "../constants"
 import toPeopleTypeMap from "../utils/peopletypemap"
-import SearchBar from "../components/searchbar"
+import SearchBar from "../components/search/searchbar"
 //import TypesFilter from "../components/people/typesfilter"
 import TypeSelector from "../components/people/typeselector"
 import HideSmall from "../components/hidesmall"
-import SearchSummary from "../components/searchsummary"
+import SearchSummary from "../components/search/searchsummary"
+import GlobalSearch from "../components/search/globalsearch"
 
 const EMPTY_QUERY = ""
 
-const FacultyAndStaffExtTemplate = ({ data, pageContext }) => {
-  const { groupMap, allPeople } = pageContext
+const FacultyAndStaffV2Template = ({ data, pageContext }) => {
+  const { groupMap, allPeople, searchData } = pageContext
 
   const [query, setQuery] = useState(EMPTY_QUERY)
   const [filteredPeople, setFilteredPeople] = useState([])
@@ -111,11 +112,7 @@ const FacultyAndStaffExtTemplate = ({ data, pageContext }) => {
       title="Faculty and Staff"
       headerComponent={
         <HideSmall className="w-1/3">
-          <SearchBar
-            handleInputChange={handleInputChange}
-            placeholder="Type to find faculty..."
-            text={query}
-          />
+          <GlobalSearch searchData={searchData} />
         </HideSmall>
       }
       titleComponent={
@@ -153,7 +150,7 @@ const FacultyAndStaffExtTemplate = ({ data, pageContext }) => {
   )
 }
 
-export default FacultyAndStaffExtTemplate
+export default FacultyAndStaffV2Template
 
 export const query = graphql`
   query {

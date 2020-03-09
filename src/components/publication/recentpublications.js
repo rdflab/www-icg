@@ -40,7 +40,9 @@ const RecentPublications = ({
       <h2>Recent Publications</h2>
       <div className="mt-4">{createPublications(publications)}</div>
       <div className="text-center">
-        <Button to={`/research-areas/labs/${group.id}/publications`}>
+        <Button
+          to={`/research-areas/labs/${group.frontmatter.id}/publications`}
+        >
           More
         </Button>
       </div>

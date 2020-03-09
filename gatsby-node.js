@@ -1,9 +1,16 @@
 const path = require(`path`)
 
+const PEOPLE_TYPES = [
+  "Faculty",
+  "Research Scientist",
+  "Graduate Student",
+  "Staff",
+]
+
 const labTemplate = path.resolve(`src/templates/lab.js`)
-const labsTemplate = path.resolve(`src/templates/labs.js`)
-const FacultyAndStaffExtTemplate = path.resolve(
-  `src/templates/faculty-and-staff-ext.js`
+const labsTemplate = path.resolve(`src/templates/labsv2.js`)
+const FacultyAndStaffTemplate = path.resolve(
+  `src/templates/facultyandstaffv2.js`
 )
 const labPublicationsTemplate = path.resolve(`src/templates/labpublications.js`)
 const labOverviewTemplate = path.resolve(`src/templates/laboverview.js`)
@@ -13,11 +20,9 @@ const newsTemplate = path.resolve(`src/templates/news.js`)
 const newsItemTemplate = path.resolve(`src/templates/newsitem.js`)
 const calEventsTemplate = path.resolve(`src/templates/calevents.js`)
 const calEventTemplate = path.resolve(`src/templates/calevent.js`)
-const publicationsExtTemplate = path.resolve(
-  `src/templates/publications-ext.js`
-)
-const researchAreasTemplate = path.resolve(`src/templates/research-areas.js`)
-const researchAreaTemplate = path.resolve(`src/templates/research-area.js`)
+const publicationsTemplate = path.resolve(`src/templates/publicationsv2.js`)
+const researchAreasTemplate = path.resolve(`src/templates/researchareasv2.js`)
+const researchAreaTemplate = path.resolve(`src/templates/researchareav2.js`)
 
 const toPeopleMap = people => {
   let ret = new Object() //new Map()
@@ -30,11 +35,31 @@ const toPeopleMap = people => {
   return ret
 }
 
+const toPeopleTypeMap = people => {
+  const ret = {}
+
+  for (let type of PEOPLE_TYPES) {
+    ret[type] = []
+  }
+
+  for (let person of people) {
+    const t = person.frontmatter.type
+
+    if (!(t in ret)) {
+      ret[this] = []
+    }
+
+    ret[t].push(person)
+  }
+
+  return ret
+}
+
 const toGroupMap = groups => {
   let ret = {}
 
   for (let group of groups) {
-    ret[group.id] = group
+    ret[group.frontmatter.id] = group
   }
 
   return ret
@@ -73,14 +98,21 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const result = await graphql(`
     query {
-      labGroups: allGroupsJson(filter: { type: { eq: "Lab" } }) {
+      labGroups: allMarkdownRemark(
+        sort: { fields: frontmatter___name, order: ASC }
+        filter: { frontmatter: { type: { eq: "Lab" } } }
+      ) {
         edges {
           node {
-            id
-            name
-            leaders
-            members
-            urls
+            frontmatter {
+              id
+              name
+              leaders
+              members
+              urls
+            }
+            excerpt(format: HTML)
+            html
           }
         }
       }
@@ -280,27 +312,89 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     markdownMap[node.frontmatter.path] = node
   })
 
+  //
+  // Index some data for searching
+  //
+
+  const searchData = {}
+  searchData["sections"] = []
+  searchData["data"] = {}
+
+  // Labs
+
+  searchData["sections"].push("Labs")
+  searchData["data"]["Labs"] = {}
+
   for (let group of allLabGroups) {
-    const path = `/research-areas/labs/${group.id}`
+    searchData["data"]["Labs"][group.frontmatter.name] = {
+      name: "Lab page",
+      to: `/research-areas/labs/${group.frontmatter.id}`,
+    }
+  }
+
+  // Research areas
+
+  searchData["sections"].push("Research Areas")
+  searchData["data"]["Research Areas"] = {}
+
+  for (let ra of allResearchAreas) {
+    searchData["data"]["Research Areas"][ra.name] = {
+      name: "Research page",
+      to: `/research-areas/${ra.id}`,
+    }
+  }
+
+  // People types
+
+  const peopleTypeMap = toPeopleTypeMap(allPeople)
+
+  for (let type of PEOPLE_TYPES) {
+    searchData["sections"].push(type)
+    searchData["data"][type] = {}
+
+    for (let person of peopleTypeMap[type]) {
+      const name = `${person.frontmatter.firstName} ${person.frontmatter.lastName}`
+
+      //const groupId = `${person.frontmatter.id}-lab`
+      // if (groupId in groupMap) {
+      //   searchData["data"][type][name].push({
+      //     name: "Lab",
+      //     to: `/research-areas/labs/${groupId}`,
+      //   })
+      // }
+
+      searchData["data"][type][name] = {
+        name: `${person.frontmatter.titles[0]}`,
+        to: `/research-areas/faculty-and-staff/${person.frontmatter.id}`,
+      }
+    }
+  }
+
+  //
+  // Make pages
+  //
+
+  for (let group of allLabGroups) {
+    const path = `/research-areas/labs/${group.frontmatter.id}`
 
     const labPublications = []
 
     allPublications.forEach(publication => {
-      if (publication.groups.includes(group.id)) {
+      if (publication.groups.includes(group.frontmatter.id)) {
         labPublications.push(publication)
       }
     })
 
     const labPeople = []
 
-    for (let pid of group.members) {
+    for (let pid of group.frontmatter.members) {
       labPeople.push(peopleMap[pid])
     }
 
     const labNews = []
 
     for (item of allNews) {
-      if (item.frontmatter.groups.includes(group.id)) {
+      if (item.frontmatter.groups.includes(group.frontmatter.id)) {
         labNews.push(item)
       }
     }
@@ -315,7 +409,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
 
     createPage({
-      path: `/research-areas/labs/${group.id}`,
+      path: `/research-areas/labs/${group.frontmatter.id}`,
       component: labTemplate,
       context: {
         group: group,
@@ -325,6 +419,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         labNews: labNews,
         labExcerptHtml: labExcerptHtml,
         labHtml: labHtml,
+        searchData: searchData,
       },
     })
 
@@ -333,7 +428,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     //
 
     createPage({
-      path: `/research-areas/labs/${group.id}/overview`,
+      path: `/research-areas/labs/${group.frontmatter.id}/overview`,
       component: labOverviewTemplate,
       context: {
         group: group,
@@ -355,6 +450,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         group: group,
         labPeople: labPeople,
         peopleMap: peopleMap,
+        searchData: searchData,
       },
     })
 
@@ -376,7 +472,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     // For each person
     //
 
-    for (let pid of group.members) {
+    for (let pid of group.frontmatter.members) {
       const person = peopleMap[pid]
 
       const personPublications = []
@@ -459,8 +555,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     path: "/research-areas/labs",
     component: labsTemplate,
     context: {
-      groups: allLabGroups,
+      allGroups: allLabGroups,
       peopleMap: peopleMap,
+      searchData: searchData,
     },
   })
 
@@ -468,10 +565,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   createPage({
     path: "/research-areas/faculty-and-staff",
-    component: FacultyAndStaffExtTemplate,
+    component: FacultyAndStaffTemplate,
     context: {
       groupMap: groupMap,
       allPeople: allPeople,
+      searchData: searchData,
     },
   })
 
@@ -479,7 +577,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   createPage({
     path: "/research-areas/publications",
-    component: publicationsExtTemplate,
+    component: publicationsTemplate,
     context: {
       groupMap: groupMap,
       peopleMap: peopleMap,
@@ -496,6 +594,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     component: researchAreasTemplate,
     context: {
       allResearchAreas: allResearchAreas,
+      searchData: searchData,
     },
   })
 
@@ -507,6 +606,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         groupMap: groupMap,
         allPeople: allPeople,
         researchArea: researchArea,
+        searchData: searchData,
       },
     })
   }

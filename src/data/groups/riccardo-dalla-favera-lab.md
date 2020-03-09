@@ -1,6 +1,6 @@
 ---
 id: "riccardo-dalla-favera-lab"
-name: "Riccardo Dalla-Favera Lab"
+name: "Riccardo Dalla-Favera"
 type: "Lab"
 photo: ""
 leaders: ["riccardo-dalla-favera"]

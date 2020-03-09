@@ -1,6 +1,6 @@
 ---
 id: "adolfo-ferrando-lab"
-name: "Adolfo Ferrando Lab"
+name: "Adolfo Ferrando"
 type: "Lab"
 photo: ""
 leaders: ["adolfo-ferrando"]

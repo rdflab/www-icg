@@ -1,6 +1,6 @@
 ---
 id: "jean-gautier-lab"
-name: "Jean Gautier Lab"
+name: "Jean Gautier"
 type: "Lab"
 photo: ""
 leaders: ["jean-gautier"]

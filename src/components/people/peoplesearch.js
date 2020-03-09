@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import SearchBar from "../searchbar"
+import SearchBar from "../search/searchbar"
 import TypesFilter from "./typesfilter"
 import Collapsible from "../collapsible"
 import toPeopleTypeMap from "../../utils/peopletypemap"

@@ -7,7 +7,7 @@ const SideBarMembers = ({ group, people }) => (
     <Collapsible title="Lab Members" height="auto">
       {/* <div className="bottom-spacing-1">
       <SideBarLink
-        to={`/research-areas/labs/${group.id}/members`}
+        to={`/research-areas/labs/${group.frontmatter.id}/members`}
         style={{ marginBottom: "1rem" }}
       >
         Overview

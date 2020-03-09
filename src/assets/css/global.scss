@@ -214,17 +214,7 @@ a:hover {
   width: 80%;
 }
 
-.search-bar {
-  @apply row p-2 trans-ani border border-solid border-gray-400 rounded items-center bg-white;
-}
 
-.search-bar:hover {
-  @apply border-blue-500;
-}
-
-.search-input[type=text] {
-  @apply border-none w-full;
-}
 
 .header-link {
   @apply link text-white opacity-50 mr-6 trans-ani; // border-b-2 border-solid border-transparent;

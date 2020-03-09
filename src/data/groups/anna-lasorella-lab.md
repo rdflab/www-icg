@@ -1,6 +1,6 @@
 ---
 id: "anna-lasorella-lab"
-name: "Anna Lasorella Lab"
+name: "Anna Lasorella"
 type: "Lab"
 photo: ""
 leaders: ["anna-lasorella"]

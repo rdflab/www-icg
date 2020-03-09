@@ -1,13 +1,13 @@
 import React, { useState } from "react"
 import CrumbLayout from "../components/crumblayout"
-import SearchBar from "../components/searchbar"
+import SearchBar from "../components/search/searchbar"
 import PubSearchResults from "../components/publication/pubsearchresults"
 import HideSmall from "../components/hidesmall"
-import SearchSummary from "../components/searchsummary"
+import SearchSummary from "../components/search/searchsummary"
 
 const EMPTY_QUERY = ""
 
-const PublicationsExtTemplate = ({ pageContext }) => {
+const PublicationsV2Template = ({ pageContext }) => {
   const { groupMap, peopleMap, allPublications } = pageContext
 
   const [query, setQuery] = useState(EMPTY_QUERY)
@@ -74,7 +74,7 @@ const PublicationsExtTemplate = ({ pageContext }) => {
         <HideSmall className="w-1/3">
           <SearchBar
             handleInputChange={handleInputChange}
-            placeholder="Type to find faculty..."
+            placeholder="Type to find publications..."
             text={query}
           />
         </HideSmall>
@@ -108,4 +108,4 @@ const PublicationsExtTemplate = ({ pageContext }) => {
   )
 }
 
-export default PublicationsExtTemplate
+export default PublicationsV2Template

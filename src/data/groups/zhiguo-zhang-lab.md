@@ -1,6 +1,6 @@
 ---
 id: "zhiguo-zhang-lab"
-name: "Zhiguo Zhang Lab"
+name: "Zhiguo Zhang"
 type: "Lab"
 photo: ""
 leaders: ["zhiguo-zhang"]

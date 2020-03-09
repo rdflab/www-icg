@@ -1,6 +1,6 @@
 ---
 id: "shan-zha-lab"
-name: "Shan Zha Lab"
+name: "Shan Zha"
 type: "Lab"
 photo: ""
 leaders: ["shan-zha"]

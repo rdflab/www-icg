@@ -1,39 +1,28 @@
 import React from "react"
-import { graphql } from "gatsby"
 import CrumbLayout from "../components/crumblayout"
-import toImageMap from "../utils/toimagemap"
 import PeopleTypes from "../components/people/peopletypes"
-import HideSmall from "../components/hidesmall"
+import { graphql } from "gatsby"
+import toImageMap from "../utils/toimagemap"
 import GlobalSearch from "../components/search/globalsearch"
+import HideSmall from "../components/hidesmall"
 
-const LabMembersTemplate = ({ pageContext, data }) => {
-  const { group, groupMap, peopleMap, searchData } = pageContext
-
-  const faculty = peopleMap[group.frontmatter.leaders[0]]
-
-  const people = []
+const ResearchAreaV2Template = ({ data, pageContext }) => {
+  const { groupMap, allPeople, researchArea, searchData } = pageContext
 
   const imageMap = toImageMap(data.files)
 
-  for (let pid of group.frontmatter.members) {
-    people.push(peopleMap[pid])
-  }
-
-  const title = `The ${faculty.frontmatter.lastName} Lab Members`
+  const people = allPeople.filter(person => {
+    return person.frontmatter.researchAreas.includes(researchArea.id)
+  })
 
   return (
     <CrumbLayout
       crumbs={[
         ["Home", "/"],
         ["Research Areas", "/research-areas"],
-        ["Labs", "/research-areas/labs"],
-        [
-          `${faculty.frontmatter.firstName} ${faculty.frontmatter.lastName}`,
-          `/research-areas/labs/${group.frontmatter.id}`,
-        ],
-        ["Members", `/research-areas/labs/${group.frontmatter.id}/members`],
+        [researchArea.name, `/research-areas/${researchArea.id}`],
       ]}
-      title={title}
+      title={researchArea.name}
       headerComponent={
         <HideSmall className="w-1/3">
           <GlobalSearch searchData={searchData} />
@@ -50,7 +39,7 @@ const LabMembersTemplate = ({ pageContext, data }) => {
   )
 }
 
-export default LabMembersTemplate
+export default ResearchAreaV2Template
 
 export const query = graphql`
   query {

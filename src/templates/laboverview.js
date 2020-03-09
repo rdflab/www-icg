@@ -12,7 +12,7 @@ const LabOverviewTemplate = props => {
   const { pageContext } = props
   const { group, labPeople, peopleMap, labPublications, labHtml } = pageContext
 
-  const faculty = peopleMap[group.leaders[0]]
+  const faculty = peopleMap[group.frontmatter.leaders[0]]
 
   const title = `The ${faculty.frontmatter.lastName} Lab`
 
@@ -20,8 +20,8 @@ const LabOverviewTemplate = props => {
     ["Home", "/"],
     ["Research Areas", "/research-areas"],
     ["Labs", "/research-areas/labs"],
-    [title, `/research-areas/labs/${group.id}`],
-    [`Overview`, `/research-areas/labs/${group.id}/overview`],
+    [title, `/research-areas/labs/${group.frontmatter.id}`],
+    [`Overview`, `/research-areas/labs/${group.frontmatter.id}/overview`],
   ]
 
   return (

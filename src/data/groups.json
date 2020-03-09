@@ -2,7 +2,7 @@
   {
     "id": "adolfo-ferrando-lab",
     "type": "Lab",
-    "name": "Adolfo Ferrando Lab",
+    "name": "Adolfo Ferrando",
     "photo": "",
     "leaders": ["adolfo-ferrando"],
     "members": [
@@ -33,7 +33,7 @@
   {
     "id": "anna-lasorella-lab",
     "type": "Lab",
-    "name": "Anna Lasorella Lab",
+    "name": "Anna Lasorella",
     "photo": "",
     "leaders": ["anna-lasorella"],
     "members": [
@@ -54,7 +54,7 @@
   {
     "id": "antonio-iavarone-lab",
     "type": "Lab",
-    "name": "Antonio Iavarone Lab",
+    "name": "Antonio Iavarone",
     "photo": "",
     "leaders": ["antonio-iavarone"],
     "members": [
@@ -74,7 +74,7 @@
   {
     "id": "christine-chio-lab",
     "type": "Lab",
-    "name": "Christine Chio Lab",
+    "name": "Christine Chio",
     "photo": "",
     "leaders": ["christine-chio"],
     "members": [
@@ -90,7 +90,7 @@
   {
     "id": "jean-gautier-lab",
     "type": "Lab",
-    "name": "Jean Gautier Lab",
+    "name": "Jean Gautier",
     "photo": "",
     "leaders": ["jean-gautier"],
     "members": [
@@ -110,7 +110,7 @@
   {
     "id": "murty-vundavalli-lab",
     "type": "Lab",
-    "name": "Murty Vundavalli Lab",
+    "name": "Murty Vundavalli",
     "photo": "",
     "leaders": ["murty-vundavalli"],
     "members": ["murty-vundavalli", "ishdorj-ganchimeg"],
@@ -121,7 +121,7 @@
   {
     "id": "riccardo-dalla-favera-lab",
     "type": "Lab",
-    "name": "Riccardo Dalla-Favera Lab",
+    "name": "Riccardo Dalla-Favera",
     "photo": "",
     "leaders": ["riccardo-dalla-favera"],
     "members": [
@@ -147,7 +147,7 @@
   {
     "id": "richard-baer-lab",
     "type": "Lab",
-    "name": "Richard Baer Lab",
+    "name": "Richard Baer",
     "photo": "",
     "leaders": ["richard-baer"],
     "members": ["richard-baer", "foon-wu-baer"],
@@ -158,7 +158,7 @@
   {
     "id": "shan-zha-lab",
     "type": "Lab",
-    "name": "Shan Zha Lab",
+    "name": "Shan Zha",
     "photo": "",
     "leaders": ["shan-zha"],
     "members": [
@@ -176,7 +176,7 @@
   {
     "id": "swarnali-acharyya-lab",
     "type": "Lab",
-    "name": "Swarnali Acharyya Lab",
+    "name": "Swarnali Acharyya",
     "photo": "",
     "leaders": ["swarnali-acharyya"],
     "members": [
@@ -197,7 +197,7 @@
   {
     "id": "wei-gu-lab",
     "type": "Lab",
-    "name": "Wei Gu Lab",
+    "name": "Wei Gu",
     "photo": "",
     "leaders": ["wei-gu"],
     "members": [
@@ -218,7 +218,7 @@
   {
     "id": "zhiguo-zhang-lab",
     "type": "Lab",
-    "name": "Zhiguo Zhang Lab",
+    "name": "Zhiguo Zhang",
     "photo": "",
     "leaders": ["zhiguo-zhang"],
     "members": [

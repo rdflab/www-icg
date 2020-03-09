@@ -1,7 +1,6 @@
 import React from "react"
 import Pagination from "../pagination"
 import PeopleTypes from "./peopletypes"
-import SearchSummary from "../searchsummary"
 
 const PeopleSearchResults = ({
   people,

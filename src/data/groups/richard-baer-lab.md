@@ -1,6 +1,6 @@
 ---
 id: "richard-baer-lab"
-name: "Richard Baer Lab"
+name: "Richard Baer"
 type: "Lab"
 photo: ""
 leaders: ["richard-baer"]

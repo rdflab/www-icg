@@ -56,9 +56,9 @@ const Publication = ({
   for (let groupId of publication.groups) {
     if (groupId in groupMap) {
       const group = groupMap[groupId]
-      const pi = group.leaders[0]
+      const pi = group.frontmatter.leaders[0]
       const person = peopleMap[pi]
-      groups.push([groupId, person.frontmatter.lastName + " Lab"])
+      groups.push([groupId, person.frontmatter.lastName + ""])
     }
   }
 

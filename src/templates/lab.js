@@ -13,20 +13,22 @@ import SideColumn from "../components/sidecolumn"
 import Card from "../components/card"
 import ContactInfo from "../components/people/contactinfo"
 import HTMLDiv from "../components/htmldiv"
+import HideSmall from "../components/hidesmall"
+import GlobalSearch from "../components/search/globalsearch"
 
-const LabTemplate = props => {
-  const { pageContext } = props
+const LabTemplate = ({ pageContext }) => {
   const {
     group,
     peopleMap,
     labPublications,
     labNews,
     labExcerptHtml,
+    searchData,
   } = pageContext
 
   const groupMap = toGroupMap([group])
 
-  const faculty = peopleMap[group.leaders[0]]
+  const faculty = peopleMap[group.frontmatter.leaders[0]]
 
   const title = `The ${faculty.frontmatter.lastName} Lab`
 
@@ -34,11 +36,19 @@ const LabTemplate = props => {
     ["Home", "/"],
     ["Research Areas", "/research-areas"],
     ["Labs", "/research-areas/labs"],
-    [title, `/research-areas/labs/${group.id}`],
+    [title, `/research-areas/labs/${group.frontmatter.id}`],
   ]
 
   return (
-    <CrumbLayout crumbs={crumbs} title={title}>
+    <CrumbLayout
+      crumbs={crumbs}
+      title={title}
+      headerComponent={
+        <HideSmall className="w-1/3">
+          <GlobalSearch searchData={searchData} />
+        </HideSmall>
+      }
+    >
       <Columns>
         <SmallColumn>
           <ContactInfo person={faculty} urls={group.urls} />
@@ -47,7 +57,9 @@ const LabTemplate = props => {
           <HTMLDiv html={labExcerptHtml} />
 
           <div className="text-center">
-            <Button to={`/research-areas/labs/${group.id}/overview`}>
+            <Button
+              to={`/research-areas/labs/${group.frontmatter.id}/overview`}
+            >
               Learn more
             </Button>
           </div>

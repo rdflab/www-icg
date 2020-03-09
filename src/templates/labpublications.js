@@ -8,12 +8,12 @@ const LabPublicationsTemplate = props => {
   const { group, peopleMap, allPublications } = pageContext
   const groupMap = toGroupMap([group])
 
-  const faculty = peopleMap[group.leaders[0]]
+  const faculty = peopleMap[group.frontmatter.leaders[0]]
 
   const publications = []
 
   allPublications.forEach(publication => {
-    if (publication.groups.includes(group.id)) {
+    if (publication.groups.includes(group.frontmatter.id)) {
       publications.push(publication)
     }
   })
@@ -28,9 +28,12 @@ const LabPublicationsTemplate = props => {
         ["Labs", "/research-areas/labs"],
         [
           `${faculty.firstName} ${faculty.lastName}`,
-          `/research-areas/labs/${group.id}`,
+          `/research-areas/labs/${group.frontmatter.id}`,
         ],
-        ["Publications", `/research-areas/labs/${group.id}/publications`],
+        [
+          "Publications",
+          `/research-areas/labs/${group.frontmatter.id}/publications`,
+        ],
       ]}
       title={title}
     >

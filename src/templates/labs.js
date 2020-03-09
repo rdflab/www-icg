@@ -1,6 +1,6 @@
 import React from "react"
 import CrumbLayout from "../components/crumblayout"
-import LabSearch from "../components/labsearch"
+import LabSearch from "../components/lab/labsearch"
 
 const LabsTemplate = props => {
   const { pageContext } = props
