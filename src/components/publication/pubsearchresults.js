@@ -7,8 +7,6 @@ import SearchSummary from "../search/searchsummary"
 const PubSearchResults = ({
   publications,
   pagedPublications,
-  groupMap,
-  peopleMap,
   page,
   recordsPerPage,
   onPageChanged,
@@ -23,8 +21,6 @@ const PubSearchResults = ({
 
     <PublicationYears
       publications={pagedPublications}
-      groupMap={groupMap}
-      peopleMap={peopleMap}
       showLabLink={showLabLink}
     />
 

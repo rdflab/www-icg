@@ -163,7 +163,7 @@ class Pagination extends Component {
         {pages.map((page, index) => {
           if (page === LEFT_PAGE)
             return (
-              <PaginationBlockDiv key={index}>
+              <PaginationBlockDiv key={`left-${index}`}>
                 <div>
                   <a
                     className="gray-link"
@@ -180,7 +180,7 @@ class Pagination extends Component {
 
           if (page === RIGHT_PAGE)
             return (
-              <PaginationBlockDiv key={index}>
+              <PaginationBlockDiv key={`right-${index}`}>
                 <div>
                   <a
                     className="gray-link"
@@ -196,7 +196,7 @@ class Pagination extends Component {
             )
 
           return (
-            <PaginationBlockDiv key={index}>
+            <PaginationBlockDiv key={`current-${index}`}>
               <div>
                 <a
                   className={currentPage === page ? "blue-link" : "gray-link"}

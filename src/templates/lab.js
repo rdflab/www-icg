@@ -14,7 +14,7 @@ import Card from "../components/card"
 import ContactInfo from "../components/people/contactinfo"
 import HTMLDiv from "../components/htmldiv"
 import HideSmall from "../components/hidesmall"
-import GlobalSearch from "../components/search/globalsearch"
+import SiteSearch from "../components/search/sitesearch"
 
 const LabTemplate = ({ pageContext }) => {
   const {
@@ -43,11 +43,7 @@ const LabTemplate = ({ pageContext }) => {
     <CrumbLayout
       crumbs={crumbs}
       title={title}
-      headerComponent={
-        <HideSmall className="w-1/3">
-          <GlobalSearch searchData={searchData} />
-        </HideSmall>
-      }
+      headerComponent={<SiteSearch searchData={searchData} />}
     >
       <Columns>
         <SmallColumn>

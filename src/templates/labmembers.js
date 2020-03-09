@@ -4,7 +4,7 @@ import CrumbLayout from "../components/crumblayout"
 import toImageMap from "../utils/toimagemap"
 import PeopleTypes from "../components/people/peopletypes"
 import HideSmall from "../components/hidesmall"
-import GlobalSearch from "../components/search/globalsearch"
+import SiteSearch from "../components/search/sitesearch"
 
 const LabMembersTemplate = ({ pageContext, data }) => {
   const { group, groupMap, peopleMap, searchData } = pageContext
@@ -34,11 +34,7 @@ const LabMembersTemplate = ({ pageContext, data }) => {
         ["Members", `/research-areas/labs/${group.frontmatter.id}/members`],
       ]}
       title={title}
-      headerComponent={
-        <HideSmall className="w-1/3">
-          <GlobalSearch searchData={searchData} />
-        </HideSmall>
-      }
+      headerComponent={<SiteSearch searchData={searchData} />}
     >
       <PeopleTypes
         imageMap={imageMap}

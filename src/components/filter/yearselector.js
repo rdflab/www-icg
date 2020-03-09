@@ -6,7 +6,7 @@
  */
 
 import React, { useState } from "react"
-import SelectItem from "../filter/selectitem"
+import SelectItem from "./selectitem"
 
 const AllType = ({ text, onClick, selected, children, className }) => (
   <SelectItem
@@ -31,7 +31,7 @@ const SelectType = ({ text, onClick, selected, children }) => (
   </AllType>
 )
 
-const TypeSelector = ({ onClick }) => {
+const YearSelector = ({ onClick }) => {
   const [selectedTypes, setSelectedTypes] = useState(["All"])
 
   const _handleClick = data => {
@@ -41,8 +41,16 @@ const TypeSelector = ({ onClick }) => {
     onClick(types)
   }
 
+  const year = new Date().getFullYear()
+
+  const years = []
+
+  for (let i = 0; i < 4; ++i) {
+    years.push((year - i).toString())
+  }
+
   return (
-    <div className="row justify-center">
+    <div className="row justify-center my-4">
       <div className="row items-center rounded-md border-2 border-solid border-gray-300 cursor-pointer overflow-hidden">
         <AllType
           onClick={_handleClick}
@@ -51,31 +59,20 @@ const TypeSelector = ({ onClick }) => {
         >
           All
         </AllType>
-        <SelectType
-          onClick={_handleClick}
-          text="Faculty"
-          selected={selectedTypes[0] === "Faculty"}
-        >
-          Faculty
-        </SelectType>
-        <SelectType
-          onClick={_handleClick}
-          text="Research Scientist"
-          selected={selectedTypes[0] === "Research Scientist"}
-        >
-          Research Scientist
-        </SelectType>
 
-        <SelectType
-          onClick={_handleClick}
-          text="Staff"
-          selected={selectedTypes[0] === "Staff"}
-        >
-          Staff
-        </SelectType>
+        {years.map((year, index) => (
+          <SelectType
+            key={index}
+            onClick={_handleClick}
+            text={year}
+            selected={selectedTypes[0] === year}
+          >
+            {year}
+          </SelectType>
+        ))}
       </div>
     </div>
   )
 }
 
-export default TypeSelector
+export default YearSelector

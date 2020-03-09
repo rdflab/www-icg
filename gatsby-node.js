@@ -8,11 +8,9 @@ const PEOPLE_TYPES = [
 ]
 
 const labTemplate = path.resolve(`src/templates/lab.js`)
-const labsTemplate = path.resolve(`src/templates/labsv2.js`)
-const FacultyAndStaffTemplate = path.resolve(
-  `src/templates/facultyandstaffv2.js`
-)
-const labPublicationsTemplate = path.resolve(`src/templates/labpublications.js`)
+const labsTemplate = path.resolve(`src/templates/labs.js`)
+const FacultyAndStaffTemplate = path.resolve(`src/templates/facultyandstaff.js`)
+//const labPublicationsTemplate = path.resolve(`src/templates/labpublications.js`)
 const labOverviewTemplate = path.resolve(`src/templates/laboverview.js`)
 const labMembersTemplate = path.resolve(`src/templates/labmembers.js`)
 const memberTemplate = path.resolve(`src/templates/member.js`)
@@ -20,9 +18,9 @@ const newsTemplate = path.resolve(`src/templates/news.js`)
 const newsItemTemplate = path.resolve(`src/templates/newsitem.js`)
 const calEventsTemplate = path.resolve(`src/templates/calevents.js`)
 const calEventTemplate = path.resolve(`src/templates/calevent.js`)
-const publicationsTemplate = path.resolve(`src/templates/publicationsv2.js`)
-const researchAreasTemplate = path.resolve(`src/templates/researchareasv2.js`)
-const researchAreaTemplate = path.resolve(`src/templates/researchareav2.js`)
+const publicationsTemplate = path.resolve(`src/templates/publications.js`)
+const researchAreasTemplate = path.resolve(`src/templates/researchareas.js`)
+const researchAreaTemplate = path.resolve(`src/templates/researcharea.js`)
 
 const toPeopleMap = people => {
   let ret = new Object() //new Map()
@@ -261,6 +259,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     researchAreasMap[node.id] = node
   })
 
+  result.data.labGroups.edges.forEach(({ node }) => {
+    allLabGroups.push(node)
+  })
+
   result.data.people.edges.forEach(({ node }) => {
     const person = node
 
@@ -281,21 +283,40 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     allPeople.push(person)
   })
 
+  const groupMap = toGroupMap(allLabGroups)
   const peopleMap = toPeopleMap(allPeople)
 
   result.data.publications.edges.forEach(({ node }) => {
-    allPublications.push(node)
+    const publication = node
+
+    // replace labs refs with labs objs
+
+    var groups = []
+
+    for (let group of publication.groups) {
+      if (group in groupMap) {
+        groups.push(groupMap[group])
+      }
+    }
+
+    publication.groups = groups
+
+    var people = []
+
+    for (let person of publication.people) {
+      if (person in peopleMap) {
+        people.push(peopleMap[person])
+      }
+    }
+
+    publication.people = people
+
+    allPublications.push(publication)
   })
 
   result.data.news.edges.forEach(({ node }) => {
     allNews.push(node)
   })
-
-  result.data.labGroups.edges.forEach(({ node }) => {
-    allLabGroups.push(node)
-  })
-
-  const groupMap = toGroupMap(allLabGroups)
 
   result.data.events.edges.forEach(({ node }) => {
     const calEvent = node
@@ -370,6 +391,55 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
   }
 
+  // Publications
+
+  searchData["sections"].push("Publications")
+  searchData["data"]["Publications"] = {}
+
+  for (let publication of allPublications) {
+    if (publication.pubmed !== "") {
+      let title = publication.title
+
+      // Truncate if longer than 50 chars
+      if (title.length > 60) {
+        title = `${title.substring(0, 60)}...`
+      }
+
+      searchData["data"]["Publications"][title] = {
+        name: `PubMed`,
+        to: `https://www.ncbi.nlm.nih.gov/pubmed/?term=${publication.pubmed}`,
+      }
+    }
+  }
+
+  // News
+
+  searchData["sections"].push("News")
+  searchData["data"]["News"] = {}
+
+  for (let item of allNews) {
+    searchData["data"]["News"][item.frontmatter.title] = {
+      name: `View`,
+      to: item.frontmatter.path,
+    }
+  }
+
+  // Events
+
+  searchData["sections"].push("Events")
+  searchData["data"]["Events"] = {}
+
+  for (let calEvent of allCalEvents) {
+    const path = `/events/${
+      calEvent.frontmatter.start.split("T")[0]
+    }-${calEvent.frontmatter.title.toLowerCase().replace(" ", "-")}`
+
+    searchData["data"]["Events"][calEvent.frontmatter.title] = {
+      name: `View`,
+      to: path,
+    }
+  }
+
   //
   // Make pages
   //
@@ -379,11 +449,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
     const labPublications = []
 
-    allPublications.forEach(publication => {
-      if (publication.groups.includes(group.frontmatter.id)) {
-        labPublications.push(publication)
+    // Filter for pubs belonging only to this lab/group
+    for (let publication of allPublications) {
+      for (let g of publication.groups) {
+        if (g.frontmatter.id === group.frontmatter.id) {
+          labPublications.push(publication)
+          break
+        }
       }
-    })
+    }
 
     const labPeople = []
 
@@ -460,11 +534,27 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
     createPage({
       path: `${path}/publications`,
-      component: labPublicationsTemplate,
+      component: publicationsTemplate,
       context: {
-        group: group,
-        peopleMap: peopleMap,
-        allPublications: allPublications,
+        title: "Publications",
+        crumbs: [
+          ["Home", "/"],
+          ["Research Areas", "/research-areas"],
+          ["Labs", "/research-areas/labs"],
+          [
+            group.frontmatter.name,
+            `/research-areas/labs/${group.frontmatter.id}`,
+          ],
+          [
+            "Publications",
+            `/research-areas/labs/${group.frontmatter.id}/publications`,
+          ],
+        ],
+        selectedTab: "",
+        allPublications: labPublications,
+        showSearch: false,
+        showYears: true,
+        searchData: searchData,
       },
     })
 
@@ -477,11 +567,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
       const personPublications = []
 
-      allPublications.forEach(publication => {
-        if (publication.people.includes(person.frontmatter.id)) {
-          personPublications.push(publication)
+      for (let publication of allPublications) {
+        for (let p of publication.people) {
+          if (p.frontmatter.id === person.frontmatter.id) {
+            personPublications.push(publication)
+            break
+          }
         }
-      })
+      }
 
       createPage({
         path: `/research-areas/faculty-and-staff/${person.frontmatter.id}`,
@@ -494,6 +587,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           labPeople: labPeople,
           peopleMap: peopleMap,
           publications: personPublications,
+          searchData: searchData,
         },
       })
     }
@@ -508,6 +602,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     component: newsTemplate,
     context: {
       allNews: allNews,
+      searchData: searchData,
     },
   })
 
@@ -531,6 +626,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     component: calEventsTemplate,
     context: {
       allCalEvents: allCalEvents,
+      searchData: searchData,
     },
   })
 
@@ -579,9 +675,17 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     path: "/research-areas/publications",
     component: publicationsTemplate,
     context: {
-      groupMap: groupMap,
-      peopleMap: peopleMap,
+      title: "Publications",
+      crumbs: [
+        ["Home", "/"],
+        ["Research Areas", "/research-areas"],
+        ["Publications", "/research-areas/publications"],
+      ],
+      selectedTab: "Publications",
       allPublications: allPublications,
+      showSearch: true,
+      showYears: false,
+      searchData: searchData,
     },
   })
 

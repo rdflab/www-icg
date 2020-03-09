@@ -11,6 +11,7 @@ import Columns from "../columns"
 import Column from "../column"
 import { FaExternalLinkAlt } from "react-icons/fa"
 import BlueLinkExt from "../bluelinkext"
+import PubMedLink from "./pubmedlink"
 
 /**
  * Format author list into string.
@@ -42,27 +43,13 @@ const authorString = (authors, maxAuthors) => {
   return ret
 }
 
-const Publication = ({
-  publication,
-  groupMap,
-  peopleMap,
-  showLabLink,
-  maxAuthors,
-}) => {
+const Publication = ({ publication, showLabLink, maxAuthors }) => {
   const authors = authorString(publication.authors, maxAuthors)
-  const groupId = publication.groups[0]
   let groups = []
 
-  for (let groupId of publication.groups) {
-    if (groupId in groupMap) {
-      const group = groupMap[groupId]
-      const pi = group.frontmatter.leaders[0]
-      const person = peopleMap[pi]
-      groups.push([groupId, person.frontmatter.lastName + ""])
-    }
+  for (let group of publication.groups) {
+    groups.push([group.frontmatter.id, group.frontmatter.name])
   }
-
-  console.log(groupId)
 
   return (
     <div className="mb-8">
@@ -77,10 +64,12 @@ const Publication = ({
         </Column>
 
         <Column w="1/2">
-          {groups.length > 0 && showLabLink && (
+          {publication.groups.length > 0 && showLabLink && (
             <div className="md:text-right">
-              <BlueLink to={`/research-areas/labs/${groups[0][0]}`}>
-                {groups[0][1]}
+              <BlueLink
+                to={`/research-areas/labs/${publication.groups[0].frontmatter.id}`}
+              >
+                {publication.groups[0].frontmatter.name}
               </BlueLink>
             </div>
           )}
@@ -90,12 +79,7 @@ const Publication = ({
       {publication.pubmed !== "" && (
         <div className="row blue items-center">
           <div>
-            <BlueLinkExt
-              target="_blank"
-              to={`https://www.ncbi.nlm.nih.gov/pubmed/?term=${publication.pubmed}`}
-            >
-              PubMed
-            </BlueLinkExt>
+            <PubMedLink publication={publication} />
           </div>
           <div className="ml-1">
             <FaExternalLinkAlt />

@@ -8,12 +8,7 @@
 import React from "react"
 import PublicationList from "./publicationlist"
 
-const PublicationYears = ({
-  publications,
-  groupMap,
-  peopleMap,
-  showLabLink,
-}) => {
+const PublicationYears = ({ publications, showLabLink }) => {
   let yearMap = new Map()
 
   for (let publication of publications) {
@@ -40,8 +35,6 @@ const PublicationYears = ({
               }
               <PublicationList
                 publications={yearMap.get(year)}
-                groupMap={groupMap}
-                peopleMap={peopleMap}
                 showLabLink={showLabLink}
               />
             </div>

@@ -12,6 +12,7 @@ import BlueLink from "../components/bluelink"
 import ContactInfo from "../components/people/contactinfo"
 import HTMLDiv from "../components/htmldiv"
 import SimplePubSearch from "../components/publication/simplepubsearch"
+import SiteSearch from "../components/search/sitesearch"
 
 const interests = person => {
   const n = person.researchAreas.length
@@ -40,11 +41,10 @@ const MemberTemplate = ({ pageContext, data }) => {
     id,
     person,
     group,
-    groupMap,
     labPeople,
-    peopleMap,
     publications,
     researchAreasMap,
+    searchData,
   } = pageContext
 
   const title = `${person.frontmatter.firstName} ${person.frontmatter.lastName}`
@@ -58,6 +58,7 @@ const MemberTemplate = ({ pageContext, data }) => {
         [title, `/research-areas/faculty-and-staff/${person.frontmatter.id}`],
       ]}
       title={title}
+      headerComponent={<SiteSearch searchData={searchData} />}
     >
       <Columns>
         <SmallColumn>
@@ -85,8 +86,6 @@ const MemberTemplate = ({ pageContext, data }) => {
               <h2>Publications</h2>
 
               <SimplePubSearch
-                groupMap={groupMap}
-                peopleMap={peopleMap}
                 allPublications={publications}
                 showLabLink={false}
               />

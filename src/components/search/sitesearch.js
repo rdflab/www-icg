@@ -3,19 +3,33 @@ import SearchBar from "./searchbar"
 import Columns from "../columns"
 import Column from "../column"
 import BlueLink from "../bluelink"
+import HideSmall from "../hidesmall"
+import BlueLinkExt from "../bluelinkext"
 
-const GlobalSearchResult = ({ s1, s2, s3, link }) => (
-  <Columns className="my-2">
-    <Column w="1/2">
-      <span>{s1}</span>
-      <span className="bg-blue-100 text-blue-400">{s2}</span>
-      <span>{s3}</span>
-    </Column>
-    <Column w="1/2">
-      <BlueLink to={link.to}>{link.name}</BlueLink>
-    </Column>
-  </Columns>
-)
+const SiteSearchResult = ({ s1, s2, s3, link }) => {
+  let linkComp
+
+  if (link.to.includes("http")) {
+    linkComp = (
+      <BlueLinkExt target="_blank" to={link.to}>
+        {link.name}
+      </BlueLinkExt>
+    )
+  } else {
+    linkComp = <BlueLink to={link.to}>{link.name}</BlueLink>
+  }
+
+  return (
+    <Columns className="my-2">
+      <Column w="7/12" className="mr-4">
+        <span>{s1}</span>
+        <span className="bg-blue-100 text-blue-400">{s2}</span>
+        <span>{s3}</span>
+      </Column>
+      <Column w="5/12">{linkComp}</Column>
+    </Columns>
+  )
+}
 
 const Heading = ({ name }) => (
   <div className="py-1 mt-2 mb-2 border-b border-solid border-gray-400 text-gray-500 text-sm font-semibold">
@@ -28,7 +42,7 @@ const Heading = ({ name }) => (
  * @param {*} showMenu    whether to show the menu or not
  * @param {*} handleClickEvent    allows menu to be closed
  */
-const GlobalSearchMenuPane = ({ showMenu, handleClickEvent }) => {
+const SiteSearchMenuPane = ({ showMenu, handleClickEvent }) => {
   return (
     <div
       onClick={handleClickEvent}
@@ -39,7 +53,7 @@ const GlobalSearchMenuPane = ({ showMenu, handleClickEvent }) => {
   )
 }
 
-const GlobalSearchMenu = ({ showMenu, children }) => {
+const SiteSearchMenu = ({ showMenu, children }) => {
   return (
     <div
       className={`absolute z-50 bg-white p-4 shadow-md rounded-md w-full border border-solid border-gray-200 ${
@@ -51,7 +65,7 @@ const GlobalSearchMenu = ({ showMenu, children }) => {
   )
 }
 
-const GlobalSearch = ({ searchData, className, placeholder, maxResults }) => {
+const SiteSearch = ({ searchData, className, placeholder, maxResults }) => {
   const [query, setQuery] = useState("")
   const [results, setResults] = useState([])
   const [showMenu, setShowMenu] = useState(false)
@@ -90,7 +104,7 @@ const GlobalSearch = ({ searchData, className, placeholder, maxResults }) => {
           const s3 = name.substring(p + ql.length)
 
           ret.push(
-            <GlobalSearchResult
+            <SiteSearchResult
               s1={s1}
               s2={s2}
               s3={s3}
@@ -132,12 +146,6 @@ const GlobalSearch = ({ searchData, className, placeholder, maxResults }) => {
     }
   }
 
-  const handleOnBlur = e => {
-    if (showMenu) {
-      setShowMenu(false)
-    }
-  }
-
   const handleMouseEnter = e => {
     setHover(true)
   }
@@ -147,31 +155,33 @@ const GlobalSearch = ({ searchData, className, placeholder, maxResults }) => {
   }
 
   return (
-    <div
-      className="relative"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseExit}
-    >
-      <SearchBar
-        handleInputChange={handleInputChange}
-        text={query}
-        placeholder={placeholder}
-        color={showMenu || hover ? "text-blue-500" : "text-gray-400"}
-        borderColor={showMenu ? "border-blue-500" : "border-transparent"}
-      />
-      <GlobalSearchMenuPane
-        showMenu={showMenu}
-        handleClickEvent={handleClickEvent}
-      />
-      <GlobalSearchMenu showMenu={showMenu}>{results}</GlobalSearchMenu>
-    </div>
+    <HideSmall className="w-5/12">
+      <div
+        className="relative"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseExit}
+      >
+        <SearchBar
+          handleInputChange={handleInputChange}
+          text={query}
+          placeholder={placeholder}
+          color={showMenu || hover ? "text-blue-500" : "text-gray-400"}
+          borderColor={showMenu ? "border-blue-500" : "border-transparent"}
+        />
+        <SiteSearchMenuPane
+          showMenu={showMenu}
+          handleClickEvent={handleClickEvent}
+        />
+        <SiteSearchMenu showMenu={showMenu}>{results}</SiteSearchMenu>
+      </div>
+    </HideSmall>
   )
 }
 
-GlobalSearch.defaultProps = {
+SiteSearch.defaultProps = {
   placeholder: "",
   className: "",
   maxResults: 10,
 }
 
-export default GlobalSearch
+export default SiteSearch

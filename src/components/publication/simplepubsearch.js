@@ -6,12 +6,7 @@ import SearchSummary from "../search/searchsummary"
 
 const EMPTY_QUERY = ""
 
-const SimplePubSearch = ({
-  groupMap,
-  peopleMap,
-  allPublications,
-  showLabLink,
-}) => {
+const SimplePubSearch = ({ allPublications, showLabLink }) => {
   const [query, setQuery] = useState(EMPTY_QUERY)
   const [filteredPublications, setFilteredPublications] = useState([])
   const [page, setPage] = useState(1)
@@ -75,8 +70,6 @@ const SimplePubSearch = ({
 
       <PublicationYears
         publications={pagedPublications}
-        groupMap={groupMap}
-        peopleMap={peopleMap}
         showLabLink={showLabLink}
       />
 

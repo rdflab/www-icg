@@ -1,25 +1,116 @@
-import React from "react"
+import React, { useState } from "react"
 import CrumbLayout from "../components/crumblayout"
-import PubSearch from "../components/publication/pubsearch"
+import SearchBar from "../components/search/searchbar"
+import PubSearchResults from "../components/publication/pubsearchresults"
+import SiteSearch from "../components/search/sitesearch"
+import SearchSummary from "../components/search/searchsummary"
+import YearSelector from "../components/filter/yearselector"
+import HideSmall from "../components/hidesmall"
 
-const PublicationsTemplate = props => {
-  const { pageContext } = props
-  const { groupMap, peopleMap, allPublications } = pageContext
+const EMPTY_QUERY = ""
+
+const PublicationsTemplate = ({ pageContext }) => {
+  const {
+    title,
+    crumbs,
+    selectedTab,
+    allPublications,
+    showSearch,
+    showYears,
+    searchData,
+  } = pageContext
+
+  const [query, setQuery] = useState(EMPTY_QUERY)
+  const [filteredPublications, setFilteredPublications] = useState([])
+  const [page, setPage] = useState(1)
+  const [recordsPerPage, setRecordsPerPage] = useState(20)
+  const [filterYears, setFilterYears] = useState([])
+
+  const handleInputChange = e => {
+    const q = e.target.value
+    let ret = []
+
+    for (let publication of allPublications) {
+      if (publication.title.toLowerCase().includes(q.toLowerCase())) {
+        ret.push(publication)
+      }
+    }
+
+    // update state according to the latest query and results
+    setQuery(q)
+    setFilteredPublications(ret)
+    setPage(1)
+  }
+
+  const onPageChanged = data => {
+    const { currentPage } = data
+    setPage(currentPage)
+  }
+
+  const handleClick = data => {
+    setFilterYears(data)
+    setPage(1)
+  }
+
+  const hasSearchResults = query !== EMPTY_QUERY
+  let publications = hasSearchResults ? filteredPublications : allPublications
+
+  let yearFilteredPublications
+
+  if (filterYears.length > 0) {
+    yearFilteredPublications = publications.filter(publication => {
+      return filterYears.includes(publication.year)
+    })
+  } else {
+    yearFilteredPublications = publications
+  }
+
+  const offset = (page - 1) * recordsPerPage
+  let pagedPublications = yearFilteredPublications.slice(
+    offset,
+    offset + recordsPerPage
+  )
+
+  console.log(pagedPublications)
 
   return (
     <CrumbLayout
-      crumbs={[
-        ["Home", "/"],
-        ["Research Areas", "/research-areas"],
-        ["Publications", "/research-areas/publications"],
-      ]}
-      selectedTab="Publications"
-      title="Publications"
+      crumbs={crumbs}
+      selectedTab={selectedTab}
+      title={title}
+      headerComponent={<SiteSearch searchData={searchData} />}
+      titleComponent={
+        <SearchSummary
+          count={yearFilteredPublications.length}
+          single="Publication"
+          plural="Publications"
+        />
+      }
     >
-      <PubSearch
-        groupMap={groupMap}
-        peopleMap={peopleMap}
-        allPublications={allPublications}
+      {showSearch && (
+        <div>
+          <SearchBar
+            className="my-4 sm:w-1/2 mx-auto"
+            handleInputChange={handleInputChange}
+            placeholder="Type to find publications..."
+            text={query}
+          />
+        </div>
+      )}
+
+      {showYears && (
+        <HideSmall>
+          <YearSelector onClick={handleClick} />
+        </HideSmall>
+      )}
+
+      <PubSearchResults
+        publications={yearFilteredPublications}
+        pagedPublications={pagedPublications}
+        page={page}
+        recordsPerPage={recordsPerPage}
+        onPageChanged={onPageChanged}
+        showLabLink={true}
       />
     </CrumbLayout>
   )

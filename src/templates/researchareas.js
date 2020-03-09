@@ -1,10 +1,10 @@
 import React from "react"
 import CrumbLayout from "../components/crumblayout"
 import BlueLink from "../components/bluelink"
-import GlobalSearch from "../components/search/globalsearch"
+import SiteSearch from "../components/search/sitesearch"
 import HideSmall from "../components/hidesmall"
 
-const ResearchAreasV2Template = ({ pageContext }) => {
+const ResearchAreasTemplate = ({ pageContext }) => {
   const { allResearchAreas, searchData } = pageContext
 
   const raMap = {}
@@ -20,11 +20,7 @@ const ResearchAreasV2Template = ({ pageContext }) => {
         ["Research Areas", "/research-areas"],
       ]}
       title="Research Areas"
-      headerComponent={
-        <HideSmall className="w-1/3">
-          <GlobalSearch searchData={searchData} />
-        </HideSmall>
-      }
+      headerComponent={<SiteSearch searchData={searchData} />}
     >
       {Object.keys(raMap)
         .sort()
@@ -39,4 +35,4 @@ const ResearchAreasV2Template = ({ pageContext }) => {
   )
 }
 
-export default ResearchAreasV2Template
+export default ResearchAreasTemplate

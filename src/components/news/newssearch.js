@@ -11,6 +11,7 @@ import Columns from "../columns"
 import SmallColumn from "../smallcolumn"
 import MainColumn from "../maincolumn"
 import SideColumn from "../sidecolumn"
+import NewsSearchResults from "../news/newssearchresults"
 
 const EMPTY_QUERY = ""
 
@@ -72,19 +73,11 @@ const NewsSearch = ({ allNews }) => {
         />
       </SmallColumn>
       <MainColumn>
-        <SearchSummary
-          count={yearFilteredNews.length}
-          single="News Item"
-          plural="News Items"
-        />
-
-        <NewsItems news={pagedNews} />
-
-        <Pagination
+        <NewsSearchResults
+          news={yearFilteredNews}
+          pagedNews={pagedNews}
           page={page}
-          totalRecords={yearFilteredNews.length}
           recordsPerPage={recordsPerPage}
-          pageNeighbours={1}
           onPageChanged={onPageChanged}
         />
       </MainColumn>
