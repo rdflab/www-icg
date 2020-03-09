@@ -10,7 +10,7 @@ import SelectItem from "./selectitem"
 
 const AllType = ({ text, onClick, selected, children, className }) => (
   <SelectItem
-    className={`font-semibold text-sm px-5 py-2 text-center trans-ani ${className}`}
+    className={`font-semibold text-sm px-4 py-2 text-center trans-ani ${className}`}
     selectedClassName="bg-gray-200"
     onClick={onClick}
     text={text}
@@ -31,7 +31,7 @@ const SelectType = ({ text, onClick, selected, children }) => (
   </AllType>
 )
 
-const YearSelector = ({ onClick }) => {
+const YearSelector = ({ maxYears, onClick }) => {
   const [selectedTypes, setSelectedTypes] = useState(["All"])
 
   const _handleClick = data => {
@@ -45,8 +45,8 @@ const YearSelector = ({ onClick }) => {
 
   const years = []
 
-  for (let i = 0; i < 4; ++i) {
-    years.push((year - i).toString())
+  for (let i = 0; i < maxYears; ++i) {
+    years.push(year - i)
   }
 
   return (
@@ -73,6 +73,10 @@ const YearSelector = ({ onClick }) => {
       </div>
     </div>
   )
+}
+
+YearSelector.defaultProps = {
+  maxYears: 5,
 }
 
 export default YearSelector

@@ -315,7 +315,12 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   })
 
   result.data.news.edges.forEach(({ node }) => {
-    allNews.push(node)
+    const item = node
+
+    // beter if the year is an it
+    item.year = parseInt(node.frontmatter.year)
+
+    allNews.push(item)
   })
 
   result.data.events.edges.forEach(({ node }) => {
@@ -554,6 +559,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         allPublications: labPublications,
         showSearch: false,
         showYears: true,
+        showLabLink: false,
         searchData: searchData,
       },
     })
@@ -685,6 +691,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       allPublications: allPublications,
       showSearch: true,
       showYears: false,
+      showLabLink: true,
       searchData: searchData,
     },
   })

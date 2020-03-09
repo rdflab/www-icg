@@ -50,7 +50,7 @@ const NewsTemplate = ({ pageContext }) => {
 
   if (filterYears.length > 0) {
     yearFilteredNews = news.filter(item => {
-      return filterYears.includes(item.frontmatter.year)
+      return filterYears.includes(item.year)
     })
   } else {
     yearFilteredNews = news

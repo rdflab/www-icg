@@ -17,6 +17,7 @@ const PublicationsTemplate = ({ pageContext }) => {
     allPublications,
     showSearch,
     showYears,
+    showLabLink,
     searchData,
   } = pageContext
 
@@ -57,7 +58,8 @@ const PublicationsTemplate = ({ pageContext }) => {
 
   let yearFilteredPublications
 
-  if (filterYears.length > 0) {
+  console.log(filterYears)
+  if (filterYears.length > 0 && filterYears[0] !== "All") {
     yearFilteredPublications = publications.filter(publication => {
       return filterYears.includes(publication.year)
     })
@@ -70,8 +72,6 @@ const PublicationsTemplate = ({ pageContext }) => {
     offset,
     offset + recordsPerPage
   )
-
-  console.log(pagedPublications)
 
   return (
     <CrumbLayout
@@ -110,7 +110,7 @@ const PublicationsTemplate = ({ pageContext }) => {
         page={page}
         recordsPerPage={recordsPerPage}
         onPageChanged={onPageChanged}
-        showLabLink={true}
+        showLabLink={showLabLink}
       />
     </CrumbLayout>
   )
