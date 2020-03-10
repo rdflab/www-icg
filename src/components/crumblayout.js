@@ -15,11 +15,16 @@ const CrumbLayout = ({
   title,
   titleComponent,
   headerComponent,
+  menuComponent,
   children,
   crumbs,
 }) => {
   return (
-    <Layout title={title} headerComponent={headerComponent}>
+    <Layout
+      title={title}
+      headerComponent={headerComponent}
+      menuComponent={menuComponent}
+    >
       {crumbs.length > 0 && <Breadcrumb crumbs={crumbs} />}
 
       <Container className="min-h-screen mt-4">
@@ -41,6 +46,7 @@ CrumbLayout.defaultProps = {
   title: "",
   titleComponent: null,
   headerComponent: null,
+  menuComponent: null,
 }
 
 export default CrumbLayout

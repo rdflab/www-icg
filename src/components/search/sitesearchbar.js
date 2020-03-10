@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { FaSearch } from "react-icons/fa"
 
-const SearchBar = ({
+const SiteSearchBar = ({
   handleInputChange,
   placeholder,
   text,
@@ -21,10 +21,11 @@ const SearchBar = ({
 
   return (
     <div
-      className={`row z-40 px-4 py-2 border border-solid border-gray-300 rounded-md items-center bg-white trans-ani ${
-        border ? "border-gray-300" : ""
-      } ${hover || selected ? "shadow" : ""}
-       ${className}`}
+      className={`row z-40 px-4 py-2 rounded-md items-center border border-solid  trans-ani ${
+        hover || selected
+          ? "bg-white border-gray-200"
+          : "bg-gray-100 border-gray-100"
+      } ${className}`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
@@ -36,16 +37,20 @@ const SearchBar = ({
         onChange={handleInputChange}
         className="w-full bg-transparent"
       />
-      <FaSearch className={`text-blue-400 trans-ani ml-2`} />
+      <FaSearch
+        className={`${
+          hover ? "text-blue-400" : "text-gray-500"
+        } trans-ani ml-2`}
+      />
     </div>
   )
 }
 
-SearchBar.defaultProps = {
+SiteSearchBar.defaultProps = {
   placeholder: "Type to find items...",
   border: true,
   text: "",
   selected: false,
 }
 
-export default SearchBar
+export default SiteSearchBar

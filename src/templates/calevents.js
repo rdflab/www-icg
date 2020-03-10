@@ -106,7 +106,7 @@ const CalEventsTemplate = ({ pageContext }) => {
     >
       <div>
         <SearchBar
-          className="my-4 sm:w-1/2 mx-auto"
+          className="my-4 sm:w-1/3 mx-auto"
           handleInputChange={handleInputChange}
           placeholder="Type to find events..."
           text={query}

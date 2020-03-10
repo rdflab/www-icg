@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import SearchBar from "./searchbar"
+import SiteSearchBar from "./sitesearchbar"
 import Columns from "../columns"
 import Column from "../column"
 import BlueLink from "../bluelink"
@@ -155,24 +155,23 @@ const SiteSearch = ({ searchData, className, placeholder, maxResults }) => {
   }
 
   return (
-    <HideSmall className="w-5/12">
-      <div
-        className="relative"
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseExit}
-      >
-        <SearchBar
-          handleInputChange={handleInputChange}
-          text={query}
-          placeholder={placeholder}
-          border={false}
-        />
-        <SiteSearchMenuPane
-          showMenu={showMenu}
-          handleClickEvent={handleClickEvent}
-        />
-        <SiteSearchMenu showMenu={showMenu}>{results}</SiteSearchMenu>
-      </div>
+    <HideSmall className="relative w-1/2">
+      <SiteSearchBar
+        handleInputChange={handleInputChange}
+        text={query}
+        placeholder={placeholder}
+        border={false}
+        selected={showMenu}
+        className="ml-auto w-1/2"
+      />
+
+      <SiteSearchMenuPane
+        showMenu={showMenu}
+        handleClickEvent={handleClickEvent}
+      />
+      <SiteSearchMenu showMenu={showMenu} className="w-1/2">
+        {results}
+      </SiteSearchMenu>
     </HideSmall>
   )
 }

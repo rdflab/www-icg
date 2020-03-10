@@ -60,13 +60,17 @@ const SimplePubSearch = ({ allPublications, showLabLink }) => {
 
   return (
     <>
-      <SearchBar handleInputChange={handleInputChange} />
+      <SearchBar
+        handleInputChange={handleInputChange}
+        className="my-4 sm:w-1/2 mx-auto"
+        placeholder="Type to find publications..."
+      />
 
-      <SearchSummary
+      {/* <SearchSummary
         count={yearFilteredPublications.length}
         single="Publication"
         plural="Publications"
-      />
+      /> */}
 
       <PublicationYears
         publications={pagedPublications}

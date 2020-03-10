@@ -58,7 +58,6 @@ const PublicationsTemplate = ({ pageContext }) => {
 
   let yearFilteredPublications
 
-  console.log(filterYears)
   if (filterYears.length > 0 && filterYears[0] !== "All") {
     yearFilteredPublications = publications.filter(publication => {
       return filterYears.includes(publication.year)
@@ -80,17 +79,19 @@ const PublicationsTemplate = ({ pageContext }) => {
       title={title}
       headerComponent={<SiteSearch searchData={searchData} />}
       titleComponent={
-        <SearchSummary
-          count={yearFilteredPublications.length}
-          single="Publication"
-          plural="Publications"
-        />
+        <HideSmall>
+          <SearchSummary
+            count={yearFilteredPublications.length}
+            single="Publication"
+            plural="Publications"
+          />
+        </HideSmall>
       }
     >
       {showSearch && (
         <div>
           <SearchBar
-            className="my-4 sm:w-5/12 mx-auto"
+            className="my-4 sm:w-1/3 mx-auto"
             handleInputChange={handleInputChange}
             placeholder="Type to find publications..."
             text={query}

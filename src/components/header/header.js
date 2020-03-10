@@ -9,7 +9,7 @@ import Container from "../container"
 import Row from "../row"
 import HideSmall from "../hidesmall"
 
-const Header = ({ title, content }) => (
+const Header = ({ title, content, menuContent }) => (
   <>
     <nav
       aria-label="Navigation"
@@ -34,10 +34,14 @@ const Header = ({ title, content }) => (
         </Container>
       </div>
 
-      <nav aria-label="Navigation" className="bg-blue-columbia-80 py-3">
+      <nav aria-label="Navigation" className="bg-blue-columbia-80 py-2">
         <Container>
-          <Row className="items-center">
-            <HeaderLinks />
+          <Row className="justify-between items-center">
+            <Row className="items-center">
+              <HeaderLinks />
+            </Row>
+
+            {menuContent !== null && menuContent}
           </Row>
         </Container>
       </nav>
@@ -52,6 +56,7 @@ Header.propTypes = {
 Header.defaultProps = {
   title: "",
   content: null,
+  menuContent: null,
 }
 
 export default Header

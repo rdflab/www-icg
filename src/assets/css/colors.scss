@@ -48,6 +48,26 @@ $columbia-blue-90-color: rgba($columbia-blue-color, 0.9);
   color: $columbia-blue-80-color;
 }
 
+.bg-white-10 {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.bg-white-20 {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.bg-white-40 {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.bg-white-50 {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.border-white-20 {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
 .text-blue-columbia {
   color: $columbia-blue-color;
 }
