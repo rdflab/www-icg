@@ -74,7 +74,7 @@ const MemberTemplate = ({ pageContext, data }) => {
               <Img
                 fluid={data.file.childImageSharp.fluid}
                 style={{ width: "20rem" }}
-                className="shadow-md rounded-md"
+                className="shadow-md rounded-md mx-auto sm:mx-0"
               />
             </div>
           )}

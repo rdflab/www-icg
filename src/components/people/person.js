@@ -17,7 +17,7 @@ const Person = ({ person, groupMap, showLabLink, image }) => {
   return (
     <div className="my-4">
       <Columns>
-        <Column w="1/12" className="mr-4">
+        <Column w="1/12" className="mr-4 text-center">
           {image !== null && (
             <Img
               fluid={image.childImageSharp.fluid}
