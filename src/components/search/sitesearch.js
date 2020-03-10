@@ -85,12 +85,6 @@ const SiteSearch = ({ searchData, className, placeholder, maxResults }) => {
 
   // }, [])
 
-  // const searchData = {}
-  // searchData['sections'] = ['People']
-  // searchData['data'] = {}
-  // searchData['data']['People'] = {}
-  // searchData['data']['People']['Cheese'] = {name:'Home', to:'/research/areas/cake'}
-
   const search = (q, sd) => {
     //console.log("q", q)
 

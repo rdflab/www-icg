@@ -48,8 +48,6 @@ const CalSearch = ({ allCalEvents }) => {
     setSelectedDays(selected ? [] : [day])
   }
 
-  console.log(selectedDays)
-
   const onPageChanged = data => {
     const { currentPage } = data
     setPage(currentPage)

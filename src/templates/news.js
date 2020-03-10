@@ -38,7 +38,6 @@ const NewsTemplate = ({ pageContext }) => {
   }
 
   const handleClick = data => {
-    console.log("year", data)
     setFilterYears(data)
     setPage(1)
   }
