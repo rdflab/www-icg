@@ -165,8 +165,7 @@ const SiteSearch = ({ searchData, className, placeholder, maxResults }) => {
           handleInputChange={handleInputChange}
           text={query}
           placeholder={placeholder}
-          color={showMenu || hover ? "text-blue-500" : "text-gray-400"}
-          borderColor={showMenu ? "border-blue-500" : "border-transparent"}
+          border={false}
         />
         <SiteSearchMenuPane
           showMenu={showMenu}

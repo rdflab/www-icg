@@ -6,7 +6,7 @@ const SearchBar = ({
   placeholder,
   text,
   className,
-  borderColor,
+  border,
 }) => {
   const [hover, setHover] = useState(false)
 
@@ -20,8 +20,9 @@ const SearchBar = ({
 
   return (
     <div
-      className={`row z-40 px-4 py-2 trans-ani border border-solid ${
-        hover ? "shadow" : borderColor
+      className={`row z-40 px-4 py-2 trans-ani ${border ? "shadow" : ""} ${
+        hover ? "shadow" : ""
+      }
       } rounded-md items-center bg-white ${className}`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
@@ -32,21 +33,16 @@ const SearchBar = ({
         placeholder={placeholder}
         value={text}
         onChange={handleInputChange}
-        className="border-none w-full"
+        className="w-full"
       />
-      <FaSearch
-        className={`${
-          hover ? "text-blue-400" : "text-gray-500"
-        } trans-ani ml-2`}
-      />
+      <FaSearch className={`text-blue-400 trans-ani ml-2`} />
     </div>
   )
 }
 
 SearchBar.defaultProps = {
   placeholder: "Type to find items...",
-  borderColor: "border-gray-400",
-  className: "",
+  border: true,
   text: "",
 }
 
