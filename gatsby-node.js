@@ -1,4 +1,5 @@
 const path = require(`path`)
+var fs = require("fs")
 
 const PEOPLE_TYPES = [
   "Faculty",
@@ -10,10 +11,8 @@ const PEOPLE_TYPES = [
 const labTemplate = path.resolve(`src/templates/lab.js`)
 const labsTemplate = path.resolve(`src/templates/labs.js`)
 const peopleTemplate = path.resolve(`src/templates/people.js`)
-//const labPublicationsTemplate = path.resolve(`src/templates/labpublications.js`)
 const labOverviewTemplate = path.resolve(`src/templates/laboverview.js`)
-const labMembersTemplate = path.resolve(`src/templates/labmembers.js`)
-const memberTemplate = path.resolve(`src/templates/member.js`)
+const personTemplate = path.resolve(`src/templates/person.js`)
 const newsTemplate = path.resolve(`src/templates/news.js`)
 const newsItemTemplate = path.resolve(`src/templates/newsitem.js`)
 const calEventsTemplate = path.resolve(`src/templates/calevents.js`)
@@ -594,7 +593,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
       createPage({
         path: `/research-areas/faculty-and-staff/${person.frontmatter.id}`,
-        component: memberTemplate,
+        component: personTemplate,
         context: {
           id: person.frontmatter.id,
           person: person,
@@ -737,4 +736,102 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     })
   }
+
+  const siteData = {}
+
+  siteData.sections = searchData["sections"]
+  siteData.links = []
+  siteData.linkNames = []
+  siteData.tree = [{}, []]
+
+  const linkNameMap = {}
+
+  for (let section of siteData.sections) {
+    if (section in searchData["data"]) {
+      for (let s of Object.keys(searchData["data"][section]).sort()) {
+        const link = searchData["data"][section][s]
+
+        let si = -1
+
+        for (let i = 0; i < siteData.sections.length; ++i) {
+          if (siteData.sections[i] === section) {
+            si = i
+            break
+          }
+        }
+
+        if (!(link["name"] in linkNameMap)) {
+          linkNameMap[link["name"]] = siteData.linkNames.length
+          siteData.linkNames.push(link["name"])
+        }
+
+        siteData.links.push([s, si, linkNameMap[link["name"]], link["to"]])
+      }
+    }
+  }
+
+  // Build a suffix tree
+
+  for (let i = 0; i < siteData.links.length; ++i) {
+    const words = siteData.links[i][0].toLowerCase().split(" ")
+
+    for (let word of words) {
+      for (let j = 0; j < word.length; ++j) {
+        const suffix = word.substring(j)
+
+        let node = siteData.tree
+
+        for (let k = 0; k < suffix.length; ++k) {
+          const c = suffix.charAt(k)
+
+          if (!(c in node[0])) {
+            node[0][c] = [{}, []]
+          }
+
+          const nextNode = node[0][c]
+
+          // Suffix must be at least of length two to
+          // store results
+          if (k > 0) {
+            if (!nextNode[1].includes(i)) {
+              nextNode[1].push(i)
+            }
+          }
+
+          node = nextNode
+        }
+      }
+    }
+
+    // const words = siteData.links[i][0].toLowerCase()
+
+    // for (let j = 0; j < words.length; ++j) {
+    //   const suffix = words.substring(j)
+
+    //   let node = siteData.tree
+
+    //   for (let k = 0; k < suffix.length; ++k) {
+    //     const c = suffix.charAt(k)
+
+    //     if (!(c in node[0])) {
+    //       node[0][c] = [{}, []]
+    //     }
+
+    //     const nextNode = node[0][c]
+
+    //     // Suffix must be at least of length two to
+    //     // store results
+    //     if (k > 0) {
+    //       if (!nextNode[1].includes(i)) {
+    //         nextNode[1].push(i)
+    //       }
+    //     }
+
+    //     node = nextNode
+    //   }
+    // }
+  }
+
+  let data = JSON.stringify(siteData)
+  fs.writeFileSync("static/site.json", data)
 }

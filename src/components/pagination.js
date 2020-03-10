@@ -20,9 +20,8 @@ const range = (from, to, step = 1) => {
   return range
 }
 
-const PaginationBlockDiv = ({ key, children, className }) => (
+const PaginationBlockDiv = ({ children, className }) => (
   <div
-    key={key}
     className={`row w-8 h-8 justify-center items-center text-center ${className}`}
   >
     {children}

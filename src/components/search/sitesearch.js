@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import SiteSearchBar from "./sitesearchbar"
 import Columns from "../columns"
 import Column from "../column"
@@ -6,17 +6,19 @@ import BlueLink from "../bluelink"
 import HideSmall from "../hidesmall"
 import BlueLinkExt from "../bluelinkext"
 
-const SiteSearchResult = ({ s1, s2, s3, link }) => {
+const axios = require("axios")
+
+const SiteSearchResult = ({ s1, s2, s3, to, link }) => {
   let linkComp
 
-  if (link.to.includes("http")) {
+  if (to.includes("http")) {
     linkComp = (
-      <BlueLinkExt target="_blank" to={link.to}>
-        {link.name}
+      <BlueLinkExt target="_blank" to={to}>
+        {link}
       </BlueLinkExt>
     )
   } else {
-    linkComp = <BlueLink to={link.to}>{link.name}</BlueLink>
+    linkComp = <BlueLink to={to}>{link}</BlueLink>
   }
 
   return (
@@ -65,11 +67,23 @@ const SiteSearchMenu = ({ showMenu, children }) => {
   )
 }
 
+const getSiteData = () => {
+  return axios.get("/site.json").then(resp => {
+    return resp.data
+  })
+}
+
 const SiteSearch = ({ searchData, className, placeholder, maxResults }) => {
   const [query, setQuery] = useState("")
   const [results, setResults] = useState([])
   const [showMenu, setShowMenu] = useState(false)
   const [hover, setHover] = useState(false)
+  const [siteData, setSiteData] = useState(null)
+
+  // useEffect(() => {
+  //   setSiteData(getSiteData(setSiteData))
+
+  // }, [])
 
   // const searchData = {}
   // searchData['sections'] = ['People']
@@ -77,81 +91,187 @@ const SiteSearch = ({ searchData, className, placeholder, maxResults }) => {
   // searchData['data']['People'] = {}
   // searchData['data']['People']['Cheese'] = {name:'Home', to:'/research/areas/cake'}
 
+  const search = (q, sd) => {
+    //console.log("q", q)
+
+    let node
+    let found
+    const words = q.split(" ")
+
+    const items = []
+
+    for (let word of words) {
+      node = sd.tree
+
+      found = true
+
+      for (let i = 0; i < word.length; ++i) {
+        const c = word.charAt(i)
+
+        if (c in node[0]) {
+          node = node[0][c]
+        } else {
+          found = false
+          break
+        }
+      }
+
+      if (found) {
+        for (let item of node[1]) {
+          if (!items.includes(item)) {
+            items.push(item)
+          }
+        }
+      }
+    }
+
+    // If some links were found, put them in the search
+    // results
+    if (items.length > 0) {
+      let c = 0
+      let currentSection = ""
+      let ret = []
+
+      for (let item of items) {
+        let link = sd.links[item]
+
+        const name = link[0]
+        const section = sd.sections[link[1]]
+
+        const nl = link[0].toLowerCase()
+
+        // first the first match in the string and highlight that
+
+        // The index of a match cannot exceed 100, so anything
+        // we find must be smaller
+        let minP = 100
+
+        let sectionComp = null
+        let resultComp = null
+
+        for (let word of words) {
+          const p = nl.indexOf(word)
+
+          if (p != -1 && p < minP) {
+            if (section !== currentSection && sectionComp === null) {
+              sectionComp = <Heading key={`heading-${c}`} name={section} />
+              currentSection = section
+            }
+
+            const s1 = name.substring(0, p)
+            const s2 = name.substring(p, p + word.length)
+            const s3 = name.substring(p + word.length)
+
+            resultComp = (
+              <SiteSearchResult
+                key={`result-${c}`}
+                s1={s1}
+                s2={s2}
+                s3={s3}
+                to={link[3]}
+                link={sd.linkNames[link[2]]}
+              />
+            )
+
+            minP = p
+          }
+        }
+
+        // If we found a match render components
+
+        if (sectionComp !== null) {
+          ret.push(sectionComp)
+        }
+
+        if (resultComp !== null) {
+          ret.push(resultComp)
+        }
+
+        ++c
+
+        // limit displayed results for performance
+        if (c === maxResults) {
+          break
+        }
+      }
+
+      if (ret.length > 0) {
+        if (!showMenu) {
+          setShowMenu(true)
+        }
+
+        setResults(ret)
+      }
+    }
+  }
+
   const handleInputChange = e => {
     const q = e.target.value
     const ql = q.toLowerCase()
 
-    let ret = []
-
-    let c = 0
-    let stop = false
-
-    for (let section of searchData["sections"]) {
-      let needsHeader = true
-
-      for (let name of Object.keys(searchData["data"][section]).sort()) {
-        const nl = name.toLowerCase()
-
-        const p = nl.indexOf(ql)
-
-        if (p !== -1) {
-          if (needsHeader) {
-            ret.push(<Heading name={section} />)
-            needsHeader = false
-          }
-          const s1 = name.substring(0, p)
-          const s2 = name.substring(p, p + ql.length)
-          const s3 = name.substring(p + ql.length)
-
-          ret.push(
-            <SiteSearchResult
-              s1={s1}
-              s2={s2}
-              s3={s3}
-              link={searchData["data"][section][name]}
-            />
-          )
-
-          ++c
-
-          if (c === maxResults) {
-            stop = true
-            break
-          }
-        }
-      }
-      if (stop) {
-        break
-      }
-    }
-
-    setResults(ret)
-
     setQuery(q)
 
-    if (q !== "") {
-      if (!showMenu) {
-        setShowMenu(true)
-      }
-    } else {
+    if (ql === "") {
       if (showMenu) {
         setShowMenu(false)
       }
+    } else {
+      if (siteData !== null) {
+        search(ql, siteData)
+      } else {
+        getSiteData().then(data => {
+          setSiteData(data)
+          search(ql, data)
+        })
+      }
     }
+
+    // for (let section of searchData["sections"]) {
+    //   let needsHeader = true
+
+    //   for (let name of Object.keys(searchData["data"][section]).sort()) {
+    //     const nl = name.toLowerCase()
+
+    //     const p = nl.indexOf(ql)
+
+    //     if (p !== -1) {
+    //       if (needsHeader) {
+    //         ret.push(<Heading name={section} />)
+    //         needsHeader = false
+    //       }
+    //       const s1 = name.substring(0, p)
+    //       const s2 = name.substring(p, p + ql.length)
+    //       const s3 = name.substring(p + ql.length)
+
+    //       ret.push(
+    //         <SiteSearchResult key={c}
+    //           s1={s1}
+    //           s2={s2}
+    //           s3={s3}
+    //           link={searchData["data"][section][name]}
+    //         />
+    //       )
+
+    //       ++c
+
+    //       if (c === maxResults) {
+    //         stop = true
+    //         break
+    //       }
+    //     }
+    //   }
+    //   if (stop) {
+    //     break
+    //   }
+    // }
+
+    // setResults(ret)
   }
 
   const handleClickEvent = e => {
     if (showMenu) {
       setShowMenu(false)
     }
-  }
-
-  const handleMouseEnter = e => {
-    setHover(true)
-  }
-
-  const handleMouseExit = e => {
-    setHover(false)
   }
 
   return (

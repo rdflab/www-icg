@@ -36,7 +36,7 @@ const interests = person => {
   return <div>{ret}</div>
 }
 
-const MemberTemplate = ({ pageContext, data }) => {
+const PersonTemplate = ({ pageContext, data }) => {
   const {
     id,
     person,
@@ -115,7 +115,7 @@ const MemberTemplate = ({ pageContext, data }) => {
   )
 }
 
-export default MemberTemplate
+export default PersonTemplate
 
 export const query = graphql`
   query($id: String!) {
