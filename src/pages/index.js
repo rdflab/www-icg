@@ -8,6 +8,7 @@ import BlueIndexLink from "../components/blueindexlink"
 import WhiteIndexLink from "../components/whiteindexlink"
 import MicroscopeSection from "../components/images/microscope"
 import TestTubesSection from "../components/images/testtubes"
+import SiteSearch from "../components/search/sitesearch"
 
 const HomeSection = ({ title, subTitle, text, links, alt }) => {
   return (
@@ -40,7 +41,11 @@ HomeSection.defaultProps = {
 }
 
 const IndexPage = () => (
-  <Layout crumbs={[["Home", "/"]]} title="Home">
+  <Layout
+    crumbs={[["Home", "/"]]}
+    title="Home"
+    headerComponent={<SiteSearch />}
+  >
     <TestTubesSection>
       <Container className="h-full py-8 sm:py-16">
         <Columns className="h-full p-8 sm:p-16">

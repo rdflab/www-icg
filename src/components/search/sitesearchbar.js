@@ -23,8 +23,8 @@ const SiteSearchBar = ({
     <div
       className={`row z-40 px-4 py-2 rounded-md items-center border border-solid  trans-ani ${
         hover || selected
-          ? "bg-white border-gray-200"
-          : "bg-gray-100 border-gray-100"
+          ? "bg-white border-gray-300"
+          : "bg-gray-200 border-gray-200"
       } ${className}`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
