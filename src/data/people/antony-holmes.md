@@ -13,7 +13,7 @@ tags: ["People", "Research Scientist"]
 urls: []
 ---
 
-<p >I am the senior bioinformatician in the Dalla-Favera lab and amongst many other jobs, I worked extensively to create this website.</p>
+<p >I am the senior bioinformatician in the Dalla-Favera lab and I worked extensively to create this website.</p>
 
 <h2 class="mt-4">Programming Languages</h2>
 

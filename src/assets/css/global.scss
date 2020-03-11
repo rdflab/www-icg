@@ -287,7 +287,7 @@ a:hover {
 }
 
 .breadcrumb-li {
-  @apply float-left m-0 p-0 font-semibold;
+  @apply float-left m-0 p-0;
 }
 
 // .breadcrumb li+li:before {
@@ -299,7 +299,7 @@ a:hover {
 
 .breadcrumb-li:not(:last-child):after {
   @apply mx-4;
-  content: "/";
+  content: "";
 }
 
 /* purgecss end ignore */

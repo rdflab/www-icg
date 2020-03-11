@@ -120,7 +120,7 @@ const SiteSearch = ({ className, placeholder, maxResults }) => {
         for (let word of words) {
           const p = nl.indexOf(word)
 
-          if (p != -1 && p < minP) {
+          if (p !== -1 && p < minP) {
             if (section !== currentSection && sectionComp === null) {
               sectionComp = <Heading key={`heading-${c}`} name={section} />
               currentSection = section
@@ -129,7 +129,7 @@ const SiteSearch = ({ className, placeholder, maxResults }) => {
             resultComp = (
               <SiteSearchResult
                 key={`result-${c}`}
-                text={<SearchHighlight text={name} p={p} l={word.length} />}
+                text={<SearchHighlight text={name} words={words} />}
                 to={link[3]}
                 link={sd.linkNames[link[2]]}
               />
@@ -169,21 +169,21 @@ const SiteSearch = ({ className, placeholder, maxResults }) => {
 
   const handleInputChange = e => {
     const q = e.target.value
-    const ql = q.toLowerCase()
+    //const ql = q.toLowerCase()
 
     setQuery(q)
 
-    if (ql === "") {
+    if (q === "") {
       if (showMenu) {
         setShowMenu(false)
       }
     } else {
       if (siteData !== null) {
-        search(ql, siteData)
+        search(q, siteData)
       } else {
         getSiteData().then(data => {
           setSiteData(data)
-          search(ql, data)
+          search(q, data)
         })
       }
     }

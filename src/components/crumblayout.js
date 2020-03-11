@@ -10,6 +10,7 @@ import Breadcrumb from "./breadcrumb/breadcrumbv2"
 import Title from "./title"
 import Layout from "./layout"
 import Container from "./container"
+import HideSmall from "./hidesmall"
 
 const CrumbLayout = ({
   title,
@@ -25,7 +26,11 @@ const CrumbLayout = ({
       headerComponent={headerComponent}
       menuComponent={menuComponent}
     >
-      {crumbs.length > 0 && <Breadcrumb crumbs={crumbs} />}
+      {crumbs.length > 0 && (
+        <HideSmall>
+          <Breadcrumb crumbs={crumbs} />
+        </HideSmall>
+      )}
 
       <Container className="min-h-screen mt-4">
         <div className="row items-center justify-between mb-4">
