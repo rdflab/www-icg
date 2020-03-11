@@ -5,39 +5,10 @@ import Column from "../column"
 import BlueLink from "../bluelink"
 import HideSmall from "../hidesmall"
 import BlueLinkExt from "../bluelinkext"
+import SearchHighlight from "./searchhighlight"
+import { searchTree } from "./searchtree"
 
 const axios = require("axios")
-
-const SearchHighlight = ({text, search, p, l, className}) => {
-  if (search !== "") {
-    p = text.toLowerCase().indexOf(search)
-    l = search.length
-  }
-
-  if (p !== -1) {
-    const n = p + l
-    const s1 = text.substring(0, p)
-    const s2 = text.substring(p, n)
-    const s3 = text.substring(n)
-
-    return (
-      <>
-        <span>{s1}</span>
-        <span className={className}>{s2}</span>
-        <span>{s3}</span>
-      </>
-    )
-  } else {
-    return text
-  }
-}
-
-SearchHighlight.defaultProps = {
-  search: "",
-  l: -1,
-  p: -1,
-  className:"bg-blue-100 text-blue-400",
-}
 
 const SiteSearchResult = ({ text, to, link }) => {
   let linkComp
@@ -119,34 +90,8 @@ const SiteSearch = ({ className, placeholder, maxResults }) => {
 
     let node
     let found
-    const words = q.split(" ")
 
-    const items = []
-
-    for (let word of words) {
-      node = sd.tree
-
-      found = true
-
-      for (let i = 0; i < word.length; ++i) {
-        const c = word.charAt(i)
-
-        if (c in node[0]) {
-          node = node[0][c]
-        } else {
-          found = false
-          break
-        }
-      }
-
-      if (found) {
-        for (let item of node[1]) {
-          if (!items.includes(item)) {
-            items.push(item)
-          }
-        }
-      }
-    }
+    const [items, words] = searchTree(sd.tree, q)
 
     // If some links were found, put them in the search
     // results
@@ -182,7 +127,6 @@ const SiteSearch = ({ className, placeholder, maxResults }) => {
             }
 
             resultComp = (
-              
               <SiteSearchResult
                 key={`result-${c}`}
                 text={<SearchHighlight text={name} p={p} l={word.length} />}

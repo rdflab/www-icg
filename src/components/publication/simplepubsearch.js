@@ -2,11 +2,17 @@ import React, { useState } from "react"
 import PublicationYears from "./publicationyears"
 import Pagination from "../pagination"
 import SearchBar from "../search/searchbar"
-import SearchSummary from "../search/searchsummary"
+import HideSmall from "../hidesmall"
+import YearSelector from "../filter/yearselector"
 
 const EMPTY_QUERY = ""
 
-const SimplePubSearch = ({ allPublications, showLabLink }) => {
+const SimplePubSearch = ({
+  allPublications,
+  showSearch,
+  showYears,
+  showLabLink,
+}) => {
   const [query, setQuery] = useState(EMPTY_QUERY)
   const [filteredPublications, setFilteredPublications] = useState([])
   const [page, setPage] = useState(1)
@@ -60,12 +66,20 @@ const SimplePubSearch = ({ allPublications, showLabLink }) => {
 
   return (
     <>
-      <SearchBar
-        handleInputChange={handleInputChange}
-        className="my-4 sm:w-1/2 mx-auto"
-        placeholder="Type to find publications..."
-        text={query}
-      />
+      {showSearch && (
+        <SearchBar
+          handleInputChange={handleInputChange}
+          className="my-4 sm:w-1/2 mx-auto"
+          placeholder="Type to find publications..."
+          text={query}
+        />
+      )}
+
+      {showYears && (
+        <HideSmall>
+          <YearSelector onClick={handleClick} />
+        </HideSmall>
+      )}
 
       {/* <SearchSummary
         count={yearFilteredPublications.length}
@@ -91,6 +105,8 @@ const SimplePubSearch = ({ allPublications, showLabLink }) => {
 
 SimplePubSearch.defaultProps = {
   showLabLink: true,
+  showSearch: false,
+  showYears: true,
 }
 
 export default SimplePubSearch

@@ -6,6 +6,9 @@ import SiteSearch from "../components/search/sitesearch"
 import SearchSummary from "../components/search/searchsummary"
 import YearSelector from "../components/filter/yearselector"
 import HideSmall from "../components/hidesmall"
+import { searchTree } from "../components/search/searchtree"
+
+const axios = require("axios")
 
 const EMPTY_QUERY = ""
 
@@ -15,6 +18,7 @@ const PublicationsTemplate = ({ pageContext }) => {
     crumbs,
     selectedTab,
     allPublications,
+    index,
     showSearch,
     showYears,
     showLabLink,
@@ -25,21 +29,53 @@ const PublicationsTemplate = ({ pageContext }) => {
   const [page, setPage] = useState(1)
   const [recordsPerPage, setRecordsPerPage] = useState(20)
   const [filterYears, setFilterYears] = useState([])
+  const [pubIndex, setPubIndex] = useState(null)
+
+  const loadPubIndex = () => {
+    return axios.get(index).then(resp => {
+      return resp.data
+    })
+  }
+
+  const search = (pubIndex, q) => {
+    let ret = []
+    const [indices, words] = searchTree(pubIndex, q)
+
+    for (let i of indices) {
+      ret.push(allPublications[i])
+    }
+
+    setFilteredPublications(ret)
+    setPage(1)
+  }
 
   const handleInputChange = e => {
     const q = e.target.value
-    let ret = []
 
-    for (let publication of allPublications) {
-      if (publication.title.toLowerCase().includes(q.toLowerCase())) {
-        ret.push(publication)
+    setQuery(q)
+
+    if (q !== "") {
+      if (pubIndex !== null) {
+        search(pubIndex, q)
+      } else {
+        loadPubIndex().then(data => {
+          setPubIndex(data)
+          search(data, q)
+        })
       }
     }
 
-    // update state according to the latest query and results
-    setQuery(q)
-    setFilteredPublications(ret)
-    setPage(1)
+    // const [indices, words] = searchTree(labPubIndex, q)
+
+    // for (let i of indices) {
+    //   ret.push(allPublications[i])
+    // }
+
+    // for (let publication of allPublications) {
+    //   if (publication.title.toLowerCase().includes(q.toLowerCase())) {
+    //     ret.push(publication)
+    //   }
+    // }
   }
 
   const onPageChanged = data => {
@@ -88,14 +124,12 @@ const PublicationsTemplate = ({ pageContext }) => {
       }
     >
       {showSearch && (
-        <div>
-          <SearchBar
-            className="my-4 sm:w-1/3 mx-auto"
-            handleInputChange={handleInputChange}
-            placeholder="Type to find publications..."
-            text={query}
-          />
-        </div>
+        <SearchBar
+          className="my-4 sm:w-1/3 mx-auto"
+          handleInputChange={handleInputChange}
+          placeholder="Type to find publications..."
+          text={query}
+        />
       )}
 
       {showYears && (

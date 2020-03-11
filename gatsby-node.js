@@ -62,6 +62,50 @@ const toGroupMap = groups => {
   return ret
 }
 
+const createSuffixTree = (root, text, item) => {
+  const words = text.toLowerCase().split(" ")
+
+  for (let word of words) {
+    for (let j = 0; j < word.length; ++j) {
+      let node = root
+
+      const suffix = word.substring(j)
+
+      for (let k = 0; k < suffix.length; k++) {
+        const c = suffix.charAt(k)
+
+        if (!(c in node[0])) {
+          node[0][c] = [{}, []]
+        }
+
+        node = node[0][c]
+
+        if (k > 0) {
+          if (!node[1].includes(item)) {
+            node[1].push(item)
+          }
+        }
+      }
+    }
+  }
+}
+
+const writeJson = (file, data) => {
+  fs.writeFileSync(file, JSON.stringify(data))
+}
+
+const indexPublications = publications => {
+  pubIndex = [{}, []]
+
+  for (let i = 0; i < publications.length; ++i) {
+    const publication = publications[i]
+
+    createSuffixTree(pubIndex, publication.title, i)
+  }
+
+  return pubIndex
+}
+
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions
   const typeDefs = `
@@ -397,8 +441,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   // Publications
 
-  pubSearchTree = [{}, []]
-
   searchData["sections"].push("Publications")
   searchData["data"]["Publications"] = {}
 
@@ -418,37 +460,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         to: `https://www.ncbi.nlm.nih.gov/pubmed/?term=${publication.pubmed}`,
       }
     }
-
-    const words = publication.title.split(" ")
-
-    for (let word of words) {
-      for (let j = 0; j < word.length; ++j) {
-        const suffix = word.substring(j)
-
-        let node = pubSearchTree
-
-        for (let k = 0; k < suffix.length; k++) {
-          const c = suffix.charAt(k)
-
-          if (!(c in node[0])) {
-            node[0][c] = [{}, []]
-          }
-
-          node = node[0][c]
-
-          if (k > 0) {
-            if (!node[1].includes(i)) {
-              node[1].push(i)
-            }
-          }
-        }
-      }  
-
-      
-    }
   }
-
-  console.log(pubSearchTree)
 
   // News
 
@@ -479,6 +491,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
 
   //
+  // Create some search indices
+  //
+
+  pubIndex = indexPublications(allPublications)
+  writeJson("static/publications.index.json", pubIndex)
+
+  //
   // Make pages
   //
 
@@ -496,6 +515,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         }
       }
     }
+
+    labPubIndex = indexPublications(labPublications)
+    indexFile = `static/${group.frontmatter.id}.publications.index.json`
+    writeJson(indexFile, labPubIndex)
 
     const labPeople = []
 
@@ -598,6 +621,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         ],
         selectedTab: "",
         allPublications: labPublications,
+        index: indexFile,
         showSearch: false,
         showYears: true,
         showLabLink: false,
@@ -730,6 +754,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       ],
       selectedTab: "Publications",
       allPublications: allPublications,
+      index: "/publications.index.json",
       showSearch: true,
       showYears: false,
       showLabLink: true,
@@ -796,68 +821,37 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   // Build a suffix tree
 
   for (let i = 0; i < siteData.links.length; ++i) {
-    const words = siteData.links[i][0].toLowerCase().split(" ")
-
-    for (let word of words) {
-      for (let j = 0; j < word.length; ++j) {
-        const suffix = word.substring(j)
-
-        let node = siteData.tree
-
-        for (let k = 0; k < suffix.length; ++k) {
-          const c = suffix.charAt(k)
-
-          if (!(c in node[0])) {
-            node[0][c] = [{}, []]
-          }
-
-          const nextNode = node[0][c]
-
-          // Suffix must be at least of length two to
-          // store results
-          if (k > 0) {
-            if (!nextNode[1].includes(i)) {
-              nextNode[1].push(i)
-            }
-          }
-
-          node = nextNode
-        }
-      }
-    }
-
-    // const words = siteData.links[i][0].toLowerCase()
-
-    // for (let j = 0; j < words.length; ++j) {
-    //   const suffix = words.substring(j)
-
-    //   let node = siteData.tree
-
-    //   for (let k = 0; k < suffix.length; ++k) {
-    //     const c = suffix.charAt(k)
-
-    //     if (!(c in node[0])) {
-    //       node[0][c] = [{}, []]
-    //     }
-
-    //     const nextNode = node[0][c]
-
-    //     // Suffix must be at least of length two to
-    //     // store results
-    //     if (k > 0) {
-    //       if (!nextNode[1].includes(i)) {
-    //         nextNode[1].push(i)
-    //       }
-    //     }
-
-    //     node = nextNode
-    //   }
-    // }
+    createSuffixTree(siteData.tree, siteData.links[i][0], i)
   }
+
+  // const words = siteData.links[i][0].toLowerCase()
+
+  // for (let j = 0; j < words.length; ++j) {
+  //   const suffix = words.substring(j)
+
+  //   let node = siteData.tree
+
+  //   for (let k = 0; k < suffix.length; ++k) {
+  //     const c = suffix.charAt(k)
+
+  //     if (!(c in node[0])) {
+  //       node[0][c] = [{}, []]
+  //     }
+
+  //     const nextNode = node[0][c]
+
+  //     // Suffix must be at least of length two to
+  //     // store results
+  //     if (k > 0) {
+  //       if (!nextNode[1].includes(i)) {
+  //         nextNode[1].push(i)
+  //       }
+  //     }
+
+  //     node = nextNode
+  //   }
+  // }
 
   let data = JSON.stringify(siteData)
   fs.writeFileSync("static/site.json", data)
-
-  data = JSON.stringify(pubSearchTree)
-  fs.writeFileSync("static/pub.json", data)
 }
