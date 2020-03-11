@@ -5,12 +5,11 @@ class Stack {
   }
 
   push(element) {
-    this.data[this.top] = element
-    ++this.top
+    this.data[this.top++] = element
   }
 
   size() {
-    return this.top
+    return this.top.length
   }
 
   peek() {
@@ -23,7 +22,7 @@ class Stack {
 
   pop() {
     if (this.isEmpty() === false) {
-      this.top = this.top - 1
+      --this.top
       return this.data.pop() // removes the last element
     }
   }
@@ -44,6 +43,7 @@ class Stack {
     if (index != 0) {
       this._reverse(index - 1)
     }
+
     console.log(this.data[index])
   }
 }

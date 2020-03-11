@@ -21,8 +21,10 @@ export const searchTree = (root, q) => {
 
   const words = text.split(" ")
 
+  const lastWord = words[words.length - 1]
+
   // Need empty token to balance parser
-  if (words[words.length - 1] === "AND" || words[words.length - 1] === "OR") {
+  if (lastWord === "AND" || lastWord === "OR") {
     words.push(EMPTY_TOKEN)
   }
 
@@ -73,6 +75,7 @@ export const searchTree = (root, q) => {
         s1 = Array.from(s1).filter(e => {
           return s2.has(e)
         })
+
         opStack.push(s1)
 
         break
@@ -151,5 +154,7 @@ export const searchTree = (root, q) => {
   //   }
   // }
 
-  return [Array.from(opStack.pop()).sort(), terms]
+  const ret = Array.from(opStack.pop()).sort()
+
+  return [ret, terms]
 }

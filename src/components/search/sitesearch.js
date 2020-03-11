@@ -157,12 +157,14 @@ const SiteSearch = ({ className, placeholder, maxResults }) => {
         }
       }
 
-      if (ret.length > 0) {
-        if (!showMenu) {
-          setShowMenu(true)
-        }
+      if (!showMenu) {
+        setShowMenu(true)
+      }
 
-        setResults(ret)
+      setResults(ret)
+    } else {
+      if (showMenu) {
+        setShowMenu(false)
       }
     }
   }
