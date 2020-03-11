@@ -18,7 +18,6 @@ const PublicationsTemplate = ({ pageContext }) => {
     showSearch,
     showYears,
     showLabLink,
-    searchData,
   } = pageContext
 
   const [query, setQuery] = useState(EMPTY_QUERY)
@@ -77,7 +76,7 @@ const PublicationsTemplate = ({ pageContext }) => {
       crumbs={crumbs}
       selectedTab={selectedTab}
       title={title}
-      headerComponent={<SiteSearch searchData={searchData} />}
+      headerComponent={<SiteSearch />}
       titleComponent={
         <HideSmall>
           <SearchSummary

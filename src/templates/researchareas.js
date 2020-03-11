@@ -20,7 +20,7 @@ const ResearchAreasTemplate = ({ pageContext }) => {
         ["Research Areas", "/research-areas"],
       ]}
       title="Research Areas"
-      headerComponent={<SiteSearch searchData={searchData} />}
+      headerComponent={<SiteSearch />}
     >
       {Object.keys(raMap)
         .sort()

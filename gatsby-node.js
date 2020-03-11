@@ -497,7 +497,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         labNews: labNews,
         labExcerptHtml: labExcerptHtml,
         labHtml: labHtml,
-        searchData: searchData,
       },
     })
 
@@ -538,7 +537,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         ],
         groupMap: groupMap,
         allPeople: labPeople,
-        searchData: searchData,
       },
     })
 
@@ -569,7 +567,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         showSearch: false,
         showYears: true,
         showLabLink: false,
-        searchData: searchData,
       },
     })
 
@@ -602,7 +599,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           labPeople: labPeople,
           peopleMap: peopleMap,
           publications: personPublications,
-          searchData: searchData,
         },
       })
     }
@@ -617,7 +613,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     component: newsTemplate,
     context: {
       allNews: allNews,
-      searchData: searchData,
     },
   })
 
@@ -641,7 +636,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     component: calEventsTemplate,
     context: {
       allCalEvents: allCalEvents,
-      searchData: searchData,
     },
   })
 
@@ -668,7 +662,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     context: {
       allGroups: allLabGroups,
       peopleMap: peopleMap,
-      searchData: searchData,
     },
   })
 
@@ -686,7 +679,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       title: "Faculty and Staff",
       groupMap: groupMap,
       allPeople: allPeople,
-      searchData: searchData,
     },
   })
 
@@ -707,7 +699,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       showSearch: true,
       showYears: false,
       showLabLink: true,
-      searchData: searchData,
     },
   })
 
@@ -720,7 +711,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     component: researchAreasTemplate,
     context: {
       allResearchAreas: allResearchAreas,
-      searchData: searchData,
     },
   })
 
@@ -732,7 +722,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         groupMap: groupMap,
         allPeople: allPeople,
         researchArea: researchArea,
-        searchData: searchData,
       },
     })
   }

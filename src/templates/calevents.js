@@ -95,7 +95,7 @@ const CalEventsTemplate = ({ pageContext }) => {
         ["Events", "/events"],
       ]}
       title="Events"
-      headerComponent={<SiteSearch searchData={searchData} />}
+      headerComponent={<SiteSearch />}
       // titleComponent={
       //   <SearchSummary
       //     count={calEvents.length}

@@ -65,7 +65,7 @@ const NewsTemplate = ({ pageContext }) => {
         ["News", "/news"],
       ]}
       title="News"
-      headerComponent={<SiteSearch searchData={searchData} />}
+      headerComponent={<SiteSearch />}
     >
       <HideSmall>
         <YearSelector onClick={handleClick} />

@@ -64,6 +64,7 @@ const SimplePubSearch = ({ allPublications, showLabLink }) => {
         handleInputChange={handleInputChange}
         className="my-4 sm:w-1/2 mx-auto"
         placeholder="Type to find publications..."
+        text={query}
       />
 
       {/* <SearchSummary

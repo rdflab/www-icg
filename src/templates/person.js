@@ -44,7 +44,6 @@ const PersonTemplate = ({ pageContext, data }) => {
     labPeople,
     publications,
     researchAreasMap,
-    searchData,
   } = pageContext
 
   const title = `${person.frontmatter.firstName} ${person.frontmatter.lastName}`
@@ -58,7 +57,7 @@ const PersonTemplate = ({ pageContext, data }) => {
         [title, `/research-areas/faculty-and-staff/${person.frontmatter.id}`],
       ]}
       title={title}
-      headerComponent={<SiteSearch searchData={searchData} />}
+      headerComponent={<SiteSearch />}
     >
       <Columns>
         <SmallColumn>

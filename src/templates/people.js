@@ -106,7 +106,7 @@ const PeopleTemplate = ({ data, pageContext }) => {
     <CrumbLayout
       crumbs={crumbs}
       title={title}
-      headerComponent={<SiteSearch searchData={searchData} />}
+      headerComponent={<SiteSearch />}
       titleComponent={
         <SearchSummary
           count={typeFilteredPeople.length}

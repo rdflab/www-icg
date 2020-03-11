@@ -73,7 +73,7 @@ const getSiteData = () => {
   })
 }
 
-const SiteSearch = ({ searchData, className, placeholder, maxResults }) => {
+const SiteSearch = ({ className, placeholder, maxResults }) => {
   const [query, setQuery] = useState("")
   const [results, setResults] = useState([])
   const [showMenu, setShowMenu] = useState(false)

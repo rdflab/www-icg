@@ -51,7 +51,7 @@ const LabsTemplate = ({ pageContext }) => {
         ["Labs", "/research-areas/labs"],
       ]}
       title="Research Labs"
-      headerComponent={<SiteSearch searchData={searchData} />}
+      headerComponent={<SiteSearch />}
       // titleComponent={
       //   <SearchSummary count={groups.length} single="Lab" plural="Labs" />
       // }

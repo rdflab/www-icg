@@ -23,7 +23,7 @@ const ResearchAreaTemplate = ({ data, pageContext }) => {
         [researchArea.name, `/research-areas/${researchArea.id}`],
       ]}
       title={researchArea.name}
-      headerComponent={<SiteSearch searchData={searchData} />}
+      headerComponent={<SiteSearch />}
     >
       <PeopleTypes
         imageMap={imageMap}

@@ -23,7 +23,6 @@ const LabTemplate = ({ pageContext }) => {
     labPublications,
     labNews,
     labExcerptHtml,
-    searchData,
   } = pageContext
 
   const groupMap = toGroupMap([group])
@@ -40,11 +39,7 @@ const LabTemplate = ({ pageContext }) => {
   ]
 
   return (
-    <CrumbLayout
-      crumbs={crumbs}
-      title={title}
-      headerComponent={<SiteSearch searchData={searchData} />}
-    >
+    <CrumbLayout crumbs={crumbs} title={title} headerComponent={<SiteSearch />}>
       <Columns>
         <SmallColumn>
           <ContactInfo person={faculty} urls={group.urls} />
