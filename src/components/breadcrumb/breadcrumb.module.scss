@@ -29,42 +29,30 @@ $crumb-hover-color: rgb(200, 200, 200);
 // }
 
 .breadcrumb li a {
-  margin: 0;
-  outline: none;
+  @apply m-0 outline-none relative block float-left transition duration-300;
   padding: 0.5rem 0 0.5rem 3rem;
   font-weight: 300;
-  position: relative; 
-  display: block;
-  float: left;
-  transition: background-color 0.4s;
   border-bottom: none !important;
-  color: rgb(100, 100, 100) !important;
 }
 
 .breadcrumb li:not(:last-child) a {
-  background-color: $crumb-color;
-  color: white !important;
+  @apply bg-gray-500 text-white;
 }
 
 .breadcrumb li:not(:last-child) a:hover {
-  background-color: $crumb-hover-color;
-  border-bottom: none !important;
+  @apply bg-gray-400;
 }
 
 .breadcrumb li:not(:last-child) a:after { 
+  @apply absolute block w-0 h-0 transition duration-300 border-gray-500 border-l;
   content: " "; 
-  display: block; 
-  width: 0; 
-  height: 0;
   border-top: 50px solid transparent; /* Go big on the size, and let overflow hide */
   border-bottom: 50px solid transparent;
-  border-left: 2rem solid $crumb-color;
-  position: absolute;
+  border-left-width: 2rem;
   top: 50%;
   margin-top: -50px; 
   left: 100%;
   z-index: 2;
-  transition: border-left-color 0.4s;
 }
 
 .breadcrumb li:not(:last-child) a:hover:after {
@@ -93,5 +81,5 @@ $crumb-hover-color: rgb(200, 200, 200);
 }
 
 .breadcrumb li:last-child a {
-  color: rgb(50, 50, 50)
+  @apply bg-transparent;
 }
