@@ -14,6 +14,7 @@ const Collapsible = props => {
       <div
         className="row items-center mb-2 cursor-pointer text-gray-700"
         onClick={toggle}
+        aria-label={`Collapse ${props.title}`}
       >
         <h1 className="text-lg">{props.title}</h1>
         <div className="ml-auto">
