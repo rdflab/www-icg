@@ -397,10 +397,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   // Publications
 
+  pubSearchTree = [{}, []]
+
   searchData["sections"].push("Publications")
   searchData["data"]["Publications"] = {}
 
-  for (let publication of allPublications) {
+  for (let i = 0; i < allPublications.length; ++i) {
+    const publication = allPublications[i]
+
     if (publication.pubmed !== "") {
       let title = publication.title
 
@@ -414,7 +418,37 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         to: `https://www.ncbi.nlm.nih.gov/pubmed/?term=${publication.pubmed}`,
       }
     }
+
+    const words = publication.title.split(" ")
+
+    for (let word of words) {
+      for (let j = 0; j < word.length; ++j) {
+        const suffix = word.substring(j)
+
+        let node = pubSearchTree
+
+        for (let k = 0; k < suffix.length; k++) {
+          const c = suffix.charAt(k)
+
+          if (!(c in node[0])) {
+            node[0][c] = [{}, []]
+          }
+
+          node = node[0][c]
+
+          if (k > 0) {
+            if (!node[1].includes(i)) {
+              node[1].push(i)
+            }
+          }
+        }
+      }  
+
+      
+    }
   }
+
+  console.log(pubSearchTree)
 
   // News
 
@@ -823,4 +857,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   let data = JSON.stringify(siteData)
   fs.writeFileSync("static/site.json", data)
+
+  data = JSON.stringify(pubSearchTree)
+  fs.writeFileSync("static/pub.json", data)
 }

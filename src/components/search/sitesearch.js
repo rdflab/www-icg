@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import SiteSearchBar from "./sitesearchbar"
 import Columns from "../columns"
 import Column from "../column"
@@ -8,7 +8,38 @@ import BlueLinkExt from "../bluelinkext"
 
 const axios = require("axios")
 
-const SiteSearchResult = ({ s1, s2, s3, to, link }) => {
+const SearchHighlight = ({text, search, p, l, className}) => {
+  if (search !== "") {
+    p = text.toLowerCase().indexOf(search)
+    l = search.length
+  }
+
+  if (p !== -1) {
+    const n = p + l
+    const s1 = text.substring(0, p)
+    const s2 = text.substring(p, n)
+    const s3 = text.substring(n)
+
+    return (
+      <>
+        <span>{s1}</span>
+        <span className={className}>{s2}</span>
+        <span>{s3}</span>
+      </>
+    )
+  } else {
+    return text
+  }
+}
+
+SearchHighlight.defaultProps = {
+  search: "",
+  l: -1,
+  p: -1,
+  className:"bg-blue-100 text-blue-400",
+}
+
+const SiteSearchResult = ({ text, to, link }) => {
   let linkComp
 
   if (to.includes("http")) {
@@ -24,9 +55,7 @@ const SiteSearchResult = ({ s1, s2, s3, to, link }) => {
   return (
     <Columns className="my-2">
       <Column w="7/12" className="mr-4">
-        <span>{s1}</span>
-        <span className="bg-blue-100 text-blue-400">{s2}</span>
-        <span>{s3}</span>
+        {text}
       </Column>
       <Column w="5/12">{linkComp}</Column>
     </Columns>
@@ -152,16 +181,11 @@ const SiteSearch = ({ className, placeholder, maxResults }) => {
               currentSection = section
             }
 
-            const s1 = name.substring(0, p)
-            const s2 = name.substring(p, p + word.length)
-            const s3 = name.substring(p + word.length)
-
             resultComp = (
+              
               <SiteSearchResult
                 key={`result-${c}`}
-                s1={s1}
-                s2={s2}
-                s3={s3}
+                text={<SearchHighlight text={name} p={p} l={word.length} />}
                 to={link[3]}
                 link={sd.linkNames[link[2]]}
               />
