@@ -126,21 +126,32 @@ a:hover {
   @apply underline-link-hover border-b border-solid border-gray-800;
 }
 
-.blue-link-active {
-  @apply border-blue-columbia;
-}
+
 
 .blue-link {
   @apply underline-link blue; 
+}
+
+.blue-link-active {
+  @apply border-blue-columbia;
 }
 
 .blue-link:hover {
   @apply underline-link-hover border-b border-solid blue blue-border;
 }
 
-.blue-link-active {
+.gray-link {
+  @apply underline-link gray; 
+}
+
+.gray-link-active {
   @apply border-blue-columbia;
 }
+
+.gray-link:hover {
+  @apply underline-link-hover border-b border-solid gray gray-border;
+}
+
 
 .white-link {
   @apply underline-link text-white;
@@ -275,7 +286,21 @@ a:hover {
     border: 0;
 }
 
+.breadcrumb-li {
+  @apply float-left m-0 p-0 font-semibold;
+}
 
+// .breadcrumb li+li:before {
+//   padding-left: 1rem;
+//   padding-right: 1rem;
+//   color: black;
+//   content: "/";
+// }
+
+.breadcrumb-li:not(:last-child):after {
+  @apply mx-4;
+  content: "/";
+}
 
 /* purgecss end ignore */
 
