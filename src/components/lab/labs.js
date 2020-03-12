@@ -7,6 +7,8 @@ import Column from "../column"
 //import SideBar from "./sidebar/sidebar"
 import TextLink from "../textlink"
 import SectionBreak from "../sectionbreak"
+import Card from "../card"
+import BlueLink from "../bluelink"
 
 const Labs = ({ pagedGroups, peopleMap }) => (
   <>
@@ -23,21 +25,23 @@ const Labs = ({ pagedGroups, peopleMap }) => (
       return (
         <SectionBreak key={index}>
           <Columns>
-            <Column w="1/2">
-              <h3>
-                <TextLink to={`/research-areas/labs/${group.frontmatter.id}`}>
+            <Column w="4/12">
+              <h2 className="mb-2">
+                <BlueLink to={`/research-areas/labs/${group.frontmatter.id}`}>
                   {name}
-                </TextLink>
-              </h3>
+                </BlueLink>
+              </h2>
             </Column>
-            <Column w="1/2" style={{ borderLeft: "solid 1px lightgray" }}>
-              <MembersLink
-                to={`/research-areas/labs/${group.frontmatter.id}/members`}
-              />
-              <PublicationsLink
-                to={`/research-areas/labs/${group.frontmatter.id}/publications`}
-              />
-              <EmailLink to={person.frontmatter.email[0]} />
+            <Column w="4/12">
+              <Card>
+                <MembersLink
+                  to={`/research-areas/labs/${group.frontmatter.id}/members`}
+                />
+                <PublicationsLink
+                  to={`/research-areas/labs/${group.frontmatter.id}/publications`}
+                />
+                <EmailLink to={person.frontmatter.email[0]} />
+              </Card>
             </Column>
           </Columns>
         </SectionBreak>
