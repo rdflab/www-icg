@@ -190,8 +190,9 @@ const PersonTemplate = ({ pageContext, data }) => {
             />
           )}
           {/* </SideBar> */}
-
-          <SideBarMembers group={group} people={labPeople} />
+          <div className="mt-8">
+            <SideBarMembers group={group} people={labPeople} />
+          </div>
         </SideColumn>
       </Columns>
     </CrumbLayout>
