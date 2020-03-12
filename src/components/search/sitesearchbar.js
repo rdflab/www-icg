@@ -28,7 +28,7 @@ const SiteSearchBar = ({
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
-      <div className="w-full">
+      <div className="flex items-center w-full">
         <input
           type="text"
           aria-label="Search"
@@ -38,7 +38,7 @@ const SiteSearchBar = ({
           className="bg-transparent w-full"
         />
       </div>
-      <div>
+      <div class="flex items-center">
         <FaSearch
           className={`${
             hover ? "text-blue-400" : "text-gray-500"
