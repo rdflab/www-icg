@@ -18,6 +18,7 @@ import Collapsible from "../components/collapsible"
 import SectionBreak from "../components/sectionbreak"
 import Card from "../components/card"
 import FlatCard from "../components/flatcard"
+import HideSmall from "../components/hidesmall"
 
 const interests = person => {
   const n = person.researchAreas.length

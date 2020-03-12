@@ -9,6 +9,7 @@ import WhiteIndexLink from "../components/whiteindexlink"
 import MicroscopeSection from "../components/images/microscope"
 import TestTubesSection from "../components/images/testtubes"
 import SiteSearch from "../components/search/sitesearch"
+import HideSmall from "../components/hidesmall"
 
 const HomeSection = ({ title, subTitle, text, links, alt }) => {
   return (

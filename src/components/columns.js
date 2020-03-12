@@ -9,7 +9,7 @@ import React from "react"
 
 const Columns = ({ children, className, isMobile, isVCentered, onClick }) => (
   <div
-    className={`flex ${isMobile ? "flex-row" : "flex-col sm:flex-row"} ${
+    className={`flex ${isMobile ? "flex-row" : "flex-col md:flex-row"} ${
       isVCentered ? "items-center" : ""
     } ${className}`}
     onClick={onClick}

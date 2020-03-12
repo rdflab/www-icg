@@ -4,6 +4,7 @@ import SiteSearch from "../components/search/sitesearch"
 import YearSelector from "../components/filter/yearselector"
 import HideSmall from "../components/hidesmall"
 import NewsSearchResults from "../components/news/newssearchresults"
+import SearchSummary from "../components/search/searchsummary"
 
 const EMPTY_QUERY = ""
 
@@ -65,6 +66,15 @@ const NewsTemplate = ({ pageContext }) => {
         ["News", "/news"],
       ]}
       title="News"
+      titleComponent={
+        <HideSmall>
+          <SearchSummary
+            count={news.length}
+            single="News Item"
+            plural="News Items"
+          />
+        </HideSmall>
+      }
       headerComponent={<SiteSearch />}
     >
       <HideSmall>

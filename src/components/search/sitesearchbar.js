@@ -21,7 +21,7 @@ const SiteSearchBar = ({
 
   return (
     <div
-      className={`row z-40 px-4 py-2 rounded-md items-center border border-solid  trans-ani ${
+      className={`row z-40 px-4 py-2 rounded-md items-center border border-solid justify-between trans-ani ${
         hover || selected
           ? "bg-white border-gray-300"
           : "bg-gray-200 border-gray-200"
@@ -29,19 +29,23 @@ const SiteSearchBar = ({
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
-      <input
-        type="text"
-        aria-label="Search"
-        placeholder={placeholder}
-        value={text}
-        onChange={handleInputChange}
-        className="w-full bg-transparent"
-      />
-      <FaSearch
-        className={`${
-          hover ? "text-blue-400" : "text-gray-500"
-        } trans-ani ml-2`}
-      />
+      <div>
+        <input
+          type="text"
+          aria-label="Search"
+          placeholder={placeholder}
+          value={text}
+          onChange={handleInputChange}
+          className="w-full bg-transparent"
+        />
+      </div>
+      <div>
+        <FaSearch
+          className={`${
+            hover ? "text-blue-400" : "text-gray-500"
+          } trans-ani ml-2`}
+        />
+      </div>
     </div>
   )
 }

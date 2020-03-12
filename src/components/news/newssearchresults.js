@@ -13,7 +13,7 @@ const NewsSearchResults = ({
   onPageChanged,
 }) => (
   <div className="mt-8">
-    <SearchSummary count={news.length} single="News Item" plural="News Items" />
+    {/* <SearchSummary count={news.length} single="News Item" plural="News Items" /> */}
 
     <NewsItems news={pagedNews} />
 

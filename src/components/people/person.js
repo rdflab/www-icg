@@ -25,7 +25,7 @@ const Person = ({ person, groupMap, showLabLink, image }) => {
             />
           )}
         </Column>
-        <MainColumn w="5/12">
+        <MainColumn w="6/12">
           <div>
             <h3>
               <TextLink
@@ -37,7 +37,7 @@ const Person = ({ person, groupMap, showLabLink, image }) => {
           </div>
           <div className="gray">{person.frontmatter.titles[0]}</div>
         </MainColumn>
-        <Column w="5/12">
+        <Column w="4/12">
           <ContactInfo person={person} />
         </Column>
       </Columns>

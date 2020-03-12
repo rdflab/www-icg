@@ -10,6 +10,7 @@ import CalSearchResults from "../components/calendar/calsearchresults"
 import DayPicker, { DateUtils } from "react-day-picker"
 import "../../node_modules/react-day-picker/lib/style.css"
 import "../components/calendar/calendar.scss"
+import HideSmall from "../components/hidesmall"
 
 const EMPTY_QUERY = ""
 
@@ -104,14 +105,18 @@ const CalEventsTemplate = ({ pageContext }) => {
       //   />
       // }
     >
-      <div>
-        <SearchBar
-          className="my-4 sm:w-1/3 mx-auto"
-          handleInputChange={handleInputChange}
-          placeholder="Type to find events..."
-          text={query}
-        />
-      </div>
+      <HideSmall>
+        <div className="row items-center justify-between">
+          <div className="w-1/3">
+            <SearchBar
+              handleInputChange={handleInputChange}
+              placeholder="Type to find events..."
+              text={query}
+            />
+          </div>
+          <div></div>
+        </div>
+      </HideSmall>
 
       <Columns>
         {/* <SmallColumn>

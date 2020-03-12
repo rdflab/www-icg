@@ -239,7 +239,7 @@ const SiteSearch = ({ className, placeholder, maxResults }) => {
   }
 
   return (
-    <HideSmall className="relative w-1/2">
+    <HideSmall size="md" className="relative w-1/2">
       <SiteSearchBar
         handleInputChange={handleInputChange}
         text={query}
