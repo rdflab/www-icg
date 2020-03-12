@@ -15,6 +15,8 @@ import ContactInfo from "../components/people/contactinfo"
 import HTMLDiv from "../components/htmldiv"
 import HideSmall from "../components/hidesmall"
 import SiteSearch from "../components/search/sitesearch"
+import Collapsible from "../components/collapsible"
+import SectionBreak from "../components/sectionbreak"
 
 const LabTemplate = ({ pageContext }) => {
   const {
@@ -67,14 +69,16 @@ const LabTemplate = ({ pageContext }) => {
                 groupMap={groupMap}
                 peopleMap={peopleMap}
               />
-              <Card className="hidden sm:block">
-                <RecentPublications
-                  group={group}
-                  publications={labPublications}
-                  groupMap={groupMap}
-                  peopleMap={peopleMap}
-                />
-              </Card>
+              <SectionBreak>
+                <Collapsible title="Recent Publications" height="auto">
+                  <RecentPublications
+                    group={group}
+                    publications={labPublications}
+                    groupMap={groupMap}
+                    peopleMap={peopleMap}
+                  />
+                </Collapsible>
+              </SectionBreak>
             </div>
           )}
         </MainColumn>

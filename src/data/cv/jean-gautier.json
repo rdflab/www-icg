@@ -1,0 +1,54 @@
+{
+  "id": "jean-gautier",
+  "education": [
+    {
+      "year": "1983",
+      "title": "Ph.D. University of Toulouse",
+      "notes": []
+    },
+    {
+      "year": "1988",
+      "title": "Dr. Sc. University of Toulouse",
+      "notes": []
+    }
+  ],
+  "training": [],
+  "experience": [],
+  "awards": [
+    {
+      "year": "1989",
+      "title": "Bronze Medal of the CNRS.",
+      "notes": []
+    },
+    {
+      "year": "1989",
+      "title": "EMBO post-doctoral fellowship (Prof. Paul Nurse).",
+      "notes": []
+    },
+    {
+      "year": "1989-1992",
+      "title": "American Cancer Society Senior Postdoctoral Fellow (Dr. Kirschner).",
+      "notes": []
+    },
+    {
+      "year": "1996-1998",
+      "title": "Mallinckrodt Foundation Award.",
+      "notes": []
+    },
+    {
+      "year": "1997-2001",
+      "title": "Irma T. Hirschl Scholar Award.",
+      "notes": []
+    },
+    {
+      "year": "1997-2002",
+      "title": "DOD-BRCP. Career Development Award.",
+      "notes": []
+    },
+    {
+      "year": "2002",
+      "title": "Dr. Harold and Golden Lamport Award for Excellence in Basic Science Research.",
+      "notes": []
+    }
+  ]
+}

@@ -9,7 +9,7 @@ const Breadcrumb = ({ crumbs }) => {
 
   for (let i = 0; i < crumbs.length; ++i) {
     const crumb = crumbs[i]
-    
+
     ret.push(
       <BlueLink key={`link-${i}`} to={crumb[1]}>
         {crumb[0]}

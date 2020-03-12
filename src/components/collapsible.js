@@ -10,13 +10,13 @@ const Collapsible = props => {
   }
 
   return (
-    <div className="my-4">
+    <>
       <div
-        className="row items-center mb-2 cursor-pointer text-gray-700"
+        className="row items-center mb-2 cursor-pointer"
         onClick={toggle}
         aria-label={`Collapse ${props.title}`}
       >
-        <h1 className="text-lg">{props.title}</h1>
+        <h2>{props.title}</h2>
         <div className="ml-auto">
           {height === 0 ? <FaChevronDown /> : <FaChevronUp />}
         </div>
@@ -25,7 +25,7 @@ const Collapsible = props => {
       <AnimateHeight duration={250} height={height}>
         {props.children}
       </AnimateHeight>
-    </div>
+    </>
   )
 }
 

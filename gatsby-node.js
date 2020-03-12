@@ -163,7 +163,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           fields: [frontmatter___lastName, frontmatter___firstName]
           order: [ASC, ASC]
         }
-        filter: { frontmatter: { tags: { regex: "/People/" } } }
+        filter: { fileAbsolutePath: { regex: "/people/" } }
       ) {
         edges {
           node {
@@ -182,6 +182,18 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             }
             excerpt(format: HTML)
             html
+          }
+        }
+      }
+
+      markdown: allMarkdownRemark {
+        edges {
+          node {
+            html
+            frontmatter {
+              path
+            }
+            excerpt(format: HTML)
           }
         }
       }
@@ -209,6 +221,30 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         }
       }
 
+      cv: allCvJson {
+        edges {
+          node {
+            id
+            education {
+              year
+              title
+            }
+            training {
+              year
+              title
+            }
+            experience {
+              year
+              title
+            }
+            awards {
+              year
+              title
+            }
+          }
+        }
+      }
+
       researchAreas: allResearchAreasJson {
         edges {
           node {
@@ -218,21 +254,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         }
       }
 
-      markdown: allMarkdownRemark {
-        edges {
-          node {
-            html
-            frontmatter {
-              path
-            }
-            excerpt(format: HTML)
-          }
-        }
-      }
-
       news: allMarkdownRemark(
         sort: { fields: frontmatter___date, order: DESC }
-        filter: { frontmatter: { path: { regex: "/news/" } } }
+        filter: { fileAbsolutePath: { regex: "/news/" } }
       ) {
         edges {
           node {
@@ -255,7 +279,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
       events: allMarkdownRemark(
         sort: { fields: frontmatter___start, order: DESC }
-        filter: { frontmatter: { tags: { regex: "/Event/" } } }
+        filter: { fileAbsolutePath: { regex: "/events/" } }
       ) {
         edges {
           node {
@@ -296,6 +320,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const allCalEvents = []
   const allResearchAreas = []
   const researchAreasMap = {}
+  const cvMap = {}
 
   result.data.researchAreas.edges.forEach(({ node }) => {
     allResearchAreas.push(node)
@@ -304,6 +329,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   result.data.labGroups.edges.forEach(({ node }) => {
     allLabGroups.push(node)
+  })
+
+  result.data.cv.edges.forEach(({ node }) => {
+    cvMap[node.id] = node
   })
 
   result.data.people.edges.forEach(({ node }) => {
@@ -657,6 +686,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           labPeople: labPeople,
           peopleMap: peopleMap,
           publications: personPublications,
+          cv:
+            person.frontmatter.id in cvMap
+              ? cvMap[person.frontmatter.id]
+              : null,
         },
       })
     }

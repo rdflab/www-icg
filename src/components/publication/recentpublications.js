@@ -37,7 +37,7 @@ const RecentPublications = ({
 
   return (
     <div className={`mb-4 ${className}`}>
-      <h2>Recent Publications</h2>
+      {/* <h2>Recent Publications</h2> */}
       <div className="mt-4">{createPublications(publications)}</div>
       <div className="text-center">
         <Button

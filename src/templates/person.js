@@ -13,6 +13,10 @@ import ContactInfo from "../components/people/contactinfo"
 import HTMLDiv from "../components/htmldiv"
 import SimplePubSearch from "../components/publication/simplepubsearch"
 import SiteSearch from "../components/search/sitesearch"
+import Column from "../components/column"
+import Collapsible from "../components/collapsible"
+import SectionBreak from "../components/sectionbreak"
+import Card from "../components/card"
 
 const interests = person => {
   const n = person.researchAreas.length
@@ -36,6 +40,68 @@ const interests = person => {
   return <div>{ret}</div>
 }
 
+const Education = ({ cv }) => (
+  // <Items title="Education" items={cv.education} />
+  <SectionBreak>
+    <Collapsible title="Education" height="auto">
+      <div>
+        {/* <h2>Education</h2> */}
+        {cv.education.map((item, index) => (
+          <div key={index} className="mb-2">
+            {item.year !== "n/a" && (
+              <div className="text-blue-500">{item.year}</div>
+            )}
+            <div>{item.title}</div>
+          </div>
+        ))}
+      </div>
+    </Collapsible>
+  </SectionBreak>
+)
+
+const Experience = ({ cv }) => (
+  <Items title="Experience" items={cv.experience} />
+  // <div>
+  //   <h2>Experience</h2>
+  //   {cv.experience.map((item, index) => (
+  //     <div key={index} className="mb-2">
+  //     {item.year !== "n/a" && <div className="text-blue-500">{item.year}</div>}
+  //     <div>{item.title}</div>
+  //     </div>
+  //   ))}
+  // </div>
+)
+
+const Training = ({ cv }) => <Items title="Training" items={cv.training} />
+
+const Awards = ({ cv }) => <Items title="Awards and Honors" items={cv.awards} />
+
+const Items = ({ title, items }) => (
+  <SectionBreak>
+    <Collapsible title={title} height="auto">
+      <div>
+        {/* <h2>{title}</h2> */}
+        {items.map((item, index) => (
+          <Columns key={index} className="mb-2">
+            <Column w="2/12" className="text-blue-500">
+              {item.year !== "n/a" && item.year}
+            </Column>
+            <Column w="10/12">{item.title}</Column>
+          </Columns>
+        ))}
+      </div>
+    </Collapsible>
+  </SectionBreak>
+)
+
+const ResearchInterests = ({ person, researchAreasMap }) => (
+  <div className="mt-4">
+    <h2>Research Interests</h2>
+
+    {interests(person, researchAreasMap)}
+  </div>
+)
+
 const PersonTemplate = ({ pageContext, data }) => {
   const {
     id,
@@ -44,6 +110,7 @@ const PersonTemplate = ({ pageContext, data }) => {
     labPeople,
     publications,
     researchAreasMap,
+    cv,
   } = pageContext
 
   const title = `${person.frontmatter.firstName} ${person.frontmatter.lastName}`
@@ -80,31 +147,40 @@ const PersonTemplate = ({ pageContext, data }) => {
 
           <HTMLDiv html={person.html} />
 
-          {publications.length > 0 && (
-            <div className="mt-8">
-              <h2>Publications</h2>
+          {cv !== null && cv.education.length > 0 && <Education cv={cv} />}
 
-              <SimplePubSearch
-                allPublications={publications}
-                showLabLink={false}
-              />
-            </div>
+          {cv !== null && cv.training.length > 0 && <Training cv={cv} />}
+
+          {cv !== null && cv.experience.length > 0 && <Experience cv={cv} />}
+
+          {cv !== null && cv.awards.length > 0 && <Awards cv={cv} />}
+
+          {publications.length > 0 && (
+            <SectionBreak>
+              <Collapsible title="Publications" height="auto">
+                <SimplePubSearch
+                  allPublications={publications}
+                  showLabLink={false}
+                />
+              </Collapsible>
+            </SectionBreak>
           )}
         </MainColumn>
         <SideColumn>
           {/* <SideBar> */}
-          <h1 className="text-blue-columbia mb-4">
-            {person.frontmatter.titles[0]}
-          </h1>
 
-          <ContactInfo person={person} />
+          <Card>
+            <h1 className="text-blue-columbia mb-4">
+              {person.frontmatter.titles[0]}
+            </h1>
 
+            <ContactInfo person={person} />
+          </Card>
           {person.frontmatter.researchAreas.length > 0 && (
-            <div className="mt-4">
-              <h2>Research Interests</h2>
-
-              {interests(person, researchAreasMap)}
-            </div>
+            <ResearchInterests
+              person={person}
+              researchAreasMap={researchAreasMap}
+            />
           )}
           {/* </SideBar> */}
           <SideBarMembers group={group} people={labPeople} />

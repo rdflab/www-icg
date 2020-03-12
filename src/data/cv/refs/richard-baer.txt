@@ -1,0 +1,18 @@
+<h2>Education</h2>
+<p>Ph.D. Rutgers College, New Brunswick, New Jersey</p>
+<h2>Experience</h2>
+<p>Professor of Pathology &amp; Cell Biology at Columbia University Medical Center (CUMC), the Deputy Director of the CUMC Institute for Cancer Genetics, and the Associate Director for Basic Science of the CUMC Herbert Irving Comprehensive Cancer Center</p>
+Since 1987, I have maintained an independent program of cancer research that has been supported continuously by R01/P01 grants from the NCI.  My independent work was initially focused on the discovery and characterization of TAL1 and TAL2, proto-oncogenes that are malignantly activated in approximately half of patients with T cell acute lymphoblastic leukemia.  For the past 15 years, I have studied the role of the BRCA1 tumor suppressor in hereditary breast cancer.  In the course of this work, our laboratory discovered the BARD1 protein and showed that the biochemical, developmental, and tumor suppression functions of BRCA1 are mediated primarily by the BRCA1/BARD1 heterodimer.  We also identified CtIP as a major interacting partner of BRCA1 and, in collaborative studies, demonstrated the requirements for CtIP in DNA resection, homology-directed repair of DNA double-strand breaks, and cell cycle checkpoint control.</p>
+<p>2007 - present: Deputy Director; CUMC Institute for Cancer Genetics</p>
+<p>2005 - present: Assoc. Director for Basic Research; CUMC Herbert Irving Comprehensive Cancer Center </p>
+<p>1999 - present: Professor of Pathology &amp; Cell Biology; Columbia University Medical Center (CUMC)</p>
+<p>1995 - 1999: Professor of Microbiology; U.T. Southwestern Medical Center, Dallas, TX</p>
+<p>1990 - 1995: Associate Professor of Microbiology; U.T. Southwestern Medical Center</p>
+<p>1987 - 1990: Assistant Professor of Microbiology; U.T. Southwestern Medical Center</p>
+<p>1981 - 1987: Postdoctoral Fellow; MRC-Laboratory of Molecular Biology, Cambridge, UK</p>
+
+<h2>Honors</h2>
+<p>1993 - 1997: Faculty Research Award; American Cancer Society</p>
+<p>1990 - 1992: Junior Faculty Research Award; American Cancer Society</p>
+<p>1983 - 1985: Postdoctoral Fellowship; Lady Tata Memorial Trust</p>
+<p>1981 - 1982: Postdoctoral Fellowship; Damon Runyon/Walter Winchell Cancer Fund</p>
