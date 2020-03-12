@@ -9,12 +9,7 @@ import React from "react"
 import PeopleList from "./peoplelist"
 import { PEOPLE_TYPES } from "../../constants"
 import toPeopleTypeMap from "../../utils/peopletypemap"
-import styled from "styled-components"
-
-const StyledDiv = styled.div`
-  margin-top: 1rem;
-  border-bottom: solid 1px lightgray;
-`
+import SectionBreak from "../sectionbreak"
 
 const PeopleTypes = ({ allPeople, groupMap, showLabLink, imageMap }) => {
   const peopleMap = toPeopleTypeMap(allPeople)
@@ -28,18 +23,15 @@ const PeopleTypes = ({ allPeople, groupMap, showLabLink, imageMap }) => {
 
     if (people.length > 0) {
       elems.push(
-        <StyledDiv key={c++}>
-          <h2>{type}</h2>
-        </StyledDiv>
-      )
-      elems.push(
-        <PeopleList
-          key={c++}
-          imageMap={imageMap}
-          people={people}
-          groupMap={groupMap}
-          showLabLink={showLabLink}
-        />
+        <SectionBreak title={type} key={c++}>
+          <PeopleList
+            key={c++}
+            imageMap={imageMap}
+            people={people}
+            groupMap={groupMap}
+            showLabLink={showLabLink}
+          />
+        </SectionBreak>
       )
     }
   }

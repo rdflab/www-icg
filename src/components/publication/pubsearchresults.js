@@ -35,7 +35,7 @@ const PubSearchResults = ({
 )
 
 PubSearchResults.defaultProps = {
-  showLabLink: true,
+  showLabLink: false,
 }
 
 export default PubSearchResults

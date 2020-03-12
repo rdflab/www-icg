@@ -1,14 +1,15 @@
 import React from "react"
 
-const SectionBreak = ({ children, className }) => (
-  <div
-    className={`mt-4 pt-2 border-t border-solid border-gray-300 ${className}`}
-  >
+const SectionBreak = ({ title, children, className }) => (
+  <>
+    <hr className="w-1/12 border-2 border-solid border-blue-700 mt-8 mb-2" />
+    {title !== "" && <h2 className="text-blue-700 mb-2">{title}</h2>}
     {children}
-  </div>
+  </>
 )
 
 SectionBreak.defaultProps = {
+  title: "",
   className: "",
 }
 

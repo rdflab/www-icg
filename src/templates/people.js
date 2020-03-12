@@ -125,7 +125,18 @@ const PeopleTemplate = ({ data, pageContext }) => {
       />
 
       <HideSmall>
-        <TypeSelector onClick={handleClick} />
+        <div className="row items-center justify-between">
+          <div className="w-1/3">
+            <SearchBar
+              handleInputChange={handleInputChange}
+              placeholder="Type to find faculty..."
+              text={query}
+            />
+          </div>
+          <div>
+            <TypeSelector onClick={handleClick} />
+          </div>
+        </div>
       </HideSmall>
 
       <PeopleSearchResults

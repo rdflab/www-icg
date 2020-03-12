@@ -6,6 +6,7 @@ import Columns from "../columns"
 import Column from "../column"
 //import SideBar from "./sidebar/sidebar"
 import TextLink from "../textlink"
+import SectionBreak from "../sectionbreak"
 
 const Labs = ({ pagedGroups, peopleMap }) => (
   <>
@@ -20,10 +21,7 @@ const Labs = ({ pagedGroups, peopleMap }) => (
       }
 
       return (
-        <div
-          className="pt-4 pb-8 border-t border-solid border-gray-300"
-          key={index}
-        >
+        <SectionBreak key={index}>
           <Columns>
             <Column w="1/2">
               <h3>
@@ -42,7 +40,7 @@ const Labs = ({ pagedGroups, peopleMap }) => (
               <EmailLink to={person.frontmatter.email[0]} />
             </Column>
           </Columns>
-        </div>
+        </SectionBreak>
       )
     })}
   </>

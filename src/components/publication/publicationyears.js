@@ -7,6 +7,7 @@
 
 import React from "react"
 import PublicationList from "./publicationlist"
+import SectionBreak from "../sectionbreak"
 
 const PublicationYears = ({ publications, showLabLink }) => {
   let yearMap = new Map()
@@ -24,24 +25,25 @@ const PublicationYears = ({ publications, showLabLink }) => {
       {Array.from(yearMap.keys())
         .sort()
         .reverse()
+        .filter(year => {
+          return year !== -1
+        })
         .map((year, index) => {
           return (
-            <div key={index} className="mt-8">
-              {year !== -1 && (
-                // <div class="row justify-center items-center">
-                <div className="text-xl text-blue-300 mb-4">{year}</div>
-              )
-              // </div>
-              }
+            <SectionBreak title={year} key={index}>
               <PublicationList
                 publications={yearMap.get(year)}
                 showLabLink={showLabLink}
               />
-            </div>
+            </SectionBreak>
           )
         })}
     </>
   )
+}
+
+PublicationYears.defaultProps = {
+  showLabLink: false,
 }
 
 export default PublicationYears

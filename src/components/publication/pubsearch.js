@@ -95,7 +95,7 @@ const PubSearch = ({ groupMap, peopleMap, allPublications, showLabLink }) => {
 }
 
 PubSearch.defaultProps = {
-  showLabLink: true,
+  showLabLink: false,
 }
 
 export default PubSearch

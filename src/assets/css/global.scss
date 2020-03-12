@@ -302,6 +302,11 @@ a:hover {
   content: "";
 }
 
+.card {
+  @apply bg-white rounded-md p-4 overflow-hidden;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
 /* purgecss end ignore */
 
 //@tailwind utilities;

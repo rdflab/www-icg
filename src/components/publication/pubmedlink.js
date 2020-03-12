@@ -12,7 +12,7 @@ export const pubmedUrl = pubmed => {
   return `https://www.ncbi.nlm.nih.gov/pubmed/?term=${pubmed}`
 }
 
-const PubMedLink = publication => (
+const PubMedLink = ({ publication }) => (
   <BlueLinkExt target="_blank" to={pubmedUrl(publication.pubmed)}>
     PubMed
   </BlueLinkExt>

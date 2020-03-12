@@ -104,6 +104,7 @@ const Publication = ({ publication, showLabLink, maxAuthors }) => {
 }
 
 Publication.defaultProps = {
+  showLabLink: false,
   maxAuthors: 4,
 }
 

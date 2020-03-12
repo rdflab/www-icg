@@ -17,6 +17,7 @@ import Column from "../components/column"
 import Collapsible from "../components/collapsible"
 import SectionBreak from "../components/sectionbreak"
 import Card from "../components/card"
+import FlatCard from "../components/flatcard"
 
 const interests = person => {
   const n = person.researchAreas.length
@@ -41,22 +42,22 @@ const interests = person => {
 }
 
 const Education = ({ cv }) => (
-  // <Items title="Education" items={cv.education} />
-  <SectionBreak>
-    <Collapsible title="Education" height="auto">
-      <div>
-        {/* <h2>Education</h2> */}
-        {cv.education.map((item, index) => (
-          <div key={index} className="mb-2">
-            {item.year !== "n/a" && (
-              <div className="text-blue-500">{item.year}</div>
-            )}
-            <div>{item.title}</div>
-          </div>
-        ))}
-      </div>
-    </Collapsible>
-  </SectionBreak>
+  <Items title="Education" items={cv.education} />
+  // <SectionBreak>
+  //   <Collapsible title="Education" height="auto">
+  //     <div>
+  //       {/* <h2>Education</h2> */}
+  //       {cv.education.map((item, index) => (
+  //         <div key={index} className="mb-2">
+  //           {item.year !== "n/a" && (
+  //             <div className="text-blue-600">{item.year}</div>
+  //           )}
+  //           <div>{item.title}</div>
+  //         </div>
+  //       ))}
+  //     </div>
+  //   </Collapsible>
+  // </SectionBreak>
 )
 
 const Experience = ({ cv }) => (
@@ -78,12 +79,12 @@ const Awards = ({ cv }) => <Items title="Awards and Honors" items={cv.awards} />
 
 const Items = ({ title, items }) => (
   <SectionBreak>
-    <Collapsible title={title} height="auto">
+    <Collapsible title={title} height="auto" headerClassName="text-blue-700">
       <div>
         {/* <h2>{title}</h2> */}
         {items.map((item, index) => (
           <Columns key={index} className="mb-2">
-            <Column w="2/12" className="text-blue-500">
+            <Column w="2/12" className="text-gray-600">
               {item.year !== "n/a" && item.year}
             </Column>
             <Column w="10/12">{item.title}</Column>
@@ -95,7 +96,7 @@ const Items = ({ title, items }) => (
 )
 
 const ResearchInterests = ({ person, researchAreasMap }) => (
-  <div className="mt-4">
+  <div className="mt-8">
     <h2>Research Interests</h2>
 
     {interests(person, researchAreasMap)}
@@ -157,7 +158,11 @@ const PersonTemplate = ({ pageContext, data }) => {
 
           {publications.length > 0 && (
             <SectionBreak>
-              <Collapsible title="Publications" height="auto">
+              <Collapsible
+                title="Publications"
+                height="auto"
+                headerClassName="text-blue-700"
+              >
                 <SimplePubSearch
                   allPublications={publications}
                   showLabLink={false}
@@ -176,6 +181,7 @@ const PersonTemplate = ({ pageContext, data }) => {
 
             <ContactInfo person={person} />
           </Card>
+
           {person.frontmatter.researchAreas.length > 0 && (
             <ResearchInterests
               person={person}
@@ -183,6 +189,7 @@ const PersonTemplate = ({ pageContext, data }) => {
             />
           )}
           {/* </SideBar> */}
+
           <SideBarMembers group={group} people={labPeople} />
         </SideColumn>
       </Columns>

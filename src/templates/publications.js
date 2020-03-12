@@ -123,20 +123,20 @@ const PublicationsTemplate = ({ pageContext }) => {
         </HideSmall>
       }
     >
-      {showSearch && (
-        <SearchBar
-          className="my-4 sm:w-1/3 mx-auto"
-          handleInputChange={handleInputChange}
-          placeholder="Type to find publications..."
-          text={query}
-        />
-      )}
-
-      {showYears && (
-        <HideSmall>
-          <YearSelector onClick={handleClick} />
-        </HideSmall>
-      )}
+      <HideSmall>
+        <div className="row items-center justify-between">
+          <div className="w-1/3">
+            {showSearch && (
+              <SearchBar
+                handleInputChange={handleInputChange}
+                placeholder="Type to find publications..."
+                text={query}
+              />
+            )}
+          </div>
+          <div>{showYears && <YearSelector onClick={handleClick} />}</div>
+        </div>
+      </HideSmall>
 
       <PubSearchResults
         publications={yearFilteredPublications}
