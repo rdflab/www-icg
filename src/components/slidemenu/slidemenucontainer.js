@@ -1,11 +1,15 @@
-import React from "react"
+import React, { useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import flattenEdges from "../../utils/flattenedges"
 import SlideMenuLink from "./slidemenulink"
 import SlideMenuCloseButton from "./slidemenuclosebutton"
 import ColumbiaICGImage from "../images/columbiaicgimage"
+import SiteSearchBar from "../search/sitesearchbar"
+import { getSiteData, Heading, SiteLink } from "../search/sitesearch"
+import { searchTree } from "../search/searchtree"
+import BlueLink from "../bluelink"
 
-const SlideMenuContainer = ({ title, onClickHandle, visible }) => {
+const SlideMenuContainer = ({ title, onClickHandle, visible, maxResults }) => {
   const data = useStaticQuery(graphql`
     query {
       links: allSlidemenulinksJson {
@@ -19,14 +23,110 @@ const SlideMenuContainer = ({ title, onClickHandle, visible }) => {
     }
   `)
 
+  const [query, setQuery] = useState("")
+  const [results, setResults] = useState([])
+  const [showMenu, setShowMenu] = useState(false)
+  const [hover, setHover] = useState(false)
+  const [siteData, setSiteData] = useState(null)
+
+  const search = (q, sd) => {
+    //console.log("q", q)
+
+    let node
+    let found
+
+    const [items, words] = searchTree(sd.tree, q)
+
+    // If some links were found, put them in the search
+    // results
+    if (items.length > 0) {
+      let c = 0
+      let currentSection = ""
+      let ret = []
+
+      for (let item of items) {
+        let link = sd.links[item]
+
+        const name = link[0]
+        const section = sd.sections[link[1]]
+
+        let sectionComp = null
+
+        if (section !== currentSection) {
+          sectionComp = <Heading key={`heading-${c}`} name={section} />
+          currentSection = section
+        }
+
+        // If we found a match render components
+        if (sectionComp !== null) {
+          ret.push(sectionComp)
+        }
+
+        ret.push(
+          <div className="mb-2">
+            <SiteLink to={link[3]} link={name} />
+          </div>
+        )
+
+        ++c
+
+        // limit displayed results for performance
+        if (c === maxResults) {
+          break
+        }
+      }
+
+      setResults(ret)
+    }
+  }
+
+  const handleInputChange = e => {
+    const q = e.target.value
+    //const ql = q.toLowerCase()
+
+    setQuery(q)
+
+    if (q !== "") {
+      if (siteData !== null) {
+        search(q, siteData)
+      } else {
+        getSiteData().then(data => {
+          setSiteData(data)
+          search(q, data)
+        })
+      }
+    }
+  }
+
   const links = flattenEdges(data.links.edges)
+
+  // onClick={onClickHandle}
+
+  let display
+
+  if (results.length > 0) {
+    display = results
+  } else {
+    display = links.map((link, index) => {
+      return (
+        <div key={index}>
+          <SlideMenuLink
+            key={index}
+            to={link.link}
+            active={link.name === title}
+          >
+            {link.name}
+          </SlideMenuLink>
+        </div>
+      )
+    })
+  }
 
   return (
     <div
       className={`slide-menu-container-2 ${
         visible ? "slide-menu-container-2-visible" : ""
       }`}
-      onClick={onClickHandle}
     >
       <div
         className={`fixed col shadow-xl rounded-lg bg-white overflow-hidden`}
@@ -55,24 +155,21 @@ const SlideMenuContainer = ({ title, onClickHandle, visible }) => {
             </button> */}
           </div>
         </div>
-        <div className="px-4">
-          {links.map((link, index) => {
-            return (
-              <div key={index}>
-                <SlideMenuLink
-                  key={index}
-                  to={link.link}
-                  active={link.name === title}
-                >
-                  {link.name}
-                </SlideMenuLink>
-              </div>
-            )
-          })}
+        <div className="mx-4 mb-4">
+          <SiteSearchBar
+            handleInputChange={handleInputChange}
+            text={query}
+            placeholder="Search site..."
+          />
         </div>
+        <div className="px-4">{display}</div>
       </div>
     </div>
   )
+}
+
+SlideMenuContainer.defaultProps = {
+  maxResults: 5,
 }
 
 export default SlideMenuContainer

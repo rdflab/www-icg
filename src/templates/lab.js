@@ -62,13 +62,6 @@ const LabTemplate = ({ pageContext }) => {
 
           {labPublications.length > 0 && (
             <div className="my-8">
-              <RecentPublications
-                className="sm:hidden"
-                group={group}
-                publications={labPublications}
-                groupMap={groupMap}
-                peopleMap={peopleMap}
-              />
               <SectionBreak>
                 <Collapsible title="Recent Publications" height="auto">
                   <RecentPublications

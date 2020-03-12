@@ -10,33 +10,35 @@ import { searchTree } from "./searchtree"
 
 const axios = require("axios")
 
-const SiteSearchResult = ({ text, to, link }) => {
+export const SiteLink = ({ to, link }) => {
   let linkComp
 
   if (to.includes("http")) {
-    linkComp = (
+    return (
       <BlueLinkExt target="_blank" to={to}>
         {link}
       </BlueLinkExt>
     )
   } else {
-    linkComp = <BlueLink to={to}>{link}</BlueLink>
+    return <BlueLink to={to}>{link}</BlueLink>
   }
+}
 
+const SiteSearchResult = ({ text, to, link }) => {
   return (
     <Columns className="my-2">
       <Column w="7/12" className="mr-4">
         {text}
       </Column>
-      <Column w="5/12">{linkComp}</Column>
+      <Column w="5/12">
+        <SiteLink to={to} link={link} />
+      </Column>
     </Columns>
   )
 }
 
-const Heading = ({ name }) => (
-  <div className="py-1 mt-2 mb-2 border-b border-solid border-gray-400 text-gray-500 text-sm font-semibold">
-    {name}
-  </div>
+export const Heading = ({ name }) => (
+  <div className="py-1 text-gray-500 text-sm font-semibold">{name}</div>
 )
 
 /**
@@ -67,7 +69,7 @@ const SiteSearchMenu = ({ showMenu, children }) => {
   )
 }
 
-const getSiteData = () => {
+export const getSiteData = () => {
   return axios.get("/site.json").then(resp => {
     return resp.data
   })

@@ -6,7 +6,6 @@ const SiteSearchBar = ({
   placeholder,
   text,
   className,
-  border,
   selected,
 }) => {
   const [hover, setHover] = useState(false)
@@ -21,7 +20,7 @@ const SiteSearchBar = ({
 
   return (
     <div
-      className={`row z-40 px-4 py-2 rounded-md items-center border border-solid justify-between trans-ani ${
+      className={`row z-40 text-gray-900 px-4 py-2 rounded-md items-center border border-solid justify-between trans-ani ${
         hover || selected
           ? "bg-white border-gray-300"
           : "bg-gray-200 border-gray-200"
@@ -52,7 +51,6 @@ const SiteSearchBar = ({
 
 SiteSearchBar.defaultProps = {
   placeholder: "Type to find items...",
-  border: true,
   text: "",
   selected: false,
 }
