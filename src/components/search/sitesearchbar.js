@@ -28,14 +28,14 @@ const SiteSearchBar = ({
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
-      <div>
+      <div className="w-full">
         <input
           type="text"
           aria-label="Search"
           placeholder={placeholder}
           value={text}
           onChange={handleInputChange}
-          className="w-full bg-transparent"
+          className="bg-transparent w-full"
         />
       </div>
       <div>
