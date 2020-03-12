@@ -9,14 +9,16 @@
   ],
   "training": [
     {
-      "year": "03/1978-07/1982",
+      "year": "1978-1982",
       "title": "Visiting Fellow. Laboratory of Tumor Cell Biology, National Cancer Institute, USA.",
       "notes": []
     },
     {
-      "year": "09/1976-03/1978",
+      "year": "1976-1978",
       "title": "Residency in Hematology. University of Milan, Italy",
-      "notes": [""]
+      "notes": [
+        ""
+      ]
     }
   ],
   "experience": [],

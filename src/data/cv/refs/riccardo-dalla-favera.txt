@@ -1,8 +1,8 @@
 <h2>Education</h2>
 <p>MD, University of Milan</p>
 <h2>Training</h2>
-<p>03/1978 - 07/1982 Visiting Fellow. Laboratory of Tumor Cell Biology, National Cancer Institute, USA.</p>
-<p>09/1976 - 03/1978 Residency in Hematology. University of Milan, Italy</p>
+<p>1978 - 1982 Visiting Fellow. Laboratory of Tumor Cell Biology, National Cancer Institute, USA.</p>
+<p>1976 - 1978 Residency in Hematology. University of Milan, Italy</p>
 
 <h2>Awards and Honors</h2>
 <p>2017 Leopold Griffuel Award in Basic Research, ARC Foundation, Paris France</p>

@@ -4,14 +4,18 @@
     {
       "year": "2001-2007",
       "title": "PhD in Integrated Biomedical Science (Cancer Genetics), Ohio State University.",
-      "notes": ["Mentor: Denis Guttridge, Ph.D."]
+      "notes": [
+        "Mentor: Denis Guttridge, Ph.D."
+      ]
     }
   ],
   "training": [
     {
       "year": "2007-2013",
       "title": "Postdoctoral Training in Cancer Biology and Genetics, Memorial Sloan Kettering Cancer Center",
-      "notes": ["Mentor: Dr. Joan Massague, Ph.D."]
+      "notes": [
+        "Mentor: Dr. Joan Massague, Ph.D."
+      ]
     }
   ],
   "experience": [],

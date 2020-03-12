@@ -4,7 +4,9 @@
     {
       "year": "07/1994-10/1998",
       "title": "PhD Biochemistry University of Utah, Salk Lake City, UT",
-      "notes": ["Thesis Advisor: Martin Rechsteiner, PhD"]
+      "notes": [
+        "Thesis Advisor: Martin Rechsteiner, PhD"
+      ]
     },
     {
       "year": "07/1989-12/1992",
@@ -21,7 +23,9 @@
     {
       "year": "10/1998-04/2003",
       "title": "Postdoctoral Fellow Cold Spring Harbor Laboratory Cold Spring Harbor, NY",
-      "notes": ["Advisor: Bruce Stillman"]
+      "notes": [
+        "Advisor: Bruce Stillman"
+      ]
     }
   ],
   "experience": [],
