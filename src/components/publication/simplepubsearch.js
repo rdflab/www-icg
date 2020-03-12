@@ -11,6 +11,7 @@ const SimplePubSearch = ({
   allPublications,
   showSearch,
   showYears,
+  sectionMode,
   showLabLink,
 }) => {
   const [query, setQuery] = useState(EMPTY_QUERY)
@@ -90,6 +91,7 @@ const SimplePubSearch = ({
       <PublicationYears
         publications={pagedPublications}
         showLabLink={showLabLink}
+        sectionMode={sectionMode}
       />
 
       <Pagination
@@ -106,6 +108,7 @@ const SimplePubSearch = ({
 SimplePubSearch.defaultProps = {
   showLabLink: true,
   showSearch: false,
+  sectionMode: "main",
   showYears: true,
 }
 

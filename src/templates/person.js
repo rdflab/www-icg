@@ -85,7 +85,7 @@ const Items = ({ title, items }) => (
         {/* <h2>{title}</h2> */}
         {items.map((item, index) => (
           <Columns key={index} className="mb-2">
-            <Column w="2/12" className="text-gray-600">
+            <Column w="2/12" className="text-gray-600 text-right mr-4">
               {item.year !== "n/a" && item.year}
             </Column>
             <Column w="10/12">{item.title}</Column>
@@ -167,6 +167,7 @@ const PersonTemplate = ({ pageContext, data }) => {
                 <SimplePubSearch
                   allPublications={publications}
                   showLabLink={false}
+                  sectionMode="alt"
                 />
               </Collapsible>
             </SectionBreak>

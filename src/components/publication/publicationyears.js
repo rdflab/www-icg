@@ -9,7 +9,7 @@ import React from "react"
 import PublicationList from "./publicationlist"
 import SectionBreak from "../sectionbreak"
 
-const PublicationYears = ({ publications, showLabLink }) => {
+const PublicationYears = ({ publications, sectionMode, showLabLink }) => {
   let yearMap = new Map()
 
   for (let publication of publications) {
@@ -30,7 +30,7 @@ const PublicationYears = ({ publications, showLabLink }) => {
         })
         .map((year, index) => {
           return (
-            <SectionBreak title={year} key={index}>
+            <SectionBreak title={year} key={index} mode={sectionMode}>
               <PublicationList
                 publications={yearMap.get(year)}
                 showLabLink={showLabLink}
@@ -43,6 +43,7 @@ const PublicationYears = ({ publications, showLabLink }) => {
 }
 
 PublicationYears.defaultProps = {
+  sectionMode: "main",
   showLabLink: false,
 }
 
