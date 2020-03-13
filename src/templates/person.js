@@ -186,16 +186,16 @@ const PersonTemplate = ({ pageContext, data }) => {
           </Card>
 
           <div className="mx-2">
-          {person.frontmatter.researchAreas.length > 0 && (
-            <ResearchInterests
-              person={person}
-              researchAreasMap={researchAreasMap}
-            />
-          )}
-          {/* </SideBar> */}
-          <div className="mt-8">
-            <SideBarMembers group={group} people={labPeople} />
-          </div>
+            {person.frontmatter.researchAreas.length > 0 && (
+              <ResearchInterests
+                person={person}
+                researchAreasMap={researchAreasMap}
+              />
+            )}
+            {/* </SideBar> */}
+            <div className="mt-8">
+              <SideBarMembers group={group} people={labPeople} />
+            </div>
           </div>
         </SideColumn>
       </Columns>

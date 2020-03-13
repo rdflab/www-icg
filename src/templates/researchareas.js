@@ -31,10 +31,9 @@ const ResearchAreasTemplate = ({ pageContext }) => {
         .map((name, index) => (
           <Card className="items-center justify-center text-center p-16 m-16">
             <h2>
-          <BlueLink to={`/research-areas/${raMap[name]}`}>{name}</BlueLink>
-        </h2>
-        </Card>
-          
+              <BlueLink to={`/research-areas/${raMap[name]}`}>{name}</BlueLink>
+            </h2>
+          </Card>
         ))}
     </CrumbLayout>
   )

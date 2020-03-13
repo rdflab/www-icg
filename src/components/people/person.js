@@ -42,7 +42,7 @@ const Person = ({ person, groupMap, showLabLink, image }) => {
         </MainColumn>
         <Column w="4/12">
           <Card>
-          <ContactInfo person={person} />
+            <ContactInfo person={person} />
           </Card>
         </Column>
       </Columns>
