@@ -1,8 +1,12 @@
 import React from "react"
+import Layout from "../components/layout"
 import CrumbLayout from "../components/crumblayout"
 import BlueLink from "../components/bluelink"
+import WhiteLink from "../components/whitelink"
 import SiteSearch from "../components/search/sitesearch"
-import HideSmall from "../components/hidesmall"
+import Container from "../components/container"
+import Title from "../components/title"
+import Card from "../components/card"
 
 const ResearchAreasTemplate = ({ pageContext }) => {
   const { allResearchAreas, searchData } = pageContext
@@ -25,11 +29,12 @@ const ResearchAreasTemplate = ({ pageContext }) => {
       {Object.keys(raMap)
         .sort()
         .map((name, index) => (
-          <div key={index}>
+          <Card className="items-center justify-center text-center p-16 m-16">
             <h2>
-              <BlueLink to={`/research-areas/${raMap[name]}`}>{name}</BlueLink>
-            </h2>
-          </div>
+          <BlueLink to={`/research-areas/${raMap[name]}`}>{name}</BlueLink>
+        </h2>
+        </Card>
+          
         ))}
     </CrumbLayout>
   )

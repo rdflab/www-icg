@@ -248,7 +248,7 @@ const SiteSearch = ({ className, placeholder, maxResults }) => {
         placeholder={placeholder}
         border={false}
         selected={showMenu}
-        className="ml-auto w-1/2"
+        className="ml-auto w-3/4"
       />
 
       <SiteSearchMenuPane

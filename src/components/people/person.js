@@ -12,6 +12,9 @@ import ContactInfo from "./contactinfo"
 import Column from "../column"
 import TextLink from "../textlink"
 import Img from "gatsby-image"
+import Card from "../card"
+import FlatCard from "../flatcard"
+import BlueLink from "../bluelink"
 
 const Person = ({ person, groupMap, showLabLink, image }) => {
   return (
@@ -25,20 +28,22 @@ const Person = ({ person, groupMap, showLabLink, image }) => {
             />
           )}
         </Column>
-        <MainColumn w="6/12">
+        <MainColumn w="5/12">
           <div>
-            <h3>
-              <TextLink
+            <h3 className="mt-2">
+              <BlueLink
                 to={`/research-areas/faculty-and-staff/${person.frontmatter.id}`}
               >
                 {person.frontmatter.firstName} {person.frontmatter.lastName}
-              </TextLink>
+              </BlueLink>
             </h3>
           </div>
           <div className="gray">{person.frontmatter.titles[0]}</div>
         </MainColumn>
         <Column w="4/12">
+          <Card>
           <ContactInfo person={person} />
+          </Card>
         </Column>
       </Columns>
     </div>

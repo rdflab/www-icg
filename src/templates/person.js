@@ -19,6 +19,7 @@ import SectionBreak from "../components/sectionbreak"
 import Card from "../components/card"
 import FlatCard from "../components/flatcard"
 import HideSmall from "../components/hidesmall"
+import Title from "../components/title"
 
 const interests = person => {
   const n = person.researchAreas.length
@@ -84,7 +85,7 @@ const Items = ({ title, items }) => (
       <div>
         {/* <h2>{title}</h2> */}
         {items.map((item, index) => (
-          <Columns key={index} className="mb-2">
+          <Columns key={index} className="mb-4">
             <Column w="2/12" className="text-gray-600 text-right mr-4">
               {item.year !== "n/a" && item.year}
             </Column>
@@ -125,7 +126,6 @@ const PersonTemplate = ({ pageContext, data }) => {
         ["Faculty and Staff", "/research-areas/faculty-and-staff"],
         [title, `/research-areas/faculty-and-staff/${person.frontmatter.id}`],
       ]}
-      title={title}
       headerComponent={<SiteSearch />}
     >
       <Columns>
@@ -137,6 +137,7 @@ const PersonTemplate = ({ pageContext, data }) => {
           <ContactInfo person={person} />
         </SmallColumn>
         <MainColumn>
+          <Title>{title}</Title>
           {data.file !== null && (
             <div className="mb-8">
               <Img
@@ -184,6 +185,7 @@ const PersonTemplate = ({ pageContext, data }) => {
             <ContactInfo person={person} />
           </Card>
 
+          <div className="mx-2">
           {person.frontmatter.researchAreas.length > 0 && (
             <ResearchInterests
               person={person}
@@ -193,6 +195,7 @@ const PersonTemplate = ({ pageContext, data }) => {
           {/* </SideBar> */}
           <div className="mt-8">
             <SideBarMembers group={group} people={labPeople} />
+          </div>
           </div>
         </SideColumn>
       </Columns>

@@ -6,7 +6,6 @@ const Card = ({ children, padding, className }) => (
 
 Card.defaultProps = {
   className: "",
-  padding: "p-4",
 }
 
 export default Card

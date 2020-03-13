@@ -303,8 +303,8 @@ a:hover {
 }
 
 .card {
-  @apply bg-white rounded-md p-4 overflow-hidden;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  @apply bg-white rounded-md px-4 py-2 overflow-hidden;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
 }
 
 /* purgecss end ignore */

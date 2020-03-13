@@ -3,7 +3,7 @@
   "education": [
     {
       "year": "n/a",
-      "title": "Ph.D. Rutgers College, New Brunswick, New Jersey",
+      "title": "PhD Rutgers College, New Brunswick, New Jersey",
       "notes": []
     }
   ],
@@ -11,7 +11,21 @@
   "experience": [
     {
       "year": "n/a",
-      "title": "Professor of Pathology and Cell Biology at Columbia University Medical Center (CUMC), the Deputy Director of the CUMC Institute for Cancer Genetics, and the Associate Director for Basic Science of the CUMC Herbert Irving Comprehensive Cancer Center",
+      "title": "Professor of Pathology and Cell Biology at Columbia University Medical Center (CUMC)",
+      "notes": [
+        "Since 1987, I have maintained an independent program of cancer research that has been supported continuously by R01/P01 grants from the NCI. \u00a0My independent work was initially focused on the discovery and characterization of TAL1 and TAL2, proto-oncogenes that are malignantly activated in approximately half of patients with T cell acute lymphoblastic leukemia. \u00a0For the past 15 years, I have studied the role of the BRCA1 tumor suppressor in hereditary breast cancer. \u00a0In the course of this work, our laboratory discovered the BARD1 protein and showed that the biochemical, developmental, and tumor suppression functions of BRCA1 are mediated primarily by the BRCA1/BARD1 heterodimer. \u00a0We also identified CtIP as a major interacting partner of BRCA1 and, in collaborative studies, demonstrated the requirements for CtIP in DNA resection, homology-directed repair of DNA double-strand breaks, and cell cycle checkpoint control."
+      ]
+    },
+    {
+      "year": "n/a",
+      "title": "Deputy Director of the CUMC Institute for Cancer Genetics",
+      "notes": [
+        "Since 1987, I have maintained an independent program of cancer research that has been supported continuously by R01/P01 grants from the NCI. \u00a0My independent work was initially focused on the discovery and characterization of TAL1 and TAL2, proto-oncogenes that are malignantly activated in approximately half of patients with T cell acute lymphoblastic leukemia. \u00a0For the past 15 years, I have studied the role of the BRCA1 tumor suppressor in hereditary breast cancer. \u00a0In the course of this work, our laboratory discovered the BARD1 protein and showed that the biochemical, developmental, and tumor suppression functions of BRCA1 are mediated primarily by the BRCA1/BARD1 heterodimer. \u00a0We also identified CtIP as a major interacting partner of BRCA1 and, in collaborative studies, demonstrated the requirements for CtIP in DNA resection, homology-directed repair of DNA double-strand breaks, and cell cycle checkpoint control."
+      ]
+    },
+    {
+      "year": "n/a",
+      "title": "Associate Director for Basic Science of the CUMC Herbert Irving Comprehensive Cancer Center",
       "notes": [
         "Since 1987, I have maintained an independent program of cancer research that has been supported continuously by R01/P01 grants from the NCI. \u00a0My independent work was initially focused on the discovery and characterization of TAL1 and TAL2, proto-oncogenes that are malignantly activated in approximately half of patients with T cell acute lymphoblastic leukemia. \u00a0For the past 15 years, I have studied the role of the BRCA1 tumor suppressor in hereditary breast cancer. \u00a0In the course of this work, our laboratory discovered the BARD1 protein and showed that the biochemical, developmental, and tumor suppression functions of BRCA1 are mediated primarily by the BRCA1/BARD1 heterodimer. \u00a0We also identified CtIP as a major interacting partner of BRCA1 and, in collaborative studies, demonstrated the requirements for CtIP in DNA resection, homology-directed repair of DNA double-strand breaks, and cell cycle checkpoint control."
       ]

@@ -10,7 +10,7 @@ const FlatCard = ({ children, padding, className }) => (
 
 FlatCard.defaultProps = {
   className: "",
-  padding: "p-4",
+  padding: "px-4 py-2",
 }
 
 export default FlatCard

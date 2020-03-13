@@ -9,6 +9,7 @@ import TextLink from "../textlink"
 import SectionBreak from "../sectionbreak"
 import Card from "../card"
 import BlueLink from "../bluelink"
+import FlatCard from "../flatcard"
 
 const Labs = ({ pagedGroups, peopleMap }) => (
   <>
@@ -26,7 +27,7 @@ const Labs = ({ pagedGroups, peopleMap }) => (
         <SectionBreak key={index}>
           <Columns>
             <Column w="4/12">
-              <h2 className="mb-2">
+              <h2 className="my-2">
                 <BlueLink to={`/research-areas/labs/${group.frontmatter.id}`}>
                   {name}
                 </BlueLink>
