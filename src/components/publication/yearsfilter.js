@@ -38,7 +38,7 @@ class YearsFilter extends Component {
     }
 
     return (
-      <div class="col">
+      <div className="col">
         {Array.from(years)
           .sort()
           .reverse()

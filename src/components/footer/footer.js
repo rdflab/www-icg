@@ -4,30 +4,45 @@ import FooterLinks from "./footerlinks"
 import Container from "../container"
 
 import Column from "../column"
+import HideSmall from "../hidesmall"
 
 const Footer = ({ siteTitle }) => {
   return (
     <footer className="text-white text-sm h-48 p-8 mt-8 bg-blue-columbia-80">
-      <Container>
-        <Column isVCentered={true}>
-          <Column w="1/3" className="pb-4">
-            <FooterLinks />
+      <HideSmall>
+        <Container>
+          <Column isVCentered={true}>
+            <Column w="4" className="">
+              <FooterLinks />
+            </Column>
+            <Column w="4" isCentered={true} className="text-center">
+              <a href="https://cumc.columbia.edu">
+                <HICCCImage style={{ width: "350px" }} />
+              </a>
+            </Column>
+            <Column w="4" isCentered={true}>
+              <div>
+                &copy; {new Date().getFullYear()} {siteTitle}
+              </div>
+            </Column>
           </Column>
-          <Column w="1/3" className="hidden sm:block text-center pb-4">
-            <a href="https://cumc.columbia.edu">
-              <HICCCImage />
-            </a>
-          </Column>
-          <Column w="1/3" className="text-center pb-4">
+        </Container>
+      </HideSmall>
+
+      <HideSmall show={true}>
+        <Container>
+          <FooterLinks />
+          <div className="w-full text-center mt-4">
             &copy; {new Date().getFullYear()} {siteTitle}
-          </Column>
-          <Column w="1/3" className="sm:hidden text-center pb-4">
+          </div>
+
+          <div className="w-full text-center mt-4">
             <a href="https://cumc.columbia.edu">
-              <HICCCImage />
+              <HICCCImage style={{ width: "350px" }} className="mx-auto" />
             </a>
-          </Column>
-        </Column>
-      </Container>
+          </div>
+        </Container>
+      </HideSmall>
     </footer>
   )
 }

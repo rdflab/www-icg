@@ -13,7 +13,7 @@ import HideSmall from "../components/hidesmall"
 
 const HomeSection = ({ title, subTitle, text, links, alt }) => {
   return (
-    <div class={`text-center p-16 ${alt ? "blue-bg text-white" : ""}`}>
+    <div className={`text-center p-16 ${alt ? "blue-bg text-white" : ""}`}>
       <span
         className={`uppercase tracking-wide border-t-2 p-2 mx-auto ${
           alt ? "border-white" : "blue-border"

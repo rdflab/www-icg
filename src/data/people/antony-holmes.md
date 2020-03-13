@@ -15,9 +15,9 @@ urls: []
 
 <p >I am the senior bioinformatician in the Dalla-Favera lab. As a full stack engineer I also develop software and web tools and I worked extensively to create this website.</p>
 
-<h2 class="mt-4">Programming Languages</h2>
+<h2 className="mt-4">Programming Languages</h2>
 
-<ul class="list-disc ml-8">
+<ul className="list-disc ml-8">
   <li>Java</li>
   <li>Python</li>
   <li>Gatsby/React/JS</li>

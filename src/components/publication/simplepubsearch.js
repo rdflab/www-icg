@@ -19,7 +19,7 @@ const SimplePubSearch = ({
   const [filteredPublications, setFilteredPublications] = useState([])
   const [page, setPage] = useState(1)
   const [recordsPerPage, setRecordsPerPage] = useState(20)
-  const [filterYears, setFilterYears] = useState(new Set())
+  const [filterYears, setFilterYears] = useState([])
 
   const handleInputChange = e => {
     const q = e.target.value
@@ -52,9 +52,9 @@ const SimplePubSearch = ({
 
   let yearFilteredPublications
 
-  if (filterYears.size > 0) {
+  if (filterYears.length > 0 && filterYears[0] !== "All") {
     yearFilteredPublications = publications.filter(publication => {
-      return filterYears.has(publication.year)
+      return filterYears.includes(publication.year)
     })
   } else {
     yearFilteredPublications = publications

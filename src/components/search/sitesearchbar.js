@@ -38,7 +38,7 @@ const SiteSearchBar = ({
           className="bg-transparent w-full"
         />
       </div>
-      <div class="flex items-center">
+      <div className="flex items-center">
         <FaSearch
           className={`${
             hover ? "text-blue-400" : "text-gray-500"
