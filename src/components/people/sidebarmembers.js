@@ -4,7 +4,7 @@ import Collapsible from "../collapsible"
 import { personUrl } from "../../utils/urls"
 import { personName } from "../../utils/personname"
 
-const SideBarMembers = ({ people, maxRecords }) => {
+const SideBarMembers = ({ people, title, maxRecords }) => {
   const ret = []
 
   for (let i = 0; i < people.length; ++i) {
@@ -25,7 +25,7 @@ const SideBarMembers = ({ people, maxRecords }) => {
   }
 
   return (
-    <Collapsible title="Lab Members" height="auto">
+    <Collapsible title={title} height="auto">
       {/* <div className="bottom-spacing-1">
       <SideBarLink
         to={`/research-areas/labs/${group.frontmatter.id}/members`}
@@ -41,6 +41,7 @@ const SideBarMembers = ({ people, maxRecords }) => {
 }
 
 SideBarMembers.defaultProps = {
+  title: "Lab Members",
   maxRecords: -1,
 }
 

@@ -214,11 +214,11 @@ const PersonTemplate = ({ pageContext, data }) => {
               <SideBarMembers
                 group={groups[0]}
                 people={labPeople}
-                maxRecords={10}
+                maxRecords={5}
               />
 
               <div className="mt-2">
-                <Button to={labMembersUrl(groups[0])}>More</Button>
+                <BlueLink to={labMembersUrl(groups[0])}>More</BlueLink>
               </div>
             </div>
           </div>

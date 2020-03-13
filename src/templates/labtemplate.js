@@ -21,6 +21,7 @@ import FlatCard from "../components/flatcard"
 import SideBarMembers from "../components/people/sidebarmembers"
 import { personName } from "../utils/personname"
 import { labMembersUrl } from "../utils/urls"
+import BlueLink from "../components/bluelink"
 
 export const labName = faculty => {
   return `The ${personName(faculty)} Lab`
@@ -94,9 +95,17 @@ const LabTemplate = ({ pageContext }) => {
           )}
 
           <div className="mt-8">
-            <SideBarMembers group={group} people={labPeople} maxRecords={10} />
+            <SideBarMembers
+              group={group}
+              people={group.leaders}
+              title="Faculty"
+            />
+          </div>
+
+          <div className="mt-8">
+            <SideBarMembers group={group} people={labPeople} maxRecords={5} />
             <div className="mt-2">
-              <Button to={labMembersUrl(group)}>More</Button>
+              <BlueLink to={labMembersUrl(group)}>More</BlueLink>
             </div>
           </div>
         </SideColumn>

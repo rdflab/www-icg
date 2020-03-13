@@ -25,7 +25,7 @@ const HomeSection = ({ title, subTitle, text, links, alt }) => {
       <p>{text}</p>
 
       {links.map((link, index) => (
-        <div className="mt-2">
+        <div className="mt-2" key={index}>
           {alt ? (
             <WhiteIndexLink to={link.url}>{link.text}</WhiteIndexLink>
           ) : (
