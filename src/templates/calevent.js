@@ -2,7 +2,7 @@ import React from "react"
 import CrumbLayout from "../components/crumblayout"
 import CalEventLocation from "../components/calendar/caleventlocation"
 import styled from "styled-components"
-import Columns from "../components/columns"
+import Column from "../components/column"
 import MainColumn from "../components/maincolumn"
 import SideColumn from "../components/sidecolumn"
 
@@ -31,7 +31,7 @@ const CalEventTemplate = props => {
       ]}
       title={title}
     >
-      <Columns>
+      <Column>
         <MainColumn>
           <div dangerouslySetInnerHTML={{ __html: calEvent.html }} />
 
@@ -40,7 +40,7 @@ const CalEventTemplate = props => {
           </LocDiv>
         </MainColumn>
         <SideColumn></SideColumn>
-      </Columns>
+      </Column>
     </CrumbLayout>
   )
 }

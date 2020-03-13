@@ -7,6 +7,7 @@ import SearchSummary from "../components/search/searchsummary"
 import YearSelector from "../components/filter/yearselector"
 import HideSmall from "../components/hidesmall"
 import { searchTree } from "../components/search/searchtree"
+import Column from "../components/column"
 
 const axios = require("axios")
 
@@ -124,18 +125,21 @@ const PublicationsTemplate = ({ pageContext }) => {
       }
     >
       <HideSmall>
-        <div className="row items-center justify-between">
-          <div className="w-1/3">
-            {showSearch && (
+        <Column
+          isVCentered={true}
+          className={`${showSearch ? "justify-between" : "justify-center"}`}
+        >
+          {showSearch && (
+            <div className="w-1/3">
               <SearchBar
                 handleInputChange={handleInputChange}
                 placeholder="Type to find publications..."
                 text={query}
               />
-            )}
-          </div>
+            </div>
+          )}
           <div>{showYears && <YearSelector onClick={handleClick} />}</div>
-        </div>
+        </Column>
       </HideSmall>
 
       <PubSearchResults

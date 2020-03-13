@@ -6,10 +6,10 @@
  */
 
 import React from "react"
-import Columns from "../columns"
+import Column from "../column"
 import MainColumn from "../maincolumn"
 import ContactInfo from "./contactinfo"
-import Column from "../column"
+
 import TextLink from "../textlink"
 import Img from "gatsby-image"
 import Card from "../card"
@@ -19,8 +19,8 @@ import BlueLink from "../bluelink"
 const Person = ({ person, groupMap, showLabLink, image }) => {
   return (
     <div className="my-4">
-      <Columns>
-        <Column w="1/12" className="mr-4">
+      <Column isCentered={true}>
+        <Column w="1" className="mr-4">
           {image !== null && (
             <Img
               fluid={image.childImageSharp.fluid}
@@ -28,7 +28,7 @@ const Person = ({ person, groupMap, showLabLink, image }) => {
             />
           )}
         </Column>
-        <MainColumn w="5/12">
+        <MainColumn w="4">
           <div>
             <h3 className="mt-2">
               <BlueLink
@@ -37,15 +37,16 @@ const Person = ({ person, groupMap, showLabLink, image }) => {
                 {person.frontmatter.firstName} {person.frontmatter.lastName}
               </BlueLink>
             </h3>
+
+            <div className="gray">{person.frontmatter.titles[0]}</div>
           </div>
-          <div className="gray">{person.frontmatter.titles[0]}</div>
         </MainColumn>
-        <Column w="4/12">
-          <Card>
+        <Column w="4">
+          <FlatCard>
             <ContactInfo person={person} />
-          </Card>
+          </FlatCard>
         </Column>
-      </Columns>
+      </Column>
     </div>
   )
 }

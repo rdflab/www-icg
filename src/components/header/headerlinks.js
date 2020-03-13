@@ -20,7 +20,7 @@ const HeaderLinks = () => {
   const links = flattenEdges(data.links.edges)
 
   return (
-    <>
+    <div>
       {links.map((link, index) => {
         return (
           <HeaderLink
@@ -32,7 +32,7 @@ const HeaderLinks = () => {
           </HeaderLink>
         )
       })}
-    </>
+    </div>
   )
 }
 

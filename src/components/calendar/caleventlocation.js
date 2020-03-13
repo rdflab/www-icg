@@ -1,8 +1,7 @@
 import React from "react"
-import Columns from "../columns"
 import Column from "../column"
+
 import { FaRegClock, FaMapMarkerAlt } from "react-icons/fa"
-import Row from "../row"
 
 const CalEventLocation = ({ event, showDate, isMobile }) => {
   const st = event.start.toLocaleString("en-US", {
@@ -30,8 +29,8 @@ const CalEventLocation = ({ event, showDate, isMobile }) => {
 
   return (
     <>
-      <div className="sm:hidden gray">
-        <Row className="items-center">
+      <div className="md:hidden gray">
+        <Column isVCentered={true} isMobile={isMobile}>
           <div className="mr-4">
             <FaRegClock size={28} />
           </div>
@@ -41,33 +40,33 @@ const CalEventLocation = ({ event, showDate, isMobile }) => {
               {st} - {et}
             </div>
           </div>
-        </Row>
-        <Row className="items-center mt-4">
+        </Column>
+        <Column isVCentered={true} className="mt-4" isMobile={isMobile}>
           <div className="mr-4">
             <FaMapMarkerAlt size={28} />
           </div>
           <div>{event.frontmatter.location}</div>
-        </Row>
+        </Column>
       </div>
 
-      <div className="hidden sm:block">
-        <Columns className="gray items-center">
-          <Column w="1/12">
+      <div className="hidden md:block">
+        <Column className="gray items-center">
+          <Column w="1">
             <FaRegClock size={28} />
           </Column>
-          <Column w="5/12">
+          <Column w="5">
             {showDate && <div>{date}</div>}
             <div>
               {st} - {et}
             </div>
           </Column>
-          <Column w="1/12">
+          <Column w="1">
             <FaMapMarkerAlt size={28} />
           </Column>
-          <Column isMobile={true} w="5/12">
+          <Column isMobile={true} w="5">
             {event.frontmatter.location}
           </Column>
-        </Columns>
+        </Column>
       </div>
     </>
   )

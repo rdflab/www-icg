@@ -5,7 +5,7 @@ import Collapsible from "../collapsible"
 import toPeopleTypeMap from "../../utils/peopletypemap"
 import { PEOPLE_TYPES } from "../../constants"
 //import SideBar from "../sidebar/sidebar"
-import Columns from "../columns"
+import Column from "../column"
 import SmallColumn from "../smallcolumn"
 import MainColumn from "../maincolumn"
 import SideColumn from "../sidecolumn"
@@ -100,7 +100,7 @@ const PeopleSearch = ({ groupMap, allPeople, showLabLink, imageMap }) => {
   }
 
   return (
-    <Columns>
+    <Column>
       <SmallColumn>
         <SearchBar
           handleInputChange={handleInputChange}
@@ -130,7 +130,7 @@ const PeopleSearch = ({ groupMap, allPeople, showLabLink, imageMap }) => {
         </Collapsible>
         {/* </SideBar> */}
       </SideColumn>
-    </Columns>
+    </Column>
   )
 }
 

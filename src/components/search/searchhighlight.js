@@ -1,5 +1,16 @@
 import React from "react"
 
+const Span = ({ children, key, className }) => (
+  <span key={key} className={`whitespace-pre-wrap ${className}`}>
+    {children}
+  </span>
+)
+
+Span.defaultProps = {
+  className: "",
+  key: "",
+}
+
 const SearchHighlight = ({ text, words, highlightClassName }) => {
   //const [blocks, setBlocks] = useState([])
 
@@ -45,9 +56,7 @@ const SearchHighlight = ({ text, words, highlightClassName }) => {
     blocks.push([s, e])
   }
 
-  //setBlocks(ret)
-
-  // }, [])
+  console.log(blocks)
 
   const ret = []
   s = 0
@@ -56,11 +65,11 @@ const SearchHighlight = ({ text, words, highlightClassName }) => {
   let c = 0
 
   for (let block of blocks) {
-    ret.push(<span key={`span-${c++}`}>{text.substring(s, block[0])}</span>)
+    ret.push(<Span key={`span-${c++}`}>{text.substring(s, block[0])}</Span>)
     ret.push(
-      <span key={`span-${c++}`} className={highlightClassName}>
+      <Span key={`span-${c++}`} className={highlightClassName}>
         {text.substring(block[0], block[1])}
-      </span>
+      </Span>
     )
 
     s = block[1]
@@ -68,7 +77,8 @@ const SearchHighlight = ({ text, words, highlightClassName }) => {
 
   // Add on substring at end
   if (s < text.length) {
-    ret.push(<span key={`span-${c++}`}>{text.substring(s, text.length)}</span>)
+    console.log("hmm:", text.substring(s))
+    ret.push(<Span key={`span-${c++}`}>{text.substring(s)}</Span>)
   }
 
   return <>{ret}</>

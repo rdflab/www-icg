@@ -1,8 +1,8 @@
 import React from "react"
 import CrumbLayout from "../components/crumblayout"
 import Card from "../components/card"
-import Columns from "../components/columns"
 import Column from "../components/column"
+
 import MainColumn from "../components/maincolumn"
 
 const Contact = () => (
@@ -13,7 +13,7 @@ const Contact = () => (
     ]}
     title="Contact Us"
   >
-    <Columns>
+    <Column>
       <MainColumn w="1/2" className="text-center justify-center mb-8">
         {/* <Card> */}
         {/* <iframe
@@ -57,7 +57,7 @@ const Contact = () => (
           <div>USA</div>
         </Card>
       </Column>
-    </Columns>
+    </Column>
   </CrumbLayout>
 )
 

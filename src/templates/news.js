@@ -5,6 +5,7 @@ import YearSelector from "../components/filter/yearselector"
 import HideSmall from "../components/hidesmall"
 import NewsSearchResults from "../components/news/newssearchresults"
 import SearchSummary from "../components/search/searchsummary"
+import Column from "../components/column"
 
 const EMPTY_QUERY = ""
 
@@ -78,7 +79,12 @@ const NewsTemplate = ({ pageContext }) => {
       headerComponent={<SiteSearch />}
     >
       <HideSmall>
-        <YearSelector onClick={handleClick} />
+        <Column isVCentered={true} className="justify-between">
+          <div></div>
+          <div>
+            <YearSelector onClick={handleClick} />
+          </div>
+        </Column>
       </HideSmall>
 
       <NewsSearchResults

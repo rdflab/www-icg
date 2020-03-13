@@ -1,7 +1,7 @@
 import React from "react"
 import CrumbLayout from "../components/crumblayout"
 
-import Columns from "../components/columns"
+import Column from "../components/column"
 //import SideBar from "../components/sidebar/sidebar"
 import SideBarMembers from "../components/people/sidebarmembers"
 import SideColumn from "../components/sidecolumn"
@@ -26,7 +26,7 @@ const LabOverviewTemplate = props => {
 
   return (
     <CrumbLayout crumbs={crumbs} title={`${title} Overview`}>
-      <Columns>
+      <Column>
         <MainColumn>
           <HTMLDiv html={labHtml} />
         </MainColumn>
@@ -35,7 +35,7 @@ const LabOverviewTemplate = props => {
           <SideBarMembers group={group} people={labPeople} />
           {/* </SideBar> */}
         </SideColumn>
-      </Columns>
+      </Column>
     </CrumbLayout>
   )
 }

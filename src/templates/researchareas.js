@@ -8,6 +8,18 @@ import Container from "../components/container"
 import Title from "../components/title"
 import Card from "../components/card"
 
+const FlatCard = ({ children, className }) => (
+  <div
+    className={`bg-white border border-solid border-gray-300 rounded-md overflow-hidden ${className}`}
+  >
+    {children}
+  </div>
+)
+
+FlatCard.defaultProps = {
+  className: "",
+}
+
 const ResearchAreasTemplate = ({ pageContext }) => {
   const { allResearchAreas, searchData } = pageContext
 
@@ -29,11 +41,14 @@ const ResearchAreasTemplate = ({ pageContext }) => {
       {Object.keys(raMap)
         .sort()
         .map((name, index) => (
-          <Card className="items-center justify-center text-center p-16 m-16">
+          <FlatCard
+            key={index}
+            className="items-center justify-center text-center m-16 p-8"
+          >
             <h2>
               <BlueLink to={`/research-areas/${raMap[name]}`}>{name}</BlueLink>
             </h2>
-          </Card>
+          </FlatCard>
         ))}
     </CrumbLayout>
   )

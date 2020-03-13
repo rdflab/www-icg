@@ -7,6 +7,7 @@
 
 import React, { useState } from "react"
 import SelectItem from "./selectitem"
+import Column from "../column"
 
 const AllType = ({ text, onClick, selected, children, className }) => (
   <SelectItem
@@ -50,28 +51,29 @@ const YearSelector = ({ maxYears, onClick }) => {
   }
 
   return (
-    <div className="row justify-center my-4">
-      <div className="row items-center rounded-md border border-solid border-gray-400 cursor-pointer overflow-hidden">
-        <AllType
-          onClick={_handleClick}
-          text="All"
-          selected={selectedTypes[0] === "All"}
-        >
-          All
-        </AllType>
+    <Column
+      isVCentered={true}
+      className="rounded-md border border-solid border-gray-400 cursor-pointer overflow-hidden"
+    >
+      <AllType
+        onClick={_handleClick}
+        text="All"
+        selected={selectedTypes[0] === "All"}
+      >
+        All
+      </AllType>
 
-        {years.map((year, index) => (
-          <SelectType
-            key={index}
-            onClick={_handleClick}
-            text={year}
-            selected={selectedTypes[0] === year}
-          >
-            {year}
-          </SelectType>
-        ))}
-      </div>
-    </div>
+      {years.map((year, index) => (
+        <SelectType
+          key={index}
+          onClick={_handleClick}
+          text={year}
+          selected={selectedTypes[0] === year}
+        >
+          {year}
+        </SelectType>
+      ))}
+    </Column>
   )
 }
 

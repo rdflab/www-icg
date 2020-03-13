@@ -6,7 +6,7 @@ import YearsFilter from "./yearsfilter"
 import Collapsible from "../collapsible"
 import SearchSummary from "../search/searchsummary"
 //import SideBar from "../sidebar/sidebar"
-import Columns from "../columns"
+import Column from "../column"
 import SideColumn from "../sidecolumn"
 import MainColumn from "../maincolumn"
 import SmallColumn from "../smallcolumn"
@@ -67,7 +67,7 @@ const PubSearch = ({ groupMap, peopleMap, allPublications, showLabLink }) => {
   )
 
   return (
-    <Columns>
+    <Column>
       <SmallColumn>
         <SearchBar handleInputChange={handleInputChange} />
       </SmallColumn>
@@ -90,7 +90,7 @@ const PubSearch = ({ groupMap, peopleMap, allPublications, showLabLink }) => {
         </Collapsible>
         {/* </SideBar> */}
       </SideColumn>
-    </Columns>
+    </Column>
   )
 }
 

@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import SearchBar from "../search/searchbar"
-import Columns from "../columns"
 import Column from "../column"
+
 //import SideBar from "./sidebar/sidebar"
 import SmallColumn from "../smallcolumn"
 import SideColumn from "../sidecolumn"
@@ -44,7 +44,7 @@ const LabSearch = ({ allGroups, peopleMap }) => {
   let pagedGroups = groups.slice(offset, offset + recordsPerPage)
 
   return (
-    <Columns>
+    <Column>
       <SmallColumn>
         <SearchBar
           handleInputChange={handleInputChange}
@@ -69,7 +69,7 @@ const LabSearch = ({ allGroups, peopleMap }) => {
         />
         {/* </SideBar> */}
       </SideColumn>
-    </Columns>
+    </Column>
   )
 }
 

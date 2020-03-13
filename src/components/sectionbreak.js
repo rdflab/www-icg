@@ -2,7 +2,7 @@ import React from "react"
 import MainSectionBreak from "./mainsectionbreak"
 import AltSectionBreak from "./altsectionbreak"
 
-const SectionBreak = ({ title, children, mode, className }) => {
+const SectionBreak = ({ title, children, mode, align, className }) => {
   switch (mode) {
     case "alt":
       return (
@@ -12,7 +12,7 @@ const SectionBreak = ({ title, children, mode, className }) => {
       )
     default:
       return (
-        <MainSectionBreak title={title} className={className}>
+        <MainSectionBreak title={title} className={className} align={align}>
           {children}
         </MainSectionBreak>
       )
@@ -21,6 +21,7 @@ const SectionBreak = ({ title, children, mode, className }) => {
 
 SectionBreak.defaultProps = {
   mode: "main",
+  align: "text-left",
   title: "",
   className: "",
 }

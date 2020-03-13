@@ -1,18 +1,37 @@
 import React from "react"
 
 // <div
-//   className={`column is-marginless is-paddingless is-${w} ${className}`}
-//   style={style}
+//   className={`columns is-marginless is-paddingless ${
+//     isVCentered ? "is-vcentered" : ""
+//   } ${className}`}
 //   onClick={onClick}
 // >
 
-const Column = ({ children, w, isMobile, className, style, onClick }) => {
-  let baseClass
+const Column = ({
+  children,
+  w,
+  isMobile,
+  isCentered,
+  isVCentered,
+  onClick,
+  className,
+}) => {
+  let baseClass = "flex"
 
   if (isMobile) {
-    baseClass = w !== "" ? `w-${w}` : ""
+    baseClass = `${baseClass} flex-row ${w !== "" ? `w-${w}/12` : "w-full"}`
   } else {
-    baseClass = `w-full ${w !== "" ? `sm:w-${w}` : ""}`
+    baseClass = `${baseClass} flex-col md:flex-row ${
+      w !== "" ? `md:w-${w}/12` : "w-full"
+    }`
+  }
+
+  if (isCentered) {
+    baseClass = `${baseClass} justify-center`
+  }
+
+  if (isVCentered) {
+    baseClass = `${baseClass} items-center`
   }
 
   return (
@@ -24,9 +43,10 @@ const Column = ({ children, w, isMobile, className, style, onClick }) => {
 
 Column.defaultProps = {
   w: "",
-  isMobile: false,
   className: "",
-  style: {},
+  isMobile: false,
+  isCentered: false,
+  isVCentered: false,
 }
 
 export default Column

@@ -8,12 +8,12 @@ const CalEventDetails = ({ event, isMobile }) => {
   }-${event.frontmatter.title.toLowerCase().replace(" ", "-")}`
 
   return (
-    <>
+    <div>
       <h2>
         <BlueLink to={path}>{event.frontmatter.title}</BlueLink>
       </h2>
       <CalEventLocation event={event} isMobile={isMobile} />
-    </>
+    </div>
   )
 }
 

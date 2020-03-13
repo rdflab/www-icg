@@ -2,7 +2,7 @@ import React from "react"
 import CrumbLayout from "../components/crumblayout"
 import SideBarNews from "../components/news/sidebarnews"
 import NewsItemDate from "../components/news/newsitemdate"
-import Columns from "../components/columns"
+import Column from "../components/column"
 import MainColumn from "../components/maincolumn"
 import SideColumn from "../components/sidecolumn"
 import NewsContent from "../components/news/newscontent"
@@ -21,7 +21,7 @@ const NewsItemTemplate = props => {
       ]}
       title={title}
     >
-      <Columns>
+      <Column>
         <MainColumn>
           <NewsItemDate>{item.frontmatter.date}</NewsItemDate>
 
@@ -30,7 +30,7 @@ const NewsItemTemplate = props => {
         <SideColumn>
           <SideBarNews allNews={allNews} />
         </SideColumn>
-      </Columns>
+      </Column>
     </CrumbLayout>
   )
 }

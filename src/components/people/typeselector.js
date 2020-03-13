@@ -42,38 +42,36 @@ const TypeSelector = ({ onClick }) => {
   }
 
   return (
-    <div className="row justify-center">
-      <div className="row items-center rounded-md border border-solid border-gray-400 cursor-pointer overflow-hidden">
-        <AllType
-          onClick={_handleClick}
-          text="All"
-          selected={selectedTypes[0] === "All"}
-        >
-          All
-        </AllType>
-        <SelectType
-          onClick={_handleClick}
-          text="Faculty"
-          selected={selectedTypes[0] === "Faculty"}
-        >
-          Faculty
-        </SelectType>
-        <SelectType
-          onClick={_handleClick}
-          text="Research Scientist"
-          selected={selectedTypes[0] === "Research Scientist"}
-        >
-          Research Scientist
-        </SelectType>
+    <div className="row items-center rounded-md border border-solid border-gray-400 cursor-pointer overflow-hidden">
+      <AllType
+        onClick={_handleClick}
+        text="All"
+        selected={selectedTypes[0] === "All"}
+      >
+        All
+      </AllType>
+      <SelectType
+        onClick={_handleClick}
+        text="Faculty"
+        selected={selectedTypes[0] === "Faculty"}
+      >
+        Faculty
+      </SelectType>
+      <SelectType
+        onClick={_handleClick}
+        text="Research Scientist"
+        selected={selectedTypes[0] === "Research Scientist"}
+      >
+        Research Scientist
+      </SelectType>
 
-        <SelectType
-          onClick={_handleClick}
-          text="Staff"
-          selected={selectedTypes[0] === "Staff"}
-        >
-          Staff
-        </SelectType>
-      </div>
+      <SelectType
+        onClick={_handleClick}
+        text="Staff"
+        selected={selectedTypes[0] === "Staff"}
+      >
+        Staff
+      </SelectType>
     </div>
   )
 }

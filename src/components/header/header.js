@@ -6,43 +6,43 @@ import ColumbiaICGImage from "../images/columbiaicgimage"
 import ColumbiaICGWhiteImage from "../images/columbiaicgwhiteimage"
 import SlideMenu from "../slidemenu/slidemenu"
 import Container from "../container"
-import Row from "../row"
 import HideSmall from "../hidesmall"
+import Column from "../column"
 
 const Header = ({ title, content, menuContent }) => (
   <>
-    <nav
-      aria-label="Navigation"
-      className="row text-white p-3 bg-blue-columbia-80 sm:hidden"
-    >
-      <SlideMenu title={title} />
-      <Link to="/">
-        <ColumbiaICGWhiteImage style={{ width: `300px` }} />
-      </Link>
-    </nav>
+    <HideSmall show={true}>
+      <nav
+        aria-label="Navigation"
+        className="row text-white p-3 bg-blue-columbia-80"
+      >
+        <SlideMenu title={title} />
+        <Link to="/">
+          <ColumbiaICGWhiteImage style={{ width: `300px` }} />
+        </Link>
+      </nav>
+    </HideSmall>
 
     <HideSmall>
       <div className="p-3">
         <Container>
-          <Row className="justify-between items-center">
+          <Column isVCentered={true} className="justify-between">
             <Link to="/" className="mr-8">
               <ColumbiaICGImage style={{ width: `400px` }} />
             </Link>
 
             {content !== null && content}
-          </Row>
+          </Column>
         </Container>
       </div>
 
       <nav aria-label="Navigation" className="bg-blue-columbia-80 py-2">
         <Container>
-          <Row className="justify-between items-center">
-            <Row className="items-center">
-              <HeaderLinks />
-            </Row>
+          <Column isVCentered={true} className="justify-between">
+            <HeaderLinks />
 
             {menuContent !== null && menuContent}
-          </Row>
+          </Column>
         </Container>
       </nav>
     </HideSmall>

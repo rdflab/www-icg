@@ -2,14 +2,14 @@ import React from "react"
 import HICCCImage from "../hicccimage"
 import FooterLinks from "./footerlinks"
 import Container from "../container"
+
 import Column from "../column"
-import Columns from "../columns"
 
 const Footer = ({ siteTitle }) => {
   return (
     <footer className="text-white text-sm h-48 p-8 mt-8 bg-blue-columbia-80">
       <Container>
-        <Columns isVCentered={true}>
+        <Column isVCentered={true}>
           <Column w="1/3" className="pb-4">
             <FooterLinks />
           </Column>
@@ -26,7 +26,7 @@ const Footer = ({ siteTitle }) => {
               <HICCCImage />
             </a>
           </Column>
-        </Columns>
+        </Column>
       </Container>
     </footer>
   )

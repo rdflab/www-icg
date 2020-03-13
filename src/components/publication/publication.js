@@ -7,8 +7,8 @@
 
 import React from "react"
 import BlueLink from "../bluelink"
-import Columns from "../columns"
 import Column from "../column"
+
 import { FaExternalLinkAlt } from "react-icons/fa"
 import BlueLinkExt from "../bluelinkext"
 import PubMedLink from "./pubmedlink"
@@ -56,7 +56,7 @@ const Publication = ({ publication, showLabLink, maxAuthors }) => {
       <h3>{publication.title}</h3>
       <div className="font-light">{authors}</div>
 
-      <Columns>
+      <Column>
         <Column w="1/2">
           {publication.journal !== "" && <>{publication.journal}.</>}
           {publication.year !== -1 && <> {publication.year}.</>}
@@ -74,7 +74,7 @@ const Publication = ({ publication, showLabLink, maxAuthors }) => {
             </div>
           )}
         </Column>
-      </Columns>
+      </Column>
 
       {publication.pubmed !== "" && (
         <div className="row blue items-center">

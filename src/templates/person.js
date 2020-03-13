@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import CrumbLayout from "../components/crumblayout"
-import Columns from "../components/columns"
+import Column from "../components/column"
 import SideBar from "../components/sidebar/sidebar"
 import SideBarMembers from "../components/people/sidebarmembers"
 import SmallColumn from "../components/smallcolumn"
@@ -13,12 +13,11 @@ import ContactInfo from "../components/people/contactinfo"
 import HTMLDiv from "../components/htmldiv"
 import SimplePubSearch from "../components/publication/simplepubsearch"
 import SiteSearch from "../components/search/sitesearch"
-import Column from "../components/column"
+
 import Collapsible from "../components/collapsible"
 import SectionBreak from "../components/sectionbreak"
 import Card from "../components/card"
 import FlatCard from "../components/flatcard"
-import HideSmall from "../components/hidesmall"
 import Title from "../components/title"
 
 const interests = person => {
@@ -85,12 +84,12 @@ const Items = ({ title, items }) => (
       <div>
         {/* <h2>{title}</h2> */}
         {items.map((item, index) => (
-          <Columns key={index} className="mb-4">
-            <Column w="2/12" className="text-gray-600 text-right mr-4">
+          <Column key={index} className="mb-4">
+            <Column w="2" className="text-gray-600 text-right mr-4">
               {item.year !== "n/a" && item.year}
             </Column>
-            <Column w="10/12">{item.title}</Column>
-          </Columns>
+            <Column w="10">{item.title}</Column>
+          </Column>
         ))}
       </div>
     </Collapsible>
@@ -128,7 +127,7 @@ const PersonTemplate = ({ pageContext, data }) => {
       ]}
       headerComponent={<SiteSearch />}
     >
-      <Columns>
+      <Column>
         <SmallColumn>
           <h1 className="text-blue-columbia mb-4">
             {person.frontmatter.titles[0]}
@@ -137,53 +136,55 @@ const PersonTemplate = ({ pageContext, data }) => {
           <ContactInfo person={person} />
         </SmallColumn>
         <MainColumn>
-          <Title>{title}</Title>
-          {data.file !== null && (
-            <div className="mb-8">
-              <Img
-                fluid={data.file.childImageSharp.fluid}
-                style={{ width: "20rem" }}
-                className="shadow-md rounded-md mx-auto sm:mx-0"
-              />
-            </div>
-          )}
-
-          <HTMLDiv html={person.html} />
-
-          {cv !== null && cv.education.length > 0 && <Education cv={cv} />}
-
-          {cv !== null && cv.training.length > 0 && <Training cv={cv} />}
-
-          {cv !== null && cv.experience.length > 0 && <Experience cv={cv} />}
-
-          {cv !== null && cv.awards.length > 0 && <Awards cv={cv} />}
-
-          {publications.length > 0 && (
-            <SectionBreak>
-              <Collapsible
-                title="Publications"
-                height="auto"
-                headerClassName="text-blue-700"
-              >
-                <SimplePubSearch
-                  allPublications={publications}
-                  showLabLink={false}
-                  sectionMode="alt"
+          <div>
+            <Title>{title}</Title>
+            {data.file !== null && (
+              <div className="mb-8">
+                <Img
+                  fluid={data.file.childImageSharp.fluid}
+                  style={{ width: "20rem" }}
+                  className="shadow-md rounded-md mx-auto sm:mx-0"
                 />
-              </Collapsible>
-            </SectionBreak>
-          )}
+              </div>
+            )}
+
+            <HTMLDiv html={person.html} />
+
+            {cv !== null && cv.education.length > 0 && <Education cv={cv} />}
+
+            {cv !== null && cv.training.length > 0 && <Training cv={cv} />}
+
+            {cv !== null && cv.experience.length > 0 && <Experience cv={cv} />}
+
+            {cv !== null && cv.awards.length > 0 && <Awards cv={cv} />}
+
+            {publications.length > 0 && (
+              <SectionBreak>
+                <Collapsible
+                  title="Publications"
+                  height="auto"
+                  headerClassName="text-blue-700"
+                >
+                  <SimplePubSearch
+                    allPublications={publications}
+                    showLabLink={false}
+                    sectionMode="alt"
+                  />
+                </Collapsible>
+              </SectionBreak>
+            )}
+          </div>
         </MainColumn>
         <SideColumn>
           {/* <SideBar> */}
 
-          <Card>
+          <FlatCard>
             <h1 className="text-blue-columbia mb-4">
               {person.frontmatter.titles[0]}
             </h1>
 
             <ContactInfo person={person} />
-          </Card>
+          </FlatCard>
 
           <div className="mx-2">
             {person.frontmatter.researchAreas.length > 0 && (
@@ -198,7 +199,7 @@ const PersonTemplate = ({ pageContext, data }) => {
             </div>
           </div>
         </SideColumn>
-      </Columns>
+      </Column>
     </CrumbLayout>
   )
 }

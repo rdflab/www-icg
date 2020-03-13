@@ -2,8 +2,8 @@ import React from "react"
 import Layout from "../components/layout"
 import NYCBgSection from "../components/images/nycbg"
 import Container from "../components/container"
-import Columns from "../components/columns"
 import Column from "../components/column"
+
 import BlueIndexLink from "../components/blueindexlink"
 import WhiteIndexLink from "../components/whiteindexlink"
 import MicroscopeSection from "../components/images/microscope"
@@ -49,7 +49,7 @@ const IndexPage = () => (
   >
     <TestTubesSection>
       <Container className="h-full py-8 sm:py-16">
-        <Columns className="h-full p-8 sm:p-16">
+        <Column className="h-full p-8 sm:p-16">
           <Column
             w="7"
             className="bg-blue-columbia opacity-75 float-left text-white p-8"
@@ -66,7 +66,7 @@ const IndexPage = () => (
 
             <WhiteIndexLink to="/about">More</WhiteIndexLink>
           </Column>
-        </Columns>
+        </Column>
       </Container>
     </TestTubesSection>
 

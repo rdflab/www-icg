@@ -2,11 +2,10 @@ import React, { useState } from "react"
 import SearchBar from "../search/searchbar"
 import Collapsible from "../collapsible"
 //import SideBar from "../sidebar/sidebar"
-import Columns from "../columns"
+import Column from "../column"
 import DayPicker, { DateUtils } from "react-day-picker"
 import "../../../node_modules/react-day-picker/lib/style.css"
 import "./calendar.scss"
-import SmallColumn from "../smallcolumn"
 import MainColumn from "../maincolumn"
 import SideColumn from "../sidecolumn"
 import CalSearchResults from "./calsearchresults"
@@ -71,7 +70,7 @@ const CalSearch = ({ allCalEvents }) => {
   let pagedEvents = dayFilteredEvents.slice(offset, offset + recordsPerPage)
 
   return (
-    <Columns>
+    <Column>
       {/* <SmallColumn>
         <SearchBar
           handleInputChange={handleInputChange}
@@ -103,7 +102,7 @@ const CalSearch = ({ allCalEvents }) => {
         {/* </Collapsible> */}
         {/* </SideBar> */}
       </SideColumn>
-    </Columns>
+    </Column>
   )
 }
 

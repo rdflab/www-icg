@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import SiteSearchBar from "./sitesearchbar"
-import Columns from "../columns"
 import Column from "../column"
 import BlueLink from "../bluelink"
 import HideSmall from "../hidesmall"
@@ -26,14 +25,14 @@ export const SiteLink = ({ to, link }) => {
 
 const SiteSearchResult = ({ text, to, link }) => {
   return (
-    <Columns className="my-2">
-      <Column w="7/12" className="mr-4">
-        {text}
+    <Column className="my-2">
+      <Column w="7" className="mr-4">
+        <div>{text}</div>
       </Column>
-      <Column w="5/12">
+      <Column w="5">
         <SiteLink to={to} link={link} />
       </Column>
-    </Columns>
+    </Column>
   )
 }
 

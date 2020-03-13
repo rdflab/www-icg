@@ -7,7 +7,7 @@ import Collapsible from "../collapsible"
 import NewsItems from "./newsitems"
 import SearchSummary from "../search/searchsummary"
 //import SideBar from "../sidebar/sidebar"
-import Columns from "../columns"
+import Column from "../column"
 import SmallColumn from "../smallcolumn"
 import MainColumn from "../maincolumn"
 import SideColumn from "../sidecolumn"
@@ -65,7 +65,7 @@ const NewsSearch = ({ allNews }) => {
   let pagedNews = yearFilteredNews.slice(offset, offset + recordsPerPage)
 
   return (
-    <Columns>
+    <Column>
       <SmallColumn>
         <SearchBar
           handleInputChange={handleInputChange}
@@ -95,7 +95,7 @@ const NewsSearch = ({ allNews }) => {
         </Collapsible>
         {/* </SideBar> */}
       </SideColumn>
-    </Columns>
+    </Column>
   )
 }
 

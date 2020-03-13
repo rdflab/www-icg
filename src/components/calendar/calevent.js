@@ -1,29 +1,29 @@
 import React from "react"
-import Columns from "../columns"
 import Column from "../column"
+
 import CalEventDate from "./caleventdate"
 import CalEventDetails from "./caleventdetails"
 
 const CalEvent = ({ event }) => {
   return (
-    <div className="border-b border-solid gray-border mb-4 pb-4">
-      <div className="sm:hidden">
-        <Columns isMobile={true}>
-          <Column w="3/12" isMobile={true}>
+    <div className="w-full border-b border-solid border-gray-300 mb-4 pb-4">
+      <div className="md:hidden">
+        <Column isMobile={true}>
+          <Column w="3" isMobile={true}>
             <CalEventDate event={event} />
           </Column>
-        </Columns>
+        </Column>
         <CalEventDetails event={event} isMobile={true} />
       </div>
-      <div className="hidden sm:block">
-        <Columns>
-          <Column w="2/12" className="mr-2">
+      <div className="hidden md:block">
+        <Column>
+          <Column w="2" className="mr-2">
             <CalEventDate event={event} />
           </Column>
-          <Column w="10/12">
+          <Column w="10">
             <CalEventDetails event={event} />
           </Column>
-        </Columns>
+        </Column>
       </div>
     </div>
   )

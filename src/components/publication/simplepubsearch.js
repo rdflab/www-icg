@@ -4,6 +4,7 @@ import Pagination from "../pagination"
 import SearchBar from "../search/searchbar"
 import HideSmall from "../hidesmall"
 import YearSelector from "../filter/yearselector"
+import Column from "../column"
 
 const EMPTY_QUERY = ""
 
@@ -78,7 +79,11 @@ const SimplePubSearch = ({
 
       {showYears && (
         <HideSmall>
-          <YearSelector onClick={handleClick} />
+          <Column isVCentered={true} isCentered={true}>
+            <div>
+              <YearSelector onClick={handleClick} />
+            </div>
+          </Column>
         </HideSmall>
       )}
 

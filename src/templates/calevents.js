@@ -4,8 +4,7 @@ import SearchBar from "../components/search/searchbar"
 import SiteSearch from "../components/search/sitesearch"
 import MainColumn from "../components/maincolumn"
 import SideColumn from "../components/sidecolumn"
-import Columns from "../components/columns"
-import SearchSummary from "../components/search/searchsummary"
+import Column from "../components/column"
 import CalSearchResults from "../components/calendar/calsearchresults"
 import DayPicker, { DateUtils } from "react-day-picker"
 import "../../node_modules/react-day-picker/lib/style.css"
@@ -118,7 +117,7 @@ const CalEventsTemplate = ({ pageContext }) => {
         </div>
       </HideSmall>
 
-      <Columns>
+      <Column>
         {/* <SmallColumn>
         <SearchBar
           handleInputChange={handleInputChange}
@@ -153,7 +152,7 @@ const CalEventsTemplate = ({ pageContext }) => {
           {/* </Collapsible> */}
           {/* </SideBar> */}
         </SideColumn>
-      </Columns>
+      </Column>
     </CrumbLayout>
   )
 }
