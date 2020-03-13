@@ -43,8 +43,6 @@ class Stack {
     if (index != 0) {
       this._reverse(index - 1)
     }
-
-    console.log(this.data[index])
   }
 }
 

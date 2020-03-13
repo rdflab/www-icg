@@ -7,20 +7,22 @@ import SideBarMembers from "../components/people/sidebarmembers"
 import SideColumn from "../components/sidecolumn"
 import MainColumn from "../components/maincolumn"
 import HTMLDiv from "../components/htmldiv"
+import { labName } from "./labtemplate"
+import { personName } from "../utils/personname"
 
 const LabOverviewTemplate = props => {
   const { pageContext } = props
-  const { group, labPeople, peopleMap, labPublications, labHtml } = pageContext
+  const { group, labPeople, labPublications, labHtml } = pageContext
 
-  const faculty = peopleMap[group.frontmatter.leaders[0]]
+  const faculty = group.leaders[0]
 
-  const title = `The ${faculty.frontmatter.lastName} Lab`
+  const title = labName(faculty)
 
   const crumbs = [
     ["Home", "/"],
     ["Research Areas", "/research-areas"],
     ["Labs", "/research-areas/labs"],
-    [title, `/research-areas/labs/${group.frontmatter.id}`],
+    [personName(faculty), `/research-areas/labs/${group.frontmatter.id}`],
     [`Overview`, `/research-areas/labs/${group.frontmatter.id}/overview`],
   ]
 

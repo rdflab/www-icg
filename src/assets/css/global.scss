@@ -258,7 +258,7 @@ a:hover {
 }
 
 .links-list {
-  @apply flex m-0 p-0 w-full justify-center;
+  @apply flex m-0 p-0 w-full;
 }
 
 .link-item {
@@ -305,6 +305,10 @@ a:hover {
 .card {
   @apply bg-white rounded-md px-4 py-2 overflow-hidden;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.flatcard {
+  @apply w-full bg-white border border-solid border-gray-300 rounded-md px-4 py-2 overflow-hidden;
 }
 
 /* purgecss end ignore */

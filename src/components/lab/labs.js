@@ -10,6 +10,7 @@ import SectionBreak from "../sectionbreak"
 import Card from "../card"
 import BlueLink from "../bluelink"
 import FlatCard from "../flatcard"
+import { labMembersUrl, labUrl } from "../../utils/urls"
 
 const Labs = ({ pagedGroups, peopleMap }) => (
   <>
@@ -25,19 +26,15 @@ const Labs = ({ pagedGroups, peopleMap }) => (
 
       return (
         // <SectionBreak key={index}>
-        <Column isCentered={true} className="mb-8">
+        <Column key={index} isCentered={true} className="mb-8">
           <Column w="4">
             <h2 className="my-2">
-              <BlueLink to={`/research-areas/labs/${group.frontmatter.id}`}>
-                {name}
-              </BlueLink>
+              <BlueLink to={labUrl(group)}>{name}</BlueLink>
             </h2>
           </Column>
           <Column w="4">
             <FlatCard>
-              <MembersLink
-                to={`/research-areas/labs/${group.frontmatter.id}/members`}
-              />
+              <MembersLink to={labMembersUrl(group)} />
               <PublicationsLink
                 to={`/research-areas/labs/${group.frontmatter.id}/publications`}
               />

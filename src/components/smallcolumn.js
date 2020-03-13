@@ -1,10 +1,14 @@
 import React from "react"
 import Column from "./column"
 
-const SmallColumn = ({ children }) => (
-  <Column w="4" className="is-hidden-tablet sm:hidden">
+const SmallColumn = ({ children, className }) => (
+  <Column w="4" className={`md:hidden ${className}`}>
     {children}
   </Column>
 )
+
+SmallColumn.defaultProps = {
+  className: "",
+}
 
 export default SmallColumn

@@ -9,27 +9,13 @@ import React from "react"
 import Publication from "./publication"
 import Button from "../../components/button"
 
-const RecentPublications = ({
-  group,
-  publications,
-  groupMap,
-  peopleMap,
-  top,
-  className,
-}) => {
+const RecentPublications = ({ group, publications, top, className }) => {
   const createPublications = publications => {
     let ret = []
 
     // Outer loop to create parent
     for (let i = 0; i < Math.min(top, publications.length); ++i) {
-      ret.push(
-        <Publication
-          key={i}
-          publication={publications[i]}
-          groupMap={groupMap}
-          peopleMap={peopleMap}
-        />
-      )
+      ret.push(<Publication key={i} publication={publications[i]} />)
     }
 
     return ret

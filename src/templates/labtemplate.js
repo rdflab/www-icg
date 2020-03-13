@@ -18,27 +18,32 @@ import SiteSearch from "../components/search/sitesearch"
 import Collapsible from "../components/collapsible"
 import SectionBreak from "../components/sectionbreak"
 import FlatCard from "../components/flatcard"
+import SideBarMembers from "../components/people/sidebarmembers"
+import { personName } from "../utils/personname"
+import { labMembersUrl } from "../utils/urls"
+
+export const labName = faculty => {
+  return `The ${personName(faculty)} Lab`
+}
 
 const LabTemplate = ({ pageContext }) => {
   const {
     group,
-    peopleMap,
+    labPeople,
     labPublications,
     labNews,
     labExcerptHtml,
   } = pageContext
 
-  const groupMap = toGroupMap([group])
+  const faculty = group.leaders[0]
 
-  const faculty = peopleMap[group.frontmatter.leaders[0]]
-
-  const title = `The ${faculty.frontmatter.lastName} Lab`
+  const title = labName(faculty)
 
   const crumbs = [
     ["Home", "/"],
     ["Research Areas", "/research-areas"],
     ["Labs", "/research-areas/labs"],
-    [title, `/research-areas/labs/${group.frontmatter.id}`],
+    [personName(faculty), `/research-areas/labs/${group.frontmatter.id}`],
   ]
 
   return (
@@ -69,8 +74,6 @@ const LabTemplate = ({ pageContext }) => {
                     <RecentPublications
                       group={group}
                       publications={labPublications}
-                      groupMap={groupMap}
-                      peopleMap={peopleMap}
                     />
                   </Collapsible>
                 </SectionBreak>
@@ -79,11 +82,9 @@ const LabTemplate = ({ pageContext }) => {
           </div>
         </MainColumn>
         <SideColumn>
-          {/* <SideBar> */}
           <FlatCard>
-            <ContactInfo person={faculty} urls={group.urls} />
+            <ContactInfo person={group.leaders[0]} urls={group.urls} />
           </FlatCard>
-          {/* </SideBar> */}
 
           {labNews.length > 0 && (
             <div className="mt-8">
@@ -91,6 +92,13 @@ const LabTemplate = ({ pageContext }) => {
               <SideBarNews allNews={labNews} />
             </div>
           )}
+
+          <div className="mt-8">
+            <SideBarMembers group={group} people={labPeople} maxRecords={10} />
+            <div className="mt-2">
+              <Button to={labMembersUrl(group)}>More</Button>
+            </div>
+          </div>
         </SideColumn>
       </Column>
     </CrumbLayout>

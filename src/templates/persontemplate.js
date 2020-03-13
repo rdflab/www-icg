@@ -16,9 +16,11 @@ import SiteSearch from "../components/search/sitesearch"
 
 import Collapsible from "../components/collapsible"
 import SectionBreak from "../components/sectionbreak"
-import Card from "../components/card"
+import Button from "../components/button"
 import FlatCard from "../components/flatcard"
 import Title from "../components/title"
+import { labName } from "./labtemplate"
+import { labUrl, personUrl, labMembersUrl } from "../utils/urls"
 
 const interests = person => {
   const n = person.researchAreas.length
@@ -104,11 +106,22 @@ const ResearchInterests = ({ person, researchAreasMap }) => (
   </div>
 )
 
+const Groups = ({ groups }) => (
+  <div>
+    <h2 className="mt-8">Lab</h2>
+    <div>
+      <BlueLink to={labUrl(groups[0])}>
+        {labName(groups[0].leaders[0])}
+      </BlueLink>
+    </div>
+  </div>
+)
+
 const PersonTemplate = ({ pageContext, data }) => {
   const {
     id,
     person,
-    group,
+    groups,
     labPeople,
     publications,
     researchAreasMap,
@@ -123,7 +136,7 @@ const PersonTemplate = ({ pageContext, data }) => {
         ["Home", "/"],
         ["Research Areas", "/research-areas"],
         ["Faculty and Staff", "/research-areas/faculty-and-staff"],
-        [title, `/research-areas/faculty-and-staff/${person.frontmatter.id}`],
+        [title, personUrl(person)],
       ]}
       headerComponent={<SiteSearch />}
     >
@@ -193,9 +206,20 @@ const PersonTemplate = ({ pageContext, data }) => {
                 researchAreasMap={researchAreasMap}
               />
             )}
+
+            {groups.length > 0 && <Groups groups={groups} />}
+
             {/* </SideBar> */}
             <div className="mt-8">
-              <SideBarMembers group={group} people={labPeople} />
+              <SideBarMembers
+                group={groups[0]}
+                people={labPeople}
+                maxRecords={10}
+              />
+
+              <div className="mt-2">
+                <Button to={labMembersUrl(groups[0])}>More</Button>
+              </div>
             </div>
           </div>
         </SideColumn>

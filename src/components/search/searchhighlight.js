@@ -56,8 +56,6 @@ const SearchHighlight = ({ text, words, highlightClassName }) => {
     blocks.push([s, e])
   }
 
-  console.log(blocks)
-
   const ret = []
   s = 0
   e = 0
@@ -77,7 +75,6 @@ const SearchHighlight = ({ text, words, highlightClassName }) => {
 
   // Add on substring at end
   if (s < text.length) {
-    console.log("hmm:", text.substring(s))
     ret.push(<Span key={`span-${c++}`}>{text.substring(s)}</Span>)
   }
 

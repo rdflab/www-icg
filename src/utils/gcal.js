@@ -5,8 +5,6 @@ const API_KEY = "AIzaSyBj1KBwlLU7jrY2eFkhsYg9DHV2dqqzadA"
 let url = `https://www.googleapis.com/calendar/v3/calendars/${CALENDAR_ID}/events?key=${API_KEY}`
 
 export function getEvents(callback) {
-  console.log(url)
-
   axios.get(url).then(resp => {
     const events = []
 

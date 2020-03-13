@@ -2,14 +2,11 @@ import React from "react"
 import Column from "./column"
 
 const IconLink = ({ icon, content }) => (
-  <Column isMobile={true} isVCentered={true} className="my-2">
-    <Column isMobile={true} className="w-2/12 lg:w-1/12">
-      {icon}
-    </Column>
-    <Column isMobile={true} className="w-10/12 lg:w-11/12">
-      {content}
-    </Column>
-  </Column>
+  <div className="row my-1">
+    <div className="mr-4">{icon}</div>
+
+    <div>{content}</div>
+  </div>
 )
 
 export default IconLink

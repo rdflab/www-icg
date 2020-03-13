@@ -9,14 +9,13 @@ import React from "react"
 import Column from "../column"
 import MainColumn from "../maincolumn"
 import ContactInfo from "./contactinfo"
-
-import TextLink from "../textlink"
 import Img from "gatsby-image"
-import Card from "../card"
 import FlatCard from "../flatcard"
 import BlueLink from "../bluelink"
+import { personUrl } from "../../utils/urls"
+import { personName } from "../../utils/personname"
 
-const Person = ({ person, groupMap, showLabLink, image }) => {
+const Person = ({ person, showLabLink, image }) => {
   return (
     <div className="my-4">
       <Column isCentered={true}>
@@ -31,11 +30,7 @@ const Person = ({ person, groupMap, showLabLink, image }) => {
         <MainColumn w="4">
           <div>
             <h3 className="mt-2">
-              <BlueLink
-                to={`/research-areas/faculty-and-staff/${person.frontmatter.id}`}
-              >
-                {person.frontmatter.firstName} {person.frontmatter.lastName}
-              </BlueLink>
+              <BlueLink to={personUrl(person)}>{personName(person)}</BlueLink>
             </h3>
 
             <div className="gray">{person.frontmatter.titles[0]}</div>

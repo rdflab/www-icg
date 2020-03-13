@@ -9,7 +9,7 @@ const ContactInfo = ({ person, urls, className }) => {
   }
 
   return (
-    <div className={className}>
+    <div className={`w-full ${className}`}>
       {person.frontmatter.email.length > 0 && (
         <EmailLink to={person.frontmatter.email[0]} />
       )}

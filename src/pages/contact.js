@@ -1,9 +1,12 @@
 import React from "react"
 import CrumbLayout from "../components/crumblayout"
 import Card from "../components/card"
+import FlatCard from "../components/flatcard"
 import Column from "../components/column"
-
+import SiteSearch from "../components/search/sitesearch"
 import MainColumn from "../components/maincolumn"
+import SideColumn from "../components/sidecolumn"
+import SmallColumn from "../components/smallcolumn"
 
 const Contact = () => (
   <CrumbLayout
@@ -12,9 +15,10 @@ const Contact = () => (
       ["Contact", "/contact"],
     ]}
     title="Contact Us"
+    headerComponent={<SiteSearch />}
   >
     <Column>
-      <MainColumn w="1/2" className="text-center justify-center mb-8">
+      <MainColumn w="7" className="mb-8">
         {/* <Card> */}
         {/* <iframe
             width="425"
@@ -25,7 +29,7 @@ const Contact = () => (
             marginwidth="0"
             src="https://www.openstreetmap.org/export/embed.html?bbox=-73.94093066453935%2C40.839045405350824%2C-73.93842011690141%2C40.840475992930344&amp;layer=mapnik"
           ></iframe> */}
-        <Card padding="p-0">
+        <FlatCard className="p-0">
           <div
             className="iframe-container w-full"
             style={{ minHeight: "32rem" }}
@@ -38,8 +42,7 @@ const Contact = () => (
               title="Small map"
             ></iframe>
           </div>
-        </Card>
-
+        </FlatCard>
         {/* <br />
           <small>
             <a href="https://www.openstreetmap.org/#map=19/40.83976/-73.93968">
@@ -48,15 +51,24 @@ const Contact = () => (
           </small> */}
         {/* </Card> */}
       </MainColumn>
-      <Column w="1/2">
-        <Card>
+      <SideColumn w="5">
+        <FlatCard>
           <h2>Our Contact Information</h2>
           <div>Herbert Irving Cancer Center</div>
           <div>1130 St Nicholas Ave</div>
           <div>New York, NY 10032</div>
           <div>USA</div>
-        </Card>
-      </Column>
+        </FlatCard>
+      </SideColumn>
+      <SmallColumn className="mb-8">
+        <FlatCard>
+          <h2>Our Contact Information</h2>
+          <div>Herbert Irving Cancer Center</div>
+          <div>1130 St Nicholas Ave</div>
+          <div>New York, NY 10032</div>
+          <div>USA</div>
+        </FlatCard>
+      </SmallColumn>
     </Column>
   </CrumbLayout>
 )

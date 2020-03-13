@@ -8,11 +8,11 @@ const PEOPLE_TYPES = [
   "Staff",
 ]
 
-const labTemplate = path.resolve(`src/templates/lab.js`)
+const labTemplate = path.resolve(`src/templates/labtemplate.js`)
 const labsTemplate = path.resolve(`src/templates/labs.js`)
 const peopleTemplate = path.resolve(`src/templates/people.js`)
 const labOverviewTemplate = path.resolve(`src/templates/laboverview.js`)
-const personTemplate = path.resolve(`src/templates/person.js`)
+const personTemplate = path.resolve(`src/templates/persontemplate.js`)
 const newsTemplate = path.resolve(`src/templates/news.js`)
 const newsItemTemplate = path.resolve(`src/templates/newsitem.js`)
 const calEventsTemplate = path.resolve(`src/templates/calevents.js`)
@@ -327,10 +327,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     researchAreasMap[node.id] = node
   })
 
-  result.data.labGroups.edges.forEach(({ node }) => {
-    allLabGroups.push(node)
-  })
-
   result.data.cv.edges.forEach(({ node }) => {
     cvMap[node.id] = node
   })
@@ -355,8 +351,63 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     allPeople.push(person)
   })
 
-  const groupMap = toGroupMap(allLabGroups)
   const peopleMap = toPeopleMap(allPeople)
+
+  result.data.labGroups.edges.forEach(({ node }) => {
+    const group = node
+
+    const leaders = []
+
+    for (let person of group.frontmatter.leaders) {
+      leaders.push(peopleMap[person])
+    }
+
+    group.leaders = leaders
+
+    const members = []
+
+    for (let person of group.frontmatter.members) {
+      members.push(peopleMap[person])
+    }
+
+    group.members = members
+
+    allLabGroups.push(group)
+  })
+
+  const groupMap = toGroupMap(allLabGroups)
+
+  //
+  // Work out if people belong to more than one group
+  //
+  const personGroups = {}
+
+  for (let group of allLabGroups) {
+    for (let person of group.leaders) {
+      if (!(person.frontmatter.id in personGroups)) {
+        personGroups[person.frontmatter.id] = new Set()
+      }
+
+      personGroups[person.frontmatter.id].add(group.frontmatter.id)
+    }
+
+    for (let person of group.members) {
+      if (!(person.frontmatter.id in personGroups)) {
+        personGroups[person.frontmatter.id] = new Set()
+      }
+
+      personGroups[person.frontmatter.id].add(group.frontmatter.id)
+    }
+  }
+
+  // Add groups to person
+  // for (let person of allPeople) {
+  //   if (person.frontmatter.id in personGroups) {
+  //     person.groups = personGroups[person.frontmatter.id]
+  //   } else {
+  //     person.groups = []
+  //   }
+  // }
 
   result.data.publications.edges.forEach(({ node }) => {
     const publication = node
@@ -389,8 +440,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   result.data.news.edges.forEach(({ node }) => {
     const item = node
 
-    // beter if the year is an it
-    item.year = parseInt(node.frontmatter.year)
+    // better if the year is an int
+    item.year = parseInt(item.frontmatter.year)
 
     allNews.push(item)
   })
@@ -577,8 +628,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       component: labTemplate,
       context: {
         group: group,
-        groupMap: groupMap,
-        peopleMap: peopleMap,
+        labPeople: labPeople,
         labPublications: labPublications,
         labNews: labNews,
         labExcerptHtml: labExcerptHtml,
@@ -596,7 +646,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       context: {
         group: group,
         labPeople: labPeople,
-        peopleMap: peopleMap,
         labPublications: labPublications,
         labHtml: labHtml,
       },
@@ -675,14 +724,25 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         }
       }
 
+      // Groups are not added to persons, because react
+      // does not seem to like circular references, so
+      // whilst groups contain people objects, people
+      // cannot contain group objects at the same time
+      let groups = []
+
+      if (person.frontmatter.id in personGroups) {
+        for (let id of personGroups[person.frontmatter.id]) {
+          groups.push(groupMap[id])
+        }
+      }
+
       createPage({
         path: `/research-areas/faculty-and-staff/${person.frontmatter.id}`,
         component: personTemplate,
         context: {
           id: person.frontmatter.id,
           person: person,
-          group: group,
-          groupMap: groupMap,
+          groups: groups,
           labPeople: labPeople,
           peopleMap: peopleMap,
           publications: personPublications,
