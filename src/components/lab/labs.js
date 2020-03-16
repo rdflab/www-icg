@@ -12,9 +12,9 @@ import BlueLink from "../bluelink"
 import FlatCard from "../flatcard"
 import { labMembersUrl, labUrl } from "../../utils/urls"
 
-const Labs = ({ pagedGroups, peopleMap }) => (
+const Labs = ({ groups, peopleMap }) => (
   <>
-    {pagedGroups.map((group, index) => {
+    {groups.map((group, index) => {
       const person = peopleMap[group.frontmatter.leaders[0]]
 
       let name =

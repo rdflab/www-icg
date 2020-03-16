@@ -9,7 +9,7 @@ import SearchSummary from "../components/search/searchsummary"
 const EMPTY_QUERY = ""
 
 const LabsTemplate = ({ pageContext }) => {
-  const { allGroups, peopleMap, searchData } = pageContext
+  const { allGroups, peopleMap } = pageContext
 
   const [query, setQuery] = useState(EMPTY_QUERY)
   const [filteredGroups, setFilteredGroups] = useState([])

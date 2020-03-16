@@ -34,6 +34,7 @@
     "react-dom": "^16.13.0",
     "react-helmet": "^5.2.1",
     "react-icons": "^3.9.0",
+    "read-markdown": "^1.0.2",
     "styled-components": "^5.0.1"
   },
   "devDependencies": {
@@ -58,7 +59,9 @@
     "reinstall": "npm run clean && npm install",
     "rebuild": "npm run clean && npm install && npm run build",
     "deploy": "gatsby-plugin-s3 deploy --yes",
-    "bd": "gatsby build && npm run deploy"
+    "bd": "gatsby build && npm run deploy",
+    "index": "node src/scripts/indexpub.js",
+    "indexsite": "node src/scripts/indexsite.js"
   },
   "repository": {
     "type": "git",

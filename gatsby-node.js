@@ -9,17 +9,23 @@ const PEOPLE_TYPES = [
 ]
 
 const labTemplate = path.resolve(`src/templates/labtemplate.js`)
-const labsTemplate = path.resolve(`src/templates/labs.js`)
-const peopleTemplate = path.resolve(`src/templates/people.js`)
-const labOverviewTemplate = path.resolve(`src/templates/laboverview.js`)
+const labsTemplate = path.resolve(`src/templates/labstemplate.js`)
+const peopleTemplate = path.resolve(`src/templates/peopletemplate.js`)
+const labOverviewTemplate = path.resolve(`src/templates/laboverviewtemplate.js`)
 const personTemplate = path.resolve(`src/templates/persontemplate.js`)
-const newsTemplate = path.resolve(`src/templates/news.js`)
-const newsItemTemplate = path.resolve(`src/templates/newsitem.js`)
-const calEventsTemplate = path.resolve(`src/templates/calevents.js`)
-const calEventTemplate = path.resolve(`src/templates/calevent.js`)
-const publicationsTemplate = path.resolve(`src/templates/publications.js`)
-const researchAreasTemplate = path.resolve(`src/templates/researchareas.js`)
-const researchAreaTemplate = path.resolve(`src/templates/researcharea.js`)
+const newsTemplate = path.resolve(`src/templates/newstemplate.js`)
+const newsItemTemplate = path.resolve(`src/templates/newsitemtemplate.js`)
+const calEventsTemplate = path.resolve(`src/templates/caleventstemplate.js`)
+const calEventTemplate = path.resolve(`src/templates/caleventtemplate.js`)
+const publicationsTemplate = path.resolve(
+  `src/templates/publicationstemplate.js`
+)
+const researchAreasTemplate = path.resolve(
+  `src/templates/researchareastemplate.js`
+)
+const researchAreaTemplate = path.resolve(
+  `src/templates/researchareatemplate.js`
+)
 
 const toPeopleMap = people => {
   let ret = new Object() //new Map()
@@ -90,21 +96,21 @@ const createSuffixTree = (root, text, item) => {
   }
 }
 
-const writeJson = (file, data) => {
-  fs.writeFileSync(file, JSON.stringify(data))
-}
+// const writeJson = (file, data) => {
+//   fs.writeFileSync(file, JSON.stringify(data))
+// }
 
-const indexPublications = publications => {
-  pubIndex = [{}, []]
+// const indexPublications = publications => {
+//   pubIndex = [{}, []]
 
-  for (let i = 0; i < publications.length; ++i) {
-    const publication = publications[i]
+//   for (let i = 0; i < publications.length; ++i) {
+//     const publication = publications[i]
 
-    createSuffixTree(pubIndex, publication.title, i)
-  }
+//     createSuffixTree(pubIndex, publication.title, i)
+//   }
 
-  return pubIndex
-}
+//   return pubIndex
+// }
 
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions
@@ -571,13 +577,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
 
   //
-  // Create some search indices
-  //
-
-  pubIndex = indexPublications(allPublications)
-  writeJson("static/publications.index.json", pubIndex)
-
-  //
   // Make pages
   //
 
@@ -596,9 +595,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       }
     }
 
-    labPubIndex = indexPublications(labPublications)
-    indexFile = `static/${group.frontmatter.id}.publications.index.json`
-    writeJson(indexFile, labPubIndex)
+    //labPubIndex = indexPublications(labPublications)
+    //indexFile = `static/${group.frontmatter.id}.publications.index.json`
+    //writeJson(indexFile, labPubIndex)
 
     const labPeople = []
 
@@ -744,7 +743,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           person: person,
           groups: groups,
           labPeople: labPeople,
-          peopleMap: peopleMap,
           publications: personPublications,
           cv:
             person.frontmatter.id in cvMap
@@ -912,7 +910,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
 
   // Build a suffix tree
-
   for (let i = 0; i < siteData.links.length; ++i) {
     createSuffixTree(siteData.tree, siteData.links[i][0], i)
   }
