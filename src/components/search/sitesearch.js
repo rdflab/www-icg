@@ -69,7 +69,7 @@ const SiteSearchMenu = ({ showMenu, children }) => {
 }
 
 export const getSiteData = () => {
-  return axios.get("/site.json").then(resp => {
+  return axios.get("/site.index.json").then(resp => {
     return resp.data
   })
 }

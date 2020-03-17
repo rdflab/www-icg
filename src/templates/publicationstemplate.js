@@ -19,7 +19,6 @@ const PublicationsTemplate = ({ pageContext }) => {
     crumbs,
     selectedTab,
     allPublications,
-    index,
     showSearch,
     showYears,
     showLabLink,
@@ -32,11 +31,11 @@ const PublicationsTemplate = ({ pageContext }) => {
   const [filterYears, setFilterYears] = useState([])
   const [pubIndex, setPubIndex] = useState(null)
 
-  const loadPubIndex = () => {
-    return axios.get(index).then(resp => {
-      return resp.data
-    })
-  }
+  // const loadPubIndex = () => {
+  //   return axios.get(index).then(resp => {
+  //     return resp.data
+  //   })
+  // }
 
   const search = (pubIndex, q) => {
     let ret = []
@@ -55,28 +54,26 @@ const PublicationsTemplate = ({ pageContext }) => {
 
     setQuery(q)
 
-    if (q !== "") {
-      if (pubIndex !== null) {
-        search(pubIndex, q)
-      } else {
-        loadPubIndex().then(data => {
-          setPubIndex(data)
-          search(data, q)
-        })
+    // if (q !== "") {
+    //   if (pubIndex !== null) {
+    //     search(pubIndex, q)
+    //   } else {
+    //     loadPubIndex().then(data => {
+    //       setPubIndex(data)
+    //       search(data, q)
+    //     })
+    //   }
+    // }
+
+    let ret = []
+
+    for (let publication of allPublications) {
+      if (publication.title.toLowerCase().includes(q.toLowerCase())) {
+        ret.push(publication)
       }
     }
 
-    // const [indices, words] = searchTree(labPubIndex, q)
-
-    // for (let i of indices) {
-    //   ret.push(allPublications[i])
-    // }
-
-    // for (let publication of allPublications) {
-    //   if (publication.title.toLowerCase().includes(q.toLowerCase())) {
-    //     ret.push(publication)
-    //   }
-    // }
+    setFilteredPublications(ret)
   }
 
   const onPageChanged = data => {

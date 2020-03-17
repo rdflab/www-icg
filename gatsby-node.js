@@ -698,7 +698,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         ],
         selectedTab: "",
         allPublications: labPublications,
-        index: indexFile,
         showSearch: false,
         showYears: true,
         showLabLink: false,

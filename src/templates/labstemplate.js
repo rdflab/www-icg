@@ -1,8 +1,6 @@
 import React, { useState } from "react"
 import CrumbLayout from "../components/crumblayout"
 import SiteSearch from "../components/search/sitesearch"
-import HideSmall from "../components/hidesmall"
-import SearchBar from "../components/search/searchbar"
 import Labs from "../components/lab/labs"
 import SearchSummary from "../components/search/searchsummary"
 
