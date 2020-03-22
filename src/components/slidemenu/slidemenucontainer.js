@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import flattenEdges from "../../utils/flattenedges"
 import SlideMenuLink from "./slidemenulink"
 import SlideMenuCloseButton from "./slidemenuclosebutton"
@@ -7,7 +7,18 @@ import ColumbiaICGImage from "../images/columbiaicgimage"
 import SiteSearchBar from "../search/sitesearchbar"
 import { getSiteData, Heading, SiteLink } from "../search/sitesearch"
 import { searchTree } from "../search/searchtree"
-import BlueLink from "../bluelink"
+import SearchHighlight from "../search/searchhighlight"
+import Column from "../column"
+
+const SiteSearchResult = ({ text, to }) => {
+  return (
+    <Link to={to}>
+      <Column className="px-4 py-2 cursor-pointer hover:bg-gray-200 trans-ani">
+        <div>{text}</div>
+      </Column>
+    </Link>
+  )
+}
 
 const SlideMenuContainer = ({ title, onClickHandle, visible, maxResults }) => {
   const data = useStaticQuery(graphql`
@@ -63,9 +74,11 @@ const SlideMenuContainer = ({ title, onClickHandle, visible, maxResults }) => {
         }
 
         ret.push(
-          <div className="mb-2">
-            <SiteLink to={link[3]} link={name} />
-          </div>
+          <SiteSearchResult
+            key={`result-${c}`}
+            text={<SearchHighlight text={name} words={words} />}
+            to={link[3]}
+          />
         )
 
         ++c

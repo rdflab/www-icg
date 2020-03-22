@@ -58,6 +58,10 @@ h3 {
   @apply flex flex-row;
 }
 
+.column {
+  @apply flex flex-row;
+}
+
 .col {
   @apply flex flex-col;
 }

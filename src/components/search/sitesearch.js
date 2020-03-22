@@ -6,6 +6,7 @@ import HideSmall from "../hidesmall"
 import BlueLinkExt from "../bluelinkext"
 import SearchHighlight from "./searchhighlight"
 import { searchTree } from "./searchtree"
+import { Link } from "gatsby"
 
 const axios = require("axios")
 
@@ -25,19 +26,23 @@ export const SiteLink = ({ to, link }) => {
 
 const SiteSearchResult = ({ text, to, link }) => {
   return (
-    <Column className="my-2">
-      <Column w="7" className="mr-4">
-        <div>{text}</div>
+    <Link to={to}>
+      <Column className="px-4 py-2 cursor-pointer hover:bg-gray-200 trans-ani">
+        <Column w="7" className="mr-4">
+          <div>{text}</div>
+        </Column>
+        <Column w="5">
+          <div>{link}</div>
+        </Column>
       </Column>
-      <Column w="5">
-        <SiteLink to={to} link={link} />
-      </Column>
-    </Column>
+    </Link>
   )
 }
 
 export const Heading = ({ name }) => (
-  <div className="py-1 text-gray-500 text-sm font-semibold">{name}</div>
+  <div className="px-4 pt-4 mb-2 text-gray-500 text-sm font-semibold">
+    {name}
+  </div>
 )
 
 /**
@@ -59,7 +64,7 @@ const SiteSearchMenuPane = ({ showMenu, handleClickEvent }) => {
 const SiteSearchMenu = ({ showMenu, children }) => {
   return (
     <div
-      className={`absolute z-50 bg-white p-4 shadow-md rounded-md w-full border border-solid border-gray-200 ${
+      className={`absolute z-50 bg-white shadow-md rounded-md w-full border border-solid border-gray-200 ${
         showMenu ? "block" : "hidden"
       }`}
     >

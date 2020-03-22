@@ -7,7 +7,7 @@ const IndexLink = ({ color, to, children }) => (
     <ColorLink color={color} to={to}>
       {children}
     </ColorLink>
-    <FaChevronRight className={`${color} inline align-bottom ml-1`} />
+    <FaChevronRight className={`${color} inline align-center ml-1`} />
   </>
 )
 

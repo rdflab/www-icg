@@ -52,7 +52,7 @@ const LabTemplate = ({ pageContext }) => {
           <ContactInfo person={faculty} urls={group.urls} />
         </SmallColumn>
         <MainColumn>
-          <div>
+          <div className="w-full">
             <HTMLDiv html={labExcerptHtml} />
 
             <div className="text-center">
@@ -69,7 +69,11 @@ const LabTemplate = ({ pageContext }) => {
             {labPublications.length > 0 && (
               <div className="my-8">
                 <SectionBreak>
-                  <Collapsible title="Recent Publications" height="auto">
+                  <Collapsible
+                    title="Recent Publications"
+                    height="auto"
+                    headerClassName="text-blue-700"
+                  >
                     <RecentPublications
                       group={group}
                       publications={labPublications}

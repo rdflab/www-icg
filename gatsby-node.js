@@ -941,6 +941,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   //   }
   // }
 
-  let data = JSON.stringify(siteData)
-  fs.writeFileSync("static/site.json", data)
+  //let data = JSON.stringify(siteData)
+  //fs.writeFileSync("static/site.json", data)
 }

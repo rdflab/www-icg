@@ -61,7 +61,7 @@ const LabsTemplate = ({ pageContext }) => {
         className="my-4"
       /> */}
 
-      <Labs pagedGroups={pagedGroups} peopleMap={peopleMap} />
+      <Labs groups={pagedGroups} peopleMap={peopleMap} />
     </CrumbLayout>
   )
 }

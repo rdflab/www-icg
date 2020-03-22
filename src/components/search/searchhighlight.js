@@ -63,7 +63,11 @@ const SearchHighlight = ({ text, words, highlightClassName }) => {
   let c = 0
 
   for (let block of blocks) {
-    ret.push(<Span key={`span-${c++}`}>{text.substring(s, block[0])}</Span>)
+    ret.push(
+      <Span key={`span-${c++}`} className="text">
+        {text.substring(s, block[0])}
+      </Span>
+    )
     ret.push(
       <Span key={`span-${c++}`} className={highlightClassName}>
         {text.substring(block[0], block[1])}
@@ -75,7 +79,11 @@ const SearchHighlight = ({ text, words, highlightClassName }) => {
 
   // Add on substring at end
   if (s < text.length) {
-    ret.push(<Span key={`span-${c++}`}>{text.substring(s)}</Span>)
+    ret.push(
+      <Span key={`span-${c++}`} className="text">
+        {text.substring(s)}
+      </Span>
+    )
   }
 
   return <>{ret}</>
@@ -83,7 +91,7 @@ const SearchHighlight = ({ text, words, highlightClassName }) => {
 
 SearchHighlight.defaultProps = {
   words: [],
-  highlightClassName: "bg-blue-100 text-blue-400",
+  highlightClassName: "text-blue-400 font-bold",
 }
 
 export default SearchHighlight

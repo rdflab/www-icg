@@ -48,23 +48,25 @@ const IndexPage = () => (
     headerComponent={<SiteSearch />}
   >
     <TestTubesSection>
-      <Container className="h-full py-8 sm:py-16">
+      <Container className="h-full py-8 sm:py-8">
         <Column className="h-full p-8 sm:p-16">
           <Column
             w="7"
             className="bg-blue-columbia opacity-75 float-left text-white p-8"
           >
-            <h2 className="title is-2 text-white">
-              Institute For Cancer Genetics
-            </h2>
+            <div>
+              <h2 className="title is-2 text-white">
+                Institute For Cancer Genetics
+              </h2>
 
-            <p>
-              The Institute for Cancer Genetics was founded in 1999 as part of a
-              commitment by Columbia University to examine the molecular
-              mechanisms and pathogenesis of cancer.
-            </p>
+              <p>
+                The Institute for Cancer Genetics was founded in 1999 as part of
+                a commitment by Columbia University to examine the molecular
+                mechanisms and pathogenesis of cancer.
+              </p>
 
-            <WhiteIndexLink to="/about">More</WhiteIndexLink>
+              <WhiteIndexLink to="/about">More</WhiteIndexLink>
+            </div>
           </Column>
         </Column>
       </Container>
