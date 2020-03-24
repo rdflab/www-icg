@@ -59,10 +59,10 @@ const TypeSelector = ({ onClick }) => {
       </SelectType>
       <SelectType
         onClick={_handleClick}
-        text="Research Scientist"
-        selected={selectedTypes[0] === "Research Scientist"}
+        text="Research Scientists"
+        selected={selectedTypes[0] === "Research Scientists"}
       >
-        Research Scientist
+        Research Scientists
       </SelectType>
 
       <SelectType

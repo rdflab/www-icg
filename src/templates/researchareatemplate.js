@@ -4,7 +4,6 @@ import PeopleTypes from "../components/people/peopletypes"
 import { graphql } from "gatsby"
 import toImageMap from "../utils/toimagemap"
 import SiteSearch from "../components/search/sitesearch"
-import HideSmall from "../components/hidesmall"
 
 const ResearchAreaTemplate = ({ data, pageContext }) => {
   const { groupMap, allPeople, researchArea, searchData } = pageContext

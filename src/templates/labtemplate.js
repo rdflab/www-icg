@@ -55,16 +55,16 @@ const LabTemplate = ({ pageContext }) => {
           <div className="w-full">
             <HTMLDiv html={labExcerptHtml} />
 
-            <div className="text-center">
+            {/* <div className="text-center">
               <Button
                 to={`/research-areas/labs/${group.frontmatter.id}/overview`}
               >
                 Learn more
               </Button>
-            </div>
-
+            </div> */}
+            {/* 
             <h3>Research Focus</h3>
-            <h3>Education</h3>
+            <h3>Education</h3> */}
 
             {labPublications.length > 0 && (
               <div className="my-8">

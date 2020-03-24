@@ -35,7 +35,7 @@ const SiteSearchBar = ({
           placeholder={placeholder}
           value={text}
           onChange={handleInputChange}
-          className="bg-transparent w-full"
+          className="bg-transparent w-full border-none outline-none"
         />
       </div>
       <div className="flex items-center">

@@ -3,7 +3,7 @@ var fs = require("fs")
 
 const PEOPLE_TYPES = [
   "Faculty",
-  "Research Scientist",
+  "Research Scientists",
   "Graduate Student",
   "Staff",
 ]
@@ -284,7 +284,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       }
 
       events: allMarkdownRemark(
-        sort: { fields: frontmatter___start, order: DESC }
+        sort: { fields: frontmatter___start, order: ASC }
         filter: { fileAbsolutePath: { regex: "/events/" } }
       ) {
         edges {

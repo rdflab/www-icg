@@ -2,14 +2,14 @@
 id: "antony-holmes"
 firstName: "Antony"
 lastName: "Holmes"
-type: "Research Scientist"
+type: "Research Scientists"
 photo: ""
 titles: ["Associate Research Scientist"]
 letters: ["PhD"]
 email: ["abh2138@cumc.columbia.edu"]
 phone: ["(212) 851-5269"]
 researchAreas: ["cancer-biology", "data-science"]
-tags: ["People", "Research Scientist"]
+tags: ["People", "Research Scientists"]
 urls: []
 ---
 
@@ -17,8 +17,8 @@ urls: []
 
 <h2 className="mt-4">Programming Languages</h2>
 
-<ul className="list-disc ml-8">
-  <li>Java</li>
+<ul className="list-inside list-disc ml-8" style={{listStyleType: "disc"}}>
+  <li className="list-inside list-disc" style={{display: "list-item"}}>Java</li>
   <li>Python</li>
   <li>Gatsby/React/JS</li>
   <li>C/C++</li>

@@ -26,7 +26,7 @@ export const SiteLink = ({ to, link }) => {
 
 const SiteSearchResult = ({ text, to, link }) => {
   return (
-    <Link to={to}>
+    <Link to={to} className="p-0 m-0">
       <Column className="px-4 py-2 cursor-pointer hover:bg-gray-200 trans-ani">
         <Column w="7" className="mr-4">
           <div>{text}</div>
@@ -64,7 +64,7 @@ const SiteSearchMenuPane = ({ showMenu, handleClickEvent }) => {
 const SiteSearchMenu = ({ showMenu, children }) => {
   return (
     <div
-      className={`absolute z-50 bg-white shadow-md rounded-md w-full border border-solid border-gray-200 ${
+      className={`absolute z-50 bg-white p-0 m-0 outline-none shadow-md rounded-md overflow-hidden border border-solid border-gray-200 w-full ${
         showMenu ? "block" : "hidden"
       }`}
     >

@@ -15,7 +15,7 @@ export const MONTHS = [
 
 export const PEOPLE_TYPES = [
   "Faculty",
-  "Research Scientist",
+  "Research Scientists",
   "Graduate Student",
   "Staff",
 ]

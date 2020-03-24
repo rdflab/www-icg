@@ -9,6 +9,7 @@ const CalEventLocation = ({ event, showDate, isMobile }) => {
     minute: "numeric",
     hour12: true,
   })
+
   const et = event.end.toLocaleString("en-US", {
     hour: "numeric",
     minute: "numeric",
@@ -30,7 +31,7 @@ const CalEventLocation = ({ event, showDate, isMobile }) => {
   return (
     <>
       <div className="md:hidden gray">
-        <Column isVCentered={true} isMobile={isMobile}>
+        <Column isVCentered={true} isMobile={true}>
           <div className="mr-4">
             <FaRegClock size={28} />
           </div>
@@ -41,7 +42,7 @@ const CalEventLocation = ({ event, showDate, isMobile }) => {
             </div>
           </div>
         </Column>
-        <Column isVCentered={true} className="mt-4" isMobile={isMobile}>
+        <Column isVCentered={true} className="mt-4" isMobile={true}>
           <div className="mr-4">
             <FaMapMarkerAlt size={28} />
           </div>

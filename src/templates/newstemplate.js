@@ -67,20 +67,26 @@ const NewsTemplate = ({ pageContext }) => {
         ["News", "/news"],
       ]}
       title="News"
-      titleComponent={
-        <HideSmall>
-          <SearchSummary
-            count={news.length}
-            single="News Item"
-            plural="News Items"
-          />
-        </HideSmall>
-      }
+      // titleComponent={
+      //   <HideSmall>
+      //     <SearchSummary
+      //       count={news.length}
+      //       single="News Item"
+      //       plural="News Items"
+      //     />
+      //   </HideSmall>
+      // }
       headerComponent={<SiteSearch />}
     >
       <HideSmall>
-        <Column isVCentered={true} className="justify-between">
+        {/* <Column isVCentered={true} className="justify-between">
           <div></div>
+          <div>
+            <YearSelector onClick={handleClick} />
+          </div>
+        </Column> */}
+
+        <Column isVCentered={true} isCentered={true}>
           <div>
             <YearSelector onClick={handleClick} />
           </div>

@@ -1,12 +1,7 @@
 import React from "react"
-import Layout from "../components/layout"
 import CrumbLayout from "../components/crumblayout"
 import BlueLink from "../components/bluelink"
-import WhiteLink from "../components/whitelink"
 import SiteSearch from "../components/search/sitesearch"
-import Container from "../components/container"
-import Title from "../components/title"
-import Card from "../components/card"
 
 const FlatCard = ({ children, className }) => (
   <div

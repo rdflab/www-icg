@@ -1,18 +1,9 @@
 import React from "react"
 import CrumbLayout from "../components/crumblayout"
 import CalEventLocation from "../components/calendar/caleventlocation"
-import styled from "styled-components"
 import Column from "../components/column"
 import MainColumn from "../components/maincolumn"
 import SideColumn from "../components/sidecolumn"
-
-const LocDiv = styled.div`
-  margin-top: 1rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  border-top: solid 1px lightgray;
-  border-bottom: solid 1px lightgray;
-`
 
 const CalEventTemplate = props => {
   const { pageContext } = props
@@ -33,11 +24,13 @@ const CalEventTemplate = props => {
     >
       <Column>
         <MainColumn>
-          <div dangerouslySetInnerHTML={{ __html: calEvent.html }} />
+          <div>
+            <div dangerouslySetInnerHTML={{ __html: calEvent.html }} />
 
-          <LocDiv>
-            <CalEventLocation event={calEvent} showDate={true} />
-          </LocDiv>
+            <div className="my-4 py-4 border-t border-b border-solid border-gray-400">
+              <CalEventLocation event={calEvent} showDate={true} />
+            </div>
+          </div>
         </MainColumn>
         <SideColumn></SideColumn>
       </Column>

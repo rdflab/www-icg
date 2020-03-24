@@ -23,9 +23,11 @@ const NewsItemTemplate = props => {
     >
       <Column>
         <MainColumn>
-          <NewsItemDate>{item.frontmatter.date}</NewsItemDate>
+          <div>
+            <NewsItemDate>{item.frontmatter.date}</NewsItemDate>
 
-          <NewsContent html={item.html} />
+            <NewsContent html={item.html} />
+          </div>
         </MainColumn>
         <SideColumn>
           <SideBarNews allNews={allNews} />

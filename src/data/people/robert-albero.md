@@ -2,13 +2,13 @@
 id: "robert-albero"
 firstName: "Robert"
 lastName: "Albero"
-type: "Research Scientist"
+type: "Research Scientists"
 photo: ""
 titles: ["Postdoctoral Research Scientist"]
 letters: ["PhD"]
 email: []
 phone: []
 researchAreas: []
-tags: ["People", "Research Scientist"]
+tags: ["People", "Research Scientists"]
 urls: []
 ---
