@@ -4,7 +4,6 @@ import SiteSearch from "../components/search/sitesearch"
 import YearSelector from "../components/filter/yearselector"
 import HideSmall from "../components/hidesmall"
 import NewsSearchResults from "../components/news/newssearchresults"
-import SearchSummary from "../components/search/searchsummary"
 import Column from "../components/column"
 
 const EMPTY_QUERY = ""

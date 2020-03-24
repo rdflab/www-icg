@@ -77,7 +77,7 @@ const IndexPage = () => (
       subTitle="Find Out Who We Are"
       text="Our world-class researchers study all aspects of cancer. Explore what
         they are doing."
-      links={[{ text: "Labs", url: "/research-area/labs" }]}
+      links={[{ text: "Labs", url: "/research-areas/labs" }]}
     />
 
     <HomeSection

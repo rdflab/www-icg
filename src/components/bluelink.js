@@ -3,7 +3,7 @@ import ColorLink from "./colorlink"
 
 const BlueLink = ({ to, children, className, activeClassName }) => (
   <ColorLink
-    color="blue-link"
+    color="blue"
     to={to}
     className={className}
     activeClassName={activeClassName}

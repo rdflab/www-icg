@@ -20,6 +20,7 @@ import SideBarMembers from "../components/people/sidebarmembers"
 import { personName } from "../utils/personname"
 import { labMembersUrl } from "../utils/urls"
 import BlueLink from "../components/bluelink"
+import SideBarMember from "../components/people/sidebarmember"
 
 export const labName = faculty => {
   return `The ${personName(faculty)} Lab`
@@ -97,12 +98,16 @@ const LabTemplate = ({ pageContext }) => {
           )}
 
           <div className="mt-8">
+            <SideBarMember person={group.leaders[0]} />
+          </div>
+
+          {/* <div className="mt-8">
             <SideBarMembers
               group={group}
               people={group.leaders}
               title="Faculty"
             />
-          </div>
+          </div> */}
 
           <div className="mt-8">
             <SideBarMembers group={group} people={labPeople} maxRecords={5} />

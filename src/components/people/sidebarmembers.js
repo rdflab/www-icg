@@ -1,8 +1,6 @@
 import React from "react"
-import SideBarLink from "../sidebar/sidebarlink"
 import Collapsible from "../collapsible"
-import { personUrl } from "../../utils/urls"
-import { personName } from "../../utils/personname"
+import SideBarMember from "./sidebarmember"
 
 const SideBarMembers = ({ people, title, maxRecords }) => {
   const ret = []
@@ -10,14 +8,7 @@ const SideBarMembers = ({ people, title, maxRecords }) => {
   for (let i = 0; i < people.length; ++i) {
     const person = people[i]
 
-    ret.push(
-      <div key={i} className="mb-4">
-        <div>
-          <SideBarLink to={personUrl(person)}>{personName(person)}</SideBarLink>
-        </div>
-        <div className="font-light">{person.frontmatter.titles[0]}</div>
-      </div>
-    )
+    ret.push(<SideBarMember person={person} />)
 
     if (i == maxRecords) {
       break

@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 const ColorLink = ({ color, to, children, className, activeClassName }) => (
   <Link
     to={to}
-    className={`${color} ${className}`}
+    className={`${color}-link ${className}`}
     activeClassName={activeClassName}
   >
     {children}
