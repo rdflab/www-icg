@@ -2,11 +2,11 @@ import React, { useState } from "react"
 import CrumbLayout from "../components/crumblayout"
 import SiteSearch from "../components/search/sitesearch"
 import YearSelector from "../components/filter/yearselector"
-import HideSmall from "../components/hidesmall"
+//import HideSmall from "../components/hidesmall"
 import NewsSearchResults from "../components/news/newssearchresults"
 import Column from "../components/column"
-import MainColumn from "../components/maincolumn"
-import SideColumn from "../components/sidecolumn"
+// import MainColumn from "../components/maincolumn"
+// import SideColumn from "../components/sidecolumn"
 
 const EMPTY_QUERY = ""
 
@@ -87,26 +87,26 @@ const NewsTemplate = ({ pageContext }) => {
           </div>
         </Column>
       </HideSmall> */}
-
+      {/* 
       <Column>
         <MainColumn>
-          <div className="w-full">
-            <Column isVCentered={true} isCentered={true}>
-              <div>
-                <YearSelector onClick={handleClick} />
-              </div>
-            </Column>
-            <NewsSearchResults
-              news={yearFilteredNews}
-              pagedNews={pagedNews}
-              page={page}
-              recordsPerPage={recordsPerPage}
-              onPageChanged={onPageChanged}
-            />
-          </div>
+          <div className="w-full"> */}
+      <Column isVCentered={true} isCentered={true}>
+        <div>
+          <YearSelector onClick={handleClick} />
+        </div>
+      </Column>
+      <NewsSearchResults
+        news={yearFilteredNews}
+        pagedNews={pagedNews}
+        page={page}
+        recordsPerPage={recordsPerPage}
+        onPageChanged={onPageChanged}
+      />
+      {/* </div>
         </MainColumn>
         <SideColumn></SideColumn>
-      </Column>
+      </Column> */}
     </CrumbLayout>
   )
 }

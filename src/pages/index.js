@@ -74,8 +74,7 @@ const IndexPage = () => (
     <HomeSection
       title="Expertise"
       subTitle="Find Out Who We Are"
-      text="Our world-class researchers study all aspects of cancer. Explore what
-        they are doing."
+      text="Explore what our world-class researchers are studying."
       links={[{ text: "Labs", url: "/research-areas/labs" }]}
     />
 
@@ -93,8 +92,7 @@ const IndexPage = () => (
     <HomeSection
       title="Publications"
       subTitle="Read About Our Pioneering Work"
-      text="Our research is published in world renowed journals with high impact
-      factors."
+      text="Our research is published in world renowed journals."
       links={[{ text: "Publications", url: "/research-areas/publications" }]}
     />
   </Layout>

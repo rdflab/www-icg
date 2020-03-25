@@ -118,21 +118,19 @@ const PublicationsTemplate = ({ pageContext }) => {
         </HideSmall>
       }
     >
+      <SearchBar
+        handleInputChange={handleInputChange}
+        placeholder="Type to find publications..."
+        text={query}
+      />
+
       <HideSmall>
-        <Column
-          isVCentered={true}
-          className={`${showSearch ? "justify-between" : "justify-center"}`}
-        >
-          {showSearch && (
-            <div className="w-1/3">
-              <SearchBar
-                handleInputChange={handleInputChange}
-                placeholder="Type to find publications..."
-                text={query}
-              />
+        <Column isVCentered={true} className="mt-8 justify-center">
+          {showYears && (
+            <div>
+              <YearSelector onClick={handleClick} />
             </div>
           )}
-          <div>{showYears && <YearSelector onClick={handleClick} />}</div>
         </Column>
       </HideSmall>
 

@@ -12,8 +12,8 @@ import HideSmall from "../components/hidesmall"
 import SearchSummary from "../components/search/searchsummary"
 import SiteSearch from "../components/search/sitesearch"
 import Column from "../components/column"
-import MainColumn from "../components/maincolumn"
-import SideColumn from "../components/sidecolumn"
+// import MainColumn from "../components/maincolumn"
+// import SideColumn from "../components/sidecolumn"
 
 const EMPTY_QUERY = ""
 
@@ -121,7 +121,6 @@ const PeopleTemplate = ({ data, pageContext }) => {
       {/* <TypesFilter handleClick={handleClick} /> */}
 
       <SearchBar
-        className="sm:hidden"
         handleInputChange={handleInputChange}
         placeholder="Type to find faculty..."
         text={query}
@@ -131,18 +130,11 @@ const PeopleTemplate = ({ data, pageContext }) => {
       <MainColumn>
         <div className="w-full"> */}
       <HideSmall>
-        <div className="row items-center justify-between">
-          <div className="w-1/3">
-            <SearchBar
-              handleInputChange={handleInputChange}
-              placeholder="Type to find faculty..."
-              text={query}
-            />
-          </div>
+        <Column isVCentered={true} className="justify-center mt-8">
           <div>
             <TypeSelector onClick={handleClick} />
           </div>
-        </div>
+        </Column>
       </HideSmall>
 
       <PeopleSearchResults
