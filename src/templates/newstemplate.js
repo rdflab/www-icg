@@ -91,11 +91,14 @@ const NewsTemplate = ({ pageContext }) => {
       <Column>
         <MainColumn>
           <div className="w-full"> */}
-      <Column isVCentered={true} isCentered={true}>
-        <div>
-          <YearSelector onClick={handleClick} />
-        </div>
-      </Column>
+
+      <HideSmall>
+        <Column isVCentered={true} isCentered={true}>
+          <div>
+            <YearSelector onClick={handleClick} />
+          </div>
+        </Column>
+      </HideSmall>
       <NewsSearchResults
         news={yearFilteredNews}
         pagedNews={pagedNews}
