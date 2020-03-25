@@ -1,9 +1,6 @@
 import React from "react"
 import Pagination from "../pagination"
 import NewsItems from "./newsitems"
-import SearchSummary from "../search/searchsummary"
-
-const EMPTY_QUERY = ""
 
 const NewsSearchResults = ({
   news,

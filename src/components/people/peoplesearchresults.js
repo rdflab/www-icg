@@ -12,7 +12,7 @@ const PeopleSearchResults = ({
   showLabLink,
   onPageChanged,
 }) => (
-  <div className="mt-8">
+  <div className="w-full mt-8">
     {/* <SearchSummary count={people.length} single="Member" plural="Members" /> */}
 
     <PeopleTypes

@@ -1,6 +1,5 @@
 import React from "react"
 import CrumbLayout from "../components/crumblayout"
-import Card from "../components/card"
 import FlatCard from "../components/flatcard"
 import Column from "../components/column"
 import SiteSearch from "../components/search/sitesearch"

@@ -9,3 +9,9 @@ export const labUrl = group => {
 export const labMembersUrl = group => {
   return `/research-areas/labs/${group.frontmatter.id}/members`
 }
+
+export const eventUrl = event => {
+  return `/events/${
+    event.frontmatter.start.split("T")[0]
+  }-${event.frontmatter.title.toLowerCase().replace(" ", "-")}`
+}

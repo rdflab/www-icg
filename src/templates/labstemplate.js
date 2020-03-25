@@ -2,7 +2,9 @@ import React, { useState } from "react"
 import CrumbLayout from "../components/crumblayout"
 import SiteSearch from "../components/search/sitesearch"
 import Labs from "../components/lab/labs"
-import SearchSummary from "../components/search/searchsummary"
+import MainColumn from "../components/maincolumn"
+import SideColumn from "../components/sidecolumn"
+import Column from "../components/column"
 
 const EMPTY_QUERY = ""
 
@@ -15,11 +17,11 @@ const LabsTemplate = ({ pageContext }) => {
   const [recordsPerPage, setRecordsPerPage] = useState(20)
 
   const handleInputChange = e => {
-    const q = e.target.value
+    const q = e.target.value.toLowerCase()
     let ret = []
 
     for (let group of allGroups) {
-      if (group.frontmatter.name.toLowerCase().includes(q.toLowerCase())) {
+      if (group.frontmatter.name.toLowerCase().includes(q)) {
         ret.push(group)
       }
     }
@@ -61,7 +63,14 @@ const LabsTemplate = ({ pageContext }) => {
         className="my-4"
       /> */}
 
-      <Labs groups={pagedGroups} peopleMap={peopleMap} />
+      <Column>
+        <MainColumn>
+          <div className="w-full">
+            <Labs groups={pagedGroups} peopleMap={peopleMap} />
+          </div>
+        </MainColumn>
+        <SideColumn></SideColumn>
+      </Column>
     </CrumbLayout>
   )
 }

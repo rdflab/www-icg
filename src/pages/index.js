@@ -1,15 +1,14 @@
 import React from "react"
 import Layout from "../components/layout"
-import NYCBgSection from "../components/images/nycbg"
+// import NYCBgSection from "../components/images/nycbg"
 import Container from "../components/container"
 import Column from "../components/column"
 
 import BlueIndexLink from "../components/blueindexlink"
 import WhiteIndexLink from "../components/whiteindexlink"
-import MicroscopeSection from "../components/images/microscope"
+// import MicroscopeSection from "../components/images/microscope"
 import TestTubesSection from "../components/images/testtubes"
 import SiteSearch from "../components/search/sitesearch"
-import HideSmall from "../components/hidesmall"
 
 const HomeSection = ({ title, subTitle, text, links, alt }) => {
   return (

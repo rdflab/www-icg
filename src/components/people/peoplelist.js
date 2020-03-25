@@ -8,7 +8,7 @@
 import React from "react"
 import Person from "./person"
 
-const PeopleList = ({ people, groupMap: groupMap, showLabLink, imageMap }) => (
+const PeopleList = ({ people, groupMap, showLabLink, imageMap }) => (
   <>
     {people.map((person, index) => (
       <Person

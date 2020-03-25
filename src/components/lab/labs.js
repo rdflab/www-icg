@@ -4,10 +4,6 @@ import MembersLink from "../memberslink"
 import PublicationsLink from "../publication/publicationslink"
 import Column from "../column"
 
-//import SideBar from "./sidebar/sidebar"
-import TextLink from "../textlink"
-import SectionBreak from "../sectionbreak"
-import Card from "../card"
 import BlueLink from "../bluelink"
 import FlatCard from "../flatcard"
 import { labMembersUrl, labUrl } from "../../utils/urls"
@@ -27,12 +23,12 @@ const Labs = ({ groups, peopleMap }) => (
       return (
         // <SectionBreak key={index}>
         <Column key={index} isCentered={true} className="mb-8">
-          <Column w="4">
+          <Column w={6}>
             <h2 className="my-2">
               <BlueLink to={labUrl(group)}>{name}</BlueLink>
             </h2>
           </Column>
-          <Column w="4">
+          <Column w={6}>
             <FlatCard>
               <MembersLink to={labMembersUrl(group)} />
               <PublicationsLink

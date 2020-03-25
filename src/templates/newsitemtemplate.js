@@ -6,6 +6,8 @@ import Column from "../components/column"
 import MainColumn from "../components/maincolumn"
 import SideColumn from "../components/sidecolumn"
 import NewsContent from "../components/news/newscontent"
+import Collapsible from "../components/collapsible"
+import Title from "../components/title"
 
 const NewsItemTemplate = props => {
   const { pageContext } = props
@@ -19,18 +21,24 @@ const NewsItemTemplate = props => {
         ["Home", "/"],
         ["News", "/news"],
       ]}
-      title={title}
     >
       <Column>
         <MainColumn>
-          <div>
-            <NewsItemDate>{item.frontmatter.date}</NewsItemDate>
+          <div className="w-full">
+            <div>
+              <Title>{title}</Title>
+            </div>
+            <div>
+              <NewsItemDate>{item.frontmatter.date}</NewsItemDate>
 
-            <NewsContent html={item.html} />
+              <NewsContent html={item.html} />
+            </div>
           </div>
         </MainColumn>
         <SideColumn>
-          <SideBarNews allNews={allNews} />
+          <Collapsible title="Recent News">
+            <SideBarNews allNews={allNews} />
+          </Collapsible>
         </SideColumn>
       </Column>
     </CrumbLayout>

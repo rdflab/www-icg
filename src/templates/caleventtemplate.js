@@ -4,6 +4,8 @@ import CalEventLocation from "../components/calendar/caleventlocation"
 import Column from "../components/column"
 import MainColumn from "../components/maincolumn"
 import SideColumn from "../components/sidecolumn"
+import CalEventsSideBar from "../components/calendar/caleventssidebar"
+import Title from "../components/title"
 
 const CalEventTemplate = props => {
   const { pageContext } = props
@@ -20,11 +22,12 @@ const CalEventTemplate = props => {
         ["Home", "/"],
         ["Events", "/events"],
       ]}
-      title={title}
     >
       <Column>
         <MainColumn>
-          <div>
+          <div className="w-full">
+            <Title>{title}</Title>
+
             <div dangerouslySetInnerHTML={{ __html: calEvent.html }} />
 
             <div className="my-4 py-4 border-t border-b border-solid border-gray-400">
@@ -32,7 +35,9 @@ const CalEventTemplate = props => {
             </div>
           </div>
         </MainColumn>
-        <SideColumn></SideColumn>
+        <SideColumn>
+          <CalEventsSideBar events={allCalEvents} />
+        </SideColumn>
       </Column>
     </CrumbLayout>
   )

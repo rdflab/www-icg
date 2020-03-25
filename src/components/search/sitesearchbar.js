@@ -41,7 +41,7 @@ const SiteSearchBar = ({
       <div className="flex items-center">
         <FaSearch
           className={`${
-            hover ? "text-blue-400" : "text-gray-500"
+            hover ? "text-blue-400" : "text-gray-400"
           } trans-ani ml-2`}
         />
       </div>

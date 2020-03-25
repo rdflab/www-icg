@@ -1,6 +1,5 @@
 import React from "react"
 import Pagination from "../pagination"
-import SearchSummary from "../search/searchsummary"
 import CalEvents from "./calevents"
 
 const CalSearchResults = ({

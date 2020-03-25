@@ -17,9 +17,9 @@ import { personName } from "../../utils/personname"
 
 const Person = ({ person, showLabLink, image }) => {
   return (
-    <div className="my-4">
+    <div className="w-full my-4">
       <Column isCentered={true}>
-        <Column w="1" className="mr-4">
+        <Column w={1} className="mr-4">
           {image !== null && (
             <Img
               fluid={image.childImageSharp.fluid}
@@ -27,19 +27,21 @@ const Person = ({ person, showLabLink, image }) => {
             />
           )}
         </Column>
-        <MainColumn w="4">
+        <Column w={7} className="mr-4">
           <div>
             <h3 className="mt-2">
               <BlueLink to={personUrl(person)}>{personName(person)}</BlueLink>
             </h3>
 
-            <div className="gray">{person.frontmatter.titles[0]}</div>
+            <div className="gray mb-4">{person.frontmatter.titles[0]}</div>
           </div>
-        </MainColumn>
-        <Column w="4">
-          <FlatCard>
-            <ContactInfo person={person} />
-          </FlatCard>
+        </Column>
+        <Column w={4}>
+          <div className="w-full">
+            <FlatCard>
+              <ContactInfo person={person} />
+            </FlatCard>
+          </div>
         </Column>
       </Column>
     </div>

@@ -5,7 +5,7 @@ import BlueLink from "../bluelink"
 import HTMLDiv from "../htmldiv"
 
 const NewsItem = ({ item }) => (
-  <article className="mb-8 pb-4 border-b border-solid gray-border">
+  <article className="mb-8 pb-4">
     <NewsItemDate>{item.frontmatter.date}</NewsItemDate>
     <BlueLink
       aria-label={`Goto news about ${item.frontmatter.title}`}

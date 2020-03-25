@@ -10,7 +10,7 @@ const SideBarMembers = ({ people, title, maxRecords }) => {
 
     ret.push(<SideBarMember person={person} />)
 
-    if (i == maxRecords) {
+    if (i === maxRecords) {
       break
     }
   }

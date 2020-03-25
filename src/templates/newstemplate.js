@@ -5,11 +5,13 @@ import YearSelector from "../components/filter/yearselector"
 import HideSmall from "../components/hidesmall"
 import NewsSearchResults from "../components/news/newssearchresults"
 import Column from "../components/column"
+import MainColumn from "../components/maincolumn"
+import SideColumn from "../components/sidecolumn"
 
 const EMPTY_QUERY = ""
 
 const NewsTemplate = ({ pageContext }) => {
-  const { allNews, searchData } = pageContext
+  const { allNews } = pageContext
 
   const [query, setQuery] = useState(EMPTY_QUERY)
   const [filteredNews, setFilteredNews] = useState([])
@@ -77,28 +79,34 @@ const NewsTemplate = ({ pageContext }) => {
       // }
       headerComponent={<SiteSearch />}
     >
-      <HideSmall>
-        {/* <Column isVCentered={true} className="justify-between">
-          <div></div>
-          <div>
-            <YearSelector onClick={handleClick} />
-          </div>
-        </Column> */}
+      {/* <HideSmall>
 
         <Column isVCentered={true} isCentered={true}>
           <div>
             <YearSelector onClick={handleClick} />
           </div>
         </Column>
-      </HideSmall>
+      </HideSmall> */}
 
-      <NewsSearchResults
-        news={yearFilteredNews}
-        pagedNews={pagedNews}
-        page={page}
-        recordsPerPage={recordsPerPage}
-        onPageChanged={onPageChanged}
-      />
+      <Column>
+        <MainColumn>
+          <div className="w-full">
+            <Column isVCentered={true} isCentered={true}>
+              <div>
+                <YearSelector onClick={handleClick} />
+              </div>
+            </Column>
+            <NewsSearchResults
+              news={yearFilteredNews}
+              pagedNews={pagedNews}
+              page={page}
+              recordsPerPage={recordsPerPage}
+              onPageChanged={onPageChanged}
+            />
+          </div>
+        </MainColumn>
+        <SideColumn></SideColumn>
+      </Column>
     </CrumbLayout>
   )
 }

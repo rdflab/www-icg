@@ -1,7 +1,6 @@
 import React from "react"
 import Container from "../container"
 import BlueLink from "../bluelink"
-import GrayLink from "../graylink"
 import { FaChevronRight } from "react-icons/fa"
 
 const Breadcrumb = ({ crumbs }) => {

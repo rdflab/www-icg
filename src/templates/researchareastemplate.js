@@ -16,7 +16,7 @@ FlatCard.defaultProps = {
 }
 
 const ResearchAreasTemplate = ({ pageContext }) => {
-  const { allResearchAreas, searchData } = pageContext
+  const { allResearchAreas } = pageContext
 
   const raMap = {}
 

@@ -118,7 +118,6 @@ const Groups = ({ groups }) => (
 
 const PersonTemplate = ({ pageContext, data }) => {
   const {
-    id,
     person,
     groups,
     labPeople,
@@ -213,8 +212,7 @@ const PersonTemplate = ({ pageContext, data }) => {
 
             {groups.length > 0 && <Groups groups={groups} />}
 
-            {/* </SideBar> */}
-            <div className="mt-8">
+            {/* <div className="mt-8">
               <SideBarMembers
                 group={groups[0]}
                 people={labPeople}
@@ -224,7 +222,7 @@ const PersonTemplate = ({ pageContext, data }) => {
               <div className="mt-2">
                 <BlueLink to={labMembersUrl(groups[0])}>More</BlueLink>
               </div>
-            </div>
+            </div> */}
           </div>
         </SideColumn>
       </Column>

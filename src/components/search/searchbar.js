@@ -36,7 +36,11 @@ const SearchBar = ({
         onChange={handleInputChange}
         className="w-full bg-transparent"
       />
-      <FaSearch className={`text-blue-400 trans-ani ml-2`} />
+      <FaSearch
+        className={`${
+          hover ? "text-blue-400" : "text-gray-400"
+        } trans-ani ml-2`}
+      />
     </div>
   )
 }

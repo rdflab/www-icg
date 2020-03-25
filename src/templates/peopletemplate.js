@@ -11,6 +11,9 @@ import TypeSelector from "../components/people/typeselector"
 import HideSmall from "../components/hidesmall"
 import SearchSummary from "../components/search/searchsummary"
 import SiteSearch from "../components/search/sitesearch"
+import Column from "../components/column"
+import MainColumn from "../components/maincolumn"
+import SideColumn from "../components/sidecolumn"
 
 const EMPTY_QUERY = ""
 
@@ -124,6 +127,9 @@ const PeopleTemplate = ({ data, pageContext }) => {
         text={query}
       />
 
+      {/* <Column>
+      <MainColumn>
+        <div className="w-full"> */}
       <HideSmall>
         <div className="row items-center justify-between">
           <div className="w-1/3">
@@ -149,6 +155,10 @@ const PeopleTemplate = ({ data, pageContext }) => {
         showLabLink={true}
         onPageChanged={onPageChanged}
       />
+      {/* </div>
+      </MainColumn>
+      <SideColumn></SideColumn>
+      </Column> */}
     </CrumbLayout>
   )
 }

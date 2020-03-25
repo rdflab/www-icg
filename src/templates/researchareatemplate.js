@@ -6,7 +6,7 @@ import toImageMap from "../utils/toimagemap"
 import SiteSearch from "../components/search/sitesearch"
 
 const ResearchAreaTemplate = ({ data, pageContext }) => {
-  const { groupMap, allPeople, researchArea, searchData } = pageContext
+  const { groupMap, allPeople, researchArea } = pageContext
 
   const imageMap = toImageMap(data.files)
 

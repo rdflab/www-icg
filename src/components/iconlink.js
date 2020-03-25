@@ -1,5 +1,4 @@
 import React from "react"
-import Column from "./column"
 
 const IconLink = ({ icon, content }) => (
   <div className="row my-1">

@@ -5,7 +5,7 @@ import SlideMenuLink from "./slidemenulink"
 import SlideMenuCloseButton from "./slidemenuclosebutton"
 import ColumbiaICGImage from "../images/columbiaicgimage"
 import SiteSearchBar from "../search/sitesearchbar"
-import { getSiteData, Heading, SiteLink } from "../search/sitesearch"
+import { getSiteData, Heading } from "../search/sitesearch"
 import { searchTree } from "../search/searchtree"
 import SearchHighlight from "../search/searchhighlight"
 import Column from "../column"
@@ -36,8 +36,8 @@ const SlideMenuContainer = ({ title, onClickHandle, visible, maxResults }) => {
 
   const [query, setQuery] = useState("")
   const [results, setResults] = useState([])
-  const [showMenu, setShowMenu] = useState(false)
-  const [hover, setHover] = useState(false)
+  //const [showMenu, setShowMenu] = useState(false)
+  //const [hover, setHover] = useState(false)
   const [siteData, setSiteData] = useState(null)
 
   const search = (q, sd) => {

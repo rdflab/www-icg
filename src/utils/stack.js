@@ -40,7 +40,7 @@ class Stack {
   }
 
   _reverse(index) {
-    if (index != 0) {
+    if (index !== 0) {
       this._reverse(index - 1)
     }
   }

@@ -9,12 +9,12 @@ import CalSearchResults from "../components/calendar/calsearchresults"
 import DayPicker, { DateUtils } from "react-day-picker"
 import "../../node_modules/react-day-picker/lib/style.css"
 import "../components/calendar/calendar.scss"
-import HideSmall from "../components/hidesmall"
+import Title from "../components/title"
 
 const EMPTY_QUERY = ""
 
 const CalEventsTemplate = ({ pageContext }) => {
-  const { allCalEvents, searchData } = pageContext
+  const { allCalEvents } = pageContext
 
   const [query, setQuery] = useState(EMPTY_QUERY)
   const [filteredCalEvents, setFilteredCalEvents] = useState([])
@@ -24,8 +24,10 @@ const CalEventsTemplate = ({ pageContext }) => {
 
   useEffect(() => {
     for (let calEvent of allCalEvents) {
-      calEvent.start = new Date(calEvent.frontmatter.start)
-      calEvent.end = new Date(calEvent.frontmatter.end)
+      if (calEvent.start === undefined) {
+        calEvent.start = new Date(calEvent.frontmatter.start)
+        calEvent.end = new Date(calEvent.frontmatter.end)
+      }
     }
   }, [])
 
@@ -45,11 +47,17 @@ const CalEventsTemplate = ({ pageContext }) => {
   }
 
   const handleInputChange = e => {
-    const q = e.target.value
+    const q = e.target.value.toLowerCase()
     let ret = []
 
     for (let event of allCalEvents) {
-      if (event.frontmatter.title.toLowerCase().includes(q.toLowerCase())) {
+      const day = event.start.toLocaleString("default", { day: "numeric" })
+      const month = event.start
+        .toLocaleString("default", { month: "short" })
+        .toLowerCase()
+      const title = event.frontmatter.title.toLowerCase()
+
+      if (title.includes(q) || day === q || month === q) {
         ret.push(event)
       }
     }
@@ -94,7 +102,6 @@ const CalEventsTemplate = ({ pageContext }) => {
         ["Home", "/"],
         ["Events", "/events"],
       ]}
-      title="Events"
       headerComponent={<SiteSearch />}
       // titleComponent={
       //   <SearchSummary
@@ -104,7 +111,7 @@ const CalEventsTemplate = ({ pageContext }) => {
       //   />
       // }
     >
-      <HideSmall>
+      {/* <HideSmall>
         <div className="row items-center justify-between">
           <div className="w-1/3">
             <SearchBar
@@ -115,7 +122,7 @@ const CalEventsTemplate = ({ pageContext }) => {
           </div>
           <div></div>
         </div>
-      </HideSmall>
+      </HideSmall> */}
 
       <Column>
         {/* <SmallColumn>
@@ -128,13 +135,40 @@ const CalEventsTemplate = ({ pageContext }) => {
         </div>
       </SmallColumn> */}
         <MainColumn>
-          <CalSearchResults
-            events={calEvents}
-            pagedEvents={pagedEvents}
-            page={page}
-            recordsPerPage={recordsPerPage}
-            onPageChanged={onPageChanged}
-          />
+          <div className="w-full">
+            <div>
+              <Title>Events</Title>
+            </div>
+
+            {/* <div className="w-1/2"> */}
+            <SearchBar
+              handleInputChange={handleInputChange}
+              placeholder="Type to find events..."
+              text={query}
+            />
+            {/* </div> */}
+
+            {/* <Column className="justify-between">
+              <div>
+                <Title>Events</Title>
+              </div>
+              <div className="w-1/2">
+                <SearchBar
+                  handleInputChange={handleInputChange}
+                  placeholder="Type to find events..."
+                  text={query}
+                />
+              </div>
+            </Column> */}
+
+            <CalSearchResults
+              events={calEvents}
+              pagedEvents={pagedEvents}
+              page={page}
+              recordsPerPage={recordsPerPage}
+              onPageChanged={onPageChanged}
+            />
+          </div>
         </MainColumn>
         <SideColumn>
           {/* <SideBar> */}
@@ -143,12 +177,9 @@ const CalEventsTemplate = ({ pageContext }) => {
           placeholder="Type to find events..."
         /> */}
           {/* <Collapsible title="Filter By Date" height="auto"> */}
-          <div className="text-center">
-            <DayPicker
-              selectedDays={selectedDays}
-              onDayClick={handleDayClick}
-            />
-          </div>
+
+          <DayPicker selectedDays={selectedDays} onDayClick={handleDayClick} />
+
           {/* </Collapsible> */}
           {/* </SideBar> */}
         </SideColumn>

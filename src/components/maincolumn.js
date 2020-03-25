@@ -8,7 +8,7 @@ const MainColumn = ({ w, children, className }) => (
 )
 
 MainColumn.defaultProps = {
-  w: "8",
+  w: 8,
   className: "",
 }
 

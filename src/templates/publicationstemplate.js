@@ -9,8 +9,6 @@ import HideSmall from "../components/hidesmall"
 import { searchTree } from "../components/search/searchtree"
 import Column from "../components/column"
 
-const axios = require("axios")
-
 const EMPTY_QUERY = ""
 
 const PublicationsTemplate = ({ pageContext }) => {
@@ -29,7 +27,6 @@ const PublicationsTemplate = ({ pageContext }) => {
   const [page, setPage] = useState(1)
   const [recordsPerPage, setRecordsPerPage] = useState(20)
   const [filterYears, setFilterYears] = useState([])
-  const [pubIndex, setPubIndex] = useState(null)
 
   // const loadPubIndex = () => {
   //   return axios.get(index).then(resp => {

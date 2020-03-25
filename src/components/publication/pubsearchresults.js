@@ -1,7 +1,6 @@
 import React from "react"
 import PublicationYears from "./publicationyears"
 import Pagination from "../pagination"
-import SearchSummary from "../search/searchsummary"
 //import SideBar from "../sidebar/sidebar"
 
 const PubSearchResults = ({
