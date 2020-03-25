@@ -19,6 +19,7 @@ import FlatCard from "../components/flatcard"
 import Title from "../components/title"
 import { labName } from "./labtemplate"
 import { labUrl, personUrl, labMembersUrl } from "../utils/urls"
+import HideSmall from "../components/hidesmall"
 
 const interests = person => {
   const n = person.researchAreas.length
@@ -140,6 +141,8 @@ const PersonTemplate = ({ pageContext, data }) => {
     >
       <Column>
         <SmallColumn>
+          <Title>{title}</Title>
+
           <h1 className="text-blue-columbia mb-4">
             {person.frontmatter.titles[0]}
           </h1>
@@ -148,7 +151,10 @@ const PersonTemplate = ({ pageContext, data }) => {
         </SmallColumn>
         <MainColumn>
           <div>
-            <Title>{title}</Title>
+            <HideSmall>
+              <Title>{title}</Title>
+            </HideSmall>
+
             {data.file !== null && (
               <div className="mb-8">
                 <Img

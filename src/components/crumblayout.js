@@ -34,9 +34,12 @@ const CrumbLayout = ({
 
       <Container className="min-h-screen mt-4">
         <div className="row items-center justify-between mb-4">
-          <div className="mr-8">
-            <Title>{title}</Title>
-          </div>
+          {title !== "" && (
+            <div className="mr-8">
+              <Title>{title}</Title>
+            </div>
+          )}
+
           {titleComponent !== null ? titleComponent : ""}
         </div>
         {children}
