@@ -8,6 +8,7 @@ titles: ["Technician B"]
 letters: []
 email: []
 phone: []
+room: ""
 researchAreas: []
 tags: ["People", "Staff"]
 urls: []

@@ -8,6 +8,7 @@ titles: ["Professor of Pathology and Cell Biology"]
 letters: ["PhD"]
 email: ["wg8@cumc.columbia.edu"]
 phone: ["(212) 851-5282", "(212) 851-5284"]
+room: "609A"
 researchAreas: []
 tags: ["People", "Faculty"]
 urls: []

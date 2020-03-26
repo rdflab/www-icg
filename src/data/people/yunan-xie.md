@@ -8,6 +8,7 @@ titles: ["Administrative Assistant"]
 letters: []
 email: ["yx30@cumc.columbia.edu"]
 phone: ["(212) 851-5268"]
+room: "507"
 researchAreas: []
 tags: ["People", "Staff"]
 urls: []

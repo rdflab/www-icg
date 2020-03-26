@@ -2,17 +2,14 @@
 id: "luciano-garofano"
 firstName: "Luciano"
 lastName: "Garofano"
-type: "Research Scientists"
+type: "Research Scientist"
 photo: ""
-titles:
-  [
-    "Postdoctoral Research Scientist Start July/August",
-    "Postdoctoral Research Scientist start July/August",
-  ]
+titles: ["Postdoctoral Research Scientist Start July/August", "Postdoctoral Research Scientist start July/August"]
 letters: ["PhD"]
-email: ["lg2485@cumc.columbia.edu", "lg2485@cumc.columbia.edu"]
+email: ["lg2485@cumc.columbia.edu"]
 phone: ["(212) 851-5287"]
+room: "403"
 researchAreas: []
-tags: ["People", "Research Scientists", "Research Scientists"]
+tags: ["People", "Research Scientist", "Research Scientist"]
 urls: []
 ---

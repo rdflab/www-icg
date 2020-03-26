@@ -2,13 +2,14 @@
 id: "peiguo-shi"
 firstName: "Peiguo"
 lastName: "Shi"
-type: "Research Scientists"
+type: "Research Scientist"
 photo: ""
 titles: ["Postdoctoral Research Scientist"]
 letters: ["PhD"]
-email: ["ps3008@cumc.columbia.edu", "ps3008@cumc.columbia.edu"]
+email: ["ps3008@cumc.columbia.edu"]
 phone: ["(212) 851-5287"]
+room: "403"
 researchAreas: []
-tags: ["People", "Research Scientists", "Research Scientists"]
+tags: ["People", "Research Scientist", "Research Scientist"]
 urls: []
 ---

@@ -2,13 +2,14 @@
 id: "maja-milanovic"
 firstName: "Maja"
 lastName: "Milanovic"
-type: "Research Scientists"
+type: "Research Scientist"
 photo: ""
 titles: ["Postdoctoral Research Scientist"]
 letters: ["PhD"]
 email: ["mm4619@cumc.columbia.edu"]
 phone: ["(212) 851-4785"]
+room: "501"
 researchAreas: []
-tags: ["People", "Research Scientists"]
+tags: ["People", "Research Scientist"]
 urls: []
 ---

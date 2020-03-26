@@ -8,6 +8,7 @@ titles: ["Technician B"]
 letters: []
 email: ["kmc@cumc.columbia.edu"]
 phone: ["(212) 851-4966"]
+room: "505"
 researchAreas: []
 tags: ["People", "Staff"]
 urls: []

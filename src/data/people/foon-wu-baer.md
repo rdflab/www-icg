@@ -8,6 +8,7 @@ titles: ["Senior Staff Associate"]
 letters: []
 email: ["fw110@cumc.columbia.edu"]
 phone: ["(212) 851-5260"]
+room: "502"
 researchAreas: []
 tags: ["People", "Staff"]
 urls: []

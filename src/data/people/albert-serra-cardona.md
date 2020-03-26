@@ -2,13 +2,14 @@
 id: "albert-serra-cardona"
 firstName: "Albert"
 lastName: "Serra-Cardona"
-type: "Research Scientists"
+type: "Research Scientist"
 photo: ""
 titles: ["Postdoctoral Research Scientist"]
 letters: ["PhD"]
 email: ["as5251@cumc.columbia.edu"]
 phone: ["(212) 851-4937"]
+room: "407"
 researchAreas: []
-tags: ["People", "Research Scientists"]
+tags: ["People", "Research Scientist"]
 urls: []
 ---

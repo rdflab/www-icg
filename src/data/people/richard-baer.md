@@ -8,6 +8,7 @@ titles: ["Professor of Pathology and Cell Biology"]
 letters: ["PhD"]
 email: ["rb670@cumc.columbia.edu"]
 phone: ["(212) 851-5275", "(212) 851-5267"]
+room: "503A"
 researchAreas: []
 tags: ["People", "Faculty"]
 urls: []

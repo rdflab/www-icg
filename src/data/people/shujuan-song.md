@@ -8,6 +8,7 @@ titles: ["Visiting Scientist"]
 letters: ["PhD"]
 email: ["ss5519@cumc.columbia.edu"]
 phone: ["(212) 851-5285"]
+room: "608"
 researchAreas: []
 tags: ["People", "Staff"]
 urls: []

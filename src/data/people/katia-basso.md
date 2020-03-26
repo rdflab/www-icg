@@ -8,7 +8,8 @@ titles: ["Assistant Professor of Pathology and Cell Biology"]
 letters: ["PhD"]
 email: ["kb451@cumc.columbia.edu"]
 phone: ["(212) 851-4786"]
-researchAreas: ["cancer-biology"]
+room: "506"
+researchAreas: []
 tags: ["People", "Faculty"]
 urls: []
 ---

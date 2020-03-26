@@ -2,13 +2,14 @@
 id: "agnieszka-wendorff"
 firstName: "Agnieszka"
 lastName: "Wendorff"
-type: "Research Scientists"
+type: "Research Scientist"
 photo: ""
 titles: ["Postdoctoral Research Scientist"]
 letters: ["PhD"]
 email: ["aw2785@cumc.columbia.edu"]
 phone: ["(212) 851-2564"]
+room: "401B"
 researchAreas: []
-tags: ["People", "Research Scientists"]
+tags: ["People", "Research Scientist"]
 urls: []
 ---

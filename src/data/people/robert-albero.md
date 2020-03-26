@@ -2,13 +2,14 @@
 id: "robert-albero"
 firstName: "Robert"
 lastName: "Albero"
-type: "Research Scientists"
+type: "Research Scientist"
 photo: ""
 titles: ["Postdoctoral Research Scientist"]
 letters: ["PhD"]
-email: ["ra2967@cumc.columbia.edu"]
-phone: ["(212) 851-5292"]
+email: []
+phone: []
+room: ""
 researchAreas: []
-tags: ["People", "Research Scientists"]
+tags: ["People", "Research Scientist"]
 urls: []
 ---

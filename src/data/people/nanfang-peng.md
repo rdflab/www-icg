@@ -2,13 +2,14 @@
 id: "nanfang-peng"
 firstName: "Nanfang"
 lastName: "Peng"
-type: "Research Scientists"
+type: "Research Scientist"
 photo: ""
 titles: ["Postdoctoral Research Scientist"]
 letters: ["PhD"]
 email: ["np2599@cumc.columbia.edu"]
 phone: ["(212) 851-5287"]
+room: "403"
 researchAreas: []
-tags: ["People", "Research Scientists"]
+tags: ["People", "Research Scientist"]
 urls: []
 ---

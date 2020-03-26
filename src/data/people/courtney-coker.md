@@ -8,6 +8,7 @@ titles: ["Staff Associate"]
 letters: []
 email: ["cc3703@cumc.columbia.edu"]
 phone: ["(212) 851-4792"]
+room: "401A"
 researchAreas: []
 tags: ["People", "Staff"]
 urls: []

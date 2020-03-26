@@ -1,6 +1,6 @@
 ---
 id: "murty-vundavalli-lab"
-name: "Murty Vundavalli"
+name: "Murty Vundavalli Lab"
 type: "Lab"
 photo: ""
 leaders: ["murty-vundavalli"]
