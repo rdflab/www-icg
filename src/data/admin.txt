@@ -1,0 +1,10 @@
+NAME	TITLE	PHONE	EMAIL	ROOM
+Arjune, Deonarine R 	Senior Project Officer 	851-4682 	dra2112@cumc.columbia.edu 	320A
+Gavaris, Tom 	Divisional Administrator  	851-4747 	tg2294@cumc.columbia.edu 	508B
+Gellhorn, Tina  	Executive Assistant  	851-5274 	cg482@cumc.columbia.edu 	508
+Meregildo, Clara  	HR Administrative Coordinator 	851-5276 	cm2217@cumc.columbia.edu 	508
+Quintero, Esperanza  	Technical Assistant (Glassware Facility) 	851-5283 	eq2102@cumc.columbia.edu 	415
+Ramirez, German  	Technical Assistant (Glassware Facility) 	851-5283 	gr2241@cumc.columbia.edu 	415
+Srinivasan, Seetha 	Database Maint (Variable Hours Officer) 	851-5276 	svs2113@cumc.columbia.edu 	508
+Szalasny, Russell  	Administrative Aid  	851-5272 	rs2426@cumc.columbia.edu 	407
+Tejeda, Jeanette 	Administrative Coordinator 	851-5283 	jt591@cumc.columbia.edu 	609

@@ -3,6 +3,7 @@ var fs = require("fs")
 
 const PEOPLE_TYPES = [
   "Faculty",
+  "Administration",
   "Research Scientists",
   "Graduate Student",
   "Staff",

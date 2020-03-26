@@ -57,6 +57,15 @@ const TypeSelector = ({ onClick }) => {
       >
         Faculty
       </SelectType>
+
+      <SelectType
+        onClick={_handleClick}
+        text="Administration"
+        selected={selectedTypes[0] === "Administration"}
+      >
+        Administration
+      </SelectType>
+
       <SelectType
         onClick={_handleClick}
         text="Research Scientists"
