@@ -231,21 +231,46 @@ a:hover {
 
 
 
+// .header-link {
+//   @apply link text-white opacity-50 mr-6 trans-ani;
+// }
+
+// .header-link:hover {
+//   @apply opacity-90;
+// }
+
+// .header-link-active {
+//   @apply opacity-100;
+// }
+
+// .header-link-active:hover {
+//   @apply opacity-100;
+// }
+
+
+
+
 .header-link {
-  @apply link text-white opacity-50 mr-6 trans-ani; // border-b-2 border-solid border-transparent;
+  @apply link block text-gray-500 py-2 px-4 rounded-t trans-ani; // border-b-2 border-solid border-transparent;
 }
 
 .header-link:hover {
-  @apply opacity-90;
+  @apply text-blue-500;
 }
 
 .header-link-active {
-  @apply opacity-100; //blue border-b-2 border-solid border-blue-500;
+  @apply text-blue-600 bg-gray-200; //blue border-b-2 border-solid border-blue-500;
 }
 
 .header-link-active:hover {
-  @apply opacity-100; //blue border-b-2 border-solid border-blue-500;
+  @apply text-blue-600; //blue border-b-2 border-solid border-blue-500;
 }
+
+
+
+
+
+
 
 
 

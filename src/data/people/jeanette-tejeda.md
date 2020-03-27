@@ -8,7 +8,7 @@ titles: ["Administrative Coordinator"]
 letters: []
 email: ["jt591@cumc.columbia.edu"]
 phone: ["851-5283"]
-room: ["609"]
+room: "609"
 researchAreas: []
 tags: ["People", "Administration"]
 urls: []

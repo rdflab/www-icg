@@ -7,7 +7,6 @@ const PeopleSearchResults = ({
   pagedPeople,
   page,
   recordsPerPage,
-  groupMap,
   imageMap,
   showLabLink,
   onPageChanged,
@@ -18,7 +17,6 @@ const PeopleSearchResults = ({
     <PeopleTypes
       imageMap={imageMap}
       allPeople={pagedPeople}
-      groupMap={groupMap}
       showLabLink={showLabLink}
     />
     <div className="has-text-centered">

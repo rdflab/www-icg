@@ -36,9 +36,9 @@ const Header = ({ title, content, menuContent }) => (
         </Container>
       </div>
 
-      <nav aria-label="Navigation" className="bg-blue-columbia-80 py-2">
+      <nav aria-label="Navigation">
         <Container>
-          <Column isVCentered={true} className="justify-between">
+          <Column isVCentered={true} className="justify-between -mx-4">
             <HeaderLinks />
 
             {menuContent !== null && menuContent}

@@ -133,7 +133,7 @@ const PersonTemplate = ({ pageContext, data }) => {
       crumbs={[
         ["Home", "/"],
         ["Research Areas", "/research-areas"],
-        ["Faculty and Staff", "/research-areas/faculty-and-staff"],
+        ["People", "/research-areas/people"],
         [title, personUrl(person)],
       ]}
       headerComponent={<SiteSearch />}

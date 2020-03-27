@@ -15,6 +15,8 @@ df = pd.read_csv('admin.txt', sep='\t', header=0)
 type = 'Administration'
 tags = 'People'
 
+ids = []
+
 for i in range(0, df.shape[0]):
     names = df['NAME'][i].split(', ')
     
@@ -26,6 +28,8 @@ for i in range(0, df.shape[0]):
     title = df['TITLE'][i].strip()
     
     id = '{}-{}'.format(firstName.lower().replace(' ', '-'), lastName.lower().replace(' ', '-'))
+    
+    ids.append(id)
     
     file = 'people/{}.md'.format(id)
     
@@ -42,9 +46,24 @@ for i in range(0, df.shape[0]):
     print('letters: []', file=f)
     print('email: ["{}"]'.format(email), file=f)
     print('phone: ["{}"]'.format(phone), file=f)
-    print('room: ["{}"]'.format(room), file=f)
+    print('room: "{}"'.format(room), file=f)
     print('researchAreas: []', file=f)
     print('tags: ["People", "Administration"]', file=f)
     print('urls: []', file=f)
     print('---', file=f)
     f.close()
+    
+    
+f = open('groups/administration.md', 'w')
+print('---', file=f)
+print('id: "administration"', file=f)
+print('name: "Administration"', file=f)
+print('type: "Administration"', file=f)
+print('photo: ""', file=f)
+print('leaders: []', file=f)
+print('members: [{}]'.format(','.join(['"{}"'.format(id) for id in sorted(ids)])), file=f)
+print('email: []'.format(email), file=f)
+print('phone: []'.format(phone), file=f)
+print('urls: []', file=f)
+print('---', file=f)
+f.close()

@@ -1,5 +1,5 @@
 export const personUrl = person => {
-  return `/research-areas/faculty-and-staff/${person.frontmatter.id}`
+  return `/people/${person.frontmatter.id}`
 }
 
 export const labUrl = group => {

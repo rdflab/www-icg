@@ -8,7 +8,7 @@ titles: ["Executive Assistant"]
 letters: []
 email: ["cg482@cumc.columbia.edu"]
 phone: ["851-5274"]
-room: ["508"]
+room: "508"
 researchAreas: []
 tags: ["People", "Administration"]
 urls: []

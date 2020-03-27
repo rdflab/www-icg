@@ -8,7 +8,7 @@ titles: ["Senior Project Officer"]
 letters: []
 email: ["dra2112@cumc.columbia.edu"]
 phone: ["851-4682"]
-room: ["320A"]
+room: "320A"
 researchAreas: []
 tags: ["People", "Administration"]
 urls: []

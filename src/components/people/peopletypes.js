@@ -11,7 +11,7 @@ import { PEOPLE_TYPES } from "../../constants"
 import toPeopleTypeMap from "../../utils/peopletypemap"
 import SectionBreak from "../sectionbreak"
 
-const PeopleTypes = ({ allPeople, groupMap, showLabLink, imageMap }) => {
+const PeopleTypes = ({ allPeople, showLabLink, imageMap }) => {
   const peopleMap = toPeopleTypeMap(allPeople)
 
   var elems = []
@@ -28,7 +28,6 @@ const PeopleTypes = ({ allPeople, groupMap, showLabLink, imageMap }) => {
             key={c++}
             imageMap={imageMap}
             people={people}
-            groupMap={groupMap}
             showLabLink={showLabLink}
           />
         </SectionBreak>

@@ -3,14 +3,15 @@ import EmailLink from "../emaillink"
 import PhoneLink from "../phonelink"
 import URLLink from "../urllink"
 import RoomLink from "../roomlink"
+import Column from "../column"
 
-const ContactInfo = ({ person, urls, className }) => {
+const ContactInfo2 = ({ person, urls, className }) => {
   if (urls.length === 0 && person.frontmatter.urls.length > 0) {
     urls = person.frontmatter.urls
   }
 
   return (
-    <div className={`w-full mb-4 md:mb-0 ${className}`}>
+    <Column className={className}>
       {person.frontmatter.email.length > 0 && (
         <EmailLink to={person.frontmatter.email[0]} />
       )}
@@ -21,13 +22,13 @@ const ContactInfo = ({ person, urls, className }) => {
         <RoomLink room={person.frontmatter.room} />
       )}
       {urls.length > 0 && <URLLink urls={urls} />}
-    </div>
+    </Column>
   )
 }
 
-ContactInfo.defaultProps = {
+ContactInfo2.defaultProps = {
   className: "",
   urls: [],
 }
 
-export default ContactInfo
+export default ContactInfo2

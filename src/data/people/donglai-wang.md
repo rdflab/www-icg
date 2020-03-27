@@ -2,7 +2,7 @@
 id: "donglai-wang"
 firstName: "Donglai"
 lastName: "Wang"
-type: "Research Scientist"
+type: "Research Scientists"
 photo: ""
 titles: ["Postdoctoral Research Scientist"]
 letters: ["PhD"]
@@ -10,6 +10,6 @@ email: ["dw2586@cumc.columbia.edu"]
 phone: ["(212) 851-5285"]
 room: "608"
 researchAreas: []
-tags: ["People", "Research Scientist"]
+tags: ["People", "Research Scientists"]
 urls: []
 ---

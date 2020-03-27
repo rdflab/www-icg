@@ -112,7 +112,7 @@ for t in PEOPLE_TYPES:
             
             name = '{} {}'.format(first, last)
             
-            to = '/research-areas/faculty-and-staff/{}'.format(id)
+            to = '/people/{}'.format(id)
     
             create_suffix_tree(siteData['tree'], name, len(siteData['links']))
     
@@ -146,13 +146,7 @@ for pub in data:
         siteData['links'].append([name, si, linkNameMap[link], to])
 
 si += 1
-    
-    
-    
-    
-    
-    
-    
-    
+
+  
 json.dump(siteData, open('static/site.index.json', 'w'), separators=(',', ':')) #, indent=2)
        

@@ -12,6 +12,7 @@ const PEOPLE_TYPES = [
 const labTemplate = path.resolve(`src/templates/labtemplate.js`)
 const labsTemplate = path.resolve(`src/templates/labstemplate.js`)
 const peopleTemplate = path.resolve(`src/templates/peopletemplate.js`)
+const groupTemplate = path.resolve(`src/templates/grouptemplate.js`)
 const labOverviewTemplate = path.resolve(`src/templates/laboverviewtemplate.js`)
 const personTemplate = path.resolve(`src/templates/persontemplate.js`)
 const newsTemplate = path.resolve(`src/templates/newstemplate.js`)
@@ -50,7 +51,7 @@ const toPeopleTypeMap = people => {
     const t = person.frontmatter.type
 
     if (!(t in ret)) {
-      ret[this] = []
+      ret[t] = []
     }
 
     ret[t].push(person)
@@ -133,6 +134,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       urls: [String!]!
       groups: [String!]!
       people: [String!]!
+      room: String!
       researchAreas: [String!]!
       start: Date
       end: Date
@@ -183,6 +185,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               type
               email
               phone
+              room
               researchAreas
               tags
               urls
@@ -521,7 +524,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
       searchData["data"][type][name] = {
         name: `${person.frontmatter.titles[0]}`,
-        to: `/research-areas/faculty-and-staff/${person.frontmatter.id}`,
+        to: `/people/${person.frontmatter.id}`,
       }
     }
   }
@@ -670,7 +673,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           ],
           ["Members", `/research-areas/labs/${group.frontmatter.id}/members`],
         ],
-        groupMap: groupMap,
         allPeople: labPeople,
       },
     })
@@ -736,7 +738,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       }
 
       createPage({
-        path: `/research-areas/faculty-and-staff/${person.frontmatter.id}`,
+        path: `/people/${person.frontmatter.id}`,
         component: personTemplate,
         context: {
           id: person.frontmatter.id,
@@ -752,6 +754,78 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       })
     }
   }
+
+  //
+  // Faculty
+  //
+
+  createPage({
+    path: `/people/faculty`,
+    component: groupTemplate,
+    context: {
+      title: `Faculty`,
+      crumbs: [
+        ["Home", "/"],
+        ["People", "/people"],
+        ["Faculty", "/people/faculty"],
+      ],
+      allPeople: peopleTypeMap["Faculty"],
+    },
+  })
+
+  //
+  // Research Staff
+  //
+
+  createPage({
+    path: `/people/research-scientists`,
+    component: groupTemplate,
+    context: {
+      title: `Research Scientists`,
+      crumbs: [
+        ["Home", "/"],
+        ["People", "/people"],
+        ["Research Scientists", "/people/research-scientists"],
+      ],
+      allPeople: peopleTypeMap["Research Scientists"],
+    },
+  })
+
+  //
+  // Admin
+  //
+
+  createPage({
+    path: `/people/administration`,
+    component: groupTemplate,
+    context: {
+      title: `Administration`,
+      crumbs: [
+        ["Home", "/"],
+        ["People", "/people"],
+        ["Administration", "/people/administration"],
+      ],
+      allPeople: peopleTypeMap["Administration"],
+    },
+  })
+
+  //
+  // Staff
+  //
+
+  createPage({
+    path: `/people/staff`,
+    component: groupTemplate,
+    context: {
+      title: `Staff`,
+      crumbs: [
+        ["Home", "/"],
+        ["People", "/people"],
+        ["Staff", "/people/staff"],
+      ],
+      allPeople: peopleTypeMap["Staff"],
+    },
+  })
 
   //
   // News pages
@@ -814,18 +888,17 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     },
   })
 
-  // Faculty and Staff page
+  // People page
 
   createPage({
-    path: "/research-areas/faculty-and-staff",
+    path: "/people",
     component: peopleTemplate,
     context: {
       crumbs: [
         ["Home", "/"],
-        ["Research Areas", "/research-areas"],
-        ["Faculty and Staff", "/research-areas/faculty-and-staff"],
+        ["People", "/people"],
       ],
-      title: "Faculty and Staff",
+      title: "People",
       groupMap: groupMap,
       allPeople: allPeople,
     },

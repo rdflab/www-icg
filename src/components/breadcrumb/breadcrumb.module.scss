@@ -2,23 +2,13 @@ $crumb-background-color: rgb(240, 240, 240);
 $crumb-color: rgb(180, 180, 180);
 $crumb-hover-color: rgb(200, 200, 200);
 
-.breadcrumb-container {
-  background-color: $crumb-background-color
-}
-
 .breadcrumb {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  list-style: none;
-  overflow: hidden;
+  @apply m-0 -mx-4 py-4 overflow-hidden list-none;
   padding: 0;
-  margin: 0;
 }
   
 .breadcrumb li {
-  float: left;
-  padding: 0;
-  margin: 0;
+  @apply float-left p-0 m-0;
 }
 
 // .breadcrumb li+li:before {
@@ -31,21 +21,22 @@ $crumb-hover-color: rgb(200, 200, 200);
 .breadcrumb li a {
   @apply m-0 outline-none relative block float-left transition duration-300;
   padding: 0.5rem 0 0.5rem 3rem;
-  font-weight: 300;
   border-bottom: none !important;
 }
 
 .breadcrumb li:not(:last-child) a {
-  @apply bg-gray-500 text-white;
+  @apply text-white;
+  background-color: $crumb-color;
 }
 
 .breadcrumb li:not(:last-child) a:hover {
-  @apply bg-gray-400;
+  background-color: $crumb-hover-color;
 }
 
 .breadcrumb li:not(:last-child) a:after { 
-  @apply absolute block w-0 h-0 transition duration-300 border-gray-500 border-l;
+  @apply absolute block w-0 h-0 transition duration-300;
   content: " "; 
+  border-left-color: $crumb-color;
   border-top: 50px solid transparent; /* Go big on the size, and let overflow hide */
   border-bottom: 50px solid transparent;
   border-left-width: 2rem;
@@ -61,14 +52,11 @@ $crumb-hover-color: rgb(200, 200, 200);
 
 
 .breadcrumb li:not(:last-child) a:before { 
+  @apply absolute block w-0 h-0;
   content: " "; 
-  display: block; 
-  width: 0; 
-  height: 0;
   border-top: 50px solid transparent;           /* Go big on the size, and let overflow hide */
   border-bottom: 50px solid transparent;
   border-left: 2rem solid white;
-  position: absolute;
   top: 50%;
   margin-top: -50px; 
   margin-left: 1px;

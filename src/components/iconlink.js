@@ -1,11 +1,12 @@
 import React from "react"
+import Column from "./column"
 
 const IconLink = ({ icon, content }) => (
-  <div className="row my-1">
-    <div className="mr-4">{icon}</div>
+  <Column isVCentered={true} isMobile={true} className="my-1 mr-4">
+    <div className="mr-2">{icon}</div>
 
     <div>{content}</div>
-  </div>
+  </Column>
 )
 
 export default IconLink

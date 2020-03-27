@@ -11,7 +11,7 @@ const toPeopleTypeMap = people => {
     const t = person.frontmatter.type
 
     if (!(t in ret)) {
-      ret[this] = []
+      ret[t] = []
     }
 
     ret[t].push(person)
