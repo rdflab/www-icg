@@ -12,7 +12,8 @@ import collections
 
 PEOPLE_TYPES = [
   'Faculty',
-  'Research Scientist',
+  'Administration',
+  'Research Scientists',
   'Graduate Student',
   'Staff',
 ]

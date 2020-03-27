@@ -118,11 +118,25 @@ const PublicationsTemplate = ({ pageContext }) => {
         </HideSmall>
       }
     >
-      <SearchBar
-        handleInputChange={handleInputChange}
-        placeholder="Type to find publications..."
-        text={query}
-      />
+      <HideSmall show={true}>
+        <SearchBar
+          handleInputChange={handleInputChange}
+          placeholder="Type to find publications..."
+          text={query}
+        />
+      </HideSmall>
+
+      <HideSmall>
+        <Column isCentered={true} className="mb-8">
+          <div className="w-1/2">
+            <SearchBar
+              handleInputChange={handleInputChange}
+              placeholder="Type to find publications..."
+              text={query}
+            />
+          </div>
+        </Column>
+      </HideSmall>
 
       <HideSmall>
         <Column isVCentered={true} className="mt-8 justify-center">

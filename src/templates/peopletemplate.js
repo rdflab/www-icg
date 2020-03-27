@@ -118,13 +118,25 @@ const PeopleTemplate = ({ data, pageContext }) => {
         />
       }
     >
-      {/* <TypesFilter handleClick={handleClick} /> */}
+      <HideSmall show={true}>
+        <SearchBar
+          handleInputChange={handleInputChange}
+          placeholder="Type to find faculty..."
+          text={query}
+        />
+      </HideSmall>
 
-      <SearchBar
-        handleInputChange={handleInputChange}
-        placeholder="Type to find faculty..."
-        text={query}
-      />
+      <HideSmall>
+        <Column isCentered={true} className="mb-8">
+          <div className="w-1/2">
+            <SearchBar
+              handleInputChange={handleInputChange}
+              placeholder="Type to find faculty..."
+              text={query}
+            />
+          </div>
+        </Column>
+      </HideSmall>
 
       {/* <Column>
       <MainColumn>

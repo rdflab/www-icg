@@ -23,8 +23,8 @@ const SiteSearchBar = ({
 
   return (
     <div
-      className={`row z-40 text-gray-900 px-4 py-2 rounded-md items-center border border-solid justify-between trans-ani ${
-        hover || selected ? "border-gray-300" : "border-white"
+      className={`row z-40 text-white px-4 py-2 rounded-md items-center justify-between trans-ani ${
+        hover || selected ? "bg-white-opacity-60" : "bg-transparent"
       } ${className}`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
@@ -42,7 +42,7 @@ const SiteSearchBar = ({
       <div className="flex items-center">
         <FaSearch
           className={`${
-            hover ? "text-blue-400" : "text-gray-400"
+            hover || selected ? "text-white" : "text-white-opacity-50"
           } trans-ani ml-2`}
         />
       </div>

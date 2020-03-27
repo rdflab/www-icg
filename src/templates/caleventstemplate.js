@@ -10,6 +10,7 @@ import DayPicker, { DateUtils } from "react-day-picker"
 import "../../node_modules/react-day-picker/lib/style.css"
 import "../components/calendar/calendar.scss"
 import Title from "../components/title"
+import HideSmall from "../components/hidesmall"
 
 const EMPTY_QUERY = ""
 
@@ -140,12 +141,26 @@ const CalEventsTemplate = ({ pageContext }) => {
               <Title>Events</Title>
             </div>
 
-            {/* <div className="w-1/2"> */}
-            <SearchBar
-              handleInputChange={handleInputChange}
-              placeholder="Type to find events..."
-              text={query}
-            />
+            <HideSmall show={true}>
+              <SearchBar
+                handleInputChange={handleInputChange}
+                placeholder="Type to find events..."
+                text={query}
+              />
+            </HideSmall>
+
+            <HideSmall>
+              <Column isCentered={true} className="mb-8">
+                <div className="w-2/3">
+                  <SearchBar
+                    handleInputChange={handleInputChange}
+                    placeholder="Type to find events..."
+                    text={query}
+                  />
+                </div>
+              </Column>
+            </HideSmall>
+
             {/* </div> */}
 
             {/* <Column className="justify-between">

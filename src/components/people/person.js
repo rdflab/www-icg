@@ -20,14 +20,6 @@ const Person = ({ person, showLabLink, image }) => {
   return (
     <div className="w-full mb-6">
       <Column>
-        <Column w={2} className="mr-4">
-          {image !== null && (
-            <Img
-              fluid={image.childImageSharp.fluid}
-              className="w-full shadow rounded"
-            />
-          )}
-        </Column>
         <Column w={10}>
           <div className="w-full">
             <h2>
@@ -57,6 +49,14 @@ const Person = ({ person, showLabLink, image }) => {
               </FlatCard>
             </Column>
           </Column> */}
+        </Column>
+        <Column w={2} className="mr-4">
+          {image !== null && (
+            <Img
+              fluid={image.childImageSharp.fluid}
+              className="w-full shadow rounded"
+            />
+          )}
         </Column>
       </Column>
     </div>

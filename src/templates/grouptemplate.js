@@ -6,6 +6,8 @@ import SearchBar from "../components/search/searchbar"
 import SearchSummary from "../components/search/searchsummary"
 import SiteSearch from "../components/search/sitesearch"
 import PeopleList from "../components/people/peoplelist"
+import Column from "../components/column"
+import HideSmall from "../components/hidesmall"
 // import MainColumn from "../components/maincolumn"
 // import SideColumn from "../components/sidecolumn"
 
@@ -60,11 +62,25 @@ const GroupTemplate = ({ data, pageContext }) => {
     >
       {/* <TypesFilter handleClick={handleClick} /> */}
 
-      <SearchBar
-        handleInputChange={handleInputChange}
-        placeholder="Type to find people..."
-        text={query}
-      />
+      <HideSmall show={true}>
+        <SearchBar
+          handleInputChange={handleInputChange}
+          placeholder="Type to find people..."
+          text={query}
+        />
+      </HideSmall>
+
+      <HideSmall>
+        <Column isCentered={true} className="mb-8">
+          <div className="w-1/2">
+            <SearchBar
+              handleInputChange={handleInputChange}
+              placeholder="Type to find people..."
+              text={query}
+            />
+          </div>
+        </Column>
+      </HideSmall>
 
       <PeopleList imageMap={imageMap} people={people} />
     </CrumbLayout>

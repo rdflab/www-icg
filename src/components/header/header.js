@@ -24,7 +24,7 @@ const Header = ({ title, content, menuContent }) => (
     </HideSmall>
 
     <HideSmall>
-      <div className="p-3">
+      {/* <div className="p-3">
         <Container>
           <Column isVCentered={true} className="justify-between">
             <Link to="/" className="mr-8">
@@ -34,17 +34,29 @@ const Header = ({ title, content, menuContent }) => (
             {content !== null && content}
           </Column>
         </Container>
-      </div>
+      </div> */}
 
-      <nav aria-label="Navigation">
+      <div className="p-3 bg-blue-columbia-80">
         <Container>
-          <Column isVCentered={true} className="justify-between -mx-4">
-            <HeaderLinks />
+          <Column isVCentered={true} className="justify-between">
+            <Link to="/" className="mr-8">
+              <ColumbiaICGWhiteImage style={{ width: `400px` }} />
+            </Link>
 
-            {menuContent !== null && menuContent}
+            {content !== null && content}
           </Column>
         </Container>
-      </nav>
+
+        <nav aria-label="Navigation">
+          <Container>
+            <Column isVCentered={true} className="justify-between">
+              <HeaderLinks />
+
+              {menuContent !== null && menuContent}
+            </Column>
+          </Container>
+        </nav>
+      </div>
     </HideSmall>
   </>
 )

@@ -1,6 +1,6 @@
 $crumb-background-color: rgb(240, 240, 240);
-$crumb-color: rgb(180, 180, 180);
-$crumb-hover-color: rgb(200, 200, 200);
+$crumb-color: #CBD5E0; //rgb(180, 180, 180);
+$crumb-hover-color: #E2E8F0;
 
 .breadcrumb {
   @apply m-0 -mx-4 py-4 overflow-hidden list-none;
@@ -19,7 +19,7 @@ $crumb-hover-color: rgb(200, 200, 200);
 // }
 
 .breadcrumb li a {
-  @apply m-0 outline-none relative block float-left transition duration-300;
+  @apply text-gray-500 m-0 outline-none relative block float-left transition duration-300;
   padding: 0.5rem 0 0.5rem 3rem;
   border-bottom: none !important;
 }
