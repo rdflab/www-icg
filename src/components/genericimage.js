@@ -13,10 +13,10 @@ import Img from "gatsby-image"
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-const HICCCImage = ({ className, style }) => {
+const GenericImage = ({ className, style }) => {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "hiccc.png" }) {
+      file(relativePath: { eq: "generic.png" }) {
         childImageSharp {
           fluid(maxWidth: 500) {
             ...GatsbyImageSharpFluid
@@ -35,9 +35,9 @@ const HICCCImage = ({ className, style }) => {
   )
 }
 
-HICCCImage.defaultProps = {
+GenericImage.defaultProps = {
   className: "",
   style: "",
 }
 
-export default HICCCImage
+export default GenericImage

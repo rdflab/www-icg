@@ -20,6 +20,7 @@ const PeopleList = ({ people, showLabLink, imageMap }) => (
             ? imageMap[person.frontmatter.id]
             : null
         }
+        generic={imageMap["generic"]}
       />
     ))}
   </>

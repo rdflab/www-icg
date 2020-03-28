@@ -15,11 +15,33 @@ import BlueLink from "../bluelink"
 import { personUrl } from "../../utils/urls"
 import { personName } from "../../utils/personname"
 import ContactInfo2 from "./contactinfo2"
+import GenericImage from "../genericimage"
 
-const Person = ({ person, showLabLink, image }) => {
+const Person = ({ person, showLabLink, image, generic }) => {
+  let im
+
+  if (image !== null) {
+    im = (
+      <Img
+        fluid={image.childImageSharp.fluid}
+        className="w-full shadow rounded"
+      />
+    )
+  } else {
+    im = (
+      <Img
+        fluid={generic.childImageSharp.fluid}
+        className="w-full shadow rounded"
+      />
+    )
+  }
+
   return (
     <div className="w-full mb-6">
       <Column>
+        <Column w={2} className="mr-8">
+          {im !== null && im}
+        </Column>
         <Column w={10}>
           <div className="w-full">
             <h2>
@@ -50,14 +72,6 @@ const Person = ({ person, showLabLink, image }) => {
             </Column>
           </Column> */}
         </Column>
-        <Column w={2} className="mr-4">
-          {image !== null && (
-            <Img
-              fluid={image.childImageSharp.fluid}
-              className="w-full shadow rounded"
-            />
-          )}
-        </Column>
       </Column>
     </div>
   )
@@ -65,6 +79,7 @@ const Person = ({ person, showLabLink, image }) => {
 
 Person.defaultProps = {
   image: null,
+  generic: null,
 }
 
 export default Person
