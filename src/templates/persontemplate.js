@@ -68,8 +68,8 @@ const interests2 = person => {
   }
 
   return (
-    <div className="my-8 py-4">
-      <div className="uppercase mb-4 text-blue-700 font-semibold text-xl">
+    <div className="mb-8">
+      <div className="uppercase border-b border-solid border-gray-300 pb-4 mb-4 font-bold">
         Research Interests
       </div>
       <Column className="items-center">{ret}</Column>
@@ -168,10 +168,10 @@ const PersonTemplate = ({ pageContext, data }) => {
       ]}
       headerComponent={<SiteSearch />}
     >
-      <HideSmall className="relative w-full  mb-8">
-        <Column className="w-full h-full absolute">
-          <Column className="w-6/10 bg-gray-100 p-8 px-32"></Column>
-          <Column className="w-4/10 bg-gray-600 p-8 text-white"></Column>
+      <HideSmall className="relative w-full  my-8">
+        <Column className="w-full h-full absolute bg-white ">
+          <Column className="w-6/10 bg-white p-8 px-32"></Column>
+          <Column className="w-4/10 bg-blue-600 opacity-80 p-8 text-white"></Column>
         </Column>
         <Container className="z-20 relative">
           <Column>
@@ -220,17 +220,18 @@ const PersonTemplate = ({ pageContext, data }) => {
         {cv !== null && cv.awards.length > 0 && <Awards cv={cv} />}
 
         {publications.length > 0 && (
-          <Collapsible
-            title="Publications"
-            height="auto"
-            headerClassName="text-blue-700 uppercase"
-          >
-            <SimplePubSearch
-              allPublications={publications}
-              showLabLink={false}
-              sectionMode="alt"
-            />
-          </Collapsible>
+          <>
+            <div className="uppercase border-b border-solid border-gray-300 pb-4 mb-8 font-bold">
+              Publications
+            </div>
+            <div>
+              <SimplePubSearch
+                allPublications={publications}
+                showLabLink={false}
+                sectionMode="alt"
+              />
+            </div>
+          </>
         )}
       </Container>
     </CrumbLayout>

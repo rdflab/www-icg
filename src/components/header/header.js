@@ -19,12 +19,12 @@ const Header = ({ title, content, menuContent }) => (
       >
         <SlideMenu title={title} />
         <Link to="/">
-          <ColumbiaICGWhiteImage style={{ width: `300px` }} />
+          <ColumbiaICGWhiteImage style={{ width: `800px` }} />
         </Link>
       </nav>
     </HideSmall>
 
-    <HideSmall>
+    <HideSmall className="bg-white">
       {/* <div className="p-3">
         <Container>
           <Column isVCentered={true} className="justify-between">
@@ -37,28 +37,28 @@ const Header = ({ title, content, menuContent }) => (
         </Container>
       </div> */}
 
+      <nav aria-label="Navigation">
+        <Container className="py-2">
+          <Column isVCentered={true} className="justify-between">
+            <HeaderLinks />
+
+            {menuContent !== null && menuContent}
+          </Column>
+        </Container>
+      </nav>
+
       <div className="p-3 bg-blue-columbia-80">
         <Container>
           <Column isVCentered={true} className="justify-between">
             <Link to="/" className="mr-8">
               {/* <ColumbiaICGWhiteImage style={{ width: `400px` }} /> */}
 
-              <img src={logo} style={{ width: "400px" }} />
+              <img src={logo} style={{ width: "500px" }} />
             </Link>
 
             {content !== null && content}
           </Column>
         </Container>
-
-        <nav aria-label="Navigation">
-          <Container>
-            <Column isVCentered={true} className="justify-between">
-              <HeaderLinks />
-
-              {menuContent !== null && menuContent}
-            </Column>
-          </Container>
-        </nav>
       </div>
     </HideSmall>
   </>
