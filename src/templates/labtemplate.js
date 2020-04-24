@@ -24,6 +24,53 @@ export const labName = faculty => {
   return `The ${personName(faculty)} Lab`
 }
 
+const PeopleGrid = ({ people, cols }) => {
+  const rows = Math.floor(people.length / cols) + 1
+
+  const ret = []
+
+  let pc = 0
+
+  console.log(rows, cols, people)
+
+  for (let r = 0; r < rows; ++r) {
+    const col = []
+
+    for (let c = 0; c < cols; ++c) {
+      let person = people[pc]
+
+      col.push(
+        <Column w={3}>
+          {pc < people.length && (
+            <div className={`w-full shadow ${c === 0 ? "mr-1" : "ml-1"}`}>
+              <div>{personName(person)}</div>
+              <ContactInfo person={person} />
+            </div>
+          )}
+        </Column>
+      )
+
+      ++pc
+
+      if (pc === people.length) {
+        break
+      }
+    }
+
+    ret.push(<Column className="mb-1">{col}</Column>)
+
+    if (pc === people.length) {
+      break
+    }
+  }
+
+  return ret
+}
+
+PeopleGrid.defaultProps = {
+  cols: 4,
+}
+
 const LabTemplate = ({ pageContext }) => {
   const {
     group,
@@ -64,6 +111,8 @@ const LabTemplate = ({ pageContext }) => {
             {/* 
             <h3>Research Focus</h3>
             <h3>Education</h3> */}
+            <div>people</div>
+            <PeopleGrid people={labPeople} />
 
             {labPublications.length > 0 && (
               <div className="my-8">

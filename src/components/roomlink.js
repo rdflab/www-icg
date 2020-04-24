@@ -5,8 +5,8 @@ import BlueLinkExt from "./bluelinkext"
 
 const RoomLink = ({ room }) => (
   <IconLink
-    icon={<FaDoorOpen className="text-gray-600" size={20} />}
-    content={<div className="gray">Room {room}</div>}
+    icon={<FaDoorOpen className="text-white" size={20} />}
+    content={<div className="text-white">Room {room}</div>}
   />
 )
 

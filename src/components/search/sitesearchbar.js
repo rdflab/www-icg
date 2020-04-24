@@ -18,6 +18,14 @@ const SiteSearchBar = ({
     setHover(false)
   }
 
+  const onFocus = e => {
+    setHover(true)
+  }
+
+  const onBlur = e => {
+    setHover(false)
+  }
+
   //"bg-white border-gray-300"
   // "bg-gray-200 border-gray-200"
 
@@ -30,6 +38,8 @@ const SiteSearchBar = ({
       } ${className}`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
+      onFocus={onFocus}
+      onBlur={onBlur}
     >
       <div className="flex items-center w-full">
         <input
@@ -53,7 +63,7 @@ const SiteSearchBar = ({
 }
 
 SiteSearchBar.defaultProps = {
-  placeholder: "Type to find items...",
+  placeholder: "Type to search...",
   text: "",
   selected: false,
 }

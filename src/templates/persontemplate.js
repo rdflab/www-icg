@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import CrumbLayout from "../components/crumblayout"
 import Column from "../components/column"
@@ -21,6 +21,11 @@ import { labName } from "./labtemplate"
 import { labUrl, personUrl, labMembersUrl } from "../utils/urls"
 import HideSmall from "../components/hidesmall"
 
+import bgsvg from "../assets/svg/name-bg.svg"
+import Container from "../components/container"
+import { personName } from "../utils/personname"
+import WhiteLink from "../components/whitelink"
+
 const interests = person => {
   const n = person.researchAreas.length
 
@@ -41,6 +46,35 @@ const interests = person => {
   }
 
   return <div>{ret}</div>
+}
+
+const interests2 = person => {
+  const n = person.researchAreas.length
+
+  let ret = []
+
+  //ret.push(<div className="mr-4">Research Interests</div>)
+
+  for (let i = 0; i < n; ++i) {
+    const researchArea = person.researchAreas[i]
+
+    ret.push(
+      <Link key={i} to={`/research-areas/${researchArea.id}`}>
+        <div className="rounded-full text-center bg-gray-100 border border-solid border-gray-300 px-4 py-2 mr-2">
+          {researchArea.name}
+        </div>
+      </Link>
+    )
+  }
+
+  return (
+    <div className="my-8 py-4">
+      <div className="uppercase mb-4 text-blue-700 font-semibold text-xl">
+        Research Interests
+      </div>
+      <Column className="items-center">{ret}</Column>
+    </div>
+  )
 }
 
 const Education = ({ cv }) => (
@@ -106,13 +140,10 @@ const ResearchInterests = ({ person, researchAreasMap }) => (
 )
 
 const Groups = ({ groups }) => (
-  <div>
-    <h2 className="mt-8">Lab</h2>
-    <div>
-      <BlueLink to={labUrl(groups[0])}>
-        {labName(groups[0].leaders[0])}
-      </BlueLink>
-    </div>
+  <div className="mt-4">
+    <WhiteLink to={labUrl(groups[0])}>
+      {labName(groups[0].leaders[0])}
+    </WhiteLink>
   </div>
 )
 
@@ -132,100 +163,76 @@ const PersonTemplate = ({ pageContext, data }) => {
     <CrumbLayout
       crumbs={[
         ["Home", "/"],
-        ["Research Areas", "/research-areas"],
         ["People", "/research-areas/people"],
         [title, personUrl(person)],
       ]}
       headerComponent={<SiteSearch />}
     >
-      <Column>
-        <SmallColumn>
-          <Title>{title}</Title>
-
-          <h1 className="text-blue-columbia mb-4">
-            {person.frontmatter.titles[0]}
-          </h1>
-
-          <ContactInfo person={person} />
-        </SmallColumn>
-        <MainColumn>
-          <div>
-            <HideSmall>
-              <Title>{title}</Title>
-            </HideSmall>
-
-            {data.file !== null && (
-              <div className="mb-8">
-                <Img
-                  fluid={data.file.childImageSharp.fluid}
-                  style={{ width: "20rem" }}
-                  className="shadow-md rounded-md mx-auto sm:mx-0"
-                />
+      <HideSmall className="relative w-full  mb-8">
+        <Column className="w-full h-full absolute">
+          <Column className="w-6/10 bg-gray-100 p-8 px-32"></Column>
+          <Column className="w-4/10 bg-gray-600 p-8 text-white"></Column>
+        </Column>
+        <Container className="z-20 relative">
+          <Column>
+            <MainColumn className="py-8">
+              <div>
+                <div className="uppercase mb-4">People</div>
+                <div className="text-4xl font-semibold">
+                  {personName(person)}
+                </div>
+                <div className="text-2xl">{person.frontmatter.titles[0]}</div>
               </div>
-            )}
+            </MainColumn>
+            <SideColumn className="py-8 text-white">
+              <div>
+                <div className="uppercase mb-4">Contact</div>
+                <ContactInfo person={person} />
 
-            <HTMLDiv html={person.html} />
-
-            {cv !== null && cv.education.length > 0 && <Education cv={cv} />}
-
-            {cv !== null && cv.training.length > 0 && <Training cv={cv} />}
-
-            {cv !== null && cv.experience.length > 0 && <Experience cv={cv} />}
-
-            {cv !== null && cv.awards.length > 0 && <Awards cv={cv} />}
-
-            {publications.length > 0 && (
-              <SectionBreak>
-                <Collapsible
-                  title="Publications"
-                  height="auto"
-                  headerClassName="text-blue-700"
-                >
-                  <SimplePubSearch
-                    allPublications={publications}
-                    showLabLink={false}
-                    sectionMode="alt"
-                  />
-                </Collapsible>
-              </SectionBreak>
-            )}
-          </div>
-        </MainColumn>
-        <SideColumn>
-          {/* <SideBar> */}
-
-          <FlatCard>
-            <h1 className="text-blue-columbia mb-4">
-              {person.frontmatter.titles[0]}
-            </h1>
-
-            <ContactInfo person={person} />
-          </FlatCard>
-
-          <div className="mx-2">
-            {person.frontmatter.researchAreas.length > 0 && (
-              <ResearchInterests
-                person={person}
-                researchAreasMap={researchAreasMap}
-              />
-            )}
-
-            {groups.length > 0 && <Groups groups={groups} />}
-
-            {/* <div className="mt-8">
-              <SideBarMembers
-                group={groups[0]}
-                people={labPeople}
-                maxRecords={5}
-              />
-
-              <div className="mt-2">
-                <BlueLink to={labMembersUrl(groups[0])}>More</BlueLink>
+                {groups.length > 0 && <Groups groups={groups} />}
               </div>
-            </div> */}
+            </SideColumn>
+          </Column>
+        </Container>
+      </HideSmall>
+
+      <Container>
+        {interests2(person)}
+
+        {data.file !== null && (
+          <div className="mb-8">
+            <Img
+              fluid={data.file.childImageSharp.fluid}
+              style={{ width: "20rem" }}
+              className="shadow-md rounded-md mx-auto sm:mx-0"
+            />
           </div>
-        </SideColumn>
-      </Column>
+        )}
+
+        <HTMLDiv html={person.html} />
+
+        {cv !== null && cv.education.length > 0 && <Education cv={cv} />}
+
+        {cv !== null && cv.training.length > 0 && <Training cv={cv} />}
+
+        {cv !== null && cv.experience.length > 0 && <Experience cv={cv} />}
+
+        {cv !== null && cv.awards.length > 0 && <Awards cv={cv} />}
+
+        {publications.length > 0 && (
+          <Collapsible
+            title="Publications"
+            height="auto"
+            headerClassName="text-blue-700 uppercase"
+          >
+            <SimplePubSearch
+              allPublications={publications}
+              showLabLink={false}
+              sectionMode="alt"
+            />
+          </Collapsible>
+        )}
+      </Container>
     </CrumbLayout>
   )
 }

@@ -8,6 +8,7 @@ import SlideMenu from "../slidemenu/slidemenu"
 import Container from "../container"
 import HideSmall from "../hidesmall"
 import Column from "../column"
+import logo from "../../assets/svg/icg-logo-white.svg"
 
 const Header = ({ title, content, menuContent }) => (
   <>
@@ -40,7 +41,9 @@ const Header = ({ title, content, menuContent }) => (
         <Container>
           <Column isVCentered={true} className="justify-between">
             <Link to="/" className="mr-8">
-              <ColumbiaICGWhiteImage style={{ width: `400px` }} />
+              {/* <ColumbiaICGWhiteImage style={{ width: `400px` }} /> */}
+
+              <img src={logo} style={{ width: "400px" }} />
             </Link>
 
             {content !== null && content}

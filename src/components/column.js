@@ -15,6 +15,7 @@ const Column = ({
   isVCentered,
   onClick,
   className,
+  style,
 }) => {
   let baseClass = "flex"
 
@@ -35,7 +36,11 @@ const Column = ({
   }
 
   return (
-    <div className={`${baseClass} ${className}`} onClick={onClick}>
+    <div
+      className={`${baseClass} ${className}`}
+      style={style}
+      onClick={onClick}
+    >
       {children}
     </div>
   )
@@ -44,6 +49,7 @@ const Column = ({
 Column.defaultProps = {
   w: "",
   className: "",
+  style: null,
   isMobile: false,
   isCentered: false,
   isVCentered: false,
