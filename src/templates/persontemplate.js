@@ -163,12 +163,12 @@ const PersonTemplate = ({ pageContext, data }) => {
     <CrumbLayout
       crumbs={[
         ["Home", "/"],
-        ["People", "/research-areas/people"],
+        ["People", "/people"],
         [title, personUrl(person)],
       ]}
       headerComponent={<SiteSearch />}
     >
-      <HideSmall className="relative w-full  my-8">
+      <HideSmall className="relative w-full">
         <Column className="w-full h-full absolute bg-white ">
           <Column className="w-6/10 bg-white p-8 px-32"></Column>
           <Column className="w-4/10 bg-blue-600 opacity-80 p-8 text-white"></Column>

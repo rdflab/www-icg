@@ -6,7 +6,7 @@
  */
 
 import React from "react"
-import Breadcrumb from "./breadcrumb/breadcrumb"
+import Breadcrumb from "./breadcrumb/breadcrumbv2"
 import Title from "./title"
 import Layout from "./layout"
 import Container from "./container"
