@@ -3,6 +3,7 @@ import HICCCImage from "../hicccimage"
 import FooterLinks from "./footerlinks"
 import Container from "../container"
 import Column from "../column"
+import cuimcsvg from "../../assets/svg/cuimc-white.svg"
 
 const Footer = ({ siteTitle }) => {
   return (
@@ -21,7 +22,7 @@ const Footer = ({ siteTitle }) => {
 
         <div className="row items-center justify-center md:justify-start">
           <a href="https://cumc.columbia.edu">
-            <HICCCImage style={{ width: "400px" }} />
+            <img src={cuimcsvg} className="h-10" />
           </a>
         </div>
       </Container>

@@ -25,6 +25,8 @@ import bgsvg from "../assets/svg/name-bg.svg"
 import Container from "../components/container"
 import { personName } from "../utils/personname"
 import WhiteLink from "../components/whitelink"
+import H1 from "../components/headings/h1"
+import H2 from "../components/headings/h2"
 
 const interests = person => {
   const n = person.researchAreas.length
@@ -68,12 +70,10 @@ const interests2 = person => {
   }
 
   return (
-    <div className="mb-8">
-      <div className="uppercase border-b border-solid border-gray-300 pb-4 mb-4 font-bold">
-        Research Interests
-      </div>
+    <>
+      <Heading>Research Interests</Heading>
       <Column className="items-center">{ret}</Column>
-    </div>
+    </>
   )
 }
 
@@ -113,27 +113,38 @@ const Training = ({ cv }) => <Items title="Training" items={cv.training} />
 
 const Awards = ({ cv }) => <Items title="Awards and Honors" items={cv.awards} />
 
+const Heading = ({ children, className }) => (
+  <H1
+    className={`text-center pt-8 border-t border-solid border-gray-300 ${className}`}
+  >
+    {children}
+  </H1>
+)
+
 const Items = ({ title, items }) => (
-  <SectionBreak>
-    <Collapsible title={title} height="auto" headerClassName="text-blue-700">
-      <div>
-        {/* <h2>{title}</h2> */}
-        {items.map((item, index) => (
-          <Column key={index} className="mb-4">
-            <Column w="2" className="text-gray-600 text-right mr-4">
-              {item.year !== "n/a" && item.year}
-            </Column>
-            <Column w="10">{item.title}</Column>
+  // <SectionBreak>
+  //   <Collapsible title={title} height="auto" headerClassName="text-blue-700">
+  <>
+    <H2 className="text-center ">{title}</H2>
+
+    <div className="w-full bg-gray-100 p-8">
+      {items.map((item, index) => (
+        <Column key={index}>
+          <Column w="2" className="font-semibold justify-end mr-4">
+            {item.year !== "n/a" && item.year}
           </Column>
-        ))}
-      </div>
-    </Collapsible>
-  </SectionBreak>
+          <Column w="10" className="ml-4 ">
+            {item.title}
+          </Column>
+        </Column>
+      ))}
+    </div>
+  </>
 )
 
 const ResearchInterests = ({ person, researchAreasMap }) => (
   <div className="mt-8">
-    <h2>Research Interests</h2>
+    <H1>Research Interests</H1>
 
     {interests(person, researchAreasMap)}
   </div>
@@ -162,20 +173,19 @@ const PersonTemplate = ({ pageContext, data }) => {
   return (
     <CrumbLayout
       crumbs={[
-        ["Home", "/"],
         ["People", "/people"],
         [title, personUrl(person)],
       ]}
       headerComponent={<SiteSearch />}
     >
-      <HideSmall className="relative w-full">
+      <HideSmall className="relative w-full mb-16">
         <Column className="w-full h-full absolute bg-white ">
-          <Column className="w-6/10 bg-white p-8 px-32"></Column>
-          <Column className="w-4/10 bg-blue-600 opacity-80 p-8 text-white"></Column>
+          <Column className="w-6/10 bg-gray-100 p-8 px-32"></Column>
+          <Column className="w-4/10 bg-blue-columbia-60 p-8 text-white"></Column>
         </Column>
         <Container className="z-20 relative">
           <Column>
-            <MainColumn className="py-8">
+            <MainColumn className="w-6/10 py-8">
               <div>
                 <div className="uppercase mb-4">People</div>
                 <div className="text-4xl font-semibold">
@@ -197,7 +207,7 @@ const PersonTemplate = ({ pageContext, data }) => {
       </HideSmall>
 
       <Container>
-        {interests2(person)}
+        {/* {interests2(person)} */}
 
         {data.file !== null && (
           <div className="mb-8">
@@ -211,19 +221,35 @@ const PersonTemplate = ({ pageContext, data }) => {
 
         <HTMLDiv html={person.html} />
 
-        {cv !== null && cv.education.length > 0 && <Education cv={cv} />}
+        <Heading>About {personName(person)}</Heading>
 
-        {cv !== null && cv.training.length > 0 && <Training cv={cv} />}
+        {cv !== null && cv.education.length > 0 && (
+          <div className="mb-8">
+            <Education cv={cv} />
+          </div>
+        )}
 
-        {cv !== null && cv.experience.length > 0 && <Experience cv={cv} />}
+        {cv !== null && cv.awards.length > 0 && (
+          <div className="mb-8">
+            <Awards cv={cv} />
+          </div>
+        )}
 
-        {cv !== null && cv.awards.length > 0 && <Awards cv={cv} />}
+        {cv !== null && cv.training.length > 0 && (
+          <div className="mb-8">
+            <Training cv={cv} />
+          </div>
+        )}
+
+        {cv !== null && cv.experience.length > 0 && (
+          <div className="mb-8">
+            <Experience cv={cv} />
+          </div>
+        )}
 
         {publications.length > 0 && (
           <>
-            <div className="uppercase border-b border-solid border-gray-300 pb-4 mb-8 font-bold">
-              Publications
-            </div>
+            <Heading className="text-center mt-32">Publications</Heading>
             <div>
               <SimplePubSearch
                 allPublications={publications}

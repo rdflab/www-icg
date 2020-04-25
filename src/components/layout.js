@@ -15,6 +15,7 @@ import "../assets/css/global.scss"
 import Header from "./header/header"
 import Footer from "./footer/footer"
 import SEO from "./seo"
+import Helmet from "react-helmet"
 
 const Layout = ({
   title,
@@ -35,6 +36,21 @@ const Layout = ({
 
   return (
     <>
+      <Helmet>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap"
+          rel="stylesheet"
+        />
+      </Helmet>
+
       {title !== "" && <SEO title={title} />}
 
       <Header

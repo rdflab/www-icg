@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import CrumbLayout from "../components/crumblayout"
+import CrumbContainerLayout from "../components/crumbcontainerlayout"
 import SearchBar from "../components/search/searchbar"
 import SiteSearch from "../components/search/sitesearch"
 import MainColumn from "../components/maincolumn"
@@ -11,6 +11,7 @@ import "../../node_modules/react-day-picker/lib/style.css"
 import "../components/calendar/calendar.scss"
 import Title from "../components/title"
 import HideSmall from "../components/hidesmall"
+import H1 from "../components/headings/h1"
 
 const EMPTY_QUERY = ""
 
@@ -98,11 +99,8 @@ const CalEventsTemplate = ({ pageContext }) => {
   let pagedEvents = calEvents.slice(offset, offset + recordsPerPage)
 
   return (
-    <CrumbLayout
-      crumbs={[
-        ["Home", "/"],
-        ["Events", "/events"],
-      ]}
+    <CrumbContainerLayout
+      crumbs={[["Events", "/events"]]}
       headerComponent={<SiteSearch />}
       // titleComponent={
       //   <SearchSummary
@@ -112,18 +110,7 @@ const CalEventsTemplate = ({ pageContext }) => {
       //   />
       // }
     >
-      {/* <HideSmall>
-        <div className="row items-center justify-between">
-          <div className="w-1/3">
-            <SearchBar
-              handleInputChange={handleInputChange}
-              placeholder="Type to find events..."
-              text={query}
-            />
-          </div>
-          <div></div>
-        </div>
-      </HideSmall> */}
+      <H1 className="text-center">Events</H1>
 
       <Column>
         {/* <SmallColumn>
@@ -137,10 +124,6 @@ const CalEventsTemplate = ({ pageContext }) => {
       </SmallColumn> */}
         <MainColumn>
           <div className="w-full">
-            <div>
-              <Title>Events</Title>
-            </div>
-
             <HideSmall show={true}>
               <SearchBar
                 handleInputChange={handleInputChange}
@@ -199,7 +182,7 @@ const CalEventsTemplate = ({ pageContext }) => {
           {/* </SideBar> */}
         </SideColumn>
       </Column>
-    </CrumbLayout>
+    </CrumbContainerLayout>
   )
 }
 

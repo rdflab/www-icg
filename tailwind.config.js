@@ -1,7 +1,7 @@
 module.exports = {
   theme: {
     fontFamily: {
-      sans: ["Lato"],
+      sans: ["Inter"],
     },
     extend: {
       width: {

@@ -9,6 +9,7 @@ import WhiteIndexLink from "../components/whiteindexlink"
 // import MicroscopeSection from "../components/images/microscope"
 import TestTubesSection from "../components/images/testtubes"
 import SiteSearch from "../components/search/sitesearch"
+import H2 from "../components/headings/h2"
 
 const HomeSection = ({ title, subTitle, text, links, alt }) => {
   return (
@@ -41,22 +42,16 @@ HomeSection.defaultProps = {
 }
 
 const IndexPage = () => (
-  <Layout
-    crumbs={[["Home", "/"]]}
-    title="Home"
-    headerComponent={<SiteSearch />}
-  >
+  <Layout title="Home" headerComponent={<SiteSearch />}>
     <TestTubesSection>
       <Container className="h-full py-8 sm:py-8">
         <Column className="h-full p-8 sm:p-16">
           <Column
-            w="7"
+            w="8"
             className="bg-blue-columbia opacity-75 float-left text-white p-8"
           >
             <div>
-              <h2 className="title is-2 text-white">
-                Institute For Cancer Genetics
-              </h2>
+              <H2 className="text-white">Mission</H2>
 
               <p>
                 The Institute for Cancer Genetics was founded in 1999 as part of

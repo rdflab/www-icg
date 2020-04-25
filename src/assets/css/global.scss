@@ -12,14 +12,16 @@ html {
 
 body {
   @apply relative p-0 m-0 text min-h-full;
+  background-color: rgb(252, 252, 252);
 }
 
 h1 {
-  @apply text-2xl;
+  @apply text-3xl;
+  font-family: Raleway;
 }
 
 h2 {
-  @apply text-xl;
+  @apply text-2xl font-semibold;
 }
 
 h3 {
@@ -251,19 +253,19 @@ a:hover {
 
 
 .header-link {
-  @apply link block text-white-opacity-60 mt-2 mr-6 trans-ani; // border-b-2 border-solid border-transparent;
+  @apply link block text-gray-400 mt-2 mr-6 trans-ani; 
 }
 
 .header-link:hover {
-  @apply text-white-opacity-90;
+  @apply text-black;
 }
 
 .header-link-active {
-  @apply text-white; //blue border-b-2 border-solid border-blue-500;
+  @apply text-black;
 }
 
 .header-link-active:hover {
-  @apply text-white; //blue border-b-2 border-solid border-blue-500;
+  @apply text-black; 
 }
 
 

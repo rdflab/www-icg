@@ -1,5 +1,4 @@
-$crumb-background-color: rgb(240, 240, 240);
-$crumb-color: #CBD5E0; //rgb(180, 180, 180);
+$crumb-color: rgba(255, 255, 255, 0.2);
 $crumb-hover-color: #E2E8F0;
 
 .breadcrumb {
@@ -36,7 +35,7 @@ $crumb-hover-color: #E2E8F0;
 .breadcrumb li:not(:last-child) a:after { 
   @apply absolute block w-0 h-0 transition duration-300;
   content: " "; 
-  border-left-color: $crumb-color;
+  border-left-color: red;
   border-top: 50px solid transparent; /* Go big on the size, and let overflow hide */
   border-bottom: 50px solid transparent;
   border-left-width: 2rem;

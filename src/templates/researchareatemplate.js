@@ -17,7 +17,6 @@ const ResearchAreaTemplate = ({ data, pageContext }) => {
   return (
     <CrumbLayout
       crumbs={[
-        ["Home", "/"],
         ["Research Areas", "/research-areas"],
         [researchArea.name, `/research-areas/${researchArea.id}`],
       ]}

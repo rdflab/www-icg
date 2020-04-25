@@ -2,6 +2,7 @@ import React from "react"
 import CrumbLayout from "../components/crumblayout"
 import BlueLink from "../components/bluelink"
 import SiteSearch from "../components/search/sitesearch"
+import H1 from "../components/headings/h1"
 
 const FlatCard = ({ children, className }) => (
   <div
@@ -26,13 +27,12 @@ const ResearchAreasTemplate = ({ pageContext }) => {
 
   return (
     <CrumbLayout
-      crumbs={[
-        ["Home", "/"],
-        ["Research Areas", "/research-areas"],
-      ]}
+      crumbs={[["Research Areas", "/research-areas"]]}
       title="Research Areas"
       headerComponent={<SiteSearch />}
     >
+      <H1>Research Areas</H1>
+
       {Object.keys(raMap)
         .sort()
         .map((name, index) => (

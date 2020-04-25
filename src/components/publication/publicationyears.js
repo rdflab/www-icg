@@ -8,6 +8,8 @@
 import React from "react"
 import PublicationList from "./publicationlist"
 import SectionBreak from "../sectionbreak"
+import Column from "../column"
+import H2 from "../headings/h2"
 
 const PublicationYears = ({ publications, sectionMode, showLabLink }) => {
   let yearMap = new Map()
@@ -30,12 +32,19 @@ const PublicationYears = ({ publications, sectionMode, showLabLink }) => {
         })
         .map((year, index) => {
           return (
-            <SectionBreak title={year} key={index} mode={sectionMode}>
-              <PublicationList
-                publications={yearMap.get(year)}
-                showLabLink={showLabLink}
-              />
-            </SectionBreak>
+            <Column className="border-t border-solid border-gray-300 pt-8">
+              <Column w={2} className="justify-end px-8">
+                <H2>{year}</H2>
+              </Column>
+              <Column w={10} className="px-8">
+                <div>
+                  <PublicationList
+                    publications={yearMap.get(year)}
+                    showLabLink={showLabLink}
+                  />
+                </div>
+              </Column>
+            </Column>
           )
         })}
     </>

@@ -17,12 +17,7 @@ const CalEventTemplate = props => {
   calEvent.end = new Date(calEvent.frontmatter.end)
 
   return (
-    <CrumbLayout
-      crumbs={[
-        ["Home", "/"],
-        ["Events", "/events"],
-      ]}
-    >
+    <CrumbLayout crumbs={[["Events", "/events"]]}>
       <Column>
         <MainColumn>
           <div className="w-full">

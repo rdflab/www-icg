@@ -10,7 +10,8 @@ const PEOPLE_TYPES = [
 ]
 
 const labTemplate = path.resolve(`src/templates/labtemplate.js`)
-const labsTemplate = path.resolve(`src/templates/labstemplate.js`)
+//const labsTemplate = path.resolve(`src/templates/labstemplate.js`)
+const facultyTemplate = path.resolve(`src/templates/facultytemplate.js`)
 const peopleTemplate = path.resolve(`src/templates/peopletemplate.js`)
 const groupTemplate = path.resolve(`src/templates/grouptemplate.js`)
 const labOverviewTemplate = path.resolve(`src/templates/laboverviewtemplate.js`)
@@ -585,7 +586,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   //
 
   for (let group of allLabGroups) {
-    const path = `/research-areas/labs/${group.frontmatter.id}`
+    const path = `/research-areas/faculty/${group.frontmatter.id}`
 
     const labPublications = []
 
@@ -627,7 +628,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
 
     createPage({
-      path: `/research-areas/labs/${group.frontmatter.id}`,
+      path: `/research-areas/faculty/${group.frontmatter.id}`,
       component: labTemplate,
       context: {
         group: group,
@@ -664,7 +665,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       context: {
         title: `The ${group.frontmatter.name} Lab Members`,
         crumbs: [
-          ["Home", "/"],
           ["Research Areas", "/research-areas"],
           ["Labs", "/research-areas/labs"],
           [
@@ -687,7 +687,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       context: {
         title: `${group.frontmatter.name} Lab Publications`,
         crumbs: [
-          ["Home", "/"],
           ["Research Areas", "/research-areas"],
           ["Labs", "/research-areas/labs"],
           [
@@ -765,7 +764,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     context: {
       title: `Faculty`,
       crumbs: [
-        ["Home", "/"],
         ["People", "/people"],
         ["Faculty", "/people/faculty"],
       ],
@@ -783,7 +781,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     context: {
       title: `Research Scientists`,
       crumbs: [
-        ["Home", "/"],
         ["People", "/people"],
         ["Research Scientists", "/people/research-scientists"],
       ],
@@ -801,7 +798,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     context: {
       title: `Administration`,
       crumbs: [
-        ["Home", "/"],
         ["People", "/people"],
         ["Administration", "/people/administration"],
       ],
@@ -819,7 +815,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     context: {
       title: `Staff`,
       crumbs: [
-        ["Home", "/"],
         ["People", "/people"],
         ["Staff", "/people/staff"],
       ],
@@ -880,8 +875,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   // Labs page
 
   createPage({
-    path: "/research-areas/labs",
-    component: labsTemplate,
+    path: "/people/faculty",
+    component: facultyTemplate,
     context: {
       allGroups: allLabGroups,
       peopleMap: peopleMap,
@@ -894,10 +889,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     path: "/people",
     component: peopleTemplate,
     context: {
-      crumbs: [
-        ["Home", "/"],
-        ["People", "/people"],
-      ],
+      crumbs: [["People", "/people"]],
       title: "People",
       groupMap: groupMap,
       allPeople: allPeople,
@@ -912,7 +904,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     context: {
       title: "Publications",
       crumbs: [
-        ["Home", "/"],
         ["Research Areas", "/research-areas"],
         ["Publications", "/research-areas/publications"],
       ],

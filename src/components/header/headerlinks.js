@@ -5,6 +5,7 @@ import HeaderLink from "./headerlink"
 import Column from "../column"
 import BlueLink from "../bluelink"
 import TextLink from "../textlink"
+import Header from "./header"
 
 const HeaderLinks = () => {
   const data = useStaticQuery(graphql`
@@ -26,14 +27,13 @@ const HeaderLinks = () => {
     <Column>
       {links.map((link, index) => {
         return (
-          <TextLink
+          <HeaderLink
             key={index}
             aria-label={`Goto ${link.name}`}
             to={link.link}
-            className="mr-8 text-sm font-semibold"
           >
             {link.name}
-          </TextLink>
+          </HeaderLink>
         )
       })}
     </Column>

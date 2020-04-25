@@ -79,29 +79,25 @@ module.exports = {
         },
       },
     },
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Lato`,
-            variants: [`300`, `400`, `700`],
-          },
-          {
-            family: `Montserrat`,
-            variants: [`300`, `400`, `700`],
-          },
-          // {
-          //   family: `Source Sans Pro`,
-          //   variants: [`300`, `400`, `700`]
-          // },
-          // {
-          //   family: `Source Sans Pro`,
-          //   variants: [`300`, `400`, `700`],
-          // },
-        ],
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-prefetch-google-fonts`,
+    //   options: {
+    //     fonts: [
+    //       {
+    //         family: `Lato`,
+    //         variants: [`300`, `400`, `700`],
+    //       },
+    //       {
+    //         family: `Montserrat`,
+    //         variants: [`300`, `400`, `700`],
+    //       },
+    //       {
+    //         family: `Inter`,
+    //         variants: [`300`, `400`, `700`],
+    //       },
+    //     ],
+    //   },
+    // },
     {
       resolve: "gatsby-background-image",
       options: {

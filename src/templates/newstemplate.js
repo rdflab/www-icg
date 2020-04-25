@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import CrumbLayout from "../components/crumblayout"
+import CrumbContainerLayout from "../components/crumbcontainerlayout"
 import SiteSearch from "../components/search/sitesearch"
 import YearSelector from "../components/filter/yearselector"
 import HideSmall from "../components/hidesmall"
@@ -62,11 +62,8 @@ const NewsTemplate = ({ pageContext }) => {
   let pagedNews = yearFilteredNews.slice(offset, offset + recordsPerPage)
 
   return (
-    <CrumbLayout
-      crumbs={[
-        ["Home", "/"],
-        ["News", "/news"],
-      ]}
+    <CrumbContainerLayout
+      crumbs={[["News", "/news"]]}
       title="News"
       // titleComponent={
       //   <HideSmall>
@@ -110,7 +107,7 @@ const NewsTemplate = ({ pageContext }) => {
         </MainColumn>
         <SideColumn></SideColumn>
       </Column> */}
-    </CrumbLayout>
+    </CrumbContainerLayout>
   )
 }
 

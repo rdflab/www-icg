@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { graphql } from "gatsby"
-import CrumbLayout from "../components/crumblayout"
+import CrumbContainerLayout from "../components/crumbcontainerlayout"
 import toImageMap from "../utils/toimagemap"
 import PeopleSearchResults from "../components/people/peoplesearchresults"
 import { PEOPLE_TYPES } from "../constants"
@@ -12,6 +12,8 @@ import HideSmall from "../components/hidesmall"
 import SearchSummary from "../components/search/searchsummary"
 import SiteSearch from "../components/search/sitesearch"
 import Column from "../components/column"
+import ShowSmall from "../components/showsmall"
+import H1 from "../components/headings/h1"
 // import MainColumn from "../components/maincolumn"
 // import SideColumn from "../components/sidecolumn"
 
@@ -106,7 +108,7 @@ const PeopleTemplate = ({ data, pageContext }) => {
   }
 
   return (
-    <CrumbLayout
+    <CrumbContainerLayout
       crumbs={crumbs}
       title={title}
       headerComponent={<SiteSearch />}
@@ -118,13 +120,15 @@ const PeopleTemplate = ({ data, pageContext }) => {
         />
       }
     >
-      <HideSmall show={true}>
+      <H1>{title}</H1>
+
+      <ShowSmall>
         <SearchBar
           handleInputChange={handleInputChange}
           placeholder="Type to find faculty..."
           text={query}
         />
-      </HideSmall>
+      </ShowSmall>
 
       <HideSmall>
         <Column isCentered={true} className="mb-8">
@@ -162,7 +166,7 @@ const PeopleTemplate = ({ data, pageContext }) => {
       </MainColumn>
       <SideColumn></SideColumn>
       </Column> */}
-    </CrumbLayout>
+    </CrumbContainerLayout>
   )
 }
 

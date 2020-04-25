@@ -1,13 +1,15 @@
 import React, { useState } from "react"
-import CrumbLayout from "../components/crumblayout"
+import CrumbContainerLayout from "../components/crumbcontainerlayout"
 import SearchBar from "../components/search/searchbar"
 import PubSearchResults from "../components/publication/pubsearchresults"
 import SiteSearch from "../components/search/sitesearch"
 import SearchSummary from "../components/search/searchsummary"
 import YearSelector from "../components/filter/yearselector"
 import HideSmall from "../components/hidesmall"
+import ShowSmall from "../components/showsmall"
 import { searchTree } from "../components/search/searchtree"
 import Column from "../components/column"
+import H1 from "../components/headings/h1"
 
 const EMPTY_QUERY = ""
 
@@ -103,7 +105,7 @@ const PublicationsTemplate = ({ pageContext }) => {
   )
 
   return (
-    <CrumbLayout
+    <CrumbContainerLayout
       crumbs={crumbs}
       selectedTab={selectedTab}
       title={title}
@@ -118,15 +120,16 @@ const PublicationsTemplate = ({ pageContext }) => {
         </HideSmall>
       }
     >
-      <HideSmall show={true}>
+      <ShowSmall>
         <SearchBar
           handleInputChange={handleInputChange}
           placeholder="Type to find publications..."
           text={query}
         />
-      </HideSmall>
+      </ShowSmall>
 
       <HideSmall>
+        <H1 className="text-center">Publications</H1>
         <Column isCentered={true} className="mb-8">
           <div className="w-1/2">
             <SearchBar
@@ -156,7 +159,7 @@ const PublicationsTemplate = ({ pageContext }) => {
         onPageChanged={onPageChanged}
         showLabLink={showLabLink}
       />
-    </CrumbLayout>
+    </CrumbContainerLayout>
   )
 }
 

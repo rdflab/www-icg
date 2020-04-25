@@ -5,12 +5,7 @@ import CrumbLayout from "../components/crumblayout"
 import SEO from "../components/seo"
 
 const Help = () => (
-  <CrumbLayout
-    crumbs={[
-      ["Home", "/"],
-      ["Help", "/help"],
-    ]}
-  >
+  <CrumbLayout crumbs={[["Help", "/help"]]}>
     <SEO title="Help" />
     <p>Institute for Cancer Genetics website</p>
     <p>version: 1.0.0</p>

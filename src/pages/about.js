@@ -5,13 +5,7 @@ import SideColumn from "../components/sidecolumn"
 import Column from "../components/column"
 
 const About = () => (
-  <CrumbLayout
-    crumbs={[
-      ["Home", "/"],
-      ["About", "/about"],
-    ]}
-    title="About Us"
-  >
+  <CrumbLayout crumbs={[["About", "/about"]]} title="About Us">
     <Column>
       <MainColumn>
         <div>

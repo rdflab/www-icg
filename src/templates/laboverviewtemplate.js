@@ -19,7 +19,6 @@ const LabOverviewTemplate = props => {
   const title = labName(faculty)
 
   const crumbs = [
-    ["Home", "/"],
     ["Research Areas", "/research-areas"],
     ["Labs", "/research-areas/labs"],
     [personName(faculty), `/research-areas/labs/${group.frontmatter.id}`],

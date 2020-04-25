@@ -1,11 +1,22 @@
 import React from "react"
 import Container from "../container"
 import BlueLink from "../bluelink"
-import { FaChevronRight } from "react-icons/fa"
+import { FaChevronRight, FaHome } from "react-icons/fa"
 import WhiteLink from "../whitelink"
+import Column from "../column"
+import breadcrumbsvg from "../../assets/svg/breadcrumb.svg"
+import { Link } from "gatsby"
 
 const Breadcrumb = ({ crumbs }) => {
   const ret = []
+
+  ret.push(
+    <Link to="/">
+      <FaHome className="text-white" size={24} />
+    </Link>
+  )
+
+  ret.push(<img src={breadcrumbsvg} className="text-white px-4 h-10" />)
 
   for (let i = 0; i < crumbs.length; ++i) {
     const crumb = crumbs[i]
@@ -18,15 +29,20 @@ const Breadcrumb = ({ crumbs }) => {
 
     if (i < crumbs.length - 1) {
       ret.push(
-        <FaChevronRight key={`arrow-${i}`} className="text-white mx-2" />
+        // <FaChevronRight
+        //   key={`arrow-${i}`}
+        //   className="text-white-opacity-50 mx-2"
+        // />
+
+        <img src={breadcrumbsvg} className="text-white px-4 h-10" />
       )
     }
   }
 
   return (
-    <div className="pb-4 pt-2 bg-blue-columbia-80 text-sm">
+    <div className="bg-blue-columbia-80 text-sm">
       <Container>
-        <div className="row items-center">{ret}</div>
+        <Column className="items-center">{ret}</Column>
       </Container>
     </div>
   )

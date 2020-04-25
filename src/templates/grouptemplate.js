@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { graphql } from "gatsby"
-import CrumbLayout from "../components/crumblayout"
+import CrumbContainerLayout from "../components/crumbcontainerlayout"
 import toImageMap from "../utils/toimagemap"
 import SearchBar from "../components/search/searchbar"
 import SearchSummary from "../components/search/searchsummary"
@@ -8,6 +8,8 @@ import SiteSearch from "../components/search/sitesearch"
 import PeopleList from "../components/people/peoplelist"
 import Column from "../components/column"
 import HideSmall from "../components/hidesmall"
+import ShowSmall from "../components/showsmall"
+import H1 from "../components/headings/h1"
 // import MainColumn from "../components/maincolumn"
 // import SideColumn from "../components/sidecolumn"
 
@@ -54,7 +56,7 @@ const GroupTemplate = ({ data, pageContext }) => {
   console.log(imageMap)
 
   return (
-    <CrumbLayout
+    <CrumbContainerLayout
       crumbs={crumbs}
       title={title}
       headerComponent={<SiteSearch />}
@@ -64,13 +66,15 @@ const GroupTemplate = ({ data, pageContext }) => {
     >
       {/* <TypesFilter handleClick={handleClick} /> */}
 
-      <HideSmall show={true}>
+      <H1>{title}</H1>
+
+      <ShowSmall>
         <SearchBar
           handleInputChange={handleInputChange}
           placeholder="Type to find people..."
           text={query}
         />
-      </HideSmall>
+      </ShowSmall>
 
       <HideSmall>
         <Column isCentered={true} className="mb-8">
@@ -85,7 +89,7 @@ const GroupTemplate = ({ data, pageContext }) => {
       </HideSmall>
 
       <PeopleList imageMap={imageMap} people={people} />
-    </CrumbLayout>
+    </CrumbContainerLayout>
   )
 }
 

@@ -16,12 +16,7 @@ const NewsItemTemplate = props => {
   const title = item.frontmatter.title
 
   return (
-    <CrumbLayout
-      crumbs={[
-        ["Home", "/"],
-        ["News", "/news"],
-      ]}
-    >
+    <CrumbLayout crumbs={[["News", "/news"]]}>
       <Column>
         <MainColumn>
           <div className="w-full">
