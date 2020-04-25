@@ -4,7 +4,7 @@
     "link": "/people/faculty"
   },
   {
-    "name": "Administation",
+    "name": "Administration",
     "link": "/people/administration"
   },
   {
@@ -18,5 +18,9 @@
   {
     "name": "Events",
     "link": "/events"
+  },
+  {
+    "name": "Services",
+    "link": "/services"
   }
 ]

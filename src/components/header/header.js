@@ -47,7 +47,7 @@ const Header = ({ title, content, menuContent }) => (
         </Container>
       </nav>
 
-      <div className="pb-2">
+      <div className="py-4">
         <Container>
           <Column isVCentered={true} className="justify-between">
             <Link to="/" className="mr-8">

@@ -114,31 +114,37 @@ const Training = ({ cv }) => <Items title="Training" items={cv.training} />
 const Awards = ({ cv }) => <Items title="Awards and Honors" items={cv.awards} />
 
 const Heading = ({ children, className }) => (
-  <H1
-    className={`text-center pt-8 border-t border-solid border-gray-300 ${className}`}
-  >
-    {children}
-  </H1>
+  <H1 className={`text-center pt-8  ${className}`}>{children}</H1>
 )
 
 const Items = ({ title, items }) => (
   // <SectionBreak>
   //   <Collapsible title={title} height="auto" headerClassName="text-blue-700">
   <>
-    <H2 className="text-center ">{title}</H2>
+    <Column>
+      <Column w={2} className="pr-8">
+        <div className="row items-center justify-end h-16 w-full">
+          <div>
+            <h3 className="text-blue-600">{title}</h3>
+          </div>
+        </div>
+      </Column>
 
-    <div className="w-full bg-gray-100 p-8">
-      {items.map((item, index) => (
-        <Column key={index}>
-          <Column w="2" className="font-semibold justify-end mr-4">
-            {item.year !== "n/a" && item.year}
-          </Column>
-          <Column w="10" className="ml-4 ">
-            {item.title}
-          </Column>
-        </Column>
-      ))}
-    </div>
+      <Column w={10} className="bg-white shadow p-8">
+        <div className="w-full">
+          {items.map((item, index) => (
+            <Column key={index}>
+              <Column w={2} className="font-semibold justify-end mr-4">
+                {item.year !== "n/a" && item.year}
+              </Column>
+              <Column w={10} className="ml-4 ">
+                {item.title}
+              </Column>
+            </Column>
+          ))}
+        </div>
+      </Column>
+    </Column>
   </>
 )
 

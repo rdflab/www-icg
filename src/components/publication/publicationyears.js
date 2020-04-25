@@ -32,11 +32,13 @@ const PublicationYears = ({ publications, sectionMode, showLabLink }) => {
         })
         .map((year, index) => {
           return (
-            <Column className="border-t border-solid border-gray-300 pt-8">
-              <Column w={2} className="justify-end px-8">
-                <H2>{year}</H2>
+            <Column className="mb-8">
+              <Column w={2} className="pr-8">
+                <div className="row items-center justify-end h-16 w-full">
+                  <h2 className="text-blue-600">{year}</h2>
+                </div>
               </Column>
-              <Column w={10} className="px-8">
+              <Column w={10} className="p-8 bg-white shadow">
                 <div>
                   <PublicationList
                     publications={yearMap.get(year)}

@@ -24,19 +24,21 @@ const HeaderLinks = () => {
   const links = flattenEdges(data.links.edges)
 
   return (
-    <Column>
-      {links.map((link, index) => {
-        return (
-          <HeaderLink
-            key={index}
-            aria-label={`Goto ${link.name}`}
-            to={link.link}
-          >
-            {link.name}
-          </HeaderLink>
-        )
-      })}
-    </Column>
+    <div className="w-1/2">
+      <Column className="justify-between">
+        {links.map((link, index) => {
+          return (
+            <HeaderLink
+              key={index}
+              aria-label={`Goto ${link.name}`}
+              to={link.link}
+            >
+              {link.name}
+            </HeaderLink>
+          )
+        })}
+      </Column>
+    </div>
   )
 }
 
