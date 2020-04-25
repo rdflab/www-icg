@@ -1,11 +1,11 @@
 import React from "react"
-import CrumbLayout from "../components/crumblayout"
+import CrumbContainerLayout from "../components/crumbcontainerlayout"
 import MainColumn from "../components/maincolumn"
 import SideColumn from "../components/sidecolumn"
 import Column from "../components/column"
 
 const About = () => (
-  <CrumbLayout crumbs={[["About", "/about"]]} title="About Us">
+  <CrumbContainerLayout crumbs={[["About", "/about"]]} title="About Us">
     <Column>
       <MainColumn>
         <div>
@@ -31,7 +31,7 @@ const About = () => (
       </MainColumn>
       <SideColumn></SideColumn>
     </Column>
-  </CrumbLayout>
+  </CrumbContainerLayout>
 )
 
 export default About

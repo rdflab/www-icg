@@ -1,17 +1,16 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import CrumbLayout from "../components/crumblayout"
+import CrumbContainerLayout from "../components/crumbcontainerlayout"
 import SEO from "../components/seo"
 
 const Help = () => (
-  <CrumbLayout crumbs={[["Help", "/help"]]}>
+  <CrumbContainerLayout crumbs={[["Help", "/help"]]}>
     <SEO title="Help" />
     <p>Institute for Cancer Genetics website</p>
-    <p>version: 1.0.0</p>
+    <p>Version: 2020.05.01</p>
     <p>Developed by Antony Holmes</p>
-    <Link to="/">Go back to the homepage</Link>
-  </CrumbLayout>
+  </CrumbContainerLayout>
 )
 
 export default Help
