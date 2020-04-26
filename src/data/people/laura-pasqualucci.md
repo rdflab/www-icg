@@ -1,15 +1,14 @@
 ---
 id: "laura-pasqualucci"
+name: "Laura Pasqualucci"
 firstName: "Laura"
 lastName: "Pasqualucci"
-type: "Faculty"
-photo: ""
-titles: ["Professor of Clinical Pathology"]
 letters: ["MD"]
-email: ["lp171@cumc.columbia.edu"]
-phone: ["(212) 851-4792"]
-room: "507B"
-researchAreas: []
-tags: ["People", "Faculty"]
-urls: []
+title: "Professor of Pathology and Cell Biology"
+phone: "851-5248"
+fax: ""
+email: "lp171@cumc.columbia.edu"
+room: " 507B"
+url: ""
+tags: []
 ---

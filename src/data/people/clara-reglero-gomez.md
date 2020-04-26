@@ -1,15 +1,14 @@
 ---
 id: "clara-reglero-gomez"
+name: "Clara Reglero Gomez"
 firstName: "Clara"
 lastName: "Reglero Gomez"
-type: "Research Scientists"
-photo: ""
-titles: ["Postdoctoral Research Scientist"]
 letters: ["PhD"]
-email: ["cr3023@cumc.columbia.edu"]
-phone: ["(212) 851-5292"]
+title: "Postdoctoral Research Scientist"
+phone: "851-5292"
+fax: ""
+email: "cr3023@cumc.columbia.edu"
 room: "401B"
-researchAreas: []
-tags: ["People", "Research Scientists"]
-urls: []
+url: ""
+tags: []
 ---

@@ -5,7 +5,7 @@ path: "/news/welcome"
 groups: []
 people: []
 tags: ["News"]
-urls: []
+url: ""
 ---
 
 The ICG website has been redesigned.

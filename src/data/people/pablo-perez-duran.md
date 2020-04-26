@@ -1,15 +1,14 @@
 ---
 id: "pablo-perez-duran"
+name: "Pablo Perez-Duran"
 firstName: "Pablo"
 lastName: "Perez-Duran"
-type: "Research Scientists"
-photo: ""
-titles: ["Postdoctoral Research Scientist"]
 letters: ["PhD"]
-email: ["pp2569@cumc.columbia.edu"]
-phone: ["(212) 851-5292"]
+title: "Postdoctoral Research Scientist"
+phone: "851-5292"
+fax: ""
+email: "pp2569@cumc.columbia.edu"
 room: "401B"
-researchAreas: []
-tags: ["People", "Research Scientists"]
-urls: []
+url: ""
+tags: []
 ---

@@ -1,15 +1,14 @@
 ---
 id: "claudio-scuoppo"
+name: "Claudio Scuoppo"
 firstName: "Claudio"
 lastName: "Scuoppo"
-type: "Research Scientists"
-photo: ""
-titles: ["Instructor"]
 letters: ["PhD"]
-email: ["cs3064@cumc.columbia.edu"]
-phone: ["(212) 851-5270"]
+title: "Instructor"
+phone: "851-5270"
+fax: ""
+email: "cs3064@cumc.columbia.edu"
 room: "507"
-researchAreas: []
-tags: ["People", "Research Scientists"]
-urls: []
+url: ""
+tags: []
 ---

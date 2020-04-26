@@ -1,15 +1,14 @@
 ---
 id: "antonio-iavarone"
+name: "Antonio Iavarone"
 firstName: "Antonio"
 lastName: "Iavarone"
-type: "Faculty"
-photo: ""
-titles: ["Professor of Neurology and Pathology and Cell Biology"]
 letters: ["MD"]
-email: ["ai2102@cumc.columbia.edu"]
-phone: ["(212) 851-5245"]
+title: "Professor of Neurology & Pathology & Cell Bio (in ICG)"
+phone: "851-5245"
+fax: "851-5267"
+email: "ai2102@columbia.edu"
 room: "407B"
-researchAreas: []
-tags: ["People", "Faculty", "Faculty"]
-urls: []
+url: ""
+tags: []
 ---

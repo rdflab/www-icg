@@ -27,7 +27,7 @@ const ContactInfo = ({ person, urls, className }) => {
 
 ContactInfo.defaultProps = {
   className: "",
-  urls: [],
+  url: "",
 }
 
 export default ContactInfo

@@ -1,15 +1,14 @@
 ---
 id: "tim-zhong"
+name: "Tim Zhong"
 firstName: "Tim"
 lastName: "Zhong"
-type: "Graduate Student"
-photo: ""
-titles: ["Graduate student"]
 letters: []
-email: ["tjz2104@cumc.columbia.edu"]
-phone: ["(212) 851-4792"]
+title: "GRA"
+phone: "851-4792"
+fax: ""
+email: "tjz2104@cumc.columbia.edu"
 room: "401A"
-researchAreas: []
-tags: ["People", "Graduate Student"]
-urls: []
+url: ""
+tags: []
 ---

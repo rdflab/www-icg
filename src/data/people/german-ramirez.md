@@ -1,15 +1,14 @@
 ---
 id: "german-ramirez"
+name: "German Ramirez"
 firstName: "German"
 lastName: "Ramirez"
-type: "Administration"
-photo: ""
-titles: ["Technical Assistant (Glassware Facility)"]
 letters: []
-email: ["gr2241@cumc.columbia.edu"]
-phone: ["851-5283"]
-room: "415"
-researchAreas: []
-tags: ["People", "Administration"]
-urls: []
+title: "Technical Assistant"
+phone: "851-5283"
+fax: ""
+email: "gr2241@cumc.columbia.edu"
+room: "4th fl 415"
+url: ""
+tags: []
 ---

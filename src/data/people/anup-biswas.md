@@ -1,15 +1,14 @@
 ---
 id: "anup-biswas"
+name: "Anup Biswas"
 firstName: "Anup"
 lastName: "Biswas"
-type: "Research Scientists"
-photo: ""
-titles: ["Associate Research Scientist"]
 letters: ["PhD"]
-email: ["akb2180@cumc.columbia.edu"]
-phone: ["(212) 851-4792"]
+title: "Associate Research Scientist"
+phone: "851-4791"
+fax: ""
+email: "akb2180@cumc.columbia.edu"
 room: "401A"
-researchAreas: []
-tags: ["People", "Research Scientists"]
-urls: []
+url: ""
+tags: []
 ---

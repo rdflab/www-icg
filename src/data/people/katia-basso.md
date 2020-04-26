@@ -1,15 +1,14 @@
 ---
 id: "katia-basso"
+name: "Katia Basso"
 firstName: "Katia"
 lastName: "Basso"
-type: "Faculty"
-photo: ""
-titles: ["Assistant Professor of Pathology and Cell Biology"]
 letters: ["PhD"]
-email: ["kb451@cumc.columbia.edu"]
-phone: ["(212) 851-4786"]
+title: "Associate Professor of Pathology & Cell Biology"
+phone: "851-4786"
+fax: ""
+email: "kb451@cumc.columbia.edu"
 room: "506"
-researchAreas: []
-tags: ["People", "Faculty"]
-urls: []
+url: ""
+tags: []
 ---

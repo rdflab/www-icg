@@ -1,15 +1,14 @@
 ---
 id: "rohaan-hegde"
+name: "Rohaan Hegde"
 firstName: "Rohaan"
 lastName: "Hegde"
-type: "Graduate Student"
-photo: ""
-titles: ["Undergraduate student"]
 letters: []
-email: []
-phone: ["(212) 851-4792"]
+title: "Tech B"
+phone: "851-4793"
+fax: ""
+email: "rh2862@cumc.columbia.edu"
 room: "401A"
-researchAreas: []
-tags: ["People", "Graduate Student"]
-urls: []
+url: ""
+tags: []
 ---

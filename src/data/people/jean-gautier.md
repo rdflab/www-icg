@@ -1,15 +1,14 @@
 ---
 id: "jean-gautier"
+name: "Jean Gautier"
 firstName: "Jean"
 lastName: "Gautier"
-type: "Faculty"
-photo: ""
-titles: ["Professor of Genetics and Development"]
 letters: ["PhD"]
-email: ["jg130@cumc.columbia.edu"]
-phone: ["(212) 851-4564"]
-room: "603A"
-researchAreas: []
-tags: ["People", "Faculty"]
-urls: []
+title: "Professor of Genetic & Development (in ICG)"
+phone: "851-4564"
+fax: ""
+email: "jg130@columbia.edu"
+room: "603A, 602,613"
+url: ""
+tags: []
 ---

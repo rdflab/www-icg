@@ -1,15 +1,14 @@
 ---
 id: "laura-belver-miguel"
+name: "Laura Belver-Miguel"
 firstName: "Laura"
 lastName: "Belver-Miguel"
-type: "Research Scientists"
-photo: ""
-titles: ["Associate Research Scientist"]
 letters: ["PhD"]
-email: ["lb2878@cumc.columbia.edu"]
-phone: ["(212) 851-5292"]
+title: "Associate Research Scientist"
+phone: "851-5292"
+fax: ""
+email: "lb2878@cumc.columbia.edu"
 room: "401B"
-researchAreas: []
-tags: ["People", "Research Scientists"]
-urls: []
+url: ""
+tags: []
 ---

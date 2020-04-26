@@ -1,15 +1,14 @@
 ---
 id: "thomas-gunning"
+name: "Thomas Gunning"
 firstName: "Thomas"
 lastName: "Gunning"
-type: "Staff"
-photo: ""
-titles: ["Technician B"]
 letters: []
-email: []
-phone: []
-room: ""
-researchAreas: []
-tags: ["People", "Staff"]
-urls: []
+title: "Tech B "
+phone: "851-5292"
+fax: ""
+email: "tg2680@cumc.columbia.edu"
+room: "401 B"
+url: ""
+tags: []
 ---

@@ -1,15 +1,14 @@
 ---
 id: "courtney-coker"
+name: "Courtney Coker"
 firstName: "Courtney"
 lastName: "Coker"
-type: "Staff"
-photo: ""
-titles: ["Staff Associate"]
 letters: []
-email: ["cc3703@cumc.columbia.edu"]
-phone: ["(212) 851-4792"]
+title: "Staff Associate"
+phone: "851-4792"
+fax: ""
+email: "cc3703@cumc.columbia.edu"
 room: "401A"
-researchAreas: []
-tags: ["People", "Staff"]
-urls: []
+url: ""
+tags: []
 ---

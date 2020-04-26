@@ -1,15 +1,14 @@
 ---
 id: "wanchao-ma"
+name: "Wanchao Ma"
 firstName: "Wanchao"
 lastName: "Ma"
-type: "Staff"
-photo: ""
-titles: ["Senior Staff Associate"]
 letters: []
-email: ["wm49@cumc.columbia.edu"]
-phone: ["(212) 851-4792"]
+title: "Sr Staff Associate "
+phone: "851-4791"
+fax: ""
+email: "wm49@cumc.columbia.edu"
 room: "401A"
-researchAreas: []
-tags: ["People", "Staff"]
-urls: []
+url: ""
+tags: []
 ---

@@ -1,15 +1,14 @@
 ---
 id: "seetha-srinivasan"
+name: "Seetha Srinivasan"
 firstName: "Seetha"
 lastName: "Srinivasan"
-type: "Administration"
-photo: ""
-titles: ["Database Maint (Variable Hours Officer)"]
-letters: []
-email: ["svs2113@cumc.columbia.edu"]
-phone: ["851-5276"]
-room: "508"
-researchAreas: []
-tags: ["People", "Administration"]
-urls: []
+letters: ["PhD"]
+title: "Variable Hours Coordinator"
+phone: "513-293-0857"
+fax: ""
+email: "svs2113@cumc.columbia.edu"
+room: ""
+url: ""
+tags: []
 ---

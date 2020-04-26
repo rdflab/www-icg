@@ -1,15 +1,14 @@
 ---
 id: "zhenyi-su"
+name: "Zhenyi Su"
 firstName: "Zhenyi"
 lastName: "Su"
-type: "Research Scientists"
-photo: ""
-titles: ["Postdoctoral Research Scientist"]
 letters: ["PhD"]
-email: ["zs2391@cumc.columbia.edu"]
-phone: ["(212) 851-5285"]
+title: "Postdoctoral Research Scientist"
+phone: "851-5285"
+fax: ""
+email: "zs2391@cumc.columbia.edu"
 room: "608"
-researchAreas: []
-tags: ["People", "Research Scientists"]
-urls: []
+url: ""
+tags: []
 ---

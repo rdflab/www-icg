@@ -1,15 +1,14 @@
 ---
 id: "seoyoung-han"
+name: "Seoyoung Han"
 firstName: "Seoyoung"
 lastName: "Han"
-type: "Graduate Student"
-photo: ""
-titles: ["Graduate student"]
 letters: []
-email: ["sh3844@columbia.edu"]
-phone: ["(212) 851-4792"]
+title: "Tech B"
+phone: "951-4792"
+fax: ""
+email: "sh3844@cumc.columbia.edu"
 room: "401A"
-researchAreas: []
-tags: ["People", "Graduate Student"]
-urls: []
+url: ""
+tags: []
 ---

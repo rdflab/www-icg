@@ -1,15 +1,14 @@
 ---
 id: "clarissa-corinaldesi"
+name: "Clarissa Corinaldesi"
 firstName: "Clarissa"
 lastName: "Corinaldesi"
-type: "Research Scientists"
-photo: ""
-titles: ["Postdoctoral Research Scientist"]
 letters: ["PhD"]
-email: ["cc4308@cumc.columbia.edu"]
-phone: ["(212) 851-5269"]
+title: "Postdoctoral Research Scientist  "
+phone: "851-5269"
+fax: ""
+email: "cc4308@cumc.columbia.edu"
 room: "507"
-researchAreas: []
-tags: ["People", "Research Scientists"]
-urls: []
+url: ""
+tags: []
 ---

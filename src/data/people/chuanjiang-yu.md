@@ -1,15 +1,14 @@
 ---
 id: "chuanjiang-yu"
+name: "Chuanjiang Yu"
 firstName: "Chuanjiang"
 lastName: "Yu"
-type: "Research Scientists"
-photo: ""
-titles: ["Postdoctoral Research Scientist"]
 letters: ["PhD"]
-email: ["cy2491@cumc.columbia.edu"]
-phone: ["(212) 851-5270"]
+title: "Postdoctoral Research Scientist"
+phone: "851-5270"
+fax: ""
+email: "cy2491@cumc.columbia.edu"
 room: "507"
-researchAreas: []
-tags: ["People", "Research Scientists"]
-urls: []
+url: ""
+tags: []
 ---

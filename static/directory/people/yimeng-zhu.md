@@ -1,9 +1,11 @@
 ---
 id: "yimeng-zhu"
 name: "Yimeng Zhu"
+letters: ["PhD"]
 title: "Postdoctoral Research Scientist"
 phone: "851-4785"
-fax: "n/a"
+fax: ""
 email: "yz3537@cumc.columbia.edu"
 room: "501"
+url: ""
 ---

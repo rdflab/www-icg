@@ -11,7 +11,7 @@ const PEOPLE_TYPES = [
 
 const labTemplate = path.resolve(`src/templates/labtemplate.js`)
 //const labsTemplate = path.resolve(`src/templates/labstemplate.js`)
-const facultyTemplate = path.resolve(`src/templates/facultytemplate.js`)
+const staffTemplate = path.resolve(`src/templates/stafftemplate.js`)
 const peopleTemplate = path.resolve(`src/templates/peopletemplate.js`)
 const groupTemplate = path.resolve(`src/templates/grouptemplate.js`)
 const labOverviewTemplate = path.resolve(`src/templates/laboverviewtemplate.js`)
@@ -118,25 +118,19 @@ const createSuffixTree = (root, text, item) => {
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions
   const typeDefs = `
-    type GroupsJson implements Node {
-      urls: [String!]!
-    }
-
     type MarkdownRemark implements Node {
       frontmatter: Frontmatter
     }
 
     type Frontmatter {
-      titles: [String!]!
-      phone: [String!]!
-      email: [String!]!
+      name: String!
+      title: String!
       letters: [String!]!
       tags: [String!]!
-      urls: [String!]!
       groups: [String!]!
       people: [String!]!
       room: String!
-      researchAreas: [String!]!
+      url: String!
       start: Date
       end: Date
     }
@@ -149,18 +143,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const result = await graphql(`
     query {
-      labGroups: allMarkdownRemark(
+      groups: allMarkdownRemark(
         sort: { fields: frontmatter___name, order: ASC }
-        filter: { frontmatter: { type: { eq: "Lab" } } }
+        filter: { fileAbsolutePath: { regex: "/groups/" } }
       ) {
         edges {
           node {
             frontmatter {
               id
               name
-              leaders
-              members
-              urls
+              url
             }
             excerpt(format: HTML)
             html
@@ -179,20 +171,60 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           node {
             frontmatter {
               id
-              firstName
-              lastName
-              titles
+              name
+              title
               letters
-              type
               email
               phone
+              fax
               room
-              researchAreas
               tags
-              urls
+              url
             }
             excerpt(format: HTML)
             html
+          }
+        }
+      }
+
+      faculty: allFacultyJson {
+        edges {
+          node {
+            id
+            name
+            url
+            faculty {
+              id
+              name
+              url
+              subgroups {
+                id
+                members
+                name
+                url
+              }
+            }
+          }
+        }
+      }
+
+      administration: allAdministrationJson {
+        edges {
+          node {
+            id
+            name
+            url
+            staff {
+              id
+              name
+              url
+              subgroups {
+                members
+                name
+                url
+                id
+              }
+            }
           }
         }
       }
@@ -281,7 +313,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               people
               path
               tags
-              urls
+              url
             }
             excerpt(format: HTML)
           }
@@ -300,7 +332,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               location
               start
               end
-              urls
+              url
               tags
             }
             excerpt(format: HTML)
@@ -333,60 +365,74 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const researchAreasMap = {}
   const cvMap = {}
 
-  result.data.researchAreas.edges.forEach(({ node }) => {
-    allResearchAreas.push(node)
-    researchAreasMap[node.id] = node
-  })
+  // result.data.researchAreas.edges.forEach(({ node }) => {
+  //   allResearchAreas.push(node)
+  //   researchAreasMap[node.id] = node
+  // })
 
   result.data.cv.edges.forEach(({ node }) => {
     cvMap[node.id] = node
   })
 
+  const allGroups = []
+  result.data.groups.edges.forEach(({ node }) => {
+    const group = node
+    allGroups.push(group)
+  })
+
+  const allFaculty = []
+  result.data.faculty.edges.forEach(({ node }) => {
+    const faculty = node
+    allFaculty.push(faculty)
+  })
+
+  console.log("all", allGroups)
+
   result.data.people.edges.forEach(({ node }) => {
     const person = node
 
-    let ras = {}
+    // let ras = {}
 
-    for (let ra of person.frontmatter.researchAreas) {
-      if (ra in researchAreasMap) {
-        ras[researchAreasMap[ra].name] = researchAreasMap[ra]
-      }
-    }
+    // for (let ra of person.frontmatter.researchAreas) {
+    //   if (ra in researchAreasMap) {
+    //     ras[researchAreasMap[ra].name] = researchAreasMap[ra]
+    //   }
+    // }
 
-    person.researchAreas = Object.keys(ras)
-      .sort()
-      .map(key => {
-        return ras[key]
-      })
+    // person.researchAreas = Object.keys(ras)
+    //   .sort()
+    //   .map(key => {
+    //     return ras[key]
+    //   })
 
     allPeople.push(person)
   })
 
   const peopleMap = toPeopleMap(allPeople)
 
-  result.data.labGroups.edges.forEach(({ node }) => {
-    const group = node
+  // result.data.labGroups.edges.forEach(({ node }) => {
+  //   const group = node
 
-    const leaders = []
+  //   const leaders = []
 
-    for (let person of group.frontmatter.leaders) {
-      leaders.push(peopleMap[person])
-    }
+  //   for (let person of group.frontmatter.leaders) {
+  //     leaders.push(peopleMap[person])
+  //   }
 
-    group.leaders = leaders
+  //   group.leaders = leaders
 
-    const members = []
+  //   const members = []
 
-    for (let person of group.frontmatter.members) {
-      members.push(peopleMap[person])
-    }
+  //   for (let person of group.frontmatter.members) {
+  //     members.push(peopleMap[person])
+  //   }
 
-    group.members = members
+  //   group.members = members
 
-    allLabGroups.push(group)
-  })
+  //   allLabGroups.push(group)
+  // })
 
-  const groupMap = toGroupMap(allLabGroups)
+  const groupMap = toGroupMap(allGroups)
 
   //
   // Work out if people belong to more than one group
@@ -394,21 +440,18 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const personGroups = {}
 
   for (let group of allLabGroups) {
-    for (let person of group.leaders) {
-      if (!(person.frontmatter.id in personGroups)) {
-        personGroups[person.frontmatter.id] = new Set()
-      }
-
-      personGroups[person.frontmatter.id].add(group.frontmatter.id)
-    }
-
-    for (let person of group.members) {
-      if (!(person.frontmatter.id in personGroups)) {
-        personGroups[person.frontmatter.id] = new Set()
-      }
-
-      personGroups[person.frontmatter.id].add(group.frontmatter.id)
-    }
+    // for (let person of group.leaders) {
+    //   if (!(person.frontmatter.id in personGroups)) {
+    //     personGroups[person.frontmatter.id] = new Set()
+    //   }
+    //   personGroups[person.frontmatter.id].add(group.frontmatter.id)
+    // }
+    // for (let person of group.members) {
+    //   if (!(person.frontmatter.id in personGroups)) {
+    //     personGroups[person.frontmatter.id] = new Set()
+    //   }
+    //   personGroups[person.frontmatter.id].add(group.frontmatter.id)
+    // }
   }
 
   // Add groups to person
@@ -448,14 +491,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     allPublications.push(publication)
   })
 
-  result.data.news.edges.forEach(({ node }) => {
-    const item = node
+  // result.data.news.edges.forEach(({ node }) => {
+  //   const item = node
 
-    // better if the year is an int
-    item.year = parseInt(item.frontmatter.year)
+  //   // better if the year is an int
+  //   item.year = parseInt(item.frontmatter.year)
 
-    allNews.push(item)
-  })
+  //   allNews.push(item)
+  // })
 
   result.data.events.edges.forEach(({ node }) => {
     const calEvent = node
@@ -569,6 +612,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   searchData["sections"].push("Events")
   searchData["data"]["Events"] = {}
+
+  console.log("cake", allCalEvents)
 
   for (let calEvent of allCalEvents) {
     const path = `/events/${
@@ -760,14 +805,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   createPage({
     path: `/people/faculty`,
-    component: groupTemplate,
+    component: staffTemplate,
     context: {
       title: `Faculty`,
       crumbs: [
         ["People", "/people"],
         ["Faculty", "/people/faculty"],
       ],
-      allPeople: peopleTypeMap["Faculty"],
+      allFaculty: allFaculty,
+      peopleMap: peopleMap,
     },
   })
 
@@ -874,14 +920,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   // Labs page
 
-  createPage({
-    path: "/people/faculty",
-    component: facultyTemplate,
-    context: {
-      allGroups: allLabGroups,
-      peopleMap: peopleMap,
-    },
-  })
+  // createPage({
+  //   path: "/people/faculty",
+  //   component: staffTemplate,
+  //   context: {
+  //     allFaculty: allFaculty,
+  //     peopleMap : peopleMap,
+  //   },
+  // })
 
   // People page
 

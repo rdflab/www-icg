@@ -1,15 +1,14 @@
 ---
 id: "jingjie-yi"
-firstName: "JIngjie"
+name: "Jingjie Yi"
+firstName: "Jingjie"
 lastName: "Yi"
-type: "Research Scientists"
-photo: ""
-titles: ["Postdoctoral Research Scientist"]
 letters: ["PhD"]
-email: ["jy2651@cumc.columbia.edu"]
-phone: ["(212) 851-5285"]
+title: "Postdoctoral Research Scientist"
+phone: "851-5285"
+fax: ""
+email: "jy2652@cumc.columbia.edu"
 room: "608"
-researchAreas: []
-tags: ["People", "Research Scientists"]
-urls: []
+url: ""
+tags: []
 ---

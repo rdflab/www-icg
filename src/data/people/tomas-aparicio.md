@@ -1,15 +1,14 @@
 ---
 id: "tomas-aparicio"
+name: "Tomas Aparicio"
 firstName: "Tomas"
 lastName: "Aparicio"
-type: "Research Scientists"
-photo: ""
-titles: ["Associate Research Scientist"]
 letters: ["PhD"]
-email: ["ta2308@cumc.columbia.edu"]
-phone: ["(212) 851-4566"]
+title: "Associate Research Scientist"
+phone: "851-4566/67/68"
+fax: ""
+email: "ta2308@cumc.columbia.edu"
 room: "602"
-researchAreas: []
-tags: ["People", "Research Scientists"]
-urls: []
+url: ""
+tags: []
 ---

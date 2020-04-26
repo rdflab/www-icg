@@ -1,15 +1,14 @@
 ---
 id: "huan-li"
+name: "Huan Li"
 firstName: "Huan"
 lastName: "Li"
-type: "Staff"
-photo: ""
-titles: ["Staff Associate"]
 letters: []
-email: ["hl2977@cumc.columbia.edu"]
-phone: []
-room: ""
-researchAreas: []
-tags: ["People", "Staff"]
-urls: []
+title: "Staff Associate"
+phone: "851-5285"
+fax: ""
+email: "hl2977@cumc.columbia.edu"
+room: "608"
+url: ""
+tags: []
 ---

@@ -1,9 +1,11 @@
 ---
 id: "jingjie-yi"
 name: "Jingjie Yi"
+letters: ["PhD"]
 title: "Postdoctoral Research Scientist"
 phone: "851-5285"
-fax: "n/a"
+fax: ""
 email: "jy2652@cumc.columbia.edu"
 room: "608"
+url: ""
 ---

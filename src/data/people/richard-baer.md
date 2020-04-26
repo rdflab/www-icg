@@ -1,15 +1,14 @@
 ---
 id: "richard-baer"
+name: "Richard Baer"
 firstName: "Richard"
 lastName: "Baer"
-type: "Faculty"
-photo: ""
-titles: ["Professor of Pathology and Cell Biology"]
 letters: ["PhD"]
-email: ["rb670@cumc.columbia.edu"]
-phone: ["(212) 851-5275", "(212) 851-5267"]
+title: " Professor of Pathology & Cell Biology (in ICG)"
+phone: "851-5275 "
+fax: "851-5220"
+email: "rb670@columbia.edu"
 room: "503A"
-researchAreas: []
-tags: ["People", "Faculty"]
-urls: []
+url: ""
+tags: []
 ---

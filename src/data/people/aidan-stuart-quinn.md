@@ -1,15 +1,14 @@
 ---
 id: "aidan-stuart-quinn"
+name: "Aidan Stuart Quinn"
 firstName: "Aidan Stuart"
 lastName: "Quinn"
-type: "Graduate Student"
-photo: ""
-titles: ["Graduate Student"]
 letters: []
-email: ["saq2106@cumc.columbia.edu"]
-phone: ["(212) 851-5292"]
+title: "GRA"
+phone: "851-5292"
+fax: ""
+email: "saq2106@cumc.columbia.edu"
 room: "401B"
-researchAreas: []
-tags: ["People", "Graduate Student"]
-urls: []
+url: ""
+tags: []
 ---

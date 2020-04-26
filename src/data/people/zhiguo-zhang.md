@@ -1,18 +1,14 @@
 ---
 id: "zhiguo-zhang"
+name: "Zhiguo Zhang"
 firstName: "Zhiguo"
 lastName: "Zhang"
-type: "Faculty"
-photo: ""
-titles:
-  [
-    "Professor of Epigenomics and Molecular Biology;in Pediatrics, Genetics and Development",
-  ]
 letters: ["PhD"]
-email: ["zz2401@cumc.columbia.edu"]
-phone: ["(212) 851-4936"]
-room: "851-4936"
-researchAreas: []
-tags: ["People", "Faculty"]
-urls: []
+title: "Professor of Epigenomics & Molecular Biology (in Ped, G & D,  ICG) "
+phone: "851-4936"
+fax: ""
+email: "zz2401@columbia.edu"
+room: "406"
+url: ""
+tags: []
 ---

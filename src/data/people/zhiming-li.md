@@ -1,15 +1,14 @@
 ---
 id: "zhiming-li"
+name: "Zhiming Li"
 firstName: "Zhiming"
 lastName: "Li"
-type: "Staff"
-photo: ""
-titles: [""]
-letters: []
-email: []
-phone: ["(212) 851-4937"]
-room: "851-4937"
-researchAreas: []
-tags: ["People", "Staff"]
-urls: []
+letters: ["PhD"]
+title: "Postdoctoral Research Scientist "
+phone: "851-4937"
+fax: ""
+email: "zl2783@cumc.columbia.edu"
+room: "407"
+url: ""
+tags: []
 ---

@@ -1,15 +1,14 @@
 ---
 id: "anisha-cooke"
+name: "Anisha Cooke"
 firstName: "Anisha"
 lastName: "Cooke"
-type: "Staff"
-photo: ""
-titles: ["Techinican B"]
 letters: []
-email: ["aa3276@cumc.columbia.edu"]
-phone: ["(212) 851-5292"]
+title: "Tech B"
+phone: "851-5292"
+fax: ""
+email: "ac4268@cumc.columbia.edu"
 room: "401B"
-researchAreas: []
-tags: ["People", "Staff"]
-urls: []
+url: ""
+tags: []
 ---

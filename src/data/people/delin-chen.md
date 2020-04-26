@@ -1,15 +1,14 @@
 ---
 id: "delin-chen"
+name: "Delin Chen"
 firstName: "Delin"
 lastName: "Chen"
-type: "Research Scientists"
-photo: ""
-titles: ["Associate Research Scientist"]
 letters: ["PhD"]
-email: ["dc723@cumc.columbia.edu"]
-phone: ["(212) 851-5285"]
+title: "Associate Research Scientist"
+phone: "851-5285"
+fax: ""
+email: "dc723@cumc.columbia.edu"
 room: "608"
-researchAreas: []
-tags: ["People", "Research Scientists"]
-urls: []
+url: ""
+tags: []
 ---

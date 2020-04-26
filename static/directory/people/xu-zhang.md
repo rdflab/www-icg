@@ -1,9 +1,11 @@
 ---
 id: "xu-zhang"
 name: "Xu Zhang"
+letters: ["PhD"]
 title: "Postdoctoral Research Scientist "
 phone: "851-4937"
-fax: "n/a"
+fax: ""
 email: "xz2711@cumc.columbia.edu"
 room: "407"
+url: ""
 ---

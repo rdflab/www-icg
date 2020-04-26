@@ -1,15 +1,14 @@
 ---
 id: "karina-chan"
+name: "Karina Chan"
 firstName: "Karina"
 lastName: "Chan"
-type: "Staff"
-photo: ""
-titles: ["Technician B"]
 letters: []
-email: ["kmc@cumc.columbia.edu"]
-phone: ["(212) 851-4966"]
+title: "Tech B"
+phone: "851-4966"
+fax: ""
+email: "kmc2228@cumc.columbia.edu"
 room: "505"
-researchAreas: []
-tags: ["People", "Staff"]
-urls: []
+url: ""
+tags: []
 ---

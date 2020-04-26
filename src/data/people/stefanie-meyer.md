@@ -1,15 +1,14 @@
 ---
 id: "stefanie-meyer"
+name: "Stefanie Meyer"
 firstName: "Stefanie"
 lastName: "Meyer"
-type: "Research Scientists"
-photo: ""
-titles: ["Postdoctoral Research Fellow"]
 letters: ["PhD"]
-email: ["snm2143@cumc.columbia.edu"]
-phone: ["(212) 851-5269"]
+title: "Postdoctoral Research Scientist"
+phone: "851-5269"
+fax: ""
+email: "snm2142@cumc.columbia.edu"
 room: "507"
-researchAreas: []
-tags: ["People", "Fellow", "Research Scientists"]
-urls: []
+url: ""
+tags: []
 ---

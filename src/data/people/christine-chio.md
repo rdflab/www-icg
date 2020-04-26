@@ -1,15 +1,14 @@
 ---
 id: "christine-chio"
+name: "Christine Chio"
 firstName: "Christine"
 lastName: "Chio"
-type: "Faculty"
-photo: ""
-titles: ["Assistant Professor of Genetics and Development"]
 letters: ["PhD"]
-email: ["ic2445@cumc.columbia.edu"]
-phone: ["(212) 851-4966"]
-room: "505"
-researchAreas: []
-tags: ["People", "Faculty"]
-urls: []
+title: "Assistant Prfessor of Genetics & Development (in ICG)"
+phone: "851-4967"
+fax: "851-5256"
+email: "ic2445@columbia.edu"
+room: "505A"
+url: ""
+tags: []
 ---

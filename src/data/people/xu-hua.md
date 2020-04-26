@@ -1,15 +1,14 @@
 ---
 id: "xu-hua"
+name: "Xu Hua"
 firstName: "Xu"
 lastName: "Hua"
-type: "Research Scientists"
-photo: ""
-titles: ["Postdoctoral Research Scientist"]
 letters: ["PhD"]
-email: ["xh2387@cumc.columbia.edu"]
-phone: ["(212) 851-4937"]
-room: "851-4937"
-researchAreas: []
-tags: ["People", "Research Scientists"]
-urls: []
+title: "Postdoctoral Research Scientist "
+phone: "851-4937"
+fax: ""
+email: "xh2387@cumc.columbia.edu"
+room: "407"
+url: ""
+tags: []
 ---

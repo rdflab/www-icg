@@ -1,15 +1,14 @@
 ---
 id: "xiangyi-ke"
+name: "Xiangyi Ke"
 firstName: "Xiangyi"
 lastName: "Ke"
-type: "Graduate Student"
-photo: ""
-titles: ["Graduate Student"]
 letters: []
-email: ["xk2138@cumc.columbia.edu"]
-phone: ["(212) 851-4966"]
+title: "GRA"
+phone: "851-4966"
+fax: ""
+email: "xk2138@cumc.columbia.edu"
 room: "505"
-researchAreas: []
-tags: ["People", "Graduate Student"]
-urls: []
+url: ""
+tags: []
 ---

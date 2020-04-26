@@ -1,15 +1,14 @@
 ---
 id: "brian-lee"
+name: "Brian Lee"
 firstName: "Brian"
 lastName: "Lee"
-type: "Staff"
-photo: ""
-titles: ["Technician B"]
 letters: []
-email: ["bl2530@cumc.columbia.edu"]
-phone: ["(212) 851-4785"]
+title: "Sr Tech B"
+phone: "851-4785"
+fax: ""
+email: "bl2530@cumc.columbia.edu"
 room: "501"
-researchAreas: []
-tags: ["People", "Staff"]
-urls: []
+url: ""
+tags: []
 ---

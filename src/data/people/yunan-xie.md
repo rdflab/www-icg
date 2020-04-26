@@ -1,15 +1,14 @@
 ---
 id: "yunan-xie"
+name: "Yunan Xie"
 firstName: "Yunan"
 lastName: "Xie"
-type: "Staff"
-photo: ""
-titles: ["Administrative Assistant"]
 letters: []
-email: ["yx30@cumc.columbia.edu"]
-phone: ["(212) 851-5268"]
+title: "Administrative Assistant"
+phone: "851-5268"
+fax: ""
+email: "yx30@cumc.columbia.edu"
 room: "507"
-researchAreas: []
-tags: ["People", "Staff"]
-urls: []
+url: ""
+tags: []
 ---

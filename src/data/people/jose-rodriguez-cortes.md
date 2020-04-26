@@ -1,15 +1,14 @@
 ---
 id: "jose-rodriguez-cortes"
+name: "Jose Rodriguez-Cortes"
 firstName: "Jose"
 lastName: "Rodriguez-Cortes"
-type: "Research Scientists"
-photo: ""
-titles: ["Postdoctoral Research Scientist"]
 letters: ["PhD"]
-email: ["jr3434@cumc.columbia.edu"]
-phone: ["(212) 851-5292"]
+title: "Associate Research Scientist"
+phone: "851-5292"
+fax: ""
+email: "jr3434@cumc.columbia.edu"
 room: "401B"
-researchAreas: []
-tags: ["People", "Research Scientists"]
-urls: []
+url: ""
+tags: []
 ---

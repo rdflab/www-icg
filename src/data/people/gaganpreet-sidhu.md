@@ -1,15 +1,14 @@
 ---
 id: "gaganpreet-sidhu"
+name: "Gaganpreet Sidhu"
 firstName: "Gaganpreet"
 lastName: "Sidhu"
-type: "Research Scientists"
-photo: ""
-titles: ["Postdoctoral Research Scientist"]
 letters: ["PhD"]
-email: ["gs2732@cumc.columbia.edu"]
-phone: ["(212) 851-4566"]
+title: "Associate Research Scientist"
+phone: "851-4566/67/68"
+fax: ""
+email: "gs2732@cumc.columbia.edu"
 room: "602"
-researchAreas: []
-tags: ["People", "Research Scientists"]
-urls: []
+url: ""
+tags: []
 ---

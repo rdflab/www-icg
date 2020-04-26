@@ -1,69 +1,162 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Mar 26 11:44:28 2020
-
-@author: nt0ny
-"""
-
-
-import pandas as pd
+import matplotlib
+matplotlib.use('agg')
+import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
+import xlrd
+from openpyxl import load_workbook
+import re
 import collections
+import json
 
-df = pd.read_csv('admin.txt', sep='\t', header=0)
+def sort_names(names):
+    name_map = collections.defaultdict(lambda: collections.defaultdict(list))
+    
+    for name in names:
+        names = name.split(' ')
+        last = names[-1]
+        first = ' '.join(names[0:-1])
+        
+        name_map[last][first].append(name)
+    
+    ret = []
+    
+    for last in name_map:
+        for first in name_map[last]:
+            ret.extend(name_map[last][first])
+    
+    return ret
 
-type = 'Administration'
-tags = 'People'
+df = pd.read_csv('ICG_Directory_3.13.20.txt', sep='\t', keep_default_na=False)
 
-ids = []
+id_map = {}
 
-for i in range(0, df.shape[0]):
-    names = df['NAME'][i].split(', ')
+lab_map = collections.defaultdict(lambda: collections.defaultdict(lambda: collections.defaultdict(list)))
+
+new_lab = False
+lab_group = 'Divisional Administrator'
+
+for i in range(3, 13):
+    name = df.iloc[i, 0]
+    name = name.strip()
     
-    firstName = names[1].strip()
-    lastName = names[0].strip()
-    email = df['EMAIL'][i].strip()
-    phone = df['PHONE'][i].strip()
-    room = df['ROOM'][i].strip()
-    title = df['TITLE'][i].strip()
+    name = re.sub(r' +', ' ', name)
     
-    id = '{}-{}'.format(firstName.lower().replace(' ', '-'), lastName.lower().replace(' ', '-'))
+    if name == '':
+        new_lab = True
+        continue
     
-    ids.append(id)
+    nl = name.lower()
     
-    file = 'people/{}.md'.format(id)
+    letters = []
+
+    if 'md' in nl:
+        letters.append('MD')
     
-    print(id, file)
+    if 'phd' in nl:
+        letters.append('PhD')
     
-    f = open(file, 'w')
+    name = re.sub(r' *, *', ',', name)
+    name = name.replace(',PhD', '')
+    name = name.replace(' PhD', '')
+    name = name.replace(',MD', '')
+    name = re.sub(r' *\(.+?\) *', '', name)
+    names = name.split(',')
+    
+    firstName = names[-1]
+    lastName = names[0]
+    formatted_name = '{} {}'.format(firstName, lastName)
+    
+    if new_lab:
+        current_lab = lab_map[lab_group][formatted_name]
+        lab_group = 'Administrative Staff'
+        new_lab = False
+    
+    id = '{}-{}'.format(firstName.lower(), lastName.lower())
+    id = id.replace('\'', '')
+    id = id.replace(' ', '-')
+    id = id.replace('.', '')
+    
+    
+    
+    id_map[formatted_name] = id
+    
+    title = df.iloc[i, 1]
+    title = title.replace('Prof ', 'Professor ')
+    title = title.replace('Assoc ', 'Associate ')
+    title = re.sub(r' \(.+', '', title)
+    
+    current_lab['Staff'].append(formatted_name)
+    
+    phone = df.iloc[i, 2]
+    phone = phone.replace('cell: ', '')
+    
+    fax = df.iloc[i, 3]
+    
+    email = df.iloc[i, 4]
+    
+    if '@' not in email:
+        email = '{}@cumc.columbia.edu'.format(email)
+        
+    uni = re.sub(r'@.+', '', email)
+    
+    room = df.iloc[i, 5]
+    
+    url = ''
+    
+    #
+    # Create markdown
+    #
+    
+    f = open('people/{}.md'.format(id), 'w')
     print('---', file=f)
     print('id: "{}"'.format(id), file=f)
+    print('name: "{}"'.format(formatted_name), file=f)
     print('firstName: "{}"'.format(firstName), file=f)
     print('lastName: "{}"'.format(lastName), file=f)
-    print('type: "Administration"', file=f)
-    print('photo: ""', file=f)
-    print('titles: ["{}"]'.format(title), file=f)
-    print('letters: []', file=f)
-    print('email: ["{}"]'.format(email), file=f)
-    print('phone: ["{}"]'.format(phone), file=f)
+    print('letters: [{}]'.format(','.join(['"{}"'.format(l) for l in letters])), file=f)
+    print('title: "{}"'.format(title), file=f)
+    print('phone: "{}"'.format(phone), file=f)
+    print('fax: "{}"'.format(fax), file=f)
+    print('email: "{}"'.format(email), file=f)
     print('room: "{}"'.format(room), file=f)
-    print('researchAreas: []', file=f)
-    print('tags: ["People", "Administration"]', file=f)
-    print('urls: []', file=f)
+    print('url: "{}"'.format(url), file=f)
+    print('tags: []', file=f)
     print('---', file=f)
     f.close()
+
+#
+# Sorted map of labs to people
+#
+
+GROUPS = ['Divisional Administrator', 'Administrative Staff']
+
+SUB_GROUPS = ['Staff']
+
+all_divisions = []
+
+for g in GROUPS:
+    faculty = []
     
+    division = {'id':g.lower().replace(' ', '-'), 'name':g, 'url':'', 'staff': []}
     
-f = open('groups/administration.md', 'w')
-print('---', file=f)
-print('id: "administration"', file=f)
-print('name: "Administration"', file=f)
-print('type: "Administration"', file=f)
-print('photo: ""', file=f)
-print('leaders: []', file=f)
-print('members: [{}]'.format(','.join(['"{}"'.format(id) for id in sorted(ids)])), file=f)
-print('email: []'.format(email), file=f)
-print('phone: []'.format(phone), file=f)
-print('urls: []', file=f)
-print('---', file=f)
-f.close()
+    faculty_names = sort_names(lab_map[g])
+    
+    for name in faculty_names:
+        lab = {'id':id_map[name], 'name':name, 'url':'', 'subgroups': []}
+        
+        for sg in SUB_GROUPS:
+            subgroup = {'id':sg.lower().replace(' ', '-'), 'name':sg, 'url':'', 'members':[]}
+            member_names = sort_names(lab_map[g][name][sg])
+            subgroup['members'] = [id_map[name] for name in member_names]
+            lab['subgroups'].append(subgroup)
+            
+        division['staff'].append(lab)
+        
+    all_divisions.append(division)
+        
+    
+with open('administration.json', 'w') as f:
+    json.dump(all_divisions, f, indent=2)
+    
+

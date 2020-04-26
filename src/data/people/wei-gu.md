@@ -1,15 +1,14 @@
 ---
 id: "wei-gu"
+name: "Wei Gu"
 firstName: "Wei"
 lastName: "Gu"
-type: "Faculty"
-photo: ""
-titles: ["Professor of Pathology and Cell Biology"]
 letters: ["PhD"]
-email: ["wg8@cumc.columbia.edu"]
-phone: ["(212) 851-5282", "(212) 851-5284"]
+title: "Professor of Pathology & Cell Biology (in ICG)"
+phone: "851-5282 "
+fax: "851-5284"
+email: "wg8@columbia.edu"
 room: "609A"
-researchAreas: []
-tags: ["People", "Faculty"]
-urls: []
+url: ""
+tags: []
 ---

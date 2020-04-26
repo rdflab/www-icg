@@ -25,7 +25,7 @@ for d in dates:
     print('start: "{}T12:00:00-05:00"'.format(fd), file=f)
     print('end: "{}T13:00:00-05:00"'.format(fd), file=f)
     print('tags: ["Event"]', file=f)
-    print('urls: []', file=f)
+    print('url: ""', file=f)
     print('---', file=f)
     print('', file=f)
     print('Weekly seminar series showcasing department research.', file=f)

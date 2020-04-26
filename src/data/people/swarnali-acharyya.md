@@ -1,15 +1,14 @@
 ---
 id: "swarnali-acharyya"
+name: "Swarnali Acharyya"
 firstName: "Swarnali"
 lastName: "Acharyya"
-type: "Faculty"
-photo: ""
-titles: ["Assistant Professor of Pathology and Cell Biology"]
 letters: ["PhD"]
-email: ["sa3141@cumc.columbia.edu"]
-phone: ["(212) 851-4791", "(212) 851-4792"]
+title: "Assistant Professor of Pathology & Cell Biology (in ICG)"
+phone: "851-4792"
+fax: ""
+email: "sa3141@columbia.edu"
 room: "402B"
-researchAreas: []
-tags: ["People", "Faculty"]
-urls: []
+url: ""
+tags: []
 ---

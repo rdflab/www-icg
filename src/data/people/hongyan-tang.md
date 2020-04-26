@@ -1,15 +1,14 @@
 ---
 id: "hongyan-tang"
+name: "Hongyan Tang"
 firstName: "Hongyan"
 lastName: "Tang"
-type: "Staff"
-photo: ""
-titles: ["Staff Associate"]
 letters: []
-email: ["ht2130@cumc.columbia.edu"]
-phone: ["(212) 851-5270"]
+title: "Staff Associate"
+phone: "851-5270"
+fax: ""
+email: "ht2130@cumc.columbia.edu"
 room: "507"
-researchAreas: []
-tags: ["People", "Staff"]
-urls: []
+url: ""
+tags: []
 ---

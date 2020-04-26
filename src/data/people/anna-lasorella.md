@@ -1,19 +1,14 @@
 ---
 id: "anna-lasorella"
+name: "Anna Lasorella"
 firstName: "Anna"
 lastName: "Lasorella"
-type: "Staff"
-photo: ""
-titles:
-  [
-    "Associate Professor of Pediatrics and Pathology and Cell Biology",
-    "Professor of Pediatrics and Pathology and Cell Biology",
-  ]
 letters: ["MD"]
-email: ["al2179@cumc.columbia.edu"]
-phone: ["(212) 851-5240"]
-room: "404"
-researchAreas: []
-tags: ["People", "Faculty", "Staff"]
-urls: []
+title: "Associate Professor of Pediatrics & Pathology&Cell Bio (in ICG)"
+phone: "851-5240"
+fax: "851-5267"
+email: "al2179@columbia.edu"
+room: "405"
+url: ""
+tags: []
 ---

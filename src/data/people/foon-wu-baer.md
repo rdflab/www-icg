@@ -1,15 +1,14 @@
 ---
 id: "foon-wu-baer"
+name: "Foon Wu-Baer"
 firstName: "Foon"
 lastName: "Wu-Baer"
-type: "Staff"
-photo: ""
-titles: ["Senior Staff Associate"]
 letters: []
-email: ["fw110@cumc.columbia.edu"]
-phone: ["(212) 851-5260"]
+title: "Senior Staff Associate"
+phone: "851-5260"
+fax: ""
+email: "fw110@cumc.columbia.edu"
 room: "502"
-researchAreas: []
-tags: ["People", "Staff"]
-urls: []
+url: ""
+tags: []
 ---

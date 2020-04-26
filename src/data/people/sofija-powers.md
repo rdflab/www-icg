@@ -1,15 +1,14 @@
 ---
 id: "sofija-powers"
+name: "Sofija Powers"
 firstName: "Sofija"
 lastName: "Powers"
-type: "Staff"
-photo: ""
-titles: ["Research Worker"]
 letters: []
-email: ["sv2458@cumc.columbia.edu"]
-phone: ["(212) 851-5270"]
+title: "Sr Research Worker"
+phone: "851-5270"
+fax: ""
+email: "sv2458@cumc.columbia.edu"
 room: "507"
-researchAreas: []
-tags: ["People", "Staff"]
-urls: []
+url: ""
+tags: []
 ---

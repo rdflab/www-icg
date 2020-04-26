@@ -1,15 +1,14 @@
 ---
 id: "tom-gavaris"
+name: "Tom Gavaris"
 firstName: "Tom"
 lastName: "Gavaris"
-type: "Administration"
-photo: ""
-titles: ["Divisional Administrator"]
 letters: []
-email: ["tg2294@cumc.columbia.edu"]
-phone: ["851-4747"]
+title: "Divisional Administrator"
+phone: "851-4747"
+fax: "851-5256"
+email: "tg2294@cumc.columbia.edu"
 room: "508B"
-researchAreas: []
-tags: ["People", "Administration"]
-urls: []
+url: ""
+tags: []
 ---

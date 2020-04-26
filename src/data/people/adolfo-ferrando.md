@@ -1,15 +1,14 @@
 ---
 id: "adolfo-ferrando"
+name: "Adolfo Ferrando"
 firstName: "Adolfo"
 lastName: "Ferrando"
-type: "Faculty"
-photo: ""
-titles: ["Associate Professor of Pediatrics and Pathology and Cell Biology"]
 letters: ["MD", "PhD"]
-email: ["af2196@cumc.columbia.edu"]
-phone: ["(212) 851-4611"]
+title: "Professor of Pediatric & Pathology & Cell Biology (in ICG)"
+phone: "851-4611"
+fax: ""
+email: "af2196@columbia.edu"
 room: "402A"
-researchAreas: []
-tags: ["People", "Faculty"]
-urls: []
+url: ""
+tags: []
 ---

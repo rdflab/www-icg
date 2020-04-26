@@ -1,15 +1,14 @@
 ---
 id: "fulvio-dangelo"
+name: "Fulvio D'Angelo"
 firstName: "Fulvio"
 lastName: "D'Angelo"
-type: "Research Scientists"
-photo: ""
-titles: ["Postdoctoral Research Scientist"]
 letters: ["PhD"]
-email: ["fd2396@cumc.columbia.edu"]
-phone: ["(212) 851-5287"]
+title: "Postdoctoral Research Scientist"
+phone: "851-5287"
+fax: ""
+email: "fd2396@cumc.columbia.edu"
 room: "403"
-researchAreas: []
-tags: ["People", "Research Scientists", "Research Scientists"]
-urls: []
+url: ""
+tags: []
 ---

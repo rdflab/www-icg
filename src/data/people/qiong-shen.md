@@ -1,15 +1,14 @@
 ---
 id: "qiong-shen"
+name: "Qiong Shen"
 firstName: "Qiong"
 lastName: "Shen"
-type: "Staff"
-photo: ""
-titles: ["Senior Staff Associate"]
 letters: []
-email: ["qs4@cumc.columbia.edu"]
-phone: ["(212) 851-5270"]
+title: "Senior Staff Associate"
+phone: "851-5270"
+fax: ""
+email: "qs4@cumc.columbia.edu"
 room: "507"
-researchAreas: []
-tags: ["People", "Staff"]
-urls: []
+url: ""
+tags: []
 ---

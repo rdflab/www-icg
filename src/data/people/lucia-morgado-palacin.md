@@ -1,15 +1,14 @@
 ---
 id: "lucia-morgado-palacin"
+name: "Lucia Morgado-Palacin"
 firstName: "Lucia"
 lastName: "Morgado-Palacin"
-type: "Research Scientists"
-photo: ""
-titles: ["Postdoctoral Research Scientist"]
 letters: ["PhD"]
-email: ["lm3230@cumc.columbia.edu"]
-phone: ["(212) 851-5292"]
+title: "Postdoctoral Research Fellow"
+phone: "851-5292"
+fax: ""
+email: "lm3230@cumc.columbia.edu"
 room: "401B"
-researchAreas: []
-tags: ["People", "Research Scientists"]
-urls: []
+url: ""
+tags: []
 ---
