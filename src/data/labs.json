@@ -1,0 +1,583 @@
+[
+  {
+    "id": "riccardo-dalla-favera",
+    "name": "Riccardo Dalla-Favera",
+    "url": "",
+    "divisions": [
+      {
+        "id": "principal-investigators",
+        "name": "Principal Investigators",
+        "url": "",
+        "people": ["katia-basso", "riccardo-dalla-favera", "laura-pasqualucci"]
+      },
+      {
+        "id": "research-staff",
+        "name": "Research Staff",
+        "url": "",
+        "people": [
+          "elodie-bal",
+          "bowen-cai",
+          "clarissa-corinaldesi",
+          "sanaz-firouzi",
+          "antony-baden-holmes",
+          "rahat-jahan",
+          "rahul-kumar",
+          "stefanie-meyer",
+          "claudio-scuoppo",
+          "chuanjiang-yu"
+        ]
+      },
+      {
+        "id": "graduate-students",
+        "name": "Graduate Students",
+        "url": "",
+        "people": []
+      },
+      {
+        "id": "staff",
+        "name": "Staff",
+        "url": "",
+        "people": [
+          "mara-holloman",
+          "tongwei-mo",
+          "sofija-powers",
+          "qiong-shen",
+          "hongyan-tang",
+          "yunan-xie"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "swarnali-acharyya",
+    "name": "Swarnali Acharyya",
+    "url": "",
+    "divisions": [
+      {
+        "id": "principal-investigators",
+        "name": "Principal Investigators",
+        "url": "",
+        "people": ["swarnali-acharyya"]
+      },
+      {
+        "id": "research-staff",
+        "name": "Research Staff",
+        "url": "",
+        "people": ["anup-biswas", "ahmad-rushdi-shakri"]
+      },
+      {
+        "id": "graduate-students",
+        "name": "Graduate Students",
+        "url": "",
+        "people": ["tim-zhong"]
+      },
+      {
+        "id": "staff",
+        "name": "Staff",
+        "url": "",
+        "people": [
+          "courtney-coker",
+          "seoyoung-han",
+          "rohaan-hegde",
+          "wanchao-ma"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "richard-baer",
+    "name": "Richard Baer",
+    "url": "",
+    "divisions": [
+      {
+        "id": "principal-investigators",
+        "name": "Principal Investigators",
+        "url": "",
+        "people": ["richard-baer"]
+      },
+      {
+        "id": "research-staff",
+        "name": "Research Staff",
+        "url": "",
+        "people": []
+      },
+      {
+        "id": "graduate-students",
+        "name": "Graduate Students",
+        "url": "",
+        "people": []
+      },
+      {
+        "id": "staff",
+        "name": "Staff",
+        "url": "",
+        "people": ["madeline-wong", "foon-wu-baer"]
+      }
+    ]
+  },
+  {
+    "id": "katia-basso",
+    "name": "Katia Basso",
+    "url": "",
+    "divisions": [
+      {
+        "id": "principal-investigators",
+        "name": "Principal Investigators",
+        "url": "",
+        "people": ["katia-basso", "riccardo-dalla-favera", "laura-pasqualucci"]
+      },
+      {
+        "id": "research-staff",
+        "name": "Research Staff",
+        "url": "",
+        "people": [
+          "elodie-bal",
+          "bowen-cai",
+          "clarissa-corinaldesi",
+          "sanaz-firouzi",
+          "antony-baden-holmes",
+          "rahat-jahan",
+          "rahul-kumar",
+          "stefanie-meyer",
+          "claudio-scuoppo",
+          "chuanjiang-yu"
+        ]
+      },
+      {
+        "id": "graduate-students",
+        "name": "Graduate Students",
+        "url": "",
+        "people": []
+      },
+      {
+        "id": "staff",
+        "name": "Staff",
+        "url": "",
+        "people": [
+          "mara-holloman",
+          "tongwei-mo",
+          "sofija-powers",
+          "qiong-shen",
+          "hongyan-tang",
+          "yunan-xie"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "adolfo-ferrando",
+    "name": "Adolfo Ferrando",
+    "url": "",
+    "divisions": [
+      {
+        "id": "principal-investigators",
+        "name": "Principal Investigators",
+        "url": "",
+        "people": ["adolfo-ferrando", "teresa-palomero"]
+      },
+      {
+        "id": "research-staff",
+        "name": "Research Staff",
+        "url": "",
+        "people": [
+          "robert-albero",
+          "laura-belver-miguel",
+          "clara-reglero-gomez",
+          "anouchka-laurent",
+          "silvia-alvarez-nanez",
+          "pablo-perez-duran",
+          "jose-rodriguez-cortes",
+          "agnieszka-wendorff"
+        ]
+      },
+      {
+        "id": "graduate-students",
+        "name": "Graduate Students",
+        "url": "",
+        "people": ["caral-bertulfo", "aidan-stuart-quinn", "bobby-shih"]
+      },
+      {
+        "id": "staff",
+        "name": "Staff",
+        "url": "",
+        "people": [
+          "mayukh-biswas",
+          "jessie-a-brown",
+          "anisha-cooke",
+          "marta-gascon",
+          "francesca-gianni",
+          "thomas-gunning",
+          "angela-kemfack",
+          "adam-mackey",
+          "lucia-morgado-palacin",
+          "marissa-rashkovan"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "jean-gautier",
+    "name": "Jean Gautier",
+    "url": "",
+    "divisions": [
+      {
+        "id": "principal-investigators",
+        "name": "Principal Investigators",
+        "url": "",
+        "people": ["jean-gautier", "jaewon-min"]
+      },
+      {
+        "id": "research-staff",
+        "name": "Research Staff",
+        "url": "",
+        "people": ["tomas-aparicio", "gaganpreet-sidhu"]
+      },
+      {
+        "id": "graduate-students",
+        "name": "Graduate Students",
+        "url": "",
+        "people": ["andrew-liebau", "jennifer-a-zagelbaum"]
+      },
+      {
+        "id": "staff",
+        "name": "Staff",
+        "url": "",
+        "people": ["jorge-reyes"]
+      }
+    ]
+  },
+  {
+    "id": "wei-gu",
+    "name": "Wei Gu",
+    "url": "",
+    "divisions": [
+      {
+        "id": "principal-investigators",
+        "name": "Principal Investigators",
+        "url": "",
+        "people": ["wei-gu"]
+      },
+      {
+        "id": "research-staff",
+        "name": "Research Staff",
+        "url": "",
+        "people": [
+          "delin-chen",
+          "ning-kon",
+          "yanging-liu",
+          "zhenyi-su",
+          "zhangchuan-xia",
+          "xin-yang",
+          "jingjie-yi"
+        ]
+      },
+      {
+        "id": "graduate-students",
+        "name": "Graduate Students",
+        "url": "",
+        "people": []
+      },
+      {
+        "id": "staff",
+        "name": "Staff",
+        "url": "",
+        "people": ["ying-jin", "huan-li"]
+      }
+    ]
+  },
+  {
+    "id": "antonio-iavarone",
+    "name": "Antonio Iavarone",
+    "url": "",
+    "divisions": [
+      {
+        "id": "principal-investigators",
+        "name": "Principal Investigators",
+        "url": "",
+        "people": ["antonio-iavarone", "anna-lasorella"]
+      },
+      {
+        "id": "research-staff",
+        "name": "Research Staff",
+        "url": "",
+        "people": [
+          "fulvio-dangelo",
+          "qiwen-gan",
+          "luciano-garofano",
+          "mohammad-hasanain",
+          "michael-oh",
+          "di-wang"
+        ]
+      },
+      {
+        "id": "graduate-students",
+        "name": "Graduate Students",
+        "url": "",
+        "people": []
+      },
+      {
+        "id": "staff",
+        "name": "Staff",
+        "url": "",
+        "people": [
+          "soumyadip-das",
+          "brulinda-frangaj",
+          "simona-migliozzi",
+          "ryan-najac",
+          "danika-sommer"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "anna-lasorella",
+    "name": "Anna Lasorella",
+    "url": "",
+    "divisions": [
+      {
+        "id": "principal-investigators",
+        "name": "Principal Investigators",
+        "url": "",
+        "people": ["antonio-iavarone", "anna-lasorella"]
+      },
+      {
+        "id": "research-staff",
+        "name": "Research Staff",
+        "url": "",
+        "people": [
+          "fulvio-dangelo",
+          "qiwen-gan",
+          "luciano-garofano",
+          "mohammad-hasanain",
+          "michael-oh",
+          "di-wang"
+        ]
+      },
+      {
+        "id": "graduate-students",
+        "name": "Graduate Students",
+        "url": "",
+        "people": []
+      },
+      {
+        "id": "staff",
+        "name": "Staff",
+        "url": "",
+        "people": [
+          "soumyadip-das",
+          "brulinda-frangaj",
+          "simona-migliozzi",
+          "ryan-najac",
+          "danika-sommer"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "jaewon-min",
+    "name": "Jaewon Min",
+    "url": "",
+    "divisions": [
+      {
+        "id": "principal-investigators",
+        "name": "Principal Investigators",
+        "url": "",
+        "people": ["jean-gautier", "jaewon-min"]
+      },
+      {
+        "id": "research-staff",
+        "name": "Research Staff",
+        "url": "",
+        "people": ["tomas-aparicio", "gaganpreet-sidhu"]
+      },
+      {
+        "id": "graduate-students",
+        "name": "Graduate Students",
+        "url": "",
+        "people": ["andrew-liebau", "jennifer-a-zagelbaum"]
+      },
+      {
+        "id": "staff",
+        "name": "Staff",
+        "url": "",
+        "people": ["jorge-reyes"]
+      }
+    ]
+  },
+  {
+    "id": "teresa-palomero",
+    "name": "Teresa Palomero",
+    "url": "",
+    "divisions": [
+      {
+        "id": "principal-investigators",
+        "name": "Principal Investigators",
+        "url": "",
+        "people": ["adolfo-ferrando", "teresa-palomero"]
+      },
+      {
+        "id": "research-staff",
+        "name": "Research Staff",
+        "url": "",
+        "people": [
+          "robert-albero",
+          "laura-belver-miguel",
+          "clara-reglero-gomez",
+          "anouchka-laurent",
+          "silvia-alvarez-nanez",
+          "pablo-perez-duran",
+          "jose-rodriguez-cortes",
+          "agnieszka-wendorff"
+        ]
+      },
+      {
+        "id": "graduate-students",
+        "name": "Graduate Students",
+        "url": "",
+        "people": ["caral-bertulfo", "aidan-stuart-quinn", "bobby-shih"]
+      },
+      {
+        "id": "staff",
+        "name": "Staff",
+        "url": "",
+        "people": [
+          "mayukh-biswas",
+          "jessie-a-brown",
+          "anisha-cooke",
+          "marta-gascon",
+          "francesca-gianni",
+          "thomas-gunning",
+          "angela-kemfack",
+          "adam-mackey",
+          "lucia-morgado-palacin",
+          "marissa-rashkovan"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "laura-pasqualucci",
+    "name": "Laura Pasqualucci",
+    "url": "",
+    "divisions": [
+      {
+        "id": "principal-investigators",
+        "name": "Principal Investigators",
+        "url": "",
+        "people": ["katia-basso", "riccardo-dalla-favera", "laura-pasqualucci"]
+      },
+      {
+        "id": "research-staff",
+        "name": "Research Staff",
+        "url": "",
+        "people": [
+          "elodie-bal",
+          "bowen-cai",
+          "clarissa-corinaldesi",
+          "sanaz-firouzi",
+          "antony-baden-holmes",
+          "rahat-jahan",
+          "rahul-kumar",
+          "stefanie-meyer",
+          "claudio-scuoppo",
+          "chuanjiang-yu"
+        ]
+      },
+      {
+        "id": "graduate-students",
+        "name": "Graduate Students",
+        "url": "",
+        "people": []
+      },
+      {
+        "id": "staff",
+        "name": "Staff",
+        "url": "",
+        "people": [
+          "mara-holloman",
+          "tongwei-mo",
+          "sofija-powers",
+          "qiong-shen",
+          "hongyan-tang",
+          "yunan-xie"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "shan-zha",
+    "name": "Shan Zha",
+    "url": "",
+    "divisions": [
+      {
+        "id": "principal-investigators",
+        "name": "Principal Investigators",
+        "url": "",
+        "people": ["shan-zha"]
+      },
+      {
+        "id": "research-staff",
+        "name": "Research Staff",
+        "url": "",
+        "people": [
+          "xiaohui-lin",
+          "maja-milanovic",
+          "zhengping-shao",
+          "yimeng-zhu"
+        ]
+      },
+      {
+        "id": "graduate-students",
+        "name": "Graduate Students",
+        "url": "",
+        "people": ["xiobin-wang"]
+      },
+      {
+        "id": "staff",
+        "name": "Staff",
+        "url": "",
+        "people": ["olivia-cupo", "brian-lee", "demis-menolfi"]
+      }
+    ]
+  },
+  {
+    "id": "zhiguo-zhang",
+    "name": "Zhiguo Zhang",
+    "url": "",
+    "divisions": [
+      {
+        "id": "principal-investigators",
+        "name": "Principal Investigators",
+        "url": "",
+        "people": ["zhiguo-zhang"]
+      },
+      {
+        "id": "research-staff",
+        "name": "Research Staff",
+        "url": "",
+        "people": [
+          "liang-cheng",
+          "shoufu-duan",
+          "xu-hua",
+          "zhiming-li",
+          "yan-mo",
+          "albert-serra-cardona",
+          "xiaowei-xu",
+          "xu-zhang"
+        ]
+      },
+      {
+        "id": "graduate-students",
+        "name": "Graduate Students",
+        "url": "",
+        "people": []
+      },
+      {
+        "id": "staff",
+        "name": "Staff",
+        "url": "",
+        "people": ["hui-zhou"]
+      }
+    ]
+  }
+]

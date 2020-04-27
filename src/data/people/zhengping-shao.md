@@ -3,7 +3,7 @@ id: "zhengping-shao"
 name: "Zhengping Shao"
 firstName: "Zhengping"
 lastName: "Shao"
-letters: ["MD", "PhD"]
+postNominalLetters: "MD PhD"
 title: "Postdoctoral Research Scientist"
 phone: "851-4785"
 fax: ""

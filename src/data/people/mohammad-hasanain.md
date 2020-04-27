@@ -3,7 +3,7 @@ id: "mohammad-hasanain"
 name: "Mohammad Hasanain"
 firstName: "Mohammad"
 lastName: "Hasanain"
-letters: ["PhD"]
+postNominalLetters: "PhD"
 title: "Postdoctoral Research Scientist "
 phone: "851-5287"
 fax: ""

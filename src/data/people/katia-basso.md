@@ -3,7 +3,7 @@ id: "katia-basso"
 name: "Katia Basso"
 firstName: "Katia"
 lastName: "Basso"
-letters: ["PhD"]
+postNominalLetters: "PhD"
 title: "Associate Professor of Pathology & Cell Biology"
 phone: "851-4786"
 fax: ""

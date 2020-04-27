@@ -3,7 +3,7 @@ id: "tina-gellhorn"
 name: "Tina Gellhorn"
 firstName: "Tina"
 lastName: "Gellhorn"
-letters: []
+postNominalLetters: ""
 title: "Executive Assistant"
 phone: "851-5274"
 fax: "851-5256"

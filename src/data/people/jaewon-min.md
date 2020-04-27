@@ -3,7 +3,7 @@ id: "jaewon-min"
 name: "Jaewon Min"
 firstName: "Jaewon"
 lastName: "Min"
-letters: ["PhD"]
+postNominalLetters: "PhD"
 title: "Assistant Professor "
 phone: "851-4566/67/68"
 fax: ""

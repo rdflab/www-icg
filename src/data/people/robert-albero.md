@@ -3,7 +3,7 @@ id: "robert-albero"
 name: "Robert Albero"
 firstName: "Robert"
 lastName: "Albero"
-letters: ["PhD"]
+postNominalLetters: "PhD"
 title: "Postdoctoral Research Scientist "
 phone: "851-5292"
 fax: ""

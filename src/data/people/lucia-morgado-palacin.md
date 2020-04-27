@@ -3,7 +3,7 @@ id: "lucia-morgado-palacin"
 name: "Lucia Morgado-Palacin"
 firstName: "Lucia"
 lastName: "Morgado-Palacin"
-letters: ["PhD"]
+postNominalLetters: "PhD"
 title: "Postdoctoral Research Fellow"
 phone: "851-5292"
 fax: ""

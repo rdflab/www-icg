@@ -3,7 +3,7 @@ id: "german-ramirez"
 name: "German Ramirez"
 firstName: "German"
 lastName: "Ramirez"
-letters: []
+postNominalLetters: ""
 title: "Technical Assistant"
 phone: "851-5283"
 fax: ""

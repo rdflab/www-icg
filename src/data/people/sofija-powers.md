@@ -3,7 +3,7 @@ id: "sofija-powers"
 name: "Sofija Powers"
 firstName: "Sofija"
 lastName: "Powers"
-letters: []
+postNominalLetters: ""
 title: "Sr Research Worker"
 phone: "851-5270"
 fax: ""

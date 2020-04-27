@@ -3,7 +3,7 @@ id: "tom-gavaris"
 name: "Tom Gavaris"
 firstName: "Tom"
 lastName: "Gavaris"
-letters: []
+postNominalLetters: ""
 title: "Divisional Administrator"
 phone: "851-4747"
 fax: "851-5256"

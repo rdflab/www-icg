@@ -3,7 +3,7 @@ id: "adolfo-ferrando"
 name: "Adolfo Ferrando"
 firstName: "Adolfo"
 lastName: "Ferrando"
-letters: ["MD", "PhD"]
+postNominalLetters: "MD PhD"
 title: "Professor of Pediatric & Pathology & Cell Biology (in ICG)"
 phone: "851-4611"
 fax: ""

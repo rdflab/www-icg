@@ -3,7 +3,7 @@ id: "jeanette-tejeda"
 name: "Jeanette Tejeda"
 firstName: "Jeanette"
 lastName: "Tejeda"
-letters: []
+postNominalLetters: ""
 title: "Administrative Coordinator"
 phone: "851-5283"
 fax: "851-5284"

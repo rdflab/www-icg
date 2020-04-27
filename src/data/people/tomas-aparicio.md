@@ -3,7 +3,7 @@ id: "tomas-aparicio"
 name: "Tomas Aparicio"
 firstName: "Tomas"
 lastName: "Aparicio"
-letters: ["PhD"]
+postNominalLetters: "PhD"
 title: "Associate Research Scientist"
 phone: "851-4566/67/68"
 fax: ""

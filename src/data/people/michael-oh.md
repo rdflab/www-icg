@@ -3,7 +3,7 @@ id: "michael-oh"
 name: "Michael Oh"
 firstName: "Michael"
 lastName: "Oh"
-letters: ["PhD"]
+postNominalLetters: "PhD"
 title: "Postdoctoral Research Scientist"
 phone: "851-5287"
 fax: ""

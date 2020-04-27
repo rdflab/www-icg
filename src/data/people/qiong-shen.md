@@ -3,7 +3,7 @@ id: "qiong-shen"
 name: "Qiong Shen"
 firstName: "Qiong"
 lastName: "Shen"
-letters: []
+postNominalLetters: ""
 title: "Senior Staff Associate"
 phone: "851-5270"
 fax: ""

@@ -3,7 +3,7 @@ id: "yunan-xie"
 name: "Yunan Xie"
 firstName: "Yunan"
 lastName: "Xie"
-letters: []
+postNominalLetters: ""
 title: "Administrative Assistant"
 phone: "851-5268"
 fax: ""

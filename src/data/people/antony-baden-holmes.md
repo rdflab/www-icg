@@ -3,7 +3,7 @@ id: "antony-baden-holmes"
 name: "Antony Baden Holmes"
 firstName: "Antony Baden"
 lastName: "Holmes"
-letters: ["PhD"]
+postNominalLetters: "PhD"
 title: "Associate Research Scientist"
 phone: "851-5269"
 fax: ""

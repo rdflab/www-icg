@@ -3,7 +3,7 @@ id: "hongyan-tang"
 name: "Hongyan Tang"
 firstName: "Hongyan"
 lastName: "Tang"
-letters: []
+postNominalLetters: ""
 title: "Staff Associate"
 phone: "851-5270"
 fax: ""

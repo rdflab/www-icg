@@ -3,7 +3,7 @@ id: "silvia-alvarez-nanez"
 name: "Silvia Alvarez Nanez"
 firstName: "Silvia"
 lastName: "Alvarez Nanez"
-letters: ["PhD"]
+postNominalLetters: "PhD"
 title: "Postdoctoral Research Scientist "
 phone: "851-5292"
 fax: ""

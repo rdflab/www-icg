@@ -3,7 +3,7 @@ id: "yanging-liu"
 name: "Yanging Liu"
 firstName: "Yanging"
 lastName: "Liu"
-letters: ["PhD"]
+postNominalLetters: "PhD"
 title: "Postdoctoral Research Scientist"
 phone: "851-5285"
 fax: ""

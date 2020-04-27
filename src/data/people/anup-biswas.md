@@ -3,7 +3,7 @@ id: "anup-biswas"
 name: "Anup Biswas"
 firstName: "Anup"
 lastName: "Biswas"
-letters: ["PhD"]
+postNominalLetters: "PhD"
 title: "Associate Research Scientist"
 phone: "851-4791"
 fax: ""

@@ -3,7 +3,7 @@ id: "jose-rodriguez-cortes"
 name: "Jose Rodriguez-Cortes"
 firstName: "Jose"
 lastName: "Rodriguez-Cortes"
-letters: ["PhD"]
+postNominalLetters: "PhD"
 title: "Associate Research Scientist"
 phone: "851-5292"
 fax: ""

@@ -3,7 +3,7 @@ id: "antonio-iavarone"
 name: "Antonio Iavarone"
 firstName: "Antonio"
 lastName: "Iavarone"
-letters: ["MD"]
+postNominalLetters: "MD"
 title: "Professor of Neurology & Pathology & Cell Bio (in ICG)"
 phone: "851-5245"
 fax: "851-5267"

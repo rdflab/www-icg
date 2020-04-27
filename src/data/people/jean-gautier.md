@@ -3,7 +3,7 @@ id: "jean-gautier"
 name: "Jean Gautier"
 firstName: "Jean"
 lastName: "Gautier"
-letters: ["PhD"]
+postNominalLetters: "PhD"
 title: "Professor of Genetic & Development (in ICG)"
 phone: "851-4564"
 fax: ""

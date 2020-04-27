@@ -3,7 +3,7 @@ id: "rohaan-hegde"
 name: "Rohaan Hegde"
 firstName: "Rohaan"
 lastName: "Hegde"
-letters: []
+postNominalLetters: ""
 title: "Tech B"
 phone: "851-4793"
 fax: ""

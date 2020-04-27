@@ -3,7 +3,7 @@ id: "yan-mo"
 name: "Yan Mo"
 firstName: "Yan"
 lastName: "Mo"
-letters: ["PhD"]
+postNominalLetters: "PhD"
 title: "Postdoctoral Research Scientist "
 phone: "851-4937"
 fax: ""

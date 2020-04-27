@@ -21,8 +21,8 @@ def sort_names(names):
     
     ret = []
     
-    for last in name_map:
-        for first in name_map[last]:
+    for last in sorted(name_map):
+        for first in sorted(name_map[last]):
             ret.extend(name_map[last][first])
     
     return ret
@@ -31,12 +31,12 @@ df = pd.read_csv('ICG_Directory_3.13.20.txt', sep='\t', keep_default_na=False)
 
 id_map = {}
 
-lab_map = collections.defaultdict(lambda: collections.defaultdict(lambda: collections.defaultdict(list)))
+lab_map = collections.defaultdict(lambda: collections.defaultdict(lambda: collections.defaultdict()))
 
 new_lab = False
 lab_group = 'Director'
 
-for i in range(12, df.shape[0]):
+for i in range(13, df.shape[0]):
     name = df.iloc[i, 0]
     name = name.strip()
     
@@ -76,9 +76,20 @@ for i in range(12, df.shape[0]):
     formatted_name = '{} {}'.format(firstName, lastName)
     
     if new_lab:
-        current_lab = lab_map[lab_group][formatted_name]
-        lab_group = 'Principal Investigators'
+        current_lab = {'id':formatted_name.lower().replace(' ', '-'),
+                       'Principal Investigators':[],
+                       'Research Staff':[],
+                       'Graduate Students':[],
+                       'Undergraduate Students':[],
+                       'Staff':[]}
+
+        
         new_lab = False
+    
+    if i == 14:
+        lab_group = 'Director'
+    else:
+        lab_group = 'Principal Investigators'
     
     id = '{}-{}'.format(firstName.lower(), lastName.lower())
     id = id.replace('\'', '')
@@ -93,7 +104,12 @@ for i in range(12, df.shape[0]):
     title = title.replace('Prof ', 'Professor ')
     title = title.replace('Assoc ', 'Associate ')
     
+    print(formatted_name, title, lab_group)
+    
     if 'Prof' in title:
+        # Map multiple faculoty to same lab if necessary
+        lab_map[lab_group][formatted_name] = current_lab
+        
         current_lab['Principal Investigators'].append(formatted_name)
     elif 'Scientist' in title:
         current_lab['Research Staff'].append(formatted_name)
@@ -130,7 +146,7 @@ for i in range(12, df.shape[0]):
     print('name: "{}"'.format(formatted_name), file=f)
     print('firstName: "{}"'.format(firstName), file=f)
     print('lastName: "{}"'.format(lastName), file=f)
-    print('letters: [{}]'.format(','.join(['"{}"'.format(l) for l in letters])), file=f)
+    print('postNominalLetters: "{}"'.format(' '.join(letters)), file=f)
     print('title: "{}"'.format(title), file=f)
     print('phone: "{}"'.format(phone), file=f)
     print('fax: "{}"'.format(fax), file=f)
@@ -153,30 +169,33 @@ GROUPS = ['Director', 'Principal Investigators']
 
 SUB_GROUPS = ['Principal Investigators', 'Research Staff', 'Graduate Students', 'Staff']
 
-all_divisions = []
+all_groups = []
+all_labs = []
 
 for g in GROUPS:
-    faculty = []
-    
-    division = {'id':g.lower().replace(' ', '-'), 'name':g, 'url':'', 'faculty': []}
+    group = {'id':g.lower().replace(' ', '-'), 'name':g, 'url':'', 'faculty': []}
     
     faculty_names = sort_names(lab_map[g])
     
     for name in faculty_names:
-        lab = {'id':id_map[name], 'name':name, 'url':'', 'subgroups': []}
+        lab = {'id':id_map[name], 'name':name, 'url':'', 'divisions': []}
         
         for sg in SUB_GROUPS:
-            subgroup = {'id':sg.lower().replace(' ', '-'), 'name':sg, 'url':'', 'members':[]}
+            division = {'id':sg.lower().replace(' ', '-'), 'name':sg, 'url':'', 'people':[]}
             member_names = sort_names(lab_map[g][name][sg])
-            subgroup['members'] = [id_map[name] for name in member_names]
-            lab['subgroups'].append(subgroup)
+            division['people'] = [id_map[name] for name in member_names]
+            lab['divisions'].append(division)
             
-        division['faculty'].append(lab)
+        group['faculty'].append({'id':id_map[name], 'labId':lab_map[g][name]['id']})
+        all_labs.append(lab)
         
-    all_divisions.append(division)
+    all_groups.append(group)
         
     
 with open('faculty.json', 'w') as f:
-    json.dump(all_divisions, f, indent=2)
+    json.dump(all_groups, f, indent=2)
+    
+with open('labs.json', 'w') as f:
+    json.dump(all_labs, f, indent=2)
     
 

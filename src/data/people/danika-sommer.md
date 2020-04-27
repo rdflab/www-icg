@@ -3,7 +3,7 @@ id: "danika-sommer"
 name: "Danika Sommer"
 firstName: "Danika"
 lastName: "Sommer"
-letters: []
+postNominalLetters: ""
 title: "Tech B"
 phone: "851-5287"
 fax: ""

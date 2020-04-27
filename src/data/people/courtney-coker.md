@@ -3,7 +3,7 @@ id: "courtney-coker"
 name: "Courtney Coker"
 firstName: "Courtney"
 lastName: "Coker"
-letters: []
+postNominalLetters: ""
 title: "Staff Associate"
 phone: "851-4792"
 fax: ""

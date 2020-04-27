@@ -3,7 +3,7 @@ id: "pablo-perez-duran"
 name: "Pablo Perez-Duran"
 firstName: "Pablo"
 lastName: "Perez-Duran"
-letters: ["PhD"]
+postNominalLetters: "PhD"
 title: "Postdoctoral Research Scientist"
 phone: "851-5292"
 fax: ""

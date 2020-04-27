@@ -3,35 +3,20 @@
     "id": "divisional-administrator",
     "name": "Divisional Administrator",
     "url": "",
-    "staff": [
-      {
-        "id": "tom-gavaris",
-        "name": "Tom Gavaris",
-        "url": "",
-        "subgroups": [
-          {
-            "id": "staff",
-            "name": "Staff",
-            "url": "",
-            "members": [
-              "tom-gavaris",
-              "tina-gellhorn",
-              "jeanette-tejeda",
-              "clara-meregildo",
-              "esperanza-quintero",
-              "german-ramirez",
-              "seetha-srinivasan",
-              "russell-szalasny"
-            ]
-          }
-        ]
-      }
-    ]
+    "members": ["Tom Gavaris"]
   },
   {
     "id": "administrative-staff",
     "name": "Administrative Staff",
     "url": "",
-    "staff": []
+    "members": [
+      "Tina Gellhorn",
+      "Clara Meregildo",
+      "Esperanza Quintero",
+      "German Ramirez",
+      "Seetha Srinivasan",
+      "Russell Szalasny",
+      "Jeanette Tejeda"
+    ]
   }
 ]

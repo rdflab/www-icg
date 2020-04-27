@@ -3,7 +3,7 @@ id: "marta-gascon"
 name: "Marta Gascon"
 firstName: "Marta"
 lastName: "Gascon"
-letters: []
+postNominalLetters: ""
 title: "Staff Associate"
 phone: "851-5292"
 fax: ""

@@ -3,7 +3,7 @@ id: "laura-pasqualucci"
 name: "Laura Pasqualucci"
 firstName: "Laura"
 lastName: "Pasqualucci"
-letters: ["MD"]
+postNominalLetters: "MD"
 title: "Professor of Pathology and Cell Biology"
 phone: "851-5248"
 fax: ""

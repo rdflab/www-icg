@@ -3,7 +3,7 @@ id: "aidan-stuart-quinn"
 name: "Aidan Stuart Quinn"
 firstName: "Aidan Stuart"
 lastName: "Quinn"
-letters: []
+postNominalLetters: ""
 title: "GRA"
 phone: "851-5292"
 fax: ""

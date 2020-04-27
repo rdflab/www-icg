@@ -3,7 +3,7 @@ id: "teresa-palomero"
 name: "Teresa Palomero"
 firstName: "Teresa"
 lastName: "Palomero"
-letters: ["PhD"]
+postNominalLetters: "PhD"
 title: "Associate Professor of Pathology and Cell Biology (in ICG)"
 phone: "851-4778"
 fax: ""

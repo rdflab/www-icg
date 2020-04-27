@@ -3,7 +3,7 @@ id: "francesca-gianni"
 name: "Francesca Gianni"
 firstName: "Francesca"
 lastName: "Gianni"
-letters: ["PhD"]
+postNominalLetters: "PhD"
 title: "Postdoctoral Research Fellow (to Aug 31)"
 phone: "851-5292"
 fax: ""

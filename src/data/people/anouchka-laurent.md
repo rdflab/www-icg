@@ -3,7 +3,7 @@ id: "anouchka-laurent"
 name: "Anouchka Laurent"
 firstName: "Anouchka"
 lastName: "Laurent"
-letters: ["PhD"]
+postNominalLetters: "PhD"
 title: "Postdoctoral Research Scientist "
 phone: "851-5292"
 fax: ""

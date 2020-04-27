@@ -3,7 +3,7 @@ id: "xu-zhang"
 name: "Xu Zhang"
 firstName: "Xu"
 lastName: "Zhang"
-letters: ["PhD"]
+postNominalLetters: "PhD"
 title: "Postdoctoral Research Scientist "
 phone: "851-4937"
 fax: ""

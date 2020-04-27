@@ -3,7 +3,7 @@ id: "ahmad-rushdi-shakri"
 name: "Ahmad Rushdi Shakri"
 firstName: "Ahmad Rushdi"
 lastName: "Shakri"
-letters: ["PhD"]
+postNominalLetters: "PhD"
 title: "Postdoctoral Research Scientist"
 phone: "851-4792"
 fax: ""

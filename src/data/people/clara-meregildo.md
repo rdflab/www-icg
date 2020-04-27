@@ -3,7 +3,7 @@ id: "clara-meregildo"
 name: "Clara Meregildo"
 firstName: "Clara"
 lastName: "Meregildo"
-letters: []
+postNominalLetters: ""
 title: "HR Administrative Coordinator"
 phone: "851-5276"
 fax: "851-5256"

@@ -3,7 +3,7 @@ id: "madeline-wong"
 name: "Madeline Wong"
 firstName: "Madeline"
 lastName: "Wong"
-letters: []
+postNominalLetters: ""
 title: "Tech B"
 phone: "851-5266"
 fax: ""

@@ -3,7 +3,7 @@ id: "olivia-cupo"
 name: "Olivia Cupo"
 firstName: "Olivia"
 lastName: "Cupo"
-letters: []
+postNominalLetters: ""
 title: "Tech B"
 phone: "851-4785"
 fax: ""

@@ -3,7 +3,7 @@ id: "claudio-scuoppo"
 name: "Claudio Scuoppo"
 firstName: "Claudio"
 lastName: "Scuoppo"
-letters: ["PhD"]
+postNominalLetters: "PhD"
 title: "Instructor"
 phone: "851-5270"
 fax: ""

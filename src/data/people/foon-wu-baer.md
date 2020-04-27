@@ -3,7 +3,7 @@ id: "foon-wu-baer"
 name: "Foon Wu-Baer"
 firstName: "Foon"
 lastName: "Wu-Baer"
-letters: []
+postNominalLetters: ""
 title: "Senior Staff Associate"
 phone: "851-5260"
 fax: ""

@@ -3,7 +3,7 @@ id: "qiwen-gan"
 name: "Qiwen Gan"
 firstName: "Qiwen"
 lastName: "Gan"
-letters: ["PhD"]
+postNominalLetters: "PhD"
 title: "Postdoctoral Research Scientist "
 phone: "851-5287"
 fax: ""

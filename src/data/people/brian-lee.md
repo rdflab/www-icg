@@ -3,7 +3,7 @@ id: "brian-lee"
 name: "Brian Lee"
 firstName: "Brian"
 lastName: "Lee"
-letters: []
+postNominalLetters: ""
 title: "Sr Tech B"
 phone: "851-4785"
 fax: ""

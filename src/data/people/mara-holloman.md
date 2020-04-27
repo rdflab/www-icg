@@ -3,7 +3,7 @@ id: "mara-holloman"
 name: "Mara Holloman"
 firstName: "Mara"
 lastName: "Holloman"
-letters: []
+postNominalLetters: ""
 title: "Tech B "
 phone: "851-5269"
 fax: ""

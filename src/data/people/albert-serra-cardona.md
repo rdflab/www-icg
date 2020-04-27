@@ -3,7 +3,7 @@ id: "albert-serra-cardona"
 name: "Albert Serra-Cardona"
 firstName: "Albert"
 lastName: "Serra-Cardona"
-letters: ["PhD"]
+postNominalLetters: "PhD"
 title: "Postdoctoral Research Scientist"
 phone: "851-4937"
 fax: ""

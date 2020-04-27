@@ -3,7 +3,7 @@ id: "xiangyi-ke"
 name: "Xiangyi Ke"
 firstName: "Xiangyi"
 lastName: "Ke"
-letters: []
+postNominalLetters: ""
 title: "GRA"
 phone: "851-4966"
 fax: ""

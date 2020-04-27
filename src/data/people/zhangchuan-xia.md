@@ -3,7 +3,7 @@ id: "zhangchuan-xia"
 name: "Zhangchuan Xia"
 firstName: "Zhangchuan"
 lastName: "Xia"
-letters: ["PhD"]
+postNominalLetters: "PhD"
 title: "Postdoctoral Research Scientist"
 phone: "851-5285"
 fax: ""

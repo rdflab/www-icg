@@ -1,9 +1,9 @@
 ---
-id: "shan-zha-shan-zha"
-name: "Shan Zha Shan Zha"
-firstName: "Shan Zha"
-lastName: "Shan Zha"
-letters: ["MD", "PhD"]
+id: "shan-zha"
+name: "Shan Zha"
+firstName: "Shan"
+lastName: "Zha"
+postNominalLetters: "MD PhD"
 title: "Associate Professor of Pediatrics & Pathology & Cell Bio (ICG & HICCC)"
 phone: "851-4779"
 fax: ""

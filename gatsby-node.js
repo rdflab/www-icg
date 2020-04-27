@@ -31,7 +31,7 @@ const researchAreaTemplate = path.resolve(
 )
 
 const toPeopleMap = people => {
-  let ret = new Object() //new Map()
+  let ret = {}
 
   people.forEach(person => {
     //ret.set(person.id, person)
@@ -124,15 +124,18 @@ exports.createSchemaCustomization = ({ actions }) => {
 
     type Frontmatter {
       name: String!
+      firstName: String!
+      lastName: String!
       title: String!
-      letters: [String!]!
+      postNominalLetters: String!
       tags: [String!]!
-      groups: [String!]!
-      people: [String!]!
       room: String!
       url: String!
       start: Date
       end: Date
+      groups: [String!]!
+      notes: [String!]!
+      people: [String!]!
     }
   `
   createTypes(typeDefs)
@@ -172,8 +175,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             frontmatter {
               id
               name
+              firstName
+              lastName
               title
-              letters
+              postNominalLetters
               email
               phone
               fax
@@ -195,14 +200,23 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             url
             faculty {
               id
+              labId
+            }
+          }
+        }
+      }
+
+      labs: allLabsJson {
+        edges {
+          node {
+            id
+            name
+            url
+            divisions {
+              id
               name
+              people
               url
-              subgroups {
-                id
-                members
-                name
-                url
-              }
             }
           }
         }
@@ -212,19 +226,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         edges {
           node {
             id
-            name
+            members
             url
-            staff {
-              id
-              name
-              url
-              subgroups {
-                members
-                name
-                url
-                id
-              }
-            }
+            name
           }
         }
       }
@@ -356,7 +360,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   //   })
   // })
 
-  const allPeople = []
   const allPublications = []
   const allNews = []
   const allLabGroups = []
@@ -374,10 +377,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     cvMap[node.id] = node
   })
 
-  const allGroups = []
-  result.data.groups.edges.forEach(({ node }) => {
-    const group = node
-    allGroups.push(group)
+  const labMap = {}
+  result.data.labs.edges.forEach(({ node }) => {
+    const lab = node
+    labMap[lab.id] = lab
   })
 
   const allFaculty = []
@@ -386,25 +389,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     allFaculty.push(faculty)
   })
 
-  console.log("all", allGroups)
-
+  const allPeople = []
   result.data.people.edges.forEach(({ node }) => {
     const person = node
-
-    // let ras = {}
-
-    // for (let ra of person.frontmatter.researchAreas) {
-    //   if (ra in researchAreasMap) {
-    //     ras[researchAreasMap[ra].name] = researchAreasMap[ra]
-    //   }
-    // }
-
-    // person.researchAreas = Object.keys(ras)
-    //   .sort()
-    //   .map(key => {
-    //     return ras[key]
-    //   })
-
     allPeople.push(person)
   })
 
@@ -431,8 +418,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   //   allLabGroups.push(group)
   // })
-
-  const groupMap = toGroupMap(allGroups)
 
   //
   // Work out if people belong to more than one group
@@ -470,11 +455,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
     var groups = []
 
-    for (let group of publication.groups) {
-      if (group in groupMap) {
-        groups.push(groupMap[group])
-      }
-    }
+    // for (let group of publication.groups) {
+    //   if (group in groupMap) {
+    //     groups.push(groupMap[group])
+    //   }
+    // }
 
     publication.groups = groups
 
@@ -613,8 +598,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   searchData["sections"].push("Events")
   searchData["data"]["Events"] = {}
 
-  console.log("cake", allCalEvents)
-
   for (let calEvent of allCalEvents) {
     const path = `/events/${
       calEvent.frontmatter.start.split("T")[0]
@@ -630,8 +613,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   // Make pages
   //
 
-  for (let group of allLabGroups) {
-    const path = `/research-areas/faculty/${group.frontmatter.id}`
+  for (let id of Object.keys(labMap)) {
+    const lab = labMap[id]
+    const path = `/research-areas/labs/${id}`
 
     const labPublications = []
 
@@ -649,16 +633,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     //indexFile = `static/${group.frontmatter.id}.publications.index.json`
     //writeJson(indexFile, labPubIndex)
 
-    const labPeople = []
-
-    for (let pid of group.frontmatter.members) {
-      labPeople.push(peopleMap[pid])
-    }
-
     const labNews = []
 
     for (item of allNews) {
-      if (item.frontmatter.groups.includes(group.frontmatter.id)) {
+      if (item.frontmatter.groups.includes(lab.id)) {
         labNews.push(item)
       }
     }
@@ -673,15 +651,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
 
     createPage({
-      path: `/research-areas/faculty/${group.frontmatter.id}`,
+      path: path,
       component: labTemplate,
       context: {
-        group: group,
-        labPeople: labPeople,
+        lab: lab,
+        peopleMap: peopleMap,
         labPublications: labPublications,
         labNews: labNews,
-        labExcerptHtml: labExcerptHtml,
-        labHtml: labHtml,
       },
     })
 
@@ -689,38 +665,38 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     // Overview
     //
 
-    createPage({
-      path: `/research-areas/labs/${group.frontmatter.id}/overview`,
-      component: labOverviewTemplate,
-      context: {
-        group: group,
-        labPeople: labPeople,
-        labPublications: labPublications,
-        labHtml: labHtml,
-      },
-    })
+    // createPage({
+    //   path: `/research-areas/labs/${group.frontmatter.id}/overview`,
+    //   component: labOverviewTemplate,
+    //   context: {
+    //     group: group,
+    //     labPeople: labPeople,
+    //     labPublications: labPublications,
+    //     labHtml: labHtml,
+    //   },
+    // })
 
     //
     // Members
     //
 
-    createPage({
-      path: `${path}/members`,
-      component: peopleTemplate,
-      context: {
-        title: `The ${group.frontmatter.name} Lab Members`,
-        crumbs: [
-          ["Research Areas", "/research-areas"],
-          ["Labs", "/research-areas/labs"],
-          [
-            group.frontmatter.name,
-            `/research-areas/labs/${group.frontmatter.id}`,
-          ],
-          ["Members", `/research-areas/labs/${group.frontmatter.id}/members`],
-        ],
-        allPeople: labPeople,
-      },
-    })
+    // createPage({
+    //   path: `${path}/members`,
+    //   component: peopleTemplate,
+    //   context: {
+    //     title: `The ${group.frontmatter.name} Lab Members`,
+    //     crumbs: [
+    //       ["Research Areas", "/research-areas"],
+    //       ["Labs", "/research-areas/labs"],
+    //       [
+    //         group.frontmatter.name,
+    //         `/research-areas/labs/${group.frontmatter.id}`,
+    //       ],
+    //       ["Members", `/research-areas/labs/${group.frontmatter.id}/members`],
+    //     ],
+    //     allPeople: labPeople,
+    //   },
+    // })
 
     //
     // Lab publications
@@ -804,15 +780,12 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   //
 
   createPage({
-    path: `/people/faculty`,
+    path: `/research-areas/faculty`,
     component: staffTemplate,
     context: {
       title: `Faculty`,
-      crumbs: [
-        ["People", "/people"],
-        ["Faculty", "/people/faculty"],
-      ],
-      allFaculty: allFaculty,
+      crumbs: [["Faculty", path]],
+      allGroups: allFaculty,
       peopleMap: peopleMap,
     },
   })

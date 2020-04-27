@@ -3,7 +3,7 @@ id: "karina-chan"
 name: "Karina Chan"
 firstName: "Karina"
 lastName: "Chan"
-letters: []
+postNominalLetters: ""
 title: "Tech B"
 phone: "851-4966"
 fax: ""

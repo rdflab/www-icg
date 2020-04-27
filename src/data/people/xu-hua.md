@@ -3,7 +3,7 @@ id: "xu-hua"
 name: "Xu Hua"
 firstName: "Xu"
 lastName: "Hua"
-letters: ["PhD"]
+postNominalLetters: "PhD"
 title: "Postdoctoral Research Scientist "
 phone: "851-4937"
 fax: ""

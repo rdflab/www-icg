@@ -3,7 +3,7 @@ id: "jennifer-a-zagelbaum"
 name: "Jennifer A. Zagelbaum"
 firstName: "Jennifer A."
 lastName: "Zagelbaum"
-letters: []
+postNominalLetters: ""
 title: "GRA"
 phone: "851-4566/67/68"
 fax: ""

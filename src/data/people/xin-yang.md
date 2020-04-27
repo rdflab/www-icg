@@ -3,7 +3,7 @@ id: "xin-yang"
 name: "Xin Yang"
 firstName: "Xin"
 lastName: "Yang"
-letters: ["PhD"]
+postNominalLetters: "PhD"
 title: "Postdoctoral Research Scientist"
 phone: "851-5285"
 fax: ""

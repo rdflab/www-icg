@@ -7,13 +7,17 @@ import SideColumn from "../components/sidecolumn"
 import Column from "../components/column"
 import H1 from "../components/headings/h1"
 import H2 from "../components/headings/h2"
-import { labMembersUrl, labUrl } from "../utils/urls"
+import { labMembersUrl } from "../utils/urls"
 import { Link } from "gatsby"
 import generic from "../assets/svg/generic.svg"
 
 const EMPTY_QUERY = ""
 
-const Lab = ({ person }) => {
+export const labUrl = person => {
+  return `/research-areas/labs/${person.labId}`
+}
+
+const Lab = ({ person, labId }) => {
   const [hover, setHover] = useState(false)
 
   const onMouseEnter = e => {
@@ -30,16 +34,16 @@ const Lab = ({ person }) => {
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
-      <Link to={labUrl(person)}>
+      <Link to={`/research-areas/labs/${labId}`}>
         <div className="bg-white">
           <img src={generic} className="w-full" />
         </div>
         <div
-          className={`p-4 text-xl trans-ani ${
+          className={`p-4 text-lg trans-ani ${
             hover ? "bg-blue-600 text-white" : "text-blue-500"
           }`}
         >
-          {person.frontmatter.name}
+          {person.frontmatter.name}, {person.frontmatter.postNominalLetters}
         </div>
       </Link>
     </div>
@@ -59,10 +63,16 @@ const StaffGrid = ({ people, peopleMap, cols }) => {
     const col = []
 
     for (let c = 0; c < cols; ++c) {
+      console.log(pc, people)
+      console.log(pc, people[pc].id, peopleMap[people[pc].id])
       let person = peopleMap[people[pc].id]
 
       col.push(
-        <Column w={3}>{pc < people.length && <Lab person={person} />}</Column>
+        <Column w={3}>
+          {pc < people.length && (
+            <Lab person={person} labId={people[pc].labId} />
+          )}
+        </Column>
       )
 
       ++pc
@@ -86,20 +96,20 @@ StaffGrid.defaultProps = {
   cols: 4,
 }
 
-const StaffGroups = ({ allFaculty, peopleMap }) => {
+const StaffGroups = ({ allGroups, peopleMap }) => {
   const ret = []
 
-  for (let faculty of allFaculty) {
-    ret.push(<H2>{faculty.name}</H2>)
+  for (let group of allGroups) {
+    ret.push(<H2>{group.name}</H2>)
 
-    ret.push(<StaffGrid people={faculty.faculty} peopleMap={peopleMap} />)
+    ret.push(<StaffGrid people={group.faculty} peopleMap={peopleMap} />)
   }
 
   return ret
 }
 
 const StaffTemplate = ({ pageContext }) => {
-  const { allFaculty, peopleMap } = pageContext
+  const { allGroups, peopleMap } = pageContext
 
   const [query, setQuery] = useState(EMPTY_QUERY)
   const [filteredGroups, setFilteredGroups] = useState([])
@@ -157,7 +167,7 @@ const StaffTemplate = ({ pageContext }) => {
       <div className="w-full">
         {/* <Labs labs={allGroups} /> */}
         {/*<StaffGrid labs={allGroups} /> */}
-        <StaffGroups allFaculty={allFaculty} peopleMap={peopleMap} />
+        <StaffGroups allGroups={allGroups} peopleMap={peopleMap} />
       </div>
     </CrumbContainerLayout>
   )

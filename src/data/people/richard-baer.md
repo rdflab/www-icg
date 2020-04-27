@@ -3,7 +3,7 @@ id: "richard-baer"
 name: "Richard Baer"
 firstName: "Richard"
 lastName: "Baer"
-letters: ["PhD"]
+postNominalLetters: "PhD"
 title: " Professor of Pathology & Cell Biology (in ICG)"
 phone: "851-5275 "
 fax: "851-5220"

@@ -3,7 +3,7 @@ id: "tongwei-mo"
 name: "Tongwei Mo"
 firstName: "Tongwei"
 lastName: "Mo"
-letters: []
+postNominalLetters: ""
 title: "Sr Research Worker"
 phone: "851-5270"
 fax: ""

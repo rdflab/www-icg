@@ -3,7 +3,7 @@ id: "marissa-rashkovan"
 name: "Marissa Rashkovan"
 firstName: "Marissa"
 lastName: "Rashkovan"
-letters: ["PhD"]
+postNominalLetters: "PhD"
 title: "Postdoctoral Research Fellow"
 phone: "851-5292"
 fax: ""

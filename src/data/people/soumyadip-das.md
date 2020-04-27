@@ -3,7 +3,7 @@ id: "soumyadip-das"
 name: "Soumyadip Das"
 firstName: "Soumyadip"
 lastName: "Das"
-letters: []
+postNominalLetters: ""
 title: "Staff Associate"
 phone: ""
 fax: ""

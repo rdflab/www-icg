@@ -17,12 +17,14 @@ def sort_names(names):
         last = names[-1]
         first = ' '.join(names[0:-1])
         
+        print(last, ':', first)
+        
         name_map[last][first].append(name)
     
     ret = []
     
-    for last in name_map:
-        for first in name_map[last]:
+    for last in sorted(name_map):
+        for first in sorted(name_map[last]):
             ret.extend(name_map[last][first])
     
     return ret
@@ -31,12 +33,12 @@ df = pd.read_csv('ICG_Directory_3.13.20.txt', sep='\t', keep_default_na=False)
 
 id_map = {}
 
-lab_map = collections.defaultdict(lambda: collections.defaultdict(lambda: collections.defaultdict(list)))
+lab_map = collections.defaultdict(list)
 
 new_lab = False
 lab_group = 'Divisional Administrator'
 
-for i in range(3, 13):
+for i in range(3, 14):
     name = df.iloc[i, 0]
     name = name.strip()
     
@@ -68,7 +70,7 @@ for i in range(3, 13):
     formatted_name = '{} {}'.format(firstName, lastName)
     
     if new_lab:
-        current_lab = lab_map[lab_group][formatted_name]
+        current_lab = lab_map[lab_group]
         lab_group = 'Administrative Staff'
         new_lab = False
     
@@ -86,7 +88,7 @@ for i in range(3, 13):
     title = title.replace('Assoc ', 'Associate ')
     title = re.sub(r' \(.+', '', title)
     
-    current_lab['Staff'].append(formatted_name)
+    current_lab.append(formatted_name)
     
     phone = df.iloc[i, 2]
     phone = phone.replace('cell: ', '')
@@ -114,7 +116,7 @@ for i in range(3, 13):
     print('name: "{}"'.format(formatted_name), file=f)
     print('firstName: "{}"'.format(firstName), file=f)
     print('lastName: "{}"'.format(lastName), file=f)
-    print('letters: [{}]'.format(','.join(['"{}"'.format(l) for l in letters])), file=f)
+    print('postNominalLetters: "{}"'.format(' '.join(letters)), file=f)
     print('title: "{}"'.format(title), file=f)
     print('phone: "{}"'.format(phone), file=f)
     print('fax: "{}"'.format(fax), file=f)
@@ -138,20 +140,19 @@ all_divisions = []
 for g in GROUPS:
     faculty = []
     
-    division = {'id':g.lower().replace(' ', '-'), 'name':g, 'url':'', 'staff': []}
+    division = {'id':g.lower().replace(' ', '-'), 'name':g, 'url':'', 'members': []}
     
     faculty_names = sort_names(lab_map[g])
     
     for name in faculty_names:
-        lab = {'id':id_map[name], 'name':name, 'url':'', 'subgroups': []}
+        #lab = {'id':id_map[name], 'name':name, 'url':'', 'subgroups': []}
         
-        for sg in SUB_GROUPS:
-            subgroup = {'id':sg.lower().replace(' ', '-'), 'name':sg, 'url':'', 'members':[]}
-            member_names = sort_names(lab_map[g][name][sg])
-            subgroup['members'] = [id_map[name] for name in member_names]
-            lab['subgroups'].append(subgroup)
+        #subgroup = {'id':sg.lower().replace(' ', '-'), 'name':sg, 'url':'', 'members':[]}
+        #member_names = sort_names(lab_map[g][name][sg])
+        #subgroup['staff'] = [id_map[name] for name in member_names]
+        #lab['subgroups'].append(subgroup)
             
-        division['staff'].append(lab)
+        division['members'].append(name)
         
     all_divisions.append(division)
         

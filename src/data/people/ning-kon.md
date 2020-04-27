@@ -3,7 +3,7 @@ id: "ning-kon"
 name: "Ning Kon"
 firstName: "Ning"
 lastName: "Kon"
-letters: ["PhD"]
+postNominalLetters: "PhD"
 title: "Associate Research Scientist"
 phone: "851-5285"
 fax: ""

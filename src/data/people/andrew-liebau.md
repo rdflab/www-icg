@@ -3,7 +3,7 @@ id: "andrew-liebau"
 name: "Andrew Liebau"
 firstName: "Andrew"
 lastName: "Liebau"
-letters: []
+postNominalLetters: ""
 title: "GRA"
 phone: "851-4566/67/68"
 fax: ""

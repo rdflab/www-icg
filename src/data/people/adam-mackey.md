@@ -3,7 +3,7 @@ id: "adam-mackey"
 name: "Adam Mackey"
 firstName: "Adam"
 lastName: "Mackey"
-letters: []
+postNominalLetters: ""
 title: "Senior Technician"
 phone: "851-5292"
 fax: ""

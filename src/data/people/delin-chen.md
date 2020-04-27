@@ -3,7 +3,7 @@ id: "delin-chen"
 name: "Delin Chen"
 firstName: "Delin"
 lastName: "Chen"
-letters: ["PhD"]
+postNominalLetters: "PhD"
 title: "Associate Research Scientist"
 phone: "851-5285"
 fax: ""

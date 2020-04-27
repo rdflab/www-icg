@@ -3,7 +3,7 @@ id: "tim-zhong"
 name: "Tim Zhong"
 firstName: "Tim"
 lastName: "Zhong"
-letters: []
+postNominalLetters: ""
 title: "GRA"
 phone: "851-4792"
 fax: ""

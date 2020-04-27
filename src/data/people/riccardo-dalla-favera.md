@@ -3,7 +3,7 @@ id: "riccardo-dalla-favera"
 name: "Riccardo Dalla-Favera"
 firstName: "Riccardo"
 lastName: "Dalla-Favera"
-letters: ["MD"]
+postNominalLetters: "MD"
 title: "Professor of Pathology & Cell Biology, Gen & Dev, M& I"
 phone: "851-5273 "
 fax: "851-5256"

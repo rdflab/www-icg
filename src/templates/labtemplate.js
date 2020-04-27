@@ -19,30 +19,30 @@ import { personName } from "../utils/personname"
 import { labMembersUrl } from "../utils/urls"
 import BlueLink from "../components/bluelink"
 import SideBarMember from "../components/people/sidebarmember"
+import H2 from "../components/headings/h2"
+import H1 from "../components/headings/h1"
 
 export const labName = faculty => {
   return `The ${personName(faculty)} Lab`
 }
 
-const PeopleGrid = ({ people, cols }) => {
+const PeopleGrid = ({ people, peopleMap, cols }) => {
   const rows = Math.floor(people.length / cols) + 1
 
   const ret = []
 
   let pc = 0
 
-  console.log(rows, cols, people)
-
   for (let r = 0; r < rows; ++r) {
     const col = []
 
     for (let c = 0; c < cols; ++c) {
-      let person = people[pc]
+      let person = peopleMap[people[pc]]
 
       col.push(
         <Column w={3}>
           {pc < people.length && (
-            <div className={`w-full shadow ${c === 0 ? "mr-1" : "ml-1"}`}>
+            <div className={`w-full shadow  mb-8 md:mx-4`}>
               <div>{personName(person)}</div>
               <ContactInfo person={person} />
             </div>
@@ -57,7 +57,7 @@ const PeopleGrid = ({ people, cols }) => {
       }
     }
 
-    ret.push(<Column className="mb-1">{col}</Column>)
+    ret.push(<Column className="justify-center">{col}</Column>)
 
     if (pc === people.length) {
       break
@@ -71,31 +71,42 @@ PeopleGrid.defaultProps = {
   cols: 4,
 }
 
+const Divisions = ({ lab, peopleMap }) => {
+  const ret = []
+
+  for (let division of lab.divisions) {
+    if (division.people.length > 0) {
+      ret.push(<H2>{division.name}</H2>)
+      ret.push(<PeopleGrid people={division.people} peopleMap={peopleMap} />)
+    }
+  }
+
+  return ret
+}
+
 const LabTemplate = ({ pageContext }) => {
   const {
-    group,
-    labPeople,
+    lab,
+    peopleMap,
     labPublications,
     labNews,
     labExcerptHtml,
   } = pageContext
 
-  const faculty = group.leaders[0]
+  const faculty = peopleMap[lab.id]
 
   const title = labName(faculty)
 
   const crumbs = [
-    ["Research Areas", "/research-areas"],
     ["Labs", "/research-areas/labs"],
-    [personName(faculty), `/research-areas/labs/${group.frontmatter.id}`],
+    [personName(faculty), `/research-areas/labs/${lab.id}`],
   ]
 
   return (
     <CrumbLayout crumbs={crumbs} title={title} headerComponent={<SiteSearch />}>
+      <H1>{title}</H1>
+
       <Column>
-        <SmallColumn>
-          <ContactInfo person={faculty} urls={group.urls} />
-        </SmallColumn>
         <MainColumn>
           <div className="w-full">
             <HTMLDiv html={labExcerptHtml} />
@@ -110,8 +121,8 @@ const LabTemplate = ({ pageContext }) => {
             {/* 
             <h3>Research Focus</h3>
             <h3>Education</h3> */}
-            <div>people</div>
-            <PeopleGrid people={labPeople} />
+
+            <Divisions lab={lab} peopleMap={peopleMap} />
 
             {labPublications.length > 0 && (
               <div className="my-8">
@@ -121,10 +132,10 @@ const LabTemplate = ({ pageContext }) => {
                     height="auto"
                     headerClassName="text-blue-700"
                   >
-                    <RecentPublications
+                    {/* <RecentPublications
                       group={group}
                       publications={labPublications}
-                    />
+                    /> */}
                   </Collapsible>
                 </SectionBreak>
               </div>
@@ -132,20 +143,12 @@ const LabTemplate = ({ pageContext }) => {
           </div>
         </MainColumn>
         <SideColumn>
-          <FlatCard>
-            <ContactInfo person={group.leaders[0]} urls={group.urls} />
-          </FlatCard>
-
           {labNews.length > 0 && (
             <div className="mt-8">
               <h3>News</h3>
               <SideBarNews allNews={labNews} />
             </div>
           )}
-
-          <div className="mt-8">
-            <SideBarMember person={group.leaders[0]} />
-          </div>
 
           {/* <div className="mt-8">
             <SideBarMembers
@@ -154,13 +157,6 @@ const LabTemplate = ({ pageContext }) => {
               title="Faculty"
             />
           </div> */}
-
-          <div className="mt-8">
-            <SideBarMembers group={group} people={labPeople} maxRecords={5} />
-            <div className="mt-2">
-              <BlueLink to={labMembersUrl(group)}>More</BlueLink>
-            </div>
-          </div>
         </SideColumn>
       </Column>
     </CrumbLayout>

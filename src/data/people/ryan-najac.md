@@ -3,7 +3,7 @@ id: "ryan-najac"
 name: "Ryan Najac"
 firstName: "Ryan"
 lastName: "Najac"
-letters: []
+postNominalLetters: ""
 title: "Tech B"
 phone: "851-5287"
 fax: ""

@@ -3,7 +3,7 @@ id: "russell-szalasny"
 name: "Russell Szalasny"
 firstName: "Russell"
 lastName: "Szalasny"
-letters: []
+postNominalLetters: ""
 title: "Administrative Aid"
 phone: "851-5272"
 fax: "851-5267"

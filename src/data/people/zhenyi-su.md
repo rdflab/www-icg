@@ -3,7 +3,7 @@ id: "zhenyi-su"
 name: "Zhenyi Su"
 firstName: "Zhenyi"
 lastName: "Su"
-letters: ["PhD"]
+postNominalLetters: "PhD"
 title: "Postdoctoral Research Scientist"
 phone: "851-5285"
 fax: ""

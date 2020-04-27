@@ -3,7 +3,7 @@ id: "luciano-garofano"
 name: "Luciano Garofano"
 firstName: "Luciano"
 lastName: "Garofano"
-letters: ["PhD"]
+postNominalLetters: "PhD"
 title: "Postdoctoral Research Scientist "
 phone: "851-5287"
 fax: ""

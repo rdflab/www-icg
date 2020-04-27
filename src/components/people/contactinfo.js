@@ -4,26 +4,20 @@ import PhoneLink from "../phonelink"
 import URLLink from "../urllink"
 import RoomLink from "../roomlink"
 
-const ContactInfo = ({ person, urls, className }) => {
-  if (urls.length === 0 && person.frontmatter.urls.length > 0) {
-    urls = person.frontmatter.urls
-  }
-
-  return (
-    <div className={`w-full mb-4 md:mb-0 ${className}`}>
-      {person.frontmatter.email.length > 0 && (
-        <EmailLink to={person.frontmatter.email[0]} />
-      )}
-      {person.frontmatter.phone.length > 0 && (
-        <PhoneLink numbers={person.frontmatter.phone} />
-      )}
-      {person.frontmatter.room !== "" && (
-        <RoomLink room={person.frontmatter.room} />
-      )}
-      {urls.length > 0 && <URLLink urls={urls} />}
-    </div>
-  )
-}
+const ContactInfo = ({ person, urls, className }) => (
+  <div className={`w-full mb-4 md:mb-0 ${className}`}>
+    {person.frontmatter.email !== "" && (
+      <EmailLink to={person.frontmatter.email[0]} />
+    )}
+    {person.frontmatter.phone !== "" && (
+      <PhoneLink numbers={person.frontmatter.phone} />
+    )}
+    {person.frontmatter.room !== "" && (
+      <RoomLink room={person.frontmatter.room} />
+    )}
+    {person.frontmatter.url !== "" && <URLLink url={person.frontmatter.url} />}
+  </div>
+)
 
 ContactInfo.defaultProps = {
   className: "",

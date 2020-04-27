@@ -3,7 +3,7 @@ id: "caral-bertulfo"
 name: "Caral Bertulfo"
 firstName: "Caral"
 lastName: "Bertulfo"
-letters: []
+postNominalLetters: ""
 title: "GRA"
 phone: "851-5292"
 fax: ""

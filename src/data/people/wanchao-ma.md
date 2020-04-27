@@ -3,7 +3,7 @@ id: "wanchao-ma"
 name: "Wanchao Ma"
 firstName: "Wanchao"
 lastName: "Ma"
-letters: []
+postNominalLetters: ""
 title: "Sr Staff Associate "
 phone: "851-4791"
 fax: ""

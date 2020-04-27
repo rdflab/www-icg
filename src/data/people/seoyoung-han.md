@@ -3,7 +3,7 @@ id: "seoyoung-han"
 name: "Seoyoung Han"
 firstName: "Seoyoung"
 lastName: "Han"
-letters: []
+postNominalLetters: ""
 title: "Tech B"
 phone: "951-4792"
 fax: ""

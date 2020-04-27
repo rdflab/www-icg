@@ -3,7 +3,7 @@ id: "di-wang"
 name: "Di Wang"
 firstName: "Di"
 lastName: "Wang"
-letters: ["PhD"]
+postNominalLetters: "PhD"
 title: "Postdoctoral Research Scientist"
 phone: "851-5287"
 fax: ""

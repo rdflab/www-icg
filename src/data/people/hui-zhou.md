@@ -3,7 +3,7 @@ id: "hui-zhou"
 name: "Hui Zhou"
 firstName: "Hui"
 lastName: "Zhou"
-letters: []
+postNominalLetters: ""
 title: "Sr Staff Associate"
 phone: "851-4937"
 fax: ""

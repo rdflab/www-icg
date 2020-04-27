@@ -3,7 +3,7 @@ id: "maja-milanovic"
 name: "Maja Milanovic"
 firstName: "Maja"
 lastName: "Milanovic"
-letters: ["PhD"]
+postNominalLetters: "PhD"
 title: "Postdoctoral Research Scientist"
 phone: "851-4785"
 fax: ""

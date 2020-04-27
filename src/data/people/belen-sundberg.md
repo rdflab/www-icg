@@ -3,7 +3,7 @@ id: "belen-sundberg"
 name: "Belen Sundberg"
 firstName: "Belen"
 lastName: "Sundberg"
-letters: []
+postNominalLetters: ""
 title: "Tech B"
 phone: "851-4966"
 fax: ""

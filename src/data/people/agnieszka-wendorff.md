@@ -3,7 +3,7 @@ id: "agnieszka-wendorff"
 name: "Agnieszka Wendorff"
 firstName: "Agnieszka"
 lastName: "Wendorff"
-letters: ["PhD"]
+postNominalLetters: "PhD"
 title: "Associate Research Scientist"
 phone: "851-5292"
 fax: ""

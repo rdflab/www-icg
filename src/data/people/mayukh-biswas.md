@@ -3,7 +3,7 @@ id: "mayukh-biswas"
 name: "Mayukh Biswas"
 firstName: "Mayukh"
 lastName: "Biswas"
-letters: []
+postNominalLetters: ""
 title: "Staff Associate"
 phone: "851-5292"
 fax: ""

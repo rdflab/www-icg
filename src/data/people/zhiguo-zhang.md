@@ -3,7 +3,7 @@ id: "zhiguo-zhang"
 name: "Zhiguo Zhang"
 firstName: "Zhiguo"
 lastName: "Zhang"
-letters: ["PhD"]
+postNominalLetters: "PhD"
 title: "Professor of Epigenomics & Molecular Biology (in Ped, G & D,  ICG) "
 phone: "851-4936"
 fax: ""

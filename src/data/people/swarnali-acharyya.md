@@ -3,7 +3,7 @@ id: "swarnali-acharyya"
 name: "Swarnali Acharyya"
 firstName: "Swarnali"
 lastName: "Acharyya"
-letters: ["PhD"]
+postNominalLetters: "PhD"
 title: "Assistant Professor of Pathology & Cell Biology (in ICG)"
 phone: "851-4792"
 fax: ""

@@ -4,6 +4,7 @@ NAME	TITLE	PHONE	FAX	E-MAIL	Office/Lab#
 "Riccardo Dalla-Favera, MD"	"Director, Institute for Cancer Genetics"	851-5273 	851-5256	rd10@columbia.edu	508A	
 						
 "Gavaris, Tom "	Divisional Administrator (cell: 347-256-5312)	851-4747	851-5256	tg2294	508B	
+						
 "Gellhorn, Tina "	Executive Assistant (cell: 201-214-2804)	851-5274	851-5256	cg482	508	
 "Tejeda, Jeanette "	Administrative Coordinator (cell: 917-969-6525)	851-5283	851-5284	jt591	609	
 "Meregildo, Clara "	HR Administrative Coordinator (cell: 917-679-9985)	851-5276	851-5256	cm2217	508	
@@ -43,12 +44,11 @@ NAME	TITLE	PHONE	FAX	E-MAIL	Office/Lab#
 						
 "Baer, Richard, PhD"	 Professor of Pathology & Cell Biology (in ICG)	851-5275 	851-5220	rb670@columbia.edu	503A	
 "Wong, Madeline"	Tech B	851-5266		mw3335	502	
-"Wong, Madeline"	Tech B	851-5266		mw3335	502	
 "Wu-Baer, Foon"	Senior Staff Associate	851-5260		fw110	502	
 						
 "Chio, Christine, PhD "	Assistant Prfessor of Genetics & Development (in ICG)	851-4967	851-5256	ic2445@columbia.edu	505A	
 "Ayres Pereira, Marina, PhD"	Postdoctoral Research Scientist	851-4966		mma2246	505	
-"Chan, Karina (Leaving 3/14)"	Tech B	851-4966		kmc2228	505	
+"Chan, Karina"	Tech B	851-4966		kmc2228	505	
 "Ke, Xiangyi (Sherry)"	GRA	851-4966		xk2138	505	
 "Sundberg, Belen"	Tech B	851-4966		bs3281	505	
 						
@@ -98,7 +98,7 @@ NAME	TITLE	PHONE	FAX	E-MAIL	Office/Lab#
 "Iavarone, Antonio, MD"	Professor of Neurology & Pathology & Cell Bio (in ICG)	851-5245	851-5267	ai2102@columbia.edu	407B	
 "Lasorella, Anna, MD"	Assoc Professor of Pediatrics & Pathology&Cell Bio (in ICG)	851-5240	851-5267	al2179@columbia.edu	405	
 "D'Angelo, Fulvio, PhD"	Postdoctoral Research Scientist	851-5287		fd2396	403	
-"Das, Soumyadip (Starts Mar 2020)"	Staff Associate					
+"Das, Soumyadip"	Staff Associate					
 "Frangaj, Brulinda"	Tech B	851-5287		bf2456	403	
 "Gan, Qiwen (Kevin), PhD"	Postdoctoral Research Scientist 	851-5287		qg2189	403	1/16/2020
 "Garofano, Luciano, PhD"	Postdoctoral Research Scientist 	851-5287		lg2845	403	
@@ -109,7 +109,7 @@ NAME	TITLE	PHONE	FAX	E-MAIL	Office/Lab#
 "Oh, Michael, PhD"	Postdoctoral Research Scientist	851-5287		mo2777	403	
 "Wang, Di, PhD"	Postdoctoral Research Scientist	851-5287		dw2919	403	
 						
-"Shan Zha, MD, PhD"	Assoc Prof of Pediatrics & Pathology & Cell Bio (ICG & HICCC)	851-4779		SZ2296@columbia.edu	503B	
+"Zha, Shan, MD, PhD"	Assoc Prof of Pediatrics & Pathology & Cell Bio (ICG & HICCC)	851-4779		SZ2296@columbia.edu	503B	
 "Cupo, Olivia"	Tech B	851-4785		oc2298	501	
 "Lee, Brian"	Sr Tech B	851-4785		bl2530	501	
 "Lin, Xiaohui, PhD"	Postdoctoral Research Scientist	851-4785		xl2866	501	

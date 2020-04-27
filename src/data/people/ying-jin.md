@@ -3,7 +3,7 @@ id: "ying-jin"
 name: "Ying Jin"
 firstName: "Ying"
 lastName: "Jin"
-letters: []
+postNominalLetters: ""
 title: "Staff Associate"
 phone: "851-5285"
 fax: ""

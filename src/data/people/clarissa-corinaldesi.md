@@ -3,7 +3,7 @@ id: "clarissa-corinaldesi"
 name: "Clarissa Corinaldesi"
 firstName: "Clarissa"
 lastName: "Corinaldesi"
-letters: ["PhD"]
+postNominalLetters: "PhD"
 title: "Postdoctoral Research Scientist  "
 phone: "851-5269"
 fax: ""

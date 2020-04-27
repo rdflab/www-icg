@@ -3,7 +3,7 @@ id: "brulinda-frangaj"
 name: "Brulinda Frangaj"
 firstName: "Brulinda"
 lastName: "Frangaj"
-letters: []
+postNominalLetters: ""
 title: "Tech B"
 phone: "851-5287"
 fax: ""

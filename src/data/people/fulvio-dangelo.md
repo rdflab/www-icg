@@ -3,7 +3,7 @@ id: "fulvio-dangelo"
 name: "Fulvio D'Angelo"
 firstName: "Fulvio"
 lastName: "D'Angelo"
-letters: ["PhD"]
+postNominalLetters: "PhD"
 title: "Postdoctoral Research Scientist"
 phone: "851-5287"
 fax: ""

@@ -3,7 +3,7 @@ id: "bowen-cai"
 name: "Bowen Cai"
 firstName: "Bowen"
 lastName: "Cai"
-letters: ["PhD"]
+postNominalLetters: "PhD"
 title: "Associate Research Scientist"
 phone: "851-5269"
 fax: ""

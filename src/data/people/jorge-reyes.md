@@ -3,7 +3,7 @@ id: "jorge-reyes"
 name: "Jorge Reyes"
 firstName: "Jorge"
 lastName: "Reyes"
-letters: []
+postNominalLetters: ""
 title: "Tech B"
 phone: "851-4566/67/68"
 fax: ""

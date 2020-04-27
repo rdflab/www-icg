@@ -3,7 +3,7 @@ id: "zhiming-li"
 name: "Zhiming Li"
 firstName: "Zhiming"
 lastName: "Li"
-letters: ["PhD"]
+postNominalLetters: "PhD"
 title: "Postdoctoral Research Scientist "
 phone: "851-4937"
 fax: ""

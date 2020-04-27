@@ -3,7 +3,7 @@ id: "anna-lasorella"
 name: "Anna Lasorella"
 firstName: "Anna"
 lastName: "Lasorella"
-letters: ["MD"]
+postNominalLetters: "MD"
 title: "Associate Professor of Pediatrics & Pathology&Cell Bio (in ICG)"
 phone: "851-5240"
 fax: "851-5267"

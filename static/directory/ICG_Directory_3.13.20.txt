@@ -109,7 +109,7 @@ NAME	TITLE	PHONE	FAX	E-MAIL	Office/Lab#
 "Oh, Michael, PhD"	Postdoctoral Research Scientist	851-5287		mo2777	403	
 "Wang, Di, PhD"	Postdoctoral Research Scientist	851-5287		dw2919	403	
 						
-"Shan Zha, MD, PhD"	Assoc Prof of Pediatrics & Pathology & Cell Bio (ICG & HICCC)	851-4779		SZ2296@columbia.edu	503B	
+"Zha, Shan, MD, PhD"	Assoc Prof of Pediatrics & Pathology & Cell Bio (ICG & HICCC)	851-4779		SZ2296@columbia.edu	503B	
 "Cupo, Olivia"	Tech B	851-4785		oc2298	501	
 "Lee, Brian"	Sr Tech B	851-4785		bl2530	501	
 "Lin, Xiaohui, PhD"	Postdoctoral Research Scientist	851-4785		xl2866	501	

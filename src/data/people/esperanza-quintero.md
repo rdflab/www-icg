@@ -3,7 +3,7 @@ id: "esperanza-quintero"
 name: "Esperanza Quintero"
 firstName: "Esperanza"
 lastName: "Quintero"
-letters: []
+postNominalLetters: ""
 title: "Technical  Assistant"
 phone: "851-5283"
 fax: ""

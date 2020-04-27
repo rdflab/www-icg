@@ -3,7 +3,7 @@ id: "laura-belver-miguel"
 name: "Laura Belver-Miguel"
 firstName: "Laura"
 lastName: "Belver-Miguel"
-letters: ["PhD"]
+postNominalLetters: "PhD"
 title: "Associate Research Scientist"
 phone: "851-5292"
 fax: ""

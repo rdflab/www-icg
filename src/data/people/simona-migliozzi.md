@@ -3,7 +3,7 @@ id: "simona-migliozzi"
 name: "Simona Migliozzi"
 firstName: "Simona"
 lastName: "Migliozzi"
-letters: []
+postNominalLetters: ""
 title: "Staff Associate"
 phone: "851-5287"
 fax: ""
