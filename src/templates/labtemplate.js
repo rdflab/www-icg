@@ -21,6 +21,7 @@ import BlueLink from "../components/bluelink"
 import SideBarMember from "../components/people/sidebarmember"
 import H2 from "../components/headings/h2"
 import H1 from "../components/headings/h1"
+import PersonLink from "../components/people/personlink"
 
 export const labName = faculty => {
   return `The ${personName(faculty)} Lab`
@@ -43,7 +44,9 @@ const PeopleGrid = ({ people, peopleMap, cols }) => {
         <Column w={3}>
           {pc < people.length && (
             <div className={`w-full shadow  mb-8 md:mx-4`}>
-              <div>{personName(person)}</div>
+              <div>
+                <PersonLink person={person} />
+              </div>
               <ContactInfo person={person} />
             </div>
           )}

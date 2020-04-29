@@ -77,6 +77,7 @@ for i in range(13, df.shape[0]):
     
     if new_lab:
         current_lab = {'id':formatted_name.lower().replace(' ', '-'),
+                       'name':formatted_name,
                        'Principal Investigators':[],
                        'Research Staff':[],
                        'Graduate Students':[],
@@ -170,7 +171,7 @@ GROUPS = ['Director', 'Principal Investigators']
 SUB_GROUPS = ['Principal Investigators', 'Research Staff', 'Graduate Students', 'Staff']
 
 all_groups = []
-all_labs = []
+all_lab_map = {}
 
 for g in GROUPS:
     group = {'id':g.lower().replace(' ', '-'), 'name':g, 'url':'', 'faculty': []}
@@ -187,11 +188,15 @@ for g in GROUPS:
             lab['divisions'].append(division)
             
         group['faculty'].append({'id':id_map[name], 'labId':lab_map[g][name]['id']})
-        all_labs.append(lab)
+        
+        # Lab names only, not the faculty mapping to the lab
+        if name == lab_map[g][name]['name']:
+            all_lab_map[lab_map[g][name]['name']] = lab
         
     all_groups.append(group)
-        
     
+all_labs = [all_lab_map[name] for name in sort_names(all_lab_map)]    
+
 with open('faculty.json', 'w') as f:
     json.dump(all_groups, f, indent=2)
     

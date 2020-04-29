@@ -3,8 +3,6 @@ import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import CrumbLayout from "../components/crumblayout"
 import Column from "../components/column"
-import SideBarMembers from "../components/people/sidebarmembers"
-import SmallColumn from "../components/smallcolumn"
 import MainColumn from "../components/maincolumn"
 import SideColumn from "../components/sidecolumn"
 import BlueLink from "../components/bluelink"
@@ -13,10 +11,6 @@ import HTMLDiv from "../components/htmldiv"
 import SimplePubSearch from "../components/publication/simplepubsearch"
 import SiteSearch from "../components/search/sitesearch"
 
-import Collapsible from "../components/collapsible"
-import SectionBreak from "../components/sectionbreak"
-import FlatCard from "../components/flatcard"
-import Title from "../components/title"
 import { labName } from "./labtemplate"
 import { labUrl, personUrl, labMembersUrl } from "../utils/urls"
 import HideSmall from "../components/hidesmall"
@@ -165,14 +159,7 @@ const Groups = ({ groups }) => (
 )
 
 const PersonTemplate = ({ pageContext, data }) => {
-  const {
-    person,
-    groups,
-    labPeople,
-    publications,
-    researchAreasMap,
-    cv,
-  } = pageContext
+  const { person, lab, publications, cv } = pageContext
 
   const title = `${person.frontmatter.firstName} ${person.frontmatter.lastName}`
 
@@ -197,15 +184,13 @@ const PersonTemplate = ({ pageContext, data }) => {
                 <div className="text-4xl font-semibold">
                   {personName(person)}
                 </div>
-                <div className="text-2xl">{person.frontmatter.titles[0]}</div>
+                <div className="text-2xl">{person.frontmatter.title}</div>
               </div>
             </MainColumn>
             <SideColumn className="py-8 text-white">
               <div>
                 <div className="uppercase mb-4">Contact</div>
                 <ContactInfo person={person} />
-
-                {groups.length > 0 && <Groups groups={groups} />}
               </div>
             </SideColumn>
           </Column>

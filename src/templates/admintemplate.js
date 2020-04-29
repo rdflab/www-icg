@@ -1,56 +1,18 @@
 import React, { useState } from "react"
 import CrumbContainerLayout from "../components/crumbcontainerlayout"
 import SiteSearch from "../components/search/sitesearch"
-import Labs from "../components/lab/labs"
-import MainColumn from "../components/maincolumn"
-import SideColumn from "../components/sidecolumn"
 import Column from "../components/column"
 import H1 from "../components/headings/h1"
 import H2 from "../components/headings/h2"
-import { labMembersUrl } from "../utils/urls"
 import { Link } from "gatsby"
 import generic from "../assets/svg/generic.svg"
+import { personName } from "../utils/personname"
+import ContactInfo from "../components/people/contactinfo"
+import PersonLink from "../components/people/personlink"
 
 const EMPTY_QUERY = ""
 
-export const labUrl = person => {
-  return `/research-areas/labs/${person.labId}`
-}
-
-const Lab = ({ person, labId }) => {
-  const [hover, setHover] = useState(false)
-
-  const onMouseEnter = e => {
-    setHover(true)
-  }
-
-  const onMouseLeave = e => {
-    setHover(false)
-  }
-
-  return (
-    <div
-      className={`w-full rounded bg-white shadow-md overflow-hidden mb-8 md:mx-4`}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-    >
-      <Link to={`/research-areas/labs/${labId}`}>
-        <div className="bg-white">
-          <img src={generic} className="w-full" />
-        </div>
-        <div
-          className={`p-4 text-lg trans-ani ${
-            hover ? "bg-blue-600 text-white" : "text-blue-500"
-          }`}
-        >
-          {person.frontmatter.name}, {person.frontmatter.postNominalLetters}
-        </div>
-      </Link>
-    </div>
-  )
-}
-
-const StaffGrid = ({ people, peopleMap, cols }) => {
+const AdminGrid = ({ people, peopleMap, cols }) => {
   console.log(people)
 
   const rows = Math.floor(people.length / cols) + 1
@@ -63,14 +25,17 @@ const StaffGrid = ({ people, peopleMap, cols }) => {
     const col = []
 
     for (let c = 0; c < cols; ++c) {
-      console.log(pc, people)
-      console.log(pc, people[pc].id, peopleMap[people[pc].id])
-      let person = peopleMap[people[pc].id]
+      let person = peopleMap[people[pc]]
 
       col.push(
         <Column w={3}>
           {pc < people.length && (
-            <Lab person={person} labId={people[pc].labId} />
+            <div className={`w-full shadow  mb-8 md:mx-4`}>
+              <div>
+                <PersonLink person={person} />
+              </div>
+              <ContactInfo person={person} />
+            </div>
           )}
         </Column>
       )
@@ -92,24 +57,24 @@ const StaffGrid = ({ people, peopleMap, cols }) => {
   return ret
 }
 
-StaffGrid.defaultProps = {
+AdminGrid.defaultProps = {
   cols: 4,
 }
 
-const StaffGroups = ({ allGroups, peopleMap }) => {
+const StaffGroups = ({ allAdmin, peopleMap }) => {
   const ret = []
 
-  for (let group of allGroups) {
+  for (let group of allAdmin) {
     ret.push(<H2>{group.name}</H2>)
 
-    ret.push(<StaffGrid people={group.faculty} peopleMap={peopleMap} />)
+    ret.push(<AdminGrid people={group.members} peopleMap={peopleMap} />)
   }
 
   return ret
 }
 
-const StaffTemplate = ({ pageContext }) => {
-  const { allGroups, peopleMap } = pageContext
+const AdminTemplate = ({ pageContext }) => {
+  const { allAdmin, peopleMap, crumbs } = pageContext
 
   const [query, setQuery] = useState(EMPTY_QUERY)
   const [filteredGroups, setFilteredGroups] = useState([])
@@ -147,9 +112,9 @@ const StaffTemplate = ({ pageContext }) => {
     <CrumbContainerLayout
       crumbs={[
         ["People", "/people"],
-        ["Faculty", "/people/faculty"],
+        ["Administration", "/administration"],
       ]}
-      title="Research Labs"
+      title="Administration"
       headerComponent={<SiteSearch />}
       // titleComponent={
       //   <SearchSummary count={groups.length} single="Lab" plural="Labs" />
@@ -162,15 +127,15 @@ const StaffTemplate = ({ pageContext }) => {
         className="my-4"
       /> */}
 
-      <H1 className="text-center">Meet our Scientists</H1>
+      <H1 className="text-center">Meet our Administration</H1>
 
       <div className="w-full">
         {/* <Labs labs={allGroups} /> */}
         {/*<StaffGrid labs={allGroups} /> */}
-        <StaffGroups allGroups={allGroups} peopleMap={peopleMap} />
+        <StaffGroups allAdmin={allAdmin} peopleMap={peopleMap} />
       </div>
     </CrumbContainerLayout>
   )
 }
 
-export default StaffTemplate
+export default AdminTemplate

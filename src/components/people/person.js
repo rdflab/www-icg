@@ -7,15 +7,11 @@
 
 import React from "react"
 import Column from "../column"
-import MainColumn from "../maincolumn"
 import ContactInfo from "./contactinfo"
 import Img from "gatsby-image"
-import FlatCard from "../flatcard"
 import BlueLink from "../bluelink"
 import { personUrl } from "../../utils/urls"
 import { personName } from "../../utils/personname"
-import ContactInfo2 from "./contactinfo2"
-import GenericImage from "../genericimage"
 
 const Person = ({ person, showLabLink, image, generic }) => {
   let im

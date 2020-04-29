@@ -152,7 +152,7 @@ for g in GROUPS:
         #subgroup['staff'] = [id_map[name] for name in member_names]
         #lab['subgroups'].append(subgroup)
             
-        division['members'].append(name)
+        division['members'].append(id_map[name])
         
     all_divisions.append(division)
         
