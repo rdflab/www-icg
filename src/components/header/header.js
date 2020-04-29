@@ -38,7 +38,7 @@ const Header = ({ title, content, menuContent }) => (
       </div> */}
 
       <nav aria-label="Navigation">
-        <Container className="py-2">
+        <Container className="py-1">
           <Column isVCentered={true} className="justify-between">
             <HeaderLinks />
 

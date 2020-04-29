@@ -253,7 +253,7 @@ a:hover {
 
 
 .header-link {
-  @apply link block text-gray-400 mt-2 trans-ani; 
+  @apply underline-link text-gray-500 mt-2 trans-ani; 
 }
 
 .header-link:hover {
@@ -261,7 +261,7 @@ a:hover {
 }
 
 .header-link-active {
-  @apply text-black;
+  @apply border-black text-black;
 }
 
 .header-link-active:hover {
