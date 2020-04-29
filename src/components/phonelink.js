@@ -1,14 +1,21 @@
 import React from "react"
 import { FaPhone } from "react-icons/fa"
 import IconLink from "./iconlink"
-import BlueLinkExt from "./bluelinkext"
-import WhiteLinkExt from "./whitelistext"
+import ColorLinkExt from "./colorlinkext"
 
-const PhoneLink = ({ phone }) => (
+const PhoneLink = ({ phone, color }) => (
   <IconLink
-    icon={<FaPhone className="text-white" size={20} />}
-    content={<WhiteLinkExt to={`tel:${phone}`}>{phone}</WhiteLinkExt>}
+    icon={<FaPhone className={`text-${color}`} size={20} />}
+    content={
+      <ColorLinkExt color={color} to={`tel:${phone}`}>
+        {phone}
+      </ColorLinkExt>
+    }
   />
 )
+
+PhoneLink.defaultProps = {
+  color: "black",
+}
 
 export default PhoneLink

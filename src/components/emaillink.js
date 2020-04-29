@@ -1,14 +1,21 @@
 import React from "react"
 import { FaEnvelope } from "react-icons/fa"
 import IconLink from "./iconlink"
-import BlueLinkExt from "./bluelinkext"
-import WhiteLinkExt from "./whitelistext"
+import ColorLinkExt from "./colorlinkext"
 
-const EmailLink = ({ to }) => (
+const EmailLink = ({ to, color }) => (
   <IconLink
-    icon={<FaEnvelope className="text-white" size={20} />}
-    content={<WhiteLinkExt to={`mailto:${to}`}>{to}</WhiteLinkExt>}
+    icon={<FaEnvelope className={`text-${color}`} size={20} />}
+    content={
+      <ColorLinkExt color={color} to={`mailto:${to}`}>
+        {to}
+      </ColorLinkExt>
+    }
   />
 )
+
+EmailLink.defaultProps = {
+  color: "black",
+}
 
 export default EmailLink

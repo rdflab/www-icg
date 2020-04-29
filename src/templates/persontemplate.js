@@ -190,7 +190,7 @@ const PersonTemplate = ({ pageContext, data }) => {
             <SideColumn className="py-8 text-white">
               <div>
                 <div className="uppercase mb-4">Contact</div>
-                <ContactInfo person={person} />
+                <ContactInfo person={person} color="white" />
               </div>
             </SideColumn>
           </Column>

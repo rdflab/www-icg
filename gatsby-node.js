@@ -245,7 +245,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               initials
               lastName
             }
-            groups
+            labs
             people
             journal
             issue
@@ -432,30 +432,33 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   //   }
   // }
 
+  const personPubMap = {}
+  const labPubMap = {}
+
   result.data.publications.edges.forEach(({ node }) => {
     const publication = node
 
     // replace labs refs with labs objs
 
-    var groups = []
+    for (let labId of publication.labs) {
+      if (labId in labMap) {
+        if (!(labId in labPubMap)) {
+          labPubMap[labId] = []
+        }
 
-    // for (let group of publication.groups) {
-    //   if (group in groupMap) {
-    //     groups.push(groupMap[group])
-    //   }
-    // }
-
-    publication.groups = groups
-
-    var people = []
-
-    for (let person of publication.people) {
-      if (person in peopleMap) {
-        people.push(peopleMap[person])
+        labPubMap[labId].push(publication)
       }
     }
 
-    publication.people = people
+    for (let pid of publication.people) {
+      if (pid in peopleMap) {
+        if (!(pid in personPubMap)) {
+          personPubMap[pid] = []
+        }
+
+        personPubMap[pid].push(publication)
+      }
+    }
 
     allPublications.push(publication)
   })
@@ -604,14 +607,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   //
 
   for (let person of allPeople) {
+    const pid = person.frontmatter.id
+
     createPage({
-      path: `/people/${person.frontmatter.id}`,
+      path: `/people/${pid}`,
       component: personTemplate,
       context: {
-        id: person.frontmatter.id,
+        id: pid,
         person: person,
-        publications: [],
-        cv: null,
+        publications: pid in personPubMap ? personPubMap[pid] : [],
+        cv: pid in cvMap ? cvMap[pid] : [],
       },
     })
   }
@@ -619,17 +624,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   for (let lab of allLabs) {
     path = `/research-areas/labs/${lab.id}`
 
-    const labPublications = []
+    const labPublications = lab.id in labPubMap ? labPubMap[lab.id] : []
 
-    // Filter for pubs belonging only to this lab/group
-    for (let publication of allPublications) {
-      for (let g of publication.groups) {
-        if (g.frontmatter.id === group.frontmatter.id) {
-          labPublications.push(publication)
-          break
-        }
-      }
-    }
+    //console.log(lab.id, labPublications)
 
     //labPubIndex = indexPublications(labPublications)
     //indexFile = `static/${group.frontmatter.id}.publications.index.json`
@@ -724,54 +721,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         showLabLink: false,
       },
     })
-
-    //
-    // For each person
-    //
-
-    for (let division of lab.divisions) {
-      for (let pid of division.people) {
-        const person = peopleMap[pid]
-
-        const personPublications = []
-
-        for (let publication of allPublications) {
-          for (let p of publication.people) {
-            if (p.frontmatter.id === person.frontmatter.id) {
-              personPublications.push(publication)
-              break
-            }
-          }
-        }
-
-        // Groups are not added to persons, because react
-        // does not seem to like circular references, so
-        // whilst groups contain people objects, people
-        // cannot contain group objects at the same time
-        let groups = []
-
-        // if (person.frontmatter.id in personGroups) {
-        //   for (let id of personGroups[person.frontmatter.id]) {
-        //     groups.push(groupMap[id])
-        //   }
-        // }
-
-        createPage({
-          path: `/people/${person.frontmatter.id}`,
-          component: personTemplate,
-          context: {
-            id: person.frontmatter.id,
-            person: person,
-            lab: lab,
-            publications: personPublications,
-            cv:
-              person.frontmatter.id in cvMap
-                ? cvMap[person.frontmatter.id]
-                : null,
-          },
-        })
-      }
-    }
   }
 
   //
@@ -806,23 +755,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   })
 
   //
-  // Research Staff
-  //
-
-  createPage({
-    path: `/people/research-scientists`,
-    component: groupTemplate,
-    context: {
-      title: `Research Scientists`,
-      crumbs: [
-        ["People", "/people"],
-        ["Research Scientists", "/people/research-scientists"],
-      ],
-      allPeople: peopleTypeMap["Research Scientists"],
-    },
-  })
-
-  //
   // Admin
   //
 
@@ -835,23 +767,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       peopleMap: peopleMap,
     },
   })
-
-  //
-  // Staff
-  //
-
-  // createPage({
-  //   path: `/people/staff`,
-  //   component: groupTemplate,
-  //   context: {
-  //     title: `Staff`,
-  //     crumbs: [
-  //       ["People", "/people"],
-  //       ["Staff", "/people/staff"],
-  //     ],
-  //     allPeople: peopleTypeMap["Staff"],
-  //   },
-  // })
 
   //
   // News pages
@@ -903,7 +818,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     })
   }
 
-  // People page
+  //
+  // People
+  //
 
   path = "/people"
 
@@ -917,7 +834,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     },
   })
 
-  // Pubs page
+  //
+  // Publications
+  //
 
   createPage({
     path: "/research-areas/publications",
@@ -960,6 +879,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     })
   }
+
+  //
+  // Indexing
+  //
 
   const siteData = {}
 

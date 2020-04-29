@@ -9,7 +9,7 @@ import React from "react"
 import Publication from "./publication"
 import Button from "../../components/button"
 
-const RecentPublications = ({ group, publications, top, className }) => {
+const RecentPublications = ({ lab, publications, top, className }) => {
   const createPublications = publications => {
     let ret = []
 
@@ -26,11 +26,7 @@ const RecentPublications = ({ group, publications, top, className }) => {
       {/* <h2>Recent Publications</h2> */}
       <div className="mt-4">{createPublications(publications)}</div>
       <div className="text-center">
-        <Button
-          to={`/research-areas/labs/${group.frontmatter.id}/publications`}
-        >
-          More
-        </Button>
+        <Button to={`/research-areas/labs/${lab.id}/publications`}>More</Button>
       </div>
     </div>
   )

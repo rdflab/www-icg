@@ -76,9 +76,6 @@ h3 {
   @apply text-blue-600; //text-blue-columbia; //text-blue-700;
 }
 
-.gray {
-  @apply text-gray-600;
-}
 
 .white {
   @apply text-white;
@@ -93,7 +90,7 @@ h3 {
 }
 
 .gray-border {
-  @apply border-gray-500;
+  @apply border-gray-600;
 }
 
 a {
@@ -146,19 +143,6 @@ a:hover {
   @apply underline-link-hover border-b border-solid blue blue-border;
 }
 
-.gray-link {
-  @apply underline-link gray; 
-}
-
-.gray-link-active {
-  @apply border-blue-columbia;
-}
-
-.gray-link:hover {
-  @apply underline-link-hover border-b border-solid gray gray-border;
-}
-
-
 .white-link {
   @apply underline-link text-white;
 }
@@ -168,11 +152,11 @@ a:hover {
 }
 
 .gray-link {
-  @apply underline-link gray;
+  @apply underline-link text-gray;
 }
 
 .gray-link:hover {
-  @apply underline-link-hover gray gray-border;
+  @apply underline-link-hover text-gray gray-border;
 }
 
 .slide-menu-container {

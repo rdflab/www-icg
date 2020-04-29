@@ -45,14 +45,14 @@ const authorString = (authors, maxAuthors) => {
 
 const Publication = ({ publication, showLabLink, maxAuthors }) => {
   const authors = authorString(publication.authors, maxAuthors)
-  let groups = []
+  // let groups = []
 
-  for (let group of publication.groups) {
-    groups.push([group.frontmatter.id, group.frontmatter.name])
-  }
+  // for (let group of publication.groups) {
+  //   groups.push([group.frontmatter.id, group.frontmatter.name])
+  // }
 
   return (
-    <div className="mb-8">
+    <div className="mb-8 text-white">
       <h3>{publication.title}</h3>
       <div className="font-light">{authors}</div>
 
@@ -64,7 +64,7 @@ const Publication = ({ publication, showLabLink, maxAuthors }) => {
         </Column>
 
         <Column w="1/2">
-          {publication.groups.length > 0 && showLabLink && (
+          {/* {publication.groups.length > 0 && showLabLink && (
             <div className="md:text-right">
               <BlueLink
                 to={`/research-areas/labs/${publication.groups[0].frontmatter.id}`}
@@ -72,7 +72,7 @@ const Publication = ({ publication, showLabLink, maxAuthors }) => {
                 {publication.groups[0].frontmatter.name}
               </BlueLink>
             </div>
-          )}
+          )} */}
         </Column>
       </Column>
 

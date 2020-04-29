@@ -87,3 +87,7 @@ $columbia-blue-90-color: rgba($columbia-blue-color, 0.9);
 .text {
   @apply text-gray-800;
 }
+
+.text-gray {
+  @apply text-gray-600;
+}

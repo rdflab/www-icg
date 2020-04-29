@@ -5,73 +5,20 @@ import RecentPublications from "../components/publication/recentpublications"
 import Column from "../components/column"
 //import SideBar from "../components/sidebar/sidebar"
 import SideBarNews from "../components/news/sidebarnews"
-import SmallColumn from "../components/smallcolumn"
 import MainColumn from "../components/maincolumn"
 import SideColumn from "../components/sidecolumn"
 import ContactInfo from "../components/people/contactinfo"
 import HTMLDiv from "../components/htmldiv"
 import SiteSearch from "../components/search/sitesearch"
-import Collapsible from "../components/collapsible"
-import SectionBreak from "../components/sectionbreak"
-import FlatCard from "../components/flatcard"
-import SideBarMembers from "../components/people/sidebarmembers"
 import { personName } from "../utils/personname"
-import { labMembersUrl } from "../utils/urls"
-import BlueLink from "../components/bluelink"
-import SideBarMember from "../components/people/sidebarmember"
 import H2 from "../components/headings/h2"
 import H1 from "../components/headings/h1"
 import PersonLink from "../components/people/personlink"
+import Container from "../components/container"
+import PeopleGrid from "../components/people/peoplegrid"
 
 export const labName = faculty => {
   return `The ${personName(faculty)} Lab`
-}
-
-const PeopleGrid = ({ people, peopleMap, cols }) => {
-  const rows = Math.floor(people.length / cols) + 1
-
-  const ret = []
-
-  let pc = 0
-
-  for (let r = 0; r < rows; ++r) {
-    const col = []
-
-    for (let c = 0; c < cols; ++c) {
-      let person = peopleMap[people[pc]]
-
-      col.push(
-        <Column w={3}>
-          {pc < people.length && (
-            <div className={`w-full shadow  mb-8 md:mx-4`}>
-              <div>
-                <PersonLink person={person} />
-              </div>
-              <ContactInfo person={person} />
-            </div>
-          )}
-        </Column>
-      )
-
-      ++pc
-
-      if (pc === people.length) {
-        break
-      }
-    }
-
-    ret.push(<Column className="justify-center">{col}</Column>)
-
-    if (pc === people.length) {
-      break
-    }
-  }
-
-  return ret
-}
-
-PeopleGrid.defaultProps = {
-  cols: 4,
 }
 
 const Divisions = ({ lab, peopleMap }) => {
@@ -79,8 +26,22 @@ const Divisions = ({ lab, peopleMap }) => {
 
   for (let division of lab.divisions) {
     if (division.people.length > 0) {
-      ret.push(<H2>{division.name}</H2>)
-      ret.push(<PeopleGrid people={division.people} peopleMap={peopleMap} />)
+      ret.push(
+        <Column className="mb-2">
+          <Column className="w-2/10">
+            <div className="text-white p-4 bg-gray-500 w-full h-full">
+              <h3>{division.name}</h3>
+            </div>
+          </Column>
+          <Column className="w-8/10">
+            <PeopleGrid
+              people={division.people}
+              peopleMap={peopleMap}
+              cols={3}
+            />
+          </Column>
+        </Column>
+      )
     }
   }
 
@@ -109,25 +70,35 @@ const LabTemplate = ({ pageContext }) => {
     <CrumbLayout crumbs={crumbs} title={title} headerComponent={<SiteSearch />}>
       <H1>{title}</H1>
 
-      <Column>
-        <MainColumn>
-          <div className="w-full">
-            <HTMLDiv html={labExcerptHtml} />
-
-            {/* <div className="text-center">
+      {/* <div className="text-center">
               <Button
                 to={`/research-areas/labs/${group.frontmatter.id}/overview`}
               >
                 Learn more
               </Button>
             </div> */}
-            {/* 
+      {/* 
             <h3>Research Focus</h3>
             <h3>Education</h3> */}
 
-            <Divisions lab={lab} peopleMap={peopleMap} />
+      <HTMLDiv html={labExcerptHtml} />
 
-            {labPublications.length > 0 && (
+      <Container>
+        <H1>Meet the team</H1>
+        <Divisions lab={lab} peopleMap={peopleMap} />
+      </Container>
+
+      {labPublications.length > 0 && (
+        <div className="py-8 bg-blue-600">
+          <Container>
+            <H1 className="text-white">Recent Publications</H1>
+
+            <RecentPublications lab={lab} publications={labPublications} />
+          </Container>
+        </div>
+      )}
+
+      {/* {labPublications.length > 0 && (
               <div className="my-8">
                 <SectionBreak>
                   <Collapsible
@@ -135,33 +106,26 @@ const LabTemplate = ({ pageContext }) => {
                     height="auto"
                     headerClassName="text-blue-700"
                   >
-                    {/* <RecentPublications
-                      group={group}
-                      publications={labPublications}
-                    /> */}
+                    <RecentPublications lab={lab} publications={labPublications}/>
                   </Collapsible>
                 </SectionBreak>
               </div>
-            )}
-          </div>
-        </MainColumn>
-        <SideColumn>
-          {labNews.length > 0 && (
-            <div className="mt-8">
-              <h3>News</h3>
-              <SideBarNews allNews={labNews} />
-            </div>
-          )}
+            )} */}
 
-          {/* <div className="mt-8">
+      {labNews.length > 0 && (
+        <div className="mt-8">
+          <h3>News</h3>
+          <SideBarNews allNews={labNews} />
+        </div>
+      )}
+
+      {/* <div className="mt-8">
             <SideBarMembers
               group={group}
               people={group.leaders}
               title="Faculty"
             />
           </div> */}
-        </SideColumn>
-      </Column>
     </CrumbLayout>
   )
 }

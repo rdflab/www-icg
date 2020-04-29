@@ -9,65 +9,20 @@ import generic from "../assets/svg/generic.svg"
 import { personName } from "../utils/personname"
 import ContactInfo from "../components/people/contactinfo"
 import PersonLink from "../components/people/personlink"
+import PeopleGrid from "../components/people/peoplegrid"
 
 const EMPTY_QUERY = ""
-
-const AdminGrid = ({ people, peopleMap, cols }) => {
-  console.log(people)
-
-  const rows = Math.floor(people.length / cols) + 1
-
-  const ret = []
-
-  let pc = 0
-
-  for (let r = 0; r < rows; ++r) {
-    const col = []
-
-    for (let c = 0; c < cols; ++c) {
-      let person = peopleMap[people[pc]]
-
-      col.push(
-        <Column w={3}>
-          {pc < people.length && (
-            <div className={`w-full shadow  mb-8 md:mx-4`}>
-              <div>
-                <PersonLink person={person} />
-              </div>
-              <ContactInfo person={person} />
-            </div>
-          )}
-        </Column>
-      )
-
-      ++pc
-
-      if (pc === people.length) {
-        break
-      }
-    }
-
-    ret.push(<Column className="justify-center">{col}</Column>)
-
-    if (pc === people.length) {
-      break
-    }
-  }
-
-  return ret
-}
-
-AdminGrid.defaultProps = {
-  cols: 4,
-}
 
 const StaffGroups = ({ allAdmin, peopleMap }) => {
   const ret = []
 
   for (let group of allAdmin) {
-    ret.push(<H2>{group.name}</H2>)
-
-    ret.push(<AdminGrid people={group.members} peopleMap={peopleMap} />)
+    ret.push(
+      <div className="mb-8">
+        <H2>{group.name}</H2>
+        <PeopleGrid people={group.members} peopleMap={peopleMap} />
+      </div>
+    )
   }
 
   return ret
@@ -127,7 +82,7 @@ const AdminTemplate = ({ pageContext }) => {
         className="my-4"
       /> */}
 
-      <H1 className="text-center">Meet our Administration</H1>
+      <H1 className="text-center">Meet our Administration Team</H1>
 
       <div className="w-full">
         {/* <Labs labs={allGroups} /> */}

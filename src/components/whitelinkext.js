@@ -1,9 +1,10 @@
 import React from "react"
+import ColorLinkExt from "./colorlinkext"
 
 const WhiteLinkExt = ({ to, children, target }) => (
-  <a className="white-link" href={to} target={target}>
+  <ColorLinkExt color="white" href={to} target={target}>
     {children}
-  </a>
+  </ColorLinkExt>
 )
 
 WhiteLinkExt.defaultProps = {
