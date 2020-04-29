@@ -599,6 +599,23 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   let path
 
+  //
+  // People
+  //
+
+  for (let person of allPeople) {
+    createPage({
+      path: `/people/${person.frontmatter.id}`,
+      component: personTemplate,
+      context: {
+        id: person.frontmatter.id,
+        person: person,
+        publications: [],
+        cv: null,
+      },
+    })
+  }
+
   for (let lab of allLabs) {
     path = `/research-areas/labs/${lab.id}`
 
