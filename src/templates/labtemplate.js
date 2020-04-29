@@ -16,6 +16,7 @@ import H1 from "../components/headings/h1"
 import PersonLink from "../components/people/personlink"
 import Container from "../components/container"
 import PeopleGrid from "../components/people/peoplegrid"
+import PersonHeader from "../components/people/personheader"
 
 export const labName = faculty => {
   return `The ${personName(faculty)} Lab`
@@ -27,13 +28,13 @@ const Divisions = ({ lab, peopleMap }) => {
   for (let division of lab.divisions) {
     if (division.people.length > 0) {
       ret.push(
-        <Column className="mb-2">
+        <Column className="mb-4">
           <Column className="w-2/10">
             <div className="text-white p-4 bg-gray-500 w-full h-full">
               <h3>{division.name}</h3>
             </div>
           </Column>
-          <Column className="w-8/10">
+          <Column className="w-8/10 bg-white">
             <PeopleGrid
               people={division.people}
               peopleMap={peopleMap}
@@ -68,7 +69,7 @@ const LabTemplate = ({ pageContext }) => {
 
   return (
     <CrumbLayout crumbs={crumbs} title={title} headerComponent={<SiteSearch />}>
-      <H1>{title}</H1>
+      <PersonHeader person={faculty} title="Labs" />
 
       {/* <div className="text-center">
               <Button

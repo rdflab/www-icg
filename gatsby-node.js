@@ -616,7 +616,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         id: pid,
         person: person,
         publications: pid in personPubMap ? personPubMap[pid] : [],
-        cv: pid in cvMap ? cvMap[pid] : [],
+        cv: pid in cvMap ? cvMap[pid] : null,
       },
     })
   }
