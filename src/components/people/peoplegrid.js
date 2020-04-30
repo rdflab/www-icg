@@ -27,7 +27,7 @@ const PeopleGrid = ({ name, people, peopleMap, cols, faculty }) => {
           <Column className={`w-1/${cols}`}>
             {pc < people.length && (
               <div
-                className={`w-full p-4 rounded-md overflow-hidden hover:shadow-md trans-ani`}
+                className={`w-full p-4 rounded overflow-hidden hover:shadow-md trans-ani`}
               >
                 <div>
                   <div>
