@@ -173,7 +173,7 @@ const PersonTemplate = ({ pageContext, data }) => {
       headerComponent={<SiteSearch />}
     >
       <PersonHeader person={person} />
-      
+
       <Container>
         {/* {interests2(person)} */}
 
@@ -189,7 +189,7 @@ const PersonTemplate = ({ pageContext, data }) => {
 
         <HTMLDiv html={person.html} />
 
-        <Heading>About {personName(person)}</Heading>
+        {/* <Heading>About {personName(person)}</Heading> */}
 
         {cv !== null && cv.education.length > 0 && (
           <div className="mb-8">

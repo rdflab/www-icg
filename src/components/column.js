@@ -20,10 +20,10 @@ const Column = ({
   let baseClass = "flex"
 
   if (isMobile) {
-    baseClass = `${baseClass} flex-row ${w !== "" ? `w-${w}/12` : "w-full"}`
+    baseClass = `${baseClass} flex-row ${w !== "" ? `w-${w}/12` : ""}`
   } else {
     baseClass = `${baseClass} flex-col md:flex-row ${
-      w !== "" ? `md:w-${w}/12` : "w-full"
+      w !== "" ? `md:w-${w}/12` : ""
     }`
   }
 

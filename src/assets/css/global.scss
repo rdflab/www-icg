@@ -237,7 +237,7 @@ a:hover {
 
 
 .header-link {
-  @apply underline-link text-gray-500 mt-2 trans-ani; 
+  @apply link text-gray-500 mt-2 trans-ani; 
 }
 
 .header-link:hover {
@@ -245,7 +245,7 @@ a:hover {
 }
 
 .header-link-active {
-  @apply border-black text-black;
+  @apply text-black;
 }
 
 .header-link-active:hover {

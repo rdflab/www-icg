@@ -2,8 +2,10 @@ import React from "react"
 import ContactInfo from "./contactinfo"
 import PersonLink from "./personlink"
 import Column from "../column"
+import { nominalTypeHack } from "prop-types"
+import H2 from "../headings/h2"
 
-const PeopleGrid = ({ people, peopleMap, cols }) => {
+const PeopleGrid = ({ name, people, peopleMap, cols, faculty }) => {
   const rows = Math.floor(people.length / cols) + 1
 
   const ret = []
@@ -12,24 +14,36 @@ const PeopleGrid = ({ people, peopleMap, cols }) => {
 
   for (let r = 0; r < rows; ++r) {
     const col = []
+    let c = 0
 
-    for (let c = 0; c < cols; ++c) {
+    while (c < cols) {
       let person = peopleMap[people[pc]]
 
-      col.push(
-        <Column className={`w-1/${cols}`}>
-          {pc < people.length && (
-            <div className={`w-full p-4`}>
-              <div>
+      if (
+        faculty === null ||
+        faculty.frontmatter.id !== person.frontmatter.id
+      ) {
+        col.push(
+          <Column className={`w-1/${cols}`}>
+            {pc < people.length && (
+              <div
+                className={`w-full p-4 rounded-md overflow-hidden hover:shadow-md trans-ani`}
+              >
                 <div>
-                  <PersonLink person={person} />
+                  <div>
+                    <PersonLink person={person} />
+                  </div>
+                  <div>{person.frontmatter.title}</div>
+                  <div>
+                    <ContactInfo person={person} />
+                  </div>
                 </div>
-                <ContactInfo person={person} />
               </div>
-            </div>
-          )}
-        </Column>
-      )
+            )}
+          </Column>
+        )
+        ++c
+      }
 
       ++pc
 
@@ -38,18 +52,32 @@ const PeopleGrid = ({ people, peopleMap, cols }) => {
       }
     }
 
-    ret.push(<Column className="w-full">{col}</Column>)
+    if (col.length > 0) {
+      ret.push(<Column>{col}</Column>)
+    }
 
     if (pc === people.length) {
       break
     }
   }
 
-  return <div className="w-full">{ret}</div>
+  if (ret.length > 0) {
+    return (
+      <div className="w-full">
+        <div>
+          <H2 className="mb-4">{name}</H2>
+        </div>
+        <div>{ret}</div>
+      </div>
+    )
+  } else {
+    return null
+  }
 }
 
 PeopleGrid.defaultProps = {
   cols: 4,
+  faculty: null,
 }
 
 export default PeopleGrid

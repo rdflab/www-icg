@@ -22,26 +22,36 @@ export const labName = faculty => {
   return `The ${personName(faculty)} Lab`
 }
 
-const Divisions = ({ lab, peopleMap }) => {
+const Divisions = ({ lab, peopleMap, faculty }) => {
   const ret = []
 
   for (let division of lab.divisions) {
     if (division.people.length > 0) {
       ret.push(
-        <Column className="mb-4">
-          <Column className="w-2/10">
-            <div className="text-white p-4 bg-gray-500 w-full h-full">
-              <h3>{division.name}</h3>
-            </div>
-          </Column>
-          <Column className="w-8/10 bg-white">
-            <PeopleGrid
-              people={division.people}
-              peopleMap={peopleMap}
-              cols={3}
-            />
-          </Column>
-        </Column>
+        // <Column className="mb-4 shadow">
+        //   <Column className="w-2/10">
+        //     <div className="text-white p-4 bg-gray-500 w-full h-full">
+        //       <h3>{division.name}</h3>
+        //     </div>
+        //   </Column>
+        //   <Column className="w-8/10 bg-white">
+        //     <PeopleGrid
+        //       people={division.people}
+        //       peopleMap={peopleMap}
+        //       cols={3}
+        //     />
+        //   </Column>
+        // </Column>
+
+        <div className="mb-8">
+          <PeopleGrid
+            name={division.name}
+            people={division.people}
+            peopleMap={peopleMap}
+            faculty={faculty}
+            cols={3}
+          />
+        </div>
       )
     }
   }
@@ -86,7 +96,7 @@ const LabTemplate = ({ pageContext }) => {
 
       <Container>
         <H1>Meet the team</H1>
-        <Divisions lab={lab} peopleMap={peopleMap} />
+        <Divisions lab={lab} peopleMap={peopleMap} faculty={faculty} />
       </Container>
 
       {labPublications.length > 0 && (

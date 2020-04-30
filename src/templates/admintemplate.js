@@ -20,7 +20,7 @@ const StaffGroups = ({ allAdmin, peopleMap }) => {
     ret.push(
       <div className="mb-8">
         <H2>{group.name}</H2>
-        <PeopleGrid people={group.members} peopleMap={peopleMap} />
+        <PeopleGrid people={group.members} peopleMap={peopleMap} cols={3} />
       </div>
     )
   }

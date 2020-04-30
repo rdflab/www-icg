@@ -1,7 +1,7 @@
 ---
-id: "antony-baden-holmes"
-name: "Antony Baden Holmes"
-firstName: "Antony Baden"
+id: "antony-holmes"
+name: "Antony Holmes"
+firstName: "Antony"
 lastName: "Holmes"
 postNominalLetters: "PhD"
 title: "Associate Research Scientist"
