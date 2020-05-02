@@ -10,5 +10,7 @@ fax: ""
 email: "mo2777@cumc.columbia.edu"
 room: "403"
 url: ""
+type: "Research Staff"
+researchAreas: []
 tags: []
 ---

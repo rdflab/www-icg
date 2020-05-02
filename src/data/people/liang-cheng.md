@@ -10,5 +10,7 @@ fax: ""
 email: "lc3420@cumc.columbia.edu"
 room: "407"
 url: ""
+type: "Research Staff"
+researchAreas: []
 tags: []
 ---

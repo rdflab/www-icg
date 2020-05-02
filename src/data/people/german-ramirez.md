@@ -10,5 +10,7 @@ fax: ""
 email: "gr2241@cumc.columbia.edu"
 room: "4th fl 415"
 url: ""
+type: "Administrative Staff"
+researchAreas: []
 tags: []
 ---

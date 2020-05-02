@@ -1,5 +1,5 @@
 import React from "react"
-import CrumbLayout from "../components/crumblayout"
+import CrumbContainerLayout from "../components/crumbcontainerlayout"
 import BlueLink from "../components/bluelink"
 import SiteSearch from "../components/search/sitesearch"
 import H1 from "../components/headings/h1"
@@ -26,7 +26,7 @@ const ResearchAreasTemplate = ({ pageContext }) => {
   })
 
   return (
-    <CrumbLayout
+    <CrumbContainerLayout
       crumbs={[["Research Areas", "/research-areas"]]}
       title="Research Areas"
       headerComponent={<SiteSearch />}
@@ -45,7 +45,7 @@ const ResearchAreasTemplate = ({ pageContext }) => {
             </h2>
           </FlatCard>
         ))}
-    </CrumbLayout>
+    </CrumbContainerLayout>
   )
 }
 

@@ -10,5 +10,7 @@ fax: ""
 email: "wm49@cumc.columbia.edu"
 room: "401A"
 url: ""
+type: "Research Staff"
+researchAreas: []
 tags: []
 ---

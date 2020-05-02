@@ -10,5 +10,7 @@ fax: ""
 email: "svs2113@cumc.columbia.edu"
 room: ""
 url: ""
+type: "Administrative Staff"
+researchAreas: []
 tags: []
 ---

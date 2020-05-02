@@ -44,7 +44,7 @@ const Person = ({ person, showLabLink, image, generic }) => {
               <BlueLink to={personUrl(person)}>{personName(person)}</BlueLink>
             </h2>
 
-            <h2 className="gray mb-2">{person.frontmatter.titles[0]}</h2>
+            <h2 className="gray mb-2">{person.frontmatter.title}</h2>
 
             <ContactInfo person={person} />
           </div>

@@ -10,5 +10,7 @@ fax: ""
 email: "mh3946@cumc.columbia.edu"
 room: "507"
 url: ""
+type: "Research Staff"
+researchAreas: []
 tags: []
 ---

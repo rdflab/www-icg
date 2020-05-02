@@ -10,5 +10,7 @@ fax: "851-5256"
 email: "cg482@cumc.columbia.edu"
 room: "508"
 url: ""
+type: "Administrative Staff"
+researchAreas: []
 tags: []
 ---

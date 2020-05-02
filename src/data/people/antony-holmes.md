@@ -10,5 +10,7 @@ fax: ""
 email: "abh2138@cumc.columbia.edu"
 room: "507"
 url: ""
+type: "Research Staff"
+researchAreas: ["data-science"]
 tags: []
 ---

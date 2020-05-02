@@ -10,5 +10,7 @@ fax: ""
 email: "aw2785@cumc.columbia.edu"
 room: "401B"
 url: ""
+type: "Research Staff"
+researchAreas: []
 tags: []
 ---

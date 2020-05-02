@@ -10,5 +10,7 @@ fax: ""
 email: "dm3231@cumc.columbia.edu"
 room: "501"
 url: ""
+type: "Research Staff"
+researchAreas: []
 tags: []
 ---

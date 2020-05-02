@@ -10,5 +10,7 @@ fax: "851-5220"
 email: "rb670@columbia.edu"
 room: "503A"
 url: ""
+type: "Research Staff"
+researchAreas: []
 tags: []
 ---

@@ -10,5 +10,7 @@ fax: ""
 email: "mh4066@cumc.columbia.edu"
 room: "403"
 url: ""
+type: "Research Staff"
+researchAreas: []
 tags: []
 ---

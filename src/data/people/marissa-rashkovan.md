@@ -10,5 +10,7 @@ fax: ""
 email: "mr3694@cumc.columbia.edu"
 room: "401B"
 url: ""
+type: "Research Staff"
+researchAreas: []
 tags: []
 ---

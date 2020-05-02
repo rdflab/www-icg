@@ -17,7 +17,7 @@ const CalEventLocation = ({ event, showDate, isMobile }) => {
 
   return (
     <>
-      <HideSmall show={true} className="gray">
+      <HideSmall show={true} className="text-gray">
         <Column isVCentered={true} isMobile={true}>
           <div className="mr-4">
             <FaRegClock size={28} />
@@ -36,7 +36,7 @@ const CalEventLocation = ({ event, showDate, isMobile }) => {
       </HideSmall>
 
       <HideSmall>
-        <Column className="gray items-center">
+        <Column className="text-gray items-center">
           <Column w="1">
             <FaRegClock size={28} />
           </Column>

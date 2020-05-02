@@ -10,5 +10,7 @@ fax: ""
 email: "gs2732@cumc.columbia.edu"
 room: "602"
 url: ""
+type: "Research Staff"
+researchAreas: []
 tags: []
 ---

@@ -10,5 +10,7 @@ fax: ""
 email: "zz2401@columbia.edu"
 room: "406"
 url: ""
+type: "Research Staff"
+researchAreas: []
 tags: []
 ---

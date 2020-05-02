@@ -14,7 +14,7 @@ const toPeopleTypeMap = people => {
       ret[t] = []
     }
 
-    ret[t].push(person)
+    ret[t].push(person.frontmatter.id)
   }
 
   return ret

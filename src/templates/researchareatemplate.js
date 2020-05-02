@@ -1,12 +1,12 @@
 import React from "react"
-import CrumbLayout from "../components/crumblayout"
+import CrumbContainerLayout from "../components/crumbcontainerlayout"
 import PeopleTypes from "../components/people/peopletypes"
 import { graphql } from "gatsby"
 import toImageMap from "../utils/toimagemap"
 import SiteSearch from "../components/search/sitesearch"
 
 const ResearchAreaTemplate = ({ data, pageContext }) => {
-  const { groupMap, allPeople, researchArea } = pageContext
+  const { allPeople, peopleMap, researchArea } = pageContext
 
   const imageMap = toImageMap(data.files)
 
@@ -15,7 +15,7 @@ const ResearchAreaTemplate = ({ data, pageContext }) => {
   })
 
   return (
-    <CrumbLayout
+    <CrumbContainerLayout
       crumbs={[
         ["Research Areas", "/research-areas"],
         [researchArea.name, `/research-areas/${researchArea.id}`],
@@ -26,10 +26,10 @@ const ResearchAreaTemplate = ({ data, pageContext }) => {
       <PeopleTypes
         imageMap={imageMap}
         allPeople={people}
-        groupMap={groupMap}
+        peopleMap={peopleMap}
         showLabLink={true}
       />
-    </CrumbLayout>
+    </CrumbContainerLayout>
   )
 }
 

@@ -10,5 +10,7 @@ fax: "851-5256"
 email: "ic2445@columbia.edu"
 room: "505A"
 url: ""
+type: "Research Staff"
+researchAreas: []
 tags: []
 ---

@@ -10,27 +10,26 @@ import PeopleList from "./peoplelist"
 import { PEOPLE_TYPES } from "../../constants"
 import toPeopleTypeMap from "../../utils/peopletypemap"
 import SectionBreak from "../sectionbreak"
+import PeopleGrid from "./peoplegrid"
 
-const PeopleTypes = ({ allPeople, showLabLink, imageMap }) => {
-  const peopleMap = toPeopleTypeMap(allPeople)
+const PeopleTypes = ({ allPeople, peopleMap, showLabLink, imageMap }) => {
+  const peopleTypeMap = toPeopleTypeMap(allPeople)
 
   var elems = []
 
   var c = 0
 
   for (let type of PEOPLE_TYPES) {
-    const people = peopleMap[type]
+    const people = peopleTypeMap[type]
 
     if (people.length > 0) {
       elems.push(
-        <SectionBreak title={type} key={c++}>
-          <PeopleList
-            key={c++}
-            imageMap={imageMap}
-            people={people}
-            showLabLink={showLabLink}
-          />
-        </SectionBreak>
+        <PeopleGrid
+          name={type}
+          people={people}
+          peopleMap={peopleMap}
+          cols={3}
+        />
       )
     }
   }

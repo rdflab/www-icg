@@ -10,5 +10,7 @@ fax: ""
 email: "kmc2228@cumc.columbia.edu"
 room: "505"
 url: ""
+type: "Research Staff"
+researchAreas: []
 tags: []
 ---

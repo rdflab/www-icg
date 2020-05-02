@@ -10,5 +10,7 @@ fax: ""
 email: "sf3010@cumc.columbia.edu"
 room: "507"
 url: ""
+type: "Research Staff"
+researchAreas: []
 tags: []
 ---

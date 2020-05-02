@@ -10,5 +10,7 @@ fax: ""
 email: "jaz2131@cumc.columbia.edu"
 room: "602"
 url: ""
+type: "Research Staff"
+researchAreas: []
 tags: []
 ---

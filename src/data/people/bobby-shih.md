@@ -10,5 +10,7 @@ fax: ""
 email: "bbs2136@cumc.columbia.edu"
 room: "401B"
 url: ""
+type: "Research Staff"
+researchAreas: []
 tags: []
 ---

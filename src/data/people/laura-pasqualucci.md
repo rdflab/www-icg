@@ -10,5 +10,7 @@ fax: ""
 email: "lp171@cumc.columbia.edu"
 room: " 507B"
 url: ""
+type: "Research Staff"
+researchAreas: []
 tags: []
 ---

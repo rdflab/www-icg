@@ -10,5 +10,7 @@ fax: ""
 email: "bc2283@cumc.columbia.edu"
 room: "507"
 url: ""
+type: "Research Staff"
+researchAreas: []
 tags: []
 ---

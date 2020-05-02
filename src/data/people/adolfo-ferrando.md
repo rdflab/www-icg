@@ -10,5 +10,7 @@ fax: ""
 email: "af2196@columbia.edu"
 room: "402A"
 url: ""
+type: "Research Staff"
+researchAreas: []
 tags: []
 ---

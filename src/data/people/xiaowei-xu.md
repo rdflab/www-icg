@@ -10,5 +10,7 @@ fax: ""
 email: "xx2285@cumc.columbia.edu"
 room: "407"
 url: ""
+type: "Research Staff"
+researchAreas: []
 tags: []
 ---

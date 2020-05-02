@@ -10,5 +10,7 @@ fax: ""
 email: "awl2142@cumc.columbia.edu"
 room: "602"
 url: ""
+type: "Research Staff"
+researchAreas: []
 tags: []
 ---

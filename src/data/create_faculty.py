@@ -154,6 +154,8 @@ for i in range(13, df.shape[0]):
     print('email: "{}"'.format(email), file=f)
     print('room: "{}"'.format(room), file=f)
     print('url: "{}"'.format(url), file=f)
+    print('type: "Research Staff"', file=f)
+    print('researchAreas: []', file=f)
     print('tags: []'.format(url), file=f)
     print('---', file=f)
     f.close()

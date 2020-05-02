@@ -10,5 +10,7 @@ fax: "851-5284"
 email: "jt591@cumc.columbia.edu"
 room: "609"
 url: ""
+type: "Administrative Staff"
+researchAreas: []
 tags: []
 ---

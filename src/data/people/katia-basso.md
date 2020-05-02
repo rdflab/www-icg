@@ -10,5 +10,7 @@ fax: ""
 email: "kb451@cumc.columbia.edu"
 room: "506"
 url: ""
+type: "Research Staff"
+researchAreas: []
 tags: []
 ---

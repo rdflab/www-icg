@@ -9,7 +9,6 @@ import CalSearchResults from "../components/calendar/calsearchresults"
 import DayPicker, { DateUtils } from "react-day-picker"
 import "../../node_modules/react-day-picker/lib/style.css"
 import "../components/calendar/calendar.scss"
-import Title from "../components/title"
 import HideSmall from "../components/hidesmall"
 import H1 from "../components/headings/h1"
 

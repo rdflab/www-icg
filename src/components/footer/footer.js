@@ -1,5 +1,4 @@
 import React from "react"
-import HICCCImage from "../hicccimage"
 import FooterLinks from "./footerlinks"
 import Container from "../container"
 import Column from "../column"

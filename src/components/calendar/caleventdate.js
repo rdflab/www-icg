@@ -2,7 +2,7 @@ import React from "react"
 
 const CalEventDate = ({ event }) => {
   return (
-    <div className="text-center text-blue-columbia mb-4 mr-4">
+    <div className="text-center text-blue-columbia mb-4 w-full">
       <div className="uppercase text-sm">
         {event.start.toLocaleString("default", { month: "short" })}
       </div>

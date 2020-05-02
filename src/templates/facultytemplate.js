@@ -59,12 +59,10 @@ const StaffGrid = ({ people, peopleMap, cols }) => {
     const col = []
 
     for (let c = 0; c < cols; ++c) {
-      console.log(pc, people)
-      console.log(pc, people[pc].id, peopleMap[people[pc].id])
       let person = peopleMap[people[pc].id]
 
       col.push(
-        <Column w={3}>
+        <Column className="md:w-1/4">
           {pc < people.length && (
             <Lab person={person} labId={people[pc].labId} />
           )}

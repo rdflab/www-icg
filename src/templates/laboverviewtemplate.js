@@ -10,8 +10,7 @@ import HTMLDiv from "../components/htmldiv"
 import { labName } from "./labtemplate"
 import { personName } from "../utils/personname"
 
-const LabOverviewTemplate = props => {
-  const { pageContext } = props
+const LabOverviewTemplate = ({ pageContext }) => {
   const { group, labPeople, labPublications, labHtml } = pageContext
 
   const faculty = group.leaders[0]

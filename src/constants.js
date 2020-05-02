@@ -15,9 +15,10 @@ export const MONTHS = [
 
 export const PEOPLE_TYPES = [
   "Faculty",
-  "Administration",
-  "Research Scientists",
-  "Graduate Student",
+  "Administrative Staff",
+  "Research Staff",
+  "Graduate Students",
+  "Undergraduates",
   "Staff",
 ]
 

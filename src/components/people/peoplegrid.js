@@ -2,7 +2,6 @@ import React from "react"
 import ContactInfo from "./contactinfo"
 import PersonLink from "./personlink"
 import Column from "../column"
-import { nominalTypeHack } from "prop-types"
 import H2 from "../headings/h2"
 
 const PeopleGrid = ({ name, people, peopleMap, cols, faculty }) => {
@@ -24,7 +23,7 @@ const PeopleGrid = ({ name, people, peopleMap, cols, faculty }) => {
         faculty.frontmatter.id !== person.frontmatter.id
       ) {
         col.push(
-          <Column className={`w-1/${cols}`}>
+          <Column className={`md:w-1/${cols}`}>
             {pc < people.length && (
               <div
                 className={`w-full p-4 rounded overflow-hidden hover:shadow-md trans-ani`}

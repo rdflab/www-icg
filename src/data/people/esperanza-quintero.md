@@ -10,5 +10,7 @@ fax: ""
 email: "eq2102@cumc.columbia.edu"
 room: "4th fl 415"
 url: ""
+type: "Administrative Staff"
+researchAreas: []
 tags: []
 ---

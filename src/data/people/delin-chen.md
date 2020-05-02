@@ -10,5 +10,7 @@ fax: ""
 email: "dc723@cumc.columbia.edu"
 room: "608"
 url: ""
+type: "Research Staff"
+researchAreas: []
 tags: []
 ---

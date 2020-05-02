@@ -9,6 +9,7 @@ const PEOPLE_TYPES = [
   "Staff",
 ]
 
+const indexTemplate = path.resolve(`src/templates/indextemplate.js`)
 const labTemplate = path.resolve(`src/templates/labtemplate.js`)
 const labsTemplate = path.resolve(`src/templates/labstemplate.js`)
 const facultyTemplate = path.resolve(`src/templates/facultytemplate.js`)
@@ -121,12 +122,14 @@ exports.createSchemaCustomization = ({ actions }) => {
       postNominalLetters: String!
       tags: [String!]!
       room: String!
+      type: String!
       url: String!
       start: Date
       end: Date
       groups: [String!]!
       notes: [String!]!
       people: [String!]!
+      researchAreas: [String!]!
       training: [Training!]!
     }
   `
@@ -175,6 +178,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               phone
               fax
               room
+              type
+              researchAreas
               tags
               url
             }
@@ -360,10 +365,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const researchAreasMap = {}
   const cvMap = {}
 
-  // result.data.researchAreas.edges.forEach(({ node }) => {
-  //   allResearchAreas.push(node)
-  //   researchAreasMap[node.id] = node
-  // })
+  result.data.researchAreas.edges.forEach(({ node }) => {
+    allResearchAreas.push(node)
+    researchAreasMap[node.id] = node
+  })
 
   result.data.cv.edges.forEach(({ node }) => {
     cvMap[node.id] = node
@@ -375,6 +380,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     allLabs.push(lab)
     labMap[lab.id] = lab
   })
+
+  console.log(allLabs)
 
   const allFaculty = []
   result.data.faculty.edges.forEach(({ node }) => {
@@ -603,6 +610,22 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   let path
 
   //
+  // Index
+  //
+
+  createPage({
+    path: "/",
+    component: indexTemplate,
+    context: {
+      director: peopleMap["riccardo-dalla-favera"],
+      allCalEvents: allCalEvents,
+      nEvents: 4,
+      allPublications: allPublications,
+      nPublications: 4,
+    },
+  })
+
+  //
   // People
   //
 
@@ -701,15 +724,12 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     // Lab publications
     //
 
-    path = `${path}/publications`
-
     createPage({
       path: `${path}/publications`,
       component: publicationsTemplate,
       context: {
         title: `${lab.name} Publications`,
         crumbs: [
-          ["Research Areas", "/research-areas"],
           ["Labs", "/research-areas/labs"],
           [lab.name, `/research-areas/labs/${lab.id}`],
           ["Publications", `/research-areas/labs/${lab.id}/publications`],
@@ -873,8 +893,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       path: `/research-areas/${researchArea.id}`,
       component: researchAreaTemplate,
       context: {
-        groupMap: groupMap,
         allPeople: allPeople,
+        peopleMap: peopleMap,
         researchArea: researchArea,
       },
     })

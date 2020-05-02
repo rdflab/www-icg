@@ -2,18 +2,12 @@ import React from "react"
 import CrumbLayout from "../components/crumblayout"
 
 import RecentPublications from "../components/publication/recentpublications"
-import Column from "../components/column"
 //import SideBar from "../components/sidebar/sidebar"
 import SideBarNews from "../components/news/sidebarnews"
-import MainColumn from "../components/maincolumn"
-import SideColumn from "../components/sidecolumn"
-import ContactInfo from "../components/people/contactinfo"
 import HTMLDiv from "../components/htmldiv"
 import SiteSearch from "../components/search/sitesearch"
 import { personName } from "../utils/personname"
-import H2 from "../components/headings/h2"
 import H1 from "../components/headings/h1"
-import PersonLink from "../components/people/personlink"
 import Container from "../components/container"
 import PeopleGrid from "../components/people/peoplegrid"
 import PersonHeader from "../components/people/personheader"
@@ -43,7 +37,7 @@ const Divisions = ({ lab, peopleMap, faculty }) => {
         //   </Column>
         // </Column>
 
-        <div className="mb-8">
+        <div className="mb-4">
           <PeopleGrid
             name={division.name}
             people={division.people}
@@ -100,9 +94,9 @@ const LabTemplate = ({ pageContext }) => {
       </Container>
 
       {labPublications.length > 0 && (
-        <div className="py-8 bg-blue-600">
+        <div className="py-8">
           <Container>
-            <H1 className="text-white">Recent Publications</H1>
+            <H1>Recent Publications</H1>
 
             <RecentPublications lab={lab} publications={labPublications} />
           </Container>

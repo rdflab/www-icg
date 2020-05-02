@@ -3,12 +3,12 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 import flattenEdges from "../../utils/flattenedges"
 import SlideMenuLink from "./slidemenulink"
 import SlideMenuCloseButton from "./slidemenuclosebutton"
-import ColumbiaICGImage from "../images/columbiaicgimage"
 import SiteSearchBar from "../search/sitesearchbar"
 import { getSiteData, Heading } from "../search/sitesearch"
 import { searchTree } from "../search/searchtree"
 import SearchHighlight from "../search/searchhighlight"
 import Column from "../column"
+import logo from "../../assets/svg/icg-logo.svg"
 
 const SiteSearchResult = ({ text, to }) => {
   return (
@@ -154,9 +154,8 @@ const SlideMenuContainer = ({ title, onClickHandle, visible, maxResults }) => {
         }}
       >
         <div className="row items-center justify-between p-4 mb-4 w-full border-b border-solid border-gray-300">
-          <div></div>
           <div>
-            <ColumbiaICGImage style={{ width: `200px` }} />
+            <img src={logo} className="h-8" />
           </div>
           <div className="text-right">
             <SlideMenuCloseButton onClick={onClickHandle} />
