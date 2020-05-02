@@ -61,7 +61,7 @@ const AdminTemplate = ({ pageContext }) => {
     <CrumbContainerLayout
       crumbs={[
         ["People", "/people"],
-        ["Administration", "/administration"],
+        ["Administration", "/people/administration"],
       ]}
       title="Administration"
       headerComponent={<SiteSearch />}

@@ -8,6 +8,7 @@ const toPeopleTypeMap = people => {
   }
 
   for (let person of people) {
+    console.log(person)
     const t = person.frontmatter.type
 
     if (!(t in ret)) {
