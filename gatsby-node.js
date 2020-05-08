@@ -33,6 +33,7 @@ const researchAreasTemplate = path.resolve(
 const researchAreaTemplate = path.resolve(
   `src/templates/researchareatemplate.js`
 )
+const helpTemplate = path.resolve(`src/templates/helptemplate.js`)
 
 const toPeopleMap = people => {
   let ret = {}
@@ -874,6 +875,21 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     })
   }
+
+  // about
+
+  const date = new Date()
+
+  const version =
+    date.getFullYear() + "." + (date.getMonth() + 1) + "." + date.getDate()
+
+  createPage({
+    path: `/help`,
+    component: helpTemplate,
+    context: {
+      version: version,
+    },
+  })
 
   //
   // Indexing

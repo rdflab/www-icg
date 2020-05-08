@@ -2,7 +2,7 @@ import React from "react"
 import ColorLinkExt from "./colorlinkext"
 
 const BlueLinkExt = ({ to, children, target }) => (
-  <ColorLinkExt color="blue" href={to} target={target}>
+  <ColorLinkExt color="blue" to={to} target={target}>
     {children}
   </ColorLinkExt>
 )

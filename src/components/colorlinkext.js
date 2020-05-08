@@ -1,9 +1,10 @@
 import React from "react"
+import ExtLink from "./extlink"
 
 const ColorLinkExt = ({ to, children, target, color }) => (
-  <a className={`${color}-link`} href={to} target={target}>
+  <ExtLink className={`${color}-link`} to={to} target={target}>
     {children}
-  </a>
+  </ExtLink>
 )
 
 ColorLinkExt.defaultProps = {
