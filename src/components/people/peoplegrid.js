@@ -4,7 +4,7 @@ import PersonLink from "./personlink"
 import Column from "../column"
 import H2 from "../headings/h2"
 
-const PeopleGrid = ({ name, people, peopleMap, cols, faculty }) => {
+const PeopleGrid = ({ name, people, cols, faculty }) => {
   const rows = Math.floor(people.length / cols) + 1
 
   const ret = []
@@ -16,7 +16,7 @@ const PeopleGrid = ({ name, people, peopleMap, cols, faculty }) => {
     let c = 0
 
     while (c < cols) {
-      let person = peopleMap[people[pc]]
+      let person = people[pc]
 
       if (
         faculty === null ||

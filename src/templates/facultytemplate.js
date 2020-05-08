@@ -47,8 +47,6 @@ const Lab = ({ person, labId }) => {
 }
 
 const StaffGrid = ({ people, peopleMap, cols }) => {
-  console.log(people)
-
   const rows = Math.floor(people.length / cols) + 1
 
   const ret = []

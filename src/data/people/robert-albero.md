@@ -10,7 +10,7 @@ fax: ""
 email: "ra2967@cumc.columbia.edu"
 room: "401B"
 url: ""
-type: "Research Staff"
+group: "Research Staff"
 researchAreas: []
 tags: []
 ---

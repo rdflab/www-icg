@@ -10,7 +10,7 @@ fax: ""
 email: "zl2783@cumc.columbia.edu"
 room: "407"
 url: ""
-type: "Research Staff"
+group: "Research Staff"
 researchAreas: []
 tags: []
 ---

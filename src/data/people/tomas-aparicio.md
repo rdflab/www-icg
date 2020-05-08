@@ -10,7 +10,7 @@ fax: ""
 email: "ta2308@cumc.columbia.edu"
 room: "602"
 url: ""
-type: "Research Staff"
+group: "Research Staff"
 researchAreas: []
 tags: []
 ---

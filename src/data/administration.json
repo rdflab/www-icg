@@ -1,15 +1,10 @@
 [
   {
-    "id": "divisional-administrator",
-    "name": "Divisional Administrator",
+    "id": "administration",
+    "name": "Administration",
     "url": "",
-    "members": ["tom-gavaris"]
-  },
-  {
-    "id": "administrative-staff",
-    "name": "Administrative Staff",
-    "url": "",
-    "members": [
+    "people": [
+      "tom-gavaris",
       "tina-gellhorn",
       "clara-meregildo",
       "esperanza-quintero",

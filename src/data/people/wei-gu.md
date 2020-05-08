@@ -10,7 +10,7 @@ fax: "851-5284"
 email: "wg8@columbia.edu"
 room: "609A"
 url: ""
-type: "Research Staff"
+group: "Faculty"
 researchAreas: []
 tags: []
 ---

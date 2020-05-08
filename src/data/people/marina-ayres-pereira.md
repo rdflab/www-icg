@@ -10,7 +10,7 @@ fax: ""
 email: "mma2246@cumc.columbia.edu"
 room: "505"
 url: ""
-type: "Research Staff"
+group: "Research Staff"
 researchAreas: []
 tags: []
 ---

@@ -8,12 +8,12 @@
 import React from "react"
 import PeopleList from "./peoplelist"
 import { PEOPLE_TYPES } from "../../constants"
-import toPeopleTypeMap from "../../utils/peopletypemap"
+import toPeopleGroupMap from "../../utils/peoplegroupmap"
 import SectionBreak from "../sectionbreak"
 import PeopleGrid from "./peoplegrid"
 
 const PeopleTypes = ({ allPeople, peopleMap, showLabLink, imageMap }) => {
-  const peopleTypeMap = toPeopleTypeMap(allPeople)
+  const peopleTypeMap = toPeopleGroupMap(allPeople)
 
   var elems = []
 

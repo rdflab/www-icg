@@ -10,7 +10,7 @@ fax: ""
 email: "yx30@cumc.columbia.edu"
 room: "507"
 url: ""
-type: "Research Staff"
+group: "Staff"
 researchAreas: []
 tags: []
 ---

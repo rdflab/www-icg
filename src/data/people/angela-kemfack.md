@@ -10,7 +10,7 @@ fax: ""
 email: "ak4554@cumc.columbia.edu"
 room: "401B"
 url: ""
-type: "Research Staff"
+group: "Staff"
 researchAreas: []
 tags: []
 ---

@@ -2,28 +2,12 @@ import React, { useState } from "react"
 import CrumbContainerLayout from "../components/crumbcontainerlayout"
 import SiteSearch from "../components/search/sitesearch"
 import H1 from "../components/headings/h1"
-import H2 from "../components/headings/h2"
-import PeopleGrid from "../components/people/peoplegrid"
+import PeopleGroups from "../components/people/peoplegroups"
 
 const EMPTY_QUERY = ""
 
-const StaffGroups = ({ allAdmin, peopleMap }) => {
-  const ret = []
-
-  for (let group of allAdmin) {
-    ret.push(
-      <div className="mb-8">
-        <H2>{group.name}</H2>
-        <PeopleGrid people={group.members} peopleMap={peopleMap} cols={3} />
-      </div>
-    )
-  }
-
-  return ret
-}
-
 const AdminTemplate = ({ pageContext }) => {
-  const { allAdmin, peopleMap, crumbs } = pageContext
+  const { adminGroupMap, crumbs } = pageContext
 
   const [query, setQuery] = useState(EMPTY_QUERY)
   const [filteredGroups, setFilteredGroups] = useState([])
@@ -79,9 +63,7 @@ const AdminTemplate = ({ pageContext }) => {
       <H1 className="text-center">Meet our Administration Team</H1>
 
       <div className="w-full">
-        {/* <Labs labs={allGroups} /> */}
-        {/*<StaffGrid labs={allGroups} /> */}
-        <StaffGroups allAdmin={allAdmin} peopleMap={peopleMap} />
+        <PeopleGroups groupMap={adminGroupMap} />
       </div>
     </CrumbContainerLayout>
   )

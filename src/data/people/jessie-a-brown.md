@@ -10,7 +10,7 @@ fax: ""
 email: "jab2451@cumc.columbia.edu"
 room: "401B"
 url: ""
-type: "Research Staff"
+group: "Research Staff"
 researchAreas: []
 tags: []
 ---

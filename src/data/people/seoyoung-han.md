@@ -10,7 +10,7 @@ fax: ""
 email: "sh3844@cumc.columbia.edu"
 room: "401A"
 url: ""
-type: "Research Staff"
+group: "Staff"
 researchAreas: []
 tags: []
 ---

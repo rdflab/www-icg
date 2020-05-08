@@ -10,7 +10,7 @@ fax: ""
 email: "rdn2108@cumc.columbia.edu"
 room: "403"
 url: ""
-type: "Research Staff"
+group: "Staff"
 researchAreas: []
 tags: []
 ---

@@ -10,7 +10,7 @@ fax: ""
 email: "tg2680@cumc.columbia.edu"
 room: "401 B"
 url: ""
-type: "Research Staff"
+group: "Staff"
 researchAreas: []
 tags: []
 ---

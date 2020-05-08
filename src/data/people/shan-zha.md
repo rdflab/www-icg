@@ -10,7 +10,7 @@ fax: ""
 email: "SZ2296@columbia.edu"
 room: "503B"
 url: ""
-type: "Research Staff"
+group: "Faculty"
 researchAreas: []
 tags: []
 ---

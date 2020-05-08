@@ -13,8 +13,9 @@ export const MONTHS = [
   "December",
 ]
 
-export const PEOPLE_TYPES = [
+export const GROUPS = [
   "Faculty",
+  "Divisional Administrator",
   "Administrative Staff",
   "Research Staff",
   "Graduate Students",

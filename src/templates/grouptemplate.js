@@ -53,8 +53,6 @@ const GroupTemplate = ({ data, pageContext }) => {
   const offset = (page - 1) * recordsPerPage
   //let pagedPeople = typeFilteredPeople.slice(offset, offset + recordsPerPage)
 
-  console.log(imageMap)
-
   return (
     <CrumbContainerLayout
       crumbs={crumbs}

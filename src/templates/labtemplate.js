@@ -11,58 +11,23 @@ import H1 from "../components/headings/h1"
 import Container from "../components/container"
 import PeopleGrid from "../components/people/peoplegrid"
 import PersonHeader from "../components/people/personheader"
+import { GROUPS } from "../constants"
+import PeopleGroups from "../components/people/peoplegroups"
 
 export const labName = faculty => {
   return `The ${personName(faculty)} Lab`
 }
 
-const Divisions = ({ lab, peopleMap, faculty }) => {
-  const ret = []
-
-  for (let division of lab.divisions) {
-    if (division.people.length > 0) {
-      ret.push(
-        // <Column className="mb-4 shadow">
-        //   <Column className="w-2/10">
-        //     <div className="text-white p-4 bg-gray-500 w-full h-full">
-        //       <h3>{division.name}</h3>
-        //     </div>
-        //   </Column>
-        //   <Column className="w-8/10 bg-white">
-        //     <PeopleGrid
-        //       people={division.people}
-        //       peopleMap={peopleMap}
-        //       cols={3}
-        //     />
-        //   </Column>
-        // </Column>
-
-        <div className="mb-4">
-          <PeopleGrid
-            name={division.name}
-            people={division.people}
-            peopleMap={peopleMap}
-            faculty={faculty}
-            cols={3}
-          />
-        </div>
-      )
-    }
-  }
-
-  return ret
-}
-
 const LabTemplate = ({ pageContext }) => {
   const {
     lab,
-    peopleMap,
+    faculty,
+    labGroupMap,
     labPublications,
     labNews,
     labExcerptHtml,
+    peopleMap,
   } = pageContext
-
-  const faculty = peopleMap[lab.id]
 
   const title = labName(faculty)
 
@@ -90,7 +55,7 @@ const LabTemplate = ({ pageContext }) => {
 
       <Container>
         <H1>Meet the team</H1>
-        <Divisions lab={lab} peopleMap={peopleMap} faculty={faculty} />
+        <PeopleGroups groupMap={labGroupMap} faculty={faculty} />
       </Container>
 
       {labPublications.length > 0 && (

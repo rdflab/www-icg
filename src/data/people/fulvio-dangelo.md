@@ -10,7 +10,7 @@ fax: ""
 email: "fd2396@cumc.columbia.edu"
 room: "403"
 url: ""
-type: "Research Staff"
+group: "Research Staff"
 researchAreas: []
 tags: []
 ---

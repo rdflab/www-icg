@@ -10,7 +10,7 @@ fax: ""
 email: "as5797@cumc.columbia.edu"
 room: "401A"
 url: ""
-type: "Research Staff"
+group: "Research Staff"
 researchAreas: []
 tags: []
 ---

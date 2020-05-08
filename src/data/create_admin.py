@@ -36,7 +36,7 @@ id_map = {}
 lab_map = collections.defaultdict(list)
 
 new_lab = False
-lab_group = 'Divisional Administrator'
+lab_group = 'Administration' #'Divisional Administrator'
 
 for i in range(3, 14):
     name = df.iloc[i, 0]
@@ -71,7 +71,7 @@ for i in range(3, 14):
     
     if new_lab:
         current_lab = lab_map[lab_group]
-        lab_group = 'Administrative Staff'
+        #lab_group = 'Administrative Staff'
         new_lab = False
     
     id = '{}-{}'.format(firstName.lower(), lastName.lower())
@@ -106,6 +106,11 @@ for i in range(3, 14):
     
     url = ''
     
+    type = 'Administrative Staff'
+    
+    if 'Divisional' in title:
+        type = 'Divisional Administrator'
+    
     #
     # Create markdown
     #
@@ -123,7 +128,7 @@ for i in range(3, 14):
     print('email: "{}"'.format(email), file=f)
     print('room: "{}"'.format(room), file=f)
     print('url: "{}"'.format(url), file=f)
-    print('type: "Administrative Staff"', file=f)
+    print('group: "{}"'.format(type), file=f)
     print('researchAreas: []', file=f)
     print('tags: []', file=f)
     print('---', file=f)
@@ -133,7 +138,7 @@ for i in range(3, 14):
 # Sorted map of labs to people
 #
 
-GROUPS = ['Divisional Administrator', 'Administrative Staff']
+GROUPS = ['Administration'] #, 'Divisional Administrator', 'Administrative Staff']
 
 SUB_GROUPS = ['Staff']
 
@@ -142,7 +147,7 @@ all_divisions = []
 for g in GROUPS:
     faculty = []
     
-    division = {'id':g.lower().replace(' ', '-'), 'name':g, 'url':'', 'members': []}
+    division = {'id':g.lower().replace(' ', '-'), 'name':g, 'url':'', 'people': []}
     
     faculty_names = sort_names(lab_map[g])
     
@@ -154,7 +159,7 @@ for g in GROUPS:
         #subgroup['staff'] = [id_map[name] for name in member_names]
         #lab['subgroups'].append(subgroup)
             
-        division['members'].append(id_map[name])
+        division['people'].append(id_map[name])
         
     all_divisions.append(division)
         

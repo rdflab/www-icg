@@ -10,7 +10,7 @@ fax: ""
 email: "bs3281@cumc.columbia.edu"
 room: "505"
 url: ""
-type: "Research Staff"
+group: "Staff"
 researchAreas: []
 tags: []
 ---

@@ -58,7 +58,7 @@ const Person = ({ person, showLabLink, image, generic }) => {
                   </BlueLink>
                 </h3>
 
-                <div className="gray mb-4">{person.frontmatter.titles[0]}</div>
+                <div className="gray mb-4">{person.frontmatter.title}</div>
               </div>
             </Column>
             <Column w={6}>

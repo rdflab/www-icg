@@ -10,7 +10,7 @@ fax: ""
 email: "sa3141@columbia.edu"
 room: "402B"
 url: ""
-type: "Research Staff"
+group: "Faculty"
 researchAreas: []
 tags: []
 ---

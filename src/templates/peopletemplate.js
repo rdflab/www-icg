@@ -3,8 +3,8 @@ import { graphql } from "gatsby"
 import CrumbContainerLayout from "../components/crumbcontainerlayout"
 import toImageMap from "../utils/toimagemap"
 import PeopleSearchResults from "../components/people/peoplesearchresults"
-import { PEOPLE_TYPES } from "../constants"
-import toPeopleTypeMap from "../utils/peopletypemap"
+import { PEOPLE_TYPES, GROUPS } from "../constants"
+import toPeopleGroupMap from "../utils/peoplegroupmap"
 import SearchBar from "../components/search/searchbar"
 //import TypesFilter from "../components/people/typesfilter"
 import TypeSelector from "../components/people/typeselector"
@@ -14,13 +14,14 @@ import SiteSearch from "../components/search/sitesearch"
 import Column from "../components/column"
 import ShowSmall from "../components/showsmall"
 import H1 from "../components/headings/h1"
+import PeopleGroups from "../components/people/peoplegroups"
 // import MainColumn from "../components/maincolumn"
 // import SideColumn from "../components/sidecolumn"
 
 const EMPTY_QUERY = ""
 
 const PeopleTemplate = ({ data, pageContext }) => {
-  const { title, crumbs, allPeople } = pageContext
+  const { title, crumbs, allPeople, groupMap } = pageContext
 
   const [query, setQuery] = useState(EMPTY_QUERY)
   const [filteredPeople, setFilteredPeople] = useState([])
@@ -82,15 +83,17 @@ const PeopleTemplate = ({ data, pageContext }) => {
   const offset = (page - 1) * recordsPerPage
   //let pagedPeople = typeFilteredPeople.slice(offset, offset + recordsPerPage)
 
-  const peopleTypeMap = toPeopleTypeMap(typeFilteredPeople)
+  //const groupMap = toPeopleGroupMap(typeFilteredPeople)
+
+  const filteredGroupMap = toPeopleGroupMap(typeFilteredPeople)
 
   var c = 0
   let typeOrderedPeople = []
   // extract number of records
-  for (let type of PEOPLE_TYPES) {
-    let p = peopleTypeMap[type]
+  for (let g of GROUPS) {
+    const gp = groupMap[g]
 
-    for (let person of p) {
+    for (let person of gp) {
       if (c >= offset) {
         typeOrderedPeople.push(person)
       }
@@ -112,15 +115,15 @@ const PeopleTemplate = ({ data, pageContext }) => {
       crumbs={crumbs}
       title={title}
       headerComponent={<SiteSearch />}
-      titleComponent={
-        <SearchSummary
-          count={typeFilteredPeople.length}
-          single="Member"
-          plural="Members"
-        />
-      }
+      // titleComponent={
+      //   <SearchSummary
+      //     count={typeFilteredPeople.length}
+      //     single="Member"
+      //     plural="Members"
+      //   />
+      // }
     >
-      <H1>{title}</H1>
+      {/* <H1>{title}</H1> */}
 
       <ShowSmall>
         <SearchBar
@@ -145,15 +148,15 @@ const PeopleTemplate = ({ data, pageContext }) => {
       {/* <Column>
       <MainColumn>
         <div className="w-full"> */}
-      <HideSmall>
+      {/* <HideSmall>
         <Column isVCentered={true} className="justify-center mt-8">
           <div>
             <TypeSelector onClick={handleClick} />
           </div>
         </Column>
-      </HideSmall>
+      </HideSmall> */}
 
-      <PeopleSearchResults
+      {/* <PeopleSearchResults
         people={typeFilteredPeople}
         pagedPeople={typeOrderedPeople}
         page={page}
@@ -161,7 +164,10 @@ const PeopleTemplate = ({ data, pageContext }) => {
         imageMap={imageMap}
         showLabLink={true}
         onPageChanged={onPageChanged}
-      />
+      /> */}
+
+      <PeopleGroups groupMap={filteredGroupMap} />
+
       {/* </div>
       </MainColumn>
       <SideColumn></SideColumn>

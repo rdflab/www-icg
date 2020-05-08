@@ -141,6 +141,14 @@ for i in range(13, df.shape[0]):
     # Create markdown
     #
     
+    t = 'Staff'
+    
+    if 'Research' in title or 'Postdoc' in title:
+        t = 'Research Staff'
+    
+    if 'Professor' in title:
+        t = 'Faculty'
+    
     f = open('people/{}.md'.format(id), 'w')
     print('---', file=f)
     print('id: "{}"'.format(id), file=f)
@@ -154,7 +162,7 @@ for i in range(13, df.shape[0]):
     print('email: "{}"'.format(email), file=f)
     print('room: "{}"'.format(room), file=f)
     print('url: "{}"'.format(url), file=f)
-    print('type: "Research Staff"', file=f)
+    print('group: "{}"'.format(t), file=f)
     print('researchAreas: []', file=f)
     print('tags: []'.format(url), file=f)
     print('---', file=f)
@@ -181,13 +189,14 @@ for g in GROUPS:
     faculty_names = sort_names(lab_map[g])
     
     for name in faculty_names:
-        lab = {'id':id_map[name], 'name':name, 'url':'', 'divisions': []}
+        lab = {'id':id_map[name], 'name':name, 'url':'', 'people':[]} #, 'divisions': []}
         
         for sg in SUB_GROUPS:
             division = {'id':sg.lower().replace(' ', '-'), 'name':sg, 'url':'', 'people':[]}
             member_names = sort_names(lab_map[g][name][sg])
             division['people'] = [id_map[name] for name in member_names]
-            lab['divisions'].append(division)
+            lab['people'].extend([id_map[name] for name in member_names])
+            #lab['divisions'].append(division)
             
         group['faculty'].append({'id':id_map[name], 'labId':lab_map[g][name]['id']})
         

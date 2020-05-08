@@ -10,7 +10,7 @@ fax: ""
 email: "jy2652@cumc.columbia.edu"
 room: "608"
 url: ""
-type: "Research Staff"
+group: "Research Staff"
 researchAreas: []
 tags: []
 ---

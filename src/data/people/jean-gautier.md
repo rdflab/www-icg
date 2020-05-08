@@ -10,7 +10,7 @@ fax: ""
 email: "jg130@columbia.edu"
 room: "603A, 602,613"
 url: ""
-type: "Research Staff"
+group: "Faculty"
 researchAreas: []
 tags: []
 ---

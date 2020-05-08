@@ -10,7 +10,7 @@ fax: ""
 email: "fw110@cumc.columbia.edu"
 room: "502"
 url: ""
-type: "Research Staff"
+group: "Staff"
 researchAreas: []
 tags: []
 ---

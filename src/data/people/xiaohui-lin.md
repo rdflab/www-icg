@@ -10,7 +10,7 @@ fax: ""
 email: "xl2866@cumc.columbia.edu"
 room: "501"
 url: ""
-type: "Research Staff"
+group: "Research Staff"
 researchAreas: []
 tags: []
 ---

@@ -10,7 +10,7 @@ fax: "851-5267"
 email: "al2179@columbia.edu"
 room: "405"
 url: ""
-type: "Research Staff"
+group: "Faculty"
 researchAreas: []
 tags: []
 ---

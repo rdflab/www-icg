@@ -10,7 +10,7 @@ fax: ""
 email: "xy2448@cumc.columbia.edu"
 room: "608"
 url: ""
-type: "Research Staff"
+group: "Research Staff"
 researchAreas: []
 tags: []
 ---

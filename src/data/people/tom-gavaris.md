@@ -10,7 +10,7 @@ fax: "851-5256"
 email: "tg2294@cumc.columbia.edu"
 room: "508B"
 url: ""
-type: "Administrative Staff"
+group: "Divisional Administrator"
 researchAreas: []
 tags: []
 ---

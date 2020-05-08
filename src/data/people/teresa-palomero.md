@@ -10,7 +10,7 @@ fax: ""
 email: "tp2151@cumc.columbia.edu"
 room: "404"
 url: ""
-type: "Research Staff"
+group: "Faculty"
 researchAreas: []
 tags: []
 ---

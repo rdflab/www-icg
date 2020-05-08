@@ -10,7 +10,7 @@ fax: ""
 email: "snm2142@cumc.columbia.edu"
 room: "507"
 url: ""
-type: "Research Staff"
+group: "Research Staff"
 researchAreas: []
 tags: []
 ---
