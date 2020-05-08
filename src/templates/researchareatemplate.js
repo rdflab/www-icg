@@ -1,18 +1,21 @@
 import React from "react"
 import CrumbContainerLayout from "../components/crumbcontainerlayout"
-import PeopleTypes from "../components/people/peopletypes"
 import { graphql } from "gatsby"
 import toImageMap from "../utils/toimagemap"
 import SiteSearch from "../components/search/sitesearch"
+import toPeopleGroupMap from "../utils/peoplegroupmap"
+import PeopleGroups from "../components/people/peoplegroups"
 
 const ResearchAreaTemplate = ({ data, pageContext }) => {
-  const { allPeople, peopleMap, researchArea } = pageContext
+  const { allPeople, researchArea } = pageContext
 
-  const imageMap = toImageMap(data.files)
+  //const imageMap = toImageMap(data.files)
 
   const people = allPeople.filter(person => {
     return person.frontmatter.researchAreas.includes(researchArea.id)
   })
+
+  const groupMap = toPeopleGroupMap(people)
 
   return (
     <CrumbContainerLayout
@@ -23,12 +26,7 @@ const ResearchAreaTemplate = ({ data, pageContext }) => {
       title={researchArea.name}
       headerComponent={<SiteSearch />}
     >
-      <PeopleTypes
-        imageMap={imageMap}
-        allPeople={people}
-        peopleMap={peopleMap}
-        showLabLink={true}
-      />
+      <PeopleGroups groupMap={groupMap} showLabLink={true} />
     </CrumbContainerLayout>
   )
 }

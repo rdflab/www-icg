@@ -23,7 +23,7 @@ const GroupTemplate = ({ data, pageContext }) => {
   const [page, setPage] = useState(1)
   const [recordsPerPage, setRecordsPerPage] = useState(20)
 
-  const imageMap = toImageMap(data.files)
+  //const imageMap = toImageMap(data.files)
 
   const handleInputChange = e => {
     const q = e.target.value
@@ -93,25 +93,25 @@ const GroupTemplate = ({ data, pageContext }) => {
 
 export default GroupTemplate
 
-export const query = graphql`
-  query {
-    files: allFile(
-      filter: {
-        absolutePath: { regex: "/images/people/" }
-        ext: { eq: ".jpg" }
-      }
-    ) {
-      edges {
-        node {
-          name
-          relativePath
-          childImageSharp {
-            fluid(maxWidth: 500) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-      }
-    }
-  }
-`
+// export const query = graphql`
+//   query {
+//     files: allFile(
+//       filter: {
+//         absolutePath: { regex: "/images/people/" }
+//         ext: { eq: ".jpg" }
+//       }
+//     ) {
+//       edges {
+//         node {
+//           name
+//           relativePath
+//           childImageSharp {
+//             fluid(maxWidth: 500) {
+//               ...GatsbyImageSharpFluid
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// `

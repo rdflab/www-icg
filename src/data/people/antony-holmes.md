@@ -11,6 +11,6 @@ email: "abh2138@cumc.columbia.edu"
 room: "507"
 url: ""
 group: "Research Staff"
-researchAreas: []
+researchAreas: ["data-science"]
 tags: []
 ---
