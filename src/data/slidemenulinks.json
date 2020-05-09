@@ -14,5 +14,9 @@
   {
     "name": "Events",
     "link": "/events"
+  },
+  {
+    "name": "About Us",
+    "link": "/about"
   }
 ]

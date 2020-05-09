@@ -17,36 +17,36 @@ const HelpTemplate = ({ pageContext }) => {
 
   return (
     <CrumbContainerLayout title="Help" crumbs={[["Help", "/help"]]}>
-      <div>
-        <p>Institute for Cancer Genetics website</p>
+      <div className="text-center">
+        {/* <p>Institute for Cancer Genetics website</p> */}
         <p>Version: {version}</p>
         <p>
-          Copyright &copy; 2020{" "}
+          &copy; 2020{" "}
           <BlueLinkExt to="mailto:antony@antonyholmes.com">
             Antony Holmes
           </BlueLinkExt>
         </p>
       </div>
-      <div className="mt-8">
+      <div className="mt-8 text-center">
         <p className="font-semibold">Built using the following technologies:</p>
 
-        <Column className="w-full mt-8">
-          <Column className="w-1/4">
+        <Column className="w-full mt-8 justify-center items-center">
+          <Column className="w-2/10 justify-center">
             <ExtLink to="https://www.npmjs.com/">
               <img src={npmsvg} className="h-8" />
             </ExtLink>
           </Column>
-          <Column className="w-1/4">
+          <Column className="w-2/10 justify-center">
             <ExtLink to="https://www.gatsbyjs.org">
               <img src={gatsbysvg} className="h-8" />
             </ExtLink>
           </Column>
-          <Column className="w-1/4">
+          <Column className="w-2/10 justify-center">
             <ExtLink to="https://mariadb.com/">
               <img src={mariadbsvg} className="h-8" />
             </ExtLink>
           </Column>
-          <Column className="w-1/4">
+          <Column className="w-2/10 justify-center">
             <a href="https://aws.amazon.com/what-is-cloud-computing">
               <img
                 src="https://d0.awsstatic.com/logos/powered-by-aws.png"

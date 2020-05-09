@@ -881,10 +881,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const date = new Date()
 
   const version =
-    date.getFullYear() + "." + (date.getMonth() + 1) + "." + date.getDate()
+    date.toLocaleString("default", { year: "numeric" }) +
+    "." +
+    date.toLocaleString("default", { month: "2-digit" }) +
+    "." +
+    date.toLocaleString("default", { day: "2-digit" })
 
   createPage({
-    path: `/help`,
+    path: "/help",
     component: helpTemplate,
     context: {
       version: version,

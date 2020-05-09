@@ -12,10 +12,6 @@
     "link": "/events"
   },
   {
-    "name": "Contact Us",
-    "link": "/contact"
-  },
-  {
     "name": "Booking",
     "link": "/services/booking"
   }
