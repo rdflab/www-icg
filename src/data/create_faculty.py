@@ -143,7 +143,7 @@ for i in range(13, df.shape[0]):
     
     t = 'Staff'
     
-    if 'Research' in title or 'Postdoc' in title:
+    if 'Research' in title or 'Postdoc' in title or 'Instructor' in title:
         t = 'Research Staff'
     
     if 'Professor' in title:
@@ -169,8 +169,6 @@ for i in range(13, df.shape[0]):
     f.close()
         
     
-    if 'Antony' in formatted_name:
-        print(i, id, formatted_name)
 
 #
 # Sorted map of labs to people

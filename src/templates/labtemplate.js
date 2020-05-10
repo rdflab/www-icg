@@ -9,14 +9,9 @@ import SiteSearch from "../components/search/sitesearch"
 import { personName } from "../utils/personname"
 import H1 from "../components/headings/h1"
 import Container from "../components/container"
-import PeopleGrid from "../components/people/peoplegrid"
 import PersonHeader from "../components/people/personheader"
-import { GROUPS } from "../constants"
 import PeopleGroups from "../components/people/peoplegroups"
-
-export const labName = faculty => {
-  return `The ${personName(faculty)} Lab`
-}
+import { labName } from "../utils/labname"
 
 const LabTemplate = ({ pageContext }) => {
   const {
@@ -26,7 +21,6 @@ const LabTemplate = ({ pageContext }) => {
     labPublications,
     labNews,
     labExcerptHtml,
-    peopleMap,
   } = pageContext
 
   const title = labName(faculty)
@@ -55,7 +49,12 @@ const LabTemplate = ({ pageContext }) => {
 
       <Container>
         <H1>Meet the team</H1>
-        <PeopleGroups groupMap={labGroupMap} faculty={faculty} />
+        <PeopleGroups
+          groupMap={labGroupMap}
+          faculty={faculty}
+          cols={4}
+          colWidth="w-2/10"
+        />
       </Container>
 
       {labPublications.length > 0 && (

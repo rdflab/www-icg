@@ -2,7 +2,7 @@ import React from "react"
 import { GROUPS } from "../../constants"
 import PeopleGrid from "./peoplegrid"
 
-const PeopleGroups = ({ groupMap, faculty }) => {
+const PeopleGroups = ({ groupMap, cols, colWidth, smallView, faculty }) => {
   const ret = []
 
   for (let g of GROUPS) {
@@ -10,23 +10,15 @@ const PeopleGroups = ({ groupMap, faculty }) => {
       const people = groupMap[g]
 
       ret.push(
-        // <Column className="mb-4 shadow">
-        //   <Column className="w-2/10">
-        //     <div className="text-white p-4 bg-gray-500 w-full h-full">
-        //       <h3>{division.name}</h3>
-        //     </div>
-        //   </Column>
-        //   <Column className="w-8/10 bg-white">
-        //     <PeopleGrid
-        //       people={division.people}
-        //       peopleMap={peopleMap}
-        //       cols={3}
-        //     />
-        //   </Column>
-        // </Column>
-
         <div className="mb-4">
-          <PeopleGrid name={g} people={people} faculty={faculty} cols={3} />
+          <PeopleGrid
+            name={g}
+            people={people}
+            faculty={faculty}
+            cols={cols}
+            colWidth={colWidth}
+            smallView={smallView}
+          />
         </div>
       )
     }
@@ -37,6 +29,9 @@ const PeopleGroups = ({ groupMap, faculty }) => {
 
 PeopleGroups.defaultProps = {
   faculty: null,
+  smallView: false,
+  cols: 4,
+  colWidth: "w-2/10",
 }
 
 export default PeopleGroups

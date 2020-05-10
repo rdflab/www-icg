@@ -10,6 +10,7 @@ import PublicationList from "./publicationlist"
 import SectionBreak from "../sectionbreak"
 import Column from "../column"
 import H2 from "../headings/h2"
+import FullDiv from "../fulldiv"
 
 const PublicationYears = ({ publications, sectionMode, showLabLink }) => {
   let yearMap = new Map()
@@ -33,18 +34,16 @@ const PublicationYears = ({ publications, sectionMode, showLabLink }) => {
         .map((year, index) => {
           return (
             <Column className="mb-8">
-              <Column w={2} className="pr-8">
-                <div className="row items-center justify-end h-16 w-full">
-                  <h2 className="text-blue-600">{year}</h2>
-                </div>
+              <Column className="w-1/10 justify-end mr-8">
+                <h2 className="text-blue-600">{year}</h2>
               </Column>
-              <Column w={10} className="p-8 bg-white shadow">
-                <div>
+              <Column className="w-9/10">
+                <FullDiv>
                   <PublicationList
                     publications={yearMap.get(year)}
                     showLabLink={showLabLink}
                   />
-                </div>
+                </FullDiv>
               </Column>
             </Column>
           )

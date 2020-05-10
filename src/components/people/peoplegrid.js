@@ -3,8 +3,9 @@ import ContactInfo from "./contactinfo"
 import PersonLink from "./personlink"
 import Column from "../column"
 import H2 from "../headings/h2"
+import FullDiv from "../fulldiv"
 
-const PeopleGrid = ({ name, people, cols, faculty }) => {
+const PeopleGrid = ({ name, people, cols, colWidth, smallView, faculty }) => {
   const rows = Math.floor(people.length / cols) + 1
 
   const ret = []
@@ -13,46 +14,47 @@ const PeopleGrid = ({ name, people, cols, faculty }) => {
 
   for (let r = 0; r < rows; ++r) {
     const col = []
-    let c = 0
 
-    while (c < cols) {
-      let person = people[pc]
+    for (let c = 0; c < cols; ++c) {
+      let person = null
 
-      if (
-        faculty === null ||
-        faculty.frontmatter.id !== person.frontmatter.id
-      ) {
-        col.push(
-          <Column className={`md:w-1/${cols}`}>
-            {pc < people.length && (
-              <div
-                className={`w-full p-4 rounded overflow-hidden hover:shadow-md trans-ani`}
-              >
-                <div>
-                  <div>
-                    <PersonLink person={person} />
-                  </div>
-                  <div>{person.frontmatter.title}</div>
-                  <div>
-                    <ContactInfo person={person} />
-                  </div>
-                </div>
+      if (pc < people.length) {
+        person = people[pc++]
+
+        if (
+          faculty !== null &&
+          faculty.frontmatter.id === person.frontmatter.id
+        ) {
+          person = people[pc++]
+        }
+      }
+
+      col.push(
+        <Column className={`md:${colWidth}`}>
+          {person != null && (
+            <div className={`w-full py-4 trans-ani`}>
+              <div>
+                <PersonLink person={person} />
               </div>
-            )}
-          </Column>
-        )
-        ++c
-      }
+              <div>{person.frontmatter.title}</div>
 
-      ++pc
+              {!smallView && (
+                <div>
+                  <ContactInfo person={person} />
+                </div>
+              )}
+            </div>
+          )}
+        </Column>
+      )
 
-      if (pc === people.length) {
-        break
-      }
+      // if (pc === people.length) {
+      //   break
+      // }
     }
 
     if (col.length > 0) {
-      ret.push(<Column>{col}</Column>)
+      ret.push(<Column className="justify-between">{col}</Column>)
     }
 
     if (pc === people.length) {
@@ -62,12 +64,12 @@ const PeopleGrid = ({ name, people, cols, faculty }) => {
 
   if (ret.length > 0) {
     return (
-      <div className="w-full">
+      <FullDiv>
         <div>
-          <H2 className="mb-4">{name}</H2>
+          <h2>{name}</h2>
         </div>
         <div>{ret}</div>
-      </div>
+      </FullDiv>
     )
   } else {
     return null
@@ -76,6 +78,8 @@ const PeopleGrid = ({ name, people, cols, faculty }) => {
 
 PeopleGrid.defaultProps = {
   cols: 4,
+  colWidth: "w-2/10",
+  smallView: false,
   faculty: null,
 }
 

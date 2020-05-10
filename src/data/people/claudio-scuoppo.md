@@ -10,7 +10,7 @@ fax: ""
 email: "cs3064@cumc.columbia.edu"
 room: "507"
 url: ""
-group: "Staff"
+group: "Research Staff"
 researchAreas: []
 tags: []
 ---

@@ -13,6 +13,7 @@ const GROUPS = [
 
 const indexTemplate = path.resolve(`src/templates/indextemplate.js`)
 const labTemplate = path.resolve(`src/templates/labtemplate.js`)
+const labPeopleTemplate = path.resolve(`src/templates/labpeopletemplate.js`)
 const labsTemplate = path.resolve(`src/templates/labstemplate.js`)
 const facultyTemplate = path.resolve(`src/templates/facultytemplate.js`)
 const adminTemplate = path.resolve(`src/templates/admintemplate.js`)
@@ -656,6 +657,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         labGroupMap: labGroupMap,
         labPublications: labPublications,
         labNews: labNews,
+      },
+    })
+
+    createPage({
+      path: `${path}/people`,
+      component: labPeopleTemplate,
+      context: {
+        lab: lab,
+        faculty: faculty,
+        labGroupMap: labGroupMap,
       },
     })
 
