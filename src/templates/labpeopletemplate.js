@@ -28,12 +28,7 @@ const LabPeopleTemplate = ({ pageContext }) => {
       <PersonHeader person={faculty} title="Labs" />
 
       <Container>
-        <PeopleGroups
-          groupMap={labGroupMap}
-          faculty={faculty}
-          cols={4}
-          colWidth="w-2/10"
-        />
+        <PeopleGroups groupMap={labGroupMap} faculty={faculty} />
       </Container>
     </CrumbLayout>
   )

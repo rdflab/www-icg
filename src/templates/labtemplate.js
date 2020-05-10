@@ -49,12 +49,7 @@ const LabTemplate = ({ pageContext }) => {
 
       <Container>
         <H1>Meet the team</H1>
-        <PeopleGroups
-          groupMap={labGroupMap}
-          faculty={faculty}
-          cols={4}
-          colWidth="w-2/10"
-        />
+        <PeopleGroups groupMap={labGroupMap} faculty={faculty} />
       </Container>
 
       {labPublications.length > 0 && (
@@ -66,20 +61,6 @@ const LabTemplate = ({ pageContext }) => {
           </Container>
         </div>
       )}
-
-      {/* {labPublications.length > 0 && (
-              <div className="my-8">
-                <SectionBreak>
-                  <Collapsible
-                    title="Recent Publications"
-                    height="auto"
-                    headerClassName="text-blue-700"
-                  >
-                    <RecentPublications lab={lab} publications={labPublications}/>
-                  </Collapsible>
-                </SectionBreak>
-              </div>
-            )} */}
 
       {labNews.length > 0 && (
         <div className="mt-8">
