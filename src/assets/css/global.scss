@@ -326,6 +326,17 @@ a:hover {
   @apply w-full bg-white border border-solid border-gray-300 rounded-md px-4 py-2 overflow-hidden;
 }
 
+.help-logo {
+  @apply transition-all duration-300;
+  filter: grayscale(100%);
+  opacity: 0.5;
+}
+
+.help-logo:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
 /* purgecss end ignore */
 
 //@tailwind utilities;

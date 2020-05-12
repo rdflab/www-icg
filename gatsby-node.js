@@ -121,6 +121,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       people: [String!]!
       researchAreas: [String!]!
       training: [Training!]!
+      authors: [String!]!
     }
   `
   createTypes(typeDefs)
@@ -213,11 +214,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       publications: allPublicationsJson(sort: { fields: year, order: DESC }) {
         edges {
           node {
-            authors {
-              corresponding
-              initials
-              lastName
-            }
+            authors
             labs
             people
             journal

@@ -24,17 +24,17 @@ const authorString = (authors, maxAuthors) => {
 
   if (authors.length <= maxAuthors) {
     for (let author of authors) {
-      strs.push(author.lastName + " " + author.initials)
+      strs.push(author) //.lastName + " " + author.initials)
     }
   } else {
     for (let i = 0; i < 3; ++i) {
-      strs.push(authors[i].lastName + " " + authors[i].initials)
+      strs.push(authors[i]) //.lastName + " " + authors[i].initials)
     }
 
     strs.push("...")
 
     const n = authors.length - 1
-    strs.push(authors[n].lastName + " " + authors[n].initials)
+    strs.push(authors[n]) //.lastName + " " + authors[n].initials)
   }
 
   let ret = strs.join(", ")

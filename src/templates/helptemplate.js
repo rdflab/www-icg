@@ -27,23 +27,23 @@ const HelpTemplate = ({ pageContext }) => {
           </BlueLinkExt>
         </p>
       </div>
-      <div className="mt-8 text-center">
+      <div className="mt-16 text-center">
         <p className="font-semibold">Built using the following technologies:</p>
 
         <Column className="w-full mt-8 justify-center items-center">
           <Column className="w-2/10 justify-center">
             <ExtLink to="https://www.npmjs.com/">
-              <img src={npmsvg} className="h-8" />
+              <img src={npmsvg} className="h-8 help-logo" />
             </ExtLink>
           </Column>
           <Column className="w-2/10 justify-center">
             <ExtLink to="https://www.gatsbyjs.org">
-              <img src={gatsbysvg} className="h-8" />
+              <img src={gatsbysvg} className="h-8 help-logo" />
             </ExtLink>
           </Column>
           <Column className="w-2/10 justify-center">
             <ExtLink to="https://mariadb.com/">
-              <img src={mariadbsvg} className="h-8" />
+              <img src={mariadbsvg} className="h-8 help-logo" />
             </ExtLink>
           </Column>
           <Column className="w-2/10 justify-center">
@@ -51,7 +51,7 @@ const HelpTemplate = ({ pageContext }) => {
               <img
                 src="https://d0.awsstatic.com/logos/powered-by-aws.png"
                 alt="Powered by AWS Cloud Computing"
-                className="h-8"
+                className="h-8 help-logo"
               />
             </a>
           </Column>

@@ -21,7 +21,7 @@ import numpy as np
 
 current_milli_time = int(round(time.time() * 1000))
 
-bak = 'publications.{}.bak'.format(current_milli_time)
+bak = 'publications.{}.json'.format(current_milli_time)
 
 copyfile('publications.json', bak)
 
