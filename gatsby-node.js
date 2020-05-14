@@ -821,7 +821,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       allPublications: allPublications,
       index: "/publications.index.json",
       showSearch: true,
-      showYears: true,
+      showYears: false,
       showLabLink: false,
     },
   })

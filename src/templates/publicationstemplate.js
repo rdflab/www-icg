@@ -19,7 +19,6 @@ const PublicationsTemplate = ({ pageContext }) => {
     crumbs,
     selectedTab,
     allPublications,
-    showSearch,
     showYears,
     showLabLink,
   } = pageContext

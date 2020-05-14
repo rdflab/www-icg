@@ -220,15 +220,15 @@ const IndexTemplate = ({ pageContext }) => {
     /> */}
 
       <Column>
-        <Column w={7}>
-          <div className="w-full p-8 pl-48">{calEvents}</div>
-        </Column>
-        <Column w={5} className="ml-8 bg-blue-800 text-white">
+        <Column w={5} className="md:pl-8 bg-blue-800 text-white">
           <div className="p-8">
             <HomeTitle>Upcoming Events</HomeTitle>
             <p>See upcoming events and seminars of interest.</p>
             <WhiteIndexLink to="/events">See all events</WhiteIndexLink>
           </div>
+        </Column>
+        <Column w={7}>
+          <div className="w-full p-8">{calEvents}</div>
         </Column>
       </Column>
 
