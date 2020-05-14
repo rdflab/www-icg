@@ -5,7 +5,7 @@ const SlideMenuButton = ({ onClickHandle }) => (
   <button
     aria-label="Open Menu"
     onClick={onClickHandle}
-    className="mr-3 border-none outline-none focus:outline-none cursor-pointer bg-transparent text-white"
+    className="mr-3 border-none outline-none focus:outline-none cursor-pointer bg-transparent text-blue-columbia-80"
   >
     <FaBars />
   </button>

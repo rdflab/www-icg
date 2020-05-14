@@ -8,13 +8,13 @@ import HTMLDiv from "../components/htmldiv"
 import SimplePubSearch from "../components/publication/simplepubsearch"
 import SiteSearch from "../components/search/sitesearch"
 
-import { labName } from "./labtemplate"
-import { labUrl, personUrl, labMembersUrl } from "../utils/urls"
+import { labUrl, personUrl } from "../utils/urls"
 
 import Container from "../components/container"
 import WhiteLink from "../components/whitelink"
 import H1 from "../components/headings/h1"
 import PersonHeader from "../components/people/personheader"
+import { labName } from "../utils/labname"
 
 const interests = person => {
   const n = person.researchAreas.length
@@ -109,30 +109,16 @@ const Items = ({ title, items }) => (
   // <SectionBreak>
   //   <Collapsible title={title} height="auto" headerClassName="text-blue-700">
   <>
-    <Column>
-      <Column w={2} className="pr-8">
-        <div className="row items-center justify-end h-16 w-full">
-          <div>
-            <h3 className="text-blue-600">{title}</h3>
-          </div>
-        </div>
-      </Column>
+    <h2 className="mb-2">{title}</h2>
 
-      <Column w={10} className="bg-white shadow p-8">
-        <div className="w-full">
-          {items.map((item, index) => (
-            <Column key={index}>
-              <Column w={2} className="font-semibold justify-end mr-4">
-                {item.year !== "n/a" && item.year}
-              </Column>
-              <Column w={10} className="ml-4 ">
-                {item.title}
-              </Column>
-            </Column>
-          ))}
-        </div>
+    {items.map((item, index) => (
+      <Column key={index} className="mb-4">
+        <Column className="w-1/10 font-semibold justify-end text-blue-600  mr-4">
+          {item.year !== "n/a" && item.year}
+        </Column>
+        <Column className="w-9/10 ml-4 ">{item.title}</Column>
       </Column>
-    </Column>
+    ))}
   </>
 )
 

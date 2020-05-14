@@ -3,7 +3,6 @@ import CrumbContainerLayout from "../components/crumbcontainerlayout"
 import SiteSearch from "../components/search/sitesearch"
 import Column from "../components/column"
 import H1 from "../components/headings/h1"
-import H2 from "../components/headings/h2"
 import { Link } from "gatsby"
 import generic from "../assets/svg/generic.svg"
 
@@ -83,7 +82,7 @@ LabGrid.defaultProps = {
 }
 
 const LabsTemplate = ({ pageContext }) => {
-  const { allLabs, crumbs } = pageContext
+  const { allLabs } = pageContext
 
   const [query, setQuery] = useState(EMPTY_QUERY)
   const [filteredGroups, setFilteredGroups] = useState([])

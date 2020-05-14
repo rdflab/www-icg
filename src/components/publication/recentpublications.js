@@ -8,6 +8,7 @@
 import React from "react"
 import Publication from "./publication"
 import Button from "../../components/button"
+import PublicationYears from "./publicationyears"
 
 const RecentPublications = ({ lab, publications, top, className }) => {
   const createPublications = publications => {
@@ -24,7 +25,10 @@ const RecentPublications = ({ lab, publications, top, className }) => {
   return (
     <div className={`mb-4 ${className}`}>
       {/* <h2>Recent Publications</h2> */}
-      <div className="mt-4">{createPublications(publications)}</div>
+      <div className="mt-4">
+        <PublicationYears publications={publications.slice(0, top)} />
+        {/* {createPublications(publications)} */}
+      </div>
       <div className="text-center">
         <Button to={`/research-areas/labs/${lab.id}/publications`}>More</Button>
       </div>

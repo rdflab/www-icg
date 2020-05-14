@@ -12,16 +12,16 @@ import ShowSmall from "../showsmall"
 
 const Header = ({ title, content, menuContent }) => (
   <>
-    <ShowSmall className="bg-blue-columbia-80">
+    <ShowSmall className="border-b border-solid border-gray-200">
       <nav aria-label="Navigation" className="row p-3">
         <SlideMenu title={title} />
         <Link to="/">
-          <img src={whitelogo} className="h-10" />
+          <img src={logo} className="h-10" alt="IGC Logo" />
         </Link>
       </nav>
     </ShowSmall>
 
-    <HideSmall className="bg-white border-b border-solid border-gray-200">
+    <HideSmall className="border-b border-solid border-gray-200">
       {/* <div className="p-3">
         <Container>
           <Column isVCentered={true} className="justify-between">
@@ -50,7 +50,7 @@ const Header = ({ title, content, menuContent }) => (
             <Link to="/" className="mr-8">
               {/* <ColumbiaICGWhiteImage style={{ width: `400px` }} /> */}
 
-              <img src={logo} className="h-16" />
+              <img src={logo} className="h-16" alt="IGC Logo" />
             </Link>
 
             {content !== null && content}

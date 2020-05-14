@@ -6,7 +6,6 @@
  */
 
 import React from "react"
-import BlueLink from "../bluelink"
 import Column from "../column"
 
 import { FaExternalLinkAlt } from "react-icons/fa"

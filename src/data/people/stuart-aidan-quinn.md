@@ -1,5 +1,5 @@
 ---
-id: "aidan-stuart-quinn"
+id: "stuart-aidan-quinn"
 name: "Aidan Stuart Quinn"
 firstName: "Aidan Stuart"
 lastName: "Quinn"

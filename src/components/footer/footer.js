@@ -21,7 +21,7 @@ const Footer = ({ siteTitle }) => {
 
         <div className="row items-center justify-center md:justify-start">
           <a href="https://cumc.columbia.edu">
-            <img src={cuimcsvg} className="h-10" />
+            <img src={cuimcsvg} className="h-10" alt="CUIMC Logo" />
           </a>
         </div>
       </Container>

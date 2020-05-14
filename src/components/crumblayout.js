@@ -7,9 +7,7 @@
 
 import React from "react"
 import Breadcrumb from "./breadcrumb/breadcrumbv2"
-import Title from "./title"
 import Layout from "./layout"
-import Container from "./container"
 import HideSmall from "./hidesmall"
 
 const CrumbLayout = ({

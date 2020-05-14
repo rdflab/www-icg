@@ -2,7 +2,6 @@ import React from "react"
 import ContactInfo from "./contactinfo"
 import PersonLink from "./personlink"
 import Column from "../column"
-import H2 from "../headings/h2"
 import FullDiv from "../fulldiv"
 
 const PeopleGrid = ({ name, people, cols, colWidth, smallView, faculty }) => {
@@ -11,12 +10,15 @@ const PeopleGrid = ({ name, people, cols, colWidth, smallView, faculty }) => {
   const ret = []
 
   let pc = 0
+  let index = 0
+  let person = null
+  let found = false
 
   for (let r = 0; r < rows; ++r) {
     const col = []
 
     for (let c = 0; c < cols; ++c) {
-      let person = null
+      person = null
 
       if (pc < people.length) {
         person = people[pc++]
@@ -25,17 +27,22 @@ const PeopleGrid = ({ name, people, cols, colWidth, smallView, faculty }) => {
           faculty !== null &&
           faculty.frontmatter.id === person.frontmatter.id
         ) {
+          // Skip to next person
           person = people[pc++]
         }
       }
 
+      if (person !== null && person !== undefined) {
+        found = true
+      }
+
       col.push(
-        <Column className={`md:${colWidth}`}>
+        <Column className={`md:${colWidth}`} key={index}>
           {person != null && (
             <div className={`w-full py-4 trans-ani`}>
-              <div>
+              <h3>
                 <PersonLink person={person} />
-              </div>
+              </h3>
               <div>{person.frontmatter.title}</div>
 
               {!smallView && (
@@ -48,13 +55,19 @@ const PeopleGrid = ({ name, people, cols, colWidth, smallView, faculty }) => {
         </Column>
       )
 
+      ++index
+
       // if (pc === people.length) {
       //   break
       // }
     }
 
     if (col.length > 0) {
-      ret.push(<Column className="justify-between">{col}</Column>)
+      ret.push(
+        <Column className="justify-between" key={r}>
+          {col}
+        </Column>
+      )
     }
 
     if (pc === people.length) {
@@ -62,12 +75,10 @@ const PeopleGrid = ({ name, people, cols, colWidth, smallView, faculty }) => {
     }
   }
 
-  if (ret.length > 0) {
+  if (found) {
     return (
-      <FullDiv>
-        <div>
-          <h2>{name}</h2>
-        </div>
+      <FullDiv key={name}>
+        <h2>{name}</h2>
         <div>{ret}</div>
       </FullDiv>
     )

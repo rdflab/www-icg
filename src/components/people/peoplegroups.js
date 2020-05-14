@@ -9,18 +9,20 @@ const PeopleGroups = ({ groupMap, cols, colWidth, smallView, faculty }) => {
     if (g in groupMap) {
       const people = groupMap[g]
 
-      ret.push(
-        <div className="mb-4">
-          <PeopleGrid
-            name={g}
-            people={people}
-            faculty={faculty}
-            cols={cols}
-            colWidth={colWidth}
-            smallView={smallView}
-          />
-        </div>
-      )
+      if (people.length > 0) {
+        ret.push(
+          <div className="mb-4" key={g}>
+            <PeopleGrid
+              name={g}
+              people={people}
+              faculty={faculty}
+              cols={cols}
+              colWidth={colWidth}
+              smallView={smallView}
+            />
+          </div>
+        )
+      }
     }
   }
 

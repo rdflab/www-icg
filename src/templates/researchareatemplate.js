@@ -1,7 +1,6 @@
 import React from "react"
 import CrumbContainerLayout from "../components/crumbcontainerlayout"
 import { graphql } from "gatsby"
-import toImageMap from "../utils/toimagemap"
 import SiteSearch from "../components/search/sitesearch"
 import toPeopleGroupMap from "../utils/peoplegroupmap"
 import PeopleGroups from "../components/people/peoplegroups"

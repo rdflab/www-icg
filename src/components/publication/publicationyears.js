@@ -7,9 +7,7 @@
 
 import React from "react"
 import PublicationList from "./publicationlist"
-import SectionBreak from "../sectionbreak"
 import Column from "../column"
-import H2 from "../headings/h2"
 import FullDiv from "../fulldiv"
 
 const PublicationYears = ({ publications, sectionMode, showLabLink }) => {

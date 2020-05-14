@@ -1,10 +1,7 @@
 import React from "react"
 import CrumbLayout from "../components/crumblayout"
 
-import RecentPublications from "../components/publication/recentpublications"
 //import SideBar from "../components/sidebar/sidebar"
-import SideBarNews from "../components/news/sidebarnews"
-import HTMLDiv from "../components/htmldiv"
 import SiteSearch from "../components/search/sitesearch"
 import { personName } from "../utils/personname"
 import Container from "../components/container"

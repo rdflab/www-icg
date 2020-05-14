@@ -615,24 +615,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   for (let lab of allLabs) {
     path = `/research-areas/labs/${lab.id}`
 
+    const faculty = peopleMap[lab.id]
     const labPublications = lab.id in labPubMap ? labPubMap[lab.id] : []
 
     const labPeople = lab.people.map(pid => peopleMap[pid])
     const labGroupMap = toGroupMap(labPeople)
 
-    //console.log(lab.id, labPublications)
-
-    //labPubIndex = indexPublications(labPublications)
-    //indexFile = `static/${group.frontmatter.id}.publications.index.json`
-    //writeJson(indexFile, labPubIndex)
-
-    const labNews = []
-
-    for (item of allNews) {
-      if (item.frontmatter.groups.includes(lab.id)) {
-        labNews.push(item)
-      }
-    }
+    const labNews = allNews.filter(item =>
+      item.frontmatter.groups.includes(lab.id)
+    )
 
     let labHtml = ""
     let labExcerptHtml = ""
@@ -642,8 +633,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       labHtml = markdown.html
       labExcerptHtml = markdown.excerpt
     }
-
-    const faculty = peopleMap[lab.id]
 
     createPage({
       path: path,
@@ -656,6 +645,20 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         labNews: labNews,
       },
     })
+  }
+
+  //
+  // Secondary lab pages
+  //
+
+  for (let lab of allLabs) {
+    path = `/research-areas/labs/${lab.id}`
+
+    const faculty = peopleMap[lab.id]
+    const labPublications = lab.id in labPubMap ? labPubMap[lab.id] : []
+
+    const labPeople = lab.people.map(pid => peopleMap[pid])
+    const labGroupMap = toGroupMap(labPeople)
 
     createPage({
       path: `${path}/people`,
@@ -666,43 +669,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         labGroupMap: labGroupMap,
       },
     })
-
-    //
-    // Overview
-    //
-
-    // createPage({
-    //   path: `/research-areas/labs/${group.frontmatter.id}/overview`,
-    //   component: labOverviewTemplate,
-    //   context: {
-    //     group: group,
-    //     labPeople: labPeople,
-    //     labPublications: labPublications,
-    //     labHtml: labHtml,
-    //   },
-    // })
-
-    //
-    // Members
-    //
-
-    // createPage({
-    //   path: `${path}/members`,
-    //   component: peopleTemplate,
-    //   context: {
-    //     title: `The ${group.frontmatter.name} Lab Members`,
-    //     crumbs: [
-    //       ["Research Areas", "/research-areas"],
-    //       ["Labs", "/research-areas/labs"],
-    //       [
-    //         group.frontmatter.name,
-    //         `/research-areas/labs/${group.frontmatter.id}`,
-    //       ],
-    //       ["Members", `/research-areas/labs/${group.frontmatter.id}/members`],
-    //     ],
-    //     allPeople: labPeople,
-    //   },
-    // })
 
     //
     // Lab publications

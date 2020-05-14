@@ -7,8 +7,8 @@ import SideBarMembers from "../components/people/sidebarmembers"
 import SideColumn from "../components/sidecolumn"
 import MainColumn from "../components/maincolumn"
 import HTMLDiv from "../components/htmldiv"
-import { labName } from "./labtemplate"
 import { personName } from "../utils/personname"
+import { labName } from "../utils/labname"
 
 const LabOverviewTemplate = ({ pageContext }) => {
   const { group, labPeople, labPublications, labHtml } = pageContext

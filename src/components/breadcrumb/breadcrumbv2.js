@@ -1,7 +1,6 @@
 import React from "react"
 import Container from "../container"
-import BlueLink from "../bluelink"
-import { FaChevronRight, FaHome } from "react-icons/fa"
+import { FaHome } from "react-icons/fa"
 import WhiteLink from "../whitelink"
 import Column from "../column"
 import breadcrumbsvg from "../../assets/svg/breadcrumb.svg"
@@ -11,18 +10,24 @@ const Breadcrumb = ({ crumbs }) => {
   const ret = []
 
   ret.push(
-    <Link to="/">
+    <Link to="/" key={ret.length}>
       <FaHome className="text-white" size={24} />
     </Link>
   )
 
-  ret.push(<img src={breadcrumbsvg} className="text-white px-4 h-10" />)
+  ret.push(
+    <img
+      src={breadcrumbsvg}
+      className="text-white px-4 h-10"
+      key={ret.length}
+    />
+  )
 
   for (let i = 0; i < crumbs.length; ++i) {
     const crumb = crumbs[i]
 
     ret.push(
-      <WhiteLink key={`link-${i}`} to={crumb[1]}>
+      <WhiteLink key={ret.length} to={crumb[1]}>
         {crumb[0]}
       </WhiteLink>
     )
@@ -34,7 +39,11 @@ const Breadcrumb = ({ crumbs }) => {
         //   className="text-white-opacity-50 mx-2"
         // />
 
-        <img src={breadcrumbsvg} className="text-white px-4 h-10" />
+        <img
+          src={breadcrumbsvg}
+          className="text-white px-4 h-10"
+          key={ret.length}
+        />
       )
     }
   }

@@ -114,7 +114,7 @@ SimplePubSearch.defaultProps = {
   showLabLink: true,
   showSearch: false,
   sectionMode: "main",
-  showYears: true,
+  showYears: false,
 }
 
 export default SimplePubSearch

@@ -3,7 +3,7 @@ import BlueLink from "../bluelink"
 //import WhiteLink from "../whitelink"
 
 const PersonLink = ({ person }) => (
-  <BlueLink to={`/people/${person.frontmatter.id}`} className="font-semibold">
+  <BlueLink to={`/people/${person.frontmatter.id}`}>
     {person.frontmatter.name}
     {person.frontmatter.postNominalLetters !== "" &&
       ", " + person.frontmatter.postNominalLetters}

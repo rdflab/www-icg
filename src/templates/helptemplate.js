@@ -1,16 +1,11 @@
-import React, { useState } from "react"
+import React from "react"
 import CrumbContainerLayout from "../components/crumbcontainerlayout"
-import SiteSearch from "../components/search/sitesearch"
-import H1 from "../components/headings/h1"
-import PeopleGroups from "../components/people/peoplegroups"
 import BlueLinkExt from "../components/bluelinkext"
 import gatsbysvg from "../assets/svg/Gatsby_logo.svg"
 import mariadbsvg from "../assets/svg/maria-db.svg"
 import npmsvg from "../assets/svg/npm-logo-black.svg"
-import { Link } from "gatsby"
 import ExtLink from "../components/extlink"
 import Column from "../components/column"
-const EMPTY_QUERY = ""
 
 const HelpTemplate = ({ pageContext }) => {
   const { version } = pageContext
@@ -33,17 +28,25 @@ const HelpTemplate = ({ pageContext }) => {
         <Column className="w-full mt-8 justify-center items-center">
           <Column className="w-2/10 justify-center">
             <ExtLink to="https://www.npmjs.com/">
-              <img src={npmsvg} className="h-8 help-logo" />
+              <img src={npmsvg} className="h-8 help-logo" alt="NPM logo" />
             </ExtLink>
           </Column>
           <Column className="w-2/10 justify-center">
             <ExtLink to="https://www.gatsbyjs.org">
-              <img src={gatsbysvg} className="h-8 help-logo" />
+              <img
+                src={gatsbysvg}
+                className="h-8 help-logo"
+                alt="Gatsby logo"
+              />
             </ExtLink>
           </Column>
           <Column className="w-2/10 justify-center">
             <ExtLink to="https://mariadb.com/">
-              <img src={mariadbsvg} className="h-8 help-logo" />
+              <img
+                src={mariadbsvg}
+                className="h-8 help-logo"
+                alt="MariaDB logo"
+              />
             </ExtLink>
           </Column>
           <Column className="w-2/10 justify-center">

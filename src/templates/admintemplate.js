@@ -7,7 +7,7 @@ import PeopleGroups from "../components/people/peoplegroups"
 const EMPTY_QUERY = ""
 
 const AdminTemplate = ({ pageContext }) => {
-  const { adminGroupMap, crumbs } = pageContext
+  const { adminGroupMap } = pageContext
 
   const [query, setQuery] = useState(EMPTY_QUERY)
   const [filteredGroups, setFilteredGroups] = useState([])

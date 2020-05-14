@@ -1,8 +1,6 @@
 import React from "react"
 import CrumbLayout from "../../components/crumblayout"
-import CrumbContainerLayout from "../../components/crumbcontainerlayout"
 import SiteSearch from "../../components/search/sitesearch"
-import H1 from "../../components/headings/h1"
 
 const Booking = () => (
   <CrumbLayout

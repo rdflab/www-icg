@@ -155,7 +155,7 @@ const SlideMenuContainer = ({ title, onClickHandle, visible, maxResults }) => {
       >
         <div className="row items-center justify-between p-4 mb-4 w-full border-b border-solid border-gray-300">
           <div>
-            <img src={logo} className="h-8" />
+            <img src={logo} className="h-8" alt="ICG logo" />
           </div>
           <div className="text-right">
             <SlideMenuCloseButton onClick={onClickHandle} />

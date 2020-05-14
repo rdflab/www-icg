@@ -6,15 +6,11 @@ import Column from "../components/column"
 
 import BlueIndexLink from "../components/blueindexlink"
 import WhiteIndexLink from "../components/whiteindexlink"
-// import MicroscopeSection from "../components/images/microscope"
-import TestTubesSection from "../components/images/testtubes"
 import SiteSearch from "../components/search/sitesearch"
-import H2 from "../components/headings/h2"
 import generic from "../assets/svg/generic.svg"
 import WhiteLink from "../components/whitelink"
 import CalEventDate from "../components/calendar/caleventdate"
 import CalEventDetails from "../components/calendar/caleventdetails"
-import BlueLink from "../components/bluelink"
 import ICGBD from "../components/images/icgbd"
 import Benchwork from "../components/images/benchwork"
 import PublicationList from "../components/publication/publicationlist"
@@ -146,7 +142,7 @@ const IndexTemplate = ({ pageContext }) => {
           <Column w={6} className="items-center justify-center">
             <div className="w-1/3 mb-8">
               <div className="bg-white shadow-md rounded">
-                <img src={generic} className="w-full" />
+                <img src={generic} className="w-full" alt="Person" />
               </div>
               <div className="font-semibold mt-4">
                 <WhiteLink

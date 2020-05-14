@@ -32,7 +32,7 @@ const Lab = ({ person, labId }) => {
     >
       <Link to={`/research-areas/labs/${labId}`}>
         <div className="bg-white">
-          <img src={generic} className="w-full" />
+          <img src={generic} className="w-full" alt={person.frontmatter.name} />
         </div>
         <div
           className={`p-4 text-lg trans-ani ${
