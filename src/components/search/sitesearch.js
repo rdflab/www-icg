@@ -153,8 +153,6 @@ const SiteSearch = ({ className, placeholder, maxResults }) => {
 
       // Init refs
 
-      console.log("hmm", resultEls.current)
-
       if (items.length > 0) {
         let c = 0
         let currentSection = ""
