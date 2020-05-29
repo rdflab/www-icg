@@ -21,11 +21,11 @@ const Footer = ({ siteTitle }) => {
           <FooterLinks />
         </div>
 
-        <div className="mt-8">
+        <div className="mt-16">
           &copy; {new Date().getFullYear()} {siteTitle}
         </div>
 
-        <div className="mt-16">
+        <div className="mt-8">
           <a href="https://cumc.columbia.edu">
             <img src={cuimcsvg} className="h-12" alt="CUIMC Logo" />
           </a>
