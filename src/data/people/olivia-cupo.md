@@ -10,7 +10,7 @@ fax: ""
 email: "oc2298@cumc.columbia.edu"
 room: "501"
 url: ""
-group: "Staff"
+group: "Research Staff"
 researchAreas: []
 tags: []
 ---

@@ -10,7 +10,7 @@ fax: ""
 email: "hl2977@cumc.columbia.edu"
 room: "608"
 url: ""
-group: "Staff"
+group: "Research Staff"
 researchAreas: []
 tags: []
 ---

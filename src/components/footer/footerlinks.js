@@ -1,6 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import WhiteLink from "../whitelink"
+import WhiteLinkExt from "../whitelinkext"
 
 const FooterLinks = () => {
   const data = useStaticQuery(graphql`
@@ -18,19 +19,23 @@ const FooterLinks = () => {
 
   const links = data.allFooterlinksJson.edges
 
-  return (
-    <div className="links-list">
-      {links.map(({ node }, index) => {
-        return (
-          <div className="link-item" key={index}>
-            <WhiteLink aria-label={`Goto ${node.name}`} to={node.link}>
-              {node.name}
-            </WhiteLink>
-          </div>
-        )
-      })}
-    </div>
-  )
+  const ret = links.map(({ node }, index) => {
+    return (
+      <div className="mb-2" key={index}>
+        <WhiteLink aria-label={`Goto ${node.name}`} to={node.link}>
+          {node.name}
+        </WhiteLink>
+      </div>
+    )
+  })
+
+  // return (
+  //   <div className="links-list">
+  //     {ret}
+  //   </div>
+  // )
+
+  return <div>{ret}</div>
 }
 
 export default FooterLinks

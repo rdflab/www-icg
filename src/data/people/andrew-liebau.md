@@ -4,13 +4,13 @@ name: "Andrew Liebau"
 firstName: "Andrew"
 lastName: "Liebau"
 postNominalLetters: ""
-title: "GRA"
+title: "Graduate Student"
 phone: "851-4566/67/68"
 fax: ""
 email: "awl2142@cumc.columbia.edu"
 room: "602"
 url: ""
-group: "Staff"
+group: "Graduate Students"
 researchAreas: []
 tags: []
 ---

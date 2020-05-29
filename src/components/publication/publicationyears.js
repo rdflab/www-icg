@@ -31,7 +31,7 @@ const PublicationYears = ({ publications, sectionMode, showLabLink }) => {
         })
         .map((year, index) => {
           return (
-            <Column className="mb-8">
+            <Column className="mb-8" key={year}>
               <Column className="w-1/10 justify-end mr-8">
                 <h2 className="text-blue-600">{year}</h2>
               </Column>

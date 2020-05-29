@@ -10,7 +10,7 @@ fax: ""
 email: "cc3703@cumc.columbia.edu"
 room: "401A"
 url: ""
-group: "Staff"
+group: "Research Staff"
 researchAreas: []
 tags: []
 ---

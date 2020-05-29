@@ -12,6 +12,7 @@ import Container from "../components/container"
 import PersonHeader from "../components/people/personheader"
 import PeopleGroups from "../components/people/peoplegroups"
 import { labName } from "../utils/labname"
+import LabHeader from "../components/lab/labheader"
 
 const LabTemplate = ({ pageContext }) => {
   const {
@@ -32,7 +33,9 @@ const LabTemplate = ({ pageContext }) => {
 
   return (
     <CrumbLayout crumbs={crumbs} title={title} headerComponent={<SiteSearch />}>
-      <PersonHeader person={faculty} title="Labs" />
+      {/* <PersonHeader person={faculty} title="Labs" /> */}
+
+      <LabHeader lab={lab} />
 
       {/* <div className="text-center">
               <Button
@@ -49,7 +52,8 @@ const LabTemplate = ({ pageContext }) => {
 
       <Container>
         <H1>Meet the team</H1>
-        <PeopleGroups groupMap={labGroupMap} faculty={faculty} />
+        <PeopleGroups groupMap={labGroupMap} />
+        {/* <PeopleGroups groupMap={labGroupMap} /> faculty={faculty} /> */}
       </Container>
 
       {labPublications.length > 0 && (

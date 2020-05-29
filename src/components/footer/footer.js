@@ -3,29 +3,35 @@ import FooterLinks from "./footerlinks"
 import Container from "../container"
 import Column from "../column"
 import cuimcsvg from "../../assets/svg/cuimc-white.svg"
+import crownsvg from "../../assets/svg/crown-white.svg"
+import styled from "styled-components"
+
+const StyledFooter = styled.footer`
+  background-image: url(${crownsvg});
+  background-size: auto 150%;
+  background-repeat: no-repeat;
+  background-position: right -4rem top 2rem;
+`
 
 const Footer = ({ siteTitle }) => {
   return (
-    <footer className="text-white text-sm mt-8 py-8 bg-blue-columbia-80">
+    <StyledFooter className="text-white text-sm mt-8 py-10 bg-blue-columbia">
       <Container>
-        <Column isVCentered={true}>
-          <Column w="6" className="mb-8 justify-center md:justify-start">
-            <FooterLinks />
-          </Column>
-          <Column w="6" className="mb-8 justify-center md:justify-end">
-            <div>
-              &copy; {new Date().getFullYear()} {siteTitle}
-            </div>
-          </Column>
-        </Column>
+        <div>
+          <FooterLinks />
+        </div>
 
-        <div className="row items-center justify-center md:justify-start">
+        <div className="mt-8">
+          &copy; {new Date().getFullYear()} {siteTitle}
+        </div>
+
+        <div className="mt-16">
           <a href="https://cumc.columbia.edu">
-            <img src={cuimcsvg} className="h-10" alt="CUIMC Logo" />
+            <img src={cuimcsvg} className="h-12" alt="CUIMC Logo" />
           </a>
         </div>
       </Container>
-    </footer>
+    </StyledFooter>
   )
 }
 

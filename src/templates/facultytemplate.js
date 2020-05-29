@@ -60,7 +60,7 @@ const StaffGrid = ({ people, peopleMap, cols }) => {
       let person = peopleMap[people[pc].id]
 
       col.push(
-        <Column className="md:w-1/4">
+        <Column className="md:w-1/4" key={`person-${pc}`}>
           {pc < people.length && (
             <Lab person={person} labId={people[pc].labId} />
           )}
@@ -74,7 +74,11 @@ const StaffGrid = ({ people, peopleMap, cols }) => {
       }
     }
 
-    ret.push(<Column className="justify-center">{col}</Column>)
+    ret.push(
+      <Column className="justify-center" key={r}>
+        {col}
+      </Column>
+    )
 
     if (pc === people.length) {
       break
@@ -92,9 +96,15 @@ const StaffGroups = ({ allGroups, peopleMap }) => {
   const ret = []
 
   for (let group of allGroups) {
-    ret.push(<H2>{group.name}</H2>)
+    ret.push(<H2 key={`header-${group.name}`}>{group.name}</H2>)
 
-    ret.push(<StaffGrid people={group.faculty} peopleMap={peopleMap} />)
+    ret.push(
+      <StaffGrid
+        people={group.faculty}
+        peopleMap={peopleMap}
+        key={group.name}
+      />
+    )
   }
 
   return ret

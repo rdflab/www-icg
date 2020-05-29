@@ -15,16 +15,16 @@ NAME	TITLE	PHONE	FAX	E-MAIL	Office/Lab#
 						
 "Dalla-Favera, Riccardo, MD"	"Prof of Pathology & Cell Biology, Gen & Dev, M& I"	851-5273 	851-5256	rd10@columbia.edu	508A	
 "Pasqualucci, Laura, MD"	Professor of Pathology and Cell Biology	851-5248		lp171	 507B	
-"Bal, Elodie, PhD"	Postdoctoral Research Scientist	851-5269		eb3151	507	
+"Bal, Elodie, PhD"	Postdoctoral Research Scientist	851-5270		eb3151	507	
 "Basso, Katia PhD"	Associate Professor of Pathology & Cell Biology	851-4786		kb451	506	
-"Bowen, Cai, PhD"	Associate Research Scientist	851-5269		bc2283	507	
-"Corinaldesi, Clarissa, PhD"	Postdoctoral Research Scientist  	851-5269		cc4308	507	
-"Firouzi, Sanaz, PhD"	Postdoctoral Research Scientist	851-5269		sf3010	507	
-"Holloman, Mara"	Tech B 	851-5269		mh3946	507	
-"Holmes, Antony, PhD"	Associate Research Scientist	851-5269		abh2138	507	
-"Jahan, Rahat, PhD"	Postdoctoral Research Scientist	851-5269		rj2586	507	
-"Kumar, Rahul, PhD"	Associate Research Scientist	851-5269		rk3032	507	
-"Meyer, Stefanie, PhD"	Postdoctoral Research Scientist	851-5269		snm2142	507	
+"Cai, Bowen, PhD"	Associate Research Scientist	851-5270		bc2283	507	
+"Corinaldesi, Clarissa, PhD"	Postdoctoral Research Scientist  	851-5270		cc4308	507	
+"Firouzi, Sanaz, PhD"	Postdoctoral Research Scientist	851-5270		sf3010	507	
+"Holloman, Mara"	Tech B 	851-5270		mh3946	507	
+"Holmes, Antony, PhD"	Associate Research Scientist	851-5270		abh2138	507	
+"Jahan, Rahat, PhD"	Postdoctoral Research Scientist	851-5270		rj2586	507	
+"Kumar, Rahul, PhD"	Associate Research Scientist	851-5270		rk3032	507	
+"Meyer, Stefanie, PhD"	Postdoctoral Research Scientist	851-5270		snm2142	507	
 "Mo, Tongwei"	Sr Research Worker	851-5270		tm2015	507	
 "Powers, Sofija"	Sr Research Worker	851-5270		sv2458	507	
 "Scuoppo, Claudio, PhD"	Instructor	851-5270		cs3064	507	
@@ -46,7 +46,7 @@ NAME	TITLE	PHONE	FAX	E-MAIL	Office/Lab#
 "Wong, Madeline"	Tech B	851-5266		mw3335	502	
 "Wu-Baer, Foon"	Senior Staff Associate	851-5260		fw110	502	
 						
-"Chio, Christine, PhD "	Assistant Prfessor of Genetics & Development (in ICG)	851-4967	851-5256	ic2445@columbia.edu	505A	
+"Chio, Christine, PhD "	Assistant Professor of Genetics & Development (in ICG)	851-4967	851-5256	ic2445@columbia.edu	505A	
 "Ayres Pereira, Marina, PhD"	Postdoctoral Research Scientist	851-4966		mma2246	505	
 "Chan, Karina"	Tech B	851-4966		kmc2228	505	
 "Ke, Xiangyi (Sherry)"	GRA	851-4966		xk2138	505	

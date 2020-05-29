@@ -3,6 +3,7 @@ import { FaSearch } from "react-icons/fa"
 
 const SiteSearchBar = ({
   handleInputChange,
+  handleKeyDown,
   placeholder,
   text,
   className,
@@ -38,6 +39,7 @@ const SiteSearchBar = ({
       onMouseLeave={onMouseLeave}
       onFocus={onFocus}
       onBlur={onBlur}
+      onKeyDown={handleKeyDown}
     >
       <div className="flex items-center w-full">
         <input

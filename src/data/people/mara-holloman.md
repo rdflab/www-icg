@@ -5,12 +5,12 @@ firstName: "Mara"
 lastName: "Holloman"
 postNominalLetters: ""
 title: "Tech B "
-phone: "851-5269"
+phone: "851-5270"
 fax: ""
 email: "mh3946@cumc.columbia.edu"
 room: "507"
 url: ""
-group: "Staff"
+group: "Research Staff"
 researchAreas: []
 tags: []
 ---

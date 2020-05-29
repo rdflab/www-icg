@@ -643,6 +643,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         labGroupMap: labGroupMap,
         labPublications: labPublications,
         labNews: labNews,
+        labExcerptHtml: labExcerptHtml,
       },
     })
   }
@@ -813,10 +814,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     component: publicationsTemplate,
     context: {
       title: "Publications",
-      crumbs: [
-        ["Research Areas", "/research-areas"],
-        ["Publications", "/research-areas/publications"],
-      ],
+      crumbs: [["Publications", "/research-areas/publications"]],
       selectedTab: "Publications",
       allPublications: allPublications,
       index: "/publications.index.json",

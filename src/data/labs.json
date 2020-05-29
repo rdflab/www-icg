@@ -7,11 +7,11 @@
       "swarnali-acharyya",
       "anup-biswas",
       "ahmad-rushdi-shakri",
-      "tim-zhong",
       "courtney-coker",
       "seoyoung-han",
       "rohaan-hegde",
-      "wanchao-ma"
+      "wanchao-ma",
+      "tim-zhong"
     ]
   },
   {
@@ -19,6 +19,18 @@
     "name": "Richard Baer",
     "url": "",
     "people": ["richard-baer", "madeline-wong", "foon-wu-baer"]
+  },
+  {
+    "id": "christine-chio",
+    "name": "Christine Chio",
+    "url": "https://chiolab.com/",
+    "people": [
+      "christine-chio",
+      "marina-ayres-pereira",
+      "karina-chan",
+      "xiangyi-ke",
+      "belen-sundberg"
+    ]
   },
   {
     "id": "riccardo-dalla-favera",
@@ -29,7 +41,7 @@
       "riccardo-dalla-favera",
       "laura-pasqualucci",
       "elodie-bal",
-      "cai-bowen",
+      "bowen-cai",
       "clarissa-corinaldesi",
       "sanaz-firouzi",
       "antony-holmes",
@@ -49,7 +61,7 @@
   {
     "id": "adolfo-ferrando",
     "name": "Adolfo Ferrando",
-    "url": "",
+    "url": "http://ferrandolab.org/",
     "people": [
       "adolfo-ferrando",
       "teresa-palomero",
@@ -62,8 +74,6 @@
       "jose-rodriguez-cortes",
       "agnieszka-wendorff",
       "caral-bertulfo",
-      "stuart-aidan-quinn",
-      "bobby-shih",
       "mayukh-biswas",
       "jessie-a-brown",
       "anisha-cooke",
@@ -73,7 +83,9 @@
       "angela-kemfack",
       "adam-mackey",
       "lucia-morgado-palacin",
-      "marissa-rashkovan"
+      "aidan-stuart-quinn",
+      "marissa-rashkovan",
+      "bobby-shih"
     ]
   },
   {
@@ -86,8 +98,8 @@
       "tomas-aparicio",
       "gaganpreet-sidhu",
       "andrew-liebau",
-      "jennifer-a-zagelbaum",
-      "jorge-reyes"
+      "jorge-reyes",
+      "jennifer-a-zagelbaum"
     ]
   },
   {
@@ -137,10 +149,10 @@
       "maja-milanovic",
       "zhengping-shao",
       "yimeng-zhu",
-      "xiobin-wang",
       "olivia-cupo",
       "brian-lee",
-      "demis-menolfi"
+      "demis-menolfi",
+      "xiobin-wang"
     ]
   },
   {

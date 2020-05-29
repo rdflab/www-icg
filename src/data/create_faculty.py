@@ -9,6 +9,9 @@ import re
 import collections
 import json
 
+LAB_URLS = {'adolfo-ferrando':'http://ferrandolab.org/',
+            'christine-chio':'https://chiolab.com/'}
+
 def sort_names(names):
     name_map = collections.defaultdict(lambda: collections.defaultdict(list))
     
@@ -104,6 +107,7 @@ for i in range(13, df.shape[0]):
     title = df.iloc[i, 1]
     title = title.replace('Prof ', 'Professor ')
     title = title.replace('Assoc ', 'Associate ')
+    title = title.replace('GRA', 'Graduate Student')
     
     print(formatted_name, title, lab_group)
     
@@ -141,10 +145,16 @@ for i in range(13, df.shape[0]):
     # Create markdown
     #
     
-    t = 'Staff'
+    t = 'Research Staff'
     
-    if 'Research' in title or 'Postdoc' in title or 'Instructor' in title:
-        t = 'Research Staff'
+    #if 'Research' in title or 'Postdoc' in title or 'Instructor' in title:
+    #    t = 'Research Staff'
+    
+    if 'Student' in title:
+        t = 'Students'
+    
+    if 'GRA' in title or 'Grad' in title:
+        t = 'Graduate Students'
     
     if 'Professor' in title:
         t = 'Faculty'
@@ -187,7 +197,7 @@ for g in GROUPS:
     faculty_names = sort_names(lab_map[g])
     
     for name in faculty_names:
-        lab = {'id':id_map[name], 'name':name, 'url':'', 'people':[]} #, 'divisions': []}
+        lab = {'id':id_map[name], 'name':name, 'url':LAB_URLS.get(id_map[name], ''), 'people':[]} #, 'divisions': []}
         
         for sg in SUB_GROUPS:
             division = {'id':sg.lower().replace(' ', '-'), 'name':sg, 'url':'', 'people':[]}

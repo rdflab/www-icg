@@ -10,7 +10,7 @@ fax: ""
 email: "jr4034@cumc.columbia.edu"
 room: "602"
 url: ""
-group: "Staff"
+group: "Research Staff"
 researchAreas: []
 tags: []
 ---

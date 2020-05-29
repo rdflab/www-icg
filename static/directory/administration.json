@@ -3,14 +3,14 @@
     "id": "divisional-administrator",
     "name": "Divisional Administrator",
     "url": "",
-    "staff": [
+    "Research Staff": [
       {
         "id": "tom-gavaris",
         "name": "Tom Gavaris",
         "url": "",
         "subgroups": [
           {
-            "id": "staff",
+            "id": "Staff",
             "name": "Staff",
             "url": "",
             "members": [
@@ -32,6 +32,6 @@
     "id": "administrative-staff",
     "name": "Administrative Staff",
     "url": "",
-    "staff": []
+    "Staff": []
   }
 ]

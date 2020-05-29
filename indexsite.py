@@ -6,16 +6,16 @@ Created on Mon Mar 16 17:34:05 2020
 @author: antony
 '''
 import os
-from frontmatter import Frontmatter
+import frontmatter
 import json
 import collections
 
 PEOPLE_TYPES = [
   'Faculty',
   'Administration',
-  'Research Scientists',
-  'Graduate Student',
-  'Staff',
+  'Research Staff',
+  'Graduate Students',
+  'Students',
 ]
 
 def create_suffix_tree(root, text, item):
@@ -60,22 +60,8 @@ if link not in linkNameMap:
     siteData['linkNames'].append(link)
 
 siteData['sections'].append('Labs')
-dir = 'src/data/groups'
-for file in sorted(os.listdir(dir)):
-    print(file)
-    post = Frontmatter.read_file(os.path.join(dir, file))
-    print(post)
-    
-    id = post['attributes']['id']
-    name = post['attributes']['name']
-     
-    to = '/research-areas/labs/{}'.format(id)
-    
-    create_suffix_tree(siteData['tree'], name, len(siteData['links']))
-    
-    siteData['links'].append([name , si, linkNameMap[link], to])
-si += 1
 
+si += 1
 
 #
 # People
@@ -85,23 +71,25 @@ people = collections.defaultdict(lambda: collections.defaultdict(lambda: collect
 
 dir = 'src/data/people'
 for file in sorted(os.listdir(dir)):
-    post = Frontmatter.read_file(os.path.join(dir, file))
+    post = frontmatter.load(os.path.join(dir, file))
     
-    id = post['attributes']['id']
-    first = post['attributes']['firstName']
-    last = post['attributes']['lastName']
-    t = post['attributes']['type']
+    print(post, os.path.join(dir, file))
+    
+    id = post.metadata['id']
+    first = post.metadata['firstName']
+    last = post.metadata['lastName']
+    g = post.metadata['group']
     
     print(post, dir, file)
     
-    people[t][last][first] = id
+    people[g][last][first] = id
 
-siteData['sections'].append('People')
+#siteData['sections'].append('People')
 
 for t in PEOPLE_TYPES:
     link = t
     
-    #siteData['sections'].append(t)
+    siteData['sections'].append(t)
     
     if link not in linkNameMap:
         linkNameMap[link] = len(siteData['linkNames'])
@@ -119,7 +107,7 @@ for t in PEOPLE_TYPES:
     
             siteData['links'].append([name, si, linkNameMap[link], to])
 
-si += 1
+    si += 1
 
 #
 # Publications

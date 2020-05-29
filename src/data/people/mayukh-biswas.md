@@ -10,7 +10,7 @@ fax: ""
 email: "mb4707@cumc.columbia.edu"
 room: "401B"
 url: ""
-group: "Staff"
+group: "Research Staff"
 researchAreas: []
 tags: []
 ---

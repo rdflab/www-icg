@@ -10,7 +10,7 @@ fax: ""
 email: "alm2283@cumc.columbia.edu"
 room: "401B"
 url: ""
-group: "Staff"
+group: "Research Staff"
 researchAreas: []
 tags: []
 ---

@@ -10,7 +10,7 @@ fax: ""
 email: "hz2458@cumc.columbia.edu"
 room: "407"
 url: ""
-group: "Staff"
+group: "Research Staff"
 researchAreas: []
 tags: []
 ---

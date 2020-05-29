@@ -11,16 +11,16 @@ import Button from "../../components/button"
 import PublicationYears from "./publicationyears"
 
 const RecentPublications = ({ lab, publications, top, className }) => {
-  const createPublications = publications => {
-    let ret = []
+  // const createPublications = publications => {
+  //   let ret = []
 
-    // Outer loop to create parent
-    for (let i = 0; i < Math.min(top, publications.length); ++i) {
-      ret.push(<Publication key={i} publication={publications[i]} />)
-    }
+  //   // Outer loop to create parent
+  //   for (let i = 0; i < Math.min(top, publications.length); ++i) {
+  //     ret.push(<Publication key={i} publication={publications[i]} />)
+  //   }
 
-    return ret
-  }
+  //   return ret
+  // }
 
   return (
     <div className={`mb-4 ${className}`}>

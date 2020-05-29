@@ -10,7 +10,7 @@ fax: ""
 email: "sm4528@cumc.columbia.edu"
 room: "403"
 url: ""
-group: "Staff"
+group: "Research Staff"
 researchAreas: []
 tags: []
 ---

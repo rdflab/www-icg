@@ -38,32 +38,32 @@ const interests = person => {
   return <div>{ret}</div>
 }
 
-const interests2 = person => {
-  const n = person.researchAreas.length
+// const interests2 = person => {
+//   const n = person.researchAreas.length
 
-  let ret = []
+//   let ret = []
 
-  //ret.push(<div className="mr-4">Research Interests</div>)
+//   //ret.push(<div className="mr-4">Research Interests</div>)
 
-  for (let i = 0; i < n; ++i) {
-    const researchArea = person.researchAreas[i]
+//   for (let i = 0; i < n; ++i) {
+//     const researchArea = person.researchAreas[i]
 
-    ret.push(
-      <Link key={i} to={`/research-areas/${researchArea.id}`}>
-        <div className="rounded-full text-center bg-gray-100 border border-solid border-gray-300 px-4 py-2 mr-2">
-          {researchArea.name}
-        </div>
-      </Link>
-    )
-  }
+//     ret.push(
+//       <Link key={i} to={`/research-areas/${researchArea.id}`}>
+//         <div className="rounded-full text-center bg-gray-100 border border-solid border-gray-300 px-4 py-2 mr-2">
+//           {researchArea.name}
+//         </div>
+//       </Link>
+//     )
+//   }
 
-  return (
-    <>
-      <Heading>Research Interests</Heading>
-      <Column className="items-center">{ret}</Column>
-    </>
-  )
-}
+//   return (
+//     <>
+//       <Heading>Research Interests</Heading>
+//       <Column className="items-center">{ret}</Column>
+//     </>
+//   )
+// }
 
 const Education = ({ cv }) => (
   <Items title="Education" items={cv.education} />
@@ -122,21 +122,21 @@ const Items = ({ title, items }) => (
   </>
 )
 
-const ResearchInterests = ({ person, researchAreasMap }) => (
-  <div className="mt-8">
-    <H1>Research Interests</H1>
+// const ResearchInterests = ({ person, researchAreasMap }) => (
+//   <div className="mt-8">
+//     <H1>Research Interests</H1>
 
-    {interests(person, researchAreasMap)}
-  </div>
-)
+//     {interests(person, researchAreasMap)}
+//   </div>
+// )
 
-const Groups = ({ groups }) => (
-  <div className="mt-4">
-    <WhiteLink to={labUrl(groups[0])}>
-      {labName(groups[0].leaders[0])}
-    </WhiteLink>
-  </div>
-)
+// const Groups = ({ groups }) => (
+//   <div className="mt-4">
+//     <WhiteLink to={labUrl(groups[0])}>
+//       {labName(groups[0].leaders[0])}
+//     </WhiteLink>
+//   </div>
+// )
 
 const PersonTemplate = ({ pageContext, data }) => {
   const { person, lab, publications, cv } = pageContext

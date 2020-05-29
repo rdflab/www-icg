@@ -7,7 +7,7 @@ import Container from "../container"
 import HideSmall from "../hidesmall"
 import Column from "../column"
 import logo from "../../assets/svg/icg-logo.svg"
-import whitelogo from "../../assets/svg/icg-logo-white.svg"
+//import whitelogo from "../../assets/svg/icg-logo-white.svg"
 import ShowSmall from "../showsmall"
 
 const Header = ({ title, content, menuContent }) => (

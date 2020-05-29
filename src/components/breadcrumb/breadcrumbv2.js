@@ -20,6 +20,7 @@ const Breadcrumb = ({ crumbs }) => {
       src={breadcrumbsvg}
       className="text-white px-4 h-10"
       key={ret.length}
+      alt="Breadcrumb separator"
     />
   )
 
@@ -43,6 +44,7 @@ const Breadcrumb = ({ crumbs }) => {
           src={breadcrumbsvg}
           className="text-white px-4 h-10"
           key={ret.length}
+          alt="Breadcrumb separator"
         />
       )
     }

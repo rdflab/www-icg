@@ -10,7 +10,7 @@ fax: ""
 email: "mw3335@cumc.columbia.edu"
 room: "502"
 url: ""
-group: "Staff"
+group: "Research Staff"
 researchAreas: []
 tags: []
 ---
