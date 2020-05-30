@@ -6,10 +6,7 @@ import React from "react"
  * @param {*} param0
  */
 const HTMLDiv = ({ html, className }) => (
-  <div
-    className={`mt-2 ${className}`}
-    dangerouslySetInnerHTML={{ __html: html }}
-  />
+  <div className={`${className}`} dangerouslySetInnerHTML={{ __html: html }} />
 )
 
 HTMLDiv.defaultProps = {

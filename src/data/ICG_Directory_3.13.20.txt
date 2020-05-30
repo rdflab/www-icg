@@ -3,15 +3,15 @@ FRONT DESK:1-4501	 SECURITY 212-851-4501		PUBLIC SAFETY (fire) 212-305-7979
 NAME	TITLE	PHONE	FAX	E-MAIL	Office/Lab#	
 "Riccardo Dalla-Favera, MD"	"Director, Institute for Cancer Genetics"	851-5273 	851-5256	rd10@columbia.edu	508A	
 						
-"Gavaris, Tom "	Divisional Administrator (cell: 347-256-5312)	851-4747	851-5256	tg2294	508B	
+"Gavaris, Tom"	Divisional Administrator (cell: 347-256-5312)	851-4747	851-5256	tg2294	508B	
 						
-"Gellhorn, Tina "	Executive Assistant (cell: 201-214-2804)	851-5274	851-5256	cg482	508	
-"Tejeda, Jeanette "	Administrative Coordinator (cell: 917-969-6525)	851-5283	851-5284	jt591	609	
-"Meregildo, Clara "	HR Administrative Coordinator (cell: 917-679-9985)	851-5276	851-5256	cm2217	508	
-"Quintero, Esperanza "	Technical  Assistant (glassware Facility) 	851-5283		eq2102	4th fl 415	
-"Ramirez, German "	Technical Assistant (Glassware Facility)	851-5283		gr2241	4th fl 415	
+"Gellhorn, Tina"	Executive Assistant (cell: 201-214-2804)	851-5274	851-5256	cg482	508	
+"Tejeda, Jeanette"	Administrative Coordinator (cell: 917-969-6525)	851-5283	851-5284	jt591	609	
+"Meregildo, Clara"	HR Administrative Coordinator (cell: 917-679-9985)	851-5276	851-5256	cm2217	508	
+"Quintero, Esperanza"	Technical  Assistant (glassware Facility) 	851-5283		eq2102	4th fl 415	
+"Ramirez, German"	Technical Assistant (Glassware Facility)	851-5283		gr2241	4th fl 415	
 "Srinivasan, Seetha, PhD"	Variable Hours Coordinator	cell: 513-293-0857		svs2113		
-"Szalasny, Russell "	Administrative Aid (cell: 347-444-6909)	851-5272	851-5267	rs2426	407	
+"Szalasny, Russell"	Administrative Aid (cell: 347-444-6909)	851-5272	851-5267	rs2426	407	
 						
 "Dalla-Favera, Riccardo, MD"	"Prof of Pathology & Cell Biology, Gen & Dev, M& I"	851-5273 	851-5256	rd10@columbia.edu	508A	
 "Pasqualucci, Laura, MD"	Professor of Pathology and Cell Biology	851-5248		lp171	 507B	
@@ -31,7 +31,7 @@ NAME	TITLE	PHONE	FAX	E-MAIL	Office/Lab#
 "Shen, Qiong"	Senior Staff Associate	851-5270		qs4	507	
 "Tang, Hongyan"	Staff Associate	851-5270		ht2130	507	
 "Xie, Yunan"	Administrative Assistant	851-5268		yx30	507	
-"Yu, Chuanjiang, PhD "	Postdoctoral Research Scientist	851-5270		cy2491	507	
+"Yu, Chuanjiang, PhD"	Postdoctoral Research Scientist	851-5270		cy2491	507	
 						
 "Acharyya, Swarnali, PhD"	Assistant Professor of Pathology & Cell Biology (in ICG)	851-4792		sa3141@columbia.edu	402B	
 "Biswas, Anup, PhD"	Associate Research Scientist	851-4791		akb2180	401A	
@@ -46,7 +46,7 @@ NAME	TITLE	PHONE	FAX	E-MAIL	Office/Lab#
 "Wong, Madeline"	Tech B	851-5266		mw3335	502	
 "Wu-Baer, Foon"	Senior Staff Associate	851-5260		fw110	502	
 						
-"Chio, Christine, PhD "	Assistant Professor of Genetics & Development (in ICG)	851-4967	851-5256	ic2445@columbia.edu	505A	
+"Chio, Christine, PhD"	Assistant Professor of Genetics & Development (in ICG)	851-4967	851-5256	ic2445@columbia.edu	505A	
 "Ayres Pereira, Marina, PhD"	Postdoctoral Research Scientist	851-4966		mma2246	505	
 "Chan, Karina"	Tech B	851-4966		kmc2228	505	
 "Ke, Xiangyi (Sherry)"	GRA	851-4966		xk2138	505	
@@ -59,10 +59,10 @@ NAME	TITLE	PHONE	FAX	E-MAIL	Office/Lab#
 "Bertulfo, Caral"	GRA	851-5292		mtb2162	401B	
 "Biswas, Mayukh"	Staff Associate	851-5292		mb4707	401B	
 "Brown, Jessie A, PhD"	Postdoctoral Research Fellow	851-5292		jab2451	401B	
-"Cooke, Anisha "	Tech B	851-5292		ac4268	401B	
+"Cooke, Anisha"	Tech B	851-5292		ac4268	401B	
 "Gascon, Marta"	Staff Associate	851-5292		mg4205	401B	1/16/2020
-"Gianni, Francesca, PhD"	Postdoctoral Research Fellow (to Aug 31)	851-5292		fg2442	401B	
-"Gunning, Thomas "	Tech B 	851-5292		tg2680	401 B	
+"Gianni, Francesca, PhD"	Postdoctoral Research Fellow	851-5292		fg2442	401B	
+"Gunning, Thomas"	Tech B 	851-5292		tg2680	401 B	
 "Kemfack, Angela"	Tech B	851-5292		ak4554	401B	
 "Laurent, Anouchka, PhD"	Postdoctoral Research Scientist 	851-5292		apl2161	401B	3/1/2020
 "Mackey, Adam"	Senior Technician	851-5292		alm2283	401B	
@@ -77,7 +77,7 @@ NAME	TITLE	PHONE	FAX	E-MAIL	Office/Lab#
 "Wendorff, Agnieszka, PhD"	Associate Research Scientist	851-5292		aw2785	401B	
 						
 "Gautier, Jean, PhD"	Professor of Genetic & Development (in ICG)	851-4564		jg130@columbia.edu	"603A, 602,613"	
-"Aparicio, Tomas, PhD "	Associate Research Scientist	851-4566/67/68		ta2308	602	
+"Aparicio, Tomas, PhD"	Associate Research Scientist	851-4566/67/68		ta2308	602	
 "Liebau, Andrew"	GRA	851-4566/67/68		awl2142	602	
 "Min, Jaewon, PhD"	Assistant Professor 	851-4566/67/68		jm5092	602	1/1/2020
 "Reyes, Jorge"	Tech B	851-4566/67/68		jr4034	602	
@@ -113,18 +113,18 @@ NAME	TITLE	PHONE	FAX	E-MAIL	Office/Lab#
 "Cupo, Olivia"	Tech B	851-4785		oc2298	501	
 "Lee, Brian"	Sr Tech B	851-4785		bl2530	501	
 "Lin, Xiaohui, PhD"	Postdoctoral Research Scientist	851-4785		xl2866	501	
-"Menolfi, Demis, PhD  "	Postdoctoral Research Fellow 	851-4785		dm3231	501	
+"Menolfi, Demis, PhD "	Postdoctoral Research Fellow 	851-4785		dm3231	501	
 "Milanovic, Maja, PhD"	Postdoctoral Research Scientist	851-4785		mm4619	501	
-"Shao, Zhengping, MD, PhD "	Postdoctoral Research Scientist	851-4785		zs2275	501	
+"Shao, Zhengping, MD, PhD"	Postdoctoral Research Scientist	851-4785		zs2275	501	
 "Wang, Xiobin (Summer)"	GRA	851-4785		xw2394	501	
 "Zhu, Yimeng, PhD"	Postdoctoral Research Scientist	851-4785		yz3537	501	
 						
-"Zhang, Zhiguo, PhD"	"Prof of Epigenomics & Molecular Biology (in Ped, G & D,  ICG) "	851-4936		zz2401@columbia.edu	406	
+"Zhang, Zhiguo, PhD"	"Prof of Epigenomics & Molecular Biology (in Ped, G & D,  ICG)"	851-4936		zz2401@columbia.edu	406	
 "Cheng, Liang, PhD"	Postdoctoral Research Scientist 	851-4937		lc3420	407	
 "Duan, Shoufu, PhD"	Postdoctoral Research Scientist 	851-4937		sd3379	407	
 "Hua, Xu, PhD"	Postdoctoral Research Scientist 	851-4937		xh2387	407	
 "Li, Zhiming, PhD"	Postdoctoral Research Scientist 	851-4937		zl2783	407	
-"Mo, Yan, PhD "	Postdoctoral Research Scientist 	851-4937		ym2667	407	
+"Mo, Yan, PhD"	Postdoctoral Research Scientist 	851-4937		ym2667	407	
 "Serra-Cardona, Albert, PhD"	Postdoctoral Research Scientist	851-4937		as5251	407	
 "Xu, Xiaowei, PhD"	Postdoctoral Research Scientist 	851-4937		xx2285	407	
 "Zhang, Xu, PhD"	Postdoctoral Research Scientist 	851-4937		xz2711	407	

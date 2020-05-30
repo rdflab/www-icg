@@ -4,7 +4,34 @@ import PersonLink from "./personlink"
 import Column from "../column"
 import FullDiv from "../fulldiv"
 
-const PeopleGrid = ({ name, people, cols, colWidth, smallView, faculty }) => {
+const PersonCard = ({ person, smallView }) => (
+  <div
+    className={`w-full trans-ani shadow-lg hover:shadow-xl rounded-md bg-white mb-12 p-8 overflow-hidden`}
+  >
+    <div>
+      <h3>
+        <PersonLink person={person} />
+      </h3>
+
+      <h4>{person.frontmatter.title}</h4>
+    </div>
+    {!smallView && (
+      <div className="mt-4">
+        <ContactInfo person={person} />
+      </div>
+    )}
+  </div>
+)
+
+const PeopleGrid = ({
+  name,
+  people,
+  cols,
+  colWidth,
+  smallView,
+  faculty,
+  headingColor,
+}) => {
   const rows = Math.floor(people.length / cols) + 1
 
   const ret = []
@@ -38,19 +65,8 @@ const PeopleGrid = ({ name, people, cols, colWidth, smallView, faculty }) => {
 
       col.push(
         <Column className={`md:${colWidth}`} key={index}>
-          {person != null && (
-            <div className={`w-full py-4 trans-ani`}>
-              <h3>
-                <PersonLink person={person} />
-              </h3>
-              <div>{person.frontmatter.title}</div>
-
-              {!smallView && (
-                <div>
-                  <ContactInfo person={person} />
-                </div>
-              )}
-            </div>
+          {person !== null && (
+            <PersonCard person={person} smallView={smallView} />
           )}
         </Column>
       )
@@ -78,7 +94,7 @@ const PeopleGrid = ({ name, people, cols, colWidth, smallView, faculty }) => {
   if (found) {
     return (
       <FullDiv key={name}>
-        <h2>{name}</h2>
+        <h2 className={`py-4 ${headingColor}`}>{name}</h2>
         <div>{ret}</div>
       </FullDiv>
     )
@@ -88,10 +104,11 @@ const PeopleGrid = ({ name, people, cols, colWidth, smallView, faculty }) => {
 }
 
 PeopleGrid.defaultProps = {
-  cols: 4,
-  colWidth: "w-2/10",
+  cols: 3,
+  colWidth: "w-3/10",
   smallView: false,
   faculty: null,
+  headingColor: "text-black",
 }
 
 export default PeopleGrid

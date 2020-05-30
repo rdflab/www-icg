@@ -2,7 +2,14 @@ import React from "react"
 import { GROUPS } from "../../constants"
 import PeopleGrid from "./peoplegrid"
 
-const PeopleGroups = ({ groupMap, cols, colWidth, smallView, faculty }) => {
+const PeopleGroups = ({
+  groupMap,
+  cols,
+  colWidth,
+  smallView,
+  faculty,
+  headingColor,
+}) => {
   const ret = []
 
   for (let g of GROUPS) {
@@ -19,6 +26,7 @@ const PeopleGroups = ({ groupMap, cols, colWidth, smallView, faculty }) => {
               cols={cols}
               colWidth={colWidth}
               smallView={smallView}
+              headingColor={headingColor}
             />
           </div>
         )
@@ -32,8 +40,9 @@ const PeopleGroups = ({ groupMap, cols, colWidth, smallView, faculty }) => {
 PeopleGroups.defaultProps = {
   faculty: null,
   smallView: false,
-  cols: 4,
-  colWidth: "w-2/10",
+  cols: 3,
+  colWidth: "w-3/10",
+  headingColor: "text-black",
 }
 
 export default PeopleGroups

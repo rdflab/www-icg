@@ -52,7 +52,7 @@ const Publication = ({ publication, showLabLink, maxAuthors }) => {
 
   return (
     <div className="mb-8">
-      <h3>{publication.title}</h3>
+      <h4>{publication.title}</h4>
       <div className="font-light">{authors}</div>
 
       <Column>

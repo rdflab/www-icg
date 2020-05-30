@@ -18,5 +18,9 @@
   {
     "name": "Events",
     "link": "/events"
+  },
+  {
+    "name": "Services",
+    "link": "/services"
   }
 ]

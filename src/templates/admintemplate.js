@@ -1,8 +1,9 @@
 import React, { useState } from "react"
-import CrumbContainerLayout from "../components/crumbcontainerlayout"
+import CrumbLayout from "../components/crumblayout"
 import SiteSearch from "../components/search/sitesearch"
 import H1 from "../components/headings/h1"
 import PeopleGroups from "../components/people/peoplegroups"
+import Container from "../components/container"
 
 const EMPTY_QUERY = ""
 
@@ -42,7 +43,7 @@ const AdminTemplate = ({ pageContext }) => {
   // let pagedGroups = groups.slice(offset, offset + recordsPerPage)
 
   return (
-    <CrumbContainerLayout
+    <CrumbLayout
       crumbs={[
         ["People", "/people"],
         ["Administration", "/people/administration"],
@@ -59,13 +60,19 @@ const AdminTemplate = ({ pageContext }) => {
         text={query}
         className="my-4"
       /> */}
+      <div className="bg-gray-700 py-16">
+        <Container>
+          <H1 className="text-white">Meet our Administration Team</H1>
 
-      <H1 className="text-center">Meet our Administration Team</H1>
-
-      <div className="w-full">
-        <PeopleGroups groupMap={adminGroupMap} />
+          <div className="w-full">
+            <PeopleGroups
+              groupMap={adminGroupMap}
+              headingColor="text-gray-100"
+            />
+          </div>
+        </Container>
       </div>
-    </CrumbContainerLayout>
+    </CrumbLayout>
   )
 }
 

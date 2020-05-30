@@ -27,7 +27,8 @@ const LabTemplate = ({ pageContext }) => {
   const title = labName(faculty)
 
   const crumbs = [
-    ["Labs", "/research-areas/labs"],
+    ["People", "/people"],
+    ["Faculty", "/people/faculty"],
     [personName(faculty), `/research-areas/labs/${lab.id}`],
   ]
 
@@ -48,38 +49,45 @@ const LabTemplate = ({ pageContext }) => {
             <h3>Research Focus</h3>
             <h3>Education</h3> */}
 
-      <HTMLDiv html={labExcerptHtml} />
+      <div>
+        <HTMLDiv html={labExcerptHtml} />
 
-      <Container>
-        <H1>Meet the team</H1>
-        <PeopleGroups groupMap={labGroupMap} />
-        {/* <PeopleGroups groupMap={labGroupMap} /> faculty={faculty} /> */}
-      </Container>
-
-      {labPublications.length > 0 && (
-        <div className="py-8">
+        <div className="bg-gray-700 py-16">
           <Container>
-            <H1>Recent Publications</H1>
-
-            <RecentPublications lab={lab} publications={labPublications} />
+            <H1 className="text-white">Meet the team</H1>
+            <PeopleGroups
+              groupMap={labGroupMap}
+              headingColor={"text-gray-200"}
+            />
+            {/* <PeopleGroups groupMap={labGroupMap} /> faculty={faculty} /> */}
           </Container>
         </div>
-      )}
 
-      {labNews.length > 0 && (
-        <div className="mt-8">
-          <h3>News</h3>
-          <SideBarNews allNews={labNews} />
-        </div>
-      )}
+        {labPublications.length > 0 && (
+          <div className="py-16">
+            <Container>
+              <H1>Recent Publications</H1>
 
-      {/* <div className="mt-8">
+              <RecentPublications lab={lab} publications={labPublications} />
+            </Container>
+          </div>
+        )}
+
+        {labNews.length > 0 && (
+          <div className="mt-8">
+            <h3>News</h3>
+            <SideBarNews allNews={labNews} />
+          </div>
+        )}
+
+        {/* <div className="mt-8">
             <SideBarMembers
               group={group}
               people={group.leaders}
               title="Faculty"
             />
           </div> */}
+      </div>
     </CrumbLayout>
   )
 }

@@ -1,11 +1,12 @@
 import React, { useState } from "react"
-import CrumbContainerLayout from "../components/crumbcontainerlayout"
+import CrumbLayout from "../components/crumblayout"
 import SiteSearch from "../components/search/sitesearch"
 import Column from "../components/column"
 import H1 from "../components/headings/h1"
 import H2 from "../components/headings/h2"
 import { Link } from "gatsby"
 import generic from "../assets/svg/generic.svg"
+import Container from "../components/container"
 
 const EMPTY_QUERY = ""
 
@@ -26,7 +27,9 @@ const Lab = ({ person, labId }) => {
 
   return (
     <div
-      className={`w-full rounded bg-white shadow-md overflow-hidden mb-8 md:mx-4`}
+      className={`w-full rounded-md bg-white shadow-lg overflow-hidden mb-16 text-white trans-ani ${
+        hover ? "bg-blue-500" : "bg-blue-600"
+      }`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
@@ -34,19 +37,18 @@ const Lab = ({ person, labId }) => {
         <div className="bg-white">
           <img src={generic} className="w-full" alt={person.frontmatter.name} />
         </div>
-        <div
-          className={`p-4 text-lg trans-ani ${
-            hover ? "bg-blue-600 text-white" : "text-blue-500"
-          }`}
-        >
-          {person.frontmatter.name}, {person.frontmatter.postNominalLetters}
+        <div className="p-4 text-lg">
+          <h3>
+            {person.frontmatter.name}, {person.frontmatter.postNominalLetters}
+          </h3>
+          <h4>{person.frontmatter.title}</h4>
         </div>
       </Link>
     </div>
   )
 }
 
-const StaffGrid = ({ people, peopleMap, cols }) => {
+const StaffGrid = ({ people, peopleMap, cols, colWidth }) => {
   const rows = Math.floor(people.length / cols) + 1
 
   const ret = []
@@ -57,25 +59,23 @@ const StaffGrid = ({ people, peopleMap, cols }) => {
     const col = []
 
     for (let c = 0; c < cols; ++c) {
-      let person = peopleMap[people[pc].id]
+      let person = null
+
+      if (pc < people.length) {
+        person = peopleMap[people[pc].id]
+      }
 
       col.push(
-        <Column className="md:w-1/4" key={`person-${pc}`}>
-          {pc < people.length && (
-            <Lab person={person} labId={people[pc].labId} />
-          )}
+        <Column className={`md:${colWidth}`} key={`person-${pc}`}>
+          {person !== null && <Lab person={person} labId={people[pc].labId} />}
         </Column>
       )
 
       ++pc
-
-      if (pc === people.length) {
-        break
-      }
     }
 
     ret.push(
-      <Column className="justify-center" key={r}>
+      <Column className="justify-between" key={r}>
         {col}
       </Column>
     )
@@ -89,14 +89,19 @@ const StaffGrid = ({ people, peopleMap, cols }) => {
 }
 
 StaffGrid.defaultProps = {
-  cols: 4,
+  cols: 3,
+  colWidth: "w-3/10",
 }
 
 const StaffGroups = ({ allGroups, peopleMap }) => {
   const ret = []
 
   for (let group of allGroups) {
-    ret.push(<H2 key={`header-${group.name}`}>{group.name}</H2>)
+    ret.push(
+      <h2 className="my-4" key={`header-${group.name}`}>
+        {group.name}
+      </h2>
+    )
 
     ret.push(
       <StaffGrid
@@ -146,7 +151,7 @@ const FacultyTemplate = ({ pageContext }) => {
   // let pagedGroups = groups.slice(offset, offset + recordsPerPage)
 
   return (
-    <CrumbContainerLayout
+    <CrumbLayout
       crumbs={crumbs}
       title="Research Labs"
       headerComponent={<SiteSearch />}
@@ -160,15 +165,16 @@ const FacultyTemplate = ({ pageContext }) => {
         text={query}
         className="my-4"
       /> */}
+      <div className="bg-gray-700 py-8 text-white">
+        <Container>
+          <H1 className="text-center">Meet our Scientists</H1>
 
-      <H1 className="text-center">Meet our Scientists</H1>
-
-      <div className="w-full">
-        {/* <Labs labs={allGroups} /> */}
-        {/*<StaffGrid labs={allGroups} /> */}
-        <StaffGroups allGroups={allGroups} peopleMap={peopleMap} />
+          {/* <Labs labs={allGroups} /> */}
+          {/*<StaffGrid labs={allGroups} /> */}
+          <StaffGroups allGroups={allGroups} peopleMap={peopleMap} />
+        </Container>
       </div>
-    </CrumbContainerLayout>
+    </CrumbLayout>
   )
 }
 

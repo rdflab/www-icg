@@ -33,7 +33,7 @@ const PublicationYears = ({ publications, sectionMode, showLabLink }) => {
           return (
             <Column className="mb-8" key={year}>
               <Column className="w-1/10 justify-end mr-8">
-                <h2 className="text-blue-600">{year}</h2>
+                <h3 className="text-blue-600">{year}</h3>
               </Column>
               <Column className="w-9/10">
                 <FullDiv>

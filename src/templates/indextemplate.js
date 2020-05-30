@@ -5,6 +5,7 @@ import Container from "../components/container"
 import Column from "../components/column"
 
 import BlueIndexLink from "../components/blueindexlink"
+import TextIndexLink from "../components/textindexlink"
 import WhiteIndexLink from "../components/whiteindexlink"
 import SiteSearch from "../components/search/sitesearch"
 import generic from "../assets/svg/generic.svg"
@@ -200,7 +201,9 @@ const IndexTemplate = ({ pageContext }) => {
                   Find out who we are by exploring what our world-class
                   researchers are studying.
                 </p>
-                <BlueIndexLink to="/people/faculty">Faculty</BlueIndexLink>
+                <h3 className="mt-4">
+                  <TextIndexLink to="/people/faculty">Faculty</TextIndexLink>
+                </h3>
               </div>
             </Column>
             <Column w={6}></Column>
@@ -224,7 +227,9 @@ const IndexTemplate = ({ pageContext }) => {
           <div className="p-8">
             <HomeTitle>Upcoming Events</HomeTitle>
             <p>See upcoming events and seminars of interest.</p>
-            <WhiteIndexLink to="/events">See all events</WhiteIndexLink>
+            <h3 className="mt-4">
+              <WhiteIndexLink to="/events">See all events</WhiteIndexLink>
+            </h3>
           </div>
         </Column>
         <Column w={7}>

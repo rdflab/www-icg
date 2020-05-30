@@ -15,7 +15,7 @@ const StyledFooter = styled.footer`
 
 const Footer = ({ siteTitle }) => {
   return (
-    <StyledFooter className="text-white text-sm mt-8 py-10 bg-blue-columbia">
+    <StyledFooter className="text-white text-sm py-10 bg-blue-columbia">
       <Container>
         <div>
           <FooterLinks />

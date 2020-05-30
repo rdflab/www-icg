@@ -34,7 +34,7 @@ const LabHeader = ({ lab, title, heading, subHeading }) => {
   return (
     <>
       <ShowSmall>
-        <div className="bg-blue-columbia-50 py-4 text-white">
+        <div className="bg-blue-400 py-4 text-white">
           <Container>
             <div>
               <div className="uppercase mb-4">{title}</div>
@@ -43,11 +43,11 @@ const LabHeader = ({ lab, title, heading, subHeading }) => {
             </div>
           </Container>
         </div>
-        <div className="bg-blue-columbia-60 py-4 text-white">
+        <div className="bg-blue-600 py-4 text-white">
           <Container></Container>
         </div>
       </ShowSmall>
-      <HideSmall className="relative w-full mb-16">
+      <HideSmall className="relative w-full">
         <Column className="w-full h-full absolute bg-white ">
           <Column className="w-6/10 bg-blue-columbia-50 p-8 px-32"></Column>
           <Column className="w-4/10 bg-blue-columbia-60 p-8 text-white"></Column>

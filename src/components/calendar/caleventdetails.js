@@ -5,9 +5,9 @@ import { eventUrl } from "../../utils/urls"
 
 const CalEventDetails = ({ event, isMobile }) => (
   <div>
-    <h2>
+    <h3>
       <BlueLink to={eventUrl(event)}>{event.frontmatter.title}</BlueLink>
-    </h2>
+    </h3>
     <CalEventLocation event={event} isMobile={isMobile} />
   </div>
 )

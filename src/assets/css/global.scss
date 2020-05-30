@@ -16,16 +16,20 @@ body {
 }
 
 h1 {
-  @apply text-3xl;
+  @apply text-4xl;
   font-family: Raleway;
 }
 
 h2 {
-  @apply text-2xl font-semibold;
+  @apply text-3xl font-semibold;
 }
 
 h3 {
-  @apply text-lg font-semibold;
+  @apply text-2xl font-semibold;
+}
+
+h4 {
+  @apply text-xl font-semibold;
 }
 
 
