@@ -1,10 +1,12 @@
 import React, { useState } from "react"
-import CrumbContainerLayout from "../components/crumbcontainerlayout"
+import CrumbLayout from "../components/crumblayout"
 import SiteSearch from "../components/search/sitesearch"
 import YearSelector from "../components/filter/yearselector"
 import HideSmall from "../components/hidesmall"
 import NewsSearchResults from "../components/news/newssearchresults"
 import Column from "../components/column"
+import H from "../components/headings/h"
+import Container from "../components/container"
 // import MainColumn from "../components/maincolumn"
 // import SideColumn from "../components/sidecolumn"
 
@@ -62,7 +64,7 @@ const NewsTemplate = ({ pageContext }) => {
   let pagedNews = yearFilteredNews.slice(offset, offset + recordsPerPage)
 
   return (
-    <CrumbContainerLayout
+    <CrumbLayout
       crumbs={[["News", "/news"]]}
       title="News"
       // titleComponent={
@@ -76,38 +78,25 @@ const NewsTemplate = ({ pageContext }) => {
       // }
       headerComponent={<SiteSearch />}
     >
-      {/* <HideSmall>
+      <H>News</H>
 
-        <Column isVCentered={true} isCentered={true}>
-          <div>
-            <YearSelector onClick={handleClick} />
-          </div>
-        </Column>
-      </HideSmall> */}
-      {/* 
-      <Column>
-        <MainColumn>
-          <div className="w-full"> */}
-
-      <HideSmall>
-        <Column isVCentered={true} isCentered={true}>
-          <div>
-            <YearSelector onClick={handleClick} />
-          </div>
-        </Column>
-      </HideSmall>
-      <NewsSearchResults
-        news={yearFilteredNews}
-        pagedNews={pagedNews}
-        page={page}
-        recordsPerPage={recordsPerPage}
-        onPageChanged={onPageChanged}
-      />
-      {/* </div>
-        </MainColumn>
-        <SideColumn></SideColumn>
-      </Column> */}
-    </CrumbContainerLayout>
+      <Container className="py-8">
+        <HideSmall>
+          <Column isVCentered={true} isCentered={true}>
+            <div>
+              <YearSelector onClick={handleClick} />
+            </div>
+          </Column>
+        </HideSmall>
+        <NewsSearchResults
+          news={yearFilteredNews}
+          pagedNews={pagedNews}
+          page={page}
+          recordsPerPage={recordsPerPage}
+          onPageChanged={onPageChanged}
+        />
+      </Container>
+    </CrumbLayout>
   )
 }
 
