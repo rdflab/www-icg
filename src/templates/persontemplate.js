@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import CrumbLayout from "../components/crumblayout"
 import Column from "../components/column"
@@ -8,13 +8,11 @@ import HTMLDiv from "../components/htmldiv"
 import SimplePubSearch from "../components/publication/simplepubsearch"
 import SiteSearch from "../components/search/sitesearch"
 
-import { labUrl, personUrl } from "../utils/urls"
+import { personUrl } from "../utils/urls"
 
 import Container from "../components/container"
-import WhiteLink from "../components/whitelink"
 import H1 from "../components/headings/h1"
 import PersonHeader from "../components/people/personheader"
-import { labName } from "../utils/labname"
 
 const interests = person => {
   const n = person.researchAreas.length

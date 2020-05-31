@@ -5,5 +5,5 @@ type: "Administration"
 photo: ""
 email: ""
 phone: ""
-url: ""
+url: []
 ---

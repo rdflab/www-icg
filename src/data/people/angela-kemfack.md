@@ -9,7 +9,7 @@ phone: "851-5292"
 fax: ""
 email: "ak4554@cumc.columbia.edu"
 room: "401B"
-url: ""
+url: []
 group: "Research Staff"
 researchAreas: []
 tags: []

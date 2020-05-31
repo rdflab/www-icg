@@ -9,7 +9,7 @@ phone: "851-4937"
 fax: ""
 email: "xh2387@cumc.columbia.edu"
 room: "407"
-url: ""
+url: []
 group: "Research Staff"
 researchAreas: []
 tags: []

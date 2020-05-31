@@ -9,11 +9,9 @@ import SiteSearch from "../components/search/sitesearch"
 import { personName } from "../utils/personname"
 import H1 from "../components/headings/h1"
 import Container from "../components/container"
-import PersonHeader from "../components/people/personheader"
 import PeopleGroups from "../components/people/peoplegroups"
 import { labName } from "../utils/labname"
 import LabHeader from "../components/lab/labheader"
-import H from "../components/headings/h"
 
 const LabTemplate = ({ pageContext }) => {
   const {

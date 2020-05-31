@@ -9,7 +9,7 @@ phone: "851-5285"
 fax: ""
 email: "yl4214@cumc.columbia.edu"
 room: "608"
-url: ""
+url: []
 group: "Research Staff"
 researchAreas: []
 tags: []

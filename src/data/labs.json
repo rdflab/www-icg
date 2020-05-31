@@ -2,7 +2,7 @@
   {
     "id": "swarnali-acharyya",
     "name": "Swarnali Acharyya",
-    "url": "",
+    "url": [],
     "people": [
       "swarnali-acharyya",
       "anup-biswas",
@@ -17,13 +17,13 @@
   {
     "id": "richard-baer",
     "name": "Richard Baer",
-    "url": "",
+    "url": [],
     "people": ["richard-baer", "madeline-wong", "foon-wu-baer"]
   },
   {
     "id": "christine-chio",
     "name": "Christine Chio",
-    "url": "chiolab.com",
+    "url": ["chiolab.com", "https://chiolab.com/"],
     "people": [
       "christine-chio",
       "marina-ayres-pereira",
@@ -35,7 +35,7 @@
   {
     "id": "riccardo-dalla-favera",
     "name": "Riccardo Dalla-Favera",
-    "url": "",
+    "url": [],
     "people": [
       "katia-basso",
       "riccardo-dalla-favera",
@@ -61,7 +61,7 @@
   {
     "id": "adolfo-ferrando",
     "name": "Adolfo Ferrando",
-    "url": "ferrandolab.org",
+    "url": ["ferrandolab.org", "http://www.ferrandolab.org/"],
     "people": [
       "adolfo-ferrando",
       "teresa-palomero",
@@ -91,7 +91,7 @@
   {
     "id": "jean-gautier",
     "name": "Jean Gautier",
-    "url": "",
+    "url": [],
     "people": [
       "jean-gautier",
       "jaewon-min",
@@ -105,7 +105,7 @@
   {
     "id": "wei-gu",
     "name": "Wei Gu",
-    "url": "",
+    "url": [],
     "people": [
       "wei-gu",
       "delin-chen",
@@ -122,7 +122,7 @@
   {
     "id": "antonio-iavarone",
     "name": "Antonio Iavarone",
-    "url": "",
+    "url": [],
     "people": [
       "antonio-iavarone",
       "anna-lasorella",
@@ -142,7 +142,7 @@
   {
     "id": "shan-zha",
     "name": "Shan Zha",
-    "url": "",
+    "url": [],
     "people": [
       "shan-zha",
       "xiaohui-lin",
@@ -158,7 +158,7 @@
   {
     "id": "zhiguo-zhang",
     "name": "Zhiguo Zhang",
-    "url": "",
+    "url": [],
     "people": [
       "zhiguo-zhang",
       "liang-cheng",

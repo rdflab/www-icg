@@ -9,7 +9,7 @@ phone: "851-4793"
 fax: ""
 email: "rh2862@cumc.columbia.edu"
 room: "401A"
-url: ""
+url: []
 group: "Research Staff"
 researchAreas: []
 tags: []

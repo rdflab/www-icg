@@ -28,21 +28,12 @@ export const SiteLink = ({ to, link }) => {
 const SiteSearchResult = ({ text, to, link, selected }) => {
   const linkEl = useRef(null)
 
-  const onKeyDown = e => {
-    if (selected) {
-      console.log(e)
-
-      if (e.keyCode === 13) {
-      }
-    }
-  }
-
   const click = () => {
     linkEl.current.click()
   }
 
   return (
-    <Link ref={linkEl} to={to} className="p-0 m-0" onKeyDown={onKeyDown}>
+    <Link ref={linkEl} to={to} className="p-0 m-0">
       <div
         className={`px-4 py-2 cursor-pointer ${
           selected ? "bg-gray-200" : "hover:bg-gray-200"
@@ -305,7 +296,7 @@ const SiteSearch = ({ className, placeholder, maxResults }) => {
   }
 
   const onKeyDown = e => {
-    console.log(e.keyCode)
+    //console.log(e.keyCode)
 
     if (e.keyCode === 38 || e.keyCode === 37) {
       setSelectedIndex(Math.max(-1, selectedIndex - 1))

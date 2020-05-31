@@ -9,7 +9,7 @@ phone: "851-5266"
 fax: ""
 email: "mw3335@cumc.columbia.edu"
 room: "502"
-url: ""
+url: []
 group: "Research Staff"
 researchAreas: []
 tags: []

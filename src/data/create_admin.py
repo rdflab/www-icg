@@ -127,7 +127,7 @@ for i in range(3, 14):
     print('fax: "{}"'.format(fax), file=f)
     print('email: "{}"'.format(email), file=f)
     print('room: "{}"'.format(room), file=f)
-    print('url: "{}"'.format(url), file=f)
+    print('url: []'.format(url), file=f)
     print('group: "{}"'.format(type), file=f)
     print('researchAreas: []', file=f)
     print('tags: []', file=f)

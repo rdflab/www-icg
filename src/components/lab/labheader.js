@@ -12,7 +12,7 @@ const LabWebSite = ({ lab }) => {
     return (
       <div>
         <h5>
-          <WhiteLinkExt to={lab.url}>{lab.url}</WhiteLinkExt>
+          <WhiteLinkExt to={lab.url[1]}>{lab.url[0]}</WhiteLinkExt>
         </h5>
       </div>
     )
@@ -46,21 +46,21 @@ const LabHeader = ({ lab, title, heading, subHeading }) => {
           <Container></Container>
         </div>
       </ShowSmall>
-      <HideSmall className="relative w-full bg-columbia-secondary-blue">
+      <HideSmall className="relative w-full bg-columbia-secondary-blue py-8">
         {/* <Column className="w-full h-full absolute bg-white text-white">
           <Column className="w-6/10 bg-columbia-secondary-blue p-8 px-32"></Column>
           <Column className="w-4/10 bg-columbia-secondary-blue p-8"></Column>
         </Column> */}
         <Container className="z-20 relative">
           <Column isVCentered={true}>
-            <Column className="w-8/10 py-8">
+            <Column className="w-7/10">
               <div className="text-white">
                 <div className="uppercase mb-4">{title}</div>
                 <div className="text-4xl font-semibold">{heading}</div>
                 <div className="text-2xl">{subHeading}</div>
               </div>
             </Column>
-            <Column className="py-8 text-white">
+            <Column className="text-white">
               <LabWebSite lab={lab} />
             </Column>
           </Column>

@@ -9,7 +9,7 @@ phone: "851-5287"
 fax: ""
 email: "qg2189@cumc.columbia.edu"
 room: "403"
-url: ""
+url: []
 group: "Research Staff"
 researchAreas: []
 tags: []

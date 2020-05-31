@@ -171,7 +171,7 @@ for i in range(13, df.shape[0]):
     print('fax: "{}"'.format(fax), file=f)
     print('email: "{}"'.format(email), file=f)
     print('room: "{}"'.format(room), file=f)
-    print('url: "{}"'.format(url), file=f)
+    print('url: []'.format(url), file=f)
     print('group: "{}"'.format(t), file=f)
     print('researchAreas: []', file=f)
     print('tags: []'.format(url), file=f)

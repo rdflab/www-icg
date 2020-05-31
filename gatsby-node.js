@@ -113,7 +113,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       tags: [String!]!
       room: String!
       type: String!
-      url: String!
+      url: [String!]!
       start: Date
       end: Date
       groups: [String!]!

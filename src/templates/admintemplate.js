@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import CrumbLayout from "../components/crumblayout"
 import SiteSearch from "../components/search/sitesearch"
-import H1 from "../components/headings/h1"
 import PeopleGroups from "../components/people/peoplegroups"
 import Container from "../components/container"
 import H from "../components/headings/h"

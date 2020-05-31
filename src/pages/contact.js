@@ -1,5 +1,4 @@
 import React from "react"
-import H1 from "../components/headings/h1"
 import Container from "../components/container"
 import CrumbLayout from "../components/crumblayout"
 import H from "../components/headings/h"

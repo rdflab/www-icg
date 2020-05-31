@@ -36,26 +36,26 @@ const PersonHeader = ({ person, title, heading, subHeading }) => {
           </Container>
         </div>
       </ShowSmall>
-      <HideSmall className="relative w-full mb-16">
-        <Column className="w-full h-full absolute bg-white ">
+      <HideSmall className="relative w-full bg-columbia-secondary-blue py-8 text-white">
+        {/* <Column className="w-full h-full absolute bg-white ">
           <Column className="w-6/10 bg-columbia-blue-50 p-8 px-32"></Column>
           <Column className="w-4/10 bg-columbia-blue-60 p-8 text-white"></Column>
-        </Column>
+        </Column> */}
         <Container className="z-20 relative">
-          <Column>
-            <MainColumn className="w-6/10 py-8">
+          <Column isVCentered={true}>
+            <Column className="w-7/10">
               <div className="text-white">
                 <div className="uppercase mb-4">{title}</div>
                 <div className="text-4xl font-semibold">{heading}</div>
                 <div className="text-2xl">{subHeading}</div>
               </div>
-            </MainColumn>
-            <SideColumn className="py-8 text-white">
+            </Column>
+            <Column>
               <div>
-                <div className="uppercase mb-4">Contact</div>
+                {/* <div className="uppercase mb-4">Contact</div> */}
                 <ContactInfo person={person} color="white" />
               </div>
-            </SideColumn>
+            </Column>
           </Column>
         </Container>
       </HideSmall>

@@ -9,7 +9,7 @@ phone: "851-4936"
 fax: ""
 email: "zz2401@columbia.edu"
 room: "406"
-url: ""
+url: []
 group: "Faculty"
 researchAreas: []
 tags: []

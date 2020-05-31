@@ -9,7 +9,7 @@ phone: "851-5275 "
 fax: "851-5220"
 email: "rb670@columbia.edu"
 room: "503A"
-url: ""
+url: []
 group: "Faculty"
 researchAreas: []
 tags: []

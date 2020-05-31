@@ -9,7 +9,7 @@ phone: "851-4792"
 fax: ""
 email: "sa3141@columbia.edu"
 room: "402B"
-url: ""
+url: []
 group: "Faculty"
 researchAreas: []
 tags: []

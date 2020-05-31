@@ -9,7 +9,7 @@ phone: "851-5270"
 fax: ""
 email: "eb3151@cumc.columbia.edu"
 room: "507"
-url: ""
+url: []
 group: "Research Staff"
 researchAreas: []
 tags: []
