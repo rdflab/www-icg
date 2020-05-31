@@ -94,6 +94,10 @@ const createSuffixTree = (root, text, item) => {
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions
   const typeDefs = `
+    type LabsJson implements Node {
+      url: [String!]!
+    }
+
     type MarkdownRemark implements Node {
       frontmatter: Frontmatter
     }
@@ -116,7 +120,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       url: [String!]!
       start: Date
       end: Date
-      groups: [String!]!
+      labs: [String!]!
       notes: [String!]!
       people: [String!]!
       researchAreas: [String!]!
@@ -272,10 +276,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             html
             frontmatter {
               title
-              date(formatString: "MMMM DD, YYYY")
-              year: date(formatString: "YYYY")
-              month: date(formatString: "MMMM")
-              groups
+              date
+              labs
               people
               path
               tags
@@ -438,14 +440,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     allPublications.push(publication)
   })
 
-  // result.data.news.edges.forEach(({ node }) => {
-  //   const item = node
-
-  //   // better if the year is an int
-  //   item.year = parseInt(item.frontmatter.year)
-
-  //   allNews.push(item)
-  // })
+  result.data.news.edges.forEach(({ node }) => {
+    const item = node
+    allNews.push(item)
+  })
 
   result.data.events.edges.forEach(({ node }) => {
     const calEvent = node
@@ -548,6 +546,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   searchData["sections"].push("News")
   searchData["data"]["News"] = {}
 
+  console.log(allNews)
+
   for (let item of allNews) {
     searchData["data"]["News"][item.frontmatter.title] = {
       name: `View`,
@@ -622,7 +622,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     const labGroupMap = toGroupMap(labPeople)
 
     const labNews = allNews.filter(item =>
-      item.frontmatter.groups.includes(lab.id)
+      item.frontmatter.labs.includes(lab.id)
     )
 
     let labHtml = ""

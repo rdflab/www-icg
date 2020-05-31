@@ -4,7 +4,7 @@ import BlueLink from "../bluelink"
 
 const SideBarNewsItem = ({ item }) => (
   <article className="mb-4 pb-4">
-    <NewsItemDate>{item.frontmatter.date}</NewsItemDate>
+    <NewsItemDate item={item} />
     <div>
       <BlueLink to={item.frontmatter.path}>{item.frontmatter.title}</BlueLink>
     </div>

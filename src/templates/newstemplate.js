@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import CrumbLayout from "../components/crumblayout"
 import SiteSearch from "../components/search/sitesearch"
 import YearSelector from "../components/filter/yearselector"
@@ -20,6 +20,12 @@ const NewsTemplate = ({ pageContext }) => {
   const [page, setPage] = useState(1)
   const [recordsPerPage, setRecordsPerPage] = useState(20)
   const [filterYears, setFilterYears] = useState([])
+
+  for (let item of allNews) {
+    if (item.date === undefined) {
+      item.date = new Date(item.frontmatter.date)
+    }
+  }
 
   const handleInputChange = e => {
     const q = e.target.value
@@ -54,7 +60,9 @@ const NewsTemplate = ({ pageContext }) => {
 
   if (filterYears.length > 0 && filterYears[0] !== "All") {
     yearFilteredNews = news.filter(item => {
-      return filterYears.includes(item.year)
+      return filterYears.includes(
+        item.date.toLocaleString("default", { year: "numeric" })
+      )
     })
   } else {
     yearFilteredNews = news
@@ -62,6 +70,8 @@ const NewsTemplate = ({ pageContext }) => {
 
   const offset = (page - 1) * recordsPerPage
   let pagedNews = yearFilteredNews.slice(offset, offset + recordsPerPage)
+
+  console.log(news)
 
   return (
     <CrumbLayout

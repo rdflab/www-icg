@@ -6,6 +6,8 @@ import MainColumn from "../components/maincolumn"
 import SideColumn from "../components/sidecolumn"
 import CalEventsSideBar from "../components/calendar/caleventssidebar"
 import Title from "../components/title"
+import H from "../components/headings/h"
+import Container from "../components/container"
 
 const CalEventTemplate = props => {
   const { pageContext } = props
@@ -18,22 +20,23 @@ const CalEventTemplate = props => {
 
   return (
     <CrumbLayout crumbs={[["Events", "/events"]]}>
-      <Column>
-        <MainColumn>
-          <div className="w-full">
-            <Title>{title}</Title>
+      <H>{title}</H>
+      <Container className="py-8">
+        <Column>
+          <MainColumn className="mr-16">
+            <div className="w-full">
+              <div dangerouslySetInnerHTML={{ __html: calEvent.html }} />
 
-            <div dangerouslySetInnerHTML={{ __html: calEvent.html }} />
-
-            <div className="my-4 py-4 border-t border-b border-solid border-gray-400">
-              <CalEventLocation event={calEvent} showDate={true} />
+              <div className="my-4 py-4 border-t border-b border-solid border-gray-400">
+                <CalEventLocation event={calEvent} showDate={true} />
+              </div>
             </div>
-          </div>
-        </MainColumn>
-        <SideColumn>
-          <CalEventsSideBar events={allCalEvents} />
-        </SideColumn>
-      </Column>
+          </MainColumn>
+          <SideColumn>
+            <CalEventsSideBar events={allCalEvents} />
+          </SideColumn>
+        </Column>
+      </Container>
     </CrumbLayout>
   )
 }

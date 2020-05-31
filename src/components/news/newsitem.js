@@ -6,14 +6,15 @@ import HTMLDiv from "../htmldiv"
 
 const NewsItem = ({ item }) => (
   <article className="mb-8 pb-4">
-    <NewsItemDate>{item.frontmatter.date}</NewsItemDate>
-    <BlueLink
-      aria-label={`Goto news about ${item.frontmatter.title}`}
-      to={item.frontmatter.path}
-    >
-      {item.frontmatter.title}
-    </BlueLink>
-
+    <NewsItemDate item={item} />
+    <h3>
+      <BlueLink
+        aria-label={`Goto news about ${item.frontmatter.title}`}
+        to={item.frontmatter.path}
+      >
+        {item.frontmatter.title}
+      </BlueLink>
+    </h3>
     <HTMLDiv html={item.excerpt} />
   </article>
 )
