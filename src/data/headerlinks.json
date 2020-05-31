@@ -12,11 +12,11 @@
     "link": "/research-areas/publications"
   },
   {
-    "name": "News",
-    "link": "/news"
-  },
-  {
     "name": "Events",
     "link": "/events"
+  },
+  {
+    "name": "News",
+    "link": "/news"
   }
 ]

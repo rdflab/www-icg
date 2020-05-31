@@ -7,6 +7,7 @@ import H2 from "../components/headings/h2"
 import { Link } from "gatsby"
 import generic from "../assets/svg/generic.svg"
 import Container from "../components/container"
+import H from "../components/headings/h"
 
 const EMPTY_QUERY = ""
 
@@ -165,10 +166,9 @@ const FacultyTemplate = ({ pageContext }) => {
         text={query}
         className="my-4"
       /> */}
-      <div className="bg-gray-700 py-8 text-white">
+      <H>Meet our Scientists</H>
+      <div className="bg-columbia-light-gray py-8 text-columbia-secondary-blue">
         <Container>
-          <H1 className="text-center">Meet our Scientists</H1>
-
           {/* <Labs labs={allGroups} /> */}
           {/*<StaffGrid labs={allGroups} /> */}
           <StaffGroups allGroups={allGroups} peopleMap={peopleMap} />

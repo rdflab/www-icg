@@ -16,6 +16,7 @@ const CrumbContainerLayout = ({
   menuComponent,
   children,
   crumbs,
+  backgroundColor,
 }) => {
   return (
     <CrumbLayout
@@ -24,18 +25,20 @@ const CrumbContainerLayout = ({
       menuComponent={menuComponent}
       crumbs={crumbs}
     >
-      <Container className="min-h-screen mt-4">
-        <div className="row items-center justify-between mb-4">
-          {/* {title !== "" && (
+      <div className={`${backgroundColor}`}>
+        <Container className="min-h-screen">
+          <div className="row items-center justify-between mb-4">
+            {/* {title !== "" && (
             <div className="mr-8">
               <Title>{title}</Title>
             </div>
           )} */}
-          <div></div>
-          {titleComponent !== null ? titleComponent : ""}
-        </div>
-        {children}
-      </Container>
+            <div></div>
+            {titleComponent !== null ? titleComponent : ""}
+          </div>
+          {children}
+        </Container>
+      </div>
     </CrumbLayout>
   )
 }
@@ -47,6 +50,7 @@ CrumbContainerLayout.defaultProps = {
   titleComponent: null,
   headerComponent: null,
   menuComponent: null,
+  backgroundColor: "bg-white",
 }
 
 export default CrumbContainerLayout

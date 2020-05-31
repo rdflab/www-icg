@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { graphql } from "gatsby"
-import CrumbContainerLayout from "../components/crumbcontainerlayout"
+import CrumbLayout from "../components/crumblayout"
 import toImageMap from "../utils/toimagemap"
 import { GROUPS } from "../constants"
 import toPeopleGroupMap from "../utils/peoplegroupmap"
@@ -11,6 +11,8 @@ import SiteSearch from "../components/search/sitesearch"
 import Column from "../components/column"
 import ShowSmall from "../components/showsmall"
 import PeopleGroups from "../components/people/peoplegroups"
+import H from "../components/headings/h"
+import Container from "../components/container"
 // import MainColumn from "../components/maincolumn"
 // import SideColumn from "../components/sidecolumn"
 
@@ -107,7 +109,7 @@ const PeopleTemplate = ({ data, pageContext }) => {
   }
 
   return (
-    <CrumbContainerLayout
+    <CrumbLayout
       crumbs={crumbs}
       title={title}
       headerComponent={<SiteSearch />}
@@ -119,32 +121,34 @@ const PeopleTemplate = ({ data, pageContext }) => {
       //   />
       // }
     >
-      {/* <H1>{title}</H1> */}
+      <H>{title}</H>
 
-      <ShowSmall>
-        <SearchBar
-          handleInputChange={handleInputChange}
-          placeholder="Type to find faculty..."
-          text={query}
-        />
-      </ShowSmall>
-
-      <HideSmall>
-        <Column isCentered={true} className="mb-8">
-          <div className="w-1/2">
+      <div className="bg-columbia-light-gray py-8">
+        <Container>
+          <ShowSmall>
             <SearchBar
               handleInputChange={handleInputChange}
               placeholder="Type to find faculty..."
               text={query}
             />
-          </div>
-        </Column>
-      </HideSmall>
+          </ShowSmall>
 
-      {/* <Column>
+          <HideSmall>
+            <Column isCentered={true} className="mb-8">
+              <div className="w-1/2">
+                <SearchBar
+                  handleInputChange={handleInputChange}
+                  placeholder="Type to find faculty..."
+                  text={query}
+                />
+              </div>
+            </Column>
+          </HideSmall>
+
+          {/* <Column>
       <MainColumn>
         <div className="w-full"> */}
-      {/* <HideSmall>
+          {/* <HideSmall>
         <Column isVCentered={true} className="justify-center mt-8">
           <div>
             <TypeSelector onClick={handleClick} />
@@ -152,7 +156,7 @@ const PeopleTemplate = ({ data, pageContext }) => {
         </Column>
       </HideSmall> */}
 
-      {/* <PeopleSearchResults
+          {/* <PeopleSearchResults
         people={typeFilteredPeople}
         pagedPeople={typeOrderedPeople}
         page={page}
@@ -162,13 +166,15 @@ const PeopleTemplate = ({ data, pageContext }) => {
         onPageChanged={onPageChanged}
       /> */}
 
-      <PeopleGroups groupMap={filteredGroupMap} />
+          <PeopleGroups groupMap={filteredGroupMap} />
 
-      {/* </div>
+          {/* </div>
       </MainColumn>
       <SideColumn></SideColumn>
       </Column> */}
-    </CrumbContainerLayout>
+        </Container>
+      </div>
+    </CrumbLayout>
   )
 }
 

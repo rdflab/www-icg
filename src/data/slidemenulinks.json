@@ -16,6 +16,10 @@
     "link": "/events"
   },
   {
+    "name": "News",
+    "link": "/news"
+  },
+  {
     "name": "About Us",
     "link": "/about"
   }

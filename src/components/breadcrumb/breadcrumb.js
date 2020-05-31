@@ -6,7 +6,7 @@ import Container from "../container"
 
 const Breadcrumb = props => {
   return (
-    <div className="p-0 hidden sm:block bg-blue-columbia-80">
+    <div className="p-0 hidden sm:block bg-columbia-secondary-blue">
       <Container>
         <ul className={breadcrumbStyles.breadcrumb}>
           {props.crumbs.map((crumb, index) => (

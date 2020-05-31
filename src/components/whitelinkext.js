@@ -8,7 +8,7 @@ const WhiteLinkExt = ({ to, children, target }) => (
 )
 
 WhiteLinkExt.defaultProps = {
-  target: "",
+  target: "_blank",
 }
 
 export default WhiteLinkExt

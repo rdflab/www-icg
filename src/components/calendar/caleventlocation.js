@@ -4,7 +4,7 @@ import HideSmall from "../hidesmall"
 import { FaRegClock, FaMapMarkerAlt } from "react-icons/fa"
 import { formatDate, formatTime } from "./calevent"
 
-const CalEventLocation = ({ event, showDate, isMobile }) => {
+const CalEventLocation = ({ event, showDate, isMobile, color }) => {
   let date
 
   if (showDate) {
@@ -17,7 +17,10 @@ const CalEventLocation = ({ event, showDate, isMobile }) => {
 
   return (
     <>
-      <HideSmall show={true} className="text-gray">
+      <HideSmall
+        show={true}
+        className={`${color === "white" ? "text-white" : "text-gray"}`}
+      >
         <Column isVCentered={true} isMobile={true}>
           <div className="mr-4">
             <FaRegClock size={28} />
@@ -35,8 +38,10 @@ const CalEventLocation = ({ event, showDate, isMobile }) => {
         </Column>
       </HideSmall>
 
-      <HideSmall>
-        <Column className="text-gray items-center">
+      <HideSmall
+        className={`${color === "white" ? "text-white" : "text-gray"}`}
+      >
+        <Column className="items-center">
           <Column w="1">
             <FaRegClock size={28} />
           </Column>
@@ -63,4 +68,5 @@ export default CalEventLocation
 CalEventLocation.defaultProps = {
   showDate: false,
   isMobile: false,
+  color: "blue",
 }

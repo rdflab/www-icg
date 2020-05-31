@@ -1,7 +1,11 @@
 [
   {
-    "name": "About Us",
+    "name": "About",
     "link": "/about"
+  },
+  {
+    "name": "Contact Us",
+    "link": "/contact"
   },
   {
     "name": "News",
@@ -10,9 +14,5 @@
   {
     "name": "Events",
     "link": "/events"
-  },
-  {
-    "name": "Booking",
-    "link": "/services/booking"
   }
 ]

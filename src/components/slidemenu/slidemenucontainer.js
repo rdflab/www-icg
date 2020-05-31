@@ -157,7 +157,7 @@ const SlideMenuContainer = ({ title, onClickHandle, visible, maxResults }) => {
           <div className="text-right">
             <SlideMenuCloseButton onClick={onClickHandle} />
             {/* <button
-              className="text-blue-columbia focus:outline-none"
+              className="text-columbia-blue focus:outline-none"
               onClick={onClickHandle}
             >
               Done

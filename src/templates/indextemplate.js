@@ -15,6 +15,7 @@ import CalEventDetails from "../components/calendar/caleventdetails"
 import ICGBD from "../components/images/icgbd"
 import Benchwork from "../components/images/benchwork"
 import PublicationList from "../components/publication/publicationlist"
+import Button from "../components/button"
 
 const HomeSection = ({ title, subTitle, text, links, alt }) => {
   return (
@@ -47,7 +48,7 @@ HomeSection.defaultProps = {
 }
 
 const HomeDiv = ({ children, className }) => (
-  <div className={`py-8 ${className}`}>
+  <div className={`py-16 ${className}`}>
     <Container>{children}</Container>
   </div>
 )
@@ -86,10 +87,10 @@ const IndexTemplate = ({ pageContext }) => {
       calEvents.push(
         <Column>
           <Column className="w-2/10 mr-4">
-            <CalEventDate event={calEvent} />
+            <CalEventDate event={calEvent} color="white" />
           </Column>
           <Column>
-            <CalEventDetails event={calEvent} />
+            <CalEventDetails event={calEvent} color="white" />
           </Column>
         </Column>
       )
@@ -120,7 +121,7 @@ const IndexTemplate = ({ pageContext }) => {
         <Column className="h-full p-8 sm:p-16">
           <Column
             w="8"
-            className="bg-blue-columbia opacity-75 float-left text-white p-8"
+            className="bg-columbia-blue opacity-75 float-left text-white p-8"
           >
             <div>
               <H2 className="text-white">Mission</H2>
@@ -222,8 +223,8 @@ const IndexTemplate = ({ pageContext }) => {
       alt={true}
     /> */}
 
-      <Column>
-        <Column w={5} className="md:pl-8 bg-blue-800 text-white">
+      <Column className="bg-blue-800 py-16">
+        <Column w={5} className="md:pl-8 text-white">
           <div className="p-8">
             <HomeTitle>Upcoming Events</HomeTitle>
             <p>See upcoming events and seminars of interest.</p>
@@ -248,9 +249,12 @@ const IndexTemplate = ({ pageContext }) => {
         <HomeTitle className="text-center">Recent Publications</HomeTitle>
         {/* <p>Read about our pioneering research in world renowed journals.</p> */}
         <PublicationList publications={publications} />
-        <BlueIndexLink to="/research-areas/publications">
+        {/* <BlueIndexLink to="/research-areas/publications">
           All Publications
-        </BlueIndexLink>
+        </BlueIndexLink> */}
+        <div className="text-center">
+          <Button to="/research-areas/publications">All Publications</Button>
+        </div>
       </HomeDiv>
     </Layout>
   )

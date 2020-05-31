@@ -21,13 +21,24 @@ const FooterLinks = () => {
 
   const ret = links.map(({ node }, index) => {
     return (
-      <div className="mb-2" key={index}>
+      <div className="mb-2 font-semibold" key={index}>
         <WhiteLink aria-label={`Goto ${node.name}`} to={node.link}>
           {node.name}
         </WhiteLink>
       </div>
     )
   })
+
+  ret.push(
+    <div className="mb-2 font-semibold" key="booking">
+      <WhiteLinkExt
+        aria-label={`Goto Booking Site`}
+        to="https://booking.columbiaicg.org"
+      >
+        Booking
+      </WhiteLinkExt>
+    </div>
+  )
 
   // return (
   //   <div className="links-list">

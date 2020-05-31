@@ -13,6 +13,7 @@ import PersonHeader from "../components/people/personheader"
 import PeopleGroups from "../components/people/peoplegroups"
 import { labName } from "../utils/labname"
 import LabHeader from "../components/lab/labheader"
+import H from "../components/headings/h"
 
 const LabTemplate = ({ pageContext }) => {
   const {
@@ -52,12 +53,15 @@ const LabTemplate = ({ pageContext }) => {
       <div>
         <HTMLDiv html={labExcerptHtml} />
 
-        <div className="bg-gray-700 py-16">
+        <div
+          className="bg-columbia-gray py-16"
+          style={{ backgroundColor: "#F9F9F9" }}
+        >
           <Container>
-            <H1 className="text-white">Meet the team</H1>
+            <H1 className="text-columbia-dark-gray">Meet the team</H1>
             <PeopleGroups
               groupMap={labGroupMap}
-              headingColor={"text-gray-200"}
+              headingColor={"text-columbia-dark-gray"}
             />
             {/* <PeopleGroups groupMap={labGroupMap} /> faculty={faculty} /> */}
           </Container>

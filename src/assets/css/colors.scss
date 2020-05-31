@@ -1,4 +1,4 @@
-$columbia-blue-color: rgb(28, 76, 143);
+$columbia-blue-color: rgb(0, 13, 116); //rgb(28, 76, 143);
 $columbia-blue-10-color: rgba($columbia-blue-color, 0.1);
 $columbia-blue-30-color: rgba($columbia-blue-color, 0.3);
 $columbia-blue-40-color: rgba($columbia-blue-color, 0.4);
@@ -8,48 +8,90 @@ $columbia-blue-70-color: rgba($columbia-blue-color, 0.7);
 $columbia-blue-80-color: rgba($columbia-blue-color, 0.8);
 $columbia-blue-90-color: rgba($columbia-blue-color, 0.9);
 
-.bg-blue-columbia {
+$columbia-footer: #41516C;
+$columbia-gray: #EFEFEF;
+$columbia-dark-gray: #555555;
+$columbia-secondary-blue: #2C6BAC;
+$columbia-light-gray: #F9F9F9;
+
+.bg-columbia-blue {
   background-color: $columbia-blue-90-color;
 }
 
-.bg-blue-columbia-10 {
+.bg-columbia-blue-10 {
   background-color: $columbia-blue-10-color;
 }
 
-.bg-blue-columbia-30 {
+.bg-columbia-blue-30 {
   background-color: $columbia-blue-30-color;
 }
 
-.bg-blue-columbia-40 {
+.bg-columbia-blue-40 {
   background-color: $columbia-blue-40-color;
 }
 
-.bg-blue-columbia-50 {
+.bg-columbia-blue-50 {
   background-color: $columbia-blue-50-color;
 }
 
-.bg-blue-columbia-60 {
+.bg-columbia-blue-60 {
   background-color: $columbia-blue-60-color;
 }
 
-.bg-blue-columbia-70 {
+.bg-columbia-blue-70 {
   background-color: $columbia-blue-70-color;
 }
 
-.bg-blue-columbia-80 {
+.bg-columbia-blue-80 {
   background-color: $columbia-blue-80-color;
 }
 
-.border-blue-columbia {
+.bg-columbia-secondary-blue {
+  background-color: $columbia-secondary-blue;
+}
+
+.bg-columbia-gray {
+  background-color: $columbia-gray;
+}
+
+.bg-columbia-light-gray {
+  background-color: $columbia-light-gray;
+}
+
+.bg-columbia-footer {
+  background-color: $columbia-footer;
+}
+
+.border-columbia-blue {
   border-color: $columbia-blue-color;
 }
 
-.text-blue-columbia-50 {
+.border-columbia-secondary-blue {
+  border-color: $columbia-secondary-blue;
+}
+
+.border-white-20 {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.border-columbia-dark-gray {
+  border-color: $columbia-dark-gray;
+}
+
+.text-columbia-blue-50 {
   color: $columbia-blue-50-color;
 }
 
-.text-blue-columbia-80 {
+.text-columbia-blue-80 {
   color: $columbia-blue-80-color;
+}
+
+.text-columbia-dark-gray {
+  color: $columbia-dark-gray;
+}
+
+.text-columbia-secondary-blue {
+  color: $columbia-secondary-blue;
 }
 
 .bg-white-10 {
@@ -68,11 +110,9 @@ $columbia-blue-90-color: rgba($columbia-blue-color, 0.9);
   background-color: rgba(255, 255, 255, 0.5);
 }
 
-.border-white-20 {
-  border-color: rgba(255, 255, 255, 0.2);
-}
 
-.text-blue-columbia {
+
+.text-columbia-blue {
   color: $columbia-blue-color;
 }
 

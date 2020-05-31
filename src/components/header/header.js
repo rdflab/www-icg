@@ -21,7 +21,7 @@ const Header = ({ title, content, menuContent }) => (
       </nav>
     </ShowSmall>
 
-    <HideSmall className="border-b border-solid border-gray-200">
+    <HideSmall className="border-b border-solid border-gray-200 py-4">
       {/* <div className="p-3">
         <Container>
           <Column isVCentered={true} className="justify-between">
@@ -34,17 +34,7 @@ const Header = ({ title, content, menuContent }) => (
         </Container>
       </div> */}
 
-      <nav aria-label="Navigation">
-        <Container className="py-1">
-          <Column isVCentered={true} className="justify-between">
-            <HeaderLinks />
-
-            {menuContent !== null && menuContent}
-          </Column>
-        </Container>
-      </nav>
-
-      <div className="py-2">
+      <div>
         <Container>
           <Column isVCentered={true} className="justify-between">
             <Link to="/" className="mr-8">
@@ -57,6 +47,16 @@ const Header = ({ title, content, menuContent }) => (
           </Column>
         </Container>
       </div>
+
+      <nav aria-label="Navigation">
+        <Container>
+          <Column isVCentered={true} className="justify-between">
+            <HeaderLinks />
+
+            {menuContent !== null && menuContent}
+          </Column>
+        </Container>
+      </nav>
     </HideSmall>
   </>
 )

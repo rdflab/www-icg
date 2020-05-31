@@ -8,18 +8,17 @@ import ShowSmall from "../showsmall"
 import WhiteLinkExt from "../whitelinkext"
 
 const LabWebSite = ({ lab }) => {
-  const ret = []
-
   if (lab.url !== "") {
-    ret.push(<div className="uppercase mb-4">Lab website</div>)
-    ret.push(
+    return (
       <div>
-        <WhiteLinkExt to={lab.url}>{lab.url}</WhiteLinkExt>
+        <h5>
+          <WhiteLinkExt to={lab.url}>{lab.url}</WhiteLinkExt>
+        </h5>
       </div>
     )
+  } else {
+    return <></>
   }
-
-  return <div>{ret}</div>
 }
 
 const LabHeader = ({ lab, title, heading, subHeading }) => {
@@ -47,23 +46,23 @@ const LabHeader = ({ lab, title, heading, subHeading }) => {
           <Container></Container>
         </div>
       </ShowSmall>
-      <HideSmall className="relative w-full">
-        <Column className="w-full h-full absolute bg-white ">
-          <Column className="w-6/10 bg-blue-columbia-50 p-8 px-32"></Column>
-          <Column className="w-4/10 bg-blue-columbia-60 p-8 text-white"></Column>
-        </Column>
+      <HideSmall className="relative w-full bg-columbia-secondary-blue">
+        {/* <Column className="w-full h-full absolute bg-white text-white">
+          <Column className="w-6/10 bg-columbia-secondary-blue p-8 px-32"></Column>
+          <Column className="w-4/10 bg-columbia-secondary-blue p-8"></Column>
+        </Column> */}
         <Container className="z-20 relative">
-          <Column>
-            <MainColumn className="w-6/10 py-8">
+          <Column isVCentered={true}>
+            <Column className="w-8/10 py-8">
               <div className="text-white">
                 <div className="uppercase mb-4">{title}</div>
                 <div className="text-4xl font-semibold">{heading}</div>
                 <div className="text-2xl">{subHeading}</div>
               </div>
-            </MainColumn>
-            <SideColumn className="py-8 text-white">
+            </Column>
+            <Column className="py-8 text-white">
               <LabWebSite lab={lab} />
-            </SideColumn>
+            </Column>
           </Column>
         </Container>
       </HideSmall>

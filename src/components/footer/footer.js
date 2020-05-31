@@ -15,13 +15,13 @@ const StyledFooter = styled.footer`
 
 const Footer = ({ siteTitle }) => {
   return (
-    <StyledFooter className="text-white text-sm py-10 bg-blue-columbia">
+    <StyledFooter className="text-white py-10 bg-columbia-footer">
       <Container>
         <div>
           <FooterLinks />
         </div>
 
-        <div className="mt-16">
+        <div className="mt-16  text-sm">
           &copy; {new Date().getFullYear()} {siteTitle}
         </div>
 

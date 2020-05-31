@@ -18,7 +18,7 @@ const Breadcrumb = ({ crumbs }) => {
   ret.push(
     <img
       src={breadcrumbsvg}
-      className="text-white px-4 h-10"
+      className="text-white px-4 h-8"
       key={ret.length}
       alt="Breadcrumb separator"
     />
@@ -42,7 +42,7 @@ const Breadcrumb = ({ crumbs }) => {
 
         <img
           src={breadcrumbsvg}
-          className="text-white px-4 h-10"
+          className="text-white px-4 h-8"
           key={ret.length}
           alt="Breadcrumb separator"
         />
@@ -51,7 +51,7 @@ const Breadcrumb = ({ crumbs }) => {
   }
 
   return (
-    <div className="bg-blue-columbia-80 text-sm">
+    <div className="bg-columbia-secondary-blue text-sm py-1">
       <Container>
         <Column className="items-center">{ret}</Column>
       </Container>

@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import CrumbContainerLayout from "../components/crumbcontainerlayout"
+import CrumbLayout from "../components/crumblayout"
 import SearchBar from "../components/search/searchbar"
 import PubSearchResults from "../components/publication/pubsearchresults"
 import SiteSearch from "../components/search/sitesearch"
@@ -10,6 +10,8 @@ import ShowSmall from "../components/showsmall"
 import { searchTree } from "../components/search/searchtree"
 import Column from "../components/column"
 import H1 from "../components/headings/h1"
+import Container from "../components/container"
+import H from "../components/headings/h"
 
 const EMPTY_QUERY = ""
 
@@ -104,61 +106,54 @@ const PublicationsTemplate = ({ pageContext }) => {
   )
 
   return (
-    <CrumbContainerLayout
+    <CrumbLayout
       crumbs={crumbs}
       selectedTab={selectedTab}
       title={title}
       headerComponent={<SiteSearch />}
-      titleComponent={
-        <HideSmall>
-          <SearchSummary
-            count={yearFilteredPublications.length}
-            single="Publication"
-            plural="Publications"
-          />
-        </HideSmall>
-      }
     >
-      <ShowSmall>
-        <SearchBar
-          handleInputChange={handleInputChange}
-          placeholder="Type to find publications..."
-          text={query}
-        />
-      </ShowSmall>
+      <H>Publications</H>
+      <Container className="mt-8">
+        <ShowSmall>
+          <SearchBar
+            handleInputChange={handleInputChange}
+            placeholder="Type to find publications..."
+            text={query}
+          />
+        </ShowSmall>
 
-      <HideSmall>
-        <H1 className="text-center">Publications</H1>
-        <Column isCentered={true} className="mb-8">
-          <div className="w-1/2">
-            <SearchBar
-              handleInputChange={handleInputChange}
-              placeholder="Type to find publications..."
-              text={query}
-            />
-          </div>
-        </Column>
-      </HideSmall>
-
-      <HideSmall>
-        <Column isVCentered={true} className="mt-8 justify-center">
-          {showYears && (
-            <div>
-              <YearSelector onClick={handleClick} />
+        <HideSmall>
+          <Column isCentered={true} className="mb-8">
+            <div className="w-1/2">
+              <SearchBar
+                handleInputChange={handleInputChange}
+                placeholder="Type to find publications..."
+                text={query}
+              />
             </div>
-          )}
-        </Column>
-      </HideSmall>
+          </Column>
+        </HideSmall>
 
-      <PubSearchResults
-        publications={yearFilteredPublications}
-        pagedPublications={pagedPublications}
-        page={page}
-        recordsPerPage={recordsPerPage}
-        onPageChanged={onPageChanged}
-        showLabLink={showLabLink}
-      />
-    </CrumbContainerLayout>
+        <HideSmall>
+          <Column isVCentered={true} className="mt-8 justify-center">
+            {showYears && (
+              <div>
+                <YearSelector onClick={handleClick} />
+              </div>
+            )}
+          </Column>
+        </HideSmall>
+
+        <PubSearchResults
+          publications={yearFilteredPublications}
+          pagedPublications={pagedPublications}
+          page={page}
+          recordsPerPage={recordsPerPage}
+          onPageChanged={onPageChanged}
+          showLabLink={showLabLink}
+        />
+      </Container>
+    </CrumbLayout>
   )
 }
 

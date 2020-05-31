@@ -30,7 +30,9 @@ const RecentPublications = ({ lab, publications, top, className }) => {
         {/* {createPublications(publications)} */}
       </div>
       <div className="text-center">
-        <Button to={`/research-areas/labs/${lab.id}/publications`}>More</Button>
+        <Button to={`/research-areas/labs/${lab.id}/publications`}>
+          More Publications
+        </Button>
       </div>
     </div>
   )

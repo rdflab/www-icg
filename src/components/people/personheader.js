@@ -20,7 +20,7 @@ const PersonHeader = ({ person, title, heading, subHeading }) => {
   return (
     <>
       <ShowSmall>
-        <div className="bg-blue-columbia-50 py-4 text-white">
+        <div className="bg-columbia-blue-50 py-4 text-white">
           <Container>
             <div>
               <div className="uppercase mb-4">{title}</div>
@@ -29,7 +29,7 @@ const PersonHeader = ({ person, title, heading, subHeading }) => {
             </div>
           </Container>
         </div>
-        <div className="bg-blue-columbia-60 py-4 text-white">
+        <div className="bg-columbia-blue-60 py-4 text-white">
           <Container>
             <div className="uppercase mb-4">Contact</div>
             <ContactInfo person={person} color="white" />
@@ -38,8 +38,8 @@ const PersonHeader = ({ person, title, heading, subHeading }) => {
       </ShowSmall>
       <HideSmall className="relative w-full mb-16">
         <Column className="w-full h-full absolute bg-white ">
-          <Column className="w-6/10 bg-blue-columbia-50 p-8 px-32"></Column>
-          <Column className="w-4/10 bg-blue-columbia-60 p-8 text-white"></Column>
+          <Column className="w-6/10 bg-columbia-blue-50 p-8 px-32"></Column>
+          <Column className="w-4/10 bg-columbia-blue-60 p-8 text-white"></Column>
         </Column>
         <Container className="z-20 relative">
           <Column>
