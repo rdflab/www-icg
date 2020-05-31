@@ -15,7 +15,7 @@ const ContactInfo = ({ person, urls, color, className }) => (
     {person.frontmatter.room !== "" && (
       <RoomLink color={color} room={person.frontmatter.room} />
     )}
-    {person.frontmatter.url !== "" && (
+    {person.frontmatter.url.length > 0 && (
       <URLLink color={color} url={person.frontmatter.url} />
     )}
   </div>

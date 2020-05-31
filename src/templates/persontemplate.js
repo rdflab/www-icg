@@ -151,60 +151,68 @@ const PersonTemplate = ({ pageContext, data }) => {
     >
       <PersonHeader person={person} />
 
-      <Container>
-        {/* {interests2(person)} */}
+      {/* {interests2(person)} */}
 
-        {data.file !== null && (
-          <div className="mb-8">
+      {data.file !== null && (
+        <div className="py-8">
+          <Container>
             <Img
               fluid={data.file.childImageSharp.fluid}
               style={{ width: "20rem" }}
-              className="shadow-md rounded-md mx-auto sm:mx-0"
+              className="shadow-lg rounded-md mx-auto sm:mx-0"
+            />
+          </Container>
+        </div>
+      )}
+
+      <HTMLDiv html={person.html} />
+
+      {/* <Heading>About {personName(person)}</Heading> */}
+
+      {cv !== null && cv.education.length > 0 && (
+        <div className="py-8 bg-columbia-light-gray">
+          <Container>
+            <Education cv={cv} />
+          </Container>
+        </div>
+      )}
+
+      {cv !== null && cv.awards.length > 0 && (
+        <div className="py-8 bg-columbia-light-gray">
+          <Container>
+            <Awards cv={cv} />
+          </Container>
+        </div>
+      )}
+
+      {cv !== null && cv.training.length > 0 && (
+        <div className="py-8 bg-columbia-light-gray">
+          <Container>
+            <Training cv={cv} />
+          </Container>
+        </div>
+      )}
+
+      {cv !== null && cv.experience.length > 0 && (
+        <div className="py-8 bg-columbia-light-gray">
+          <Container>
+            <Experience cv={cv} />
+          </Container>
+        </div>
+      )}
+
+      {publications.length > 0 && (
+        <Container className="py-8">
+          <Heading className="text-center">Publications</Heading>
+          <div>
+            <SimplePubSearch
+              allPublications={publications}
+              showLabLink={false}
+              sectionMode="alt"
             />
           </div>
-        )}
-
-        <HTMLDiv html={person.html} />
-
-        {/* <Heading>About {personName(person)}</Heading> */}
-
-        {cv !== null && cv.education.length > 0 && (
-          <div className="mb-8">
-            <Education cv={cv} />
-          </div>
-        )}
-
-        {cv !== null && cv.awards.length > 0 && (
-          <div className="mb-8">
-            <Awards cv={cv} />
-          </div>
-        )}
-
-        {cv !== null && cv.training.length > 0 && (
-          <div className="mb-8">
-            <Training cv={cv} />
-          </div>
-        )}
-
-        {cv !== null && cv.experience.length > 0 && (
-          <div className="mb-8">
-            <Experience cv={cv} />
-          </div>
-        )}
-
-        {publications.length > 0 && (
-          <>
-            <Heading className="text-center mt-32">Publications</Heading>
-            <div>
-              <SimplePubSearch
-                allPublications={publications}
-                showLabLink={false}
-                sectionMode="alt"
-              />
-            </div>
-          </>
-        )}
-      </Container>
+        </Container>
+      )}
     </CrumbLayout>
   )
 }
