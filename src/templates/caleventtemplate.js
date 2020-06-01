@@ -1,16 +1,14 @@
 import React from "react"
-import CrumbLayout from "../components/crumblayout"
+import CrumbTitleLayout from "../components/crumbtitlelayout"
 import CalEventLocation from "../components/calendar/caleventlocation"
 import Column from "../components/column"
 import MainColumn from "../components/maincolumn"
 import SideColumn from "../components/sidecolumn"
 import CalEventsSideBar from "../components/calendar/caleventssidebar"
-import Title from "../components/title"
 import H from "../components/headings/h"
 import Container from "../components/container"
 
-const CalEventTemplate = props => {
-  const { pageContext } = props
+const CalEventTemplate = ({ pageContext }) => {
   const { calEvent, allCalEvents } = pageContext
 
   const title = calEvent.frontmatter.title
@@ -19,8 +17,11 @@ const CalEventTemplate = props => {
   //calEvent.end = new Date(calEvent.frontmatter.end)
 
   return (
-    <CrumbLayout crumbs={[["Events", "/events"]]}>
-      <H>{title}</H>
+    <CrumbTitleLayout
+      nav="Events"
+      title={title}
+      crumbs={[["Events", "/events"]]}
+    >
       <Container className="py-8">
         <Column>
           <MainColumn className="mr-16">
@@ -37,7 +38,7 @@ const CalEventTemplate = props => {
           </SideColumn>
         </Column>
       </Container>
-    </CrumbLayout>
+    </CrumbTitleLayout>
   )
 }
 
