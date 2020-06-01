@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react"
-import CrumbLayout from "../components/crumblayout"
+import CrumbTitleLayout from "../components/crumbtitlelayout"
 import SiteSearch from "../components/search/sitesearch"
 import YearSelector from "../components/filter/yearselector"
 import HideSmall from "../components/hidesmall"
 import NewsSearchResults from "../components/news/newssearchresults"
 import Column from "../components/column"
-import H from "../components/headings/h"
 import Container from "../components/container"
 // import MainColumn from "../components/maincolumn"
 // import SideColumn from "../components/sidecolumn"
@@ -21,11 +20,20 @@ const NewsTemplate = ({ pageContext }) => {
   const [recordsPerPage, setRecordsPerPage] = useState(20)
   const [filterYears, setFilterYears] = useState([])
 
-  for (let item of allNews) {
-    if (item.date === undefined) {
-      item.date = new Date(item.frontmatter.date)
-    }
-  }
+  // useEffect(() => {
+  //   console.log('sgfhfghfghfgh')
+  //   for (let item of allNews) {
+  //     if (item.date === undefined) {
+  //       item.date = new Date(item.frontmatter.date)
+  //     }
+  //   }
+  // }, [])
+
+  // for (let item of allNews) {
+  //   if (item.date === undefined) {
+  //     item.date = new Date(item.frontmatter.date)
+  //   }
+  // }
 
   const handleInputChange = e => {
     const q = e.target.value
@@ -60,9 +68,7 @@ const NewsTemplate = ({ pageContext }) => {
 
   if (filterYears.length > 0 && filterYears[0] !== "All") {
     yearFilteredNews = news.filter(item => {
-      return filterYears.includes(
-        item.date.toLocaleString("default", { year: "numeric" })
-      )
+      return filterYears.includes(item.frontmatter.year)
     })
   } else {
     yearFilteredNews = news
@@ -71,12 +77,11 @@ const NewsTemplate = ({ pageContext }) => {
   const offset = (page - 1) * recordsPerPage
   let pagedNews = yearFilteredNews.slice(offset, offset + recordsPerPage)
 
-  console.log(news)
-
   return (
-    <CrumbLayout
+    <CrumbTitleLayout
       crumbs={[["News", "/news"]]}
-      title="News"
+      nav="News"
+      title="Institute News"
       // titleComponent={
       //   <HideSmall>
       //     <SearchSummary
@@ -88,8 +93,6 @@ const NewsTemplate = ({ pageContext }) => {
       // }
       headerComponent={<SiteSearch />}
     >
-      <H>News</H>
-
       <Container className="py-8">
         <HideSmall>
           <Column isVCentered={true} isCentered={true}>
@@ -106,7 +109,7 @@ const NewsTemplate = ({ pageContext }) => {
           onPageChanged={onPageChanged}
         />
       </Container>
-    </CrumbLayout>
+    </CrumbTitleLayout>
   )
 }
 

@@ -1,14 +1,18 @@
 import React from "react"
 import Container from "../components/container"
-import CrumbLayout from "../components/crumblayout"
+import CrumbTitleLayout from "../components/crumbtitlelayout"
 import H from "../components/headings/h"
 
 const Contact = () => (
-  <CrumbLayout crumbs={[["Contact Us", "/contact"]]} title="Contact Us">
-    <H>Contact Us</H>
+  <CrumbTitleLayout
+    nav="Contact Us"
+    title="Contact ICG"
+    crumbs={[["Contact Us", "/contact"]]}
+  >
     <Container className="pt-8">
       <div className="text-center text-xl">
-        <div>Herbert Irving Cancer Center</div>
+        <div>Institute for Cancer Generics</div>
+        <div>Herbert Irving Cancer Center, Columbia University</div>
         <div>1130 St Nicholas Ave</div>
         <div>New York, NY 10032</div>
         <div>USA</div>
@@ -28,7 +32,7 @@ const Contact = () => (
         </div>
       </div>
     </Container>
-  </CrumbLayout>
+  </CrumbTitleLayout>
 )
 
 export default Contact

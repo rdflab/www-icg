@@ -7,11 +7,9 @@ const CalEventDate = ({ event, color }) => {
         color === "white" ? "text-white" : "text-columbia-secondary-blue"
       }`}
     >
-      <div className="uppercase text-sm">
-        {event.start.toLocaleString("default", { month: "short" })}
-      </div>
+      <div className="uppercase text-sm">{event.frontmatter.month}</div>
       <div className="uppercase font-light text-3xl">
-        {event.start.toLocaleString("default", { day: "numeric" })}
+        {event.frontmatter.day}
       </div>
       <div
         className={`uppercase text-sm text-white px-2 ${
@@ -20,7 +18,7 @@ const CalEventDate = ({ event, color }) => {
             : "bg-columbia-secondary-blue"
         }`}
       >
-        {event.start.toLocaleString("default", { weekday: "short" })}
+        {event.frontmatter.weekday}
       </div>
     </div>
   )

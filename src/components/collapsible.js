@@ -18,7 +18,7 @@ const Collapsible = ({ title, height, children, headerClassName }) => {
         onClick={toggle}
         aria-label={`Collapse ${title}`}
       >
-        <h3 className={`${headerClassName}`}>{title}</h3>
+        <h4 className={`${headerClassName}`}>{title}</h4>
         <div className="text-gray-500 hover:text-gray-800 trans-ani">
           {_height === 0 ? <FaChevronDown /> : <FaChevronUp />}
         </div>

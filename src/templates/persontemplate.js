@@ -111,10 +111,12 @@ const Items = ({ title, items }) => (
 
     {items.map((item, index) => (
       <Column key={index} className="mb-4">
-        <Column className="w-1/10 font-semibold justify-end text-blue-600  mr-4">
-          {item.year !== "n/a" && item.year}
+        <Column className="w-2/12 justify-end text-blue-500 mr-8">
+          {item.year !== "n/a" && <h4>{item.year}</h4>}
         </Column>
-        <Column className="w-9/10 ml-4 ">{item.title}</Column>
+        <Column className="w-10/12">
+          <h4>{item.title}</h4>
+        </Column>
       </Column>
     ))}
   </>
@@ -159,7 +161,7 @@ const PersonTemplate = ({ pageContext, data }) => {
             <Img
               fluid={data.file.childImageSharp.fluid}
               style={{ width: "20rem" }}
-              className="shadow-lg rounded-md mx-auto sm:mx-0"
+              className="shadow-lg rounded-md mx-auto block"
             />
           </Container>
         </div>

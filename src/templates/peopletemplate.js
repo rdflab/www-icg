@@ -128,7 +128,7 @@ const PeopleTemplate = ({ data, pageContext }) => {
           <ShowSmall>
             <SearchBar
               handleInputChange={handleInputChange}
-              placeholder="Type to find faculty..."
+              placeholder="Type to find people..."
               text={query}
             />
           </ShowSmall>
@@ -138,7 +138,7 @@ const PeopleTemplate = ({ data, pageContext }) => {
               <div className="w-1/2">
                 <SearchBar
                   handleInputChange={handleInputChange}
-                  placeholder="Type to find faculty..."
+                  placeholder="Type to find people..."
                   text={query}
                 />
               </div>

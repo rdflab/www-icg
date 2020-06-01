@@ -1,11 +1,10 @@
 import React, { useState } from "react"
-import CrumbLayout from "../components/crumblayout"
+import CrumbTitleLayout from "../components/crumbtitlelayout"
 import SiteSearch from "../components/search/sitesearch"
 import Column from "../components/column"
 import { Link } from "gatsby"
 import generic from "../assets/svg/generic.svg"
 import Container from "../components/container"
-import H from "../components/headings/h"
 
 const EMPTY_QUERY = ""
 
@@ -150,9 +149,10 @@ const FacultyTemplate = ({ pageContext }) => {
   // let pagedGroups = groups.slice(offset, offset + recordsPerPage)
 
   return (
-    <CrumbLayout
+    <CrumbTitleLayout
       crumbs={crumbs}
-      title="Research Labs"
+      nav="Faculty"
+      title="Meet Our Scientists"
       headerComponent={<SiteSearch />}
       // titleComponent={
       //   <SearchSummary count={groups.length} single="Lab" plural="Labs" />
@@ -164,7 +164,7 @@ const FacultyTemplate = ({ pageContext }) => {
         text={query}
         className="my-4"
       /> */}
-      <H>Meet our Scientists</H>
+
       <div className="bg-columbia-light-gray py-8 text-columbia-secondary-blue">
         <Container>
           {/* <Labs labs={allGroups} /> */}
@@ -172,7 +172,7 @@ const FacultyTemplate = ({ pageContext }) => {
           <StaffGroups allGroups={allGroups} peopleMap={peopleMap} />
         </Container>
       </div>
-    </CrumbLayout>
+    </CrumbTitleLayout>
   )
 }
 

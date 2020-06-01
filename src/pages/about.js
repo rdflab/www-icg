@@ -1,11 +1,15 @@
 import React from "react"
 import Container from "../components/container"
-import CrumbLayout from "../components/crumblayout"
+import CrumbTitleLayout from "../components/crumbtitlelayout"
 import H from "../components/headings/h"
 
 const About = () => (
-  <CrumbLayout crumbs={[["About", "/about"]]} title="About Us">
-    <H>Mission</H>
+  <CrumbTitleLayout
+    nav="About"
+    title="Mission"
+    crumbs={[["About", "/about"]]}
+    title="About Us"
+  >
     <Container className="py-8">
       <div>
         <p>
@@ -28,7 +32,7 @@ const About = () => (
         </p>
       </div>
     </Container>
-  </CrumbLayout>
+  </CrumbTitleLayout>
 )
 
 export default About

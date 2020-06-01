@@ -4,11 +4,13 @@ import { eventUrl } from "../../utils/urls"
 import { formatDate, formatStartTime } from "./calevent"
 import BlueLink from "../bluelink"
 
-const CalEventSideBar = ({ event }) => (
+const SideBarCalEvent = ({ event }) => (
   <div className="mb-4">
-    <BlueLink to={eventUrl(event)}>{event.frontmatter.title}</BlueLink>
-    <div className="gray">
-      {formatDate(event)}, {formatStartTime(event)}
+    <h5>
+      <BlueLink to={eventUrl(event)}>{event.frontmatter.title}</BlueLink>
+    </h5>
+    <div className="text-gray-500">
+      <span>{event.frontmatter.date}</span>, {event.frontmatter.startTime}
     </div>
   </div>
 )
@@ -16,7 +18,7 @@ const CalEventSideBar = ({ event }) => (
 const CalEventsSideBar = ({ events, maxRecords }) => {
   const ret = []
 
-  const now = Date.now()
+  const now = new Date()
 
   let c = 0
 
@@ -32,7 +34,7 @@ const CalEventsSideBar = ({ events, maxRecords }) => {
       continue
     }
 
-    ret.push(<CalEventSideBar key={i} event={event} />)
+    ret.push(<SideBarCalEvent key={i} event={event} />)
 
     ++c
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import CrumbLayout from "../components/crumblayout"
+import CrumbTitleLayout from "../components/crumbtitlelayout"
 import SearchBar from "../components/search/searchbar"
 import SiteSearch from "../components/search/sitesearch"
 import MainColumn from "../components/maincolumn"
@@ -10,8 +10,6 @@ import DayPicker, { DateUtils } from "react-day-picker"
 import "../../node_modules/react-day-picker/lib/style.css"
 import "../components/calendar/calendar.scss"
 import HideSmall from "../components/hidesmall"
-import H1 from "../components/headings/h1"
-import H from "../components/headings/h"
 import Container from "../components/container"
 
 const EMPTY_QUERY = ""
@@ -25,14 +23,15 @@ const CalEventsTemplate = ({ pageContext }) => {
   const [recordsPerPage, setRecordsPerPage] = useState(20)
   const [selectedDays, setSelectedDays] = useState([])
 
-  useEffect(() => {
-    for (let calEvent of allCalEvents) {
-      if (calEvent.start === undefined) {
-        calEvent.start = new Date(calEvent.frontmatter.start)
-        calEvent.end = new Date(calEvent.frontmatter.end)
-      }
-    }
-  }, [])
+  // useEffect(() => {
+  //   console.log('sddf')
+  //   for (let calEvent of allCalEvents) {
+  //     if (calEvent.start === undefined) {
+  //       calEvent.start = new Date(calEvent.frontmatter.start)
+  //       calEvent.end = new Date(calEvent.frontmatter.end)
+  //     }
+  //   }
+  // }, [])
 
   const handleDayClick = (day, { selected }) => {
     // const { selectedDays } = this.state;
@@ -54,8 +53,10 @@ const CalEventsTemplate = ({ pageContext }) => {
     let ret = []
 
     for (let event of allCalEvents) {
-      const day = event.start.toLocaleString("default", { day: "numeric" })
-      const month = event.start
+      const day = event.frontmatter.start.toLocaleString("default", {
+        day: "numeric",
+      })
+      const month = event.frontmatter.start
         .toLocaleString("default", { month: "short" })
         .toLowerCase()
       const title = event.frontmatter.title.toLowerCase()
@@ -84,14 +85,43 @@ const CalEventsTemplate = ({ pageContext }) => {
     let dayFilteredEvents = []
 
     if (selectedDays.length > 0) {
-      calEvents = allCalEvents.filter(e => {
-        return DateUtils.isSameDay(selectedDays[0], e.start)
-      })
-    } else {
-      const now = Date.now()
+      console.log(selectedDays[0])
+
+      const day = parseInt(
+        selectedDays[0].toLocaleString("default", { day: "numeric" })
+      )
+      const month = parseInt(
+        selectedDays[0].toLocaleString("default", { month: "numeric" })
+      )
+      const year = parseInt(
+        selectedDays[0].toLocaleString("default", { year: "numeric" })
+      )
 
       calEvents = allCalEvents.filter(e => {
-        return e.start >= now
+        return (
+          parseInt(e.frontmatter.day) === day &&
+          parseInt(e.frontmatter.monthNum) === month &&
+          parseInt(e.frontmatter.year) === year
+        )
+      })
+    } else {
+      const now = new Date()
+
+      const day = parseInt(now.toLocaleString("default", { day: "numeric" }))
+      const month = parseInt(
+        now.toLocaleString("default", { month: "numeric" })
+      )
+      const year = parseInt(now.toLocaleString("default", { year: "numeric" }))
+
+      calEvents = allCalEvents.filter(e => {
+        const t1 =
+          parseInt(e.frontmatter.day) >= day &&
+          parseInt(e.frontmatter.monthNum) === month &&
+          parseInt(e.frontmatter.year) === year
+        const t2 =
+          parseInt(e.frontmatter.monthNum) > month &&
+          parseInt(e.frontmatter.year) >= year
+        return t1 || t2
       })
     }
   }
@@ -100,7 +130,9 @@ const CalEventsTemplate = ({ pageContext }) => {
   let pagedEvents = calEvents.slice(offset, offset + recordsPerPage)
 
   return (
-    <CrumbLayout
+    <CrumbTitleLayout
+      nav="Events"
+      title="Institute Events"
       crumbs={[["Events", "/events"]]}
       headerComponent={<SiteSearch />}
       // titleComponent={
@@ -111,8 +143,6 @@ const CalEventsTemplate = ({ pageContext }) => {
       //   />
       // }
     >
-      <H>Events</H>
-
       <Container className="py-8">
         <Column>
           {/* <SmallColumn>
@@ -188,7 +218,7 @@ const CalEventsTemplate = ({ pageContext }) => {
           </SideColumn>
         </Column>
       </Container>
-    </CrumbLayout>
+    </CrumbTitleLayout>
   )
 }
 

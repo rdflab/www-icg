@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import CrumbLayout from "../components/crumblayout"
+import CrumbTitleLayout from "../components/crumbtitlelayout"
 import SearchBar from "../components/search/searchbar"
 import PubSearchResults from "../components/publication/pubsearchresults"
 import SiteSearch from "../components/search/sitesearch"
@@ -104,13 +104,13 @@ const PublicationsTemplate = ({ pageContext }) => {
   )
 
   return (
-    <CrumbLayout
+    <CrumbTitleLayout
       crumbs={crumbs}
       selectedTab={selectedTab}
-      title={title}
+      nav="Publications"
+      title="Browse Our Publications"
       headerComponent={<SiteSearch />}
     >
-      <H>Publications</H>
       <Container className="mt-8">
         <ShowSmall>
           <SearchBar
@@ -151,7 +151,7 @@ const PublicationsTemplate = ({ pageContext }) => {
           showLabLink={showLabLink}
         />
       </Container>
-    </CrumbLayout>
+    </CrumbTitleLayout>
   )
 }
 

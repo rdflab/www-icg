@@ -74,10 +74,12 @@ const IndexTemplate = ({ pageContext }) => {
     nPublications,
   } = pageContext
 
-  const now = Date.now()
+  const now = new Date()
 
   const calEvents = []
-  for (let calEvent of allCalEvents) {
+  for (let i = 0; i < allCalEvents.length; ++i) {
+    const calEvent = allCalEvents[i]
+
     if (calEvent.start === undefined) {
       calEvent.start = new Date(calEvent.frontmatter.start)
       calEvent.end = new Date(calEvent.frontmatter.end)
@@ -85,7 +87,7 @@ const IndexTemplate = ({ pageContext }) => {
 
     if (calEvent.start >= now) {
       calEvents.push(
-        <Column>
+        <Column key={i}>
           <Column className="w-2/10 mr-4">
             <CalEventDate event={calEvent} color="white" />
           </Column>

@@ -15,8 +15,8 @@ const CalEventTemplate = props => {
 
   const title = calEvent.frontmatter.title
 
-  calEvent.start = new Date(calEvent.frontmatter.start)
-  calEvent.end = new Date(calEvent.frontmatter.end)
+  //calEvent.start = new Date(calEvent.frontmatter.start)
+  //calEvent.end = new Date(calEvent.frontmatter.end)
 
   return (
     <CrumbLayout crumbs={[["Events", "/events"]]}>

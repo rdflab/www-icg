@@ -3,6 +3,7 @@ import { FaGlobeAmericas } from "react-icons/fa"
 import IconLink from "./iconlink"
 import BlueLinkExt from "./bluelinkext"
 import WhiteLinkExt from "./whitelinkext"
+import ColorLinkExt from "./colorlinkext"
 
 const URLLink = ({ url, color }) => (
   <IconLink
@@ -11,14 +12,16 @@ const URLLink = ({ url, color }) => (
       color === "white" ? (
         <WhiteLinkExt to={`${url[1]}`}>{url[0]}</WhiteLinkExt>
       ) : (
-        <BlueLinkExt to={`${url[1]}`}>{url[0]}</BlueLinkExt>
+        <ColorLinkExt color={color} to={`${url[1]}`}>
+          {url[0]}
+        </ColorLinkExt>
       )
     }
   />
 )
 
 URLLink.defaultProps = {
-  color: "blue",
+  color: "gray",
 }
 
 export default URLLink

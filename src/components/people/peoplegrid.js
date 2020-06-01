@@ -94,11 +94,7 @@ const PeopleGrid = ({
   if (found) {
     return (
       <FullDiv key={name}>
-        <h3
-          className={`border-b border-solid border-gray-500 py-2 my-8 ${headingColor}`}
-        >
-          {name}
-        </h3>
+        <h3 className={`py-2 my-8 ${headingColor}`}>{name}</h3>
         <div>{ret}</div>
       </FullDiv>
     )
@@ -112,7 +108,7 @@ PeopleGrid.defaultProps = {
   colWidth: "w-3/10",
   smallView: false,
   faculty: null,
-  headingColor: "text-black",
+  headingColor: "text-columbia-secondary-blue",
 }
 
 export default PeopleGrid

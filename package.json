@@ -10,6 +10,7 @@
     "gatsby": "^2.19.28",
     "gatsby-background-image": "^0.10.2",
     "gatsby-image": "^2.2.42",
+    "gatsby-plugin-build-date": "^1.0.0",
     "gatsby-plugin-manifest": "^2.2.42",
     "gatsby-plugin-offline": "^3.0.35",
     "gatsby-plugin-postcss": "^2.1.20",

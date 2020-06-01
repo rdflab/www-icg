@@ -8,12 +8,12 @@ const CalEventLocation = ({ event, showDate, isMobile, color }) => {
   let date
 
   if (showDate) {
-    date = formatDate(event)
+    date = event.frontmatter.date
   } else {
     date = ""
   }
 
-  let time = formatTime(event)
+  //let time = formatTime(event)
 
   return (
     <>
@@ -27,7 +27,9 @@ const CalEventLocation = ({ event, showDate, isMobile, color }) => {
           </div>
           <div>
             {showDate && <div>{date}</div>}
-            <div>{time}</div>
+            <div>
+              {event.frontmatter.startTime} - {event.frontmatter.endTime}
+            </div>
           </div>
         </Column>
         <Column isVCentered={true} className="mt-4" isMobile={true}>
@@ -47,8 +49,10 @@ const CalEventLocation = ({ event, showDate, isMobile, color }) => {
           </Column>
           <Column w="5">
             <div>
-              {showDate && <div>{date}</div>}
-              <div>{time}</div>
+              {showDate && <div className="font-semibold">{date}</div>}
+              <div>
+                {event.frontmatter.startTime} - {event.frontmatter.endTime}
+              </div>
             </div>
           </Column>
           <Column w="1">

@@ -42,7 +42,7 @@ PeopleGroups.defaultProps = {
   smallView: false,
   cols: 3,
   colWidth: "w-3/10",
-  headingColor: "text-black",
+  headingColor: "text-columbia-secondary-blue",
 }
 
 export default PeopleGroups

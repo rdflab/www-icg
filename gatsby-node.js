@@ -118,14 +118,14 @@ exports.createSchemaCustomization = ({ actions }) => {
       room: String!
       type: String!
       url: [String!]!
-      start: Date
-      end: Date
       labs: [String!]!
       notes: [String!]!
       people: [String!]!
       researchAreas: [String!]!
       training: [Training!]!
       authors: [String!]!
+      year: Int!
+      startDate: Date!
     }
   `
   createTypes(typeDefs)
@@ -276,7 +276,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             html
             frontmatter {
               title
-              date
+              date(formatString: "MMM DD, YYYY")
+              year: date(formatString: "YYYY")
               labs
               people
               path
@@ -299,7 +300,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               title
               location
               start
+              date: start(formatString: "MMM DD, YYYY")
+              day: start(formatString: "D")
+              weekday: start(formatString: "ddd")
+              month: start(formatString: "MMM")
+              monthNum: start(formatString: "M")
+              year: start(formatString: "YYYY")
+              startTime: start(formatString: "h:mm A")
               end
+              endTime: end(formatString: "h:mm A")
               url
               tags
             }
@@ -324,14 +333,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   //   })
   // })
 
-  const allPublications = []
-  const allNews = []
-  const allLabs = []
-  const allCalEvents = []
-  const allResearchAreas = []
-  const researchAreasMap = {}
-  const cvMap = {}
-
   const allPeople = []
   result.data.people.edges.forEach(({ node }) => {
     const person = node
@@ -341,15 +342,19 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const peopleMap = toPeopleMap(allPeople)
   const groupMap = toGroupMap(allPeople)
 
+  const allResearchAreas = []
+  const researchAreasMap = {}
   result.data.researchAreas.edges.forEach(({ node }) => {
     allResearchAreas.push(node)
     researchAreasMap[node.id] = node
   })
 
+  const cvMap = {}
   result.data.cv.edges.forEach(({ node }) => {
     cvMap[node.id] = node
   })
 
+  const allLabs = []
   const labMap = {}
   result.data.labs.edges.forEach(({ node }) => {
     const lab = node
@@ -367,6 +372,25 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   result.data.admin.edges.forEach(({ node }) => {
     const admin = node
     allAdmin.push(admin)
+  })
+
+  const allNews = []
+  result.data.news.edges.forEach(({ node }) => {
+    const item = node
+
+    //item.date = new Date(Date.parse(item.frontmatter.date))
+
+    allNews.push(item)
+  })
+
+  const allCalEvents = []
+  result.data.events.edges.forEach(({ node }) => {
+    const calEvent = node
+
+    //calEvent.start = new Date(calEvent.frontmatter.start)
+    //calEvent.end = new Date(calEvent.frontmatter.end)
+
+    allCalEvents.push(calEvent)
   })
 
   const admin = allAdmin[0]
@@ -409,6 +433,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   //   }
   // }
 
+  const allPublications = []
   const personPubMap = {}
   const labPubMap = {}
 
@@ -438,20 +463,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
 
     allPublications.push(publication)
-  })
-
-  result.data.news.edges.forEach(({ node }) => {
-    const item = node
-    allNews.push(item)
-  })
-
-  result.data.events.edges.forEach(({ node }) => {
-    const calEvent = node
-
-    //calEvent.start = new Date(calEvent.frontmatter.start)
-    //calEvent.end = new Date(calEvent.frontmatter.end)
-
-    allCalEvents.push(calEvent)
   })
 
   const markdownMap = {}
@@ -545,8 +556,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   searchData["sections"].push("News")
   searchData["data"]["News"] = {}
-
-  console.log(allNews)
 
   for (let item of allNews) {
     searchData["data"]["News"][item.frontmatter.title] = {
@@ -850,64 +859,53 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   // about
 
-  const date = new Date()
-
-  const version =
-    date.toLocaleString("default", { year: "numeric" }) +
-    "." +
-    date.toLocaleString("default", { month: "2-digit" }) +
-    "." +
-    date.toLocaleString("default", { day: "2-digit" })
-
   createPage({
     path: "/help",
     component: helpTemplate,
-    context: {
-      version: version,
-    },
+    context: {},
   })
 
   //
   // Indexing
   //
 
-  const siteData = {}
+  // const siteData = {}
 
-  siteData.sections = searchData["sections"]
-  siteData.links = []
-  siteData.linkNames = []
-  siteData.tree = [{}, []]
+  // siteData.sections = searchData["sections"]
+  // siteData.links = []
+  // siteData.linkNames = []
+  // siteData.tree = [{}, []]
 
-  const linkNameMap = {}
+  // const linkNameMap = {}
 
-  for (let section of siteData.sections) {
-    if (section in searchData["data"]) {
-      for (let s of Object.keys(searchData["data"][section]).sort()) {
-        const link = searchData["data"][section][s]
+  // for (let section of siteData.sections) {
+  //   if (section in searchData["data"]) {
+  //     for (let s of Object.keys(searchData["data"][section]).sort()) {
+  //       const link = searchData["data"][section][s]
 
-        let si = -1
+  //       let si = -1
 
-        for (let i = 0; i < siteData.sections.length; ++i) {
-          if (siteData.sections[i] === section) {
-            si = i
-            break
-          }
-        }
+  //       for (let i = 0; i < siteData.sections.length; ++i) {
+  //         if (siteData.sections[i] === section) {
+  //           si = i
+  //           break
+  //         }
+  //       }
 
-        if (!(link["name"] in linkNameMap)) {
-          linkNameMap[link["name"]] = siteData.linkNames.length
-          siteData.linkNames.push(link["name"])
-        }
+  //       if (!(link["name"] in linkNameMap)) {
+  //         linkNameMap[link["name"]] = siteData.linkNames.length
+  //         siteData.linkNames.push(link["name"])
+  //       }
 
-        siteData.links.push([s, si, linkNameMap[link["name"]], link["to"]])
-      }
-    }
-  }
+  //       siteData.links.push([s, si, linkNameMap[link["name"]], link["to"]])
+  //     }
+  //   }
+  // }
 
-  // Build a suffix tree
-  for (let i = 0; i < siteData.links.length; ++i) {
-    createSuffixTree(siteData.tree, siteData.links[i][0], i)
-  }
+  // // Build a suffix tree
+  // for (let i = 0; i < siteData.links.length; ++i) {
+  //   createSuffixTree(siteData.tree, siteData.links[i][0], i)
+  // }
 
   // const words = siteData.links[i][0].toLowerCase()
 
