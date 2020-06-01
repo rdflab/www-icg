@@ -155,19 +155,22 @@ const PersonTemplate = ({ pageContext, data }) => {
 
       {/* {interests2(person)} */}
 
-      {data.file !== null && (
-        <div className="py-8">
-          <Container>
-            <Img
-              fluid={data.file.childImageSharp.fluid}
-              style={{ width: "20rem" }}
-              className="shadow-lg rounded-md mx-auto block"
-            />
-          </Container>
-        </div>
-      )}
-
-      <HTMLDiv html={person.html} />
+      <Container className="py-8">
+        <Column>
+          <div className="mr-8">
+            {data.file !== null && (
+              <Img
+                fluid={data.file.childImageSharp.fluid}
+                style={{ width: "20rem" }}
+                className="block rounded-lg shadow-lg"
+              />
+            )}
+          </div>
+          <div className="p-4 w-full">
+            <HTMLDiv html={person.html} />
+          </div>
+        </Column>
+      </Container>
 
       {/* <Heading>About {personName(person)}</Heading> */}
 

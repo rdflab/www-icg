@@ -10,23 +10,34 @@ import Column from "../components/column"
 import Container from "../components/container"
 
 const HelpTemplate = ({ pageContext, data }) => {
+  const year = new Date().getFullYear()
+
+  let copyright
+
+  if (year > 2020) {
+    copyright = `2020-${year}`
+  } else {
+    copyright = "2020"
+  }
+
   return (
     <CrumbTitleLayout
       nav="Help"
-      title="Web Site Information"
+      title={`About ${data.site.siteMetadata.title} Web Site`}
       crumbs={[["Help", "/help"]]}
     >
       <Container className="py-8">
-        <div>
+        <div className="border border-solid border-gray-200 rounded-lg shadow-lg p-8">
           {/* <p>Institute for Cancer Genetics website</p> */}
           <p>Last updated: {data.currentBuildDate.currentDate}</p>
           <p className="mt-4">
-            &copy; 2020-{new Date().getFullYear()}{" "}
+            &copy; {copyright}{" "}
             <BlueLinkExt to="mailto:antony@antonyholmes.com">
               Antony Holmes
             </BlueLinkExt>
           </p>
         </div>
+
         <div className="mt-16">
           <p className="font-semibold">
             Built using the following technologies:
@@ -76,6 +87,12 @@ export const query = graphql`
   query {
     currentBuildDate {
       currentDate
+    }
+
+    site {
+      siteMetadata {
+        title
+      }
     }
   }
 `

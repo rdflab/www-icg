@@ -94,7 +94,7 @@ const PeopleGrid = ({
   if (found) {
     return (
       <FullDiv key={name}>
-        <h3 className={`py-2 my-8 ${headingColor}`}>{name}</h3>
+        <h2 className={`my-4 ${headingColor}`}>{name}</h2>
         <div>{ret}</div>
       </FullDiv>
     )

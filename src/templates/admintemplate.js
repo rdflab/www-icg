@@ -64,10 +64,7 @@ const AdminTemplate = ({ pageContext }) => {
       <div className="bg-columbia-light-gray py-8">
         <Container>
           <div className="w-full">
-            <PeopleGroups
-              groupMap={adminGroupMap}
-              headingColor="text-columbia-secondary-blue"
-            />
+            <PeopleGroups groupMap={adminGroupMap} />
           </div>
         </Container>
       </div>

@@ -56,7 +56,7 @@ const LabTemplate = ({ pageContext }) => {
           style={{ backgroundColor: "#F9F9F9" }}
         >
           <Container>
-            <H1 className="text-columbia-secondary-blue">Meet the team</H1>
+            <H1>Meet The Team</H1>
             <PeopleGroups groupMap={labGroupMap} />
             {/* <PeopleGroups groupMap={labGroupMap} /> faculty={faculty} /> */}
           </Container>

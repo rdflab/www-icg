@@ -26,7 +26,7 @@ const H = ({ title, heading, subHeading, content }) => {
           </div>
         )}
       </ShowSmall>
-      <HideSmall className="bg-columbia-secondary-blue py-8 text-white">
+      <HideSmall className="bg-columbia-secondary-blue pt-4 pb-6 text-white">
         <Container>
           <Column isVCentered={true}>
             <Column className="w-7/10">

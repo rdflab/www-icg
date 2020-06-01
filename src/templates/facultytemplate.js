@@ -165,7 +165,7 @@ const FacultyTemplate = ({ pageContext }) => {
         className="my-4"
       /> */}
 
-      <div className="bg-columbia-light-gray py-8 text-columbia-secondary-blue">
+      <div className="bg-columbia-light-gray py-8">
         <Container>
           {/* <Labs labs={allGroups} /> */}
           {/*<StaffGrid labs={allGroups} /> */}

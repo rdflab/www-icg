@@ -4,12 +4,7 @@ import CrumbTitleLayout from "../components/crumbtitlelayout"
 import H from "../components/headings/h"
 
 const About = () => (
-  <CrumbTitleLayout
-    nav="About"
-    title="Mission"
-    crumbs={[["About", "/about"]]}
-    title="About Us"
-  >
+  <CrumbTitleLayout nav="About" title="Mission" crumbs={[["About", "/about"]]}>
     <Container className="py-8">
       <div>
         <p>

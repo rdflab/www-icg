@@ -1,4 +1,4 @@
-$columbia-blue-color: rgb(0, 13, 116); //rgb(28, 76, 143);
+$columbia-blue-color: #1d4f91; //rgb(0, 13, 116); //rgb(28, 76, 143);
 $columbia-blue-10-color: rgba($columbia-blue-color, 0.1);
 $columbia-blue-30-color: rgba($columbia-blue-color, 0.3);
 $columbia-blue-40-color: rgba($columbia-blue-color, 0.4);
@@ -11,11 +11,12 @@ $columbia-blue-90-color: rgba($columbia-blue-color, 0.9);
 $columbia-footer: #41516C;
 $columbia-gray: #EFEFEF;
 $columbia-dark-gray: #555555;
-$columbia-secondary-blue: #2C6BAC;
+$columbia-primary-blue: #000d74;
+$columbia-secondary-blue: #75AADB; //#2C6BAC;
 $columbia-light-gray: #F9F9F9;
 
 .bg-columbia-blue {
-  background-color: $columbia-blue-90-color;
+  background-color: $columbia-blue-color;
 }
 
 .bg-columbia-blue-10 {
@@ -44,6 +45,10 @@ $columbia-light-gray: #F9F9F9;
 
 .bg-columbia-blue-80 {
   background-color: $columbia-blue-80-color;
+}
+
+.bg-columbia-primary-blue {
+  background-color: $columbia-primary-blue;
 }
 
 .bg-columbia-secondary-blue {

@@ -5,11 +5,45 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    id="svg822"
    version="1.1"
-   viewBox="0 0 18.201378 39.063336"
-   height="39.063335mm"
-   width="18.201378mm">
+   viewBox="0 0 18.299314 33.7702"
+   height="33.770199mm"
+   width="18.299314mm"
+   sodipodi:docname="breadcrumb.svg"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1013"
+     id="namedview7"
+     showgrid="true"
+     inkscape:zoom="1.5984725"
+     inkscape:cx="40.021139"
+     inkscape:cy="58.017279"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid814"
+       originx="-1.6357328"
+       originy="-1.6357312" />
+  </sodipodi:namedview>
   <defs
      id="defs816" />
   <metadata
@@ -25,11 +59,13 @@
     </rdf:RDF>
   </metadata>
   <g
-     transform="translate(-36.032366,-118.71836)"
+     transform="translate(-37.668099,-122.37577)"
      id="layer1">
     <path
        id="path1372"
-       d="M 37.04167,156.77086 52.916667,138.25001 37.04167,119.7292"
-       style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.49803922" />
+       d="M 38.678199,155.13587 54.5532,139.26086 38.678199,123.38587"
+       style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccc" />
   </g>
 </svg>

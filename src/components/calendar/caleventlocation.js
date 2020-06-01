@@ -49,7 +49,7 @@ const CalEventLocation = ({ event, showDate, isMobile, color }) => {
           </Column>
           <Column w="5">
             <div>
-              {showDate && <div className="font-semibold">{date}</div>}
+              {showDate && <div>{date}</div>}
               <div>
                 {event.frontmatter.startTime} - {event.frontmatter.endTime}
               </div>
