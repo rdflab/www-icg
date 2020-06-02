@@ -901,7 +901,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     context: {
       crumbs: [["People", PEOPLE_PATH]],
       nav: "People",
-      title: "Browse All Our People",
+      title: "Browse Our People",
       allPeople: allPeople,
       groupMap: groupMap,
     },
