@@ -9,7 +9,6 @@ import ShowSmall from "../components/showsmall"
 import { searchTree } from "../components/search/searchtree"
 import Column from "../components/column"
 import Container from "../components/container"
-import H from "../components/headings/h"
 
 const EMPTY_QUERY = ""
 
@@ -108,7 +107,7 @@ const PublicationsTemplate = ({ pageContext }) => {
       crumbs={crumbs}
       selectedTab={selectedTab}
       nav="Publications"
-      title="Browse Our Publications"
+      title={title}
       headerComponent={<SiteSearch />}
     >
       <Container className="mt-8">

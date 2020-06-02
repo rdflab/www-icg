@@ -23,7 +23,7 @@ const SearchBar = ({
     <div
       className={`row z-40 px-4 py-2 border border-solid border-gray-300 rounded-md items-center bg-white trans-ani ${
         border ? "border-gray-300" : ""
-      } ${hover || selected ? "border-gray-400" : ""}
+      } ${hover || selected ? "shadow-md" : ""}
        ${className}`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}

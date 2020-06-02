@@ -1,7 +1,5 @@
 import React, { useState } from "react"
-import { graphql } from "gatsby"
-import CrumbLayout from "../components/crumblayout"
-import toImageMap from "../utils/toimagemap"
+import CrumbTitleLayout from "../components/crumbtitlelayout"
 import { GROUPS } from "../constants"
 import toPeopleGroupMap from "../utils/peoplegroupmap"
 import SearchBar from "../components/search/searchbar"
@@ -11,15 +9,12 @@ import SiteSearch from "../components/search/sitesearch"
 import Column from "../components/column"
 import ShowSmall from "../components/showsmall"
 import PeopleGroups from "../components/people/peoplegroups"
-import H from "../components/headings/h"
 import Container from "../components/container"
-// import MainColumn from "../components/maincolumn"
-// import SideColumn from "../components/sidecolumn"
 
 const EMPTY_QUERY = ""
 
-const PeopleTemplate = ({ data, pageContext }) => {
-  const { title, crumbs, allPeople, groupMap } = pageContext
+const PeopleTemplate = ({ pageContext, data }) => {
+  const { nav, title, crumbs, allPeople, groupMap } = pageContext
 
   const [query, setQuery] = useState(EMPTY_QUERY)
   const [filteredPeople, setFilteredPeople] = useState([])
@@ -27,7 +22,7 @@ const PeopleTemplate = ({ data, pageContext }) => {
   const [recordsPerPage, setRecordsPerPage] = useState(20)
   const [types, setTypes] = useState([])
 
-  const imageMap = toImageMap(data.files)
+  //const imageMap = toImageMap(data.files)
 
   const handleInputChange = e => {
     const q = e.target.value
@@ -109,8 +104,9 @@ const PeopleTemplate = ({ data, pageContext }) => {
   }
 
   return (
-    <CrumbLayout
+    <CrumbTitleLayout
       crumbs={crumbs}
+      nav={nav}
       title={title}
       headerComponent={<SiteSearch />}
       // titleComponent={
@@ -121,8 +117,6 @@ const PeopleTemplate = ({ data, pageContext }) => {
       //   />
       // }
     >
-      <H>{title}</H>
-
       <div className="bg-columbia-light-gray py-8">
         <Container>
           <ShowSmall>
@@ -174,31 +168,31 @@ const PeopleTemplate = ({ data, pageContext }) => {
       </Column> */}
         </Container>
       </div>
-    </CrumbLayout>
+    </CrumbTitleLayout>
   )
 }
 
 export default PeopleTemplate
 
-export const query = graphql`
-  query {
-    files: allFile(
-      filter: {
-        absolutePath: { regex: "/images/people/" }
-        ext: { eq: ".jpg" }
-      }
-    ) {
-      edges {
-        node {
-          name
-          relativePath
-          childImageSharp {
-            fluid(maxWidth: 500) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-      }
-    }
-  }
-`
+// export const query = graphql`
+//   query {
+//     files: allFile(
+//       filter: {
+//         absolutePath: { regex: "/images/people/" }
+//         ext: { eq: ".jpg" }
+//       }
+//     ) {
+//       edges {
+//         node {
+//           name
+//           relativePath
+//           childImageSharp {
+//             fluid(maxWidth: 500) {
+//               ...GatsbyImageSharpFluid
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// `

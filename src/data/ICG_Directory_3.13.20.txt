@@ -69,7 +69,7 @@ NAME	TITLE	PHONE	FAX	E-MAIL	Office/Lab#
 "Morgado-Palacin, Lucia, PhD"	Postdoctoral Research Fellow	851-5292		lm3230	401B	
 "Palomero, Teresa PhD"	Associate Prof of Pathology and Cell Biology (in ICG)	851-4778		tp2151	404	
 "Perez-Duran, Pablo, PhD"	Postdoctoral Research Scientist	851-5292		pp2569	401B	
-"Quinn, Aidan Stuart"	GRA	851-5292		saq2106	401B	
+"Quinn, Stuart Aidan"	GRA	851-5292		saq2106	401B	
 "Rashkovan, Marissa, PhD"	Postdoctoral Research Fellow	851-5292		mr3694	401B	
 "Reglero Gomez, Clara, PhD"	Postdoctoral Research Scientist	851-5292		cr3023	401B	
 "Rodriguez-Cortes, Jose, PhD"	Associate Research Scientist	851-5292		jr3434	401B	

@@ -1,11 +1,15 @@
 [
   {
     "name": "Faculty",
-    "link": "/people/faculty"
+    "link": "/research-areas/faculty"
   },
   {
     "name": "Administration",
-    "link": "/people/administration"
+    "link": "/administration/staff"
+  },
+  {
+    "name": "People",
+    "link": "/people"
   },
   {
     "name": "Publications",

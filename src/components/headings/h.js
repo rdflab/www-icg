@@ -7,7 +7,7 @@ import FullDiv from "../fulldiv"
 
 const TitleDiv = ({ title, heading, subHeading }) => (
   <FullDiv>
-    {title !== "" && <div className="uppercase mb-4">{title}</div>}
+    {title !== "" && <div className="uppercase py-2">{title}</div>}
     {heading !== "" && <h1>{heading}</h1>}
     {subHeading !== "" && <h3>{subHeading}</h3>}
   </FullDiv>

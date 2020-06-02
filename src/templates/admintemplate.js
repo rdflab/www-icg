@@ -1,73 +1,33 @@
-import React, { useState } from "react"
+import React from "react"
 import CrumbTitleLayout from "../components/crumbtitlelayout"
+import BlueLink from "../components/bluelink"
 import SiteSearch from "../components/search/sitesearch"
-import PeopleGroups from "../components/people/peoplegroups"
 import Container from "../components/container"
-
-const EMPTY_QUERY = ""
+import Column from "../components/column"
+import FullDiv from "../components/fulldiv"
 
 const AdminTemplate = ({ pageContext }) => {
-  const { adminGroupMap } = pageContext
-
-  const [query, setQuery] = useState(EMPTY_QUERY)
-  const [filteredGroups, setFilteredGroups] = useState([])
-  const [page, setPage] = useState(1)
-  const [recordsPerPage, setRecordsPerPage] = useState(20)
-
-  // const handleInputChange = e => {
-  //   const q = e.target.value.toLowerCase()
-  //   let ret = []
-
-  //   // for (let group of allGroups) {
-  //   //   if (group.frontmatter.name.toLowerCase().includes(q)) {
-  //   //     ret.push(group)
-  //   //   }
-  //   // }
-
-  //   // update state according to the latest query and results
-  //   setQuery(q)
-  //   setFilteredGroups(ret)
-  //   setPage(1)
-  // }
-
-  // const onPageChanged = data => {
-  //   const { currentPage } = data
-  //   setPage(currentPage)
-  // }
-
-  // const hasSearchResults = query !== EMPTY_QUERY
-  // let groups = hasSearchResults ? filteredGroups : allGroups
-
-  // const offset = (page - 1) * recordsPerPage
-  // let pagedGroups = groups.slice(offset, offset + recordsPerPage)
-
   return (
     <CrumbTitleLayout
-      crumbs={[
-        ["People", "/people"],
-        ["Administration", "/people/administration"],
-      ]}
+      crumbs={[["Administration", "/administration"]]}
       nav="Administration"
-      title="Meet Our Administration Team"
+      title="Administration"
       headerComponent={<SiteSearch />}
-      // titleComponent={
-      //   <SearchSummary count={groups.length} single="Lab" plural="Labs" />
-      // }
     >
-      {/* <SearchBar
-        handleInputChange={handleInputChange}
-        placeholder="Type to find labs"
-        text={query}
-        className="my-4"
-      /> */}
+      <Container>
+        <Column className="items-center justify-between my-8">
+          <Column className="md:w-5/10">
+            <FullDiv className="border-t-4 border-b-4 border-solid border-gray-400 py-4 my-4">
+              <h3>Administration Staff</h3>
+              <p className="my-2">
+                Browse a complete listing of our administration staff.
+              </p>
 
-      <div className="bg-columbia-light-gray py-8">
-        <Container>
-          <div className="w-full">
-            <PeopleGroups groupMap={adminGroupMap} />
-          </div>
-        </Container>
-      </div>
+              <BlueLink to="/administration/staff">Learn more</BlueLink>
+            </FullDiv>
+          </Column>
+        </Column>
+      </Container>
     </CrumbTitleLayout>
   )
 }

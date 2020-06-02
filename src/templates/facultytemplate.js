@@ -151,8 +151,8 @@ const FacultyTemplate = ({ pageContext }) => {
   return (
     <CrumbTitleLayout
       crumbs={crumbs}
-      nav="Faculty"
-      title="Meet Our Scientists"
+      nav="For Research Scientists"
+      title="Meet Our Faculty"
       headerComponent={<SiteSearch />}
       // titleComponent={
       //   <SearchSummary count={groups.length} single="Lab" plural="Labs" />

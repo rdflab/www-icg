@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React from "react"
 import CrumbTitleLayout from "../components/crumbtitlelayout"
 import SideBarNews from "../components/news/sidebarnews"
 import NewsItemDate from "../components/news/newsitemdate"

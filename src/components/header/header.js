@@ -12,7 +12,7 @@ import ShowSmall from "../showsmall"
 
 const Header = ({ title, content, menuContent }) => (
   <>
-    <ShowSmall className="bg-columbia-blue">
+    <ShowSmall className="bg-columbia-blue" size="xl">
       <nav aria-label="Navigation" className="row p-3">
         <SlideMenu title={title} />
         <Link to="/">
@@ -21,7 +21,7 @@ const Header = ({ title, content, menuContent }) => (
       </nav>
     </ShowSmall>
 
-    <HideSmall className="bg-columbia-blue py-4">
+    <HideSmall size="xl">
       {/* <div className="p-3">
         <Container>
           <Column isVCentered={true} className="justify-between">
@@ -34,27 +34,30 @@ const Header = ({ title, content, menuContent }) => (
         </Container>
       </div> */}
 
-      <Container>
-        <Column isVCentered={true} className="justify-between">
-          <Link to="/" className="mr-8">
-            {/* <ColumbiaICGWhiteImage style={{ width: `400px` }} /> */}
-
-            <img src={whitelogo} className="h-12" alt="IGC Logo" />
-          </Link>
-
-          {content !== null && content}
-        </Column>
-      </Container>
-
-      <nav aria-label="Navigation">
+      <div className="bg-columbia-blue pt-4">
         <Container>
           <Column isVCentered={true} className="justify-between">
-            <HeaderLinks />
+            <Link to="/" className="mr-8">
+              {/* <ColumbiaICGWhiteImage style={{ width: `400px` }} /> */}
 
-            {menuContent !== null && menuContent}
+              <img src={whitelogo} className="h-12" alt="IGC Logo" />
+            </Link>
+
+            {content !== null && content}
           </Column>
         </Container>
-      </nav>
+      </div>
+      <div className="bg-columbia-blue pt-4">
+        <nav aria-label="Navigation">
+          <Container>
+            <Column isVCentered={true} className="justify-between">
+              <HeaderLinks />
+
+              {menuContent !== null && menuContent}
+            </Column>
+          </Container>
+        </nav>
+      </div>
     </HideSmall>
   </>
 )

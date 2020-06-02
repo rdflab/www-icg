@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import CrumbTitleLayout from "../components/crumbtitlelayout"
 import SiteSearch from "../components/search/sitesearch"
 import YearSelector from "../components/filter/yearselector"

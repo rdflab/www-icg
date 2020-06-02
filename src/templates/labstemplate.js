@@ -1,10 +1,10 @@
 import React, { useState } from "react"
-import CrumbContainerLayout from "../components/crumbcontainerlayout"
+import CrumbTitleLayout from "../components/crumbtitlelayout"
 import SiteSearch from "../components/search/sitesearch"
 import Column from "../components/column"
-import H1 from "../components/headings/h1"
 import { Link } from "gatsby"
 import generic from "../assets/svg/generic.svg"
+import Container from "../components/container"
 
 const EMPTY_QUERY = ""
 
@@ -25,7 +25,9 @@ const Lab = ({ lab }) => {
 
   return (
     <div
-      className={`w-full rounded bg-white shadow-md overflow-hidden mb-8 md:mx-4`}
+      className={`w-full rounded-md bg-white shadow-lg overflow-hidden mb-16 trans-ani ${
+        hover ? "shadow-xl" : ""
+      }`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
@@ -33,11 +35,7 @@ const Lab = ({ lab }) => {
         <div className="bg-white">
           <img src={generic} className="w-full" />
         </div>
-        <div
-          className={`p-4 text-lg trans-ani ${
-            hover ? "bg-blue-600 text-white" : "text-blue-500"
-          }`}
-        >
+        <div className={`p-4 text-lg text-columbia-secondary-blue`}>
           {lab.name}
         </div>
       </Link>
@@ -45,7 +43,7 @@ const Lab = ({ lab }) => {
   )
 }
 
-const LabGrid = ({ labs, cols }) => {
+const LabGrid = ({ labs, cols, colWidth }) => {
   const rows = Math.floor(labs.length / cols) + 1
 
   const ret = []
@@ -58,16 +56,20 @@ const LabGrid = ({ labs, cols }) => {
     for (let c = 0; c < cols; ++c) {
       let lab = labs[pc]
 
-      col.push(<Column w={3}>{pc < labs.length && <Lab lab={lab} />}</Column>)
+      col.push(
+        <Column className={`md:${colWidth}`} key={pc}>
+          {pc < labs.length && <Lab lab={lab} />}
+        </Column>
+      )
 
       ++pc
-
-      if (pc === labs.length) {
-        break
-      }
     }
 
-    ret.push(<Column className="justify-center">{col}</Column>)
+    ret.push(
+      <Column className="justify-between" key={r}>
+        {col}
+      </Column>
+    )
 
     if (pc === labs.length) {
       break
@@ -78,11 +80,12 @@ const LabGrid = ({ labs, cols }) => {
 }
 
 LabGrid.defaultProps = {
-  cols: 4,
+  cols: 3,
+  colWidth: "w-3/10",
 }
 
 const LabsTemplate = ({ pageContext }) => {
-  const { allLabs } = pageContext
+  const { allLabs, crumbs } = pageContext
 
   const [query, setQuery] = useState(EMPTY_QUERY)
   const [filteredGroups, setFilteredGroups] = useState([])
@@ -117,12 +120,10 @@ const LabsTemplate = ({ pageContext }) => {
   // let pagedGroups = groups.slice(offset, offset + recordsPerPage)
 
   return (
-    <CrumbContainerLayout
-      crumbs={[
-        ["Research Areas", "/research-areas"],
-        ["Labs", "/research-areas/labs"],
-      ]}
-      title="Labs"
+    <CrumbTitleLayout
+      crumbs={crumbs}
+      nav="For Research Scientists"
+      title="Research Labs"
       headerComponent={<SiteSearch />}
       // titleComponent={
       //   <SearchSummary count={groups.length} single="Lab" plural="Labs" />
@@ -135,14 +136,14 @@ const LabsTemplate = ({ pageContext }) => {
         className="my-4"
       /> */}
 
-      <H1 className="text-center">Research Labs</H1>
-
-      <div className="w-full">
-        {/* <Labs labs={allGroups} /> */}
-        {/*<StaffGrid labs={allGroups} /> */}
-        <LabGrid labs={allLabs} />
+      <div className="bg-columbia-light-gray py-16">
+        <Container>
+          {/* <Labs labs={allGroups} /> */}
+          {/*<StaffGrid labs={allGroups} /> */}
+          <LabGrid labs={allLabs} />
+        </Container>
       </div>
-    </CrumbContainerLayout>
+    </CrumbTitleLayout>
   )
 }
 

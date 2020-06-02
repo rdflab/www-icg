@@ -23,10 +23,11 @@ const LabPeopleTemplate = ({ pageContext }) => {
   return (
     <CrumbLayout crumbs={crumbs} title={title} headerComponent={<SiteSearch />}>
       <PersonHeader person={faculty} title="Labs" />
-
-      <Container>
-        <PeopleGroups groupMap={labGroupMap} faculty={faculty} />
-      </Container>
+      <div className="bg-columbia-light-gray py-8">
+        <Container>
+          <PeopleGroups groupMap={labGroupMap} faculty={faculty} />
+        </Container>
+      </div>
     </CrumbLayout>
   )
 }

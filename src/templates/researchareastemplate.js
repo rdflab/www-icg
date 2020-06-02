@@ -1,8 +1,10 @@
 import React from "react"
-import CrumbContainerLayout from "../components/crumbcontainerlayout"
+import CrumbTitleLayout from "../components/crumbtitlelayout"
 import BlueLink from "../components/bluelink"
 import SiteSearch from "../components/search/sitesearch"
-import H1 from "../components/headings/h1"
+import Container from "../components/container"
+import Column from "../components/column"
+import FullDiv from "../components/fulldiv"
 
 const FlatCard = ({ children, className }) => (
   <div
@@ -26,13 +28,54 @@ const ResearchAreasTemplate = ({ pageContext }) => {
   })
 
   return (
-    <CrumbContainerLayout
+    <CrumbTitleLayout
       crumbs={[["Research Areas", "/research-areas"]]}
+      nav="For Research Scientists"
       title="Research Areas"
       headerComponent={<SiteSearch />}
     >
-      <H1>Research Areas</H1>
+      <Container>
+        <Column className="items-center justify-between my-8">
+          <Column className="md:w-5/10">
+            <FullDiv className="border-t-4 border-b-4 border-solid border-gray-400 py-4">
+              <h3>Research Faculty</h3>
+              <p className="my-2">
+                Browse a complete listing of our research faculty by name.
+              </p>
 
+              <BlueLink to="/research-areas/faculty">Learn more</BlueLink>
+            </FullDiv>
+          </Column>
+        </Column>
+
+        <Column className="items-center justify-between my-8">
+          <Column className="md:w-5/10">
+            <FullDiv className="border-t-4 border-b-4 border-solid border-gray-400 py-4">
+              <h3>Research Staff</h3>
+              <p className="my-2">
+                Browse a complete listing of our research staff by name.
+              </p>
+
+              <BlueLink to="/research-areas/faculty-staff">Learn more</BlueLink>
+            </FullDiv>
+          </Column>
+        </Column>
+
+        <Column className="items-center justify-between my-8">
+          <Column className="md:w-5/10">
+            <FullDiv className="border-t-4 border-b-4 border-solid border-gray-400 py-4">
+              <h3>Research Labs</h3>
+              <p className="my-2">
+                Browse our laboratories to learn more about the leading-edge
+                research taking place at the institute.
+              </p>
+
+              <BlueLink to="/research-areas/labs">Learn more</BlueLink>
+            </FullDiv>
+          </Column>
+        </Column>
+      </Container>
+      {/* 
       {Object.keys(raMap)
         .sort()
         .map((name, index) => (
@@ -44,8 +87,8 @@ const ResearchAreasTemplate = ({ pageContext }) => {
               <BlueLink to={`/research-areas/${raMap[name]}`}>{name}</BlueLink>
             </h2>
           </FlatCard>
-        ))}
-    </CrumbContainerLayout>
+        ))} */}
+    </CrumbTitleLayout>
   )
 }
 

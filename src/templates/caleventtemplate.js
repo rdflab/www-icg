@@ -5,7 +5,6 @@ import Column from "../components/column"
 import MainColumn from "../components/maincolumn"
 import SideColumn from "../components/sidecolumn"
 import CalEventsSideBar from "../components/calendar/caleventssidebar"
-import H from "../components/headings/h"
 import Container from "../components/container"
 
 const CalEventTemplate = ({ pageContext }) => {

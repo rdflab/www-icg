@@ -17,4 +17,4 @@ tags: []
 
 ### Introduction
 
-I work on this web site.
+I developed this web site using a number of web techologies. See [/help](/help) for details.

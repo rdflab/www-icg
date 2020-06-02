@@ -17,6 +17,7 @@ const labPeopleTemplate = path.resolve(`src/templates/labpeopletemplate.js`)
 const labsTemplate = path.resolve(`src/templates/labstemplate.js`)
 const facultyTemplate = path.resolve(`src/templates/facultytemplate.js`)
 const adminTemplate = path.resolve(`src/templates/admintemplate.js`)
+const adminStaffTemplate = path.resolve(`src/templates/adminstafftemplate.js`)
 const peopleTemplate = path.resolve(`src/templates/peopletemplate.js`)
 //const groupTemplate = path.resolve(`src/templates/grouptemplate.js`)
 //const labOverviewTemplate = path.resolve(`src/templates/laboverviewtemplate.js`)
@@ -334,9 +335,17 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   // })
 
   const allPeople = []
+  const facultyStaff = []
   result.data.people.edges.forEach(({ node }) => {
     const person = node
     allPeople.push(person)
+
+    if (
+      person.frontmatter.group === "Faculty" ||
+      person.frontmatter.group === "Research Staff"
+    ) {
+      facultyStaff.push(person)
+    }
   })
 
   const peopleMap = toPeopleMap(allPeople)
@@ -475,33 +484,33 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   // Index some data for searching
   //
 
-  const searchData = {}
-  searchData["sections"] = []
-  searchData["data"] = {}
+  // const searchData = {}
+  // searchData["sections"] = []
+  // searchData["data"] = {}
 
-  // Labs
+  // // Labs
 
-  searchData["sections"].push("Labs")
-  searchData["data"]["Labs"] = {}
+  // searchData["sections"].push("Labs")
+  // searchData["data"]["Labs"] = {}
 
-  for (let lab of allLabs) {
-    searchData["data"]["Labs"][lab.name] = {
-      name: "Lab page",
-      to: `/research-areas/labs/${lab.id}`,
-    }
-  }
+  // for (let lab of allLabs) {
+  //   searchData["data"]["Labs"][lab.name] = {
+  //     name: "Lab page",
+  //     to: `/research-areas/labs/${lab.id}`,
+  //   }
+  // }
 
-  // Research areas
+  // // Research areas
 
-  searchData["sections"].push("Research Areas")
-  searchData["data"]["Research Areas"] = {}
+  // searchData["sections"].push("Research Areas")
+  // searchData["data"]["Research Areas"] = {}
 
-  for (let ra of allResearchAreas) {
-    searchData["data"]["Research Areas"][ra.name] = {
-      name: "Research page",
-      to: `/research-areas/${ra.id}`,
-    }
-  }
+  // for (let ra of allResearchAreas) {
+  //   searchData["data"]["Research Areas"][ra.name] = {
+  //     name: "Research page",
+  //     to: `/research-areas/${ra.id}`,
+  //   }
+  // }
 
   // People types
 
@@ -531,58 +540,67 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   // Publications
 
-  searchData["sections"].push("Publications")
-  searchData["data"]["Publications"] = {}
+  // searchData["sections"].push("Publications")
+  // searchData["data"]["Publications"] = {}
 
-  for (let i = 0; i < allPublications.length; ++i) {
-    const publication = allPublications[i]
+  // for (let i = 0; i < allPublications.length; ++i) {
+  //   const publication = allPublications[i]
 
-    if (publication.pubmed !== "") {
-      let title = publication.title
+  //   if (publication.pubmed !== "") {
+  //     let title = publication.title
 
-      // Truncate if longer than 50 chars
-      if (title.length > 60) {
-        title = `${title.substring(0, 60)}...`
-      }
+  //     // Truncate if longer than 50 chars
+  //     if (title.length > 60) {
+  //       title = `${title.substring(0, 60)}...`
+  //     }
 
-      searchData["data"]["Publications"][title] = {
-        name: `PubMed`,
-        to: `https://www.ncbi.nlm.nih.gov/pubmed/?term=${publication.pubmed}`,
-      }
-    }
-  }
+  //     searchData["data"]["Publications"][title] = {
+  //       name: `PubMed`,
+  //       to: `https://www.ncbi.nlm.nih.gov/pubmed/?term=${publication.pubmed}`,
+  //     }
+  //   }
+  // }
 
-  // News
+  // // News
 
-  searchData["sections"].push("News")
-  searchData["data"]["News"] = {}
+  // searchData["sections"].push("News")
+  // searchData["data"]["News"] = {}
 
-  for (let item of allNews) {
-    searchData["data"]["News"][item.frontmatter.title] = {
-      name: `View`,
-      to: item.frontmatter.path,
-    }
-  }
+  // for (let item of allNews) {
+  //   searchData["data"]["News"][item.frontmatter.title] = {
+  //     name: `View`,
+  //     to: item.frontmatter.path,
+  //   }
+  // }
 
-  // Events
+  // // Events
 
-  searchData["sections"].push("Events")
-  searchData["data"]["Events"] = {}
+  // searchData["sections"].push("Events")
+  // searchData["data"]["Events"] = {}
 
-  for (let calEvent of allCalEvents) {
-    const path = `/events/${
-      calEvent.frontmatter.start.split("T")[0]
-    }-${calEvent.frontmatter.title.toLowerCase().replace(" ", "-")}`
+  // for (let calEvent of allCalEvents) {
+  //   const path = `/events/${
+  //     calEvent.frontmatter.start.split("T")[0]
+  //   }-${calEvent.frontmatter.title.toLowerCase().replace(" ", "-")}`
 
-    searchData["data"]["Events"][calEvent.frontmatter.title] = {
-      name: `View`,
-      to: path,
-    }
-  }
+  //   searchData["data"]["Events"][calEvent.frontmatter.title] = {
+  //     name: `View`,
+  //     to: path,
+  //   }
+  // }
 
   //
   // Make pages
   //
+
+  const RESEARCH_AREAS_PATH = "/research-areas"
+  const LABS_PATH = `${RESEARCH_AREAS_PATH}/labs`
+  const FACULTY_PATH = `${RESEARCH_AREAS_PATH}/faculty`
+  const FACULTY_STAFF_PATH = `${RESEARCH_AREAS_PATH}/faculty-staff`
+  const PUBLICATIONS_PATH = `${RESEARCH_AREAS_PATH}/publications`
+  const ADMIN_PATH = "/administration"
+  const ADMIN_STAFF_PATH = `${ADMIN_PATH}/staff`
+  const PEOPLE_PATH = `people`
 
   let path
 
@@ -621,8 +639,85 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     })
   }
 
+  //
+  // Research areas
+  //
+
+  createPage({
+    path: RESEARCH_AREAS_PATH,
+    component: researchAreasTemplate,
+    context: {
+      allResearchAreas: allResearchAreas,
+    },
+  })
+
+  // for (let researchArea of allResearchAreas) {
+  //   createPage({
+  //     path: `/research-areas/${researchArea.id}`,
+  //     component: researchAreaTemplate,
+  //     context: {
+  //       allPeople: allPeople,
+  //       peopleMap: peopleMap,
+  //       researchArea: researchArea,
+  //     },
+  //   })
+  // }
+
+  //
+  // Faculty
+  //
+
+  createPage({
+    path: FACULTY_PATH,
+    component: facultyTemplate,
+    context: {
+      title: "Faculty",
+      crumbs: [
+        ["Research Areas", RESEARCH_AREAS_PATH],
+        ["Faculty", FACULTY_PATH],
+      ],
+      allGroups: allFaculty,
+      peopleMap: peopleMap,
+    },
+  })
+
+  createPage({
+    path: FACULTY_STAFF_PATH,
+    component: peopleTemplate,
+    context: {
+      crumbs: [
+        ["Research Areas", RESEARCH_AREAS_PATH],
+        ["Faculty & Staff", FACULTY_STAFF_PATH],
+      ],
+      nav: "For Research Scientists",
+      title: "Meet Our Faculty & Staff",
+      allPeople: facultyStaff,
+      groupMap: groupMap,
+    },
+  })
+
+  //
+  // Labs page
+  //
+
+  createPage({
+    path: LABS_PATH,
+    component: labsTemplate,
+    context: {
+      allLabs: allLabs,
+      crumbs: [
+        ["Research Areas", RESEARCH_AREAS_PATH],
+        ["Labs", LABS_PATH],
+      ],
+    },
+  })
+
+  //
+  // Pages for each lab
+  //
+
   for (let lab of allLabs) {
-    path = `/research-areas/labs/${lab.id}`
+    path = `${LABS_PATH}/${lab.id}`
 
     const faculty = peopleMap[lab.id]
     const labPublications = lab.id in labPubMap ? labPubMap[lab.id] : []
@@ -648,6 +743,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       component: labTemplate,
       context: {
         lab: lab,
+        crumbs: [
+          ["Research Areas", RESEARCH_AREAS_PATH],
+          ["Labs", LABS_PATH],
+          [lab.name, path],
+        ],
         faculty: faculty,
         labGroupMap: labGroupMap,
         labPublications: labPublications,
@@ -655,26 +755,19 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         labExcerptHtml: labExcerptHtml,
       },
     })
-  }
 
-  //
-  // Secondary lab pages
-  //
-
-  for (let lab of allLabs) {
-    path = `/research-areas/labs/${lab.id}`
-
-    const faculty = peopleMap[lab.id]
-    const labPublications = lab.id in labPubMap ? labPubMap[lab.id] : []
-
-    const labPeople = lab.people.map(pid => peopleMap[pid])
-    const labGroupMap = toGroupMap(labPeople)
-
+    const labPeoplePath = `${path}/people`
     createPage({
-      path: `${path}/people`,
+      path: labPeoplePath,
       component: labPeopleTemplate,
       context: {
         lab: lab,
+        crumbs: [
+          ["Research Areas", RESEARCH_AREAS_PATH],
+          ["Labs", LABS_PATH],
+          [lab.name, path],
+          ["People", labPeoplePath],
+        ],
         faculty: faculty,
         labGroupMap: labGroupMap,
       },
@@ -683,16 +776,17 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     //
     // Lab publications
     //
-
+    const pubPath = `${path}/publications`
     createPage({
-      path: `${path}/publications`,
+      path: pubPath,
       component: publicationsTemplate,
       context: {
         title: `${lab.name} Publications`,
         crumbs: [
-          ["Labs", "/research-areas/labs"],
-          [lab.name, `/research-areas/labs/${lab.id}`],
-          ["Publications", `/research-areas/labs/${lab.id}/publications`],
+          ["Research Areas", RESEARCH_AREAS_PATH],
+          ["Labs", LABS_PATH],
+          [lab.name, path],
+          ["Publications", pubPath],
         ],
         selectedTab: "",
         allPublications: labPublications,
@@ -704,33 +798,24 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
 
   //
-  // Faculty
+  // Publications
   //
 
-  path = "/people/faculty"
   createPage({
-    path: path,
-    component: facultyTemplate,
+    path: PUBLICATIONS_PATH,
+    component: publicationsTemplate,
     context: {
-      title: "Faculty",
+      title: `Browse Our Publications`,
       crumbs: [
-        ["People", "/people"],
-        ["Faculty", path],
+        ["Research Ares", RESEARCH_AREAS_PATH],
+        ["Publications", PUBLICATIONS_PATH],
       ],
-      allGroups: allFaculty,
-      peopleMap: peopleMap,
-    },
-  })
-
-  //
-  // Labs page
-  //
-
-  createPage({
-    path: "/research-areas/labs",
-    component: labsTemplate,
-    context: {
-      allLabs: allLabs,
+      selectedTab: "Publications",
+      allPublications: allPublications,
+      index: "/publications.index.json",
+      showSearch: true,
+      showYears: false,
+      showLabLink: false,
     },
   })
 
@@ -739,10 +824,19 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   //
 
   createPage({
-    path: `/people/administration`,
+    path: ADMIN_PATH,
     component: adminTemplate,
+    context: {},
+  })
+
+  createPage({
+    path: ADMIN_STAFF_PATH,
+    component: adminStaffTemplate,
     context: {
-      title: `Administration`,
+      crumbs: [
+        ["Adminstration", ADMIN_PATH],
+        ["Staff", ADMIN_STAFF_PATH],
+      ],
       adminGroupMap: adminGroupMap,
     },
   })
@@ -801,61 +895,17 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   // People
   //
 
-  path = "/people"
-
   createPage({
-    path: path,
+    path: PEOPLE_PATH,
     component: peopleTemplate,
     context: {
-      crumbs: [["People", path]],
-      title: "People",
+      crumbs: [["People", PEOPLE_PATH]],
+      nav: "People",
+      title: "Browse All Our People",
       allPeople: allPeople,
       groupMap: groupMap,
     },
   })
-
-  //
-  // Publications
-  //
-
-  createPage({
-    path: "/research-areas/publications",
-    component: publicationsTemplate,
-    context: {
-      title: "Publications",
-      crumbs: [["Publications", "/research-areas/publications"]],
-      selectedTab: "Publications",
-      allPublications: allPublications,
-      index: "/publications.index.json",
-      showSearch: true,
-      showYears: false,
-      showLabLink: false,
-    },
-  })
-
-  //
-  // Research areas
-  //
-
-  createPage({
-    path: "/research-areas",
-    component: researchAreasTemplate,
-    context: {
-      allResearchAreas: allResearchAreas,
-    },
-  })
-
-  for (let researchArea of allResearchAreas) {
-    createPage({
-      path: `/research-areas/${researchArea.id}`,
-      component: researchAreaTemplate,
-      context: {
-        allPeople: allPeople,
-        peopleMap: peopleMap,
-        researchArea: researchArea,
-      },
-    })
-  }
 
   // about
 

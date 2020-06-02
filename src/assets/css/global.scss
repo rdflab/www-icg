@@ -242,10 +242,12 @@ a:hover {
 // }
 
 
-
+.header-link-underline {
+  @apply link pb-2 border-b-2 border-solid font-semibold
+}
 
 .header-link {
-  @apply link text-gray-400 font-semibold mt-2 mr-4 trans-ani; 
+  @apply header-link-underline border-transparent text-gray-400  trans-ani; 
 }
 
 .header-link:hover {
@@ -253,11 +255,11 @@ a:hover {
 }
 
 .header-link-active {
-  @apply text-white; //columbia-secondary-blue;
+  @apply header-link-underline border-white text-white ; //columbia-secondary-blue;
 }
 
 .header-link-active:hover {
-  @apply text-white; //columbia-secondary-blue; 
+  @apply text-white border-white; //columbia-secondary-blue; 
 }
 
 

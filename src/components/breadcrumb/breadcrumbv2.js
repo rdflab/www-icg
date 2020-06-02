@@ -51,7 +51,7 @@ const Breadcrumb = ({ crumbs }) => {
   }
 
   return (
-    <div className="bg-columbia-secondary-blue text-sm py-2">
+    <div className="bg-columbia-secondary-blue text-sm pt-4">
       <Container>
         <Column className="items-center">{ret}</Column>
       </Container>
