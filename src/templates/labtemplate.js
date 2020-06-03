@@ -11,6 +11,9 @@ import Container from "../components/container"
 import PeopleGroups from "../components/people/peoplegroups"
 import { labName } from "../utils/labname"
 import LabHeader from "../components/lab/labheader"
+import ShowSmall from "../components/showsmall"
+import HideSmall from "../components/hidesmall"
+import ShowBetween from "../components/showbetween"
 
 const LabTemplate = ({ path, pageContext }) => {
   const {
@@ -48,7 +51,19 @@ const LabTemplate = ({ path, pageContext }) => {
         <div className="py-8">
           <Container>
             <H1>Meet The Team</H1>
-            <PeopleGroups groupMap={labGroupMap} />
+
+            <ShowSmall size="lg">
+              <PeopleGroups groupMap={labGroupMap} cols={2} colWidth="w-9/20" />
+            </ShowSmall>
+
+            <ShowBetween s1="lg" s2="xl">
+              <PeopleGroups groupMap={labGroupMap} cols={3} colWidth="w-3/10" />
+            </ShowBetween>
+
+            <HideSmall size="xl">
+              <PeopleGroups groupMap={labGroupMap} />
+            </HideSmall>
+
             {/* <PeopleGroups groupMap={labGroupMap} /> faculty={faculty} /> */}
           </Container>
         </div>

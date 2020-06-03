@@ -3,6 +3,9 @@ import CrumbTitleLayout from "../components/crumbtitlelayout"
 import SiteSearch from "../components/search/sitesearch"
 import PeopleGroups from "../components/people/peoplegroups"
 import Container from "../components/container"
+import ShowSmall from "../components/showsmall"
+import ShowBetween from "../components/showbetween"
+import HideSmall from "../components/hidesmall"
 
 const EMPTY_QUERY = ""
 
@@ -61,9 +64,17 @@ const AdminStaffTemplate = ({ path, pageContext }) => {
 
       <div className="py-8">
         <Container>
-          <div className="w-full">
+          <ShowSmall size="lg">
+            <PeopleGroups groupMap={adminGroupMap} cols={2} colWidth="w-9/20" />
+          </ShowSmall>
+
+          <ShowBetween s1="lg" s2="xl">
+            <PeopleGroups groupMap={adminGroupMap} cols={3} colWidth="w-3/10" />
+          </ShowBetween>
+
+          <HideSmall size="xl">
             <PeopleGroups groupMap={adminGroupMap} />
-          </div>
+          </HideSmall>
         </Container>
       </div>
     </CrumbTitleLayout>

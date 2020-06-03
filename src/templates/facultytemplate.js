@@ -185,7 +185,7 @@ const FacultyTemplate = ({ path, pageContext }) => {
           {/* <Labs labs={allGroups} /> */}
           {/*<StaffGrid labs={allGroups} /> */}
 
-          <ShowSmall size="lg">
+          <ShowSmall size="xl">
             <StaffGroups
               allGroups={allGroups}
               peopleMap={peopleMap}
@@ -194,7 +194,7 @@ const FacultyTemplate = ({ path, pageContext }) => {
             />
           </ShowSmall>
 
-          <HideSmall size="lg">
+          <HideSmall size="xl">
             <StaffGroups allGroups={allGroups} peopleMap={peopleMap} />
           </HideSmall>
         </Container>
