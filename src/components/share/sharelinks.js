@@ -5,9 +5,9 @@ import { FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa"
 import useSiteMetadata from "../../hooks/sitemetadata"
 
 const ShareLinks = ({ color, size, opacity, path }) => {
-  const { siteURL } = useSiteMetadata()
+  const { siteUrl } = useSiteMetadata()
 
-  const href = `${siteURL}${path}`
+  const href = `${siteUrl}${path}`
 
   return (
     <Column isMobile={true} className={`${color} items-center md:justify-end`}>
