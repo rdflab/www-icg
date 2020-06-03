@@ -10,8 +10,7 @@ import Collapsible from "../components/collapsible"
 import Container from "../components/container"
 import FullDiv from "../components/fulldiv"
 
-const NewsItemTemplate = props => {
-  const { pageContext } = props
+const NewsItemTemplate = ({ path, pageContext }) => {
   const { item, allNews } = pageContext
 
   // if (item.date === undefined) {
@@ -28,6 +27,7 @@ const NewsItemTemplate = props => {
 
   return (
     <CrumbTitleLayout
+      path={path}
       nav="News Article"
       title={title}
       crumbs={[["News", "/news"]]}

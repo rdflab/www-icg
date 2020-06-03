@@ -17,7 +17,7 @@ FlatCard.defaultProps = {
   className: "",
 }
 
-const ResearchAreasTemplate = ({ pageContext }) => {
+const ResearchAreasTemplate = ({ path, pageContext }) => {
   const { allResearchAreas } = pageContext
 
   const raMap = {}
@@ -28,6 +28,7 @@ const ResearchAreasTemplate = ({ pageContext }) => {
 
   return (
     <CrumbTitleLayout
+      path={path}
       crumbs={[["Research Areas", "/research-areas"]]}
       nav="For Research Scientists"
       title="Research Areas"

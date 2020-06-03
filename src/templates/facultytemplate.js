@@ -127,7 +127,7 @@ StaffGroups.defaultProps = {
   headingColor: "text-gray-700",
 }
 
-const FacultyTemplate = ({ pageContext }) => {
+const FacultyTemplate = ({ path, pageContext }) => {
   const { allGroups, peopleMap, crumbs } = pageContext
 
   const [query, setQuery] = useState(EMPTY_QUERY)
@@ -164,6 +164,7 @@ const FacultyTemplate = ({ pageContext }) => {
 
   return (
     <CrumbTitleLayout
+      path={path}
       crumbs={crumbs}
       nav="For Research Scientists"
       title="Meet Our Faculty"

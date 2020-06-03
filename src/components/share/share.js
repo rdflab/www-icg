@@ -2,9 +2,9 @@ import React from "react"
 import Container from "../container"
 import ShareLinks from "./sharelinks"
 
-const Share = ({ url, color }) => (
+const Share = ({ path, color }) => (
   <Container className="py-4">
-    <ShareLinks url={url} color={color} />
+    <ShareLinks path={path} color={color} />
   </Container>
 )
 

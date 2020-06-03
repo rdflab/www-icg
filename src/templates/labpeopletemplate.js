@@ -1,5 +1,5 @@
 import React from "react"
-import CrumbLayout from "../components/crumblayout"
+import CrumbTitleLayout from "../components/crumbtitlelayout"
 
 //import SideBar from "../components/sidebar/sidebar"
 import SiteSearch from "../components/search/sitesearch"
@@ -9,7 +9,7 @@ import PersonHeader from "../components/people/personheader"
 import PeopleGroups from "../components/people/peoplegroups"
 import { labName } from "../utils/labname"
 
-const LabPeopleTemplate = ({ pageContext }) => {
+const LabPeopleTemplate = ({ path, pageContext }) => {
   const { lab, faculty, labGroupMap } = pageContext
 
   const title = labName(faculty)
@@ -21,14 +21,19 @@ const LabPeopleTemplate = ({ pageContext }) => {
   ]
 
   return (
-    <CrumbLayout crumbs={crumbs} title={title} headerComponent={<SiteSearch />}>
+    <CrumbTitleLayout
+      path={path}
+      crumbs={crumbs}
+      title={title}
+      headerComponent={<SiteSearch />}
+    >
       <PersonHeader person={faculty} title="Labs" />
       <div className="bg-columbia-light-gray py-8">
         <Container>
           <PeopleGroups groupMap={labGroupMap} faculty={faculty} />
         </Container>
       </div>
-    </CrumbLayout>
+    </CrumbTitleLayout>
   )
 }
 

@@ -86,7 +86,7 @@ LabGrid.defaultProps = {
   colWidth: "w-3/10",
 }
 
-const LabsTemplate = ({ pageContext }) => {
+const LabsTemplate = ({ path, pageContext }) => {
   const { allLabs, crumbs } = pageContext
 
   const [query, setQuery] = useState(EMPTY_QUERY)
@@ -123,6 +123,7 @@ const LabsTemplate = ({ pageContext }) => {
 
   return (
     <CrumbTitleLayout
+      path={path}
       crumbs={crumbs}
       nav="For Research Scientists"
       title="Research Labs"

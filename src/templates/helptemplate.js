@@ -8,8 +8,11 @@ import npmsvg from "../assets/svg/npm-logo-black.svg"
 import ExtLink from "../components/links/extlink"
 import Column from "../components/column"
 import Container from "../components/container"
+import useSiteMetadata from "../hooks/sitemetadata"
 
-const HelpTemplate = ({ pageContext, data }) => {
+const HelpTemplate = ({ path, pageContext, data }) => {
+  const { title } = useSiteMetadata()
+
   const year = new Date().getFullYear()
 
   let copyright
@@ -22,8 +25,9 @@ const HelpTemplate = ({ pageContext, data }) => {
 
   return (
     <CrumbTitleLayout
+      path={path}
       nav="Help"
-      title={`About ${data.site.siteMetadata.title} Web Site`}
+      title={`About ${title} Web Site`}
       crumbs={[["Help", "/help"]]}
     >
       <div className="bg-columbia-light-gray py-16 min-h-full">

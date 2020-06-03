@@ -139,8 +139,8 @@ const Items = ({ title, items }) => (
 //   </div>
 // )
 
-const PersonTemplate = ({ pageContext, data }) => {
-  const { person, lab, publications, cv } = pageContext
+const PersonTemplate = ({ path, pageContext, data }) => {
+  const { person, publications, cv } = pageContext
 
   const title = `${person.frontmatter.firstName} ${person.frontmatter.lastName}`
 
@@ -154,7 +154,7 @@ const PersonTemplate = ({ pageContext, data }) => {
     >
       <PersonHeader person={person} />
 
-      <Share url={window.location.href} color="text-blue-500" />
+      <Share path={path} color="text-blue-500" />
 
       {/* {interests2(person)} */}
 

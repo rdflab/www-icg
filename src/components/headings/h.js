@@ -13,7 +13,7 @@ const TitleDiv = ({ title, heading, subHeading }) => (
   </div>
 )
 
-const H = ({ title, heading, subHeading, content, showShareLinks }) => {
+const H = ({ title, heading, subHeading, content, showShareLinks, path }) => {
   return (
     <div className="text-white bg-columbia-secondary-blue-70">
       <Container>
@@ -23,7 +23,7 @@ const H = ({ title, heading, subHeading, content, showShareLinks }) => {
           {content !== null && <div className="py-2">{content}</div>}
           {showShareLinks && (
             <div className="py-2">
-              <ShareLinks url={window.location.href} color="text-white" />
+              <ShareLinks path={path} color="text-white" />
             </div>
           )}
         </ShowSmall>
@@ -33,9 +33,7 @@ const H = ({ title, heading, subHeading, content, showShareLinks }) => {
 
             <Column>{content !== null && <div>{content}</div>}</Column>
 
-            {showShareLinks && (
-              <ShareLinks url={window.location.href} color="text-white" />
-            )}
+            {showShareLinks && <ShareLinks path={path} color="text-white" />}
           </Column>
         </HideSmall>
       </Container>
@@ -47,6 +45,7 @@ H.defaultProps = {
   title: "",
   heading: "",
   subHeading: "",
+  path: "",
   content: null,
   showShareLinks: true,
 }

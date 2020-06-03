@@ -12,7 +12,7 @@ import PeopleGroups from "../components/people/peoplegroups"
 import { labName } from "../utils/labname"
 import LabHeader from "../components/lab/labheader"
 
-const LabTemplate = ({ pageContext }) => {
+const LabTemplate = ({ path, pageContext }) => {
   const {
     lab,
     crumbs,
@@ -29,7 +29,7 @@ const LabTemplate = ({ pageContext }) => {
     <CrumbLayout crumbs={crumbs} title={title} headerComponent={<SiteSearch />}>
       {/* <PersonHeader person={faculty} title="Labs" /> */}
 
-      <LabHeader lab={lab} />
+      <LabHeader lab={lab} path={path} />
 
       {/* <div className="text-center">
               <Button

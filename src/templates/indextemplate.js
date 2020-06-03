@@ -65,7 +65,7 @@ HomeTitle.defaultProps = {
   className: "",
 }
 
-const IndexTemplate = ({ pageContext }) => {
+const IndexTemplate = ({ path, pageContext }) => {
   const {
     director,
     allCalEvents,

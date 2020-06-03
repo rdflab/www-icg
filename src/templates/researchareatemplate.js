@@ -1,11 +1,10 @@
 import React from "react"
-import CrumbContainerLayout from "../components/crumbcontainerlayout"
-import { graphql } from "gatsby"
+import CrumbTitleLayout from "../components/crumbtitlelayout"
 import SiteSearch from "../components/search/sitesearch"
 import toPeopleGroupMap from "../utils/peoplegroupmap"
 import PeopleGroups from "../components/people/peoplegroups"
 
-const ResearchAreaTemplate = ({ data, pageContext }) => {
+const ResearchAreaTemplate = ({ path, pageContext }) => {
   const { allPeople, researchArea } = pageContext
 
   //const imageMap = toImageMap(data.files)
@@ -17,7 +16,8 @@ const ResearchAreaTemplate = ({ data, pageContext }) => {
   const groupMap = toPeopleGroupMap(people)
 
   return (
-    <CrumbContainerLayout
+    <CrumbTitleLayout
+      path={path}
       crumbs={[
         ["Research Areas", "/research-areas"],
         [researchArea.name, `/research-areas/${researchArea.id}`],
@@ -26,31 +26,31 @@ const ResearchAreaTemplate = ({ data, pageContext }) => {
       headerComponent={<SiteSearch />}
     >
       <PeopleGroups groupMap={groupMap} showLabLink={true} />
-    </CrumbContainerLayout>
+    </CrumbTitleLayout>
   )
 }
 
 export default ResearchAreaTemplate
 
-export const query = graphql`
-  query {
-    files: allFile(
-      filter: {
-        absolutePath: { regex: "/images/people/" }
-        ext: { eq: ".jpg" }
-      }
-    ) {
-      edges {
-        node {
-          name
-          relativePath
-          childImageSharp {
-            fluid(maxWidth: 500) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-      }
-    }
-  }
-`
+// export const query = graphql`
+//   query {
+//     files: allFile(
+//       filter: {
+//         absolutePath: { regex: "/images/people/" }
+//         ext: { eq: ".jpg" }
+//       }
+//     ) {
+//       edges {
+//         node {
+//           name
+//           relativePath
+//           childImageSharp {
+//             fluid(maxWidth: 500) {
+//               ...GatsbyImageSharpFluid
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// `

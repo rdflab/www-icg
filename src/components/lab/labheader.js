@@ -16,7 +16,7 @@ const LabWebSite = ({ lab }) => {
   }
 }
 
-const LabHeader = ({ lab, title, heading, subHeading }) => {
+const LabHeader = ({ lab, title, heading, subHeading, path }) => {
   if (heading === null) {
     heading = lab.name
   }
@@ -27,6 +27,7 @@ const LabHeader = ({ lab, title, heading, subHeading }) => {
       heading={heading}
       subHeading={subHeading}
       content={<LabWebSite lab={lab} />}
+      path={path}
     />
   )
 }
@@ -35,6 +36,7 @@ LabHeader.defaultProps = {
   title: "Labs",
   heading: null,
   subHeading: null,
+  path: "",
 }
 
 export default LabHeader

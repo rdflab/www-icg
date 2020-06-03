@@ -1,5 +1,5 @@
 import React from "react"
-import CrumbLayout from "../components/crumblayout"
+import CrumbTitleLayout from "../components/crumbtitlelayout"
 
 import Column from "../components/column"
 //import SideBar from "../components/sidebar/sidebar"
@@ -10,8 +10,8 @@ import HTMLDiv from "../components/htmldiv"
 import { personName } from "../utils/personname"
 import { labName } from "../utils/labname"
 
-const LabOverviewTemplate = ({ pageContext }) => {
-  const { group, labPeople, labPublications, labHtml } = pageContext
+const LabOverviewTemplate = ({ path, pageContext }) => {
+  const { group, labPeople, labHtml } = pageContext
 
   const faculty = group.leaders[0]
 
@@ -25,7 +25,7 @@ const LabOverviewTemplate = ({ pageContext }) => {
   ]
 
   return (
-    <CrumbLayout crumbs={crumbs} title={`${title} Overview`}>
+    <CrumbTitleLayout path={path} crumbs={crumbs} title={`${title} Overview`}>
       <Column>
         <MainColumn>
           <HTMLDiv html={labHtml} />
@@ -36,7 +36,7 @@ const LabOverviewTemplate = ({ pageContext }) => {
           {/* </SideBar> */}
         </SideColumn>
       </Column>
-    </CrumbLayout>
+    </CrumbTitleLayout>
   )
 }
 

@@ -6,7 +6,7 @@ import Container from "../components/container"
 
 const EMPTY_QUERY = ""
 
-const AdminStaffTemplate = ({ pageContext }) => {
+const AdminStaffTemplate = ({ path, pageContext }) => {
   const { adminGroupMap, crumbs } = pageContext
 
   const [query, setQuery] = useState(EMPTY_QUERY)
@@ -43,6 +43,7 @@ const AdminStaffTemplate = ({ pageContext }) => {
 
   return (
     <CrumbTitleLayout
+      path={path}
       crumbs={crumbs}
       nav="Administration"
       title="Meet Our Administration Team"

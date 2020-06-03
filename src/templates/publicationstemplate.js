@@ -12,7 +12,7 @@ import Container from "../components/container"
 
 const EMPTY_QUERY = ""
 
-const PublicationsTemplate = ({ pageContext }) => {
+const PublicationsTemplate = ({ path, pageContext }) => {
   const {
     title,
     crumbs,
@@ -104,6 +104,7 @@ const PublicationsTemplate = ({ pageContext }) => {
 
   return (
     <CrumbTitleLayout
+      path={path}
       crumbs={crumbs}
       selectedTab={selectedTab}
       nav="Publications"

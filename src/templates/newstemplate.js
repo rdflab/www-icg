@@ -11,7 +11,7 @@ import Container from "../components/container"
 
 const EMPTY_QUERY = ""
 
-const NewsTemplate = ({ pageContext }) => {
+const NewsTemplate = ({ path, pageContext }) => {
   const { allNews } = pageContext
 
   const [query, setQuery] = useState(EMPTY_QUERY)
@@ -79,6 +79,7 @@ const NewsTemplate = ({ pageContext }) => {
 
   return (
     <CrumbTitleLayout
+      path={path}
       crumbs={[["News", "/news"]]}
       nav="News"
       title="Institute News"

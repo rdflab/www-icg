@@ -13,7 +13,7 @@ import Container from "../components/container"
 
 const EMPTY_QUERY = ""
 
-const PeopleTemplate = ({ pageContext, data }) => {
+const PeopleTemplate = ({ path, pageContext }) => {
   const { nav, title, crumbs, allPeople, groupMap } = pageContext
 
   const [query, setQuery] = useState(EMPTY_QUERY)
@@ -22,7 +22,7 @@ const PeopleTemplate = ({ pageContext, data }) => {
   const [recordsPerPage, setRecordsPerPage] = useState(20)
   const [types, setTypes] = useState([])
 
-  //const imageMap = toImageMap(data.files)
+  console.log(pageContext, path)
 
   const handleInputChange = e => {
     const q = e.target.value
@@ -105,6 +105,7 @@ const PeopleTemplate = ({ pageContext, data }) => {
 
   return (
     <CrumbTitleLayout
+      path={path}
       crumbs={crumbs}
       nav={nav}
       title={title}

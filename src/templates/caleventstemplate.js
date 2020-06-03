@@ -14,7 +14,7 @@ import Container from "../components/container"
 
 const EMPTY_QUERY = ""
 
-const CalEventsTemplate = ({ pageContext }) => {
+const CalEventsTemplate = ({ path, pageContext }) => {
   const { allCalEvents } = pageContext
 
   const [query, setQuery] = useState(EMPTY_QUERY)
@@ -131,6 +131,7 @@ const CalEventsTemplate = ({ pageContext }) => {
 
   return (
     <CrumbTitleLayout
+      path={path}
       nav="Events"
       title="Institute Events"
       crumbs={[["Events", "/events"]]}

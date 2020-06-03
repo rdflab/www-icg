@@ -6,9 +6,10 @@ import Container from "../components/container"
 import Column from "../components/column"
 import FullDiv from "../components/fulldiv"
 
-const AdminTemplate = ({ pageContext }) => {
+const AdminTemplate = ({ path, pageContext }) => {
   return (
     <CrumbTitleLayout
+      path={path}
       crumbs={[["Administration", "/administration"]]}
       nav="Administration"
       title="Administration"

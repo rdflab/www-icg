@@ -7,7 +7,7 @@ import SideColumn from "../components/sidecolumn"
 import CalEventsSideBar from "../components/calendar/caleventssidebar"
 import Container from "../components/container"
 
-const CalEventTemplate = ({ pageContext }) => {
+const CalEventTemplate = ({ path, pageContext }) => {
   const { calEvent, allCalEvents } = pageContext
 
   const title = calEvent.frontmatter.title
@@ -17,6 +17,7 @@ const CalEventTemplate = ({ pageContext }) => {
 
   return (
     <CrumbTitleLayout
+      path={path}
       nav="Events"
       title={title}
       crumbs={[["Events", "/events"]]}

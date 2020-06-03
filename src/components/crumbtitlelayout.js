@@ -10,6 +10,7 @@ import CrumbLayout from "./crumblayout"
 import H from "./headings/h"
 
 const CrumbTitleLayout = ({
+  path,
   nav,
   title,
   headerComponent,
@@ -26,13 +27,14 @@ const CrumbTitleLayout = ({
       crumbs={crumbs}
       backgroundColor={backgroundColor}
     >
-      <H title={nav} heading={title} />
+      <H title={nav} heading={title} path={path} />
       <div className={`${backgroundColor}`}>{children}</div>
     </CrumbLayout>
   )
 }
 
 CrumbTitleLayout.defaultProps = {
+  path: "",
   crumbs: [],
   selectedTab: "",
   nav: null,
