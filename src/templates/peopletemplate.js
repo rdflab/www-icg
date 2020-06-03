@@ -117,7 +117,7 @@ const PeopleTemplate = ({ pageContext, data }) => {
       //   />
       // }
     >
-      <div className="bg-columbia-light-gray py-8">
+      <div className="py-8">
         <Container>
           <ShowSmall>
             <SearchBar
@@ -139,33 +139,20 @@ const PeopleTemplate = ({ pageContext, data }) => {
             </Column>
           </HideSmall>
 
-          {/* <Column>
-      <MainColumn>
-        <div className="w-full"> */}
-          {/* <HideSmall>
-        <Column isVCentered={true} className="justify-center mt-8">
-          <div>
-            <TypeSelector onClick={handleClick} />
-          </div>
-        </Column>
-      </HideSmall> */}
-
-          {/* <PeopleSearchResults
-        people={typeFilteredPeople}
-        pagedPeople={typeOrderedPeople}
-        page={page}
-        recordsPerPage={recordsPerPage}
-        imageMap={imageMap}
-        showLabLink={true}
-        onPageChanged={onPageChanged}
-      /> */}
-
-          <PeopleGroups groupMap={filteredGroupMap} />
-
-          {/* </div>
-      </MainColumn>
-      <SideColumn></SideColumn>
-      </Column> */}
+          <ShowSmall size="lg">
+            <PeopleGroups
+              groupMap={filteredGroupMap}
+              cols={2}
+              colWidth="w-9/20"
+            />
+          </ShowSmall>
+          <HideSmall size="lg">
+            <PeopleGroups
+              groupMap={filteredGroupMap}
+              cols={4}
+              colWidth="w-11/50"
+            />
+          </HideSmall>
         </Container>
       </div>
     </CrumbTitleLayout>

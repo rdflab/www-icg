@@ -5,6 +5,8 @@ import Column from "../components/column"
 import { Link } from "gatsby"
 import generic from "../assets/svg/generic.svg"
 import Container from "../components/container"
+import ShowSmall from "../components/showsmall"
+import HideSmall from "../components/hidesmall"
 
 const EMPTY_QUERY = ""
 
@@ -25,9 +27,7 @@ const Lab = ({ person, labId }) => {
 
   return (
     <div
-      className={`w-full rounded-md bg-white shadow-lg overflow-hidden mb-16 text-white trans-ani ${
-        hover ? "bg-blue-500" : "bg-blue-600"
-      }`}
+      className={`w-full rounded-lg bg-white border border-solid border-gray-300 hover:shadow-md overflow-hidden mb-16 trans-ani`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
@@ -35,18 +35,18 @@ const Lab = ({ person, labId }) => {
         <div className="bg-white">
           <img src={generic} className="w-full" alt={person.frontmatter.name} />
         </div>
-        <div className="p-4 text-lg">
-          <h3>
+        <div className="p-4">
+          <h4 className="text-columbia-secondary-blue">
             {person.frontmatter.name}, {person.frontmatter.postNominalLetters}
-          </h3>
-          <h4>{person.frontmatter.title}</h4>
+          </h4>
+          <h5>{person.frontmatter.title}</h5>
         </div>
       </Link>
     </div>
   )
 }
 
-const StaffGrid = ({ people, peopleMap, cols, colWidth }) => {
+const StaffGrid = ({ people, peopleMap, cols, colWidth, headingColor }) => {
   const rows = Math.floor(people.length / cols) + 1
 
   const ret = []
@@ -91,12 +91,18 @@ StaffGrid.defaultProps = {
   colWidth: "w-3/10",
 }
 
-const StaffGroups = ({ allGroups, peopleMap }) => {
+const StaffGroups = ({
+  allGroups,
+  peopleMap,
+  cols,
+  colWidth,
+  headingColor,
+}) => {
   const ret = []
 
   for (let group of allGroups) {
     ret.push(
-      <h2 className="my-4" key={`header-${group.name}`}>
+      <h2 className={`${headingColor} my-4`} key={`header-${group.name}`}>
         {group.name}
       </h2>
     )
@@ -106,11 +112,19 @@ const StaffGroups = ({ allGroups, peopleMap }) => {
         people={group.faculty}
         peopleMap={peopleMap}
         key={group.name}
+        cols={cols}
+        colWidth={colWidth}
       />
     )
   }
 
   return ret
+}
+
+StaffGroups.defaultProps = {
+  cols: 3,
+  colWidth: "w-3/10",
+  headingColor: "text-gray-700",
 }
 
 const FacultyTemplate = ({ pageContext }) => {
@@ -165,11 +179,23 @@ const FacultyTemplate = ({ pageContext }) => {
         className="my-4"
       /> */}
 
-      <div className="bg-columbia-light-gray py-8">
+      <div className="py-8">
         <Container>
           {/* <Labs labs={allGroups} /> */}
           {/*<StaffGrid labs={allGroups} /> */}
-          <StaffGroups allGroups={allGroups} peopleMap={peopleMap} />
+
+          <ShowSmall size="lg">
+            <StaffGroups
+              allGroups={allGroups}
+              peopleMap={peopleMap}
+              cols={2}
+              colWidth="w-9/20"
+            />
+          </ShowSmall>
+
+          <HideSmall size="lg">
+            <StaffGroups allGroups={allGroups} peopleMap={peopleMap} />
+          </HideSmall>
         </Container>
       </div>
     </CrumbTitleLayout>

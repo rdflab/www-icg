@@ -3,44 +3,43 @@ import HideSmall from "../hidesmall"
 import Column from "../column"
 import Container from "../container"
 import ShowSmall from "../showsmall"
-import FullDiv from "../fulldiv"
+import ShareLinks from "../share/sharelinks"
 
 const TitleDiv = ({ title, heading, subHeading }) => (
-  <FullDiv>
+  <div>
     {title !== "" && <div className="uppercase py-2">{title}</div>}
     {heading !== "" && <h1>{heading}</h1>}
     {subHeading !== "" && <h3>{subHeading}</h3>}
-  </FullDiv>
+  </div>
 )
 
-const H = ({ title, heading, subHeading, content }) => {
+const H = ({ title, heading, subHeading, content, showShareLinks }) => {
   return (
-    <>
-      <ShowSmall className="bg-columbia-secondary-blue py-4 text-white">
-        <Container>
+    <div className="text-white bg-columbia-secondary-blue-70">
+      <Container>
+        <ShowSmall className="py-2">
           <TitleDiv title={title} heading={heading} subHeading={subHeading} />
-        </Container>
-        {content !== null && (
-          <div className="pt-4">
-            <Container>{content}</Container>
-          </div>
-        )}
-      </ShowSmall>
-      <HideSmall className="bg-columbia-secondary-blue pt-4 pb-6 text-white">
-        <Container>
-          <Column isVCentered={true}>
-            <Column className="w-7/10">
-              <TitleDiv
-                title={title}
-                heading={heading}
-                subHeading={subHeading}
-              />
-            </Column>
-            <Column>{content !== null && <FullDiv>{content}</FullDiv>}</Column>
+
+          {content !== null && <div className="py-2">{content}</div>}
+          {showShareLinks && (
+            <div className="py-2">
+              <ShareLinks url={window.location.href} color="text-white" />
+            </div>
+          )}
+        </ShowSmall>
+        <HideSmall className="pt-2 pb-4 ">
+          <Column className="items-center justify-between">
+            <TitleDiv title={title} heading={heading} subHeading={subHeading} />
+
+            <Column>{content !== null && <div>{content}</div>}</Column>
+
+            {showShareLinks && (
+              <ShareLinks url={window.location.href} color="text-white" />
+            )}
           </Column>
-        </Container>
-      </HideSmall>
-    </>
+        </HideSmall>
+      </Container>
+    </div>
   )
 }
 
@@ -49,6 +48,7 @@ H.defaultProps = {
   heading: "",
   subHeading: "",
   content: null,
+  showShareLinks: true,
 }
 
 export default H

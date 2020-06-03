@@ -58,7 +58,7 @@ const AdminStaffTemplate = ({ pageContext }) => {
         className="my-4"
       /> */}
 
-      <div className="bg-columbia-light-gray py-8">
+      <div className="py-8">
         <Container>
           <div className="w-full">
             <PeopleGroups groupMap={adminGroupMap} />

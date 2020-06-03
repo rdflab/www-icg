@@ -1,7 +1,6 @@
 import React from "react"
 import FooterLinks from "./footerlinks"
 import Container from "../container"
-import Column from "../column"
 import cuimcsvg from "../../assets/svg/cuimc-white.svg"
 import crownsvg from "../../assets/svg/crown-white.svg"
 import styled from "styled-components"
@@ -21,7 +20,7 @@ const Footer = ({ siteTitle }) => {
           <FooterLinks />
         </div>
 
-        <div className="mt-16  text-sm">
+        <div className="mt-16 text-sm">
           &copy; {new Date().getFullYear()} {siteTitle}
         </div>
 

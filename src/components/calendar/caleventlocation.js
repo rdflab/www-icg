@@ -2,7 +2,6 @@ import React from "react"
 import Column from "../column"
 import HideSmall from "../hidesmall"
 import { FaRegClock, FaMapMarkerAlt } from "react-icons/fa"
-import { formatDate, formatTime } from "./calevent"
 
 const CalEventLocation = ({ event, showDate, isMobile, color }) => {
   let date

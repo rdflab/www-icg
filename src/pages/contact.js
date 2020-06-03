@@ -11,7 +11,7 @@ const Contact = () => (
   >
     <div className="bg-columbia-light-gray py-8">
       <Container className="pt-8">
-        <div className="w-1/2 p-8 text-xl bg-white shadow-lg hover:shadow-xl rounded-md trans-ani">
+        <div className="md:w-1/2 p-8 text-xl bg-white shadow-lg hover:shadow-xl rounded-lg trans-ani">
           <div>Institute for Cancer Generics</div>
           <div>Herbert Irving Cancer Center, Columbia University</div>
           <div>1130 St Nicholas Ave</div>
@@ -21,7 +21,7 @@ const Contact = () => (
       </Container>
 
       <Container>
-        <div className="w-1/2 my-16 shadow-lg hover:shadow-xl rounded-md bg-white overflow-hidden trans-ani">
+        <div className="md:w-1/2 my-16 shadow-lg hover:shadow-xl rounded-lg bg-white overflow-hidden trans-ani">
           <div
             className="iframe-container w-full"
             style={{ minHeight: "32rem" }}

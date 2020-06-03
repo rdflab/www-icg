@@ -13,7 +13,16 @@ $columbia-gray: #EFEFEF;
 $columbia-dark-gray: #555555;
 $columbia-primary-blue: #000d74;
 $columbia-secondary-blue: #75AADB; //#2C6BAC;
-$columbia-light-gray: #F9F9F9;
+$columbia-light-gray: #F9F9F9; //rgb(250, 250, 250); // #F9F9F9;
+
+$columbia-secondary-blue-20: rgba($columbia-secondary-blue, 0.2);
+$columbia-secondary-blue-30: rgba($columbia-secondary-blue, 0.3);
+$columbia-secondary-blue-40: rgba($columbia-secondary-blue, 0.4);
+$columbia-secondary-blue-50: rgba($columbia-secondary-blue, 0.5);
+$columbia-secondary-blue-60: rgba($columbia-secondary-blue, 0.6);
+$columbia-secondary-blue-70: rgba($columbia-secondary-blue, 0.7);
+$columbia-secondary-blue-80: rgba($columbia-secondary-blue, 0.8);
+$columbia-secondary-blue-90: rgba($columbia-secondary-blue, 0.9);
 
 .bg-columbia-blue {
   background-color: $columbia-blue-color;
@@ -51,6 +60,26 @@ $columbia-light-gray: #F9F9F9;
   background-color: $columbia-primary-blue;
 }
 
+.bg-columbia-secondary-blue-50 {
+  background-color: $columbia-secondary-blue-50;
+}
+
+.bg-columbia-secondary-blue-60 {
+  background-color: $columbia-secondary-blue-60;
+}
+
+.bg-columbia-secondary-blue-70 {
+  background-color: $columbia-secondary-blue-70;
+}
+
+.bg-columbia-secondary-blue-80 {
+  background-color: $columbia-secondary-blue-80;
+}
+
+.bg-columbia-secondary-blue-90 {
+  background-color: $columbia-secondary-blue-90;
+}
+
 .bg-columbia-secondary-blue {
   background-color: $columbia-secondary-blue;
 }
@@ -74,6 +103,33 @@ $columbia-light-gray: #F9F9F9;
 .border-columbia-secondary-blue {
   border-color: $columbia-secondary-blue;
 }
+
+.border-columbia-secondary-blue-20 {
+  border-color: $columbia-secondary-blue-20;
+}
+
+.border-columbia-secondary-blue-30 {
+  border-color: $columbia-secondary-blue-30;
+}
+
+.border-columbia-secondary-blue-40 {
+  border-color: $columbia-secondary-blue-40;
+}
+
+.border-columbia-secondary-blue-50 {
+  border-color: $columbia-secondary-blue-50;
+}
+
+@variants hover {
+  .border-columbia-secondary-blue {
+    border-color: $columbia-secondary-blue;
+  }
+
+  .border-columbia-secondary-blue-50 {
+    border-color: $columbia-secondary-blue-50;
+  }
+}
+
 
 .border-white-20 {
   border-color: rgba(255, 255, 255, 0.2);

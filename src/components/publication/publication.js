@@ -9,7 +9,7 @@ import React from "react"
 import Column from "../column"
 
 import { FaExternalLinkAlt } from "react-icons/fa"
-import BlueLinkExt from "../bluelinkext"
+import BlueLinkExt from "../links/bluelinkext"
 import PubMedLink from "./pubmedlink"
 
 /**

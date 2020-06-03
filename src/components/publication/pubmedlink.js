@@ -6,7 +6,7 @@
  */
 
 import React from "react"
-import BlueLinkExt from "../bluelinkext"
+import BlueLinkExt from "../links/bluelinkext"
 
 export const pubmedUrl = pubmed => {
   return `https://www.ncbi.nlm.nih.gov/pubmed/?term=${pubmed}`

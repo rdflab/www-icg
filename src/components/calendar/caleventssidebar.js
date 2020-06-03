@@ -1,8 +1,7 @@
 import React from "react"
 import Collapsible from "../collapsible"
 import { eventUrl } from "../../utils/urls"
-import { formatDate, formatStartTime } from "./calevent"
-import BlueLink from "../bluelink"
+import BlueLink from "../links/bluelink"
 
 const SideBarCalEvent = ({ event }) => (
   <div className="mb-4">

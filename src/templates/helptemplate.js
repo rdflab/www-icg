@@ -1,11 +1,11 @@
 import React from "react"
 import { graphql } from "gatsby"
 import CrumbTitleLayout from "../components/crumbtitlelayout"
-import BlueLinkExt from "../components/bluelinkext"
+import BlueLinkExt from "../components/links/bluelinkext"
 import gatsbysvg from "../assets/svg/Gatsby_logo.svg"
 import mariadbsvg from "../assets/svg/maria-db.svg"
 import npmsvg from "../assets/svg/npm-logo-black.svg"
-import ExtLink from "../components/extlink"
+import ExtLink from "../components/links/extlink"
 import Column from "../components/column"
 import Container from "../components/container"
 

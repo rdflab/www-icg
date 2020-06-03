@@ -135,6 +135,7 @@ const CalEventsTemplate = ({ pageContext }) => {
       title="Institute Events"
       crumbs={[["Events", "/events"]]}
       headerComponent={<SiteSearch />}
+      backgroundColor="bg-white"
       // titleComponent={
       //   <SearchSummary
       //     count={calEvents.length}

@@ -1,7 +1,7 @@
 import React from "react"
 import Container from "../container"
 import { FaHome } from "react-icons/fa"
-import WhiteLink from "../whitelink"
+import WhiteLink from "../links/whitelink"
 import Column from "../column"
 import breadcrumbsvg from "../../assets/svg/breadcrumb.svg"
 import { Link } from "gatsby"
@@ -51,7 +51,7 @@ const Breadcrumb = ({ crumbs }) => {
   }
 
   return (
-    <div className="bg-columbia-secondary-blue text-sm pt-4">
+    <div className="bg-columbia-secondary-blue text-sm py-3">
       <Container>
         <Column className="items-center">{ret}</Column>
       </Container>

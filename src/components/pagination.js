@@ -156,7 +156,7 @@ class Pagination extends Component {
 
     return (
       <div
-        className="row justify-center items center my-8"
+        className="row justify-center items center py-8"
         aria-label="Pagination"
       >
         {pages.map((page, index) => {

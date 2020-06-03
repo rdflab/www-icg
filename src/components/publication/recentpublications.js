@@ -6,7 +6,6 @@
  */
 
 import React from "react"
-import Publication from "./publication"
 import Button from "../../components/button"
 import PublicationYears from "./publicationyears"
 

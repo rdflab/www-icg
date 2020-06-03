@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import CrumbLayout from "../components/crumblayout"
 import Column from "../components/column"
-import BlueLink from "../components/bluelink"
+import BlueLink from "../components/links/bluelink"
 import HTMLDiv from "../components/htmldiv"
 import SimplePubSearch from "../components/publication/simplepubsearch"
 import SiteSearch from "../components/search/sitesearch"
@@ -13,6 +13,7 @@ import { personUrl } from "../utils/urls"
 import Container from "../components/container"
 import H1 from "../components/headings/h1"
 import PersonHeader from "../components/people/personheader"
+import Share from "../components/share/share"
 
 const interests = person => {
   const n = person.researchAreas.length
@@ -153,6 +154,8 @@ const PersonTemplate = ({ pageContext, data }) => {
     >
       <PersonHeader person={person} />
 
+      <Share url={window.location.href} color="text-blue-500" />
+
       {/* {interests2(person)} */}
 
       <Container className="py-8">
@@ -175,7 +178,7 @@ const PersonTemplate = ({ pageContext, data }) => {
       {/* <Heading>About {personName(person)}</Heading> */}
 
       {cv !== null && cv.education.length > 0 && (
-        <div className="py-8 bg-columbia-light-gray">
+        <div className="py-8">
           <Container>
             <Education cv={cv} />
           </Container>
@@ -183,7 +186,7 @@ const PersonTemplate = ({ pageContext, data }) => {
       )}
 
       {cv !== null && cv.awards.length > 0 && (
-        <div className="py-8 bg-columbia-light-gray">
+        <div className="py-8">
           <Container>
             <Awards cv={cv} />
           </Container>
@@ -191,7 +194,7 @@ const PersonTemplate = ({ pageContext, data }) => {
       )}
 
       {cv !== null && cv.training.length > 0 && (
-        <div className="py-8 bg-columbia-light-gray">
+        <div className="py-8">
           <Container>
             <Training cv={cv} />
           </Container>
@@ -199,7 +202,7 @@ const PersonTemplate = ({ pageContext, data }) => {
       )}
 
       {cv !== null && cv.experience.length > 0 && (
-        <div className="py-8 bg-columbia-light-gray">
+        <div className="py-8">
           <Container>
             <Experience cv={cv} />
           </Container>

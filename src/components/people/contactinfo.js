@@ -1,8 +1,8 @@
 import React from "react"
-import EmailLink from "../emaillink"
-import PhoneLink from "../phonelink"
-import URLLink from "../urllink"
-import RoomLink from "../roomlink"
+import EmailLink from "../links/emaillink"
+import PhoneLink from "../links/phonelink"
+import URLLink from "../links/urllink"
+import RoomLink from "../links/roomlink"
 
 const ContactInfo = ({ person, urls, color, className }) => (
   <div className={`w-full mb-4 md:mb-0 ${className}`}>

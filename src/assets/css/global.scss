@@ -16,20 +16,20 @@ body {
 }
 
 h1 {
-  @apply text-4xl;
+  @apply text-4xl font-semibold;
   //font-family: Raleway;
 }
 
 h2 {
-  @apply text-3xl;
+  @apply text-3xl font-semibold;
 }
 
 h3 {
-  @apply text-2xl;
+  @apply text-2xl font-semibold;
 }
 
 h4 {
-  @apply text-xl;
+  @apply text-xl font-semibold;
 }
 
 h5 {
@@ -243,23 +243,23 @@ a:hover {
 
 
 .header-link-underline {
-  @apply link pb-2 border-b-2 border-solid font-semibold
+  @apply link pb-2 border-b-2 border-solid font-semibold text-white opacity-70 trans-ani;
 }
 
 .header-link {
-  @apply header-link-underline border-transparent text-gray-400  trans-ani; 
+  @apply header-link-underline border-transparent ; 
 }
 
 .header-link:hover {
-  @apply text-white; //columbia-secondary-blue;
+  @apply opacity-100; //columbia-secondary-blue;
 }
 
 .header-link-active {
-  @apply header-link-underline border-white text-white ; //columbia-secondary-blue;
+  @apply header-link-underline border-white opacity-100; //columbia-secondary-blue;
 }
 
 .header-link-active:hover {
-  @apply text-white border-white; //columbia-secondary-blue; 
+  @apply border-white opacity-100; //columbia-secondary-blue; 
 }
 
 
@@ -332,8 +332,12 @@ a:hover {
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
 }
 
-.flatcard {
-  @apply w-full bg-white border border-solid border-gray-300 rounded-md px-4 py-2 overflow-hidden;
+.person-card {
+
+}
+
+.person-card:hover {
+  box-shadow: 0 1rem 1rem -0.5rem rgba(0, 0, 0, 0.3);
 }
 
 .help-logo {

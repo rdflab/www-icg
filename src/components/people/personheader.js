@@ -18,6 +18,7 @@ const PersonHeader = ({ person, title, heading, subHeading }) => {
       heading={heading}
       subHeading={subHeading}
       content={<ContactInfo person={person} color="white" />}
+      showShareLinks={false}
     />
   )
 }

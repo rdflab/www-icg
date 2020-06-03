@@ -11,7 +11,7 @@ import Column from "../column"
 
 const AllType = ({ text, onClick, selected, children, className }) => (
   <SelectItem
-    className={`font-semibold text-sm px-4 py-2 text-center trans-ani hover:bg-gray-200 ${className}`}
+    className={`font-semibold text-sm px-4 py-2 text-center trans-ani bg-white hover:bg-gray-200 ${className}`}
     selectedClassName="bg-gray-300"
     onClick={onClick}
     text={text}

@@ -45,10 +45,7 @@ const LabTemplate = ({ pageContext }) => {
       <div>
         <HTMLDiv html={labExcerptHtml} />
 
-        <div
-          className="bg-columbia-gray py-16"
-          style={{ backgroundColor: "#F9F9F9" }}
-        >
+        <div className="py-8">
           <Container>
             <H1>Meet The Team</H1>
             <PeopleGroups groupMap={labGroupMap} />

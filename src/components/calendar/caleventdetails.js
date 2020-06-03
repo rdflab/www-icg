@@ -1,8 +1,8 @@
 import React from "react"
 import CalEventLocation from "./caleventlocation"
-import BlueLink from "../bluelink"
+import BlueLink from "../links/bluelink"
 import { eventUrl } from "../../utils/urls"
-import WhiteLink from "../whitelink"
+import WhiteLink from "../links/whitelink"
 
 const CalEventDetails = ({ event, isMobile, color }) => (
   <div>

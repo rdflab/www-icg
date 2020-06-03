@@ -1,5 +1,5 @@
 import React from "react"
-import WhiteLinkExt from "../whitelinkext"
+import WhiteLinkExt from "../links/whitelinkext"
 import H from "../headings/h"
 
 const LabWebSite = ({ lab }) => {

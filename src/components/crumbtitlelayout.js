@@ -12,11 +12,11 @@ import H from "./headings/h"
 const CrumbTitleLayout = ({
   nav,
   title,
-  titleComponent,
   headerComponent,
   menuComponent,
   children,
   crumbs,
+  backgroundColor,
 }) => {
   return (
     <CrumbLayout
@@ -24,9 +24,10 @@ const CrumbTitleLayout = ({
       headerComponent={headerComponent}
       menuComponent={menuComponent}
       crumbs={crumbs}
+      backgroundColor={backgroundColor}
     >
       <H title={nav} heading={title} />
-      {children}
+      <div className={`${backgroundColor}`}>{children}</div>
     </CrumbLayout>
   )
 }
@@ -39,6 +40,7 @@ CrumbTitleLayout.defaultProps = {
   titleComponent: null,
   headerComponent: null,
   menuComponent: null,
+  backgroundColor: "bg-white",
 }
 
 export default CrumbTitleLayout

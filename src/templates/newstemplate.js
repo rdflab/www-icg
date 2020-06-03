@@ -92,6 +92,7 @@ const NewsTemplate = ({ pageContext }) => {
       //   </HideSmall>
       // }
       headerComponent={<SiteSearch />}
+      backgroundColor="bg-white"
     >
       <Container className="py-8">
         <HideSmall>

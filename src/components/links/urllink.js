@@ -1,7 +1,6 @@
 import React from "react"
 import { FaGlobeAmericas } from "react-icons/fa"
 import IconLink from "./iconlink"
-import BlueLinkExt from "./bluelinkext"
 import WhiteLinkExt from "./whitelinkext"
 import ColorLinkExt from "./colorlinkext"
 

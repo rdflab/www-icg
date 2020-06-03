@@ -40,9 +40,9 @@ const PeopleGroups = ({
 PeopleGroups.defaultProps = {
   faculty: null,
   smallView: false,
-  cols: 3,
-  colWidth: "w-3/10",
-  headingColor: "text-black", //"text-columbia-secondary-blue",
+  cols: 4,
+  colWidth: "w-11/50",
+  headingColor: "text-gray-700", //"text-columbia-secondary-blue",
 }
 
 export default PeopleGroups

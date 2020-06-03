@@ -1,6 +1,6 @@
 import React from "react"
 import NewsItemDate from "./newsitemdate"
-import BlueLink from "../bluelink"
+import BlueLink from "../links/bluelink"
 
 import HTMLDiv from "../htmldiv"
 

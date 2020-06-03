@@ -5,6 +5,8 @@ import Column from "../components/column"
 import { Link } from "gatsby"
 import generic from "../assets/svg/generic.svg"
 import Container from "../components/container"
+import ShowSmall from "../components/showsmall"
+import HideSmall from "../components/hidesmall"
 
 const EMPTY_QUERY = ""
 
@@ -25,8 +27,8 @@ const Lab = ({ lab }) => {
 
   return (
     <div
-      className={`w-full rounded-md bg-white shadow-lg overflow-hidden mb-16 trans-ani ${
-        hover ? "shadow-xl" : ""
+      className={`w-full rounded-md bg-white border border-solid border-gray-300 overflow-hidden mb-16 trans-ani ${
+        hover ? "shadow" : ""
       }`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
@@ -136,11 +138,14 @@ const LabsTemplate = ({ pageContext }) => {
         className="my-4"
       /> */}
 
-      <div className="bg-columbia-light-gray py-16">
+      <div className="py-16">
         <Container>
-          {/* <Labs labs={allGroups} /> */}
-          {/*<StaffGrid labs={allGroups} /> */}
-          <LabGrid labs={allLabs} />
+          <ShowSmall size="lg">
+            <LabGrid labs={allLabs} cols={2} colWidth="w-9/20" />
+          </ShowSmall>
+          <HideSmall size="lg">
+            <LabGrid labs={allLabs} />
+          </HideSmall>
         </Container>
       </div>
     </CrumbTitleLayout>

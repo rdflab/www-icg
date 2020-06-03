@@ -4,19 +4,75 @@ import PersonLink from "./personlink"
 import Column from "../column"
 import FullDiv from "../fulldiv"
 
+// const PersonCard = ({ person, smallView }) => (
+//   <div
+//     className={`w-full trans-ani shadow-lg hover:shadow-xl rounded-md bg-white mb-12 p-8 overflow-hidden`}
+//   >
+//     <div>
+//       <h3>
+//         <PersonLink person={person} />
+//       </h3>
+
+//       <h4>{person.frontmatter.title}</h4>
+//     </div>
+//     {!smallView && (
+//       <div className="mt-4">
+//         <ContactInfo person={person} />
+//       </div>
+//     )}
+//   </div>
+// )
+
+// const PersonCard = ({ person, smallView }) => (
+//   <div
+//     className={`w-full trans-ani border-t-4 border-b-4 border-solid border-gray-400 hover:border-columbia-blue bg-white mb-12 py-4 overflow-hidden`}
+//   >
+//     <div>
+//       <h3>
+//         <PersonLink person={person} />
+//       </h3>
+
+//       <h4>{person.frontmatter.title}</h4>
+//     </div>
+//     {!smallView && (
+//       <div className="mt-4">
+//         <ContactInfo person={person} />
+//       </div>
+//     )}
+//   </div>
+// )
+
+// const PersonCard = ({ person, smallView }) => (
+//   <div
+//     className={`w-full trans-ani border border-solid border-gray-300 hover:shadow rounded-md bg-white mb-12 px-8 py-6 overflow-hidden`}
+//   >
+//     <div>
+//       <h3>
+//         <PersonLink person={person} />
+//       </h3>
+
+//       <h4>{person.frontmatter.title}</h4>
+//     </div>
+//     {!smallView && (
+//       <div className="mt-4">
+//         <ContactInfo person={person} />
+//       </div>
+//     )}
+//   </div>
+// )
+
 const PersonCard = ({ person, smallView }) => (
   <div
-    className={`w-full trans-ani shadow-lg hover:shadow-xl rounded-md bg-white mb-12 p-8 overflow-hidden`}
+    className={`w-full trans-ani mb-12 overflow-hidden py-4 text-black border-t-4 border-solid border-transparent border-columbia-secondary-blue-40 hover:border-columbia-secondary-blue`}
   >
     <div>
-      <h3>
+      <h4>
         <PersonLink person={person} />
-      </h3>
-
-      <h4>{person.frontmatter.title}</h4>
+      </h4>
+      <h5>{person.frontmatter.title}</h5>
     </div>
     {!smallView && (
-      <div className="mt-4">
+      <div className="mt-4 ">
         <ContactInfo person={person} />
       </div>
     )}

@@ -45,6 +45,14 @@ const Layout = ({
           href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap"
           rel="stylesheet"
         />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
+          rel="stylesheet"
+        />
         {/* <link
           href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"
           rel="stylesheet"
@@ -60,7 +68,7 @@ const Layout = ({
         menuContent={menuComponent}
       />
 
-      <main>{children}</main>
+      <main className="p-0 m-0">{children}</main>
 
       <Footer siteTitle={data.site.siteMetadata.title}></Footer>
     </>

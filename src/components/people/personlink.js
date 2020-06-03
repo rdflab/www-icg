@@ -1,6 +1,6 @@
 import React from "react"
-import BlueLink from "../bluelink"
-import WhiteLink from "../whitelink"
+import BlueLink from "../links/bluelink"
+import WhiteLink from "../links/whitelink"
 //import WhiteLink from "../whitelink"
 
 const PersonLink = ({ person, color }) => {

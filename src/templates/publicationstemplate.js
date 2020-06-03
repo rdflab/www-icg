@@ -109,6 +109,7 @@ const PublicationsTemplate = ({ pageContext }) => {
       nav="Publications"
       title={title}
       headerComponent={<SiteSearch />}
+      backgroundColor="bg-white"
     >
       <Container className="mt-8">
         <ShowSmall>

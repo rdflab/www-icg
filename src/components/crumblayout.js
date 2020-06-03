@@ -12,11 +12,11 @@ import HideSmall from "./hidesmall"
 
 const CrumbLayout = ({
   title,
-  titleComponent,
   headerComponent,
   menuComponent,
   children,
   crumbs,
+  backgroundColor,
 }) => {
   return (
     <Layout
@@ -29,7 +29,8 @@ const CrumbLayout = ({
           <Breadcrumb crumbs={crumbs} />
         </HideSmall>
       )}
-      <div className="min-h-screen">{children}</div>
+
+      <div className={`min-h-screen`}>{children}</div>
     </Layout>
   )
 }
@@ -41,6 +42,7 @@ CrumbLayout.defaultProps = {
   titleComponent: null,
   headerComponent: null,
   menuComponent: null,
+  backgroundColor: "bg-white",
 }
 
 export default CrumbLayout

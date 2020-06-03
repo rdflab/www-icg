@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import WhiteLink from "../whitelink"
-import WhiteLinkExt from "../whitelinkext"
+import WhiteLink from "../links/whitelink"
+import WhiteLinkExt from "../links/whitelinkext"
 
 const FooterLinks = () => {
   const data = useStaticQuery(graphql`
