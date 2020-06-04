@@ -1,8 +1,8 @@
 import React from "react"
 import Column from "../column"
 import ExtLink from "../links/extlink"
-import { FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa"
 import useSiteMetadata from "../../hooks/sitemetadata"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const ShareLinks = ({ color, size, opacity, path }) => {
   const { siteUrl } = useSiteMetadata()
@@ -13,17 +13,17 @@ const ShareLinks = ({ color, size, opacity, path }) => {
     <Column isMobile={true} className={`${color} items-center md:justify-end`}>
       <div>
         <ExtLink to={`https://www.facebook.com/sharer.php?u=${href}`}>
-          <FaFacebook
-            className={`${opacity} hover:opacity-100 trans-ani`}
-            size={size}
+          <FontAwesomeIcon
+            icon={["fab", "facebook"]}
+            className={`${opacity} hover:opacity-100 trans-ani text-3xl`}
           />
         </ExtLink>
       </div>
       <div className="ml-4">
         <ExtLink to={`https://twitter.com/share?ref_src=${href}`}>
-          <FaTwitter
-            className={`${opacity} hover:opacity-100 trans-ani`}
-            size={size}
+          <FontAwesomeIcon
+            icon={["fab", "twitter"]}
+            className={`${opacity} hover:opacity-100 trans-ani text-3xl`}
           />
         </ExtLink>
       </div>
@@ -31,9 +31,9 @@ const ShareLinks = ({ color, size, opacity, path }) => {
         <ExtLink
           to={`https://www.linkedin.com/sharing/share-offsite/?url=${href}`}
         >
-          <FaLinkedin
-            className={`${opacity} hover:opacity-100 trans-ani`}
-            size={size}
+          <FontAwesomeIcon
+            icon={["fab", "linkedin"]}
+            className={`${opacity} hover:opacity-100 trans-ani text-3xl`}
           />
         </ExtLink>
       </div>

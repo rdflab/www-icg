@@ -10,6 +10,19 @@ const useSiteMetadata = () => {
             description
             author
             siteUrl
+            facultyGroups
+            paths {
+              adminPath
+              researchAreasPath
+              publicationsPath
+              peoplePath
+              newsPath
+              labsPath
+              facultyStaffPath
+              facultyPath
+              eventsPath
+              adminStaffPath
+            }
           }
         }
       }

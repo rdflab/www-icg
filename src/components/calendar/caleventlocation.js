@@ -1,7 +1,7 @@
 import React from "react"
 import Column from "../column"
 import HideSmall from "../hidesmall"
-import { FaRegClock, FaMapMarkerAlt } from "react-icons/fa"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const CalEventLocation = ({ event, showDate, isMobile, color }) => {
   let date
@@ -22,7 +22,7 @@ const CalEventLocation = ({ event, showDate, isMobile, color }) => {
       >
         <Column isVCentered={true} isMobile={true}>
           <div className="mr-4">
-            <FaRegClock size={28} />
+            <FontAwesomeIcon icon="clock" className={`text-3xl`} />
           </div>
           <div>
             {showDate && <div>{date}</div>}
@@ -33,7 +33,7 @@ const CalEventLocation = ({ event, showDate, isMobile, color }) => {
         </Column>
         <Column isVCentered={true} className="mt-4" isMobile={true}>
           <div className="mr-4">
-            <FaMapMarkerAlt size={28} />
+            <FontAwesomeIcon icon="map-marker-alt" className={`text-3xl`} />
           </div>
           <div>{event.frontmatter.location}</div>
         </Column>
@@ -44,7 +44,7 @@ const CalEventLocation = ({ event, showDate, isMobile, color }) => {
       >
         <Column className="items-center">
           <Column w="1">
-            <FaRegClock size={28} />
+            <FontAwesomeIcon icon={["far", "clock"]} className={`text-3xl`} />
           </Column>
           <Column w="5">
             <div>
@@ -55,7 +55,7 @@ const CalEventLocation = ({ event, showDate, isMobile, color }) => {
             </div>
           </Column>
           <Column w="1">
-            <FaMapMarkerAlt size={28} />
+            <FontAwesomeIcon icon="map-marker-alt" className={`text-3xl`} />
           </Column>
           <Column isMobile={true} w="5">
             {event.frontmatter.location}

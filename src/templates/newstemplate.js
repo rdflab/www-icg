@@ -35,7 +35,7 @@ const NewsTemplate = ({ path, pageContext }) => {
   //   }
   // }
 
-  const handleInputChange = e => {
+  const handleInputChange = (e) => {
     const q = e.target.value
     let ret = []
 
@@ -51,12 +51,12 @@ const NewsTemplate = ({ path, pageContext }) => {
     setPage(1)
   }
 
-  const onPageChanged = data => {
+  const onPageChanged = (data) => {
     const { currentPage } = data
     setPage(currentPage)
   }
 
-  const handleClick = data => {
+  const handleClick = (data) => {
     setFilterYears(data)
     setPage(1)
   }
@@ -67,7 +67,7 @@ const NewsTemplate = ({ path, pageContext }) => {
   let yearFilteredNews
 
   if (filterYears.length > 0 && filterYears[0] !== "All") {
-    yearFilteredNews = news.filter(item => {
+    yearFilteredNews = news.filter((item) => {
       return filterYears.includes(item.frontmatter.year)
     })
   } else {

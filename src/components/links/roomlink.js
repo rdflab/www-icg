@@ -1,10 +1,12 @@
 import React from "react"
-import { FaDoorOpen } from "react-icons/fa"
 import IconLink from "./iconlink"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const RoomLink = ({ room, color }) => (
   <IconLink
-    icon={<FaDoorOpen className={`text-${color}`} size={20} />}
+    icon={
+      <FontAwesomeIcon icon="door-open" className={`text-${color} text-xl`} />
+    }
     content={<div className={`text-${color}`}>Room {room}</div>}
   />
 )

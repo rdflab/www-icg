@@ -1,4 +1,4 @@
-const toPeopleGroupMap = people => {
+const toPeopleGroupMap = (people) => {
   const ret = {}
 
   for (let person of people) {

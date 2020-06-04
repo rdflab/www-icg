@@ -15,7 +15,7 @@ import H1 from "../components/headings/h1"
 import PersonHeader from "../components/people/personheader"
 import Share from "../components/share/share"
 
-const interests = person => {
+const interests = (person) => {
   const n = person.researchAreas.length
 
   let ret = []

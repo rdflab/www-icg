@@ -8,9 +8,9 @@
 import React from "react"
 import Column from "../column"
 
-import { FaExternalLinkAlt } from "react-icons/fa"
 import BlueLinkExt from "../links/bluelinkext"
 import PubMedLink from "./pubmedlink"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 /**
  * Format author list into string.
@@ -81,7 +81,7 @@ const Publication = ({ publication, showLabLink, maxAuthors }) => {
             <PubMedLink publication={publication} />
           </div>
           <div className="ml-1">
-            <FaExternalLinkAlt />
+            <FontAwesomeIcon icon="external-link-alt" className={`text-lg`} />
           </div>
 
           <div className="ml-4">
@@ -94,7 +94,7 @@ const Publication = ({ publication, showLabLink, maxAuthors }) => {
           </div>
 
           <div className="ml-1">
-            <FaExternalLinkAlt />
+            <FontAwesomeIcon icon="external-link-alt" className={`text-lg`} />
           </div>
         </div>
       )}

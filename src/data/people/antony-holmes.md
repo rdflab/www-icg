@@ -9,12 +9,8 @@ phone: "851-5270"
 fax: ""
 email: "abh2138@cumc.columbia.edu"
 room: "507"
-url: ["antonyholmes.com", "https://www.antonyholmes.com"]
+url: []
 group: "Research Staff"
 researchAreas: []
 tags: []
 ---
-
-### Introduction
-
-I developed this web site using a number of web techologies. See [/help](/help) for details.

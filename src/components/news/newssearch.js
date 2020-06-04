@@ -22,7 +22,7 @@ const NewsSearch = ({ allNews }) => {
   const [recordsPerPage, setRecordsPerPage] = useState(20)
   const [FilterYears, setFilterYears] = useState(new Set())
 
-  const handleInputChange = e => {
+  const handleInputChange = (e) => {
     const q = e.target.value
     let ret = []
 
@@ -38,12 +38,12 @@ const NewsSearch = ({ allNews }) => {
     setPage(1)
   }
 
-  const onPageChanged = data => {
+  const onPageChanged = (data) => {
     const { currentPage } = data
     setPage(currentPage)
   }
 
-  const handleClick = data => {
+  const handleClick = (data) => {
     setFilterYears(data)
     setPage(1)
   }
@@ -54,7 +54,7 @@ const NewsSearch = ({ allNews }) => {
   let yearFilteredNews
 
   if (FilterYears.size > 0) {
-    yearFilteredNews = news.filter(item => {
+    yearFilteredNews = news.filter((item) => {
       return FilterYears.has(item.frontmatter.year)
     })
   } else {

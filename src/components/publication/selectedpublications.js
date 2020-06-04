@@ -10,7 +10,7 @@ import Publication from "./publication"
 import { Link } from "gatsby"
 
 const SelectedPublications = ({ lab, publications, groupMap, top }) => {
-  const createPublications = publications => {
+  const createPublications = (publications) => {
     let ret = []
 
     let c = 0

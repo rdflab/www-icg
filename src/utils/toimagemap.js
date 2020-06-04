@@ -1,4 +1,4 @@
-const toImageMap = files => {
+const toImageMap = (files) => {
   let ret = {}
 
   files.edges.map(({ node }) => {

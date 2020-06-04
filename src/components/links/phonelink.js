@@ -1,11 +1,11 @@
 import React from "react"
-import { FaPhone } from "react-icons/fa"
 import IconLink from "./iconlink"
 import ColorLinkExt from "./colorlinkext"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const PhoneLink = ({ phone, color }) => (
   <IconLink
-    icon={<FaPhone className={`text-${color}`} size={20} />}
+    icon={<FontAwesomeIcon icon="phone" className={`text-${color} text-xl`} />}
     content={
       <ColorLinkExt color={color} to={`tel:${phone}`}>
         {phone}

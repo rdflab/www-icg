@@ -16,7 +16,7 @@ const LabSearch = ({ allGroups, peopleMap }) => {
   const [page, setPage] = useState(1)
   const [recordsPerPage, setRecordsPerPage] = useState(20)
 
-  const handleInputChange = e => {
+  const handleInputChange = (e) => {
     const q = e.target.value
     let ret = []
 
@@ -32,7 +32,7 @@ const LabSearch = ({ allGroups, peopleMap }) => {
     setPage(1)
   }
 
-  const onPageChanged = data => {
+  const onPageChanged = (data) => {
     const { currentPage } = data
     setPage(currentPage)
   }

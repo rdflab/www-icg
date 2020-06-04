@@ -12,7 +12,7 @@ import generic from "../assets/svg/generic.svg"
 import WhiteLink from "../components/links/whitelink"
 import CalEventDate from "../components/calendar/caleventdate"
 import CalEventDetails from "../components/calendar/caleventdetails"
-import ICGBD from "../components/images/icgbd"
+import CUMCImage from "../components/images/cumc"
 import Benchwork from "../components/images/benchwork"
 import PublicationList from "../components/publication/publicationlist"
 import Button from "../components/button"
@@ -118,8 +118,8 @@ const IndexTemplate = ({ path, pageContext }) => {
 
   return (
     <Layout title="Home" headerComponent={<SiteSearch />}>
-      <ICGBD>
-        {/* <Container className="h-full py-8 sm:py-8">
+      <CUMCImage />
+      {/* <Container className="h-full py-8 sm:py-8">
         <Column className="h-full p-8 sm:p-16">
           <Column
             w="8"
@@ -139,7 +139,6 @@ const IndexTemplate = ({ path, pageContext }) => {
           </Column>
         </Column>
       </Container> */}
-      </ICGBD>
 
       <HomeDiv className="bg-blue-600 text-white">
         <Column>

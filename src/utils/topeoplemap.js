@@ -1,7 +1,7 @@
-const toPeopleMap = people => {
+const toPeopleMap = (people) => {
   let ret = {}
 
-  people.forEach(person => {
+  people.forEach((person) => {
     ret[person.frontmatter.id] = person
   })
 

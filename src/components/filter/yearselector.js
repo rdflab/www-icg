@@ -35,7 +35,7 @@ const SelectType = ({ text, onClick, selected, children }) => (
 const YearSelector = ({ maxYears, onClick }) => {
   const [selectedTypes, setSelectedTypes] = useState(["All"])
 
-  const _handleClick = data => {
+  const _handleClick = (data) => {
     const types = [data.text]
     setSelectedTypes(types)
 

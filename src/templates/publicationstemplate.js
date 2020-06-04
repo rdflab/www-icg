@@ -46,7 +46,7 @@ const PublicationsTemplate = ({ path, pageContext }) => {
     setPage(1)
   }
 
-  const handleInputChange = e => {
+  const handleInputChange = (e) => {
     const q = e.target.value
 
     setQuery(q)
@@ -73,12 +73,12 @@ const PublicationsTemplate = ({ path, pageContext }) => {
     setFilteredPublications(ret)
   }
 
-  const onPageChanged = data => {
+  const onPageChanged = (data) => {
     const { currentPage } = data
     setPage(currentPage)
   }
 
-  const handleClick = data => {
+  const handleClick = (data) => {
     setFilterYears(data)
     setPage(1)
   }
@@ -89,7 +89,7 @@ const PublicationsTemplate = ({ path, pageContext }) => {
   let yearFilteredPublications
 
   if (filterYears.length > 0 && filterYears[0] !== "All") {
-    yearFilteredPublications = publications.filter(publication => {
+    yearFilteredPublications = publications.filter((publication) => {
       return filterYears.includes(publication.year)
     })
   } else {

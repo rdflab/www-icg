@@ -15,7 +15,7 @@ const TitleDiv = ({ title, heading, subHeading }) => (
 
 const H = ({ title, heading, subHeading, content, showShareLinks, path }) => {
   return (
-    <div className="text-white bg-columbia-secondary-blue-70">
+    <div className="text-white bg-columbia-secondary-blue-70 absolute z-50 w-full">
       <Container>
         <ShowSmall className="py-2">
           <TitleDiv title={title} heading={heading} subHeading={subHeading} />

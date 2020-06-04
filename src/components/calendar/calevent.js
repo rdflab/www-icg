@@ -6,7 +6,7 @@ import CalEventDetails from "./caleventdetails"
 import ShowSmall from "../showsmall"
 import HideSmall from "../hidesmall"
 
-export const formatDate = event => {
+export const formatDate = (event) => {
   return `${event.start.toLocaleString("default", {
     month: "long",
   })} ${event.start.toLocaleString("default", {
@@ -14,7 +14,7 @@ export const formatDate = event => {
   })}, ${event.start.toLocaleString("default", { year: "numeric" })}`
 }
 
-export const formatStartTime = event => {
+export const formatStartTime = (event) => {
   return event.start.toLocaleString("en-US", {
     hour: "numeric",
     minute: "numeric",
@@ -22,7 +22,7 @@ export const formatStartTime = event => {
   })
 }
 
-export const formatTime = event => {
+export const formatTime = (event) => {
   const et = event.end.toLocaleString("en-US", {
     hour: "numeric",
     minute: "numeric",

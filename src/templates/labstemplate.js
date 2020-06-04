@@ -10,18 +10,18 @@ import HideSmall from "../components/hidesmall"
 
 const EMPTY_QUERY = ""
 
-export const labUrl = person => {
+export const labUrl = (person) => {
   return `/research-areas/labs/${person.labId}`
 }
 
 const Lab = ({ lab }) => {
   const [hover, setHover] = useState(false)
 
-  const onMouseEnter = e => {
+  const onMouseEnter = (e) => {
     setHover(true)
   }
 
-  const onMouseLeave = e => {
+  const onMouseLeave = (e) => {
     setHover(false)
   }
 

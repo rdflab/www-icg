@@ -1,11 +1,11 @@
 import React from "react"
-import { FaUsers } from "react-icons/fa"
 import IconLink from "./iconlink"
 import BlueLink from "./bluelink"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const MembersLink = ({ to }) => (
   <IconLink
-    icon={<FaUsers className="text-gray-600" size={20} />}
+    icon={<FontAwesomeIcon icon="users" className={`text-${color} text-xl`} />}
     content={<BlueLink to={to}>View Lab Members</BlueLink>}
   />
 )

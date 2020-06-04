@@ -15,7 +15,7 @@ class NewsYearFilter extends Component {
     this.state = { selectedYears: new Set() }
   }
 
-  handleClick = data => {
+  handleClick = (data) => {
     const selectedYears = new Set(this.state.selectedYears)
 
     if (data.selected) {

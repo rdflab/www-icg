@@ -22,7 +22,7 @@ const ResearchAreasTemplate = ({ path, pageContext }) => {
 
   const raMap = {}
 
-  allResearchAreas.map(ra => {
+  allResearchAreas.map((ra) => {
     raMap[ra.name] = ra.id
   })
 

@@ -171,7 +171,7 @@ for i in range(13, df.shape[0]):
     print('fax: "{}"'.format(fax), file=f)
     print('email: "{}"'.format(email), file=f)
     print('room: "{}"'.format(room), file=f)
-    print('url: []'.format(url), file=f)
+    print('url: []'.format(url, url), file=f)
     print('group: "{}"'.format(t), file=f)
     print('researchAreas: []', file=f)
     print('tags: []'.format(url), file=f)
@@ -197,7 +197,22 @@ for g in GROUPS:
     faculty_names = sort_names(lab_map[g])
     
     for name in faculty_names:
-        lab = {'id':id_map[name], 'name':name, 'url':LAB_URLS.get(id_map[name], ''), 'people':[]} #, 'divisions': []}
+        f = open('faculty/{}.md'.format(id_map[name]), 'w')
+        print('---', file=f)
+        print('id: "{}"'.format(id_map[name]), file=f)
+        print('labId: "{}"'.format(lab_map[g][name]['id']), file=f)
+        print('name: "{}"'.format(name), file=f)
+        print('group: "{}"'.format(g), file=f)
+        print('phone: "{}"'.format(''), file=f)
+        print('fax: "{}"'.format(''), file=f)
+        print('email: "{}"'.format(''), file=f)
+        print('room: "{}"'.format(''), file=f)
+        print('url: []'.format(''), file=f)
+        print('tags: []'.format(''), file=f)
+        print('---', file=f)
+        f.close()
+        
+        lab = {'id':id_map[name], 'name':name, 'url':[LAB_URLS.get(id_map[name], ''), LAB_URLS.get(id_map[name], '')], 'people':[]} #, 'divisions': []}
         
         for sg in SUB_GROUPS:
             division = {'id':sg.lower().replace(' ', '-'), 'name':sg, 'url':'', 'people':[]}
@@ -206,7 +221,9 @@ for g in GROUPS:
             lab['people'].extend([id_map[name] for name in member_names])
             #lab['divisions'].append(division)
             
-        group['faculty'].append({'id':id_map[name], 'labId':lab_map[g][name]['id']})
+        group['faculty'].append({'personId':id_map[name], 'labId':lab_map[g][name]['id']})
+        
+
         
         # Lab names only, not the faculty mapping to the lab
         if name == lab_map[g][name]['name']:

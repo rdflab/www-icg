@@ -6,12 +6,12 @@
  */
 
 import React, { useState } from "react"
-import { FaCheck } from "react-icons/fa"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
-const FilterItem = props => {
+const FilterItem = (props) => {
   const [selected, setSelected] = useState(false)
 
-  const handleClick = e => {
+  const handleClick = (e) => {
     const data = { text: props.text, selected: !selected }
 
     setSelected(data.selected)
@@ -26,7 +26,10 @@ const FilterItem = props => {
           selected ? "bg-blue-300 border-blue-300" : "bg-white"
         }`}
       >
-        <FaCheck className={`mx-auto ${selected ? "visible" : "invisible"}`} />
+        <FontAwesomeIcon
+          icon="check"
+          className={`mx-auto ${selected ? "visible" : "invisible"} text-3xl`}
+        />
       </div>
 
       <div className="text-gray-700">{props.text}</div>

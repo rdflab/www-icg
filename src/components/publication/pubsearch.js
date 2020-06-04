@@ -21,7 +21,7 @@ const PubSearch = ({ groupMap, peopleMap, allPublications, showLabLink }) => {
   const [recordsPerPage, setRecordsPerPage] = useState(20)
   const [filterYears, setFilterYears] = useState(new Set())
 
-  const handleInputChange = e => {
+  const handleInputChange = (e) => {
     const q = e.target.value
     let ret = []
 
@@ -37,12 +37,12 @@ const PubSearch = ({ groupMap, peopleMap, allPublications, showLabLink }) => {
     setPage(1)
   }
 
-  const onPageChanged = data => {
+  const onPageChanged = (data) => {
     const { currentPage } = data
     setPage(currentPage)
   }
 
-  const handleClick = data => {
+  const handleClick = (data) => {
     setFilterYears(data)
     setPage(1)
   }
@@ -53,7 +53,7 @@ const PubSearch = ({ groupMap, peopleMap, allPublications, showLabLink }) => {
   let yearFilteredPublications
 
   if (filterYears.size > 0) {
-    yearFilteredPublications = publications.filter(publication => {
+    yearFilteredPublications = publications.filter((publication) => {
       return filterYears.has(publication.year)
     })
   } else {

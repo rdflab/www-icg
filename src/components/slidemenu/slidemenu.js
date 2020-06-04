@@ -10,7 +10,7 @@ const SlideMenu = ({ title }) => {
     setVisible(!visible)
   }
 
-  const onClickHandle = e => {
+  const onClickHandle = (e) => {
     toggleMenu()
   }
 

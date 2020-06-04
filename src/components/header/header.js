@@ -12,7 +12,7 @@ import ShowSmall from "../showsmall"
 
 const Header = ({ title, content, menuContent }) => (
   <>
-    <ShowSmall className="bg-columbia-blue" size="xl">
+    <ShowSmall className="bg-columbia-blue" size="lg">
       <nav aria-label="Navigation" className="row p-3">
         <SlideMenu title={title} />
         <Link to="/">
@@ -21,7 +21,7 @@ const Header = ({ title, content, menuContent }) => (
       </nav>
     </ShowSmall>
 
-    <HideSmall size="xl">
+    <HideSmall size="lg">
       {/* <div className="p-3">
         <Container>
           <Column isVCentered={true} className="justify-between">

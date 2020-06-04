@@ -1,17 +1,17 @@
 import React from "react"
 import Container from "../container"
-import { FaHome } from "react-icons/fa"
 import WhiteLink from "../links/whitelink"
 import Column from "../column"
 import breadcrumbsvg from "../../assets/svg/breadcrumb.svg"
 import { Link } from "gatsby"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const Breadcrumb = ({ crumbs }) => {
   const ret = []
 
   ret.push(
     <Link to="/" key={ret.length}>
-      <FaHome className="text-white" size={24} />
+      <FontAwesomeIcon icon="home" className="text-white text-2xl" />
     </Link>
   )
 
@@ -51,7 +51,7 @@ const Breadcrumb = ({ crumbs }) => {
   }
 
   return (
-    <div className="bg-columbia-secondary-blue text-sm py-3">
+    <div className="bg-columbia-secondary-blue text-sm py-2">
       <Container>
         <Column className="items-center">{ret}</Column>
       </Container>

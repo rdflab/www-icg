@@ -47,7 +47,7 @@ const CalSearch = ({ allCalEvents }) => {
     setSelectedDays(selected ? [] : [day])
   }
 
-  const onPageChanged = data => {
+  const onPageChanged = (data) => {
     const { currentPage } = data
     setPage(currentPage)
   }
@@ -55,13 +55,13 @@ const CalSearch = ({ allCalEvents }) => {
   let dayFilteredEvents = []
 
   if (selectedDays.length > 0) {
-    dayFilteredEvents = allCalEvents.filter(e => {
+    dayFilteredEvents = allCalEvents.filter((e) => {
       return DateUtils.isSameDay(selectedDays[0], e.start)
     })
   } else {
     const now = Date.now()
 
-    dayFilteredEvents = allCalEvents.filter(e => {
+    dayFilteredEvents = allCalEvents.filter((e) => {
       return e.start >= now
     })
   }

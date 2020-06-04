@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { FaSearch } from "react-icons/fa"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const SiteSearchBar = ({
   handleInputChange,
@@ -11,19 +11,19 @@ const SiteSearchBar = ({
 }) => {
   const [hover, setHover] = useState(false)
 
-  const onMouseEnter = e => {
+  const onMouseEnter = (e) => {
     setHover(true)
   }
 
-  const onMouseLeave = e => {
+  const onMouseLeave = (e) => {
     setHover(false)
   }
 
-  const onFocus = e => {
+  const onFocus = (e) => {
     setHover(true)
   }
 
-  const onBlur = e => {
+  const onBlur = (e) => {
     setHover(false)
   }
 
@@ -52,10 +52,11 @@ const SiteSearchBar = ({
         />
       </div>
       <div className="flex items-center">
-        <FaSearch
+        <FontAwesomeIcon
+          icon="search"
           className={`${
             hover || selected ? "text-blue-500" : "text-gray-400"
-          } trans-ani ml-2`}
+          } trans-ani ml-2 text-lg`}
         />
       </div>
     </div>

@@ -1,11 +1,13 @@
 import React from "react"
-import { FaEnvelope } from "react-icons/fa"
 import IconLink from "./iconlink"
 import ColorLinkExt from "./colorlinkext"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const EmailLink = ({ to, color }) => (
   <IconLink
-    icon={<FaEnvelope className={`text-${color}`} size={20} />}
+    icon={
+      <FontAwesomeIcon icon="envelope" className={`text-${color} text-xl`} />
+    }
     content={
       <ColorLinkExt color={color} to={`mailto:${to}`}>
         {to}

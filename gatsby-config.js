@@ -4,6 +4,19 @@ module.exports = {
     description: `Institute for Cancer Genetics website`,
     author: `Antony B Holmes <antony@antonyholmes.com>`,
     siteUrl: `https://d3gbammu2xkksk.cloudfront.net`,
+    facultyGroups: [`Director`, `Principal Investigators`],
+    paths: {
+      researchAreasPath: `/research-areas`,
+      labsPath: `/research-areas/labs`,
+      facultyPath: `/research-areas/faculty`,
+      facultyStaffPath: `/research-areas/faculty-staff`,
+      publicationsPath: `/research-areas/publications`,
+      adminPath: `/administration`,
+      adminStaffPath: `/administration/staff`,
+      peoplePath: `/people`,
+      newsPath: `/news`,
+      eventsPath: `/events`,
+    },
   },
   plugins: [
     `gatsby-plugin-sitemap`,
@@ -31,8 +44,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/data/groups`,
-        name: `groups`,
+        path: `${__dirname}/src/data/faculty`,
+        name: `faculty`,
       },
     },
     {
@@ -136,6 +149,10 @@ module.exports = {
           /-link/,
           /DayPicker/,
           /text-gray/,
+          /md:hidden/,
+          /md:block/,
+          /lg:hidden/,
+          /lg:block/,
           /xl:hidden/,
           /xl:block/,
         ],

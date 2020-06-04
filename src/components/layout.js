@@ -8,6 +8,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import { library } from "@fortawesome/fontawesome-svg-core"
 
 //import "../assets/css/global.scss"
 import "../assets/css/global.scss"
@@ -15,24 +16,52 @@ import "../assets/css/global.scss"
 import Header from "./header/header"
 import Footer from "./footer/footer"
 import SEO from "./seo"
-import Helmet from "react-helmet"
+import { Helmet } from "react-helmet"
+import useSiteMetadata from "../hooks/sitemetadata"
+import { fab } from "@fortawesome/free-brands-svg-icons"
+import {
+  faHome,
+  faCheck,
+  faMapMarkerAlt,
+  faPhone,
+  faEnvelope,
+  faDoorOpen,
+  faSearch,
+  faTimes,
+  faBars,
+  faNewspaper,
+  faExternalLinkAlt,
+  faGlobeAmericas,
+  faUsers,
+  faChevronUp,
+  faChevronDown,
+  faChevronRight,
+} from "@fortawesome/free-solid-svg-icons"
+import { faClock } from "@fortawesome/free-regular-svg-icons"
 
-const Layout = ({
-  title,
-  children,
-  crumbs,
-  headerComponent,
-  menuComponent,
-}) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+library.add(
+  fab,
+  faHome,
+  faClock,
+  faMapMarkerAlt,
+  faCheck,
+  faPhone,
+  faEnvelope,
+  faDoorOpen,
+  faSearch,
+  faTimes,
+  faBars,
+  faNewspaper,
+  faExternalLinkAlt,
+  faGlobeAmericas,
+  faUsers,
+  faChevronUp,
+  faChevronDown,
+  faChevronRight
+)
+
+const Layout = ({ title, children, headerComponent, menuComponent }) => {
+  const siteMetadata = useSiteMetadata()
 
   return (
     <>
@@ -70,7 +99,7 @@ const Layout = ({
 
       <main className="p-0 m-0">{children}</main>
 
-      <Footer siteTitle={data.site.siteMetadata.title}></Footer>
+      <Footer siteTitle={siteMetadata.title}></Footer>
     </>
   )
 }

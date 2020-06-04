@@ -9,7 +9,7 @@ const ResearchAreaTemplate = ({ path, pageContext }) => {
 
   //const imageMap = toImageMap(data.files)
 
-  const people = allPeople.filter(person => {
+  const people = allPeople.filter((person) => {
     return person.frontmatter.researchAreas.includes(researchArea.id)
   })
 

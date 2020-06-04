@@ -1,4 +1,4 @@
-const flattenEdges = edges => {
+const flattenEdges = (edges) => {
   let ret = []
 
   edges.forEach(({ node }) => {

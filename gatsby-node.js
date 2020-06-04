@@ -16,6 +16,7 @@ const labTemplate = path.resolve(`src/templates/labtemplate.js`)
 const labPeopleTemplate = path.resolve(`src/templates/labpeopletemplate.js`)
 const labsTemplate = path.resolve(`src/templates/labstemplate.js`)
 const facultyTemplate = path.resolve(`src/templates/facultytemplate.js`)
+const allFacultyTemplate = path.resolve(`src/templates/allfacultytemplate.js`)
 const adminTemplate = path.resolve(`src/templates/admintemplate.js`)
 const adminStaffTemplate = path.resolve(`src/templates/adminstafftemplate.js`)
 const peopleTemplate = path.resolve(`src/templates/peopletemplate.js`)
@@ -37,10 +38,10 @@ const researchAreaTemplate = path.resolve(
 )
 const helpTemplate = path.resolve(`src/templates/helptemplate.js`)
 
-const toPeopleMap = people => {
+const toPeopleMap = (people) => {
   let ret = {}
 
-  people.forEach(person => {
+  people.forEach((person) => {
     //ret.set(person.id, person)
     ret[person.frontmatter.id] = person
   })
@@ -48,7 +49,7 @@ const toPeopleMap = people => {
   return ret
 }
 
-const toGroupMap = people => {
+const toGroupMap = (people) => {
   const ret = {}
 
   for (let person of people) {
@@ -127,16 +128,80 @@ exports.createSchemaCustomization = ({ actions }) => {
       authors: [String!]!
       year: Int!
       startDate: Date!
+      facultyGroups: [String!]!
     }
   `
   createTypes(typeDefs)
 }
+
+// faculty: allFacultyJson {
+//   edges {
+//     node {
+//       id
+//       name
+//       url
+//       faculty {
+//         id
+//         labId
+//       }
+//     }
+//   }
+// }
+
+// faculty: allMarkdownRemark(
+//   sort: {
+//     fields: [frontmatter___lastName, frontmatter___firstName]
+//     order: [ASC, ASC]
+//   }
+//   filter: { fileAbsolutePath: { regex: "/faculty/" } }
+// ) {
+//   edges {
+//     node {
+//       frontmatter {
+//         id
+//         labId
+//         name
+//         group
+//         email
+//         phone
+//         fax
+//         room
+//         tags
+//         url
+//       }
+//       excerpt(format: HTML)
+//       html
+//     }
+//   }
+// }
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
 
   const result = await graphql(`
     query {
+      site {
+        siteMetadata {
+          title
+          description
+          author
+          siteUrl
+          facultyGroups
+          paths {
+            adminPath
+            researchAreasPath
+            publicationsPath
+            peoplePath
+            newsPath
+            labsPath
+            facultyStaffPath
+            facultyPath
+            eventsPath
+            adminStaffPath
+          }
+        }
+      }
+
       people: allMarkdownRemark(
         sort: {
           fields: [frontmatter___lastName, frontmatter___firstName]
@@ -175,7 +240,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             name
             url
             faculty {
-              id
+              personId
               labId
             }
           }
@@ -372,6 +437,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   })
 
   const allFaculty = []
+
   result.data.faculty.edges.forEach(({ node }) => {
     const faculty = node
     allFaculty.push(faculty)
@@ -403,30 +469,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   })
 
   const admin = allAdmin[0]
-  const adminPeople = admin.people.map(pid => peopleMap[pid])
+  const adminPeople = admin.people.map((pid) => peopleMap[pid])
   const adminGroupMap = toGroupMap(adminPeople)
-
-  // result.data.labGroups.edges.forEach(({ node }) => {
-  //   const group = node
-
-  //   const leaders = []
-
-  //   for (let person of group.frontmatter.leaders) {
-  //     leaders.push(peopleMap[person])
-  //   }
-
-  //   group.leaders = leaders
-
-  //   const members = []
-
-  //   for (let person of group.frontmatter.members) {
-  //     members.push(peopleMap[person])
-  //   }
-
-  //   group.members = members
-
-  //   allLabGroups.push(group)
-  // })
 
   //
   // Work out if people belong to more than one group
@@ -481,126 +525,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   })
 
   //
-  // Index some data for searching
-  //
-
-  // const searchData = {}
-  // searchData["sections"] = []
-  // searchData["data"] = {}
-
-  // // Labs
-
-  // searchData["sections"].push("Labs")
-  // searchData["data"]["Labs"] = {}
-
-  // for (let lab of allLabs) {
-  //   searchData["data"]["Labs"][lab.name] = {
-  //     name: "Lab page",
-  //     to: `/research-areas/labs/${lab.id}`,
-  //   }
-  // }
-
-  // // Research areas
-
-  // searchData["sections"].push("Research Areas")
-  // searchData["data"]["Research Areas"] = {}
-
-  // for (let ra of allResearchAreas) {
-  //   searchData["data"]["Research Areas"][ra.name] = {
-  //     name: "Research page",
-  //     to: `/research-areas/${ra.id}`,
-  //   }
-  // }
-
-  // People types
-
-  // const peopleTypeMap = toPeopleTypeMap(allPeople)
-
-  // for (let type of PEOPLE_TYPES) {
-  //   searchData["sections"].push(type)
-  //   searchData["data"][type] = {}
-
-  //   for (let person of peopleTypeMap[type]) {
-  //     const name = `${person.frontmatter.firstName} ${person.frontmatter.lastName}`
-
-  //     //const groupId = `${person.frontmatter.id}-lab`
-  //     // if (groupId in groupMap) {
-  //     //   searchData["data"][type][name].push({
-  //     //     name: "Lab",
-  //     //     to: `/research-areas/labs/${groupId}`,
-  //     //   })
-  //     // }
-
-  //     searchData["data"][type][name] = {
-  //       name: `${person.frontmatter.title}`,
-  //       to: `/people/${person.frontmatter.id}`,
-  //     }
-  //   }
-  // }
-
-  // Publications
-
-  // searchData["sections"].push("Publications")
-  // searchData["data"]["Publications"] = {}
-
-  // for (let i = 0; i < allPublications.length; ++i) {
-  //   const publication = allPublications[i]
-
-  //   if (publication.pubmed !== "") {
-  //     let title = publication.title
-
-  //     // Truncate if longer than 50 chars
-  //     if (title.length > 60) {
-  //       title = `${title.substring(0, 60)}...`
-  //     }
-
-  //     searchData["data"]["Publications"][title] = {
-  //       name: `PubMed`,
-  //       to: `https://www.ncbi.nlm.nih.gov/pubmed/?term=${publication.pubmed}`,
-  //     }
-  //   }
-  // }
-
-  // // News
-
-  // searchData["sections"].push("News")
-  // searchData["data"]["News"] = {}
-
-  // for (let item of allNews) {
-  //   searchData["data"]["News"][item.frontmatter.title] = {
-  //     name: `View`,
-  //     to: item.frontmatter.path,
-  //   }
-  // }
-
-  // // Events
-
-  // searchData["sections"].push("Events")
-  // searchData["data"]["Events"] = {}
-
-  // for (let calEvent of allCalEvents) {
-  //   const path = `/events/${
-  //     calEvent.frontmatter.start.split("T")[0]
-  //   }-${calEvent.frontmatter.title.toLowerCase().replace(" ", "-")}`
-
-  //   searchData["data"]["Events"][calEvent.frontmatter.title] = {
-  //     name: `View`,
-  //     to: path,
-  //   }
-  // }
-
-  //
   // Make pages
   //
 
-  const RESEARCH_AREAS_PATH = "/research-areas"
-  const LABS_PATH = `${RESEARCH_AREAS_PATH}/labs`
-  const FACULTY_PATH = `${RESEARCH_AREAS_PATH}/faculty`
-  const FACULTY_STAFF_PATH = `${RESEARCH_AREAS_PATH}/faculty-staff`
-  const PUBLICATIONS_PATH = `${RESEARCH_AREAS_PATH}/publications`
-  const ADMIN_PATH = "/administration"
-  const ADMIN_STAFF_PATH = `${ADMIN_PATH}/staff`
-  const PEOPLE_PATH = `people`
+  const paths = result.data.site.siteMetadata.paths
 
   let path
 
@@ -624,11 +552,23 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   // People
   //
 
+  createPage({
+    path: paths.peoplePath,
+    component: peopleTemplate,
+    context: {
+      crumbs: [["People", paths.peoplePath]],
+      nav: "People",
+      title: "Meet Our People",
+      allPeople: allPeople,
+      groupMap: groupMap,
+    },
+  })
+
   for (let person of allPeople) {
     const pid = person.frontmatter.id
 
     createPage({
-      path: `/people/${pid}`,
+      path: `${paths.peoplePath}/${pid}`,
       component: personTemplate,
       context: {
         id: pid,
@@ -644,50 +584,86 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   //
 
   createPage({
-    path: RESEARCH_AREAS_PATH,
+    path: paths.researchAreasPath,
     component: researchAreasTemplate,
     context: {
       allResearchAreas: allResearchAreas,
     },
   })
 
-  // for (let researchArea of allResearchAreas) {
-  //   createPage({
-  //     path: `/research-areas/${researchArea.id}`,
-  //     component: researchAreaTemplate,
-  //     context: {
-  //       allPeople: allPeople,
-  //       peopleMap: peopleMap,
-  //       researchArea: researchArea,
-  //     },
-  //   })
-  // }
-
   //
   // Faculty
   //
 
   createPage({
-    path: FACULTY_PATH,
-    component: facultyTemplate,
+    path: paths.facultyPath,
+    component: allFacultyTemplate,
     context: {
       title: "Faculty",
       crumbs: [
-        ["Research Areas", RESEARCH_AREAS_PATH],
-        ["Faculty", FACULTY_PATH],
+        ["Research Areas", paths.researchAreasPath],
+        ["Faculty", paths.facultyPath],
       ],
       allGroups: allFaculty,
       peopleMap: peopleMap,
     },
   })
 
+  for (let group of allFaculty) {
+    for (let faculty of group.faculty) {
+      path = `${paths.facultyPath}/${faculty.personId}`
+
+      const person = peopleMap[faculty.personId]
+      const lab = labMap[faculty.labId]
+      const labPublications = lab.id in labPubMap ? labPubMap[lab.id] : []
+
+      const labPeople = lab.people.map((pid) => peopleMap[pid])
+      const labGroupMap = toGroupMap(labPeople)
+
+      const labNews = allNews.filter((item) =>
+        item.frontmatter.labs.includes(lab.id)
+      )
+
+      let html = ""
+      let excerptHtml = ""
+
+      if (path in markdownMap) {
+        const markdown = markdownMap[path]
+        html = markdown.html
+        excerptHtml = markdown.excerpt
+      }
+
+      console.log(`${faculty.personId}-header`)
+
+      createPage({
+        path: path,
+        component: facultyTemplate,
+        context: {
+          id: faculty.personId,
+          person: person,
+          lab: lab,
+          crumbs: [
+            ["Research Areas", paths.researchAreasPath],
+            ["Faculty", paths.facultyPath],
+            [faculty.name, path],
+          ],
+          labGroupMap: labGroupMap,
+          labPublications: labPublications,
+          labNews: labNews,
+          html: html,
+          excerptHtml: excerptHtml,
+        },
+      })
+    }
+  }
+
   createPage({
-    path: FACULTY_STAFF_PATH,
+    path: paths.facultyStaffPath,
     component: peopleTemplate,
     context: {
       crumbs: [
-        ["Research Areas", RESEARCH_AREAS_PATH],
-        ["Faculty & Staff", FACULTY_STAFF_PATH],
+        ["Research Areas", paths.researchAreasPath],
+        ["Faculty & Staff", paths.facultyStaffPath],
       ],
       nav: "For Research Scientists",
       title: "Meet Our Faculty & Staff",
@@ -701,13 +677,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   //
 
   createPage({
-    path: LABS_PATH,
+    path: paths.labsPath,
     component: labsTemplate,
     context: {
       allLabs: allLabs,
       crumbs: [
-        ["Research Areas", RESEARCH_AREAS_PATH],
-        ["Labs", LABS_PATH],
+        ["Research Areas", paths.researchAreasPath],
+        ["Labs", paths.labsPath],
       ],
     },
   })
@@ -717,15 +693,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   //
 
   for (let lab of allLabs) {
-    path = `${LABS_PATH}/${lab.id}`
+    path = `${paths.labsPath}/${lab.id}`
 
     const faculty = peopleMap[lab.id]
     const labPublications = lab.id in labPubMap ? labPubMap[lab.id] : []
 
-    const labPeople = lab.people.map(pid => peopleMap[pid])
+    const labPeople = lab.people.map((pid) => peopleMap[pid])
     const labGroupMap = toGroupMap(labPeople)
 
-    const labNews = allNews.filter(item =>
+    const labNews = allNews.filter((item) =>
       item.frontmatter.labs.includes(lab.id)
     )
 
@@ -744,8 +720,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       context: {
         lab: lab,
         crumbs: [
-          ["Research Areas", RESEARCH_AREAS_PATH],
-          ["Labs", LABS_PATH],
+          ["Research Areas", paths.researchAreasPath],
+          ["Labs", paths.labsPath],
           [lab.name, path],
         ],
         faculty: faculty,
@@ -763,8 +739,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       context: {
         lab: lab,
         crumbs: [
-          ["Research Areas", RESEARCH_AREAS_PATH],
-          ["Labs", LABS_PATH],
+          ["Research Areas", paths.researchAreasPath],
+          ["Labs", paths.labsPath],
           [lab.name, path],
           ["People", labPeoplePath],
         ],
@@ -783,8 +759,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       context: {
         title: `${lab.name} Publications`,
         crumbs: [
-          ["Research Areas", RESEARCH_AREAS_PATH],
-          ["Labs", LABS_PATH],
+          ["Research Areas", paths.researchAreasPath],
+          ["Labs", paths.labsPath],
           [lab.name, path],
           ["Publications", pubPath],
         ],
@@ -802,13 +778,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   //
 
   createPage({
-    path: PUBLICATIONS_PATH,
+    path: paths.publicationsPath,
     component: publicationsTemplate,
     context: {
       title: `Browse Our Publications`,
       crumbs: [
-        ["Research Ares", RESEARCH_AREAS_PATH],
-        ["Publications", PUBLICATIONS_PATH],
+        ["Research Ares", paths.researchAreasPath],
+        ["Publications", paths.publicationsPath],
       ],
       selectedTab: "Publications",
       allPublications: allPublications,
@@ -824,18 +800,18 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   //
 
   createPage({
-    path: ADMIN_PATH,
+    path: paths.adminPath,
     component: adminTemplate,
     context: {},
   })
 
   createPage({
-    path: ADMIN_STAFF_PATH,
+    path: paths.adminStaffPath,
     component: adminStaffTemplate,
     context: {
       crumbs: [
-        ["Adminstration", ADMIN_PATH],
-        ["Staff", ADMIN_STAFF_PATH],
+        ["Adminstration", paths.adminPath],
+        ["Staff", paths.adminStaffPath],
       ],
       adminGroupMap: adminGroupMap,
     },
@@ -846,7 +822,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   //
 
   createPage({
-    path: `/news`,
+    path: paths.newsPath,
     component: newsTemplate,
     context: {
       allNews: allNews,
@@ -869,7 +845,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   //
 
   createPage({
-    path: "/events",
+    path: paths.eventsPath,
     component: calEventsTemplate,
     context: {
       allCalEvents: allCalEvents,
@@ -877,7 +853,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   })
 
   for (let calEvent of allCalEvents) {
-    const path = `/events/${
+    const path = `${paths.eventsPath}/${
       calEvent.frontmatter.start.split("T")[0]
     }-${calEvent.frontmatter.title.toLowerCase().replace(" ", "-")}`
 
@@ -890,22 +866,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     })
   }
-
-  //
-  // People
-  //
-
-  createPage({
-    path: PEOPLE_PATH,
-    component: peopleTemplate,
-    context: {
-      crumbs: [["People", PEOPLE_PATH]],
-      nav: "People",
-      title: "Meet Our People",
-      allPeople: allPeople,
-      groupMap: groupMap,
-    },
-  })
 
   // about
 

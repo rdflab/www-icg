@@ -19,7 +19,7 @@
 //   return ret
 // }
 
-const toGroupMap = labs => {
+const toGroupMap = (labs) => {
   let ret = {}
 
   for (let lab of labs) {

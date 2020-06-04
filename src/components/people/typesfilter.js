@@ -16,7 +16,7 @@ class TypesFilter extends Component {
     this.state = { selectedTypes: new Set() }
   }
 
-  handleClick = data => {
+  handleClick = (data) => {
     const selectedTypes = new Set(this.state.selectedTypes)
 
     if (data.selected) {

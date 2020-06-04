@@ -118,8 +118,8 @@ class Pagination extends Component {
     return true
   }
 
-  gotoPage = page => {
-    const { onPageChanged = f => f } = this.props
+  gotoPage = (page) => {
+    const { onPageChanged = (f) => f } = this.props
 
     const currentPage = Math.max(0, Math.min(page, this.totalPages))
 
@@ -133,17 +133,17 @@ class Pagination extends Component {
     this.setState({ currentPage }, () => onPageChanged(paginationData))
   }
 
-  handleClick = page => e => {
+  handleClick = (page) => (e) => {
     e.preventDefault()
     this.gotoPage(page)
   }
 
-  handleMoveLeft = e => {
+  handleMoveLeft = (e) => {
     e.preventDefault()
     this.gotoPage(this.state.currentPage - this.props.pageNeighbours * 2 - 1)
   }
 
-  handleMoveRight = e => {
+  handleMoveRight = (e) => {
     e.preventDefault()
     this.gotoPage(this.state.currentPage + this.props.pageNeighbours * 2 + 1)
   }

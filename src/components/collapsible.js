@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import AnimateHeight from "react-animate-height"
-import { FaChevronUp, FaChevronDown } from "react-icons/fa"
 import Column from "./column"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const Collapsible = ({ title, height, children, headerClassName }) => {
   const [_height, setHeight] = useState(height)
@@ -20,7 +20,11 @@ const Collapsible = ({ title, height, children, headerClassName }) => {
       >
         <h4 className={`${headerClassName}`}>{title}</h4>
         <div className="text-gray-500 hover:text-gray-800 trans-ani">
-          {_height === 0 ? <FaChevronDown /> : <FaChevronUp />}
+          {_height === 0 ? (
+            <FontAwesomeIcon icon="chevron-down" className={`text-lg`} />
+          ) : (
+            <FontAwesomeIcon icon="chevron-up" className={`text-lg`} />
+          )}
         </div>
       </Column>
 

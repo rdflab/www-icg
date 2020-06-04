@@ -90,7 +90,7 @@ const SlideMenuContainer = ({ title, onClickHandle, visible, maxResults }) => {
     }
   }
 
-  const handleInputChange = e => {
+  const handleInputChange = (e) => {
     const q = e.target.value
     //const ql = q.toLowerCase()
 
@@ -100,7 +100,7 @@ const SlideMenuContainer = ({ title, onClickHandle, visible, maxResults }) => {
       if (siteData !== null) {
         search(q, siteData)
       } else {
-        getSiteData().then(data => {
+        getSiteData().then((data) => {
           setSiteData(data)
           search(q, data)
         })

@@ -48,7 +48,7 @@ const CalEventsTemplate = ({ path, pageContext }) => {
     setPage(1)
   }
 
-  const handleInputChange = e => {
+  const handleInputChange = (e) => {
     const q = e.target.value.toLowerCase()
     let ret = []
 
@@ -72,7 +72,7 @@ const CalEventsTemplate = ({ path, pageContext }) => {
     setPage(1)
   }
 
-  const onPageChanged = data => {
+  const onPageChanged = (data) => {
     const { currentPage } = data
     setPage(currentPage)
   }
@@ -97,7 +97,7 @@ const CalEventsTemplate = ({ path, pageContext }) => {
         selectedDays[0].toLocaleString("default", { year: "numeric" })
       )
 
-      calEvents = allCalEvents.filter(e => {
+      calEvents = allCalEvents.filter((e) => {
         return (
           parseInt(e.frontmatter.day) === day &&
           parseInt(e.frontmatter.monthNum) === month &&
@@ -113,7 +113,7 @@ const CalEventsTemplate = ({ path, pageContext }) => {
       )
       const year = parseInt(now.toLocaleString("default", { year: "numeric" }))
 
-      calEvents = allCalEvents.filter(e => {
+      calEvents = allCalEvents.filter((e) => {
         const t1 =
           parseInt(e.frontmatter.day) >= day &&
           parseInt(e.frontmatter.monthNum) === month &&

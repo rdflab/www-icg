@@ -30,7 +30,7 @@ const CrumbLayout = ({
         </HideSmall>
       )}
 
-      <div className={`min-h-screen`}>{children}</div>
+      <div className={`relative min-h-screen`}>{children}</div>
     </Layout>
   )
 }

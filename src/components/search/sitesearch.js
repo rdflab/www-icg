@@ -92,7 +92,7 @@ const SiteSearchMenu = ({ showMenu, selectedIndex, children }) => {
 }
 
 export const getSiteData = () => {
-  return axios.get("/site.index.json").then(resp => {
+  return axios.get("/site.index.json").then((resp) => {
     return resp.data
   })
 }
@@ -115,7 +115,7 @@ const SiteSearch = ({ className, placeholder, maxResults }) => {
       if (siteData !== null) {
         search()
       } else {
-        getSiteData().then(data => {
+        getSiteData().then((data) => {
           setSiteData(data)
         })
       }
@@ -241,7 +241,7 @@ const SiteSearch = ({ className, placeholder, maxResults }) => {
     setSearchItems(searchTree(siteData.tree, query)) //[items, words])
   }
 
-  const handleInputChange = e => {
+  const handleInputChange = (e) => {
     const q = e.target.value
     //const ql = q.toLowerCase()
 
@@ -289,13 +289,13 @@ const SiteSearch = ({ className, placeholder, maxResults }) => {
     // setResults(ret)
   }
 
-  const handleClickEvent = e => {
+  const handleClickEvent = (e) => {
     if (showMenu) {
       setShowMenu(false)
     }
   }
 
-  const onKeyDown = e => {
+  const onKeyDown = (e) => {
     //console.log(e.keyCode)
 
     if (e.keyCode === 38 || e.keyCode === 37) {

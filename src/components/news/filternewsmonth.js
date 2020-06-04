@@ -16,7 +16,7 @@ class FilterNewsMonth extends Component {
     this.state = { selectedMonths: new Set() }
   }
 
-  handleClick = data => {
+  handleClick = (data) => {
     const selectedMonths = new Set(this.state.selectedMonths)
 
     if (data.selected) {

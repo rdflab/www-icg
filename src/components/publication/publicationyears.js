@@ -26,7 +26,7 @@ const PublicationYears = ({ publications, sectionMode, showLabLink }) => {
       {Array.from(yearMap.keys())
         .sort()
         .reverse()
-        .filter(year => {
+        .filter((year) => {
           return year !== -1
         })
         .map((year, index) => {

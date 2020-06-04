@@ -10,6 +10,7 @@ import Column from "../components/column"
 import ShowSmall from "../components/showsmall"
 import PeopleGroups from "../components/people/peoplegroups"
 import Container from "../components/container"
+import ShowBetween from "../components/showbetween"
 
 const EMPTY_QUERY = ""
 
@@ -22,9 +23,7 @@ const PeopleTemplate = ({ path, pageContext }) => {
   const [recordsPerPage, setRecordsPerPage] = useState(20)
   const [types, setTypes] = useState([])
 
-  console.log(pageContext, path)
-
-  const handleInputChange = e => {
+  const handleInputChange = (e) => {
     const q = e.target.value
     let ret = []
 
@@ -41,12 +40,12 @@ const PeopleTemplate = ({ path, pageContext }) => {
     setPage(1)
   }
 
-  const handleClick = data => {
+  const handleClick = (data) => {
     setTypes(data[0] !== "All" ? data : [])
     setPage(1)
   }
 
-  const onPageChanged = data => {
+  const onPageChanged = (data) => {
     const { currentPage } = data
     setPage(currentPage)
   }
@@ -57,7 +56,7 @@ const PeopleTemplate = ({ path, pageContext }) => {
   let typeFilteredPeople
 
   if (types.length > 0) {
-    typeFilteredPeople = people.filter(person => {
+    typeFilteredPeople = people.filter((person) => {
       let keep = false
 
       for (let type of types) {
@@ -147,12 +146,17 @@ const PeopleTemplate = ({ path, pageContext }) => {
               colWidth="w-9/20"
             />
           </ShowSmall>
-          <HideSmall size="lg">
+
+          <ShowBetween s1="lg" s2="xl">
             <PeopleGroups
               groupMap={filteredGroupMap}
-              cols={4}
-              colWidth="w-11/50"
+              cols={3}
+              colWidth="w-3/10"
             />
+          </ShowBetween>
+
+          <HideSmall size="xl">
+            <PeopleGroups groupMap={filteredGroupMap} />
           </HideSmall>
         </Container>
       </div>

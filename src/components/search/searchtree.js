@@ -72,7 +72,7 @@ export const searchTree = (root, q) => {
         s2 = opStack.pop()
         s1 = opStack.pop()
 
-        s1 = Array.from(s1).filter(e => {
+        s1 = Array.from(s1).filter((e) => {
           return s2.has(e)
         })
 
@@ -83,7 +83,7 @@ export const searchTree = (root, q) => {
         s2 = opStack.pop()
         s1 = opStack.pop()
 
-        s2.forEach(e => {
+        s2.forEach((e) => {
           s1.add(e)
         })
 

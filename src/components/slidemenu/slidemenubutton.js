@@ -1,5 +1,5 @@
 import React from "react"
-import { FaBars } from "react-icons/fa"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const SlideMenuButton = ({ onClickHandle }) => (
   <button
@@ -7,7 +7,7 @@ const SlideMenuButton = ({ onClickHandle }) => (
     onClick={onClickHandle}
     className="mr-3 border-none outline-none focus:outline-none cursor-pointer bg-transparent text-white"
   >
-    <FaBars />
+    <FontAwesomeIcon icon="bars" className={`text-lg`} />
   </button>
 )
 

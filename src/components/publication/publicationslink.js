@@ -1,13 +1,19 @@
 import React from "react"
-import { FaNewspaper } from "react-icons/fa"
 import IconLink from "../iconlink"
 import BlueLink from "../bluelink"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
-const PublicationsLink = ({ to }) => (
+const PublicationsLink = ({ to, color }) => (
   <IconLink
-    icon={<FaNewspaper className="text-gray-600" size={20} />}
+    icon={
+      <FontAwesomeIcon icon="newspaper" className={`text-${color} text-xl`} />
+    }
     content={<BlueLink to={to}>View Publications</BlueLink>}
   />
 )
+
+PublicationsLink.defaultProps = {
+  color: "black",
+}
 
 export default PublicationsLink

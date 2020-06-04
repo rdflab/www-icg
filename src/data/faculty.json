@@ -5,7 +5,7 @@
     "url": "",
     "faculty": [
       {
-        "id": "riccardo-dalla-favera",
+        "personId": "riccardo-dalla-favera",
         "labId": "riccardo-dalla-favera"
       }
     ]
@@ -16,59 +16,59 @@
     "url": "",
     "faculty": [
       {
-        "id": "swarnali-acharyya",
+        "personId": "swarnali-acharyya",
         "labId": "swarnali-acharyya"
       },
       {
-        "id": "richard-baer",
+        "personId": "richard-baer",
         "labId": "richard-baer"
       },
       {
-        "id": "katia-basso",
+        "personId": "katia-basso",
         "labId": "riccardo-dalla-favera"
       },
       {
-        "id": "christine-chio",
+        "personId": "christine-chio",
         "labId": "christine-chio"
       },
       {
-        "id": "adolfo-ferrando",
+        "personId": "adolfo-ferrando",
         "labId": "adolfo-ferrando"
       },
       {
-        "id": "jean-gautier",
+        "personId": "jean-gautier",
         "labId": "jean-gautier"
       },
       {
-        "id": "wei-gu",
+        "personId": "wei-gu",
         "labId": "wei-gu"
       },
       {
-        "id": "antonio-iavarone",
+        "personId": "antonio-iavarone",
         "labId": "antonio-iavarone"
       },
       {
-        "id": "anna-lasorella",
+        "personId": "anna-lasorella",
         "labId": "antonio-iavarone"
       },
       {
-        "id": "jaewon-min",
+        "personId": "jaewon-min",
         "labId": "jean-gautier"
       },
       {
-        "id": "teresa-palomero",
+        "personId": "teresa-palomero",
         "labId": "adolfo-ferrando"
       },
       {
-        "id": "laura-pasqualucci",
+        "personId": "laura-pasqualucci",
         "labId": "riccardo-dalla-favera"
       },
       {
-        "id": "shan-zha",
+        "personId": "shan-zha",
         "labId": "shan-zha"
       },
       {
-        "id": "zhiguo-zhang",
+        "personId": "zhiguo-zhang",
         "labId": "zhiguo-zhang"
       }
     ]
