@@ -63,7 +63,7 @@ import FullDiv from "../fulldiv"
 
 const PersonCard = ({ person, smallView }) => (
   <div
-    className={`w-full trans-ani mb-4 overflow-hidden py-4 text-black border-t-4 border-solid border-transparent border-columbia-secondary-blue-40 hover:border-columbia-secondary-blue`}
+    className={`w-full trans-ani mb-4 overflow-hidden py-4 text-black border-t-4 border-solid border-transparent  hover:border-columbia-secondary-blue`}
   >
     <div>
       <h4>
@@ -150,7 +150,7 @@ const PeopleGrid = ({
   if (found) {
     return (
       <FullDiv key={name}>
-        <h2 className={`my-4 ${headingColor}`}>{name}</h2>
+        <h3 className={`my-4 ${headingColor}`}>{name}</h3>
         <div>{ret}</div>
       </FullDiv>
     )

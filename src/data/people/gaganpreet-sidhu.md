@@ -9,8 +9,9 @@ phone: "851-4566/67/68"
 fax: ""
 email: "gs2732@cumc.columbia.edu"
 room: "602"
-url: []
+lab: "jean-gautier"
 group: "Research Staff"
 researchAreas: []
+url: []
 tags: []
 ---

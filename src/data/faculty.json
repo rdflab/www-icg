@@ -2,75 +2,26 @@
   {
     "id": "director",
     "name": "Director",
-    "url": "",
-    "faculty": [
-      {
-        "personId": "riccardo-dalla-favera",
-        "labId": "riccardo-dalla-favera"
-      }
-    ]
+    "people": ["riccardo-dalla-favera"]
   },
   {
     "id": "principal-investigators",
     "name": "Principal Investigators",
-    "url": "",
-    "faculty": [
-      {
-        "personId": "swarnali-acharyya",
-        "labId": "swarnali-acharyya"
-      },
-      {
-        "personId": "richard-baer",
-        "labId": "richard-baer"
-      },
-      {
-        "personId": "katia-basso",
-        "labId": "riccardo-dalla-favera"
-      },
-      {
-        "personId": "christine-chio",
-        "labId": "christine-chio"
-      },
-      {
-        "personId": "adolfo-ferrando",
-        "labId": "adolfo-ferrando"
-      },
-      {
-        "personId": "jean-gautier",
-        "labId": "jean-gautier"
-      },
-      {
-        "personId": "wei-gu",
-        "labId": "wei-gu"
-      },
-      {
-        "personId": "antonio-iavarone",
-        "labId": "antonio-iavarone"
-      },
-      {
-        "personId": "anna-lasorella",
-        "labId": "antonio-iavarone"
-      },
-      {
-        "personId": "jaewon-min",
-        "labId": "jean-gautier"
-      },
-      {
-        "personId": "teresa-palomero",
-        "labId": "adolfo-ferrando"
-      },
-      {
-        "personId": "laura-pasqualucci",
-        "labId": "riccardo-dalla-favera"
-      },
-      {
-        "personId": "shan-zha",
-        "labId": "shan-zha"
-      },
-      {
-        "personId": "zhiguo-zhang",
-        "labId": "zhiguo-zhang"
-      }
+    "people": [
+      "swarnali-acharyya",
+      "richard-baer",
+      "katia-basso",
+      "christine-chio",
+      "adolfo-ferrando",
+      "jean-gautier",
+      "wei-gu",
+      "antonio-iavarone",
+      "anna-lasorella",
+      "jaewon-min",
+      "teresa-palomero",
+      "laura-pasqualucci",
+      "shan-zha",
+      "zhiguo-zhang"
     ]
   }
 ]

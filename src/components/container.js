@@ -1,10 +1,12 @@
 import React from "react"
 
 const Container = ({ children, className, style }) => (
-  <div className={`container px-4 mx-auto ${className}`} style={style}>
+  // <div className={`container px-4 mx-auto ${className}`} style={style}>
+  //   {children}
+  // </div>
+  <div className={`mx-4 md:mx-32 ${className}`} style={style}>
     {children}
   </div>
-  //<div className={`container ${className}`}>{children}</div>
 )
 
 Container.defaultProps = {

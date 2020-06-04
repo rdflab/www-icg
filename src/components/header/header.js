@@ -12,7 +12,7 @@ import ShowSmall from "../showsmall"
 
 const Header = ({ title, content, menuContent }) => (
   <>
-    <ShowSmall className="bg-columbia-blue" size="lg">
+    <ShowSmall className="bg-columbia-blue-90" size="lg">
       <nav aria-label="Navigation" className="row p-3">
         <SlideMenu title={title} />
         <Link to="/">
@@ -21,7 +21,7 @@ const Header = ({ title, content, menuContent }) => (
       </nav>
     </ShowSmall>
 
-    <HideSmall size="lg">
+    <HideSmall size="lg" className="bg-columbia-blue-90">
       {/* <div className="p-3">
         <Container>
           <Column isVCentered={true} className="justify-between">
@@ -34,23 +34,23 @@ const Header = ({ title, content, menuContent }) => (
         </Container>
       </div> */}
 
-      <div className="bg-columbia-blue pt-4">
+      <div className="pt-4">
         <Container>
-          <Column isVCentered={true} className="justify-between">
+          <Column className="items-center justify-between">
             <Link to="/" className="mr-8">
               {/* <ColumbiaICGWhiteImage style={{ width: `400px` }} /> */}
 
-              <img src={whitelogo} className="h-12" alt="IGC Logo" />
+              <img src={whitelogo} className="h-16" alt="IGC Logo" />
             </Link>
 
             {content !== null && content}
           </Column>
         </Container>
       </div>
-      <div className="bg-columbia-blue pt-4">
+      <div className="pt-4">
         <nav aria-label="Navigation">
           <Container>
-            <Column isVCentered={true} className="justify-between">
+            <Column className="items-center justify-between">
               <HeaderLinks />
 
               {menuContent !== null && menuContent}

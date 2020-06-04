@@ -9,8 +9,9 @@ phone: "851-5292"
 fax: ""
 email: "saq2106@cumc.columbia.edu"
 room: "401B"
-url: []
+lab: "adolfo-ferrando"
 group: "Graduate Students"
 researchAreas: []
+url: []
 tags: []
 ---

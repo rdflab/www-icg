@@ -7,13 +7,11 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
 import { library } from "@fortawesome/fontawesome-svg-core"
 
 //import "../assets/css/global.scss"
 import "../assets/css/global.scss"
 
-import Header from "./header/header"
 import Footer from "./footer/footer"
 import SEO from "./seo"
 import { Helmet } from "react-helmet"
@@ -60,7 +58,7 @@ library.add(
   faChevronRight
 )
 
-const Layout = ({ title, children, headerComponent, menuComponent }) => {
+const Layout = ({ title, children }) => {
   const siteMetadata = useSiteMetadata()
 
   return (
@@ -91,13 +89,7 @@ const Layout = ({ title, children, headerComponent, menuComponent }) => {
 
       {title !== "" && <SEO title={title} />}
 
-      <Header
-        title={title}
-        content={headerComponent}
-        menuContent={menuComponent}
-      />
-
-      <main className="p-0 m-0">{children}</main>
+      {children}
 
       <Footer siteTitle={siteMetadata.title}></Footer>
     </>
@@ -112,8 +104,6 @@ Layout.defaultProps = {
   crumbs: [],
   selectedTab: "",
   title: "",
-  headerComponent: null,
-  menuComponent: null,
 }
 
 export default Layout

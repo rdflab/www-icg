@@ -9,8 +9,9 @@ phone: "851-5260"
 fax: ""
 email: "fw110@cumc.columbia.edu"
 room: "502"
-url: []
+lab: "richard-baer"
 group: "Research Staff"
 researchAreas: []
+url: []
 tags: []
 ---

@@ -8,10 +8,11 @@ import Container from "../components/container"
 import ShowSmall from "../components/showsmall"
 import HideSmall from "../components/hidesmall"
 import useSiteMetadata from "../hooks/sitemetadata"
+import Img from "gatsby-image"
 
 const EMPTY_QUERY = ""
 
-const Faculty = ({ person, labId }) => {
+const Faculty = ({ person, labId, imageMap }) => {
   const [hover, setHover] = useState(false)
 
   const { paths } = useSiteMetadata()
@@ -24,7 +25,18 @@ const Faculty = ({ person, labId }) => {
     setHover(false)
   }
 
-  console.log(paths.facultyPath, labId)
+  let img
+
+  if (person.frontmatter.id in imageMap) {
+    img = (
+      <Img
+        fluid={imageMap[person.frontmatter.id].childImageSharp.fluid}
+        className="w-full h-full"
+      />
+    )
+  } else {
+    img = <img src={generic} className="w-full" alt={person.frontmatter.name} />
+  }
 
   return (
     <div
@@ -32,10 +44,8 @@ const Faculty = ({ person, labId }) => {
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
-      <Link to={`${paths.facultyPath}/${labId}`}>
-        <div className="bg-white">
-          <img src={generic} className="w-full" alt={person.frontmatter.name} />
-        </div>
+      <Link to={`${paths.facultyPath}/${person.frontmatter.id}`}>
+        <div className="bg-white">{img}</div>
         <div className="p-4">
           <h4 className="text-columbia-secondary-blue">
             {person.frontmatter.name}, {person.frontmatter.postNominalLetters}
@@ -47,7 +57,14 @@ const Faculty = ({ person, labId }) => {
   )
 }
 
-const StaffGrid = ({ people, peopleMap, cols, colWidth, headingColor }) => {
+const StaffGrid = ({
+  people,
+  peopleMap,
+  imageMap,
+  cols,
+  colWidth,
+  headingColor,
+}) => {
   const rows = Math.floor(people.length / cols) + 1
 
   const ret = []
@@ -61,13 +78,17 @@ const StaffGrid = ({ people, peopleMap, cols, colWidth, headingColor }) => {
       let person = null
 
       if (pc < people.length) {
-        person = peopleMap[people[pc].personId]
+        person = peopleMap[people[pc]]
       }
 
       col.push(
         <Column className={`md:${colWidth}`} key={`person-${pc}`}>
           {person !== null && (
-            <Faculty person={person} labId={people[pc].labId} />
+            <Faculty
+              person={person}
+              labId={person.frontmatter.lab}
+              imageMap={imageMap}
+            />
           )}
         </Column>
       )
@@ -97,6 +118,7 @@ StaffGrid.defaultProps = {
 const StaffGroups = ({
   allGroups,
   peopleMap,
+  imageMap,
   cols,
   colWidth,
   headingColor,
@@ -112,8 +134,9 @@ const StaffGroups = ({
 
     ret.push(
       <StaffGrid
-        people={group.faculty}
+        people={group.people}
         peopleMap={peopleMap}
+        imageMap={imageMap}
         key={group.name}
         cols={cols}
         colWidth={colWidth}
@@ -130,13 +153,23 @@ StaffGroups.defaultProps = {
   headingColor: "text-gray-700",
 }
 
-const AllFacultyTemplate = ({ path, pageContext }) => {
-  const { allGroups, peopleMap, crumbs } = pageContext
+const AllFacultyTemplate = ({ path, pageContext, data }) => {
+  const { allFaculty, peopleMap, crumbs } = pageContext
 
   const [query, setQuery] = useState(EMPTY_QUERY)
   const [filteredGroups, setFilteredGroups] = useState([])
   const [page, setPage] = useState(1)
   const [recordsPerPage, setRecordsPerPage] = useState(20)
+
+  const imageMap = {}
+
+  for (let { node } of data.files.edges) {
+    const file = node
+
+    if (file.ext === ".jpg") {
+      imageMap[file.name] = file
+    }
+  }
 
   // const handleInputChange = e => {
   //   const q = e.target.value.toLowerCase()
@@ -188,17 +221,22 @@ const AllFacultyTemplate = ({ path, pageContext }) => {
           {/* <Labs labs={allGroups} /> */}
           {/*<StaffGrid labs={allGroups} /> */}
 
-          <ShowSmall size="xl">
+          <ShowSmall size="lg">
             <StaffGroups
-              allGroups={allGroups}
+              allGroups={allFaculty}
               peopleMap={peopleMap}
+              imageMap={imageMap}
               cols={2}
               colWidth="w-9/20"
             />
           </ShowSmall>
 
-          <HideSmall size="xl">
-            <StaffGroups allGroups={allGroups} peopleMap={peopleMap} />
+          <HideSmall size="lg">
+            <StaffGroups
+              allGroups={allFaculty}
+              peopleMap={peopleMap}
+              imageMap={imageMap}
+            />
           </HideSmall>
         </Container>
       </div>
@@ -207,3 +245,22 @@ const AllFacultyTemplate = ({ path, pageContext }) => {
 }
 
 export default AllFacultyTemplate
+
+export const query = graphql`
+  query {
+    files: allFile(filter: { absolutePath: { regex: "/images/people/" } }) {
+      edges {
+        node {
+          name
+          ext
+          relativePath
+          childImageSharp {
+            fluid(maxWidth: 500) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+  }
+`

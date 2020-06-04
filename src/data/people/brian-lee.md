@@ -9,8 +9,9 @@ phone: "851-4785"
 fax: ""
 email: "bl2530@cumc.columbia.edu"
 room: "501"
-url: []
+lab: "shan-zha"
 group: "Research Staff"
 researchAreas: []
+url: []
 tags: []
 ---

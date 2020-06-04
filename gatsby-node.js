@@ -118,7 +118,8 @@ exports.createSchemaCustomization = ({ actions }) => {
       postNominalLetters: String!
       tags: [String!]!
       room: String!
-      type: String!
+      group: String!
+      lab: String!
       url: [String!]!
       labs: [String!]!
       notes: [String!]!
@@ -222,6 +223,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               phone
               fax
               room
+              lab
               group
               researchAreas
               tags
@@ -238,11 +240,21 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           node {
             id
             name
-            url
-            faculty {
-              personId
-              labId
+            people
+          }
+        }
+      }
+
+      facultyMarkdown: allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/faculty/" } }
+      ) {
+        edges {
+          node {
+            html
+            frontmatter {
+              id
             }
+            excerpt(format: HTML)
           }
         }
       }
@@ -443,6 +455,12 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     allFaculty.push(faculty)
   })
 
+  const facultyMarkdownMap = {}
+
+  result.data.facultyMarkdown.edges.forEach(({ node }) => {
+    facultyMarkdownMap[node.frontmatter.id] = node
+  })
+
   const allAdmin = []
   result.data.admin.edges.forEach(({ node }) => {
     const admin = node
@@ -600,21 +618,19 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     component: allFacultyTemplate,
     context: {
       title: "Faculty",
-      crumbs: [
-        ["Research Areas", paths.researchAreasPath],
-        ["Faculty", paths.facultyPath],
-      ],
-      allGroups: allFaculty,
+      crumbs: [["Faculty", paths.facultyPath]],
+      allFaculty: allFaculty,
       peopleMap: peopleMap,
     },
   })
 
   for (let group of allFaculty) {
-    for (let faculty of group.faculty) {
-      path = `${paths.facultyPath}/${faculty.personId}`
+    for (let personId of group.people) {
+      path = `${paths.facultyPath}/${personId}`
 
-      const person = peopleMap[faculty.personId]
-      const lab = labMap[faculty.labId]
+      const person = peopleMap[personId]
+      const lab = labMap[person.frontmatter.lab]
+
       const labPublications = lab.id in labPubMap ? labPubMap[lab.id] : []
 
       const labPeople = lab.people.map((pid) => peopleMap[pid])
@@ -627,25 +643,23 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       let html = ""
       let excerptHtml = ""
 
-      if (path in markdownMap) {
-        const markdown = markdownMap[path]
+      if (personId in facultyMarkdownMap) {
+        const markdown = facultyMarkdownMap[personId]
         html = markdown.html
         excerptHtml = markdown.excerpt
       }
-
-      console.log(`${faculty.personId}-header`)
 
       createPage({
         path: path,
         component: facultyTemplate,
         context: {
-          id: faculty.personId,
+          id: personId,
           person: person,
+          cv: personId in cvMap ? cvMap[personId] : null,
           lab: lab,
           crumbs: [
-            ["Research Areas", paths.researchAreasPath],
             ["Faculty", paths.facultyPath],
-            [faculty.name, path],
+            [person.frontmatter.name, path],
           ],
           labGroupMap: labGroupMap,
           labPublications: labPublications,
@@ -661,10 +675,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     path: paths.facultyStaffPath,
     component: peopleTemplate,
     context: {
-      crumbs: [
-        ["Research Areas", paths.researchAreasPath],
-        ["Faculty & Staff", paths.facultyStaffPath],
-      ],
+      crumbs: [["Faculty & Staff", paths.facultyStaffPath]],
       nav: "For Research Scientists",
       title: "Meet Our Faculty & Staff",
       allPeople: facultyStaff,
@@ -681,10 +692,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     component: labsTemplate,
     context: {
       allLabs: allLabs,
-      crumbs: [
-        ["Research Areas", paths.researchAreasPath],
-        ["Labs", paths.labsPath],
-      ],
+      crumbs: [["Labs", paths.labsPath]],
     },
   })
 
@@ -720,7 +728,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       context: {
         lab: lab,
         crumbs: [
-          ["Research Areas", paths.researchAreasPath],
           ["Labs", paths.labsPath],
           [lab.name, path],
         ],
@@ -739,7 +746,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       context: {
         lab: lab,
         crumbs: [
-          ["Research Areas", paths.researchAreasPath],
           ["Labs", paths.labsPath],
           [lab.name, path],
           ["People", labPeoplePath],
@@ -759,7 +765,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       context: {
         title: `${lab.name} Publications`,
         crumbs: [
-          ["Research Areas", paths.researchAreasPath],
           ["Labs", paths.labsPath],
           [lab.name, path],
           ["Publications", pubPath],
@@ -782,10 +787,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     component: publicationsTemplate,
     context: {
       title: `Browse Our Publications`,
-      crumbs: [
-        ["Research Ares", paths.researchAreasPath],
-        ["Publications", paths.publicationsPath],
-      ],
+      crumbs: [["Publications", paths.publicationsPath]],
       selectedTab: "Publications",
       allPublications: allPublications,
       index: "/publications.index.json",
@@ -809,10 +811,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     path: paths.adminStaffPath,
     component: adminStaffTemplate,
     context: {
-      crumbs: [
-        ["Adminstration", paths.adminPath],
-        ["Staff", paths.adminStaffPath],
-      ],
+      crumbs: [["Adminstration", paths.adminStaffPath]],
       adminGroupMap: adminGroupMap,
     },
   })

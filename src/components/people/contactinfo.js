@@ -5,7 +5,7 @@ import URLLink from "../links/urllink"
 import RoomLink from "../links/roomlink"
 
 const ContactInfo = ({ person, urls, color, className }) => (
-  <div className={`w-full mb-4 md:mb-0 ${className}`}>
+  <div className={`w-full h-full  ${className}`}>
     {person.frontmatter.email !== "" && (
       <EmailLink color={color} to={person.frontmatter.email} />
     )}

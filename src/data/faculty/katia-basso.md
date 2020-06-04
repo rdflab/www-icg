@@ -1,12 +1,5 @@
 ---
 id: "katia-basso"
-labId: "riccardo-dalla-favera"
-name: "Katia Basso"
-group: "Principal Investigators"
-phone: ""
-fax: ""
-email: ""
-room: ""
-url: []
-tags: []
 ---
+
+Katia Basso studies the process of differentiation of germinal center B cells and the mechanisms of malignant transformation leading to lymphomagenesis. Her interest is in dissecting the transcriptional networks that drive the normal B cell differentiation and are hijacked in lymphomas. Her research informs on lymphoma features that impact diagnostics and therapeutics.

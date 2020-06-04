@@ -9,8 +9,8 @@ import re
 import collections
 import json
 
-LAB_URLS = {'adolfo-ferrando':'http://ferrandolab.org/',
-            'christine-chio':'https://chiolab.com/'}
+LAB_URLS = {'adolfo-ferrando':['Lab Web Site', 'http://ferrandolab.org/'],
+            'christine-chio':['Lab Web Site', 'https://chiolab.com/']}
 
 def sort_names(names):
     name_map = collections.defaultdict(lambda: collections.defaultdict(list))
@@ -77,9 +77,13 @@ for i in range(13, df.shape[0]):
     firstName = names[-1]
     lastName = names[0]
     formatted_name = '{} {}'.format(firstName, lastName)
+    id = '{}-{}'.format(firstName.lower(), lastName.lower())
+    id = id.replace('\'', '')
+    id = id.replace(' ', '-')
+    id = id.replace('.', '')
     
     if new_lab:
-        current_lab = {'id':formatted_name.lower().replace(' ', '-'),
+        current_lab = {'id':id,
                        'name':formatted_name,
                        'Principal Investigators':[],
                        'Research Staff':[],
@@ -95,10 +99,7 @@ for i in range(13, df.shape[0]):
     else:
         lab_group = 'Principal Investigators'
     
-    id = '{}-{}'.format(firstName.lower(), lastName.lower())
-    id = id.replace('\'', '')
-    id = id.replace(' ', '-')
-    id = id.replace('.', '')
+    
     
     
     
@@ -139,7 +140,7 @@ for i in range(13, df.shape[0]):
     
     room = df.iloc[i, 5]
     
-    url = ''
+    url = LAB_URLS.get(id, [])
     
     #
     # Create markdown
@@ -171,9 +172,16 @@ for i in range(13, df.shape[0]):
     print('fax: "{}"'.format(fax), file=f)
     print('email: "{}"'.format(email), file=f)
     print('room: "{}"'.format(room), file=f)
-    print('url: []'.format(url, url), file=f)
+    print('lab: "{}"'.format(current_lab['id']), file=f)
     print('group: "{}"'.format(t), file=f)
     print('researchAreas: []', file=f)
+    
+    
+    if (len(url) > 0):
+        print('url: ["{}", "{}"]'.format(url[0], url[1]), file=f)
+    else:
+        print('url: []', file=f)
+    
     print('tags: []'.format(url), file=f)
     print('---', file=f)
     f.close()
@@ -192,27 +200,27 @@ all_groups = []
 all_lab_map = {}
 
 for g in GROUPS:
-    group = {'id':g.lower().replace(' ', '-'), 'name':g, 'url':'', 'faculty': []}
+    group = {'id':g.lower().replace(' ', '-'), 'name':g, 'people': []}
     
     faculty_names = sort_names(lab_map[g])
     
     for name in faculty_names:
-        f = open('faculty/{}.md'.format(id_map[name]), 'w')
-        print('---', file=f)
-        print('id: "{}"'.format(id_map[name]), file=f)
-        print('labId: "{}"'.format(lab_map[g][name]['id']), file=f)
-        print('name: "{}"'.format(name), file=f)
-        print('group: "{}"'.format(g), file=f)
-        print('phone: "{}"'.format(''), file=f)
-        print('fax: "{}"'.format(''), file=f)
-        print('email: "{}"'.format(''), file=f)
-        print('room: "{}"'.format(''), file=f)
-        print('url: []'.format(''), file=f)
-        print('tags: []'.format(''), file=f)
-        print('---', file=f)
-        f.close()
+        # f = open('faculty/{}.md'.format(id_map[name]), 'w')
+        # print('---', file=f)
+        # print('id: "{}"'.format(id_map[name]), file=f)
+        # print('labId: "{}"'.format(lab_map[g][name]['id']), file=f)
+        # print('name: "{}"'.format(name), file=f)
+        # print('group: "{}"'.format(g), file=f)
+        # print('phone: "{}"'.format(''), file=f)
+        # print('fax: "{}"'.format(''), file=f)
+        # print('email: "{}"'.format(''), file=f)
+        # print('room: "{}"'.format(''), file=f)
+        # print('url: []'.format(''), file=f)
+        # print('tags: []'.format(''), file=f)
+        # print('---', file=f)
+        # f.close()
         
-        lab = {'id':id_map[name], 'name':name, 'url':[LAB_URLS.get(id_map[name], ''), LAB_URLS.get(id_map[name], '')], 'people':[]} #, 'divisions': []}
+        lab = {'id':id_map[name], 'name':name, 'url':LAB_URLS.get(id_map[name], ['','']), 'people':[]} #, 'divisions': []}
         
         for sg in SUB_GROUPS:
             division = {'id':sg.lower().replace(' ', '-'), 'name':sg, 'url':'', 'people':[]}
@@ -221,8 +229,8 @@ for g in GROUPS:
             lab['people'].extend([id_map[name] for name in member_names])
             #lab['divisions'].append(division)
             
-        group['faculty'].append({'personId':id_map[name], 'labId':lab_map[g][name]['id']})
-        
+        #group['faculty'].append({'personId':id_map[name], 'labId':lab_map[g][name]['id']})
+        group['people'].append(id_map[name])
 
         
         # Lab names only, not the faculty mapping to the lab

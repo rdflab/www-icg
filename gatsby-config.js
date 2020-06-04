@@ -44,15 +44,15 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/data/faculty`,
-        name: `faculty`,
+        path: `${__dirname}/src/data/people`,
+        name: `people`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/data/people`,
-        name: `people`,
+        path: `${__dirname}/src/data/faculty`,
+        name: `faculty`,
       },
     },
     {

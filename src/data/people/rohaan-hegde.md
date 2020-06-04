@@ -9,8 +9,9 @@ phone: "851-4793"
 fax: ""
 email: "rh2862@cumc.columbia.edu"
 room: "401A"
-url: []
+lab: "swarnali-acharyya"
 group: "Research Staff"
 researchAreas: []
+url: []
 tags: []
 ---

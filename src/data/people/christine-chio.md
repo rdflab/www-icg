@@ -9,8 +9,9 @@ phone: "851-4967"
 fax: "851-5256"
 email: "ic2445@columbia.edu"
 room: "505A"
-url: []
+lab: "christine-chio"
 group: "Faculty"
 researchAreas: []
+url: ["Lab Web Site", "https://chiolab.com/"]
 tags: []
 ---

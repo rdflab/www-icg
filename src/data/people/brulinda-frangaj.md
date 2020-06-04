@@ -9,8 +9,9 @@ phone: "851-5287"
 fax: ""
 email: "bf2456@cumc.columbia.edu"
 room: "403"
-url: []
+lab: "antonio-iavarone"
 group: "Research Staff"
 researchAreas: []
+url: []
 tags: []
 ---

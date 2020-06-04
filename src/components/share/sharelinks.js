@@ -15,7 +15,7 @@ const ShareLinks = ({ color, size, opacity, path }) => {
         <ExtLink to={`https://www.facebook.com/sharer.php?u=${href}`}>
           <FontAwesomeIcon
             icon={["fab", "facebook"]}
-            className={`${opacity} hover:opacity-100 trans-ani text-3xl`}
+            className={`opacity-90 hover:${opacity} trans-ani text-3xl`}
           />
         </ExtLink>
       </div>
@@ -23,7 +23,7 @@ const ShareLinks = ({ color, size, opacity, path }) => {
         <ExtLink to={`https://twitter.com/share?ref_src=${href}`}>
           <FontAwesomeIcon
             icon={["fab", "twitter"]}
-            className={`${opacity} hover:opacity-100 trans-ani text-3xl`}
+            className={`opacity-90 hover:${opacity} trans-ani text-3xl`}
           />
         </ExtLink>
       </div>
@@ -33,7 +33,7 @@ const ShareLinks = ({ color, size, opacity, path }) => {
         >
           <FontAwesomeIcon
             icon={["fab", "linkedin"]}
-            className={`${opacity} hover:opacity-100 trans-ani text-3xl`}
+            className={`opacity-90 hover:${opacity} trans-ani text-3xl`}
           />
         </ExtLink>
       </div>

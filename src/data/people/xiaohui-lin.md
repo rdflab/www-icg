@@ -9,8 +9,9 @@ phone: "851-4785"
 fax: ""
 email: "xl2866@cumc.columbia.edu"
 room: "501"
-url: []
+lab: "shan-zha"
 group: "Research Staff"
 researchAreas: []
+url: []
 tags: []
 ---

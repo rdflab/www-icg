@@ -6,7 +6,7 @@ import breadcrumbsvg from "../../assets/svg/breadcrumb.svg"
 import { Link } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
-const Breadcrumb = ({ crumbs }) => {
+const Breadcrumb = ({ crumbs, className }) => {
   const ret = []
 
   ret.push(
@@ -51,7 +51,9 @@ const Breadcrumb = ({ crumbs }) => {
   }
 
   return (
-    <div className="bg-columbia-secondary-blue text-sm py-2">
+    <div
+      className={`w-full bg-columbia-secondary-blue-90 text-sm py-2 ${className}`}
+    >
       <Container>
         <Column className="items-center">{ret}</Column>
       </Container>
@@ -71,6 +73,10 @@ const Breadcrumb = ({ crumbs }) => {
   //   </Container>
   //   </div>
   // )
+}
+
+Breadcrumb.defaultProps = {
+  className: "",
 }
 
 export default Breadcrumb

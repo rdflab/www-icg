@@ -7,15 +7,14 @@ import generic from "../assets/svg/generic.svg"
 import Container from "../components/container"
 import ShowSmall from "../components/showsmall"
 import HideSmall from "../components/hidesmall"
+import useSiteMetadata from "../hooks/sitemetadata"
 
 const EMPTY_QUERY = ""
 
-export const labUrl = (person) => {
-  return `/research-areas/labs/${person.labId}`
-}
-
 const Lab = ({ lab }) => {
   const [hover, setHover] = useState(false)
+
+  const { paths } = useSiteMetadata()
 
   const onMouseEnter = (e) => {
     setHover(true)
@@ -33,7 +32,7 @@ const Lab = ({ lab }) => {
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
-      <Link to={`/research-areas/labs/${lab.id}`}>
+      <Link to={`${paths.labsPath}/${lab.id}`}>
         <div className="bg-white">
           <img src={generic} className="w-full" />
         </div>

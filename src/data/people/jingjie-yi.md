@@ -9,8 +9,9 @@ phone: "851-5285"
 fax: ""
 email: "jy2652@cumc.columbia.edu"
 room: "608"
-url: []
+lab: "wei-gu"
 group: "Research Staff"
 researchAreas: []
+url: []
 tags: []
 ---

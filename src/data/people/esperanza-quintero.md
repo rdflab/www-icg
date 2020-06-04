@@ -9,8 +9,9 @@ phone: "851-5283"
 fax: ""
 email: "eq2102@cumc.columbia.edu"
 room: "4th fl 415"
-url: []
+lab: ""
 group: "Administrative Staff"
 researchAreas: []
+url: []
 tags: []
 ---

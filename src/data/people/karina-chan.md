@@ -9,8 +9,9 @@ phone: "851-4966"
 fax: ""
 email: "kmc2228@cumc.columbia.edu"
 room: "505"
-url: []
+lab: "christine-chio"
 group: "Research Staff"
 researchAreas: []
+url: []
 tags: []
 ---

@@ -177,7 +177,7 @@ const PersonTemplate = ({ path, pageContext, data }) => {
 
       {/* <Heading>About {personName(person)}</Heading> */}
 
-      {cv !== null && cv.education.length > 0 && (
+      {/* {cv !== null && cv.education.length > 0 && (
         <div className="py-8">
           <Container>
             <Education cv={cv} />
@@ -207,7 +207,7 @@ const PersonTemplate = ({ path, pageContext, data }) => {
             <Experience cv={cv} />
           </Container>
         </div>
-      )}
+      )} */}
 
       {publications.length > 0 && (
         <Container className="py-8">

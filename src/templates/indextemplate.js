@@ -1,5 +1,5 @@
 import React from "react"
-import Layout from "../components/layout"
+import CrumbLayout from "../components/crumblayout"
 // import NYCBgSection from "../components/images/nycbg"
 import Container from "../components/container"
 import Column from "../components/column"
@@ -16,6 +16,7 @@ import CUMCImage from "../components/images/cumc"
 import Benchwork from "../components/images/benchwork"
 import PublicationList from "../components/publication/publicationlist"
 import Button from "../components/button"
+import useSiteMetadata from "../hooks/sitemetadata"
 
 const HomeSection = ({ title, subTitle, text, links, alt }) => {
   return (
@@ -74,6 +75,8 @@ const IndexTemplate = ({ path, pageContext }) => {
     nPublications,
   } = pageContext
 
+  const { paths } = useSiteMetadata()
+
   const now = new Date()
 
   const calEvents = []
@@ -117,7 +120,11 @@ const IndexTemplate = ({ path, pageContext }) => {
   // })
 
   return (
-    <Layout title="Home" headerComponent={<SiteSearch />}>
+    <CrumbLayout
+      headerLinksFloat={true}
+      title="Home"
+      headerComponent={<SiteSearch />}
+    >
       <CUMCImage />
       {/* <Container className="h-full py-8 sm:py-8">
         <Column className="h-full p-8 sm:p-16">
@@ -149,7 +156,7 @@ const IndexTemplate = ({ path, pageContext }) => {
               </div>
               <div className="font-semibold mt-4">
                 <WhiteLink
-                  to={`/research-areas/labs/${director.frontmatter.id}`}
+                  to={`${paths.facultyPath}/${director.frontmatter.id}`}
                 >
                   {director.frontmatter.name},{" "}
                   {director.frontmatter.postNominalLetters}
@@ -160,7 +167,7 @@ const IndexTemplate = ({ path, pageContext }) => {
           </Column>
           <Column w={6}>
             <div>
-              <HomeTitle>Discovery</HomeTitle>
+              <HomeTitle>Our Mission</HomeTitle>
               <div className="text-xl">
                 <p>
                   The Institute for Cancer Genetics was founded in 1999 as part
@@ -204,7 +211,7 @@ const IndexTemplate = ({ path, pageContext }) => {
                   researchers are studying.
                 </p>
                 <h3 className="mt-4">
-                  <TextIndexLink to="/people/faculty">Faculty</TextIndexLink>
+                  <TextIndexLink to={paths.facultyPath}>Faculty</TextIndexLink>
                 </h3>
               </div>
             </Column>
@@ -230,7 +237,9 @@ const IndexTemplate = ({ path, pageContext }) => {
             <HomeTitle>Upcoming Events</HomeTitle>
             <p>See upcoming events and seminars of interest.</p>
             <h3 className="mt-4">
-              <WhiteIndexLink to="/events">See all events</WhiteIndexLink>
+              <WhiteIndexLink to={paths.eventsPath}>
+                See all events
+              </WhiteIndexLink>
             </h3>
           </div>
         </Column>
@@ -254,10 +263,10 @@ const IndexTemplate = ({ path, pageContext }) => {
           All Publications
         </BlueIndexLink> */}
         <div className="text-center">
-          <Button to="/research-areas/publications">All Publications</Button>
+          <Button to={paths.publicationsPath}>All Publications</Button>
         </div>
       </HomeDiv>
-    </Layout>
+    </CrumbLayout>
   )
 }
 

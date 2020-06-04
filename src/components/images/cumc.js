@@ -31,7 +31,7 @@ const BackgroundSection = ({ className, children }) => (
 
 const CUMCImage = styled(BackgroundSection)`
   width: 100%;
-  height: 24rem;
+  height: 32rem;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;

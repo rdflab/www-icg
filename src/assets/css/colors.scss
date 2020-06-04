@@ -1,20 +1,22 @@
-$columbia-blue-color: #1d4f91; //rgb(0, 13, 116); //rgb(28, 76, 143);
-$columbia-blue-10-color: rgba($columbia-blue-color, 0.1);
-$columbia-blue-30-color: rgba($columbia-blue-color, 0.3);
-$columbia-blue-40-color: rgba($columbia-blue-color, 0.4);
-$columbia-blue-50-color: rgba($columbia-blue-color, 0.5);
-$columbia-blue-60-color: rgba($columbia-blue-color, 0.6);
-$columbia-blue-70-color: rgba($columbia-blue-color, 0.7);
-$columbia-blue-80-color: rgba($columbia-blue-color, 0.8);
-$columbia-blue-90-color: rgba($columbia-blue-color, 0.9);
+$columbia-blue: #1d4f91; //rgb(0, 13, 116); //rgb(28, 76, 143);
+$columbia-blue-10: rgba($columbia-blue, 0.1);
+$columbia-blue-30: rgba($columbia-blue, 0.3);
+$columbia-blue-40: rgba($columbia-blue, 0.4);
+$columbia-blue-50: rgba($columbia-blue, 0.5);
+$columbia-blue-60: rgba($columbia-blue, 0.6);
+$columbia-blue-70: rgba($columbia-blue, 0.7);
+$columbia-blue-80: rgba($columbia-blue, 0.8);
+$columbia-blue-90: rgba($columbia-blue, 0.9);
+$columbia-blue-95: rgba($columbia-blue, 0.95);
 
 $columbia-footer: #41516C;
 $columbia-gray: #EFEFEF;
 $columbia-dark-gray: #555555;
 $columbia-primary-blue: #000d74;
-$columbia-secondary-blue: #75AADB; //#2C6BAC;
+ //#2C6BAC;
 $columbia-light-gray: #F9F9F9; //rgb(250, 250, 250); // #F9F9F9;
 
+$columbia-secondary-blue: #75AADB;
 $columbia-secondary-blue-20: rgba($columbia-secondary-blue, 0.2);
 $columbia-secondary-blue-30: rgba($columbia-secondary-blue, 0.3);
 $columbia-secondary-blue-40: rgba($columbia-secondary-blue, 0.4);
@@ -23,37 +25,56 @@ $columbia-secondary-blue-60: rgba($columbia-secondary-blue, 0.6);
 $columbia-secondary-blue-70: rgba($columbia-secondary-blue, 0.7);
 $columbia-secondary-blue-80: rgba($columbia-secondary-blue, 0.8);
 $columbia-secondary-blue-90: rgba($columbia-secondary-blue, 0.9);
+$columbia-secondary-blue-95: rgba($columbia-secondary-blue, 0.95);
+
+$columbia-medium-blue: #2C6BAC;
 
 .bg-columbia-blue {
-  background-color: $columbia-blue-color;
+  background-color: $columbia-blue;
 }
 
 .bg-columbia-blue-10 {
-  background-color: $columbia-blue-10-color;
+  background-color: $columbia-blue-10;
 }
 
 .bg-columbia-blue-30 {
-  background-color: $columbia-blue-30-color;
+  background-color: $columbia-blue-30;
 }
 
 .bg-columbia-blue-40 {
-  background-color: $columbia-blue-40-color;
+  background-color: $columbia-blue-40;
 }
 
 .bg-columbia-blue-50 {
-  background-color: $columbia-blue-50-color;
+  background-color: $columbia-blue-50;
 }
 
 .bg-columbia-blue-60 {
-  background-color: $columbia-blue-60-color;
+  background-color: $columbia-blue-60;
 }
 
 .bg-columbia-blue-70 {
-  background-color: $columbia-blue-70-color;
+  background-color: $columbia-blue-70;
 }
 
 .bg-columbia-blue-80 {
-  background-color: $columbia-blue-80-color;
+  background-color: $columbia-blue-80;
+}
+
+.bg-columbia-blue-90 {
+  background-color: $columbia-blue-90;
+}
+
+.bg-columbia-blue-95 {
+  background-color: $columbia-blue-95;
+}
+
+.bg-columbia-secondary-blue {
+  background-color: $columbia-secondary-blue;
+}
+
+.bg-columbia-medium-blue {
+  background-color: $columbia-medium-blue;
 }
 
 .bg-columbia-primary-blue {
@@ -80,9 +101,11 @@ $columbia-secondary-blue-90: rgba($columbia-secondary-blue, 0.9);
   background-color: $columbia-secondary-blue-90;
 }
 
-.bg-columbia-secondary-blue {
-  background-color: $columbia-secondary-blue;
+.bg-columbia-secondary-blue-95 {
+  background-color: $columbia-secondary-blue-95;
 }
+
+
 
 .bg-columbia-gray {
   background-color: $columbia-gray;
@@ -97,7 +120,7 @@ $columbia-secondary-blue-90: rgba($columbia-secondary-blue, 0.9);
 }
 
 .border-columbia-blue {
-  border-color: $columbia-blue-color;
+  border-color: $columbia-blue;
 }
 
 .border-columbia-secondary-blue {
@@ -140,11 +163,11 @@ $columbia-secondary-blue-90: rgba($columbia-secondary-blue, 0.9);
 }
 
 .text-columbia-blue-50 {
-  color: $columbia-blue-50-color;
+  color: $columbia-blue-50;
 }
 
 .text-columbia-blue-80 {
-  color: $columbia-blue-80-color;
+  color: $columbia-blue-80;
 }
 
 .text-columbia-dark-gray {
@@ -174,7 +197,7 @@ $columbia-secondary-blue-90: rgba($columbia-secondary-blue, 0.9);
 
 
 .text-columbia-blue {
-  color: $columbia-blue-color;
+  color: $columbia-blue;
 }
 
 .text-white-50 {

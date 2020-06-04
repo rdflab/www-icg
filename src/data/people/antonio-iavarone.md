@@ -9,8 +9,9 @@ phone: "851-5245"
 fax: "851-5267"
 email: "ai2102@columbia.edu"
 room: "407B"
-url: []
+lab: "antonio-iavarone"
 group: "Faculty"
 researchAreas: []
+url: []
 tags: []
 ---
