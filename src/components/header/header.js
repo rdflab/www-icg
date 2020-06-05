@@ -34,13 +34,13 @@ const Header = ({ title, content, menuContent }) => (
         </Container>
       </div> */}
 
-      <div className="pt-4">
+      <div className="pt-1">
         <Container>
           <Column className="items-center justify-between">
             <Link to="/" className="mr-8">
               {/* <ColumbiaICGWhiteImage style={{ width: `400px` }} /> */}
 
-              <img src={whitelogo} className="h-16" alt="IGC Logo" />
+              <img src={whitelogo} className="h-20" alt="IGC Logo" />
             </Link>
 
             {content !== null && content}

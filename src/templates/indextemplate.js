@@ -124,7 +124,7 @@ const IndexTemplate = ({ path, pageContext }) => {
 
   return (
     <CrumbLayout
-      headerLinksFloat={true}
+      headerFloat={true}
       title="Home"
       headerComponent={<SiteSearch />}
     >
