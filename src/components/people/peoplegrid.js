@@ -3,6 +3,7 @@ import ContactInfo from "./contactinfo"
 import PersonLink from "./personlink"
 import Column from "../column"
 import FullDiv from "../fulldiv"
+import FacultyLink from "../faculty/facultylink"
 
 // const PersonCard = ({ person, smallView }) => (
 //   <div
@@ -61,23 +62,31 @@ import FullDiv from "../fulldiv"
 //   </div>
 // )
 
-const PersonCard = ({ person, smallView }) => (
-  <div
-    className={`w-full trans-ani mb-4 overflow-hidden py-4 text-black border-t-4 border-solid border-transparent  hover:border-columbia-secondary-blue`}
-  >
-    <div>
-      <h4>
-        <PersonLink person={person} />
-      </h4>
-      <h5>{person.frontmatter.title}</h5>
-    </div>
-    {!smallView && (
-      <div className="mt-4 ">
-        <ContactInfo person={person} />
+const PersonCard = ({ person, smallView }) => {
+  let link
+
+  if (person.frontmatter.group === "Faculty") {
+    link = <FacultyLink person={person} />
+  } else {
+    link = <PersonLink person={person} />
+  }
+
+  return (
+    <div
+      className={`w-full trans-ani mb-4 overflow-hidden py-4 text-black border-t-4 border-solid border-transparent  hover:border-columbia-secondary-blue`}
+    >
+      <div>
+        <h4>{link}</h4>
+        <h5>{person.frontmatter.title}</h5>
       </div>
-    )}
-  </div>
-)
+      {!smallView && (
+        <div className="mt-4 ">
+          <ContactInfo person={person} />
+        </div>
+      )}
+    </div>
+  )
+}
 
 const PeopleGrid = ({
   name,

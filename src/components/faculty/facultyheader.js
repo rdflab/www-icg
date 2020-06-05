@@ -32,11 +32,11 @@ const FacultyHeader = ({ person, title, heading, subHeading, path }) => {
 
   return (
     <Column className="text-white">
-      <div className="lg:w-8/12 bg-columbia-secondary-blue p-8 md:pl-32">
+      <div className="lg:w-8/12 bg-columbia-secondary-blue p-8 md:pl-40">
         <TitleDiv title={title} heading={heading} subHeading={subHeading} />
       </div>
 
-      <div className="lg:w-4/12 bg-columbia-medium-blue p-8 md:pr-32 min-h-full">
+      <div className="lg:w-4/12 bg-columbia-medium-blue p-8 md:pr-40 min-h-full">
         <ContactInfo person={person} color="white" />
       </div>
     </Column>

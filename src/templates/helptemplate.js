@@ -1,5 +1,4 @@
 import React from "react"
-import { graphql } from "gatsby"
 import CrumbTitleLayout from "../components/crumbtitlelayout"
 import BlueLinkExt from "../components/links/bluelinkext"
 import gatsbysvg from "../assets/svg/Gatsby_logo.svg"
@@ -9,9 +8,11 @@ import ExtLink from "../components/links/extlink"
 import Column from "../components/column"
 import Container from "../components/container"
 import useSiteMetadata from "../hooks/sitemetadata"
+import useCurrentBuild from "../hooks/currentbuild"
 
 const HelpTemplate = ({ path, pageContext, data }) => {
   const { title } = useSiteMetadata()
+  const { currentBuild } = useCurrentBuild()
 
   const year = new Date().getFullYear()
 
@@ -34,7 +35,7 @@ const HelpTemplate = ({ path, pageContext, data }) => {
         <Container>
           <div className="bg-white rounded-md shadow-lg hover:shadow-xl trans-ani p-12 md:w-1/2">
             {/* <p>Institute for Cancer Genetics website</p> */}
-            <p>Last updated: {data.currentBuildDate.currentDate}</p>
+            <p>Last updated: {currentBuild}</p>
             <p className="mt-4">
               Proudly developed by{" "}
               <BlueLinkExt to="mailto:antony@antonyholmes.com">
@@ -89,19 +90,5 @@ const HelpTemplate = ({ path, pageContext, data }) => {
     </CrumbTitleLayout>
   )
 }
-
-export const query = graphql`
-  query {
-    currentBuildDate {
-      currentDate
-    }
-
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`
 
 export default HelpTemplate

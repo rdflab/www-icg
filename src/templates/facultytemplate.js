@@ -20,6 +20,7 @@ import styled from "styled-components"
 import FacultyHeader from "../components/faculty/facultyheader"
 import Column from "../components/column"
 import FullDiv from "../components/fulldiv"
+import BlueLink from "../components/links/bluelink"
 
 const AwardsGrid = ({ cv, cols, colWidth, headingColor }) => {
   const rows = Math.floor(cv.awards.length / cols) + 1
@@ -83,7 +84,7 @@ const BackgroundSection = ({ file, children }) => (
     fluid={file.childImageSharp.fluid}
     style={{
       width: "100%",
-      height: "32rem",
+      height: "36rem",
       backgroundPosition: "top center",
       backgroundRepeat: "no-repeat",
       backgroundSize: "cover",
@@ -95,9 +96,99 @@ const BackgroundSection = ({ file, children }) => (
 )
 
 const FacultyHeading = ({ children }) => (
-  <div className="uppercase text-center mb-8 text-2xl tracking-wide">
+  <div className="uppercase mb-8 text-3xl tracking-wide text-center">
     {children}
   </div>
+)
+
+const FacultyHeading2 = ({ children }) => (
+  <div className="uppercase mb-8 text-2xl tracking-wide">{children}</div>
+)
+
+const Quote = ({ text }) => (
+  <p className="text-justify">
+    <span
+      className="text-blue-500 mr-1"
+      style={{ fontFamily: "Playfair Display", fontSize: "150%" }}
+    >
+      &ldquo;
+    </span>
+    {text}
+    <span
+      className="text-blue-500 ml-1"
+      style={{ fontFamily: "Playfair Display", fontSize: "150%" }}
+    >
+      &rdquo;
+    </span>
+  </p>
+)
+
+const Abstract = ({ person, markdown }) => {
+  let heading = null
+  let html = null
+
+  if (markdown !== null) {
+    heading = (
+      <div className="text-3xl font-semibold mb-2">
+        <Quote text={markdown.frontmatter.title} />
+      </div>
+    )
+    html = <HTMLDiv className="text-justify" html={markdown.html} />
+  } else {
+    heading = <FacultyHeading2>About {person.frontmatter.name}</FacultyHeading2>
+  }
+
+  return (
+    <Container>
+      <div className="mx-4 lg:mx-40 my-16 text-2xl">
+        <div>{heading}</div>
+        <div>{html}</div>
+        <div className="mt-4">
+          <BlueLink to="#about">Read more</BlueLink>
+        </div>
+      </div>
+    </Container>
+  )
+}
+
+const About = ({ person, markdown }) => {
+  let heading = null
+  let html = null
+
+  if (markdown !== null) {
+    html = <HTMLDiv className="text-justify" html={markdown.html} />
+  }
+
+  return (
+    <Container>
+      <div className="mx-4 lg:mx-40 my-16 text-2xl">
+        <div>
+          <FacultyHeading>About {person.frontmatter.name}</FacultyHeading>
+        </div>
+        <div>{html}</div>
+      </div>
+    </Container>
+  )
+}
+
+const Team = ({ labGroupMap }) => (
+  <Container>
+    <FacultyHeading2>Meet The Team</FacultyHeading2>
+
+    <ShowSmall size="lg">
+      <PeopleGroups groupMap={labGroupMap} cols={2} colWidth="w-9/20" />
+    </ShowSmall>
+
+    <ShowBetween s1="lg" s2="xl">
+      <PeopleGroups groupMap={labGroupMap} cols={3} colWidth="w-3/10" />
+    </ShowBetween>
+
+    <HideSmall size="xl">
+      <PeopleGroups groupMap={labGroupMap} />
+    </HideSmall>
+
+    {/* <PeopleGroups groupMap={labGroupMap} /> faculty={faculty} /> */}
+  </Container>
 )
 
 const FacultyTemplate = ({ path, pageContext, data }) => {
@@ -128,19 +219,27 @@ const FacultyTemplate = ({ path, pageContext, data }) => {
   }
 
   let headerImage = null
+  let headerImageCredit = ""
 
-  console.log(data)
+  if (data.abstractMarkdown !== null) {
+    headerImageCredit = data.abstractMarkdown.frontmatter.headerImageCredit
+  }
 
   for (let { node } of data.files.edges) {
-    console.log(node)
     const file = node
 
     if (file.relativePath.includes(id)) {
       headerImage = (
         <BackgroundSection file={file}>
           {headshotImage !== null && (
-            <Container className="absolute bottom-0 mb-4">
+            <Container className="absolute bottom-0 mb-8">
               {headshotImage}
+            </Container>
+          )}
+
+          {headerImageCredit !== "" && (
+            <Container className="absolute bottom-0 right-0 text-sm text-white opacity-80 mb-8">
+              {headerImageCredit}
             </Container>
           )}
         </BackgroundSection>
@@ -162,62 +261,43 @@ const FacultyTemplate = ({ path, pageContext, data }) => {
 
       <FacultyHeader person={person} />
 
-      <div>
-        {html !== "" && (
-          <Container>
-            <div className="mx-32 my-16 text-2xl">
-              <FacultyHeading>About {person.frontmatter.name}</FacultyHeading>
-              <HTMLDiv html={html} />
-            </div>
-          </Container>
-        )}
+      <Abstract person={person} markdown={data.abstractMarkdown} />
 
-        {cv !== null && cv.awards.length > 0 && (
-          <div className="py-8 bg-columbia-light-gray">
-            <FacultyHeading>Awards and Honors</FacultyHeading>
-            <Container>
-              <AwardsGrid cv={cv} />
-            </Container>
-          </div>
-        )}
+      <div className="py-8 bg-columbia-light-gray">
+        <Team labGroupMap={labGroupMap} />
+      </div>
 
+      <div id="about" />
+
+      <div className="py-8">
+        <About person={person} markdown={data.markdown} />
+      </div>
+
+      {cv !== null && cv.awards.length > 0 && (
         <div className="py-8">
           <Container>
-            <FacultyHeading>Meet The Team</FacultyHeading>
-
-            <ShowSmall size="lg">
-              <PeopleGroups groupMap={labGroupMap} cols={2} colWidth="w-9/20" />
-            </ShowSmall>
-
-            <ShowBetween s1="lg" s2="xl">
-              <PeopleGroups groupMap={labGroupMap} cols={3} colWidth="w-3/10" />
-            </ShowBetween>
-
-            <HideSmall size="xl">
-              <PeopleGroups groupMap={labGroupMap} />
-            </HideSmall>
-
-            {/* <PeopleGroups groupMap={labGroupMap} /> faculty={faculty} /> */}
+            <FacultyHeading2>Awards and Honors</FacultyHeading2>
+            <AwardsGrid cv={cv} />
           </Container>
         </div>
+      )}
 
-        {labPublications.length > 0 && (
-          <div className="py-8 bg-columbia-light-gray">
-            <Container>
-              <FacultyHeading>Recent Publications</FacultyHeading>
+      {labPublications.length > 0 && (
+        <div className="py-8 bg-columbia-light-gray">
+          <Container>
+            <FacultyHeading2>Recent Publications</FacultyHeading2>
 
-              <RecentPublications lab={lab} publications={labPublications} />
-            </Container>
-          </div>
-        )}
+            <RecentPublications lab={lab} publications={labPublications} />
+          </Container>
+        </div>
+      )}
 
-        {/* {labNews.length > 0 && (
+      {/* {labNews.length > 0 && (
           <div className="mt-8">
             <h3>News</h3>
             <SideBarNews allNews={labNews} />
           </div>
         )} */}
-      </div>
     </CrumbLayout>
   )
 }
@@ -246,6 +326,31 @@ export const query = graphql`
           ...GatsbyImageSharpFluid
         }
       }
+    }
+
+    abstractMarkdown: markdownRemark(
+      fileAbsolutePath: { regex: "/faculty-abstracts/" }
+      frontmatter: { id: { eq: $id } }
+    ) {
+      id
+      html
+      frontmatter {
+        title
+        headerImageCredit
+      }
+      excerpt(format: HTML)
+    }
+
+    markdown: markdownRemark(
+      fileAbsolutePath: { regex: "/faculty/" }
+      frontmatter: { id: { eq: $id } }
+    ) {
+      id
+      html
+      frontmatter {
+        title
+      }
+      excerpt(format: HTML)
     }
   }
 `

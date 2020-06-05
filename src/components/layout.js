@@ -58,6 +58,11 @@ library.add(
   faChevronRight
 )
 
+if (typeof window !== "undefined") {
+  // eslint-disable-next-line global-require
+  require("smooth-scroll")('a[href*="#"]')
+}
+
 const Layout = ({ title, children }) => {
   const siteMetadata = useSiteMetadata()
 
@@ -68,16 +73,20 @@ const Layout = ({ title, children }) => {
           href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
           rel="stylesheet"
         />
-        <link
+        {/* <link
           href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap"
           rel="stylesheet"
-        />
+        /> */}
         <link
           href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700&display=swap"
           rel="stylesheet"
         />
         <link
           href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600;700&display=swap"
           rel="stylesheet"
         />
         {/* <link

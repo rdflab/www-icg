@@ -6,7 +6,7 @@ import WhiteLink from "../links/whitelink"
 
 const CalEventDetails = ({ event, isMobile, color }) => (
   <div>
-    <h3>
+    <h3 className="mb-2">
       {color === "white" && (
         <WhiteLink to={eventUrl(event)}>{event.frontmatter.title}</WhiteLink>
       )}

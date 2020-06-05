@@ -56,6 +56,21 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/data/faculty-abstracts`,
+        name: `faculty-abstracts`,
+      },
+    },
+    // {
+    //   resolve: "gatsby-plugin-react-svg",
+    //   options: {
+    //     rule: {
+    //       include: /\.inline\.svg$/,
+    //     },
+    //   },
+    // },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         excerpt_separator: `<!-- endexcerpt -->`,

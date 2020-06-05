@@ -47,7 +47,7 @@ const Header = ({ title, content, menuContent }) => (
           </Column>
         </Container>
       </div>
-      <div className="pt-4">
+      <div className="pt-2">
         <nav aria-label="Navigation">
           <Container>
             <Column className="items-center justify-between">

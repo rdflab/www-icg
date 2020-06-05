@@ -85,8 +85,6 @@ const CalEventsTemplate = ({ path, pageContext }) => {
     let dayFilteredEvents = []
 
     if (selectedDays.length > 0) {
-      console.log(selectedDays[0])
-
       const day = parseInt(
         selectedDays[0].toLocaleString("default", { day: "numeric" })
       )

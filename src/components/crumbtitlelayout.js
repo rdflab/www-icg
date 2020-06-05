@@ -44,11 +44,7 @@ const CrumbTitleLayout = ({
               <Breadcrumb crumbs={crumbs} />
             </HideSmall>
           )}
-          <div className="bg-columbia-secondary-blue-90">
-            <Container>
-              <H title={nav} heading={title} path={path} />
-            </Container>
-          </div>
+          <H title={nav} heading={title} path={path} />
         </div>
 
         <div className={`relative min-h-screen ${backgroundColor}`}>
@@ -69,11 +65,7 @@ const CrumbTitleLayout = ({
               <Breadcrumb crumbs={crumbs} />
             </HideSmall>
           )}
-          <div className="bg-columbia-secondary-blue-90">
-            <Container>
-              <H title={nav} heading={title} path={path} />
-            </Container>
-          </div>
+          <H title={nav} heading={title} path={path} />
         </div>
 
         <div className={`relative min-h-screen ${backgroundColor}`}>

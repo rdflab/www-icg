@@ -2,13 +2,14 @@ import React, { useState } from "react"
 import CrumbTitleLayout from "../components/crumbtitlelayout"
 import SiteSearch from "../components/search/sitesearch"
 import Column from "../components/column"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 import generic from "../assets/svg/generic.svg"
 import Container from "../components/container"
 import ShowSmall from "../components/showsmall"
 import HideSmall from "../components/hidesmall"
 import useSiteMetadata from "../hooks/sitemetadata"
 import Img from "gatsby-image"
+import ShowBetween from "../components/showbetween"
 
 const EMPTY_QUERY = ""
 
@@ -111,8 +112,8 @@ const StaffGrid = ({
 }
 
 StaffGrid.defaultProps = {
-  cols: 3,
-  colWidth: "w-3/10",
+  cols: 4,
+  colWidth: "w-11/50",
 }
 
 const StaffGroups = ({
@@ -148,8 +149,8 @@ const StaffGroups = ({
 }
 
 StaffGroups.defaultProps = {
-  cols: 3,
-  colWidth: "w-3/10",
+  cols: 4,
+  colWidth: "w-11/50",
   headingColor: "text-gray-700",
 }
 
@@ -221,7 +222,7 @@ const AllFacultyTemplate = ({ path, pageContext, data }) => {
           {/* <Labs labs={allGroups} /> */}
           {/*<StaffGrid labs={allGroups} /> */}
 
-          <ShowSmall size="lg">
+          <ShowSmall size="md">
             <StaffGroups
               allGroups={allFaculty}
               peopleMap={peopleMap}
@@ -231,11 +232,33 @@ const AllFacultyTemplate = ({ path, pageContext, data }) => {
             />
           </ShowSmall>
 
-          <HideSmall size="lg">
+          <ShowBetween s1="md" s2="lg">
             <StaffGroups
               allGroups={allFaculty}
               peopleMap={peopleMap}
               imageMap={imageMap}
+              cols={3}
+              colWidth="w-3/10"
+            />
+          </ShowBetween>
+
+          <ShowBetween s1="lg" s2="xl">
+            <StaffGroups
+              allGroups={allFaculty}
+              peopleMap={peopleMap}
+              imageMap={imageMap}
+              cols={4}
+              colWidth="w-11/50"
+            />
+          </ShowBetween>
+
+          <HideSmall size="xl">
+            <StaffGroups
+              allGroups={allFaculty}
+              peopleMap={peopleMap}
+              imageMap={imageMap}
+              cols={5}
+              colWidth="w-9/50"
             />
           </HideSmall>
         </Container>

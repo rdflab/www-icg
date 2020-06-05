@@ -4,13 +4,13 @@ import WhiteLink from "../links/whitelink"
 import useSiteMetadata from "../../hooks/sitemetadata"
 //import WhiteLink from "../whitelink"
 
-const PersonLink = ({ person, color }) => {
+const FacultyLink = ({ person, color }) => {
   const { paths } = useSiteMetadata()
 
   switch (color) {
     case "white":
       return (
-        <WhiteLink to={`${paths.peoplePath}/${person.frontmatter.id}`}>
+        <WhiteLink to={`${paths.facultyPath}/${person.frontmatter.id}`}>
           {person.frontmatter.name}
           {person.frontmatter.postNominalLetters !== "" &&
             ", " + person.frontmatter.postNominalLetters}
@@ -18,7 +18,7 @@ const PersonLink = ({ person, color }) => {
       )
     default:
       return (
-        <BlueLink to={`${paths.peoplePath}/${person.frontmatter.id}`}>
+        <BlueLink to={`${paths.facultyPath}/${person.frontmatter.id}`}>
           {person.frontmatter.name}
           {person.frontmatter.postNominalLetters !== "" &&
             ", " + person.frontmatter.postNominalLetters}
@@ -27,8 +27,8 @@ const PersonLink = ({ person, color }) => {
   }
 }
 
-PersonLink.defaultProps = {
+FacultyLink.defaultProps = {
   color: "blue",
 }
 
-export default PersonLink
+export default FacultyLink

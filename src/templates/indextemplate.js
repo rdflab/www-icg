@@ -90,7 +90,10 @@ const IndexTemplate = ({ path, pageContext }) => {
 
     if (calEvent.start >= now) {
       calEvents.push(
-        <Column key={i}>
+        <Column
+          className="pb-4 mb-4 border-b border-solid border-white"
+          key={i}
+        >
           <Column className="w-2/10 mr-4">
             <CalEventDate event={calEvent} color="white" />
           </Column>
