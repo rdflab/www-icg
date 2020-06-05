@@ -11,7 +11,7 @@ const useCurrentBuild = () => {
     `
   )
 
-  return currentBuildDate.currentDate
+  return currentBuildDate
 }
 
 export default useCurrentBuild

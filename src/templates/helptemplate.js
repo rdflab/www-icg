@@ -12,7 +12,7 @@ import useCurrentBuild from "../hooks/currentbuild"
 
 const HelpTemplate = ({ path, pageContext, data }) => {
   const { title } = useSiteMetadata()
-  const { currentBuild } = useCurrentBuild()
+  const { currentDate } = useCurrentBuild()
 
   const year = new Date().getFullYear()
 
@@ -35,7 +35,7 @@ const HelpTemplate = ({ path, pageContext, data }) => {
         <Container>
           <div className="bg-white rounded-md shadow-lg hover:shadow-xl trans-ani p-12 md:w-1/2">
             {/* <p>Institute for Cancer Genetics website</p> */}
-            <p>Last updated: {currentBuild}</p>
+            <p>Last updated: {currentDate}</p>
             <p className="mt-4">
               Proudly developed by{" "}
               <BlueLinkExt to="mailto:antony@antonyholmes.com">
