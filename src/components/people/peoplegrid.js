@@ -4,6 +4,11 @@ import PersonLink from "./personlink"
 import Column from "../column"
 import FullDiv from "../fulldiv"
 import FacultyLink from "../faculty/facultylink"
+import genericsvg from "../../assets/svg/generic.svg"
+import { useStaticQuery, graphql } from "gatsby"
+import useImageMap from "../../hooks/imagemap"
+import Img from "gatsby-image"
+import DropShadowFrame from "../images/dropshadowframe"
 
 // const PersonCard = ({ person, smallView }) => (
 //   <div
@@ -62,7 +67,7 @@ import FacultyLink from "../faculty/facultylink"
 //   </div>
 // )
 
-const PersonCard = ({ person, smallView }) => {
+const PersonCard = ({ person, img, smallView }) => {
   let link
 
   if (person.frontmatter.group === "Faculty") {
@@ -76,6 +81,7 @@ const PersonCard = ({ person, smallView }) => {
       className={`w-full trans-ani mb-4 overflow-hidden py-4 text-black border-t-4 border-solid border-transparent  hover:border-columbia-secondary-blue`}
     >
       <div>
+        {img !== null && <div className="bg-white mb-6">{img}</div>}
         <h4>{link}</h4>
         <h5>{person.frontmatter.title}</h5>
       </div>
@@ -96,7 +102,35 @@ const PeopleGrid = ({
   smallView,
   faculty,
   headingColor,
+  showPhoto,
 }) => {
+  const data = useStaticQuery(graphql`
+    query {
+      files: allFile(filter: { absolutePath: { regex: "/images/people/" } }) {
+        edges {
+          node {
+            name
+            ext
+            relativePath
+            childImageSharp {
+              fluid(maxWidth: 500) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const imageMap = useImageMap(data)
+
+  const genericimg = (
+    <DropShadowFrame>
+      <img src={genericsvg} className="w-full" alt="Photo" />
+    </DropShadowFrame>
+  )
+
   const rows = Math.floor(people.length / cols) + 1
 
   const ret = []
@@ -104,6 +138,7 @@ const PeopleGrid = ({
   let pc = 0
   let index = 0
   let person = null
+  let img = null
   let found = false
 
   for (let r = 0; r < rows; ++r) {
@@ -111,9 +146,25 @@ const PeopleGrid = ({
 
     for (let c = 0; c < cols; ++c) {
       person = null
+      img = null
 
       if (pc < people.length) {
         person = people[pc++]
+
+        if (showPhoto) {
+          if (person.frontmatter.id in imageMap) {
+            img = (
+              <DropShadowFrame>
+                <Img
+                  fluid={imageMap[person.frontmatter.id].childImageSharp.fluid}
+                  className="w-full h-full"
+                />
+              </DropShadowFrame>
+            )
+          } else {
+            img = genericimg
+          }
+        }
 
         if (
           faculty !== null &&
@@ -131,7 +182,7 @@ const PeopleGrid = ({
       col.push(
         <Column className={`md:${colWidth}`} key={index}>
           {person !== null && (
-            <PersonCard person={person} smallView={smallView} />
+            <PersonCard person={person} img={img} smallView={smallView} />
           )}
         </Column>
       )
@@ -173,6 +224,7 @@ PeopleGrid.defaultProps = {
   colWidth: "w-3/10",
   smallView: false,
   faculty: null,
+  showPhoto: false,
   headingColor: "text-columbia-secondary-blue",
 }
 

@@ -65,15 +65,25 @@ const AdminStaffTemplate = ({ path, pageContext }) => {
       <div className="py-8">
         <Container>
           <ShowSmall size="lg">
-            <PeopleGroups groupMap={adminGroupMap} cols={2} colWidth="w-9/20" />
+            <PeopleGroups
+              groupMap={adminGroupMap}
+              cols={2}
+              showPhoto={true}
+              colWidth="w-9/20"
+            />
           </ShowSmall>
 
           <ShowBetween s1="lg" s2="xl">
-            <PeopleGroups groupMap={adminGroupMap} cols={3} colWidth="w-3/10" />
+            <PeopleGroups
+              groupMap={adminGroupMap}
+              cols={3}
+              showPhoto={true}
+              colWidth="w-3/10"
+            />
           </ShowBetween>
 
           <HideSmall size="xl">
-            <PeopleGroups groupMap={adminGroupMap} />
+            <PeopleGroups groupMap={adminGroupMap} showPhoto={true} />
           </HideSmall>
         </Container>
       </div>

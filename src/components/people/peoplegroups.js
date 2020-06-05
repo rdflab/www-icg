@@ -9,6 +9,7 @@ const PeopleGroups = ({
   smallView,
   faculty,
   headingColor,
+  showPhoto,
 }) => {
   const ret = []
 
@@ -27,6 +28,7 @@ const PeopleGroups = ({
               colWidth={colWidth}
               smallView={smallView}
               headingColor={headingColor}
+              showPhoto={showPhoto}
             />
           </div>
         )
@@ -39,6 +41,7 @@ const PeopleGroups = ({
 
 PeopleGroups.defaultProps = {
   faculty: null,
+  showPhoto: false,
   smallView: false,
   cols: 4,
   colWidth: "w-11/50",

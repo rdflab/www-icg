@@ -14,7 +14,7 @@ import ShowSmall from "../components/showsmall"
 import HideSmall from "../components/hidesmall"
 import ShowBetween from "../components/showbetween"
 import BackgroundImage from "gatsby-background-image"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import FacultyHeader from "../components/faculty/facultyheader"
 import Column from "../components/column"
 import FullDiv from "../components/fulldiv"
@@ -23,13 +23,28 @@ import pubmedsvg from "../assets/svg/pubmed.svg"
 import ExtLink from "../components/links/extlink"
 import BlueLinkExt from "../components/links/bluelinkext"
 import SmallContainer from "../components/smallcontainer"
+import DropShadowFrame from "../components/images/dropshadowframe"
+import useSiteMetadata from "../hooks/sitemetadata"
+import Button from "../components/button"
 
 const PubMedLink = ({ person }) => (
-  <div className="uppercase">
-    <ExtLink to={person.frontmatter.pubmed}>
-      <img src={pubmedsvg} className="inline align-middle w-32" />
-    </ExtLink>
-  </div>
+  // <div className="uppercase">
+  //   <ExtLink to={person.frontmatter.pubmed}>
+  //     <img src={pubmedsvg} className="inline align-middle w-32" />
+  //   </ExtLink>
+  // </div>
+
+  <Column isVCentered={true}>
+    <Column className="uppercase mr-4 md:w-32">See more on</Column>
+    <Column>
+      <ExtLink
+        to={person.frontmatter.pubmed}
+        className="opacity-70 hover:opacity-100 trans-ani"
+      >
+        <img src={pubmedsvg} className="w-32" />
+      </ExtLink>
+    </Column>
+  </Column>
 )
 
 const AwardsGrid = ({ cv, cols, colWidth, headingColor }) => {
@@ -236,12 +251,12 @@ const About = ({ person, headshotFile, markdown }) => {
       <Column>
         <Column className="mr-8">
           {headshotFile !== null && (
-            <div className="w-48 h-48 shadow-lg hover:shadow-xl trans-ani overflow-hidden rounded-lg">
+            <DropShadowFrame className="w-48 h-48 rounded-lg">
               <Img
                 fluid={headshotFile.childImageSharp.fluid}
                 className="w-full h-full"
               />
-            </div>
+            </DropShadowFrame>
           )}
         </Column>
         <Column>
@@ -287,18 +302,18 @@ const FacultyTemplate = ({ path, pageContext, data }) => {
     labNews,
   } = pageContext
 
-  console.log(appointments)
+  const { paths } = useSiteMetadata()
 
   let headshotImage = null
 
   if (data.file !== null) {
     headshotImage = (
-      <div className="w-96 block bg-white shadow-lg hover:shadow-xl trans-ani overflow-hidden rounded-lg">
+      <DropShadowFrame className="w-96 rounded-lg">
         <Img
           fluid={data.file.childImageSharp.fluid}
           className="w-full h-full"
         />
-      </div>
+      </DropShadowFrame>
     )
   }
 
@@ -388,10 +403,14 @@ const FacultyTemplate = ({ path, pageContext, data }) => {
           </Container>
         )}
         <Container>
-          <Column>
-            <Column className="w-1/10 mr-8"></Column>
+          <Column className="items-center justify-between">
+            <PubMedLink person={person} />
             <Column>
-              <PubMedLink person={person} />
+              <Button
+                to={`${paths.facultyPath}/${person.frontmatter.id}/publications`}
+              >
+                More Publications
+              </Button>
             </Column>
           </Column>
         </Container>

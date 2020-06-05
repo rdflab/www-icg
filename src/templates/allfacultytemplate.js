@@ -3,13 +3,14 @@ import CrumbTitleLayout from "../components/crumbtitlelayout"
 import SiteSearch from "../components/search/sitesearch"
 import Column from "../components/column"
 import { Link, graphql } from "gatsby"
-import generic from "../assets/svg/generic.svg"
+import genericsvg from "../assets/svg/generic.svg"
 import Container from "../components/container"
 import ShowSmall from "../components/showsmall"
 import HideSmall from "../components/hidesmall"
 import useSiteMetadata from "../hooks/sitemetadata"
 import Img from "gatsby-image"
 import ShowBetween from "../components/showbetween"
+import useImageMap from "../hooks/imagemap"
 
 const EMPTY_QUERY = ""
 
@@ -36,7 +37,9 @@ const Faculty = ({ person, labId, imageMap }) => {
       />
     )
   } else {
-    img = <img src={generic} className="w-full" alt={person.frontmatter.name} />
+    img = (
+      <img src={genericsvg} className="w-full" alt={person.frontmatter.name} />
+    )
   }
 
   return (
@@ -162,15 +165,7 @@ const AllFacultyTemplate = ({ path, pageContext, data }) => {
   const [page, setPage] = useState(1)
   const [recordsPerPage, setRecordsPerPage] = useState(20)
 
-  const imageMap = {}
-
-  for (let { node } of data.files.edges) {
-    const file = node
-
-    if (file.ext === ".jpg") {
-      imageMap[file.name] = file
-    }
-  }
+  const imageMap = useImageMap(data)
 
   // const handleInputChange = e => {
   //   const q = e.target.value.toLowerCase()
