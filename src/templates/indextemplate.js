@@ -3,7 +3,7 @@ import CrumbLayout from "../components/crumblayout"
 // import NYCBgSection from "../components/images/nycbg"
 import Container from "../components/container"
 import Column from "../components/column"
-
+import { graphql, Link } from "gatsby"
 import BlueIndexLink from "../components/links/blueindexlink"
 import TextIndexLink from "../components/links/textindexlink"
 import WhiteIndexLink from "../components/links/whiteindexlink"
@@ -17,6 +17,8 @@ import Benchwork from "../components/images/benchwork"
 import PublicationList from "../components/publication/publicationlist"
 import Button from "../components/button"
 import useSiteMetadata from "../hooks/sitemetadata"
+import DropShadowFrame from "../components/images/dropshadowframe"
+import Img from "gatsby-image"
 
 const HomeSection = ({ title, subTitle, text, links, alt }) => {
   return (
@@ -66,7 +68,7 @@ HomeTitle.defaultProps = {
   className: "",
 }
 
-const IndexTemplate = ({ path, pageContext }) => {
+const IndexTemplate = ({ path, pageContext, data }) => {
   const {
     director,
     allCalEvents,
@@ -153,10 +155,13 @@ const IndexTemplate = ({ path, pageContext }) => {
       <HomeDiv className="bg-blue-600 text-white">
         <Column>
           <Column w={6} className="items-center justify-center">
-            <div className="w-1/3 mb-8">
-              <div className="bg-white shadow-md rounded">
-                <img src={generic} className="w-full" alt="Person" />
-              </div>
+            <div className="mb-8">
+              <DropShadowFrame className="w-48 h-48 rounded">
+                <Img
+                  fluid={data.file.childImageSharp.fluid}
+                  className="w-full hfull"
+                />
+              </DropShadowFrame>
               <div className="font-semibold mt-4">
                 <WhiteLink
                   to={`${paths.facultyPath}/${director.frontmatter.id}`}
@@ -274,3 +279,19 @@ const IndexTemplate = ({ path, pageContext }) => {
 }
 
 export default IndexTemplate
+
+export const query = graphql`
+  query {
+    file(
+      absolutePath: { regex: "/images/people/" }
+      name: { eq: "riccardo-dalla-favera" }
+    ) {
+      relativePath
+      childImageSharp {
+        fluid(maxWidth: 500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`
