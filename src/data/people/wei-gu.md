@@ -12,6 +12,7 @@ room: "609A"
 lab: "wei-gu"
 group: "Faculty"
 researchAreas: []
+pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Gu+W%5BAuthor%5D"
 url: []
 tags: []
 ---

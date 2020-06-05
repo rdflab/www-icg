@@ -12,6 +12,7 @@ room: "402B"
 lab: "swarnali-acharyya"
 group: "Faculty"
 researchAreas: []
+pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Acharyya+S%5BAuthor%5D"
 url: []
 tags: []
 ---

@@ -6,10 +6,13 @@
  */
 
 import React from "react"
-import Button from "../../components/button"
+//import Button from "../../components/button"
 import PublicationYears from "./publicationyears"
+import useSiteMetadata from "../../hooks/sitemetadata"
 
-const RecentPublications = ({ lab, publications, top, className }) => {
+const RecentPublications = ({ publications, top, className }) => {
+  const { paths } = useSiteMetadata()
+
   // const createPublications = publications => {
   //   let ret = []
 
@@ -26,13 +29,12 @@ const RecentPublications = ({ lab, publications, top, className }) => {
       {/* <h2>Recent Publications</h2> */}
       <div className="mt-4">
         <PublicationYears publications={publications.slice(0, top)} />
-        {/* {createPublications(publications)} */}
       </div>
-      <div className="text-center">
-        <Button to={`/research-areas/labs/${lab.id}/publications`}>
+      {/* <div className="text-center">
+        <Button to={`${paths.labsPath}/${lab.id}/publications`}>
           More Publications
         </Button>
-      </div>
+      </div> */}
     </div>
   )
 }

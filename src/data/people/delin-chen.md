@@ -12,6 +12,7 @@ room: "608"
 lab: "wei-gu"
 group: "Research Staff"
 researchAreas: []
+pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Chen+D%5BAuthor%5D"
 url: []
 tags: []
 ---

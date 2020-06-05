@@ -12,6 +12,7 @@ room: "401B"
 lab: "adolfo-ferrando"
 group: "Graduate Students"
 researchAreas: []
+pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Bertulfo+C%5BAuthor%5D"
 url: []
 tags: []
 ---

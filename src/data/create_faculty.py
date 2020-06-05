@@ -176,6 +176,8 @@ for i in range(13, df.shape[0]):
     print('group: "{}"'.format(t), file=f)
     print('researchAreas: []', file=f)
     
+    print('pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term={}+{}%5BAuthor%5D"'.format(lastName, firstName[0]), file=f)
+    
     
     if (len(url) > 0):
         print('url: ["{}", "{}"]'.format(url[0], url[1]), file=f)

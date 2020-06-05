@@ -68,7 +68,7 @@ const PersonCard = ({ person, smallView }) => {
   if (person.frontmatter.group === "Faculty") {
     link = <FacultyLink person={person} />
   } else {
-    link = <PersonLink person={person} />
+    link = person.frontmatter.name //<PersonLink person={person} />
   }
 
   return (

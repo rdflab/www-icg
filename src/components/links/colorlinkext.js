@@ -8,7 +8,7 @@ const ColorLinkExt = ({ to, children, target, color }) => (
 )
 
 ColorLinkExt.defaultProps = {
-  target: "",
+  target: "_blank",
   color: "black",
 }
 

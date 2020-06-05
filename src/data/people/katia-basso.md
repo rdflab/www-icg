@@ -12,6 +12,7 @@ room: "506"
 lab: "riccardo-dalla-favera"
 group: "Faculty"
 researchAreas: []
-url: []
+pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Basso+K%5BAuthor%5D"
+url: ["Lab Web Site", "http://www.rdf-lab.org"]
 tags: []
 ---

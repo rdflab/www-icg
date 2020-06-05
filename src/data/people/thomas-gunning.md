@@ -12,6 +12,7 @@ room: "401 B"
 lab: "adolfo-ferrando"
 group: "Research Staff"
 researchAreas: []
+pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Gunning+T%5BAuthor%5D"
 url: []
 tags: []
 ---

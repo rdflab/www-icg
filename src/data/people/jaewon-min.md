@@ -12,6 +12,7 @@ room: "602"
 lab: "jean-gautier"
 group: "Faculty"
 researchAreas: []
+pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Min+J%5BAuthor%5D"
 url: []
 tags: []
 ---

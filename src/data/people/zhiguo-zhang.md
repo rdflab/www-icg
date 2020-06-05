@@ -12,6 +12,7 @@ room: "406"
 lab: "zhiguo-zhang"
 group: "Faculty"
 researchAreas: []
+pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Zhang+Z%5BAuthor%5D"
 url: []
 tags: []
 ---

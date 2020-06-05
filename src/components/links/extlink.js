@@ -7,7 +7,7 @@ const ExtLink = ({ to, children, target, className }) => (
 )
 
 ExtLink.defaultProps = {
-  target: "",
+  target: "_blank",
   className: "",
 }
 

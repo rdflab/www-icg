@@ -12,6 +12,7 @@ room: "401B"
 lab: "adolfo-ferrando"
 group: "Research Staff"
 researchAreas: []
+pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Biswas+M%5BAuthor%5D"
 url: []
 tags: []
 ---

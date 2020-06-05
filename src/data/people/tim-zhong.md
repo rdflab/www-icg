@@ -12,6 +12,7 @@ room: "401A"
 lab: "swarnali-acharyya"
 group: "Graduate Students"
 researchAreas: []
+pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Zhong+T%5BAuthor%5D"
 url: []
 tags: []
 ---

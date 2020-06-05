@@ -12,6 +12,7 @@ room: "608"
 lab: "wei-gu"
 group: "Research Staff"
 researchAreas: []
+pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Su+Z%5BAuthor%5D"
 url: []
 tags: []
 ---

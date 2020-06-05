@@ -12,6 +12,7 @@ room: "407"
 lab: "zhiguo-zhang"
 group: "Research Staff"
 researchAreas: []
+pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Mo+Y%5BAuthor%5D"
 url: []
 tags: []
 ---

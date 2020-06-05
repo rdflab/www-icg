@@ -12,6 +12,7 @@ room: " 507B"
 lab: "riccardo-dalla-favera"
 group: "Faculty"
 researchAreas: []
+pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Pasqualucci+L%5BAuthor%5D"
 url: []
 tags: []
 ---

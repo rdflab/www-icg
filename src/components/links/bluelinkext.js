@@ -8,7 +8,7 @@ const BlueLinkExt = ({ to, children, target }) => (
 )
 
 BlueLinkExt.defaultProps = {
-  target: "",
+  target: "_blank",
 }
 
 export default BlueLinkExt

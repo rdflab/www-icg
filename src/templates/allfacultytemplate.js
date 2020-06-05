@@ -51,7 +51,7 @@ const Faculty = ({ person, labId, imageMap }) => {
           <h4 className="text-columbia-secondary-blue">
             {person.frontmatter.name}, {person.frontmatter.postNominalLetters}
           </h4>
-          <h5>{person.frontmatter.title}</h5>
+          {/* <h5>{person.frontmatter.title}</h5> */}
         </div>
       </Link>
     </div>

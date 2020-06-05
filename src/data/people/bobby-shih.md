@@ -12,6 +12,7 @@ room: "401B"
 lab: "adolfo-ferrando"
 group: "Graduate Students"
 researchAreas: []
+pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Shih+B%5BAuthor%5D"
 url: []
 tags: []
 ---

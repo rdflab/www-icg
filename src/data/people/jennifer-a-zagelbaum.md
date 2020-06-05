@@ -12,6 +12,7 @@ room: "602"
 lab: "jean-gautier"
 group: "Graduate Students"
 researchAreas: []
+pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Zagelbaum+J%5BAuthor%5D"
 url: []
 tags: []
 ---

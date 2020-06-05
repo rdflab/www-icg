@@ -12,6 +12,7 @@ room: "507"
 lab: "riccardo-dalla-favera"
 group: "Research Staff"
 researchAreas: []
+pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Mo+T%5BAuthor%5D"
 url: []
 tags: []
 ---

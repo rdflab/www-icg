@@ -13,7 +13,7 @@ NAME	TITLE	PHONE	FAX	E-MAIL	Office/Lab#
 "Srinivasan, Seetha, PhD"	Variable Hours Coordinator	cell: 513-293-0857		svs2113		
 "Szalasny, Russell"	Administrative Aid (cell: 347-444-6909)	851-5272	851-5267	rs2426	407	
 						
-"Dalla-Favera, Riccardo, MD"	"Prof of Pathology & Cell Biology, Gen & Dev, M& I"	851-5273 	851-5256	rd10@columbia.edu	508A	
+"Dalla-Favera, Riccardo, MD"	"Prof of Pathology & Cell Biology, Genetics & Development, Microbiology & Immunology"	851-5273 	851-5256	rd10@columbia.edu	508A	
 "Pasqualucci, Laura, MD"	Professor of Pathology and Cell Biology	851-5248		lp171	 507B	
 "Bal, Elodie, PhD"	Postdoctoral Research Scientist	851-5270		eb3151	507	
 "Basso, Katia PhD"	Associate Professor of Pathology & Cell Biology	851-4786		kb451	506	
@@ -40,7 +40,7 @@ NAME	TITLE	PHONE	FAX	E-MAIL	Office/Lab#
 "Hegde, Rohaan"	Tech B	851-4793		rh2862	401A	
 "Ma, Wanchao"	Sr Staff Associate 	851-4791		wm49	401A	
 "Shakri, Ahmad Rushdi, PhD"	Postdoctoral Research Scientist	851-4792		as5797	401A	
-"Zhong, Tim"	GRA	851-4792		tjz2104	401A	
+"Zhong, Tim"	Graduate Student	851-4792		tjz2104	401A	
 						
 "Baer, Richard, PhD"	 Professor of Pathology & Cell Biology (in ICG)	851-5275 	851-5220	rb670@columbia.edu	503A	
 "Wong, Madeline"	Tech B	851-5266		mw3335	502	
@@ -49,14 +49,14 @@ NAME	TITLE	PHONE	FAX	E-MAIL	Office/Lab#
 "Chio, Christine, PhD"	Assistant Professor of Genetics & Development (in ICG)	851-4967	851-5256	ic2445@columbia.edu	505A	
 "Ayres Pereira, Marina, PhD"	Postdoctoral Research Scientist	851-4966		mma2246	505	
 "Chan, Karina"	Tech B	851-4966		kmc2228	505	
-"Ke, Xiangyi (Sherry)"	GRA	851-4966		xk2138	505	
+"Ke, Xiangyi (Sherry)"	Graduate Student	851-4966		xk2138	505	
 "Sundberg, Belen"	Tech B	851-4966		bs3281	505	
 						
 "Ferrando, Adolfo, MD, PhD"	Professor of Pediatric & Pathology & Cell Biology (in ICG)	851-4611		af2196@columbia.edu	402A	
 "Albero, Robert, PhD"	Postdoctoral Research Scientist 	851-5292		ra2967	401B	
 "Alvarez Nanez, Silvia, PhD"	Postdoctoral Research Scientist 	851-5292		sa3358	401B	
 "Belver-Miguel, Laura, PhD"	Associate Research Scientist	851-5292		lb2878	401B	
-"Bertulfo, Caral"	GRA	851-5292		mtb2162	401B	
+"Bertulfo, Caral"	Graduate Student	851-5292		mtb2162	401B	
 "Biswas, Mayukh"	Staff Associate	851-5292		mb4707	401B	
 "Brown, Jessie A, PhD"	Postdoctoral Research Fellow	851-5292		jab2451	401B	
 "Cooke, Anisha"	Tech B	851-5292		ac4268	401B	
@@ -69,20 +69,20 @@ NAME	TITLE	PHONE	FAX	E-MAIL	Office/Lab#
 "Morgado-Palacin, Lucia, PhD"	Postdoctoral Research Fellow	851-5292		lm3230	401B	
 "Palomero, Teresa PhD"	Associate Prof of Pathology and Cell Biology (in ICG)	851-4778		tp2151	404	
 "Perez-Duran, Pablo, PhD"	Postdoctoral Research Scientist	851-5292		pp2569	401B	
-"Quinn, Stuart Aidan"	GRA	851-5292		saq2106	401B	
+"Quinn, Stuart Aidan"	Graduate Student	851-5292		saq2106	401B	
 "Rashkovan, Marissa, PhD"	Postdoctoral Research Fellow	851-5292		mr3694	401B	
 "Reglero Gomez, Clara, PhD"	Postdoctoral Research Scientist	851-5292		cr3023	401B	
 "Rodriguez-Cortes, Jose, PhD"	Associate Research Scientist	851-5292		jr3434	401B	
-"Shih, Bobby"	GRA	851-5292		bbs2136	401B	
+"Shih, Bobby"	Graduate Student	851-5292		bbs2136	401B	
 "Wendorff, Agnieszka, PhD"	Associate Research Scientist	851-5292		aw2785	401B	
 						
 "Gautier, Jean, PhD"	Professor of Genetic & Development (in ICG)	851-4564		jg130@columbia.edu	"603A, 602,613"	
 "Aparicio, Tomas, PhD"	Associate Research Scientist	851-4566/67/68		ta2308	602	
-"Liebau, Andrew"	GRA	851-4566/67/68		awl2142	602	
+"Liebau, Andrew"	Graduate Student	851-4566/67/68		awl2142	602	
 "Min, Jaewon, PhD"	Assistant Professor 	851-4566/67/68		jm5092	602	1/1/2020
 "Reyes, Jorge"	Tech B	851-4566/67/68		jr4034	602	
 "Sidhu, Gaganpreet, PhD"	Associate Research Scientist	851-4566/67/68		gs2732	602	
-"Zagelbaum, Jennifer A."	GRA	851-4566/67/68		jaz2131	602	
+"Zagelbaum, Jennifer A."	Graduate Student	851-4566/67/68		jaz2131	602	
 						
 "Gu, Wei, PhD"	Professor of Pathology & Cell Biology (in ICG)	851-5282 	851-5284	wg8@columbia.edu	609A	
 "Chen, Delin, PhD"	Associate Research Scientist	851-5285		dc723	608	
@@ -95,8 +95,8 @@ NAME	TITLE	PHONE	FAX	E-MAIL	Office/Lab#
 "Yang, Xin, PhD"	Postdoctoral Research Scientist	851-5285		xy2448	608	
 "Yi, Jingjie, PhD"	Postdoctoral Research Scientist	851-5285		jy2652	608	
 						
-"Iavarone, Antonio, MD"	Professor of Neurology & Pathology & Cell Bio (in ICG)	851-5245	851-5267	ai2102@columbia.edu	407B	
-"Lasorella, Anna, MD"	Assoc Professor of Pediatrics & Pathology&Cell Bio (in ICG)	851-5240	851-5267	al2179@columbia.edu	405	
+"Iavarone, Antonio, MD"	Professor of Neurology & Pathology & Cell Biology (in ICG)	851-5245	851-5267	ai2102@columbia.edu	407B	
+"Lasorella, Anna, MD"	Assoc Professor of Pediatrics & Pathology & Cell Biology (in ICG)	851-5240	851-5267	al2179@columbia.edu	405	
 "D'Angelo, Fulvio, PhD"	Postdoctoral Research Scientist	851-5287		fd2396	403	
 "Das, Soumyadip"	Staff Associate					
 "Frangaj, Brulinda"	Tech B	851-5287		bf2456	403	
@@ -109,17 +109,17 @@ NAME	TITLE	PHONE	FAX	E-MAIL	Office/Lab#
 "Oh, Michael, PhD"	Postdoctoral Research Scientist	851-5287		mo2777	403	
 "Wang, Di, PhD"	Postdoctoral Research Scientist	851-5287		dw2919	403	
 						
-"Zha, Shan, MD, PhD"	Assoc Prof of Pediatrics & Pathology & Cell Bio (ICG & HICCC)	851-4779		SZ2296@columbia.edu	503B	
+"Zha, Shan, MD, PhD"	Associate Professor of Pediatrics & Pathology & Cell Biology (ICG & HICCC)	851-4779		SZ2296@columbia.edu	503B	
 "Cupo, Olivia"	Tech B	851-4785		oc2298	501	
 "Lee, Brian"	Sr Tech B	851-4785		bl2530	501	
 "Lin, Xiaohui, PhD"	Postdoctoral Research Scientist	851-4785		xl2866	501	
 "Menolfi, Demis, PhD "	Postdoctoral Research Fellow 	851-4785		dm3231	501	
 "Milanovic, Maja, PhD"	Postdoctoral Research Scientist	851-4785		mm4619	501	
 "Shao, Zhengping, MD, PhD"	Postdoctoral Research Scientist	851-4785		zs2275	501	
-"Wang, Xiobin (Summer)"	GRA	851-4785		xw2394	501	
+"Wang, Xiobin (Summer)"	Graduate Student	851-4785		xw2394	501	
 "Zhu, Yimeng, PhD"	Postdoctoral Research Scientist	851-4785		yz3537	501	
 						
-"Zhang, Zhiguo, PhD"	"Prof of Epigenomics & Molecular Biology (in Ped, G & D,  ICG)"	851-4936		zz2401@columbia.edu	406	
+"Zhang, Zhiguo, PhD"	"Professor of Epigenomics & Molecular Biology (in Ped, G & D,  ICG)"	851-4936		zz2401@columbia.edu	406	
 "Cheng, Liang, PhD"	Postdoctoral Research Scientist 	851-4937		lc3420	407	
 "Duan, Shoufu, PhD"	Postdoctoral Research Scientist 	851-4937		sd3379	407	
 "Hua, Xu, PhD"	Postdoctoral Research Scientist 	851-4937		xh2387	407	

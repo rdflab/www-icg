@@ -225,6 +225,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               room
               lab
               group
+              pubmed
               researchAreas
               tags
               url
@@ -336,6 +337,19 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         }
       }
 
+      appointments: allAppointmentsJson {
+        edges {
+          node {
+            id
+            appointments {
+              institute
+              title
+              url
+            }
+          }
+        }
+      }
+
       researchAreas: allResearchAreasJson {
         edges {
           node {
@@ -438,6 +452,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const cvMap = {}
   result.data.cv.edges.forEach(({ node }) => {
     cvMap[node.id] = node
+  })
+
+  const appointmentsMap = {}
+  result.data.appointments.edges.forEach(({ node }) => {
+    appointmentsMap[node.id] = node
   })
 
   const allLabs = []
@@ -631,7 +650,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       const person = peopleMap[personId]
       const lab = labMap[person.frontmatter.lab]
 
-      const labPublications = lab.id in labPubMap ? labPubMap[lab.id] : []
+      const facultyPublications =
+        personId in personPubMap ? personPubMap[personId] : []
 
       const labPeople = lab.people.map((pid) => peopleMap[pid])
       const labGroupMap = toGroupMap(labPeople)
@@ -640,14 +660,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         item.frontmatter.labs.includes(lab.id)
       )
 
-      let html = ""
-      let excerptHtml = ""
+      // let html = ""
+      // let excerptHtml = ""
 
-      if (personId in facultyMarkdownMap) {
-        const markdown = facultyMarkdownMap[personId]
-        html = markdown.html
-        excerptHtml = markdown.excerpt
-      }
+      // if (personId in facultyMarkdownMap) {
+      //   const markdown = facultyMarkdownMap[personId]
+      //   html = markdown.html
+      //   excerptHtml = markdown.excerpt
+      // }
 
       createPage({
         path: path,
@@ -656,16 +676,38 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           id: personId,
           person: person,
           cv: personId in cvMap ? cvMap[personId] : null,
+          appointments:
+            personId in appointmentsMap ? appointmentsMap[personId] : null,
           lab: lab,
           crumbs: [
             ["Faculty", paths.facultyPath],
             [person.frontmatter.name, path],
           ],
           labGroupMap: labGroupMap,
-          labPublications: labPublications,
+          publications: facultyPublications,
           labNews: labNews,
-          html: html,
-          excerptHtml: excerptHtml,
+        },
+      })
+
+      //
+      // Lab publications
+      //
+      const pubPath = `${path}/publications`
+      createPage({
+        path: pubPath,
+        component: publicationsTemplate,
+        context: {
+          title: `${person.frontmatter.name} Publications`,
+          crumbs: [
+            ["Faculty", paths.facultyPath],
+            [person.frontmatter.name, path],
+            ["Publications", pubPath],
+          ],
+          selectedTab: "",
+          allPublications: facultyPublications,
+          showSearch: false,
+          showYears: true,
+          showLabLink: false,
         },
       })
     }

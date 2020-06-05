@@ -12,6 +12,7 @@ room: "404"
 lab: "adolfo-ferrando"
 group: "Faculty"
 researchAreas: []
+pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Palomero+T%5BAuthor%5D"
 url: []
 tags: []
 ---

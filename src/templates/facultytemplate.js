@@ -4,10 +4,9 @@ import CrumbTitleLayout from "../components/crumbtitlelayout"
 
 import RecentPublications from "../components/publication/recentpublications"
 //import SideBar from "../components/sidebar/sidebar"
-import SideBarNews from "../components/news/sidebarnews"
+//import SideBarNews from "../components/news/sidebarnews"
 import HTMLDiv from "../components/htmldiv"
 import SiteSearch from "../components/search/sitesearch"
-import H1 from "../components/headings/h1"
 import Container from "../components/container"
 import PeopleGroups from "../components/people/peoplegroups"
 import Img from "gatsby-image"
@@ -16,11 +15,22 @@ import HideSmall from "../components/hidesmall"
 import ShowBetween from "../components/showbetween"
 import BackgroundImage from "gatsby-background-image"
 import { graphql } from "gatsby"
-import styled from "styled-components"
 import FacultyHeader from "../components/faculty/facultyheader"
 import Column from "../components/column"
 import FullDiv from "../components/fulldiv"
 import BlueLink from "../components/links/bluelink"
+import pubmedsvg from "../assets/svg/pubmed.svg"
+import ExtLink from "../components/links/extlink"
+import BlueLinkExt from "../components/links/bluelinkext"
+import SmallContainer from "../components/smallcontainer"
+
+const PubMedLink = ({ person }) => (
+  <div className="uppercase">
+    <ExtLink to={person.frontmatter.pubmed}>
+      <img src={pubmedsvg} className="inline align-middle w-32" />
+    </ExtLink>
+  </div>
+)
 
 const AwardsGrid = ({ cv, cols, colWidth, headingColor }) => {
   const rows = Math.floor(cv.awards.length / cols) + 1
@@ -79,6 +89,67 @@ AwardsGrid.defaultProps = {
   headingColor: "text-columbia-secondary-blue",
 }
 
+const AppointmentsGrid = ({ appointments, cols, colWidth, headingColor }) => {
+  const rows = Math.floor(appointments.length / cols) + 1
+
+  const ret = []
+
+  let pc = 0
+  let index = 0
+  let appointment = null
+  let found = false
+
+  for (let r = 0; r < rows; ++r) {
+    const col = []
+
+    for (let c = 0; c < cols; ++c) {
+      appointment = null
+
+      if (pc < appointments.length) {
+        appointment = appointments[pc++]
+        found = true
+      }
+
+      col.push(
+        <Column className={`md:${colWidth}`} key={index}>
+          {appointment !== null && (
+            <div className="mb-4">
+              <h4>
+                <BlueLinkExt to={appointment.url}>
+                  {appointment.institute}
+                </BlueLinkExt>
+              </h4>
+              <h5 className="text-gray-600">{appointment.title}</h5>
+            </div>
+          )}
+        </Column>
+      )
+
+      ++index
+    }
+
+    if (col.length > 0) {
+      ret.push(
+        <Column className="justify-between" key={r}>
+          {col}
+        </Column>
+      )
+    }
+
+    if (pc === appointments.length) {
+      break
+    }
+  }
+
+  return <div>{ret}</div>
+}
+
+AppointmentsGrid.defaultProps = {
+  cols: 2,
+  colWidth: "w-9/20",
+  headingColor: "text-columbia-secondary-blue",
+}
+
 const BackgroundSection = ({ file, children }) => (
   <BackgroundImage
     fluid={file.childImageSharp.fluid}
@@ -96,13 +167,15 @@ const BackgroundSection = ({ file, children }) => (
 )
 
 const FacultyHeading = ({ children }) => (
-  <div className="uppercase mb-8 text-3xl tracking-wide text-center">
+  <h2 className="uppercase mb-8 text-center" style={{ fontWeight: "normal" }}>
     {children}
-  </div>
+  </h2>
 )
 
 const FacultyHeading2 = ({ children }) => (
-  <div className="uppercase mb-8 text-2xl tracking-wide">{children}</div>
+  <h3 className="uppercase mb-8" style={{ fontWeight: "normal" }}>
+    {children}
+  </h3>
 )
 
 const Quote = ({ text }) => (
@@ -139,19 +212,17 @@ const Abstract = ({ person, markdown }) => {
   }
 
   return (
-    <Container>
-      <div className="mx-4 lg:mx-40 my-16 text-2xl">
-        <div>{heading}</div>
-        <div className="text-gray-600">{html}</div>
-        <div className="mt-4">
-          <BlueLink to="#about">Read more</BlueLink>
-        </div>
+    <SmallContainer className="my-16 text-2xl">
+      <div>{heading}</div>
+      <div className="text-gray-600">{html}</div>
+      <div className="mt-4">
+        <BlueLink to="#about">Read more</BlueLink>
       </div>
-    </Container>
+    </SmallContainer>
   )
 }
 
-const About = ({ person, markdown }) => {
+const About = ({ person, headshotFile, markdown }) => {
   let heading = null
   let html = null
 
@@ -160,20 +231,32 @@ const About = ({ person, markdown }) => {
   }
 
   return (
-    <Container>
-      <div className="mx-4 lg:mx-40 my-16 text-2xl">
-        <div>
-          <FacultyHeading>About {person.frontmatter.name}</FacultyHeading>
-        </div>
-        <div>{html}</div>
-      </div>
-    </Container>
+    <SmallContainer className="my-16 text-2xl">
+      <FacultyHeading>About {person.frontmatter.name}</FacultyHeading>
+      <Column>
+        <Column className="mr-8">
+          {headshotFile !== null && (
+            <div className="w-48 h-48 shadow-lg hover:shadow-xl trans-ani overflow-hidden rounded-lg">
+              <Img
+                fluid={headshotFile.childImageSharp.fluid}
+                className="w-full h-full"
+              />
+            </div>
+          )}
+        </Column>
+        <Column>
+          <FullDiv>
+            <div>{html}</div>
+          </FullDiv>
+        </Column>
+      </Column>
+    </SmallContainer>
   )
 }
 
 const Team = ({ labGroupMap }) => (
   <Container>
-    <FacultyHeading2>Meet The Team</FacultyHeading2>
+    <FacultyHeading>Meet The Team</FacultyHeading>
 
     <ShowSmall size="lg">
       <PeopleGroups groupMap={labGroupMap} cols={2} colWidth="w-9/20" />
@@ -196,14 +279,15 @@ const FacultyTemplate = ({ path, pageContext, data }) => {
     id,
     person,
     cv,
+    appointments,
     lab,
     crumbs,
     labGroupMap,
-    labPublications,
+    publications,
     labNews,
-    html,
-    excerptHtml,
   } = pageContext
+
+  console.log(appointments)
 
   let headshotImage = null
 
@@ -263,14 +347,27 @@ const FacultyTemplate = ({ path, pageContext, data }) => {
 
       <Abstract person={person} markdown={data.abstractMarkdown} />
 
-      <div className="py-8 bg-columbia-light-gray">
+      <div className="py-16 bg-columbia-light-gray">
         <Team labGroupMap={labGroupMap} />
       </div>
 
+      {appointments !== null && appointments.appointments.length > 0 && (
+        <div className="py-16">
+          <SmallContainer>
+            <FacultyHeading>Appointments</FacultyHeading>
+            <AppointmentsGrid appointments={appointments.appointments} />
+          </SmallContainer>
+        </div>
+      )}
+
       <div id="about" />
 
-      <div className="py-8">
-        <About person={person} markdown={data.markdown} />
+      <div className="py-16">
+        <About
+          person={person}
+          headshotFile={data.file}
+          markdown={data.markdown}
+        />
       </div>
 
       {cv !== null && cv.awards.length > 0 && (
@@ -282,15 +379,23 @@ const FacultyTemplate = ({ path, pageContext, data }) => {
         </div>
       )}
 
-      {labPublications.length > 0 && (
-        <div className="py-8 bg-columbia-light-gray">
+      <div className="py-16 bg-columbia-light-gray">
+        {publications.length > 0 && (
           <Container>
             <FacultyHeading2>Recent Publications</FacultyHeading2>
 
-            <RecentPublications lab={lab} publications={labPublications} />
+            <RecentPublications publications={publications} />
           </Container>
-        </div>
-      )}
+        )}
+        <Container>
+          <Column>
+            <Column className="w-1/10 mr-8"></Column>
+            <Column>
+              <PubMedLink person={person} />
+            </Column>
+          </Column>
+        </Container>
+      </div>
 
       {/* {labNews.length > 0 && (
           <div className="mt-8">

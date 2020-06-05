@@ -12,6 +12,7 @@ room: "503A"
 lab: "richard-baer"
 group: "Faculty"
 researchAreas: []
+pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Baer+R%5BAuthor%5D"
 url: []
 tags: []
 ---

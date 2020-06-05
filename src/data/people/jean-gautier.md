@@ -12,6 +12,7 @@ room: "603A, 602,613"
 lab: "jean-gautier"
 group: "Faculty"
 researchAreas: []
+pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Gautier+J%5BAuthor%5D"
 url: []
 tags: []
 ---

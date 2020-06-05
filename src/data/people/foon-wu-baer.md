@@ -12,6 +12,7 @@ room: "502"
 lab: "richard-baer"
 group: "Research Staff"
 researchAreas: []
+pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Wu-Baer+F%5BAuthor%5D"
 url: []
 tags: []
 ---
