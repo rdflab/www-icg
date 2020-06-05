@@ -9,6 +9,7 @@ import Column from "../components/column"
 import Container from "../components/container"
 import useSiteMetadata from "../hooks/sitemetadata"
 import useCurrentBuild from "../hooks/currentbuild"
+import SiteSearch from "../components/search/sitesearch"
 
 const HelpTemplate = ({ path, pageContext, data }) => {
   const { title } = useSiteMetadata()
@@ -30,6 +31,7 @@ const HelpTemplate = ({ path, pageContext, data }) => {
       nav="Help"
       title={`About ${title} Web Site`}
       crumbs={[["Help", "/help"]]}
+      headerComponent={<SiteSearch />}
     >
       <div className="bg-columbia-light-gray py-16 min-h-full">
         <Container>

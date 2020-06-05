@@ -1,10 +1,15 @@
 import React from "react"
 import Container from "../components/container"
 import CrumbTitleLayout from "../components/crumbtitlelayout"
-import H from "../components/headings/h"
+import SiteSearch from "../components/search/sitesearch"
 
 const About = () => (
-  <CrumbTitleLayout nav="About" title="Mission" crumbs={[["About", "/about"]]}>
+  <CrumbTitleLayout
+    nav="About"
+    title="Mission"
+    crumbs={[["About", "/about"]]}
+    headerComponent={<SiteSearch />}
+  >
     <Container className="py-8">
       <div>
         <p>
