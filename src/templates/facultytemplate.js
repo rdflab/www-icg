@@ -142,7 +142,7 @@ const Abstract = ({ person, markdown }) => {
     <Container>
       <div className="mx-4 lg:mx-40 my-16 text-2xl">
         <div>{heading}</div>
-        <div>{html}</div>
+        <div className="text-gray-600">{html}</div>
         <div className="mt-4">
           <BlueLink to="#about">Read more</BlueLink>
         </div>
