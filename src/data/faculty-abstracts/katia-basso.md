@@ -4,4 +4,4 @@ title: "B cells take risks to become the essential antibody makers of our immune
 headerImageCredit: "Image courtesy of Antony Holmes"
 ---
 
-Katia Basso studies the process of differentiation of germinal center B cells and the mechanisms of malignant transformation leading to lymphomagenesis. Her interest is in dissecting the transcriptional networks that drive the normal B cell differentiation and are hijacked in lymphomas. Her research informs on lymphoma features that impact diagnostics and therapeutics.
+Katia Basso received her PhD from the University of Padova (Italy) with a focus on molecular genetics applied to the study of pediatric lymphomas. She joined Columbia University in 2000 to complete her post-doctoral training. She then joined the Faculty of ICG at Columbia University where she is continuing her research activity
