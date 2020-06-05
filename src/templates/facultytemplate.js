@@ -232,13 +232,13 @@ const FacultyTemplate = ({ path, pageContext, data }) => {
       headerImage = (
         <BackgroundSection file={file}>
           {headshotImage !== null && (
-            <Container className="absolute bottom-0 mb-8">
+            <Container className="absolute bottom-0 mb-8 z-20">
               {headshotImage}
             </Container>
           )}
 
           {headerImageCredit !== "" && (
-            <Container className="absolute bottom-0 right-0 text-sm text-white opacity-80 mb-8">
+            <Container className="hidden md:block absolute bottom-0 right-0 text-sm text-white opacity-80 mb-8 z-10">
               {headerImageCredit}
             </Container>
           )}

@@ -81,7 +81,7 @@ const CrumbLayout = ({
           </HideSmall>
 
           <HideSmall className="w-full absolute z-50" size="lg">
-            <div className="pt-2  bg-columbia-blue-90">
+            <div className="pt-2 bg-columbia-blue-90">
               <nav aria-label="Navigation">
                 <Container>
                   <Column className="items-center justify-between">
