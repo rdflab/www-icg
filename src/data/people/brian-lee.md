@@ -11,6 +11,5 @@ room: "501"
 researchAreas: []
 pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Lee+B%5BAuthor%5D"
 url: []
-formats: ["long"]
-tags: []
+tags: ["page-format:long", "publication-format:recent"]
 ---

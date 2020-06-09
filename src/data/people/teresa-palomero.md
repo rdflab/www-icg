@@ -11,6 +11,5 @@ room: "404"
 researchAreas: []
 pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Palomero+T%5BAuthor%5D"
 url: []
-formats: ["long"]
-tags: []
+tags: ["page-format:long", "publication-format:recent"]
 ---

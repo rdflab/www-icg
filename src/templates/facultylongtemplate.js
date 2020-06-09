@@ -1,8 +1,8 @@
 import React from "react"
 import CrumbLayout from "../components/crumblayout"
-import CrumbTitleLayout from "../components/crumbtitlelayout"
 
 import RecentPublications from "../components/publication/recentpublications"
+import SelectedPublications from "../components/publication/selectedpublications"
 //import SideBar from "../components/sidebar/sidebar"
 //import SideBarNews from "../components/news/sidebarnews"
 import HTMLDiv from "../components/htmldiv"
@@ -374,14 +374,14 @@ const FacultyLongTemplate = ({ path, pageContext, data }) => {
         <Team labGroupMap={lab.groupMap} />
       </div>
 
-      {appointments !== null && appointments.appointments.length > 0 && (
+      {/* {appointments !== null && appointments.appointments.length > 0 && (
         <div className="py-16">
           <SmallContainer>
             <FacultyHeading>Appointments</FacultyHeading>
             <AppointmentsGrid appointments={appointments.appointments} />
           </SmallContainer>
         </div>
-      )}
+      )} */}
 
       <div id="about" />
 
@@ -393,6 +393,15 @@ const FacultyLongTemplate = ({ path, pageContext, data }) => {
         />
       </div>
 
+      {appointments !== null && appointments.appointments.length > 0 && (
+        <div className="py-16 bg-columbia-secondary-blue-10">
+          <SmallContainer>
+            <FacultyHeading2>Appointments</FacultyHeading2>
+            <AppointmentsGrid appointments={appointments.appointments} />
+          </SmallContainer>
+        </div>
+      )}
+
       {cv !== null && cv.awards.length > 0 && (
         <div className="py-8">
           <Container>
@@ -403,14 +412,28 @@ const FacultyLongTemplate = ({ path, pageContext, data }) => {
       )}
 
       <div className="py-16 bg-columbia-light-gray">
-        {publications.length > 0 && (
-          <Container>
-            <FacultyHeading2>Recent Publications</FacultyHeading2>
+        {person.frontmatter.tags.includes("publication-format:recent") &&
+          publications.length > 0 && (
+            <Container>
+              <FacultyHeading2>Recent Publications</FacultyHeading2>
 
-            <RecentPublications publications={publications} />
-          </Container>
-        )}
-        <Container>
+              <RecentPublications publications={publications} />
+            </Container>
+          )}
+
+        {person.frontmatter.tags.includes("publication-format:selected") &&
+          publications.length > 0 && (
+            <Container>
+              <FacultyHeading2>Selected Publications</FacultyHeading2>
+
+              <SelectedPublications
+                id={person.frontmatter.id}
+                publications={publications}
+              />
+            </Container>
+          )}
+
+        <Container className="pt-8">
           <Column className="items-center justify-between">
             <PubMedLink person={person} />
             <Column>

@@ -11,6 +11,5 @@ room: "608"
 researchAreas: []
 pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Yang+X%5BAuthor%5D"
 url: []
-formats: ["long"]
-tags: []
+tags: ["page-format:long", "publication-format:recent"]
 ---

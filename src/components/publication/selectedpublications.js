@@ -7,42 +7,27 @@
 
 import React from "react"
 import Publication from "./publication"
-import { Link } from "gatsby"
 
-const createPublications = (publications) => {
+const SelectedPublications = ({ id, publications, top }) => {
   let ret = []
 
   let c = 0
 
+  const tagId = `${id}:selected`
+
   // Outer loop to create parent
   for (let publication of publications) {
-    if (publication.tags.includes("selected")) {
-      ret.push(
-        <Publication key={i} publication={publication} groupMap={groupMap} />
-      )
+    if (publication.tags.includes(tagId)) {
+      ret.push(<Publication key={c} publication={publication} />)
       ++c
     }
 
-    if (c == top) {
+    if (c === top) {
       break
     }
   }
 
   return ret
-}
-
-const SelectedPublications = ({ lab, publications, groupMap, top }) => {
-  return (
-    <>
-      {createPublications(publications)}
-      <Link
-        to={`/research-areas/labs/${lab.id}/publications`}
-        className="button is-primary"
-      >
-        More
-      </Link>
-    </>
-  )
 }
 
 SelectedPublications.defaultProps = {

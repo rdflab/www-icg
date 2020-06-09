@@ -11,6 +11,5 @@ room: "407B"
 researchAreas: []
 pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Iavarone+A%5BAuthor%5D"
 url: []
-formats: ["long"]
-tags: []
+tags: ["page-format:long", "publication-format:recent"]
 ---

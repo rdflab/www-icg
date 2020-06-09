@@ -17,6 +17,7 @@ $columbia-primary-blue: #000d74;
 $columbia-light-gray: #F9F9F9; //rgb(250, 250, 250); // #F9F9F9;
 
 $columbia-secondary-blue: #75AADB;
+$columbia-secondary-blue-10: rgba($columbia-secondary-blue, 0.1);
 $columbia-secondary-blue-20: rgba($columbia-secondary-blue, 0.2);
 $columbia-secondary-blue-30: rgba($columbia-secondary-blue, 0.3);
 $columbia-secondary-blue-40: rgba($columbia-secondary-blue, 0.4);
@@ -79,6 +80,22 @@ $columbia-medium-blue: #2C6BAC;
 
 .bg-columbia-primary-blue {
   background-color: $columbia-primary-blue;
+}
+
+.bg-columbia-secondary-blue-10 {
+  background-color: $columbia-secondary-blue-10;
+}
+
+.bg-columbia-secondary-blue-20 {
+  background-color: $columbia-secondary-blue-20;
+}
+
+.bg-columbia-secondary-blue-30 {
+  background-color: $columbia-secondary-blue-30;
+}
+
+.bg-columbia-secondary-blue-40 {
+  background-color: $columbia-secondary-blue-40;
 }
 
 .bg-columbia-secondary-blue-50 {

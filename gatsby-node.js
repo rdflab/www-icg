@@ -286,7 +286,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               room
               pubmed
               researchAreas
-              formats
               tags
               url
             }
@@ -371,9 +370,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             title
             volume
             year
-            tags
             pubmed
             url
+            tags
           }
         }
       }
@@ -499,7 +498,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
     person.titleMap = toContextMap(person.frontmatter.titles)
     //person.groups = toContextMap(person.frontmatter.groups)
-    person.formatMap = toContextMap(person.frontmatter.formats)
+    //person.formatMap = toContextMap(person.frontmatter.formats)
 
     allPeople.push(person)
   })
@@ -737,13 +736,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
       let template
 
-      switch (getContextName(person.formatMap, "people")) {
-        case "short":
-          template = facultyShortTemplate
-          break
-        default:
-          template = facultyLongTemplate
-          break
+      if (person.frontmatter.tags.includes("page-format:short")) {
+        template = facultyShortTemplate
+      } else {
+        template = facultyLongTemplate
       }
 
       createPage({

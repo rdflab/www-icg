@@ -11,6 +11,5 @@ room: "507"
 researchAreas: []
 pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Meyer+S%5BAuthor%5D"
 url: []
-formats: ["long"]
-tags: []
+tags: ["page-format:long", "publication-format:recent"]
 ---

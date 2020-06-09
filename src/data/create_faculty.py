@@ -186,8 +186,8 @@ for i in range(15, df.shape[0]):
     else:
         print('url: []', file=f)
     
-    print('formats: ["long"]', file=f)
-    print('tags: []'.format(url), file=f)
+    #print('formats: ["long"]', file=f)
+    print('tags: ["page-format:long", "publication-format:recent"]'.format(url), file=f)
     print('---', file=f)
     f.close()
     

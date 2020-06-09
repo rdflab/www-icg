@@ -11,6 +11,5 @@ room: "402A"
 researchAreas: []
 pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Ferrando+A%5BAuthor%5D"
 url: ["Lab Web Site", "http://ferrandolab.org/"]
-formats: ["long"]
-tags: []
+tags: ["page-format:long", "publication-format:recent"]
 ---

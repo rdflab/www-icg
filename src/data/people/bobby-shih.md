@@ -11,6 +11,5 @@ room: "401B"
 researchAreas: []
 pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Shih+B%5BAuthor%5D"
 url: []
-formats: ["long"]
-tags: []
+tags: ["page-format:long", "publication-format:recent"]
 ---

@@ -29,8 +29,6 @@ const Faculty = ({ person, imageMap }) => {
 
   let img
 
-  console.log(person)
-
   if (person.frontmatter.id in imageMap) {
     img = (
       <Img

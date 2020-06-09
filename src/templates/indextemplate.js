@@ -51,7 +51,7 @@ HomeSection.defaultProps = {
 }
 
 const HomeDiv = ({ children, className }) => (
-  <div className={`py-16 ${className}`}>
+  <div className={`py-32 ${className}`}>
     <Container>{children}</Container>
   </div>
 )
@@ -213,13 +213,13 @@ const IndexTemplate = ({ path, pageContext, data }) => {
           <Column className="py-8">
             <Column w={6}>
               <div>
-                <HomeTitle>Expertise</HomeTitle>
+                <HomeTitle>Meet The Faculty</HomeTitle>
                 <p className="text-xl">
                   Find out who we are by exploring what our world-class
                   researchers are studying.
                 </p>
                 <h3 className="mt-4">
-                  <TextIndexLink to={paths.facultyPath}>Faculty</TextIndexLink>
+                  <TextIndexLink to={paths.facultyPath}>See more</TextIndexLink>
                 </h3>
               </div>
             </Column>
@@ -239,7 +239,7 @@ const IndexTemplate = ({ path, pageContext, data }) => {
       alt={true}
     /> */}
 
-      <Column className="bg-blue-800 py-16">
+      <Column className="bg-blue-800 py-32">
         <Column w={5} className="md:pl-8 text-white">
           <div className="p-8">
             <HomeTitle>Upcoming Events</HomeTitle>

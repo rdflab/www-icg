@@ -11,6 +11,5 @@ room: "608"
 researchAreas: []
 pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Chen+D%5BAuthor%5D"
 url: []
-formats: ["long"]
-tags: []
+tags: ["page-format:long", "publication-format:recent"]
 ---

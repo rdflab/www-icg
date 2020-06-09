@@ -3904,7 +3904,7 @@
     "issue": "3",
     "pages": "453-465",
     "pubmed": "30205047",
-    "tags": ["Article"],
+    "tags": ["Article", "katia-basso:selected"],
     "url": "",
     "labs": ["katia-basso"],
     "people": [
@@ -4041,7 +4041,7 @@
     "issue": "",
     "pages": "",
     "pubmed": "27166359",
-    "tags": ["Article"],
+    "tags": ["Article", "katia-basso:selected"],
     "url": "",
     "labs": ["katia-basso"],
     "people": [
@@ -4069,7 +4069,7 @@
     "issue": "",
     "pages": "",
     "pubmed": "26620759",
-    "tags": ["Article"],
+    "tags": ["Article", "katia-basso:selected"],
     "url": "",
     "labs": ["katia-basso"],
     "people": [
@@ -4134,7 +4134,7 @@
     "issue": "",
     "pages": "",
     "pubmed": "24843176",
-    "tags": ["Article"],
+    "tags": ["Article", "katia-basso:selected"],
     "url": "",
     "labs": ["katia-basso"],
     "people": ["antony-holmes", "katia-basso", "riccardo-dalla-favera"]
@@ -4205,7 +4205,7 @@
     "issue": "",
     "pages": "",
     "pubmed": "23297232",
-    "tags": ["Article"],
+    "tags": ["Article", "katia-basso:selected"],
     "url": "",
     "labs": ["katia-basso"],
     "people": ["antony-holmes", "katia-basso", "riccardo-dalla-favera"]
@@ -4227,7 +4227,7 @@
     "issue": "",
     "pages": "",
     "pubmed": "23166356",
-    "tags": ["Article"],
+    "tags": ["Article", "katia-basso:selected"],
     "url": "",
     "labs": ["katia-basso"],
     "people": [
@@ -4304,7 +4304,7 @@
     "issue": "",
     "pages": "",
     "pubmed": "19965633",
-    "tags": ["Article"],
+    "tags": ["Article", "katia-basso:selected"],
     "url": "",
     "labs": ["katia-basso"],
     "people": ["katia-basso", "riccardo-dalla-favera"]
@@ -4534,7 +4534,7 @@
     "issue": "",
     "pages": "",
     "pubmed": "",
-    "tags": ["Article"],
+    "tags": ["Article", "katia-basso:selected"],
     "url": "",
     "labs": ["katia-basso"],
     "people": ["katia-basso", "riccardo-dalla-favera"]
@@ -5548,7 +5548,7 @@
     "issue": "",
     "pages": "",
     "pubmed": "23974956",
-    "tags": ["Article"],
+    "tags": ["Article", "katia-basso:selected"],
     "url": "",
     "labs": ["riccardo-dalla-favera"],
     "people": ["katia-basso", "laura-pasqualucci", "riccardo-dalla-favera"]
@@ -5677,7 +5677,7 @@
     "issue": "3",
     "pages": "172-84",
     "pubmed": "25712152",
-    "tags": ["Article"],
+    "tags": ["Article", "katia-basso:selected"],
     "url": "",
     "labs": ["riccardo-dalla-favera"],
     "people": ["katia-basso", "riccardo-dalla-favera"]

@@ -11,6 +11,5 @@ room: "603A, 602,613"
 researchAreas: []
 pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Gautier+J%5BAuthor%5D"
 url: []
-formats: ["long"]
-tags: []
+tags: ["page-format:long", "publication-format:recent"]
 ---

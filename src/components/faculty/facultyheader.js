@@ -4,6 +4,7 @@ import H from "../headings/h"
 import ContactInfo from "../people/contactinfo"
 import Column from "../column"
 import { TitleDiv } from "../headings/h"
+import getContextName from "../../utils/contextname"
 
 const LabWebSite = ({ person }) => {
   if (person.frontmatter.url.length > 0) {
@@ -27,7 +28,7 @@ const FacultyHeader = ({ person, title, heading, subHeading, path }) => {
   }
 
   if (subHeading === null) {
-    subHeading = `${person.frontmatter.title}`
+    subHeading = getContextName("people", person.titleMap) //`${person.frontmatter.title}`
   }
 
   return (

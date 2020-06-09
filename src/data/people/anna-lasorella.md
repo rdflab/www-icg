@@ -12,6 +12,5 @@ room: "405"
 researchAreas: []
 pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Lasorella+A%5BAuthor%5D"
 url: []
-formats: ["long"]
-tags: []
+tags: ["page-format:long", "publication-format:recent"]
 ---

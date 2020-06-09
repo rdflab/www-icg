@@ -78,7 +78,7 @@ const PersonCard = ({ person, img, smallView, context, isFaculty }) => {
 
   return (
     <div
-      className={`w-full trans-ani mb-4 overflow-hidden py-4 text-black border-t-4 border-solid border-transparent  hover:border-columbia-secondary-blue`}
+      className={`w-full trans-ani mb-4 overflow-hidden py-4 text-black border-b-4 border-solid border-transparent  hover:border-columbia-secondary-blue`}
     >
       <div>
         {img !== null && <div className="bg-white mb-6">{img}</div>}

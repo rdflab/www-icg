@@ -6,7 +6,6 @@ postNominalLetters: "MD"
 titles:
   [
     "Professor of Pathology & Cell Biology, Genetics & Development, Microbiology & Immunology",
-    "admin:Director",
   ]
 phone: "851-5273 "
 fax: "851-5256"
@@ -15,6 +14,5 @@ room: "508A"
 researchAreas: []
 pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Dalla-Favera+R%5BAuthor%5D"
 url: []
-formats: ["people:short"]
-tags: []
+tags: ["page-format:short", "publication-format:recent"]
 ---

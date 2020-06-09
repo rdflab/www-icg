@@ -11,6 +11,5 @@ room: "407"
 researchAreas: []
 pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Li+Z%5BAuthor%5D"
 url: []
-formats: ["long"]
-tags: []
+tags: ["page-format:long", "publication-format:recent"]
 ---

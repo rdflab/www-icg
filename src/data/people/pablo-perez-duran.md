@@ -11,6 +11,5 @@ room: "401B"
 researchAreas: []
 pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Perez-Duran+P%5BAuthor%5D"
 url: []
-formats: ["long"]
-tags: []
+tags: ["page-format:long", "publication-format:recent"]
 ---
