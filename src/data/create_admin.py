@@ -38,7 +38,7 @@ lab_map = collections.defaultdict(list)
 new_lab = False
 lab_group = 'Administration' #'Divisional Administrator'
 
-for i in range(3, 14):
+for i in range(3, 15):
     name = df.iloc[i, 0]
     name = name.strip()
     
@@ -70,7 +70,9 @@ for i in range(3, 14):
     formatted_name = '{} {}'.format(firstName, lastName)
     
     if new_lab:
-        current_lab = lab_map[lab_group]
+        print('aha')
+        current_lab = {}
+        lab_map[lab_group] = current_lab
         #lab_group = 'Administrative Staff'
         new_lab = False
     
@@ -88,8 +90,7 @@ for i in range(3, 14):
     title = title.replace('Assoc ', 'Associate ')
     title = re.sub(r' \(.+', '', title)
     
-    current_lab.append(formatted_name)
-    
+
     phone = df.iloc[i, 2]
     phone = phone.replace('cell: ', '')
     
@@ -108,8 +109,21 @@ for i in range(3, 14):
     
     type = 'Administrative Staff'
     
+    if 'Director' in title:
+        type = 'Directors'
+        
     if 'Divisional' in title:
         type = 'Divisional Administrator'
+        
+    if 'Web' in title:
+        type = 'Web Site'
+    
+    if type not in current_lab:
+        current_lab[type] = []
+        
+    current_lab[type].append(formatted_name)
+    
+    print(type, formatted_name)
     
     #
     # Create markdown
@@ -118,17 +132,18 @@ for i in range(3, 14):
     f = open('people/{}.md'.format(id), 'w')
     print('---', file=f)
     print('id: "{}"'.format(id), file=f)
-    print('name: "{}"'.format(formatted_name), file=f)
+    #print('name: "{}"'.format(formatted_name), file=f)
     print('firstName: "{}"'.format(firstName), file=f)
     print('lastName: "{}"'.format(lastName), file=f)
     print('postNominalLetters: "{}"'.format(' '.join(letters)), file=f)
-    print('title: "{}"'.format(title), file=f)
+    print('titles: ["{}"]'.format(title), file=f)
     print('phone: "{}"'.format(phone), file=f)
     print('fax: "{}"'.format(fax), file=f)
     print('email: "{}"'.format(email), file=f)
     print('room: "{}"'.format(room), file=f)
-    print('lab: "{}"'.format(''), file=f)
-    print('group: "{}"'.format(type), file=f)
+    #print('lab: "{}"'.format(''), file=f)
+    #print('group: "{}"'.format(type), file=f)
+    print('formats: ["long"]'.format(type), file=f)
     print('researchAreas: []', file=f)
     print('url: []'.format(url), file=f)
     print('tags: []', file=f)
@@ -141,26 +156,22 @@ for i in range(3, 14):
 
 GROUPS = ['Administration'] #, 'Divisional Administrator', 'Administrative Staff']
 
-SUB_GROUPS = ['Staff']
+SUB_GROUPS = ['Directors', 'Divisional Administrator', 'Administrative Staff', 'Web Site']
 
 all_divisions = []
 
 for g in GROUPS:
     faculty = []
     
-    division = {'id':g.lower().replace(' ', '-'), 'name':g, 'url':'', 'people': []}
+    division = {'name':g, 'groups': []}
     
-    faculty_names = sort_names(lab_map[g])
-    
-    for name in faculty_names:
-        #lab = {'id':id_map[name], 'name':name, 'url':'', 'subgroups': []}
-        
-        #subgroup = {'id':sg.lower().replace(' ', '-'), 'name':sg, 'url':'', 'members':[]}
-        #member_names = sort_names(lab_map[g][name][sg])
-        #subgroup['staff'] = [id_map[name] for name in member_names]
-        #lab['subgroups'].append(subgroup)
-            
-        division['people'].append(id_map[name])
+
+    for sg in SUB_GROUPS:
+          
+        if sg in lab_map[g]:
+            names = sort_names(lab_map[g][sg])
+ 
+            division['groups'].append({'name':sg, 'people':[id_map[name] for name in names]})
         
     all_divisions.append(division)
         

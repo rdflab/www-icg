@@ -1,16 +1,14 @@
 ---
 id: "clara-meregildo"
-name: "Clara Meregildo"
 firstName: "Clara"
 lastName: "Meregildo"
 postNominalLetters: ""
-title: "HR Administrative Coordinator"
+titles: ["HR Administrative Coordinator"]
 phone: "851-5276"
 fax: "851-5256"
 email: "cm2217@cumc.columbia.edu"
 room: "508"
-lab: ""
-group: "Administrative Staff"
+formats: ["long"]
 researchAreas: []
 url: []
 tags: []

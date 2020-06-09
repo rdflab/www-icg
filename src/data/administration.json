@@ -1,17 +1,31 @@
 [
   {
-    "id": "administration",
     "name": "Administration",
-    "url": "",
-    "people": [
-      "tom-gavaris",
-      "tina-gellhorn",
-      "clara-meregildo",
-      "esperanza-quintero",
-      "german-ramirez",
-      "seetha-srinivasan",
-      "russell-szalasny",
-      "jeanette-tejeda"
+    "groups": [
+      {
+        "name": "Directors",
+        "people": ["richard-baer", "riccardo-dalla-favera"]
+      },
+      {
+        "name": "Divisional Administrator",
+        "people": ["tom-gavaris"]
+      },
+      {
+        "name": "Administrative Staff",
+        "people": [
+          "tina-gellhorn",
+          "clara-meregildo",
+          "esperanza-quintero",
+          "german-ramirez",
+          "seetha-srinivasan",
+          "russell-szalasny",
+          "jeanette-tejeda"
+        ]
+      },
+      {
+        "name": "Web Site",
+        "people": ["antony-holmes"]
+      }
     ]
   }
 ]

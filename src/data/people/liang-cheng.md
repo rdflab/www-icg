@@ -1,18 +1,16 @@
 ---
 id: "liang-cheng"
-name: "Liang Cheng"
 firstName: "Liang"
 lastName: "Cheng"
 postNominalLetters: "PhD"
-title: "Postdoctoral Research Scientist "
+titles: ["Postdoctoral Research Scientist "]
 phone: "851-4937"
 fax: ""
 email: "lc3420@cumc.columbia.edu"
 room: "407"
-lab: "zhiguo-zhang"
-group: "Research Staff"
 researchAreas: []
 pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Cheng+L%5BAuthor%5D"
 url: []
+formats: ["long"]
 tags: []
 ---

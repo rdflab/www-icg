@@ -4,7 +4,9 @@ module.exports = {
     description: `Institute for Cancer Genetics website`,
     author: `Antony B Holmes <antony@antonyholmes.com>`,
     siteUrl: `https://d3gbammu2xkksk.cloudfront.net`,
-    facultyGroups: [`Director`, `Principal Investigators`],
+    facultyGroups: [`Director`, `Faculty`],
+    adminGroups: [`Directors`, `Administrative Staff`, `Web Site`],
+    labGroups: [`Faculty`, `Research Staff`],
     paths: {
       researchAreasPath: `/research-areas`,
       labsPath: `/research-areas/labs`,

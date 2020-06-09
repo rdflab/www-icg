@@ -1,16 +1,14 @@
 ---
 id: "jeanette-tejeda"
-name: "Jeanette Tejeda"
 firstName: "Jeanette"
 lastName: "Tejeda"
 postNominalLetters: ""
-title: "Administrative Coordinator"
+titles: ["Administrative Coordinator"]
 phone: "851-5283"
 fax: "851-5284"
 email: "jt591@cumc.columbia.edu"
 room: "609"
-lab: ""
-group: "Administrative Staff"
+formats: ["long"]
 researchAreas: []
 url: []
 tags: []

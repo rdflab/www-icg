@@ -1,18 +1,16 @@
 ---
 id: "mara-holloman"
-name: "Mara Holloman"
 firstName: "Mara"
 lastName: "Holloman"
 postNominalLetters: ""
-title: "Tech B "
+titles: ["Tech B "]
 phone: "851-5270"
 fax: ""
 email: "mh3946@cumc.columbia.edu"
 room: "507"
-lab: "riccardo-dalla-favera"
-group: "Research Staff"
 researchAreas: []
 pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Holloman+M%5BAuthor%5D"
 url: []
+formats: ["long"]
 tags: []
 ---

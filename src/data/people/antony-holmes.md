@@ -1,18 +1,16 @@
 ---
 id: "antony-holmes"
-name: "Antony Holmes"
 firstName: "Antony"
 lastName: "Holmes"
 postNominalLetters: "PhD"
-title: "Associate Research Scientist"
+titles: ["Associate Research Scientist", "admin:Web Site Developer"]
 phone: "851-5270"
 fax: ""
 email: "abh2138@cumc.columbia.edu"
 room: "507"
-lab: "riccardo-dalla-favera"
-group: "Research Staff"
 researchAreas: []
 pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Holmes+A%5BAuthor%5D"
 url: []
+formats: ["long"]
 tags: []
 ---

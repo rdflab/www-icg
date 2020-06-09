@@ -14,7 +14,7 @@ import useImageMap from "../hooks/imagemap"
 
 const EMPTY_QUERY = ""
 
-const Faculty = ({ person, labId, imageMap }) => {
+const Faculty = ({ person, imageMap }) => {
   const [hover, setHover] = useState(false)
 
   const { paths } = useSiteMetadata()
@@ -28,6 +28,8 @@ const Faculty = ({ person, labId, imageMap }) => {
   }
 
   let img
+
+  console.log(person)
 
   if (person.frontmatter.id in imageMap) {
     img = (
@@ -82,18 +84,12 @@ const StaffGrid = ({
       let person = null
 
       if (pc < people.length) {
-        person = peopleMap[people[pc]]
+        person = peopleMap[people[pc].person]
       }
 
       col.push(
         <Column className={`md:${colWidth}`} key={`person-${pc}`}>
-          {person !== null && (
-            <Faculty
-              person={person}
-              labId={person.frontmatter.lab}
-              imageMap={imageMap}
-            />
-          )}
+          {person !== null && <Faculty person={person} imageMap={imageMap} />}
         </Column>
       )
 

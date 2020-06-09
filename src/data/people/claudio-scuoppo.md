@@ -1,18 +1,16 @@
 ---
 id: "claudio-scuoppo"
-name: "Claudio Scuoppo"
 firstName: "Claudio"
 lastName: "Scuoppo"
 postNominalLetters: "PhD"
-title: "Instructor"
+titles: ["Instructor"]
 phone: "851-5270"
 fax: ""
 email: "cs3064@cumc.columbia.edu"
 room: "507"
-lab: "riccardo-dalla-favera"
-group: "Research Staff"
 researchAreas: []
 pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Scuoppo+C%5BAuthor%5D"
 url: []
+formats: ["long"]
 tags: []
 ---

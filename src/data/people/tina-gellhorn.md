@@ -1,16 +1,14 @@
 ---
 id: "tina-gellhorn"
-name: "Tina Gellhorn"
 firstName: "Tina"
 lastName: "Gellhorn"
 postNominalLetters: ""
-title: "Executive Assistant"
+titles: ["Executive Assistant"]
 phone: "851-5274"
 fax: "851-5256"
 email: "cg482@cumc.columbia.edu"
 room: "508"
-lab: ""
-group: "Administrative Staff"
+formats: ["long"]
 researchAreas: []
 url: []
 tags: []

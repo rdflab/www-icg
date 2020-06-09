@@ -1,18 +1,16 @@
 ---
 id: "fulvio-dangelo"
-name: "Fulvio D'Angelo"
 firstName: "Fulvio"
 lastName: "D'Angelo"
 postNominalLetters: "PhD"
-title: "Postdoctoral Research Scientist"
+titles: ["Postdoctoral Research Scientist"]
 phone: "851-5287"
 fax: ""
 email: "fd2396@cumc.columbia.edu"
 room: "403"
-lab: "antonio-iavarone"
-group: "Research Staff"
 researchAreas: []
 pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=D'Angelo+F%5BAuthor%5D"
 url: []
+formats: ["long"]
 tags: []
 ---

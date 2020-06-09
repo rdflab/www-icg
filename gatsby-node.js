@@ -6,16 +6,18 @@ const GROUPS = [
   "Divisional Administrator",
   "Administrative Staff",
   "Research Staff",
-  "Graduate Student",
-  "Undergraduates",
-  "Staff",
+  "Graduate Students",
+  "Students",
 ]
 
 const indexTemplate = path.resolve(`src/templates/indextemplate.js`)
 const labTemplate = path.resolve(`src/templates/labtemplate.js`)
 const labPeopleTemplate = path.resolve(`src/templates/labpeopletemplate.js`)
 const labsTemplate = path.resolve(`src/templates/labstemplate.js`)
-const facultyTemplate = path.resolve(`src/templates/facultytemplate.js`)
+const facultyShortTemplate = path.resolve(
+  `src/templates/facultyshorttemplate.js`
+)
+const facultyLongTemplate = path.resolve(`src/templates/facultylongtemplate.js`)
 const allFacultyTemplate = path.resolve(`src/templates/allfacultytemplate.js`)
 const adminTemplate = path.resolve(`src/templates/admintemplate.js`)
 const adminStaffTemplate = path.resolve(`src/templates/adminstafftemplate.js`)
@@ -38,6 +40,33 @@ const researchAreaTemplate = path.resolve(
 )
 const helpTemplate = path.resolve(`src/templates/helptemplate.js`)
 
+const toContextMap = (items) => {
+  const contextMap = {}
+
+  for (let i = 0; i < items.length; ++i) {
+    let item = items[i]
+    const tokens = item.split(":")
+    let context = "default"
+    let name = ""
+    if (tokens.length > 1) {
+      context = tokens[0]
+      name = tokens[1]
+    } else {
+      name = tokens[0]
+    }
+
+    // The first item we encounter is always added in the default
+    // context
+    if (i === 0) {
+      contextMap["default"] = name
+    }
+
+    contextMap[context] = name
+  }
+
+  return contextMap
+}
+
 const toPeopleMap = (people) => {
   let ret = {}
 
@@ -49,55 +78,91 @@ const toPeopleMap = (people) => {
   return ret
 }
 
-const toGroupMap = (people) => {
+const toLabPeopleMap = (lab, peopleMap) => {
   const ret = {}
 
-  for (let person of people) {
-    const g = person.frontmatter.group
-
-    if (!(g in ret)) {
-      ret[g] = []
-    }
-
-    ret[g].push(person)
+  for (let group of lab.groups) {
+    ret[group.name] = group.people.map((pid) => peopleMap[pid])
   }
 
   return ret
 }
 
-const createSuffixTree = (root, text, item) => {
-  const words = text.toLowerCase().split(" ")
+const getContextName = (contextMap, context) => {
+  let ret = ""
 
-  for (let word of words) {
-    for (let j = 0; j < word.length; ++j) {
-      let node = root
-
-      const suffix = word.substring(j)
-
-      for (let k = 0; k < suffix.length; k++) {
-        const c = suffix.charAt(k)
-
-        if (!(c in node[0])) {
-          node[0][c] = [{}, []]
-        }
-
-        node = node[0][c]
-
-        if (k > 0) {
-          if (!node[1].includes(item)) {
-            node[1].push(item)
-          }
-        }
-      }
+  if (context in contextMap) {
+    ret = contextMap[context]
+  } else {
+    // Look for default value
+    if ("default" in contextMap) {
+      ret = contextMap["default"]
     }
   }
+
+  return ret
 }
+
+// const toGroupMap = (allFaculty) => {
+//   const ret = {}
+
+//   for (let group of allFaculty) {
+//     if (!(group in ret)) {
+//       ret[group] = []
+//     }
+
+//     for (let personId of group.people) {
+//       ret[group].push(personId)
+//     }
+//   }
+
+//   return ret
+// }
+
+// const createSuffixTree = (root, text, item) => {
+//   const words = text.toLowerCase().split(" ")
+
+//   for (let word of words) {
+//     for (let j = 0; j < word.length; ++j) {
+//       let node = root
+
+//       const suffix = word.substring(j)
+
+//       for (let k = 0; k < suffix.length; k++) {
+//         const c = suffix.charAt(k)
+
+//         if (!(c in node[0])) {
+//           node[0][c] = [{}, []]
+//         }
+
+//         node = node[0][c]
+
+//         if (k > 0) {
+//           if (!node[1].includes(item)) {
+//             node[1].push(item)
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
 
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions
   const typeDefs = `
+    type StaffGroups {
+      name: String!
+      people: [String!]!
+    }
+
     type LabsJson implements Node {
-      url: [String!]!
+      name: String!
+      groups: [StaffGroups!]!
+    }
+
+    type AdministrationJson implements Node {
+      name: String!
+      groups: [StaffGroups!]
     }
 
     type MarkdownRemark implements Node {
@@ -114,14 +179,11 @@ exports.createSchemaCustomization = ({ actions }) => {
       name: String!
       firstName: String!
       lastName: String!
-      title: String!
+      titles: [String!]
       postNominalLetters: String!
       tags: [String!]!
       room: String!
-      group: String!
-      lab: String!
       url: [String!]!
-      labs: [String!]!
       notes: [String!]!
       people: [String!]!
       researchAreas: [String!]!
@@ -129,7 +191,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       authors: [String!]!
       year: Int!
       startDate: Date!
-      facultyGroups: [String!]!
+      formats: [String!]!
     }
   `
   createTypes(typeDefs)
@@ -214,19 +276,17 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           node {
             frontmatter {
               id
-              name
               firstName
               lastName
-              title
+              titles
               postNominalLetters
               email
               phone
               fax
               room
-              lab
-              group
               pubmed
               researchAreas
+              formats
               tags
               url
             }
@@ -241,7 +301,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           node {
             id
             name
-            people
+            people {
+              person
+              lab
+            }
           }
         }
       }
@@ -265,8 +328,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           node {
             id
             name
-            url
-            people
+            groups {
+              name
+              people
+            }
           }
         }
       }
@@ -274,10 +339,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       admin: allAdministrationJson {
         edges {
           node {
-            id
             name
-            url
-            people
+            groups {
+              name
+              people
+            }
           }
         }
       }
@@ -298,7 +364,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         edges {
           node {
             authors
-            labs
             people
             journal
             issue
@@ -370,7 +435,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               title
               date(formatString: "MMM DD, YYYY")
               year: date(formatString: "YYYY")
-              labs
               people
               path
               tags
@@ -426,28 +490,30 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   // })
 
   const allPeople = []
-  const facultyStaff = []
+
   result.data.people.edges.forEach(({ node }) => {
     const person = node
-    allPeople.push(person)
 
-    if (
-      person.frontmatter.group === "Faculty" ||
-      person.frontmatter.group === "Research Staff"
-    ) {
-      facultyStaff.push(person)
-    }
+    // Add name to front matter
+    person.frontmatter.name = `${person.frontmatter.firstName} ${person.frontmatter.lastName}`
+
+    person.titleMap = toContextMap(person.frontmatter.titles)
+    //person.groups = toContextMap(person.frontmatter.groups)
+    person.formatMap = toContextMap(person.frontmatter.formats)
+
+    allPeople.push(person)
   })
 
   const peopleMap = toPeopleMap(allPeople)
-  const groupMap = toGroupMap(allPeople)
 
-  const allResearchAreas = []
-  const researchAreasMap = {}
-  result.data.researchAreas.edges.forEach(({ node }) => {
-    allResearchAreas.push(node)
-    researchAreasMap[node.id] = node
-  })
+  //const groupMap = toGroupMap(allFaculty)
+
+  // const allResearchAreas = []
+  // const researchAreasMap = {}
+  // result.data.researchAreas.edges.forEach(({ node }) => {
+  //   allResearchAreas.push(node)
+  //   researchAreasMap[node.id] = node
+  // })
 
   const cvMap = {}
   result.data.cv.edges.forEach(({ node }) => {
@@ -461,8 +527,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const allLabs = []
   const labMap = {}
+  let facultyStaff = []
+
   result.data.labs.edges.forEach(({ node }) => {
     const lab = node
+
+    lab.groupMap = toLabPeopleMap(lab, peopleMap)
+
+    facultyStaff = facultyStaff.concat(lab.groupMap["Faculty"])
+    facultyStaff = facultyStaff.concat(lab.groupMap["Research Staff"])
+
     allLabs.push(lab)
     labMap[lab.id] = lab
   })
@@ -505,14 +579,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     allCalEvents.push(calEvent)
   })
 
-  const admin = allAdmin[0]
-  const adminPeople = admin.people.map((pid) => peopleMap[pid])
-  const adminGroupMap = toGroupMap(adminPeople)
-
-  //
-  // Work out if people belong to more than one group
-  //
-  const personGroups = {}
+  let admin = allAdmin[0]
+  admin.groupMap = toLabPeopleMap(admin, peopleMap)
+  //const adminPeople = admin.people.map((pid) => peopleMap[pid])
+  //const adminGroupMap = toGroupMap(adminPeople)
 
   // Add groups to person
   // for (let person of allPeople) {
@@ -525,22 +595,22 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const allPublications = []
   const personPubMap = {}
-  const labPubMap = {}
+  //const labPubMap = {}
 
   result.data.publications.edges.forEach(({ node }) => {
     const publication = node
 
     // replace labs refs with labs objs
 
-    for (let labId of publication.labs) {
-      if (labId in labMap) {
-        if (!(labId in labPubMap)) {
-          labPubMap[labId] = []
-        }
+    // for (let labId of publication.labs) {
+    //   if (labId in labMap) {
+    //     if (!(labId in labPubMap)) {
+    //       labPubMap[labId] = []
+    //     }
 
-        labPubMap[labId].push(publication)
-      }
-    }
+    //     labPubMap[labId].push(publication)
+    //   }
+    // }
 
     for (let pid of publication.people) {
       if (pid in peopleMap) {
@@ -589,17 +659,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   // People
   //
 
-  createPage({
-    path: paths.peoplePath,
-    component: peopleTemplate,
-    context: {
-      crumbs: [["People", paths.peoplePath]],
-      nav: "People",
-      title: "Meet Our People",
-      allPeople: allPeople,
-      groupMap: groupMap,
-    },
-  })
+  // createPage({
+  //   path: paths.peoplePath,
+  //   component: peopleTemplate,
+  //   context: {
+  //     crumbs: [["People", paths.peoplePath]],
+  //     nav: "People",
+  //     title: "Meet Our People",
+  //     allPeople: allPeople,
+  //   },
+  // })
 
   for (let person of allPeople) {
     const pid = person.frontmatter.id
@@ -624,7 +693,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     path: paths.researchAreasPath,
     component: researchAreasTemplate,
     context: {
-      allResearchAreas: allResearchAreas,
+      allResearchAreas: [],
     },
   })
 
@@ -644,20 +713,17 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   })
 
   for (let group of allFaculty) {
-    for (let personId of group.people) {
-      path = `${paths.facultyPath}/${personId}`
+    for (let faculty of group.people) {
+      path = `${paths.facultyPath}/${faculty.person}`
 
-      const person = peopleMap[personId]
-      const lab = labMap[person.frontmatter.lab]
+      const person = peopleMap[faculty.person]
+      const lab = labMap[faculty.lab]
 
       const facultyPublications =
-        personId in personPubMap ? personPubMap[personId] : []
-
-      const labPeople = lab.people.map((pid) => peopleMap[pid])
-      const labGroupMap = toGroupMap(labPeople)
+        faculty.person in personPubMap ? personPubMap[faculty.person] : []
 
       const labNews = allNews.filter((item) =>
-        item.frontmatter.labs.includes(lab.id)
+        item.frontmatter.people.includes(faculty.person)
       )
 
       // let html = ""
@@ -669,21 +735,34 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       //   excerptHtml = markdown.excerpt
       // }
 
+      let template
+
+      switch (getContextName(person.formatMap, "people")) {
+        case "short":
+          template = facultyShortTemplate
+          break
+        default:
+          template = facultyLongTemplate
+          break
+      }
+
       createPage({
         path: path,
-        component: facultyTemplate,
+        component: template,
         context: {
-          id: personId,
-          person: person,
-          cv: personId in cvMap ? cvMap[personId] : null,
-          appointments:
-            personId in appointmentsMap ? appointmentsMap[personId] : null,
-          lab: lab,
           crumbs: [
             ["Faculty", paths.facultyPath],
             [person.frontmatter.name, path],
           ],
-          labGroupMap: labGroupMap,
+          id: faculty.person,
+          person: peopleMap[faculty.person],
+          lab: lab,
+          cv: faculty.person in cvMap ? cvMap[faculty.person] : null,
+          appointments:
+            faculty.person in appointmentsMap
+              ? appointmentsMap[faculty.person]
+              : null,
+          peopleMap: peopleMap,
           publications: facultyPublications,
           labNews: labNews,
         },
@@ -713,17 +792,17 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
   }
 
-  createPage({
-    path: paths.facultyStaffPath,
-    component: peopleTemplate,
-    context: {
-      crumbs: [["Faculty & Staff", paths.facultyStaffPath]],
-      nav: "For Research Scientists",
-      title: "Meet Our Faculty & Staff",
-      allPeople: facultyStaff,
-      groupMap: groupMap,
-    },
-  })
+  // createPage({
+  //   path: paths.facultyStaffPath,
+  //   component: peopleTemplate,
+  //   context: {
+  //     crumbs: [["Faculty & Staff", paths.facultyStaffPath]],
+  //     nav: "For Research Scientists",
+  //     title: "Meet Our Faculty & Staff",
+  //     allPeople: facultyStaff,
+  //     groupMap: groupMap,
+  //   },
+  // })
 
   //
   // Labs page
@@ -746,13 +825,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     path = `${paths.labsPath}/${lab.id}`
 
     const faculty = peopleMap[lab.id]
-    const labPublications = lab.id in labPubMap ? labPubMap[lab.id] : []
-
-    const labPeople = lab.people.map((pid) => peopleMap[pid])
-    const labGroupMap = toGroupMap(labPeople)
+    const labPublications = lab.id in personPubMap ? personPubMap[lab.id] : [] //lab.id in labPubMap ? labPubMap[lab.id] : []
 
     const labNews = allNews.filter((item) =>
-      item.frontmatter.labs.includes(lab.id)
+      item.frontmatter.people.includes(lab.id)
     )
 
     let labHtml = ""
@@ -768,13 +844,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       path: path,
       component: labTemplate,
       context: {
+        id: lab.id,
         lab: lab,
         crumbs: [
           ["Labs", paths.labsPath],
           [lab.name, path],
         ],
         faculty: faculty,
-        labGroupMap: labGroupMap,
         labPublications: labPublications,
         labNews: labNews,
         labExcerptHtml: labExcerptHtml,
@@ -793,7 +869,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           ["People", labPeoplePath],
         ],
         faculty: faculty,
-        labGroupMap: labGroupMap,
       },
     })
 
@@ -854,7 +929,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     component: adminStaffTemplate,
     context: {
       crumbs: [["Adminstration", paths.adminStaffPath]],
-      adminGroupMap: adminGroupMap,
+      admin: admin,
     },
   })
 

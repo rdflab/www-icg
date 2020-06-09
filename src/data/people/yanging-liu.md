@@ -1,18 +1,16 @@
 ---
 id: "yanging-liu"
-name: "Yanging Liu"
 firstName: "Yanging"
 lastName: "Liu"
 postNominalLetters: "PhD"
-title: "Postdoctoral Research Scientist"
+titles: ["Postdoctoral Research Scientist"]
 phone: "851-5285"
 fax: ""
 email: "yl4214@cumc.columbia.edu"
 room: "608"
-lab: "wei-gu"
-group: "Research Staff"
 researchAreas: []
 pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Liu+Y%5BAuthor%5D"
 url: []
+formats: ["long"]
 tags: []
 ---

@@ -7,9 +7,11 @@ const PeopleGroups = ({
   cols,
   colWidth,
   smallView,
+  showHeadings,
   faculty,
   headingColor,
   showPhoto,
+  context,
 }) => {
   const ret = []
 
@@ -29,6 +31,8 @@ const PeopleGroups = ({
               smallView={smallView}
               headingColor={headingColor}
               showPhoto={showPhoto}
+              context={context}
+              showHeadings={showHeadings}
             />
           </div>
         )
@@ -43,9 +47,11 @@ PeopleGroups.defaultProps = {
   faculty: null,
   showPhoto: false,
   smallView: false,
+  showHeadings: true,
   cols: 4,
   colWidth: "w-11/50",
   headingColor: "text-gray-700", //"text-columbia-secondary-blue",
+  context: "default",
 }
 
 export default PeopleGroups

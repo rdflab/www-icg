@@ -1,16 +1,14 @@
 ---
 id: "russell-szalasny"
-name: "Russell Szalasny"
 firstName: "Russell"
 lastName: "Szalasny"
 postNominalLetters: ""
-title: "Administrative Aid"
+titles: ["Administrative Aid"]
 phone: "851-5272"
 fax: "851-5267"
 email: "rs2426@cumc.columbia.edu"
 room: "407"
-lab: ""
-group: "Administrative Staff"
+formats: ["long"]
 researchAreas: []
 url: []
 tags: []

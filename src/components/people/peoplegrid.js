@@ -1,6 +1,5 @@
 import React from "react"
 import ContactInfo from "./contactinfo"
-import PersonLink from "./personlink"
 import Column from "../column"
 import FullDiv from "../fulldiv"
 import FacultyLink from "../faculty/facultylink"
@@ -9,6 +8,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import useImageMap from "../../hooks/imagemap"
 import Img from "gatsby-image"
 import DropShadowFrame from "../images/dropshadowframe"
+import getContextName from "../../utils/contextname"
 
 // const PersonCard = ({ person, smallView }) => (
 //   <div
@@ -67,10 +67,10 @@ import DropShadowFrame from "../images/dropshadowframe"
 //   </div>
 // )
 
-const PersonCard = ({ person, img, smallView }) => {
+const PersonCard = ({ person, img, smallView, context, isFaculty }) => {
   let link
 
-  if (person.frontmatter.group === "Faculty") {
+  if (isFaculty) {
     link = <FacultyLink person={person} />
   } else {
     link = person.frontmatter.name //<PersonLink person={person} />
@@ -83,7 +83,7 @@ const PersonCard = ({ person, img, smallView }) => {
       <div>
         {img !== null && <div className="bg-white mb-6">{img}</div>}
         <h4>{link}</h4>
-        <h5>{person.frontmatter.title}</h5>
+        <h5>{getContextName(context, person.titleMap)}</h5>
       </div>
       {!smallView && (
         <div className="mt-4 ">
@@ -92,6 +92,10 @@ const PersonCard = ({ person, img, smallView }) => {
       )}
     </div>
   )
+}
+
+PersonCard.defaultProps = {
+  context: "default",
 }
 
 const PeopleGrid = ({
@@ -103,6 +107,8 @@ const PeopleGrid = ({
   faculty,
   headingColor,
   showPhoto,
+  showHeadings,
+  context,
 }) => {
   const data = useStaticQuery(graphql`
     query {
@@ -151,6 +157,16 @@ const PeopleGrid = ({
       if (pc < people.length) {
         person = people[pc++]
 
+        if (
+          faculty !== null &&
+          faculty.frontmatter.id === person.frontmatter.id
+        ) {
+          // Skip to next person
+          person = people[pc++]
+        }
+      }
+
+      if (person !== null && person !== undefined) {
         if (showPhoto) {
           if (person.frontmatter.id in imageMap) {
             img = (
@@ -166,23 +182,19 @@ const PeopleGrid = ({
           }
         }
 
-        if (
-          faculty !== null &&
-          faculty.frontmatter.id === person.frontmatter.id
-        ) {
-          // Skip to next person
-          person = people[pc++]
-        }
-      }
-
-      if (person !== null && person !== undefined) {
         found = true
       }
 
       col.push(
         <Column className={`md:${colWidth}`} key={index}>
           {person !== null && (
-            <PersonCard person={person} img={img} smallView={smallView} />
+            <PersonCard
+              person={person}
+              img={img}
+              smallView={smallView}
+              context={context}
+              isFaculty={name === "Faculty"}
+            />
           )}
         </Column>
       )
@@ -210,7 +222,8 @@ const PeopleGrid = ({
   if (found) {
     return (
       <FullDiv key={name}>
-        <h3 className={`my-4 ${headingColor}`}>{name}</h3>
+        {showHeadings && <h3 className={`my-4 ${headingColor}`}>{name}</h3>}
+
         <div>{ret}</div>
       </FullDiv>
     )
@@ -225,7 +238,9 @@ PeopleGrid.defaultProps = {
   smallView: false,
   faculty: null,
   showPhoto: false,
+  showHeadings: true,
   headingColor: "text-columbia-secondary-blue",
+  context: "default",
 }
 
 export default PeopleGrid

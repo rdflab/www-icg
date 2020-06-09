@@ -1,18 +1,16 @@
 ---
 id: "danika-sommer"
-name: "Danika Sommer"
 firstName: "Danika"
 lastName: "Sommer"
 postNominalLetters: ""
-title: "Tech B"
+titles: ["Tech B"]
 phone: "851-5287"
 fax: ""
 email: "ds3889@cumc.columbia.edu"
 room: "403"
-lab: "antonio-iavarone"
-group: "Research Staff"
 researchAreas: []
 pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Sommer+D%5BAuthor%5D"
 url: []
+formats: ["long"]
 tags: []
 ---

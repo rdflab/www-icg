@@ -36,10 +36,14 @@ id_map = {}
 
 lab_map = collections.defaultdict(lambda: collections.defaultdict(lambda: collections.defaultdict()))
 
+people_map = collections.defaultdict(lambda: collections.defaultdict(lambda: collections.defaultdict(lambda: collections.defaultdict(str))))
+
+faclabmap = {}
+
 new_lab = False
 lab_group = 'Director'
 
-for i in range(13, df.shape[0]):
+for i in range(15, df.shape[0]):
     name = df.iloc[i, 0]
     name = name.strip()
     
@@ -74,10 +78,10 @@ for i in range(13, df.shape[0]):
     name = re.sub(r' *\(.+?\) *', '', name)
     names = name.split(',')
     
-    firstName = names[-1]
-    lastName = names[0]
-    formatted_name = '{} {}'.format(firstName, lastName)
-    id = '{}-{}'.format(firstName.lower(), lastName.lower())
+    first_name = names[-1]
+    last_name = names[0]
+    formatted_name = '{} {}'.format(first_name, last_name)
+    id = '{}-{}'.format(first_name.lower(), last_name.lower())
     id = id.replace('\'', '')
     id = id.replace(' ', '-')
     id = id.replace('.', '')
@@ -85,19 +89,18 @@ for i in range(13, df.shape[0]):
     if new_lab:
         current_lab = {'id':id,
                        'name':formatted_name,
-                       'Principal Investigators':[],
+                       'Faculty':[],
                        'Research Staff':[],
                        'Graduate Students':[],
-                       'Undergraduate Students':[],
-                       'Staff':[]}
+                       'Students':[]}
 
         
         new_lab = False
     
-    if i == 14:
+    if i == 16:
         lab_group = 'Director'
     else:
-        lab_group = 'Principal Investigators'
+        lab_group = 'Faculty' #'Principal Investigators'
     
     
     
@@ -116,15 +119,13 @@ for i in range(13, df.shape[0]):
         # Map multiple faculoty to same lab if necessary
         lab_map[lab_group][formatted_name] = current_lab
         
-        current_lab['Principal Investigators'].append(formatted_name)
-    elif 'Scientist' in title:
-        current_lab['Research Staff'].append(formatted_name)
-    elif 'Instructor' in title:
-        current_lab['Research Staff'].append(formatted_name)
-    elif 'GRA' in title:
+        current_lab['Faculty'].append(formatted_name)
+    elif 'Graduate' in title:
         current_lab['Graduate Students'].append(formatted_name)
+    elif 'Student' in title:
+        current_lab['Students'].append(formatted_name)
     else:
-        current_lab['Staff'].append(formatted_name)
+        current_lab['Research Staff'].append(formatted_name)
     
     phone = df.iloc[i, 2]
     phone = phone.replace('cell: ', '')
@@ -146,37 +147,38 @@ for i in range(13, df.shape[0]):
     # Create markdown
     #
     
-    t = 'Research Staff'
+    g = 'Research Staff'
     
     #if 'Research' in title or 'Postdoc' in title or 'Instructor' in title:
     #    t = 'Research Staff'
     
     if 'Student' in title:
-        t = 'Students'
+        g = 'Students'
     
     if 'GRA' in title or 'Grad' in title:
-        t = 'Graduate Students'
+        g = 'Graduate Students'
     
     if 'Professor' in title:
-        t = 'Faculty'
+        g = 'Faculty'
+        
+    faclabmap[id] = current_lab['id']
     
     f = open('people/{}.md'.format(id), 'w')
     print('---', file=f)
     print('id: "{}"'.format(id), file=f)
-    print('name: "{}"'.format(formatted_name), file=f)
-    print('firstName: "{}"'.format(firstName), file=f)
-    print('lastName: "{}"'.format(lastName), file=f)
+    #print('name: "{}"'.format(formatted_name), file=f)
+    print('firstName: "{}"'.format(first_name), file=f)
+    print('lastName: "{}"'.format(last_name), file=f)
     print('postNominalLetters: "{}"'.format(' '.join(letters)), file=f)
-    print('title: "{}"'.format(title), file=f)
+    print('titles: ["{}"]'.format(title), file=f)
+    #print('groups: ["people:{}"]'.format(g), file=f)
     print('phone: "{}"'.format(phone), file=f)
     print('fax: "{}"'.format(fax), file=f)
     print('email: "{}"'.format(email), file=f)
     print('room: "{}"'.format(room), file=f)
-    print('lab: "{}"'.format(current_lab['id']), file=f)
-    print('group: "{}"'.format(t), file=f)
     print('researchAreas: []', file=f)
     
-    print('pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term={}+{}%5BAuthor%5D"'.format(lastName, firstName[0]), file=f)
+    print('pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term={}+{}%5BAuthor%5D"'.format(last_name, first_name[0]), file=f)
     
     
     if (len(url) > 0):
@@ -184,9 +186,12 @@ for i in range(13, df.shape[0]):
     else:
         print('url: []', file=f)
     
+    print('formats: ["long"]', file=f)
     print('tags: []'.format(url), file=f)
     print('---', file=f)
     f.close()
+    
+    people_map[g][last_name][first_name] = id
         
     
 
@@ -194,15 +199,15 @@ for i in range(13, df.shape[0]):
 # Sorted map of labs to people
 #
 
-GROUPS = ['Director', 'Principal Investigators']
+GROUPS = ['Director', 'Faculty']
 
-SUB_GROUPS = ['Principal Investigators', 'Research Staff', 'Graduate Students', 'Staff']
+SUB_GROUPS = ['Faculty', 'Research Staff', 'Graduate Students', 'Students']
 
 all_groups = []
 all_lab_map = {}
 
 for g in GROUPS:
-    group = {'id':g.lower().replace(' ', '-'), 'name':g, 'people': []}
+    group = {'name':g, 'people': []}
     
     faculty_names = sort_names(lab_map[g])
     
@@ -222,17 +227,16 @@ for g in GROUPS:
         # print('---', file=f)
         # f.close()
         
-        lab = {'id':id_map[name], 'name':name, 'url':LAB_URLS.get(id_map[name], ['','']), 'people':[]} #, 'divisions': []}
+        lab = {'id':id_map[name], 'name':name, 'groups':[]} #, 'divisions': []}
         
         for sg in SUB_GROUPS:
-            division = {'id':sg.lower().replace(' ', '-'), 'name':sg, 'url':'', 'people':[]}
             member_names = sort_names(lab_map[g][name][sg])
-            division['people'] = [id_map[name] for name in member_names]
-            lab['people'].extend([id_map[name] for name in member_names])
+            #division['people'] = [id_map[name] for name in member_names]
+            lab['groups'].append({'name':sg, 'people':[id_map[name] for name in member_names]})
             #lab['divisions'].append(division)
             
         #group['faculty'].append({'personId':id_map[name], 'labId':lab_map[g][name]['id']})
-        group['people'].append(id_map[name])
+        group['people'].append({'person':id_map[name], 'lab':faclabmap[id_map[name]]})
 
         
         # Lab names only, not the faculty mapping to the lab
@@ -243,10 +247,19 @@ for g in GROUPS:
     
 all_labs = [all_lab_map[name] for name in sort_names(all_lab_map)]    
 
+
 with open('faculty.json', 'w') as f:
     json.dump(all_groups, f, indent=2)
     
 with open('labs.json', 'w') as f:
     json.dump(all_labs, f, indent=2)
-    
+  
+sorted_people = collections.defaultdict(list)
 
+for sg in SUB_GROUPS:
+    for ln in sorted(people_map[sg]):
+        for fn in sorted(people_map[sg][ln]):
+            sorted_people[sg].append(people_map[sg][ln][fn])
+
+with open('people.json', 'w') as f:
+    json.dump(sorted_people, f, indent=2)

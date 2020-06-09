@@ -2,174 +2,304 @@
   {
     "id": "swarnali-acharyya",
     "name": "Swarnali Acharyya",
-    "url": ["", ""],
-    "people": [
-      "swarnali-acharyya",
-      "anup-biswas",
-      "ahmad-rushdi-shakri",
-      "courtney-coker",
-      "seoyoung-han",
-      "rohaan-hegde",
-      "wanchao-ma",
-      "tim-zhong"
+    "groups": [
+      {
+        "name": "Faculty",
+        "people": ["swarnali-acharyya"]
+      },
+      {
+        "name": "Research Staff",
+        "people": [
+          "anup-biswas",
+          "courtney-coker",
+          "seoyoung-han",
+          "rohaan-hegde",
+          "wanchao-ma",
+          "ahmad-rushdi-shakri"
+        ]
+      },
+      {
+        "name": "Graduate Students",
+        "people": ["tim-zhong"]
+      },
+      {
+        "name": "Students",
+        "people": []
+      }
     ]
   },
   {
     "id": "richard-baer",
     "name": "Richard Baer",
-    "url": ["", ""],
-    "people": ["richard-baer", "madeline-wong", "foon-wu-baer"]
+    "groups": [
+      {
+        "name": "Faculty",
+        "people": ["richard-baer"]
+      },
+      {
+        "name": "Research Staff",
+        "people": ["madeline-wong", "foon-wu-baer"]
+      },
+      {
+        "name": "Graduate Students",
+        "people": []
+      },
+      {
+        "name": "Students",
+        "people": []
+      }
+    ]
   },
   {
     "id": "christine-chio",
     "name": "Christine Chio",
-    "url": ["Lab Web Site", "https://chiolab.com/"],
-    "people": [
-      "christine-chio",
-      "marina-ayres-pereira",
-      "karina-chan",
-      "xiangyi-ke",
-      "belen-sundberg"
+    "groups": [
+      {
+        "name": "Faculty",
+        "people": ["christine-chio"]
+      },
+      {
+        "name": "Research Staff",
+        "people": ["karina-chan", "marina-ayres-pereira", "belen-sundberg"]
+      },
+      {
+        "name": "Graduate Students",
+        "people": ["xiangyi-ke"]
+      },
+      {
+        "name": "Students",
+        "people": []
+      }
     ]
   },
   {
     "id": "riccardo-dalla-favera",
     "name": "Riccardo Dalla-Favera",
-    "url": ["", ""],
-    "people": [
-      "katia-basso",
-      "riccardo-dalla-favera",
-      "laura-pasqualucci",
-      "elodie-bal",
-      "bowen-cai",
-      "clarissa-corinaldesi",
-      "sanaz-firouzi",
-      "antony-holmes",
-      "rahat-jahan",
-      "rahul-kumar",
-      "stefanie-meyer",
-      "claudio-scuoppo",
-      "chuanjiang-yu",
-      "mara-holloman",
-      "tongwei-mo",
-      "sofija-powers",
-      "qiong-shen",
-      "hongyan-tang",
-      "yunan-xie"
+    "groups": [
+      {
+        "name": "Faculty",
+        "people": ["katia-basso", "riccardo-dalla-favera", "laura-pasqualucci"]
+      },
+      {
+        "name": "Research Staff",
+        "people": [
+          "elodie-bal",
+          "bowen-cai",
+          "clarissa-corinaldesi",
+          "sanaz-firouzi",
+          "mara-holloman",
+          "antony-holmes",
+          "rahat-jahan",
+          "rahul-kumar",
+          "stefanie-meyer",
+          "tongwei-mo",
+          "sofija-powers",
+          "claudio-scuoppo",
+          "qiong-shen",
+          "hongyan-tang",
+          "yunan-xie",
+          "chuanjiang-yu"
+        ]
+      },
+      {
+        "name": "Graduate Students",
+        "people": []
+      },
+      {
+        "name": "Students",
+        "people": []
+      }
     ]
   },
   {
     "id": "adolfo-ferrando",
     "name": "Adolfo Ferrando",
-    "url": ["Lab Web Site", "http://ferrandolab.org/"],
-    "people": [
-      "adolfo-ferrando",
-      "teresa-palomero",
-      "robert-albero",
-      "laura-belver-miguel",
-      "clara-reglero-gomez",
-      "anouchka-laurent",
-      "silvia-alvarez-nanez",
-      "pablo-perez-duran",
-      "jose-rodriguez-cortes",
-      "agnieszka-wendorff",
-      "caral-bertulfo",
-      "mayukh-biswas",
-      "jessie-a-brown",
-      "anisha-cooke",
-      "marta-gascon",
-      "francesca-gianni",
-      "thomas-gunning",
-      "angela-kemfack",
-      "adam-mackey",
-      "lucia-morgado-palacin",
-      "stuart-aidan-quinn",
-      "marissa-rashkovan",
-      "bobby-shih"
+    "groups": [
+      {
+        "name": "Faculty",
+        "people": ["adolfo-ferrando", "teresa-palomero"]
+      },
+      {
+        "name": "Research Staff",
+        "people": [
+          "robert-albero",
+          "laura-belver-miguel",
+          "mayukh-biswas",
+          "jessie-a-brown",
+          "anisha-cooke",
+          "marta-gascon",
+          "francesca-gianni",
+          "clara-reglero-gomez",
+          "thomas-gunning",
+          "angela-kemfack",
+          "anouchka-laurent",
+          "adam-mackey",
+          "lucia-morgado-palacin",
+          "silvia-alvarez-nanez",
+          "pablo-perez-duran",
+          "marissa-rashkovan",
+          "jose-rodriguez-cortes",
+          "agnieszka-wendorff"
+        ]
+      },
+      {
+        "name": "Graduate Students",
+        "people": ["caral-bertulfo", "stuart-aidan-quinn", "bobby-shih"]
+      },
+      {
+        "name": "Students",
+        "people": []
+      }
     ]
   },
   {
     "id": "jean-gautier",
     "name": "Jean Gautier",
-    "url": ["", ""],
-    "people": [
-      "jean-gautier",
-      "jaewon-min",
-      "tomas-aparicio",
-      "gaganpreet-sidhu",
-      "andrew-liebau",
-      "jorge-reyes",
-      "jennifer-a-zagelbaum"
+    "groups": [
+      {
+        "name": "Faculty",
+        "people": ["jean-gautier", "jaewon-min"]
+      },
+      {
+        "name": "Research Staff",
+        "people": ["tomas-aparicio", "jorge-reyes", "gaganpreet-sidhu"]
+      },
+      {
+        "name": "Graduate Students",
+        "people": ["andrew-liebau", "jennifer-a-zagelbaum"]
+      },
+      {
+        "name": "Students",
+        "people": []
+      }
     ]
   },
   {
     "id": "wei-gu",
     "name": "Wei Gu",
-    "url": ["", ""],
-    "people": [
-      "wei-gu",
-      "delin-chen",
-      "ning-kon",
-      "yanging-liu",
-      "zhenyi-su",
-      "zhangchuan-xia",
-      "xin-yang",
-      "jingjie-yi",
-      "ying-jin",
-      "huan-li"
+    "groups": [
+      {
+        "name": "Faculty",
+        "people": ["wei-gu"]
+      },
+      {
+        "name": "Research Staff",
+        "people": [
+          "delin-chen",
+          "ying-jin",
+          "ning-kon",
+          "huan-li",
+          "yanging-liu",
+          "zhenyi-su",
+          "zhangchuan-xia",
+          "xin-yang",
+          "jingjie-yi"
+        ]
+      },
+      {
+        "name": "Graduate Students",
+        "people": []
+      },
+      {
+        "name": "Students",
+        "people": []
+      }
     ]
   },
   {
     "id": "antonio-iavarone",
     "name": "Antonio Iavarone",
-    "url": ["", ""],
-    "people": [
-      "antonio-iavarone",
-      "anna-lasorella",
-      "fulvio-dangelo",
-      "qiwen-gan",
-      "luciano-garofano",
-      "mohammad-hasanain",
-      "michael-oh",
-      "di-wang",
-      "soumyadip-das",
-      "brulinda-frangaj",
-      "simona-migliozzi",
-      "ryan-najac",
-      "danika-sommer"
+    "groups": [
+      {
+        "name": "Faculty",
+        "people": ["antonio-iavarone", "anna-lasorella"]
+      },
+      {
+        "name": "Research Staff",
+        "people": [
+          "fulvio-dangelo",
+          "soumyadip-das",
+          "brulinda-frangaj",
+          "qiwen-gan",
+          "luciano-garofano",
+          "mohammad-hasanain",
+          "simona-migliozzi",
+          "ryan-najac",
+          "michael-oh",
+          "danika-sommer",
+          "di-wang"
+        ]
+      },
+      {
+        "name": "Graduate Students",
+        "people": []
+      },
+      {
+        "name": "Students",
+        "people": []
+      }
     ]
   },
   {
     "id": "shan-zha",
     "name": "Shan Zha",
-    "url": ["", ""],
-    "people": [
-      "shan-zha",
-      "xiaohui-lin",
-      "maja-milanovic",
-      "zhengping-shao",
-      "yimeng-zhu",
-      "olivia-cupo",
-      "brian-lee",
-      "demis-menolfi",
-      "xiobin-wang"
+    "groups": [
+      {
+        "name": "Faculty",
+        "people": ["shan-zha"]
+      },
+      {
+        "name": "Research Staff",
+        "people": [
+          "olivia-cupo",
+          "brian-lee",
+          "xiaohui-lin",
+          "demis-menolfi",
+          "maja-milanovic",
+          "zhengping-shao",
+          "yimeng-zhu"
+        ]
+      },
+      {
+        "name": "Graduate Students",
+        "people": ["xiobin-wang"]
+      },
+      {
+        "name": "Students",
+        "people": []
+      }
     ]
   },
   {
     "id": "zhiguo-zhang",
     "name": "Zhiguo Zhang",
-    "url": ["", ""],
-    "people": [
-      "zhiguo-zhang",
-      "liang-cheng",
-      "shoufu-duan",
-      "xu-hua",
-      "zhiming-li",
-      "yan-mo",
-      "albert-serra-cardona",
-      "xiaowei-xu",
-      "xu-zhang",
-      "hui-zhou"
+    "groups": [
+      {
+        "name": "Faculty",
+        "people": ["zhiguo-zhang"]
+      },
+      {
+        "name": "Research Staff",
+        "people": [
+          "liang-cheng",
+          "shoufu-duan",
+          "xu-hua",
+          "zhiming-li",
+          "yan-mo",
+          "albert-serra-cardona",
+          "xiaowei-xu",
+          "xu-zhang",
+          "hui-zhou"
+        ]
+      },
+      {
+        "name": "Graduate Students",
+        "people": []
+      },
+      {
+        "name": "Students",
+        "people": []
+      }
     ]
   }
 ]

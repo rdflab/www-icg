@@ -274,30 +274,38 @@ const Team = ({ labGroupMap }) => (
     <FacultyHeading>Meet The Team</FacultyHeading>
 
     <ShowSmall size="lg">
-      <PeopleGroups groupMap={labGroupMap} cols={2} colWidth="w-9/20" />
+      <PeopleGroups
+        groupMap={labGroupMap}
+        cols={2}
+        colWidth="w-9/20"
+        showHeadings={false}
+      />
     </ShowSmall>
 
     <ShowBetween s1="lg" s2="xl">
-      <PeopleGroups groupMap={labGroupMap} cols={3} colWidth="w-3/10" />
+      <PeopleGroups
+        groupMap={labGroupMap}
+        cols={3}
+        colWidth="w-3/10"
+        showHeadings={false}
+      />
     </ShowBetween>
 
     <HideSmall size="xl">
-      <PeopleGroups groupMap={labGroupMap} />
+      <PeopleGroups groupMap={labGroupMap} showHeadings={false} />
     </HideSmall>
 
     {/* <PeopleGroups groupMap={labGroupMap} /> faculty={faculty} /> */}
   </Container>
 )
 
-const FacultyTemplate = ({ path, pageContext, data }) => {
+const FacultyLongTemplate = ({ path, pageContext, data }) => {
   const {
-    id,
+    crumbs,
     person,
     cv,
     appointments,
     lab,
-    crumbs,
-    labGroupMap,
     publications,
     labNews,
   } = pageContext
@@ -327,7 +335,7 @@ const FacultyTemplate = ({ path, pageContext, data }) => {
   for (let { node } of data.files.edges) {
     const file = node
 
-    if (file.relativePath.includes(id)) {
+    if (file.relativePath.includes(person.frontmatter.id)) {
       headerImage = (
         <BackgroundSection file={file}>
           {headshotImage !== null && (
@@ -363,7 +371,7 @@ const FacultyTemplate = ({ path, pageContext, data }) => {
       <Abstract person={person} markdown={data.abstractMarkdown} />
 
       <div className="py-16 bg-columbia-light-gray">
-        <Team labGroupMap={labGroupMap} />
+        <Team labGroupMap={lab.groupMap} />
       </div>
 
       {appointments !== null && appointments.appointments.length > 0 && (
@@ -426,7 +434,7 @@ const FacultyTemplate = ({ path, pageContext, data }) => {
   )
 }
 
-export default FacultyTemplate
+export default FacultyLongTemplate
 
 export const query = graphql`
   query($id: String!) {

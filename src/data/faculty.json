@@ -1,27 +1,72 @@
 [
   {
-    "id": "director",
     "name": "Director",
-    "people": ["riccardo-dalla-favera"]
+    "people": [
+      {
+        "person": "riccardo-dalla-favera",
+        "lab": "riccardo-dalla-favera"
+      }
+    ]
   },
   {
-    "id": "principal-investigators",
-    "name": "Principal Investigators",
+    "name": "Faculty",
     "people": [
-      "swarnali-acharyya",
-      "richard-baer",
-      "katia-basso",
-      "christine-chio",
-      "adolfo-ferrando",
-      "jean-gautier",
-      "wei-gu",
-      "antonio-iavarone",
-      "anna-lasorella",
-      "jaewon-min",
-      "teresa-palomero",
-      "laura-pasqualucci",
-      "shan-zha",
-      "zhiguo-zhang"
+      {
+        "person": "swarnali-acharyya",
+        "lab": "swarnali-acharyya"
+      },
+      {
+        "person": "richard-baer",
+        "lab": "richard-baer"
+      },
+      {
+        "person": "katia-basso",
+        "lab": "riccardo-dalla-favera"
+      },
+      {
+        "person": "christine-chio",
+        "lab": "christine-chio"
+      },
+      {
+        "person": "adolfo-ferrando",
+        "lab": "adolfo-ferrando"
+      },
+      {
+        "person": "jean-gautier",
+        "lab": "jean-gautier"
+      },
+      {
+        "person": "wei-gu",
+        "lab": "wei-gu"
+      },
+      {
+        "person": "antonio-iavarone",
+        "lab": "antonio-iavarone"
+      },
+      {
+        "person": "anna-lasorella",
+        "lab": "antonio-iavarone"
+      },
+      {
+        "person": "jaewon-min",
+        "lab": "jean-gautier"
+      },
+      {
+        "person": "teresa-palomero",
+        "lab": "adolfo-ferrando"
+      },
+      {
+        "person": "laura-pasqualucci",
+        "lab": "riccardo-dalla-favera"
+      },
+      {
+        "person": "shan-zha",
+        "lab": "shan-zha"
+      },
+      {
+        "person": "zhiguo-zhang",
+        "lab": "zhiguo-zhang"
+      }
     ]
   }
 ]

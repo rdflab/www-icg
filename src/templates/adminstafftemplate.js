@@ -10,7 +10,7 @@ import HideSmall from "../components/hidesmall"
 const EMPTY_QUERY = ""
 
 const AdminStaffTemplate = ({ path, pageContext }) => {
-  const { adminGroupMap, crumbs } = pageContext
+  const { admin, crumbs } = pageContext
 
   const [query, setQuery] = useState(EMPTY_QUERY)
   const [filteredGroups, setFilteredGroups] = useState([])
@@ -66,24 +66,30 @@ const AdminStaffTemplate = ({ path, pageContext }) => {
         <Container>
           <ShowSmall size="lg">
             <PeopleGroups
-              groupMap={adminGroupMap}
+              groupMap={admin.groupMap}
               cols={2}
               showPhoto={true}
               colWidth="w-9/20"
+              context="admin"
             />
           </ShowSmall>
 
           <ShowBetween s1="lg" s2="xl">
             <PeopleGroups
-              groupMap={adminGroupMap}
+              groupMap={admin.groupMap}
               cols={3}
               showPhoto={true}
               colWidth="w-3/10"
+              context="admin"
             />
           </ShowBetween>
 
           <HideSmall size="xl">
-            <PeopleGroups groupMap={adminGroupMap} showPhoto={true} />
+            <PeopleGroups
+              groupMap={admin.groupMap}
+              showPhoto={true}
+              context="admin"
+            />
           </HideSmall>
         </Container>
       </div>

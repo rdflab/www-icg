@@ -10,7 +10,7 @@ import PeopleGroups from "../components/people/peoplegroups"
 import { labName } from "../utils/labname"
 
 const LabPeopleTemplate = ({ path, pageContext }) => {
-  const { lab, faculty, labGroupMap } = pageContext
+  const { lab, faculty } = pageContext
 
   const title = labName(faculty)
 
@@ -30,7 +30,7 @@ const LabPeopleTemplate = ({ path, pageContext }) => {
       <PersonHeader person={faculty} title="Labs" />
       <div className="bg-columbia-light-gray py-8">
         <Container>
-          <PeopleGroups groupMap={labGroupMap} faculty={faculty} />
+          <PeopleGroups groupMap={lab.groupMap} faculty={faculty} />
         </Container>
       </div>
     </CrumbTitleLayout>
