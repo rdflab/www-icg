@@ -250,7 +250,7 @@ const About = ({ person, headshotFile, markdown }) => {
       <Column>
         <Column className="mr-8">
           {headshotFile !== null && (
-            <DropShadowFrame className="w-48 h-48 rounded-lg">
+            <DropShadowFrame className="w-48 h-48 rounded-lg opacity-90 hover:opacity-100">
               <Img
                 fluid={headshotFile.childImageSharp.fluid}
                 className="w-full h-full"
@@ -359,8 +359,6 @@ const FacultyLongTemplate = ({ path, pageContext, data }) => {
       break
     }
   }
-
-  console.log(cv)
 
   return (
     <CrumbLayout

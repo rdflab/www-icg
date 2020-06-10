@@ -86,7 +86,7 @@ const PersonCard = ({
   return (
     <div className={`w-full trans-ani mb-4 `}>
       {img !== null && (
-        <div className="bg-white overflow-hidden hover:shadow-md hover:bg-white rounded-lg trans-ani">
+        <div className="overflow-hidden opacity-90 hover:shadow-md hover:opacity-100 rounded-lg trans-ani">
           {img}
         </div>
       )}
@@ -247,7 +247,7 @@ PeopleGrid.defaultProps = {
   showPhoto: false,
   showHeadings: true,
   showUrl: true,
-  headingColor: "text-columbia-secondary-blue",
+  headingColor: "text-columbia-blue",
   context: "default",
 }
 

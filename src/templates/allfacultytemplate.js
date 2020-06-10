@@ -50,8 +50,8 @@ const Faculty = ({ person, imageMap }) => {
     >
       <Link to={`${paths.facultyPath}/${person.frontmatter.id}`}>
         <div
-          className={`bg-white trans-ani rounded-lg overflow-hidden ${
-            hover ? "shadow-md" : ""
+          className={`opacity-90 trans-ani rounded-lg overflow-hidden ${
+            hover ? "opacity-100 shadow-md" : ""
           }`}
         >
           {img}
@@ -156,7 +156,7 @@ const StaffGroups = ({
 StaffGroups.defaultProps = {
   cols: 4,
   colWidth: "w-11/50",
-  headingColor: "text-columbia-secondary-blue",
+  headingColor: "text-columbia-blue",
 }
 
 const AllFacultyTemplate = ({ path, pageContext, data }) => {

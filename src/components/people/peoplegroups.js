@@ -32,7 +32,7 @@ const PeopleGroups = ({
               smallView={smallView}
               headingColor={headingColor}
               showPhoto={showPhoto}
-              context={context}
+              context={g}
               showHeadings={showHeadings}
               showUrl={showUrl}
             />
@@ -53,7 +53,7 @@ PeopleGroups.defaultProps = {
   showUrl: true,
   cols: 4,
   colWidth: "w-11/50",
-  headingColor: "text-columbia-secondary-blue",
+  headingColor: "text-columbia-blue",
   context: "default",
 }
 

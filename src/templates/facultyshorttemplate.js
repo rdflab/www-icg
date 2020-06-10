@@ -249,7 +249,7 @@ const About = ({ person, headshotFile, markdown }) => {
     <SmallContainer className="my-16 text-2xl">
       {/* <FacultyHeading>About {person.frontmatter.name}</FacultyHeading> */}
       <Column>
-        <Column className="mr-8">
+        {/* <Column className="mr-8">
           {headshotFile !== null && (
             <DropShadowFrame className="w-48 h-48 rounded-lg">
               <Img
@@ -258,7 +258,7 @@ const About = ({ person, headshotFile, markdown }) => {
               />
             </DropShadowFrame>
           )}
-        </Column>
+        </Column> */}
         <Column>
           <FullDiv>
             <div>{html}</div>

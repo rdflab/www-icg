@@ -3,7 +3,7 @@ id: "antony-holmes"
 firstName: "Antony"
 lastName: "Holmes"
 postNominalLetters: "PhD"
-titles: ["Associate Research Scientist", "admin::Web Developer"]
+titles: ["Associate Research Scientist", "Web Site::Web Developer"]
 phone: "851-5270"
 fax: ""
 email: "abh2138@cumc.columbia.edu"

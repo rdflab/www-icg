@@ -6,7 +6,7 @@ postNominalLetters: "MD"
 titles:
   [
     "Professor of Pathology & Cell Biology, Genetics & Development, Microbiology & Immunology",
-    "admin::Director",
+    "Directors::Director",
   ]
 phone: "851-5273 "
 fax: "851-5256"
