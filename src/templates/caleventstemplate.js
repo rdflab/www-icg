@@ -24,7 +24,6 @@ const CalEventsTemplate = ({ path, pageContext }) => {
   const [selectedDays, setSelectedDays] = useState([])
 
   // useEffect(() => {
-  //   console.log('sddf')
   //   for (let calEvent of allCalEvents) {
   //     if (calEvent.start === undefined) {
   //       calEvent.start = new Date(calEvent.frontmatter.start)

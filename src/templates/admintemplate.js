@@ -3,8 +3,6 @@ import CrumbTitleLayout from "../components/crumbtitlelayout"
 import BlueLink from "../components/links/bluelink"
 import SiteSearch from "../components/search/sitesearch"
 import Container from "../components/container"
-import Column from "../components/column"
-import FullDiv from "../components/fulldiv"
 
 const AdminTemplate = ({ path, pageContext }) => {
   return (

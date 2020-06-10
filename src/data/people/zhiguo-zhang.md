@@ -10,6 +10,6 @@ email: "zz2401@columbia.edu"
 room: "406"
 researchAreas: []
 pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Zhang+Z%5BAuthor%5D"
-url: []
-tags: ["page-format:long", "publication-format:recent"]
+url: ""
+tags: ["page-format::long", "publication-format::recent"]
 ---

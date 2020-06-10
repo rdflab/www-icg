@@ -10,6 +10,6 @@ email: "xx2285@cumc.columbia.edu"
 room: "407"
 researchAreas: []
 pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Xu+X%5BAuthor%5D"
-url: []
-tags: ["page-format:long", "publication-format:recent"]
+url: ""
+tags: ["page-format::long", "publication-format::recent"]
 ---

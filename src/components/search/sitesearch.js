@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react"
 import SiteSearchBar from "./sitesearchbar"
-import Column from "../column"
 import BlueLink from "../links/bluelink"
 import HideSmall from "../hidesmall"
 import BlueLinkExt from "../links/bluelinkext"
@@ -227,8 +226,6 @@ const SiteSearch = ({ className, placeholder, maxResults }) => {
   }
 
   const search = () => {
-    //console.log("q", q)
-
     let node
     let found
 
@@ -296,8 +293,6 @@ const SiteSearch = ({ className, placeholder, maxResults }) => {
   }
 
   const onKeyDown = (e) => {
-    //console.log(e.keyCode)
-
     if (e.keyCode === 38 || e.keyCode === 37) {
       setSelectedIndex(Math.max(-1, selectedIndex - 1))
     }

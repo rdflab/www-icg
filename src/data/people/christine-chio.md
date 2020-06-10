@@ -10,6 +10,6 @@ email: "ic2445@columbia.edu"
 room: "505A"
 researchAreas: []
 pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Chio+C%5BAuthor%5D"
-url: ["Lab Web Site", "https://chiolab.com/"]
-tags: ["page-format:long", "publication-format:recent"]
+url: "Lab Web Site::https://chiolab.com/"
+tags: ["page-format::long", "publication-format::recent"]
 ---

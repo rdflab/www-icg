@@ -10,6 +10,6 @@ email: "saq2106@cumc.columbia.edu"
 room: "401B"
 researchAreas: []
 pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Quinn+S%5BAuthor%5D"
-url: []
-tags: ["page-format:long", "publication-format:recent"]
+url: ""
+tags: ["page-format::long", "publication-format::recent"]
 ---

@@ -10,7 +10,8 @@ import collections
 import json
 
 LAB_URLS = {'adolfo-ferrando':['Lab Web Site', 'http://ferrandolab.org/'],
-            'christine-chio':['Lab Web Site', 'https://chiolab.com/']}
+            'christine-chio':['Lab Web Site', 'https://chiolab.com/'],
+            'katia-basso':['Lab Web Site', 'https://rdf-lab.org/']}
 
 def sort_names(names):
     name_map = collections.defaultdict(lambda: collections.defaultdict(list))
@@ -182,12 +183,12 @@ for i in range(15, df.shape[0]):
     
     
     if (len(url) > 0):
-        print('url: ["{}", "{}"]'.format(url[0], url[1]), file=f)
+        print('url: "{}::{}"'.format(url[0], url[1]), file=f)
     else:
-        print('url: []', file=f)
+        print('url: ""', file=f)
     
     #print('formats: ["long"]', file=f)
-    print('tags: ["page-format:long", "publication-format:recent"]'.format(url), file=f)
+    print('tags: ["page-format::long", "publication-format::recent"]'.format(url), file=f)
     print('---', file=f)
     f.close()
     
@@ -222,7 +223,7 @@ for g in GROUPS:
         # print('fax: "{}"'.format(''), file=f)
         # print('email: "{}"'.format(''), file=f)
         # print('room: "{}"'.format(''), file=f)
-        # print('url: []'.format(''), file=f)
+        # print('url: ""'.format(''), file=f)
         # print('tags: []'.format(''), file=f)
         # print('---', file=f)
         # f.close()

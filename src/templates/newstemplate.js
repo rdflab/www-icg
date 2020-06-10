@@ -21,7 +21,6 @@ const NewsTemplate = ({ path, pageContext }) => {
   const [filterYears, setFilterYears] = useState([])
 
   // useEffect(() => {
-  //   console.log('sgfhfghfghfgh')
   //   for (let item of allNews) {
   //     if (item.date === undefined) {
   //       item.date = new Date(item.frontmatter.date)

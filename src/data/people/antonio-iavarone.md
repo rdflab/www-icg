@@ -10,6 +10,6 @@ email: "ai2102@columbia.edu"
 room: "407B"
 researchAreas: []
 pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Iavarone+A%5BAuthor%5D"
-url: []
-tags: ["page-format:long", "publication-format:recent"]
+url: ""
+tags: ["page-format::long", "publication-format::recent"]
 ---

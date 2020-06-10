@@ -133,7 +133,7 @@ const PeopleGrid = ({
 
   const genericimg = (
     <DropShadowFrame>
-      <img src={genericsvg} className="w-full" alt="Photo" />
+      <img src={genericsvg} className="w-full" />
     </DropShadowFrame>
   )
 

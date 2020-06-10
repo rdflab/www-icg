@@ -10,6 +10,6 @@ email: "bs3281@cumc.columbia.edu"
 room: "505"
 researchAreas: []
 pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Sundberg+B%5BAuthor%5D"
-url: []
-tags: ["page-format:long", "publication-format:recent"]
+url: ""
+tags: ["page-format::long", "publication-format::recent"]
 ---

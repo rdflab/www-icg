@@ -23,7 +23,7 @@ const ContactInfo = ({ person, urls, color, className }) => (
 
 ContactInfo.defaultProps = {
   className: "",
-  url: [],
+  url: "",
   color: "gray",
 }
 

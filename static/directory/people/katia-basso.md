@@ -7,5 +7,5 @@ phone: "851-4786"
 fax: ""
 email: "kb451@cumc.columbia.edu"
 room: "506"
-url: []
+url: ""
 ---

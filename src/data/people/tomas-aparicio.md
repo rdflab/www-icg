@@ -10,6 +10,6 @@ email: "ta2308@cumc.columbia.edu"
 room: "602"
 researchAreas: []
 pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Aparicio+T%5BAuthor%5D"
-url: []
-tags: ["page-format:long", "publication-format:recent"]
+url: ""
+tags: ["page-format::long", "publication-format::recent"]
 ---

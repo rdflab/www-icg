@@ -41,8 +41,6 @@ const SlideMenuContainer = ({ title, onClickHandle, visible, maxResults }) => {
   const [siteData, setSiteData] = useState(null)
 
   const search = (q, sd) => {
-    //console.log("q", q)
-
     const [items, words] = searchTree(sd.tree, q)
 
     // If some links were found, put them in the search

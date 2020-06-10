@@ -5,7 +5,7 @@ path: "/news/redesign"
 labs: []
 people: []
 tags: ["News"]
-url: []
+url: ""
 ---
 
 The ICG website has been redesigned for a better experience.

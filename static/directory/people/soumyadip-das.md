@@ -7,5 +7,5 @@ phone: ""
 fax: ""
 email: "@cumc.columbia.edu"
 room: ""
-url: []
+url: ""
 ---

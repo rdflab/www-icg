@@ -7,5 +7,5 @@ phone: "851-4611"
 fax: ""
 email: "af2196@columbia.edu"
 room: "402A"
-url: []
+url: ""
 ---

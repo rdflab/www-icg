@@ -10,6 +10,6 @@ email: "sf3010@cumc.columbia.edu"
 room: "507"
 researchAreas: []
 pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Firouzi+S%5BAuthor%5D"
-url: []
-tags: ["page-format:long", "publication-format:recent"]
+url: ""
+tags: ["page-format::long", "publication-format::recent"]
 ---

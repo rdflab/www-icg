@@ -2,16 +2,18 @@ import React, { useState } from "react"
 import CrumbTitleLayout from "../components/crumbtitlelayout"
 import SiteSearch from "../components/search/sitesearch"
 import Column from "../components/column"
-import { Link } from "gatsby"
-import generic from "../assets/svg/generic.svg"
+import { Link, graphql } from "gatsby"
+import genericsvg from "../assets/svg/generic.svg"
 import Container from "../components/container"
 import ShowSmall from "../components/showsmall"
 import HideSmall from "../components/hidesmall"
 import useSiteMetadata from "../hooks/sitemetadata"
+import useImageMap from "../hooks/imagemap"
+import Img from "gatsby-image"
 
 const EMPTY_QUERY = ""
 
-const Lab = ({ lab }) => {
+const Lab = ({ lab, imageMap }) => {
   const [hover, setHover] = useState(false)
 
   const { paths } = useSiteMetadata()
@@ -24,6 +26,19 @@ const Lab = ({ lab }) => {
     setHover(false)
   }
 
+  let img
+
+  if (lab.id in imageMap) {
+    img = (
+      <Img
+        fluid={imageMap[lab.id].childImageSharp.fluid}
+        className="w-full h-full"
+      />
+    )
+  } else {
+    img = <img src={genericsvg} className="w-full" alt={lab.name} />
+  }
+
   return (
     <div
       className={`w-full rounded-md bg-white border border-solid border-gray-300 overflow-hidden mb-16 trans-ani ${
@@ -33,9 +48,7 @@ const Lab = ({ lab }) => {
       onMouseLeave={onMouseLeave}
     >
       <Link to={`${paths.labsPath}/${lab.id}`}>
-        <div className="bg-white">
-          <img src={generic} className="w-full" />
-        </div>
+        <div className="bg-white">{img}</div>
         <div className={`p-4 text-lg text-columbia-secondary-blue`}>
           {lab.name}
         </div>
@@ -44,7 +57,7 @@ const Lab = ({ lab }) => {
   )
 }
 
-const LabGrid = ({ labs, cols, colWidth }) => {
+const LabGrid = ({ labs, cols, colWidth, imageMap }) => {
   const rows = Math.floor(labs.length / cols) + 1
 
   const ret = []
@@ -59,7 +72,7 @@ const LabGrid = ({ labs, cols, colWidth }) => {
 
       col.push(
         <Column className={`md:${colWidth}`} key={pc}>
-          {pc < labs.length && <Lab lab={lab} />}
+          {pc < labs.length && <Lab lab={lab} imageMap={imageMap} />}
         </Column>
       )
 
@@ -81,17 +94,19 @@ const LabGrid = ({ labs, cols, colWidth }) => {
 }
 
 LabGrid.defaultProps = {
-  cols: 3,
-  colWidth: "w-3/10",
+  cols: 5,
+  colWidth: "w-9/50",
 }
 
-const LabsTemplate = ({ path, pageContext }) => {
+const AllLabsTemplate = ({ path, pageContext, data }) => {
   const { allLabs, crumbs } = pageContext
 
   const [query, setQuery] = useState(EMPTY_QUERY)
   const [filteredGroups, setFilteredGroups] = useState([])
   const [page, setPage] = useState(1)
   const [recordsPerPage, setRecordsPerPage] = useState(20)
+
+  const imageMap = useImageMap(data)
 
   // const handleInputChange = e => {
   //   const q = e.target.value.toLowerCase()
@@ -141,10 +156,15 @@ const LabsTemplate = ({ path, pageContext }) => {
       <div className="py-16">
         <Container>
           <ShowSmall size="lg">
-            <LabGrid labs={allLabs} cols={2} colWidth="w-9/20" />
+            <LabGrid
+              labs={allLabs}
+              cols={2}
+              colWidth="w-9/20"
+              imageMap={imageMap}
+            />
           </ShowSmall>
           <HideSmall size="lg">
-            <LabGrid labs={allLabs} />
+            <LabGrid labs={allLabs} imageMap={imageMap} />
           </HideSmall>
         </Container>
       </div>
@@ -152,4 +172,23 @@ const LabsTemplate = ({ path, pageContext }) => {
   )
 }
 
-export default LabsTemplate
+export default AllLabsTemplate
+
+export const query = graphql`
+  query {
+    files: allFile(filter: { absolutePath: { regex: "/images/people/" } }) {
+      edges {
+        node {
+          name
+          ext
+          relativePath
+          childImageSharp {
+            fluid(maxWidth: 500) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+  }
+`

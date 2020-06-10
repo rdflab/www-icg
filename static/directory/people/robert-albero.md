@@ -7,5 +7,5 @@ phone: "851-5292"
 fax: ""
 email: "ra2967@cumc.columbia.edu"
 room: "401B"
-url: []
+url: ""
 ---

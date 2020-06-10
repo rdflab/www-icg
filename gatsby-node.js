@@ -13,7 +13,7 @@ const GROUPS = [
 const indexTemplate = path.resolve(`src/templates/indextemplate.js`)
 const labTemplate = path.resolve(`src/templates/labtemplate.js`)
 const labPeopleTemplate = path.resolve(`src/templates/labpeopletemplate.js`)
-const labsTemplate = path.resolve(`src/templates/labstemplate.js`)
+const allLabsTemplate = path.resolve(`src/templates/alllabstemplate.js`)
 const facultyShortTemplate = path.resolve(
   `src/templates/facultyshorttemplate.js`
 )
@@ -45,7 +45,7 @@ const toContextMap = (items) => {
 
   for (let i = 0; i < items.length; ++i) {
     let item = items[i]
-    const tokens = item.split(":")
+    const tokens = item.split("::")
     let context = "default"
     let name = ""
     if (tokens.length > 1) {
@@ -183,7 +183,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       postNominalLetters: String!
       tags: [String!]!
       room: String!
-      url: [String!]!
+      url: String!
       notes: [String!]!
       people: [String!]!
       researchAreas: [String!]!
@@ -191,7 +191,6 @@ exports.createSchemaCustomization = ({ actions }) => {
       authors: [String!]!
       year: Int!
       startDate: Date!
-      formats: [String!]!
     }
   `
   createTypes(typeDefs)
@@ -736,7 +735,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
       let template
 
-      if (person.frontmatter.tags.includes("page-format:short")) {
+      if (person.frontmatter.tags.includes("page-format::short")) {
         template = facultyShortTemplate
       } else {
         template = facultyLongTemplate
@@ -806,7 +805,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   createPage({
     path: paths.labsPath,
-    component: labsTemplate,
+    component: allLabsTemplate,
     context: {
       allLabs: allLabs,
       crumbs: [["Labs", paths.labsPath]],

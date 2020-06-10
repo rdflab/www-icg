@@ -7,5 +7,5 @@ phone: "851-5285"
 fax: ""
 email: "nk2139@cumc.columbia.edu"
 room: "608"
-url: []
+url: ""
 ---

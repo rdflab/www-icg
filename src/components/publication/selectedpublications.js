@@ -6,7 +6,7 @@
  */
 
 import React from "react"
-import Publication from "./publication"
+import PublicationYears from "./publicationyears"
 
 const SelectedPublications = ({ id, publications, top }) => {
   let ret = []
@@ -18,7 +18,7 @@ const SelectedPublications = ({ id, publications, top }) => {
   // Outer loop to create parent
   for (let publication of publications) {
     if (publication.tags.includes(tagId)) {
-      ret.push(<Publication key={c} publication={publication} />)
+      ret.push(publication)
       ++c
     }
 
@@ -27,7 +27,7 @@ const SelectedPublications = ({ id, publications, top }) => {
     }
   }
 
-  return ret
+  return <PublicationYears publications={ret} />
 }
 
 SelectedPublications.defaultProps = {

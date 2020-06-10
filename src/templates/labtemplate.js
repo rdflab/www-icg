@@ -20,7 +20,6 @@ const LabTemplate = ({ path, pageContext }) => {
     lab,
     crumbs,
     faculty,
-    labGroupMap,
     labPublications,
     labNews,
     labExcerptHtml,
@@ -32,7 +31,7 @@ const LabTemplate = ({ path, pageContext }) => {
     <CrumbLayout crumbs={crumbs} title={title} headerComponent={<SiteSearch />}>
       {/* <PersonHeader person={faculty} title="Labs" /> */}
 
-      <LabHeader lab={lab} path={path} />
+      <LabHeader person={faculty} path={path} />
 
       {/* <div className="text-center">
               <Button
@@ -53,15 +52,23 @@ const LabTemplate = ({ path, pageContext }) => {
             <H1>Meet The Team</H1>
 
             <ShowSmall size="lg">
-              <PeopleGroups groupMap={labGroupMap} cols={2} colWidth="w-9/20" />
+              <PeopleGroups
+                groupMap={lab.groupMap}
+                cols={2}
+                colWidth="w-9/20"
+              />
             </ShowSmall>
 
             <ShowBetween s1="lg" s2="xl">
-              <PeopleGroups groupMap={labGroupMap} cols={3} colWidth="w-3/10" />
+              <PeopleGroups
+                groupMap={lab.groupMap}
+                cols={3}
+                colWidth="w-3/10"
+              />
             </ShowBetween>
 
             <HideSmall size="xl">
-              <PeopleGroups groupMap={labGroupMap} />
+              <PeopleGroups groupMap={lab.groupMap} />
             </HideSmall>
 
             {/* <PeopleGroups groupMap={labGroupMap} /> faculty={faculty} /> */}

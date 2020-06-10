@@ -99,8 +99,8 @@ const AwardsGrid = ({ cv, cols, colWidth, headingColor }) => {
 }
 
 AwardsGrid.defaultProps = {
-  cols: 3,
-  colWidth: "w-3/10",
+  cols: 2,
+  colWidth: "w-9/20",
   headingColor: "text-columbia-secondary-blue",
 }
 
@@ -355,6 +355,8 @@ const FacultyLongTemplate = ({ path, pageContext, data }) => {
     }
   }
 
+  console.log(cv)
+
   return (
     <CrumbLayout
       nav="Faculty"
@@ -403,38 +405,38 @@ const FacultyLongTemplate = ({ path, pageContext, data }) => {
       )}
 
       {cv !== null && cv.awards.length > 0 && (
-        <div className="py-8">
-          <Container>
+        <div className="py-16">
+          <SmallContainer>
             <FacultyHeading2>Awards and Honors</FacultyHeading2>
             <AwardsGrid cv={cv} />
-          </Container>
+          </SmallContainer>
         </div>
       )}
 
       <div className="py-16 bg-columbia-light-gray">
-        {person.frontmatter.tags.includes("publication-format:recent") &&
-          publications.length > 0 && (
-            <Container>
-              <FacultyHeading2>Recent Publications</FacultyHeading2>
+        <SmallContainer>
+          {person.frontmatter.tags.includes("publication-format::recent") &&
+            publications.length > 0 && (
+              <>
+                <FacultyHeading2>Recent Publications</FacultyHeading2>
 
-              <RecentPublications publications={publications} />
-            </Container>
-          )}
+                <RecentPublications publications={publications} />
+              </>
+            )}
 
-        {person.frontmatter.tags.includes("publication-format:selected") &&
-          publications.length > 0 && (
-            <Container>
-              <FacultyHeading2>Selected Publications</FacultyHeading2>
+          {person.frontmatter.tags.includes("publication-format::selected") &&
+            publications.length > 0 && (
+              <>
+                <FacultyHeading2>Selected Publications</FacultyHeading2>
 
-              <SelectedPublications
-                id={person.frontmatter.id}
-                publications={publications}
-              />
-            </Container>
-          )}
+                <SelectedPublications
+                  id={person.frontmatter.id}
+                  publications={publications}
+                />
+              </>
+            )}
 
-        <Container className="pt-8">
-          <Column className="items-center justify-between">
+          <Column className="items-center justify-between pt-8">
             <PubMedLink person={person} />
             <Column>
               <Button
@@ -444,7 +446,7 @@ const FacultyLongTemplate = ({ path, pageContext, data }) => {
               </Button>
             </Column>
           </Column>
-        </Container>
+        </SmallContainer>
       </div>
 
       {/* {labNews.length > 0 && (

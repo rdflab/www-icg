@@ -9,8 +9,6 @@ const EMPTY_TOKEN = ""
  * @param {*} q
  */
 export const searchTree = (root, q) => {
-  //console.log("q", q)
-
   let node
   let found
   const text = q

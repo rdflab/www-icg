@@ -10,6 +10,6 @@ email: "mma2246@cumc.columbia.edu"
 room: "505"
 researchAreas: []
 pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Ayres Pereira+M%5BAuthor%5D"
-url: []
-tags: ["page-format:long", "publication-format:recent"]
+url: ""
+tags: ["page-format::long", "publication-format::recent"]
 ---

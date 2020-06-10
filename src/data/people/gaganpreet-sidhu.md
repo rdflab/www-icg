@@ -10,6 +10,6 @@ email: "gs2732@cumc.columbia.edu"
 room: "602"
 researchAreas: []
 pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Sidhu+G%5BAuthor%5D"
-url: []
-tags: ["page-format:long", "publication-format:recent"]
+url: ""
+tags: ["page-format::long", "publication-format::recent"]
 ---
