@@ -51,16 +51,18 @@ const Faculty = ({ person, imageMap }) => {
       <Link to={`${paths.facultyPath}/${person.frontmatter.id}`}>
         <div
           className={`bg-white trans-ani rounded-lg overflow-hidden ${
-            hover ? "shadow-lg" : ""
+            hover ? "shadow-md" : ""
           }`}
         >
           {img}
         </div>
-        <div className="m-1 mt-4">
-          <h4 className="text-gray-800">
-            {person.frontmatter.name}, {person.frontmatter.postNominalLetters}
-          </h4>
-          {/* <h5>{person.frontmatter.title}</h5> */}
+        <div
+          className={`m-1 mt-4 trans-ani ${
+            hover ? "text-blue" : "text-gray-800"
+          }`}
+        >
+          <h4>{person.frontmatter.name}</h4>
+          <h5>{person.frontmatter.postNominalLetters}</h5>
         </div>
       </Link>
     </div>
