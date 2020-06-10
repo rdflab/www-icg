@@ -38,7 +38,9 @@ const FacultyHeader = ({ person, title, heading, subHeading, path }) => {
       </div>
 
       <div className="lg:w-4/12 bg-columbia-medium-blue p-8 md:pr-40 min-h-full">
-        <ContactInfo person={person} color="white" />
+        <h5>
+          <ContactInfo person={person} color="white" />
+        </h5>
       </div>
     </Column>
   )

@@ -8,8 +8,7 @@
 import React from "react"
 import Column from "../column"
 
-import BlueLinkExt from "../links/bluelinkext"
-import PubMedLink from "./pubmedlink"
+import LinkExt from "../links/linkext"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 /**
@@ -41,6 +40,16 @@ const authorString = (authors, maxAuthors) => {
 
   return ret
 }
+
+export const pubmedUrl = (pubmed) => {
+  return `https://www.ncbi.nlm.nih.gov/pubmed/?term=${pubmed}`
+}
+
+const PubMedLink = ({ publication, children }) => (
+  <LinkExt target="_blank" to={pubmedUrl(publication.pubmed)}>
+    {children}
+  </LinkExt>
+)
 
 const Publication = ({ publication, showLabLink, maxAuthors }) => {
   const authors = authorString(publication.authors, maxAuthors)
@@ -76,27 +85,39 @@ const Publication = ({ publication, showLabLink, maxAuthors }) => {
       </Column>
 
       {publication.pubmed !== "" && (
-        <div className="row blue items-center">
+        <Column className="blue items-center">
           <div>
-            <PubMedLink publication={publication} />
+            <PubMedLink publication={publication}>PubMed</PubMedLink>
           </div>
           <div className="ml-1">
-            <FontAwesomeIcon icon="external-link-alt" className={`text-lg`} />
+            <PubMedLink publication={publication}>
+              {
+                <FontAwesomeIcon
+                  icon="external-link-alt"
+                  className={`text-lg`}
+                />
+              }
+            </PubMedLink>
           </div>
 
           <div className="ml-4">
-            <BlueLinkExt
+            <LinkExt
               target="_blank"
               to={`https://scholar.google.com/scholar?hl=en&as_sdt=0%2C33&q=${publication.title}`}
             >
               Google Scholar
-            </BlueLinkExt>
+            </LinkExt>
           </div>
 
           <div className="ml-1">
-            <FontAwesomeIcon icon="external-link-alt" className={`text-lg`} />
+            <LinkExt
+              target="_blank"
+              to={`https://scholar.google.com/scholar?hl=en&as_sdt=0%2C33&q=${publication.title}`}
+            >
+              <FontAwesomeIcon icon="external-link-alt" className={`text-lg`} />
+            </LinkExt>
           </div>
-        </div>
+        </Column>
       )}
     </div>
   )

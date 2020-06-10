@@ -4,7 +4,7 @@ import BlueLinkExt from "../components/links/bluelinkext"
 import gatsbysvg from "../assets/svg/Gatsby_logo.svg"
 import mariadbsvg from "../assets/svg/maria-db.svg"
 import npmsvg from "../assets/svg/npm-logo-black.svg"
-import ExtLink from "../components/links/extlink"
+import LinkExt from "../components/links/linkext"
 import Column from "../components/column"
 import Container from "../components/container"
 import useSiteMetadata from "../hooks/sitemetadata"
@@ -54,27 +54,27 @@ const HelpTemplate = ({ path, pageContext, data }) => {
 
             <Column className="w-full mt-8 justify-between items-center">
               <Column className="w-full md:w-2/10 py-4">
-                <ExtLink to="https://www.npmjs.com/">
+                <LinkExt to="https://www.npmjs.com/">
                   <img src={npmsvg} className="h-8 help-logo" alt="NPM logo" />
-                </ExtLink>
+                </LinkExt>
               </Column>
               <Column className="w-full md:w-2/10 py-4">
-                <ExtLink to="https://www.gatsbyjs.org">
+                <LinkExt to="https://www.gatsbyjs.org">
                   <img
                     src={gatsbysvg}
                     className="h-8 help-logo"
                     alt="Gatsby logo"
                   />
-                </ExtLink>
+                </LinkExt>
               </Column>
               <Column className="w-full md:w-2/10 py-4">
-                <ExtLink to="https://mariadb.com/">
+                <LinkExt to="https://mariadb.com/">
                   <img
                     src={mariadbsvg}
                     className="h-8 help-logo"
                     alt="MariaDB logo"
                   />
-                </ExtLink>
+                </LinkExt>
               </Column>
               <Column className="w-full md:w-2/10 py-4">
                 <a href="https://aws.amazon.com/what-is-cloud-computing">

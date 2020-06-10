@@ -20,7 +20,7 @@ import Column from "../components/column"
 import FullDiv from "../components/fulldiv"
 import BlueLink from "../components/links/bluelink"
 import pubmedsvg from "../assets/svg/pubmed.svg"
-import ExtLink from "../components/links/extlink"
+import LinkExt from "../components/links/linkext"
 import BlueLinkExt from "../components/links/bluelinkext"
 import SmallContainer from "../components/smallcontainer"
 import DropShadowFrame from "../components/images/dropshadowframe"
@@ -29,20 +29,20 @@ import Button from "../components/button"
 
 const PubMedLink = ({ person }) => (
   // <div className="uppercase">
-  //   <ExtLink to={person.frontmatter.pubmed}>
+  //   <LinkExt to={person.frontmatter.pubmed}>
   //     <img src={pubmedsvg} className="inline align-middle w-32" />
-  //   </ExtLink>
+  //   </LinkExt>
   // </div>
 
   <Column isVCentered={true}>
     <Column className="uppercase mr-4 md:w-32">See more on</Column>
     <Column>
-      <ExtLink
+      <LinkExt
         to={person.frontmatter.pubmed}
         className="opacity-70 hover:opacity-100 trans-ani"
       >
         <img src={pubmedsvg} className="w-32" />
-      </ExtLink>
+      </LinkExt>
     </Column>
   </Column>
 )
@@ -247,7 +247,7 @@ const About = ({ person, headshotFile, markdown }) => {
 
   return (
     <SmallContainer className="my-16 text-2xl">
-      <FacultyHeading>About {person.frontmatter.name}</FacultyHeading>
+      {/* <FacultyHeading>About {person.frontmatter.name}</FacultyHeading> */}
       <Column>
         <Column className="mr-8">
           {headshotFile !== null && (
@@ -368,21 +368,6 @@ const FacultyShortTemplate = ({ path, pageContext, data }) => {
 
       <FacultyHeader person={person} />
 
-      <div className="py-16 bg-columbia-light-gray">
-        <Team labGroupMap={lab.groupMap} />
-      </div>
-
-      {/* {appointments !== null && appointments.appointments.length > 0 && (
-        <div className="py-16 bg-columbia-secondary-blue-10">
-          <SmallContainer>
-            <FacultyHeading>Appointments</FacultyHeading>
-            <AppointmentsGrid appointments={appointments.appointments} />
-          </SmallContainer>
-        </div>
-      )} */}
-
-      <div id="about" />
-
       <div className="py-16">
         <About
           person={person}
@@ -400,6 +385,21 @@ const FacultyShortTemplate = ({ path, pageContext, data }) => {
         </div>
       )}
 
+      <div className="py-16 bg-columbia-light-gray">
+        <Team labGroupMap={lab.groupMap} />
+      </div>
+
+      {/* {appointments !== null && appointments.appointments.length > 0 && (
+        <div className="py-16 bg-columbia-secondary-blue-10">
+          <SmallContainer>
+            <FacultyHeading>Appointments</FacultyHeading>
+            <AppointmentsGrid appointments={appointments.appointments} />
+          </SmallContainer>
+        </div>
+      )} */}
+      {/* 
+      <div id="about" />
+
       {cv !== null && cv.awards.length > 0 && (
         <div className="py-8">
           <SmallContainer>
@@ -407,9 +407,9 @@ const FacultyShortTemplate = ({ path, pageContext, data }) => {
             <AwardsGrid cv={cv} />
           </SmallContainer>
         </div>
-      )}
+      )} */}
 
-      <div className="py-16 bg-columbia-light-gray">
+      <div className="py-16">
         <SmallContainer>
           {person.frontmatter.tags.includes("publication-format::recent") &&
             publications.length > 0 && (
@@ -434,13 +434,13 @@ const FacultyShortTemplate = ({ path, pageContext, data }) => {
 
           <Column className="items-center justify-between pt-8">
             <PubMedLink person={person} />
-            <Column>
+            {/* <Column>
               <Button
                 to={`${paths.facultyPath}/${person.frontmatter.id}/publications`}
               >
                 More Publications
               </Button>
-            </Column>
+            </Column> */}
           </Column>
         </SmallContainer>
       </div>

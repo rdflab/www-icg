@@ -67,7 +67,14 @@ import getContextName from "../../utils/contextname"
 //   </div>
 // )
 
-const PersonCard = ({ person, img, smallView, context, isFaculty }) => {
+const PersonCard = ({
+  person,
+  img,
+  smallView,
+  context,
+  isFaculty,
+  showUrl,
+}) => {
   let link
 
   if (isFaculty) {
@@ -77,25 +84,29 @@ const PersonCard = ({ person, img, smallView, context, isFaculty }) => {
   }
 
   return (
-    <div
-      className={`w-full trans-ani mb-4 overflow-hidden py-4 text-black border-b-4 border-solid border-transparent  hover:border-columbia-secondary-blue`}
-    >
-      <div>
-        {img !== null && <div className="bg-white mb-6">{img}</div>}
-        <h4>{link}</h4>
-        <h5>{getContextName(context, person.titleMap)}</h5>
-      </div>
-      {!smallView && (
-        <div className="mt-4 ">
-          <ContactInfo person={person} />
+    <div className={`w-full trans-ani mb-4 `}>
+      {img !== null && (
+        <div className="bg-white overflow-hidden hover:shadow-md hover:bg-white rounded-lg trans-ani">
+          {img}
         </div>
       )}
+      <div className="m-1 mt-4 text-gray-800">
+        <h4>{link}</h4>
+        <h5>{getContextName(context, person.titleMap)}</h5>
+
+        {!smallView && (
+          <div className="mt-3">
+            <ContactInfo person={person} showIcons={false} showUrl={showUrl} />
+          </div>
+        )}
+      </div>
     </div>
   )
 }
 
 PersonCard.defaultProps = {
   context: "default",
+  showUrl: true,
 }
 
 const PeopleGrid = ({
@@ -108,6 +119,7 @@ const PeopleGrid = ({
   headingColor,
   showPhoto,
   showHeadings,
+  showUrl,
   context,
 }) => {
   const data = useStaticQuery(graphql`
@@ -131,7 +143,7 @@ const PeopleGrid = ({
 
   const imageMap = useImageMap(data)
 
-  const genericimg = <img src={genericsvg} className="w-full rounded" />
+  const genericimg = <img src={genericsvg} className="w-full" />
 
   const rows = Math.floor(people.length / cols) + 1
 
@@ -168,7 +180,7 @@ const PeopleGrid = ({
             img = (
               <Img
                 fluid={imageMap[person.frontmatter.id].childImageSharp.fluid}
-                className="w-full h-full rounded-lg"
+                className="w-full h-full"
               />
             )
           } else {
@@ -188,6 +200,7 @@ const PeopleGrid = ({
               smallView={smallView}
               context={context}
               isFaculty={name === "Faculty"}
+              showUrl={showUrl}
             />
           )}
         </Column>
@@ -233,6 +246,7 @@ PeopleGrid.defaultProps = {
   faculty: null,
   showPhoto: false,
   showHeadings: true,
+  showUrl: true,
   headingColor: "text-columbia-secondary-blue",
   context: "default",
 }

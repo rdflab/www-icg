@@ -44,14 +44,20 @@ const Faculty = ({ person, imageMap }) => {
 
   return (
     <div
-      className={`w-full rounded-lg bg-white border border-solid border-gray-300 hover:shadow-md overflow-hidden mb-16 trans-ani`}
+      className={`w-full mb-16 trans-ani`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
       <Link to={`${paths.facultyPath}/${person.frontmatter.id}`}>
-        <div className="bg-white">{img}</div>
-        <div className="p-4">
-          <h4 className="text-columbia-secondary-blue">
+        <div
+          className={`bg-white trans-ani rounded-lg overflow-hidden ${
+            hover ? "shadow-lg" : ""
+          }`}
+        >
+          {img}
+        </div>
+        <div className="m-1 mt-4">
+          <h4 className="text-gray-800">
             {person.frontmatter.name}, {person.frontmatter.postNominalLetters}
           </h4>
           {/* <h5>{person.frontmatter.title}</h5> */}
@@ -125,9 +131,9 @@ const StaffGroups = ({
 
   for (let group of allGroups) {
     ret.push(
-      <h2 className={`${headingColor} my-4`} key={`header-${group.name}`}>
+      <h3 className={`${headingColor} my-4`} key={`header-${group.name}`}>
         {group.name}
-      </h2>
+      </h3>
     )
 
     ret.push(
@@ -148,7 +154,7 @@ const StaffGroups = ({
 StaffGroups.defaultProps = {
   cols: 4,
   colWidth: "w-11/50",
-  headingColor: "text-gray-700",
+  headingColor: "text-columbia-secondary-blue",
 }
 
 const AllFacultyTemplate = ({ path, pageContext, data }) => {

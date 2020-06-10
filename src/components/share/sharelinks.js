@@ -1,6 +1,6 @@
 import React from "react"
 import Column from "../column"
-import ExtLink from "../links/extlink"
+import LinkExt from "../links/linkext"
 import useSiteMetadata from "../../hooks/sitemetadata"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
@@ -12,30 +12,30 @@ const ShareLinks = ({ color, size, opacity, path }) => {
   return (
     <Column isMobile={true} className={`${color} items-center md:justify-end`}>
       <div>
-        <ExtLink to={`https://www.facebook.com/sharer.php?u=${href}`}>
+        <LinkExt to={`https://www.facebook.com/sharer.php?u=${href}`}>
           <FontAwesomeIcon
             icon={["fab", "facebook"]}
             className={`opacity-90 hover:${opacity} trans-ani text-3xl`}
           />
-        </ExtLink>
+        </LinkExt>
       </div>
       <div className="ml-4">
-        <ExtLink to={`https://twitter.com/share?ref_src=${href}`}>
+        <LinkExt to={`https://twitter.com/share?ref_src=${href}`}>
           <FontAwesomeIcon
             icon={["fab", "twitter"]}
             className={`opacity-90 hover:${opacity} trans-ani text-3xl`}
           />
-        </ExtLink>
+        </LinkExt>
       </div>
       <div className="ml-4">
-        <ExtLink
+        <LinkExt
           to={`https://www.linkedin.com/sharing/share-offsite/?url=${href}`}
         >
           <FontAwesomeIcon
             icon={["fab", "linkedin"]}
             className={`opacity-90 hover:${opacity} trans-ani text-3xl`}
           />
-        </ExtLink>
+        </LinkExt>
       </div>
     </Column>
   )

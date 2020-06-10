@@ -12,16 +12,14 @@ const FacultyLink = ({ person, color }) => {
       return (
         <WhiteLink to={`${paths.facultyPath}/${person.frontmatter.id}`}>
           {person.frontmatter.name}
-          {person.frontmatter.postNominalLetters !== "" &&
-            ", " + person.frontmatter.postNominalLetters}
+          {/* {person.frontmatter.postNominalLetters !== "" && `, ${person.frontmatter.postNominalLetters}`} */}
         </WhiteLink>
       )
     default:
       return (
         <BlueLink to={`${paths.facultyPath}/${person.frontmatter.id}`}>
           {person.frontmatter.name}
-          {person.frontmatter.postNominalLetters !== "" &&
-            ", " + person.frontmatter.postNominalLetters}
+          {/* {person.frontmatter.postNominalLetters !== "" && `, ${person.frontmatter.postNominalLetters}`} */}
         </BlueLink>
       )
   }

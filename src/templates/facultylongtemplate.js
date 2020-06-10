@@ -3,8 +3,7 @@ import CrumbLayout from "../components/crumblayout"
 
 import RecentPublications from "../components/publication/recentpublications"
 import SelectedPublications from "../components/publication/selectedpublications"
-//import SideBar from "../components/sidebar/sidebar"
-//import SideBarNews from "../components/news/sidebarnews"
+
 import HTMLDiv from "../components/htmldiv"
 import SiteSearch from "../components/search/sitesearch"
 import Container from "../components/container"
@@ -20,7 +19,7 @@ import Column from "../components/column"
 import FullDiv from "../components/fulldiv"
 import BlueLink from "../components/links/bluelink"
 import pubmedsvg from "../assets/svg/pubmed.svg"
-import ExtLink from "../components/links/extlink"
+import LinkExt from "../components/links/linkext"
 import BlueLinkExt from "../components/links/bluelinkext"
 import SmallContainer from "../components/smallcontainer"
 import DropShadowFrame from "../components/images/dropshadowframe"
@@ -29,20 +28,20 @@ import Button from "../components/button"
 
 const PubMedLink = ({ person }) => (
   // <div className="uppercase">
-  //   <ExtLink to={person.frontmatter.pubmed}>
+  //   <LinkExt to={person.frontmatter.pubmed}>
   //     <img src={pubmedsvg} className="inline align-middle w-32" />
-  //   </ExtLink>
+  //   </LinkExt>
   // </div>
 
   <Column isVCentered={true}>
     <Column className="uppercase mr-4 md:w-32">See more on</Column>
     <Column>
-      <ExtLink
+      <LinkExt
         to={person.frontmatter.pubmed}
         className="opacity-70 hover:opacity-100 trans-ani"
       >
         <img src={pubmedsvg} className="w-32" />
-      </ExtLink>
+      </LinkExt>
     </Column>
   </Column>
 )
@@ -279,6 +278,7 @@ const Team = ({ labGroupMap }) => (
         cols={2}
         colWidth="w-9/20"
         showHeadings={false}
+        showUrl={false}
       />
     </ShowSmall>
 
@@ -288,11 +288,16 @@ const Team = ({ labGroupMap }) => (
         cols={3}
         colWidth="w-3/10"
         showHeadings={false}
+        showUrl={false}
       />
     </ShowBetween>
 
     <HideSmall size="xl">
-      <PeopleGroups groupMap={labGroupMap} showHeadings={false} />
+      <PeopleGroups
+        groupMap={labGroupMap}
+        showHeadings={false}
+        showUrl={false}
+      />
     </HideSmall>
 
     {/* <PeopleGroups groupMap={labGroupMap} /> faculty={faculty} /> */}
@@ -438,13 +443,13 @@ const FacultyLongTemplate = ({ path, pageContext, data }) => {
 
           <Column className="items-center justify-between pt-8">
             <PubMedLink person={person} />
-            <Column>
+            {/* <Column>
               <Button
                 to={`${paths.facultyPath}/${person.frontmatter.id}/publications`}
               >
                 More Publications
               </Button>
-            </Column>
+            </Column> */}
           </Column>
         </SmallContainer>
       </div>

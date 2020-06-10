@@ -4,7 +4,7 @@ import WhiteLinkExt from "./whitelinkext"
 import ColorLinkExt from "./colorlinkext"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
-const UrlLink = ({ url, color }) => {
+export const urlLink = (url, color) => {
   const tokens = url.split("::")
 
   let text
@@ -37,7 +37,7 @@ const URLLink = ({ url, color }) => (
         className={`text-${color} text-xl`}
       />
     }
-    content={<UrlLink url={url} color={color} />}
+    content={urlLink(url, color)}
   />
 )
 
