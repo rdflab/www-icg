@@ -21,7 +21,7 @@ const HeaderLinks = () => {
   const links = flattenEdges(data.links.edges)
 
   return (
-    <div className="w-9/20">
+    <div className="w-full sm:w-8/10 lg:w-6/10 xl:w-4/10">
       <Column className="justify-between">
         {links.map((link, index) => {
           return (

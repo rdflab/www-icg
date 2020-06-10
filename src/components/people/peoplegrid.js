@@ -131,11 +131,7 @@ const PeopleGrid = ({
 
   const imageMap = useImageMap(data)
 
-  const genericimg = (
-    <DropShadowFrame>
-      <img src={genericsvg} className="w-full" />
-    </DropShadowFrame>
-  )
+  const genericimg = <img src={genericsvg} className="w-full rounded" />
 
   const rows = Math.floor(people.length / cols) + 1
 
@@ -170,12 +166,10 @@ const PeopleGrid = ({
         if (showPhoto) {
           if (person.frontmatter.id in imageMap) {
             img = (
-              <DropShadowFrame>
-                <Img
-                  fluid={imageMap[person.frontmatter.id].childImageSharp.fluid}
-                  className="w-full h-full"
-                />
-              </DropShadowFrame>
+              <Img
+                fluid={imageMap[person.frontmatter.id].childImageSharp.fluid}
+                className="w-full h-full rounded-lg"
+              />
             )
           } else {
             img = genericimg

@@ -89,6 +89,8 @@ const AdminStaffTemplate = ({ path, pageContext }) => {
               groupMap={admin.groupMap}
               showPhoto={true}
               context="admin"
+              cols={4}
+              colWidth="w-11/50"
             />
           </HideSmall>
         </Container>
