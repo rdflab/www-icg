@@ -3,6 +3,7 @@ import ContactInfo from "./contactinfo"
 import Column from "../column"
 import FullDiv from "../fulldiv"
 import FacultyLink from "../faculty/facultylink"
+import PersonLink from "../people/personlink"
 import genericsvg from "../../assets/svg/generic.svg"
 import { useStaticQuery, graphql } from "gatsby"
 import useImageMap from "../../hooks/imagemap"
@@ -80,7 +81,15 @@ const PersonCard = ({
   if (isFaculty) {
     link = <FacultyLink person={person} />
   } else {
-    link = person.frontmatter.name //<PersonLink person={person} />
+    if (person.frontmatter.tags.includes("personal-page::true")) {
+      link = <PersonLink person={person} />
+    } else {
+      link = `${person.frontmatter.name}${
+        person.frontmatter.postNominalLetters !== ""
+          ? `, ${person.frontmatter.postNominalLetters}`
+          : ""
+      }`
+    }
   }
 
   return (

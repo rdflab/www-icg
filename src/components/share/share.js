@@ -9,7 +9,7 @@ const Share = ({ path, color }) => (
 )
 
 Share.defaultProps = {
-  color: "text-white",
+  color: "white",
 }
 
 export default Share

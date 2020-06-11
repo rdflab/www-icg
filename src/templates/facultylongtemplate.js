@@ -25,6 +25,8 @@ import SmallContainer from "../components/smallcontainer"
 import DropShadowFrame from "../components/images/dropshadowframe"
 import useSiteMetadata from "../hooks/sitemetadata"
 import Button from "../components/button"
+import Share from "../components/share/share"
+import ShareLinks from "../components/share/sharelinks"
 
 const PubMedLink = ({ person }) => (
   // <div className="uppercase">
@@ -367,11 +369,14 @@ const FacultyLongTemplate = ({ path, pageContext, data }) => {
       crumbs={crumbs}
       headerComponent={<SiteSearch />}
       headerLinksFloat={true}
-      show
     >
       {headerImage !== null && headerImage}
 
       <FacultyHeader person={person} />
+
+      <Container className="m-8">
+        <ShareLinks path={path} color="color" opacity={[40, 100]} />
+      </Container>
 
       <Abstract person={person} markdown={data.abstractMarkdown} />
 

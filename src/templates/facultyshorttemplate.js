@@ -26,6 +26,7 @@ import SmallContainer from "../components/smallcontainer"
 import DropShadowFrame from "../components/images/dropshadowframe"
 import useSiteMetadata from "../hooks/sitemetadata"
 import Button from "../components/button"
+import ShareLinks from "../components/share/sharelinks"
 
 const PubMedLink = ({ person }) => (
   // <div className="uppercase">
@@ -367,6 +368,10 @@ const FacultyShortTemplate = ({ path, pageContext, data }) => {
       {headerImage !== null && headerImage}
 
       <FacultyHeader person={person} />
+
+      <Container className="m-8">
+        <ShareLinks path={path} color="color" opacity={[40, 100]} />
+      </Container>
 
       <div className="py-16">
         <About

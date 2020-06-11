@@ -7,19 +7,23 @@ import useSiteMetadata from "../../hooks/sitemetadata"
 const FacultyLink = ({ person, color }) => {
   const { paths } = useSiteMetadata()
 
+  const name = `${person.frontmatter.name}${
+    person.frontmatter.postNominalLetters !== ""
+      ? `, ${person.frontmatter.postNominalLetters}`
+      : ""
+  }`
+
   switch (color) {
     case "white":
       return (
         <WhiteLink to={`${paths.facultyPath}/${person.frontmatter.id}`}>
-          {person.frontmatter.name}
-          {/* {person.frontmatter.postNominalLetters !== "" && `, ${person.frontmatter.postNominalLetters}`} */}
+          {name}
         </WhiteLink>
       )
     default:
       return (
         <BlueLink to={`${paths.facultyPath}/${person.frontmatter.id}`}>
-          {person.frontmatter.name}
-          {/* {person.frontmatter.postNominalLetters !== "" && `, ${person.frontmatter.postNominalLetters}`} */}
+          {name}
         </BlueLink>
       )
   }

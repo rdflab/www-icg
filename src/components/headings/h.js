@@ -23,7 +23,7 @@ const H = ({ title, heading, subHeading, content, showShareLinks, path }) => {
           {content !== null && <div className="py-2">{content}</div>}
           {showShareLinks && (
             <div className="py-2">
-              <ShareLinks path={path} color="text-white" />
+              <ShareLinks path={path} color="white" />
             </div>
           )}
         </ShowSmall>
@@ -33,7 +33,7 @@ const H = ({ title, heading, subHeading, content, showShareLinks, path }) => {
 
             <Column>{content !== null && <div>{content}</div>}</Column>
 
-            {showShareLinks && <ShareLinks path={path} color="text-white" />}
+            {showShareLinks && <ShareLinks path={path} color="white" />}
           </Column>
         </HideSmall>
       </Container>

@@ -355,6 +355,15 @@ a:hover {
   opacity: 1;
 }
 
+.share {
+  @apply trans-ani;
+  filter: grayscale(1)
+}
+
+.share:hover {
+  filter: grayscale(0)
+}
+
 /* purgecss end ignore */
 
 //@tailwind utilities;
