@@ -68,5 +68,22 @@
         "lab": "zhiguo-zhang"
       }
     ]
+  },
+  {
+    "name": "Associate Members",
+    "people": [
+      {
+        "person": "cory-abate-shen",
+        "lab": "cory-abate-shen"
+      },
+      {
+        "person": "raul-rabadan",
+        "lab": "raul-rabadan"
+      },
+      {
+        "person": "michael-shen",
+        "lab": "michael-shen"
+      }
+    ]
   }
 ]

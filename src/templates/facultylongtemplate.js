@@ -39,7 +39,7 @@ const PubMedLink = ({ person }) => (
     <Column className="uppercase mr-4 md:w-32">See more on</Column>
     <Column>
       <LinkExt
-        to={person.frontmatter.pubmed}
+        to={`https://pubmed.ncbi.nlm.nih.gov/?term=${person.frontmatter.lastName}+${person.frontmatter.firstName}%5BAuthor%5D&sort=pubdate`}
         className="opacity-70 hover:opacity-100 trans-ani"
       >
         <img src={pubmedsvg} className="w-32" />
