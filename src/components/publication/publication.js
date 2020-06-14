@@ -20,7 +20,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 const authorString = (authors, maxAuthors) => {
   let strs = []
 
-  if (authors.length <= maxAuthors) {
+  if (authors.length <= maxAuthors || maxAuthors === -1) {
     for (let author of authors) {
       strs.push(author) //.lastName + " " + author.initials)
     }
@@ -125,7 +125,7 @@ const Publication = ({ publication, showLabLink, maxAuthors }) => {
 
 Publication.defaultProps = {
   showLabLink: false,
-  maxAuthors: 4,
+  maxAuthors: -1,
 }
 
 export default Publication

@@ -3,7 +3,7 @@ var fs = require("fs")
 
 const GROUPS = [
   "Faculty",
-  "Divisional Administrator",
+  "Administrator",
   "Administrative Staff",
   "Research Staff",
   "Graduate Students",

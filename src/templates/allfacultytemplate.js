@@ -27,7 +27,9 @@ const Faculty = ({ person, imageMap }) => {
     setHover(false)
   }
 
-  let img
+  let img = (
+    <img src={genericsvg} className="w-full" alt={person.frontmatter.name} />
+  )
 
   if (person.frontmatter.id in imageMap) {
     img = (
@@ -35,10 +37,6 @@ const Faculty = ({ person, imageMap }) => {
         fluid={imageMap[person.frontmatter.id].childImageSharp.fluid}
         className="w-full h-full"
       />
-    )
-  } else {
-    img = (
-      <img src={genericsvg} className="w-full" alt={person.frontmatter.name} />
     )
   }
 

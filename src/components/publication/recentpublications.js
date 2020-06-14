@@ -7,7 +7,8 @@
 
 import React from "react"
 //import Button from "../../components/button"
-import PublicationYears from "./publicationyears"
+//import PublicationYears from "./publicationyears"
+import PublicationList from "./publicationlist"
 import useSiteMetadata from "../../hooks/sitemetadata"
 
 const RecentPublications = ({ publications, top, className }) => {
@@ -28,7 +29,7 @@ const RecentPublications = ({ publications, top, className }) => {
     <div className={`mb-4 ${className}`}>
       {/* <h2>Recent Publications</h2> */}
       <div className="mt-4">
-        <PublicationYears publications={publications.slice(0, top)} />
+        <PublicationList publications={publications.slice(0, top)} />
       </div>
       {/* <div className="text-center">
         <Button to={`${paths.labsPath}/${lab.id}/publications`}>

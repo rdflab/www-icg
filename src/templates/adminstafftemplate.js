@@ -49,7 +49,7 @@ const AdminStaffTemplate = ({ path, pageContext }) => {
       path={path}
       crumbs={crumbs}
       nav="Administration"
-      title="Meet Our Administration Team"
+      title="Administration Team"
       headerComponent={<SiteSearch />}
       // titleComponent={
       //   <SearchSummary count={groups.length} single="Lab" plural="Labs" />

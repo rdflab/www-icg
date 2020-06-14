@@ -6,7 +6,8 @@
  */
 
 import React from "react"
-import PublicationYears from "./publicationyears"
+//import PublicationYears from "./publicationyears"
+import PublicationList from "./publicationlist"
 
 const SelectedPublications = ({ id, publications, top }) => {
   let ret = []
@@ -27,7 +28,7 @@ const SelectedPublications = ({ id, publications, top }) => {
     }
   }
 
-  return <PublicationYears publications={ret} />
+  return <PublicationList publications={ret} /> //<PublicationYears publications={ret} />
 }
 
 SelectedPublications.defaultProps = {

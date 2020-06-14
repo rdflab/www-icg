@@ -4164,31 +4164,6 @@
     "people": ["antony-holmes", "katia-basso"]
   },
   {
-    "title": "MEF2B mutations lead to deregulated expression of the oncogene BCL6 in diffuse large B cell lymphoma",
-    "authors": [
-      "Ying CY",
-      "Dominguez-Sola D",
-      "Fabi M",
-      "Lorenz IC",
-      "Hussein S",
-      "Bansal M",
-      "Califano A",
-      "Pasqualucci L",
-      "Basso K",
-      "Dalla-Favera R"
-    ],
-    "journal": "Nat Immunol",
-    "year": 2013,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "pubmed": "23974956",
-    "tags": ["Article"],
-    "url": "",
-    "labs": ["katia-basso"],
-    "people": ["katia-basso", "laura-pasqualucci", "riccardo-dalla-favera"]
-  },
-  {
     "title": "t-RNA-derived microRNA modulates proliferation and DNA damage response and is down-regulated in B cell lymphoma",
     "authors": [
       "Maute RL",
@@ -5542,7 +5517,7 @@
       "Basso K",
       "Dalla-Favera R"
     ],
-    "journal": "",
+    "journal": "Nat Immunol",
     "year": 2013,
     "volume": "",
     "issue": "",

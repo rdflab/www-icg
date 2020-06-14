@@ -112,8 +112,8 @@ for i in range(3, 15):
     if 'Director' in title:
         type = 'Directors'
         
-    if 'Divisional' in title:
-        type = 'Divisional Administrator'
+    if 'Administrator' in title:
+        type = 'Administrator'
         
     if 'Web' in title:
         type = 'Web Site'
@@ -156,7 +156,7 @@ for i in range(3, 15):
 
 GROUPS = ['Administration'] #, 'Divisional Administrator', 'Administrative Staff']
 
-SUB_GROUPS = ['Directors', 'Divisional Administrator', 'Administrative Staff', 'Web Site']
+SUB_GROUPS = ['Directors', 'Administrator', 'Administrative Staff', 'Web Site']
 
 all_divisions = []
 

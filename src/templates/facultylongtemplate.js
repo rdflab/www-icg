@@ -24,8 +24,8 @@ import BlueLinkExt from "../components/links/bluelinkext"
 import SmallContainer from "../components/smallcontainer"
 import DropShadowFrame from "../components/images/dropshadowframe"
 import useSiteMetadata from "../hooks/sitemetadata"
-import Button from "../components/button"
-import Share from "../components/share/share"
+import genericsvg from "../assets/svg/generic.svg"
+import headersvg from "../assets/svg/header.svg"
 import ShareLinks from "../components/share/sharelinks"
 
 const PubMedLink = ({ person }) => (
@@ -182,6 +182,21 @@ const BackgroundSection = ({ file, children }) => (
   </BackgroundImage>
 )
 
+const GenericBackgroundSection = ({ children }) => (
+  <div
+    className="relative w-full overflow-hidden"
+    style={{
+      backgroundImage: `url(${headersvg})`,
+      height: "36rem",
+      backgroundPosition: "top center",
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "cover",
+    }}
+  >
+    {children}
+  </div>
+)
+
 const FacultyHeading = ({ children }) => (
   <h2 className="uppercase mb-8 text-center" style={{ fontWeight: "normal" }}>
     {children}
@@ -319,47 +334,74 @@ const FacultyLongTemplate = ({ path, pageContext, data }) => {
 
   const { paths } = useSiteMetadata()
 
-  let headshotImage = null
+  let headshotImage = (
+    <img src={genericsvg} className="w-full" alt={person.frontmatter.name} />
+  )
 
   if (data.file !== null) {
     headshotImage = (
-      <DropShadowFrame className="w-96 rounded-lg">
-        <Img
-          fluid={data.file.childImageSharp.fluid}
-          className="w-full h-full"
-        />
-      </DropShadowFrame>
+      <Img fluid={data.file.childImageSharp.fluid} className="w-full h-full" />
     )
   }
 
-  let headerImage = null
+  headshotImage = (
+    <DropShadowFrame className="w-96 rounded-lg">
+      {headshotImage}
+    </DropShadowFrame>
+  )
+
+  let headerImage = (
+    <img src={headersvg} className="w-full" alt={person.frontmatter.name} />
+  )
+
   let headerImageCredit = ""
 
   if (data.abstractMarkdown !== null) {
     headerImageCredit = data.abstractMarkdown.frontmatter.headerImageCredit
   }
 
+  let headerFile = null
+
   for (let { node } of data.files.edges) {
-    const file = node
-
-    if (file.relativePath.includes(person.frontmatter.id)) {
-      headerImage = (
-        <BackgroundSection file={file}>
-          {headshotImage !== null && (
-            <Container className="absolute bottom-0 mb-8 z-20">
-              {headshotImage}
-            </Container>
-          )}
-
-          {headerImageCredit !== "" && (
-            <Container className="hidden md:block absolute bottom-0 right-0 text-sm text-white opacity-80 mb-8 z-10">
-              {headerImageCredit}
-            </Container>
-          )}
-        </BackgroundSection>
-      )
+    if (node.relativePath.includes(person.frontmatter.id)) {
+      headerFile = node
       break
     }
+  }
+
+  if (headerFile !== null) {
+    headerImage = (
+      <BackgroundSection file={headerFile}>
+        {headshotImage !== null && (
+          <Container className="absolute bottom-0 mb-8 z-20">
+            {headshotImage}
+          </Container>
+        )}
+
+        {headerImageCredit !== "" && (
+          <Container className="hidden md:block absolute bottom-0 right-0 text-sm text-white opacity-80 mb-8 z-10">
+            {headerImageCredit}
+          </Container>
+        )}
+      </BackgroundSection>
+    )
+  } else {
+    console.log("here", headshotImage)
+    headerImage = (
+      <GenericBackgroundSection>
+        {headshotImage !== null && (
+          <Container className="absolute bottom-0 mb-8 z-20">
+            {headshotImage}
+          </Container>
+        )}
+
+        {headerImageCredit !== "" && (
+          <Container className="hidden md:block absolute bottom-0 right-0 text-sm text-white opacity-80 mb-8 z-10">
+            {headerImageCredit}
+          </Container>
+        )}
+      </GenericBackgroundSection>
+    )
   }
 
   return (

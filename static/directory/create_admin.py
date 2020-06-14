@@ -126,7 +126,7 @@ for i in range(3, 13):
 # Sorted map of labs to people
 #
 
-GROUPS = ['Divisional Administrator', 'Administrative Staff']
+GROUPS = ['Administrator', 'Administrative Staff']
 
 SUB_GROUPS = ['Staff']
 
