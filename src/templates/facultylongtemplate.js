@@ -396,7 +396,6 @@ const FacultyLongTemplate = ({ path, pageContext, data }) => {
       </BackgroundSection>
     )
   } else {
-    console.log("here", headshotImage)
     headerImage = (
       <GenericBackgroundSection file={data.genericHeaderFile}>
         {headshotImage !== null && (

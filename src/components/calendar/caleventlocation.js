@@ -18,7 +18,7 @@ const CalEventLocation = ({ event, showDate, isMobile, color }) => {
     <>
       <HideSmall
         show={true}
-        className={`${color === "white" ? "text-white" : "text-gray"}`}
+        className={`${color === "white" ? "text-white" : "text-gray-500"}`}
       >
         <Column isVCentered={true} isMobile={true}>
           <div className="w-1/10 text-center">
@@ -40,7 +40,7 @@ const CalEventLocation = ({ event, showDate, isMobile, color }) => {
       </HideSmall>
 
       <HideSmall
-        className={`${color === "white" ? "text-white" : "text-gray"}`}
+        className={`${color === "white" ? "text-white" : "text-gray-500"}`}
       >
         <Column className="items-center">
           <Column w="1">

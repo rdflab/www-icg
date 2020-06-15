@@ -15,14 +15,13 @@ export const MONTHS = [
 
 export const GROUPS = [
   "Directors",
-  "Faculty",
-  "Administrator",
-  "Administrative Staff",
-  "Web Site",
+  "Members",
   "Research Staff",
   "Graduate Students",
   "Students",
-  "Staff",
+  "Administrator",
+  "Administrative Staff",
+  "Web Site",
 ]
 
 export const RESEARCH_AREA_PATH = "/research-areas"

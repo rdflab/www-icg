@@ -3,7 +3,7 @@ id: "wei-gu"
 firstName: "Wei"
 lastName: "Gu"
 postNominalLetters: "PhD"
-titles: ["Professor of Pathology & Cell Biology (in ICG)"]
+titles: ["Professor of Pathology & Cell Biology"]
 phone: "851-5282 "
 fax: "851-5284"
 email: "wg8@columbia.edu"

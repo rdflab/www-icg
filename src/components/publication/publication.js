@@ -85,7 +85,7 @@ const Publication = ({ publication, showLabLink, maxAuthors }) => {
       </Column>
 
       {publication.pubmed !== "" && (
-        <Column className="blue items-center">
+        <Column isMobile={true} className="blue items-center">
           <div>
             <PubMedLink publication={publication}>PubMed</PubMedLink>
           </div>

@@ -6,6 +6,7 @@ import MainColumn from "../components/maincolumn"
 import SideColumn from "../components/sidecolumn"
 import CalEventsSideBar from "../components/calendar/caleventssidebar"
 import Container from "../components/container"
+import useEventType from "../hooks/eventype"
 
 const CalEventTemplate = ({ path, pageContext }) => {
   const { calEvent, allCalEvents } = pageContext
@@ -18,8 +19,9 @@ const CalEventTemplate = ({ path, pageContext }) => {
   return (
     <CrumbTitleLayout
       path={path}
-      nav="Events"
+      nav={"Event"}
       title={title}
+      subTitle={useEventType(calEvent)}
       crumbs={[["Events", "/events"]]}
     >
       <Container className="py-8">

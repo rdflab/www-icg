@@ -3,8 +3,7 @@ id: "shan-zha"
 firstName: "Shan"
 lastName: "Zha"
 postNominalLetters: "MD PhD"
-titles:
-  ["Associate Professor of Pediatrics & Pathology & Cell Biology (ICG & HICCC)"]
+titles: ["Associate Professor of Pediatrics & Pathology & Cell Biology"]
 phone: "851-4779"
 fax: ""
 email: "SZ2296@columbia.edu"

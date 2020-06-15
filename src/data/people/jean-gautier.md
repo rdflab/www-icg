@@ -3,7 +3,7 @@ id: "jean-gautier"
 firstName: "Jean"
 lastName: "Gautier"
 postNominalLetters: "PhD"
-titles: ["Professor of Genetic & Development (in ICG)"]
+titles: ["Professor of Genetic & Development"]
 phone: "851-4564"
 fax: ""
 email: "jg130@columbia.edu"

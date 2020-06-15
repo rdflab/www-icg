@@ -3,7 +3,7 @@ id: "swarnali-acharyya"
 firstName: "Swarnali"
 lastName: "Acharyya"
 postNominalLetters: "PhD"
-titles: ["Assistant Professor of Pathology & Cell Biology (in ICG)"]
+titles: ["Assistant Professor of Pathology & Cell Biology"]
 phone: "851-4792"
 fax: ""
 email: "sa3141@columbia.edu"

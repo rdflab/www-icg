@@ -3,8 +3,7 @@ id: "anna-lasorella"
 firstName: "Anna"
 lastName: "Lasorella"
 postNominalLetters: "MD"
-titles:
-  ["Associate Professor of Pediatrics & Pathology & Cell Biology (in ICG)"]
+titles: ["Associate Professor of Pediatrics & Pathology & Cell Biology"]
 phone: "851-5240"
 fax: "851-5267"
 email: "al2179@columbia.edu"

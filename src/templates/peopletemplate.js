@@ -79,13 +79,10 @@ const PeopleTemplate = ({ path, pageContext }) => {
 
   const filteredGroupMap = toPeopleGroupMap(typeFilteredPeople)
 
-  console.log(groupMap)
-
   var c = 0
   let typeOrderedPeople = []
   // extract number of records
   for (let g of GROUPS) {
-    console.log(g, g in groupMap)
     if (g in groupMap) {
       const gp = groupMap[g]
 

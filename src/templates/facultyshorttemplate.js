@@ -182,6 +182,22 @@ const BackgroundSection = ({ file, children }) => (
   </BackgroundImage>
 )
 
+const GenericBackgroundSection = ({ file, children }) => (
+  <BackgroundImage
+    fluid={file.childImageSharp.fluid}
+    style={{
+      width: "100%",
+      height: "36rem",
+      backgroundPosition: "top center",
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "cover",
+      overflow: "hidden",
+    }}
+  >
+    {children}
+  </BackgroundImage>
+)
+
 const FacultyHeading = ({ children }) => (
   <h2 className="uppercase mb-8 text-center" style={{ fontWeight: "normal" }}>
     {children}
@@ -333,27 +349,47 @@ const FacultyShortTemplate = ({ path, pageContext, data }) => {
     headerImageCredit = data.abstractMarkdown.frontmatter.headerImageCredit
   }
 
+  let headerFile = null
+
   for (let { node } of data.files.edges) {
-    const file = node
-
-    if (file.relativePath.includes(person.frontmatter.id)) {
-      headerImage = (
-        <BackgroundSection file={file}>
-          {headshotImage !== null && (
-            <Container className="absolute bottom-0 mb-8 z-20">
-              {headshotImage}
-            </Container>
-          )}
-
-          {headerImageCredit !== "" && (
-            <Container className="hidden md:block absolute bottom-0 right-0 text-sm text-white opacity-80 mb-8 z-10">
-              {headerImageCredit}
-            </Container>
-          )}
-        </BackgroundSection>
-      )
+    if (node.relativePath.includes(person.frontmatter.id)) {
+      headerFile = node
       break
     }
+  }
+
+  if (headerFile !== null) {
+    headerImage = (
+      <BackgroundSection file={headerFile}>
+        {headshotImage !== null && (
+          <Container className="absolute bottom-0 mb-8 z-20">
+            {headshotImage}
+          </Container>
+        )}
+
+        {headerImageCredit !== "" && (
+          <Container className="hidden md:block absolute bottom-0 right-0 text-sm text-white opacity-80 mb-8 z-10">
+            {headerImageCredit}
+          </Container>
+        )}
+      </BackgroundSection>
+    )
+  } else {
+    headerImage = (
+      <GenericBackgroundSection file={data.genericHeaderFile}>
+        {headshotImage !== null && (
+          <Container className="absolute bottom-0 mb-8 z-20">
+            {headshotImage}
+          </Container>
+        )}
+
+        {headerImageCredit !== "" && (
+          <Container className="hidden md:block absolute bottom-0 right-0 text-sm text-white opacity-80 mb-8 z-10">
+            {headerImageCredit}
+          </Container>
+        )}
+      </GenericBackgroundSection>
+    )
   }
 
   return (
@@ -476,6 +512,15 @@ export const query = graphql`
       childImageSharp {
         fluid(maxWidth: 500) {
           ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
+    genericHeaderFile: file(name: { eq: "generic-header" }) {
+      relativePath
+      childImageSharp {
+        fluid(quality: 90, maxWidth: 1920) {
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }

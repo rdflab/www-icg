@@ -3,7 +3,7 @@ id: "adolfo-ferrando"
 firstName: "Adolfo"
 lastName: "Ferrando"
 postNominalLetters: "MD PhD"
-titles: ["Professor of Pediatric & Pathology & Cell Biology (in ICG)"]
+titles: ["Professor of Pediatric & Pathology & Cell Biology"]
 phone: "851-4611"
 fax: ""
 email: "af2196@columbia.edu"

@@ -3,7 +3,7 @@ id: "laura-pasqualucci"
 firstName: "Laura"
 lastName: "Pasqualucci"
 postNominalLetters: "MD"
-titles: ["Professor of Pathology and Cell Biology"]
+titles: ["Professor of Pathology & Cell Biology"]
 phone: "851-5248"
 fax: ""
 email: "lp171@cumc.columbia.edu"

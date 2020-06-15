@@ -17,6 +17,7 @@ const CrumbTitleLayout = ({
   path,
   nav,
   title,
+  subTitle,
   headerComponent,
   menuComponent,
   children,
@@ -35,6 +36,7 @@ const CrumbTitleLayout = ({
         <div className={`w-full absolute z-50`}>
           <Header
             title={title}
+            subTitle={subTitle}
             content={headerComponent}
             menuContent={menuComponent}
           />
@@ -43,7 +45,7 @@ const CrumbTitleLayout = ({
               <Breadcrumb crumbs={crumbs} />
             </HideSmall>
           )}
-          <H title={nav} heading={title} path={path} />
+          <H title={nav} heading={title} subHeading={subTitle} path={path} />
         </div>
 
         <div className={`relative min-h-screen ${backgroundColor}`}>
@@ -55,6 +57,7 @@ const CrumbTitleLayout = ({
     return (
       <HeaderLayout
         title={title}
+        subTitle={subTitle}
         headerComponent={headerComponent}
         menuComponent={menuComponent}
       >
@@ -64,7 +67,7 @@ const CrumbTitleLayout = ({
               <Breadcrumb crumbs={crumbs} />
             </HideSmall>
           )}
-          <H title={nav} heading={title} path={path} />
+          <H title={nav} heading={title} subHeading={subTitle} path={path} />
         </div>
 
         <div className={`relative min-h-screen ${backgroundColor}`}>
@@ -97,6 +100,7 @@ CrumbTitleLayout.defaultProps = {
   selectedTab: "",
   nav: null,
   title: null,
+  subTitle: null,
   titleComponent: null,
   headerComponent: null,
   menuComponent: null,
