@@ -7,23 +7,31 @@ import { eventUrl } from "../../utils/urls"
 
 import HTMLDiv from "../htmldiv"
 import useSiteMetadata from "../../hooks/sitemetadata"
-import useEventType from "../../hooks/eventype"
+import getEventType from "../../utils/eventype"
 
-const useEventTypeUrl = (root, eventType) => {
+const getEventTypeUrl = (root, eventType) => {
   return `${root}/${eventType.replace(" ", "-").toLowerCase()}`
 }
 
 const CalEventDetails = ({ event, isMobile, color }) => {
   const { paths } = useSiteMetadata()
 
-  const eventType = useEventType(event)
+  const eventType = getEventType(event)
 
   return (
     <div>
       <div className="uppercase text-blue-500">
-        <BlueLink to={useEventTypeUrl(paths.eventsPath, eventType)}>
-          {eventType}
-        </BlueLink>
+        {color === "white" && (
+          <WhiteLink to={getEventTypeUrl(paths.eventsPath, eventType)}>
+            {eventType}
+          </WhiteLink>
+        )}
+
+        {color !== "white" && (
+          <BlueLink to={getEventTypeUrl(paths.eventsPath, eventType)}>
+            {eventType}
+          </BlueLink>
+        )}
       </div>
       <h3 className="mb-2">
         {color === "white" && (
@@ -36,7 +44,11 @@ const CalEventDetails = ({ event, isMobile, color }) => {
           <TextLink to={eventUrl(event)}>{event.frontmatter.title}</TextLink>
         )}
       </h3>
-      <h5 className="mb-2 text-columbia-dark-gray">
+      <h5
+        className={`mb-2 ${
+          color === "white" ? "text-white" : "text-columbia-dark-gray"
+        }`}
+      >
         <HTMLDiv html={event.excerpt} />
       </h5>
       <CalEventLocation event={event} isMobile={isMobile} color={color} />

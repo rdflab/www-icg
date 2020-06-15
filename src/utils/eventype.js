@@ -1,4 +1,4 @@
-const useEventType = (event) => {
+const getEventType = (event) => {
   let ret = ""
 
   if (event.frontmatter.tags.includes("Public Talk")) {
@@ -10,4 +10,4 @@ const useEventType = (event) => {
   return ret
 }
 
-export default useEventType
+export default getEventType
