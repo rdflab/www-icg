@@ -11,5 +11,5 @@ room: "404"
 researchAreas: []
 pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Palomero+Teresa%5BAuthor%5D&sort=pubdate"
 url: ""
-tags: ["page-format::long", "publication-format::recent"]
+tags: ["page-format::short", "publication-format::recent"]
 ---

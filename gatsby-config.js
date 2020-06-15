@@ -172,6 +172,7 @@ module.exports = {
           /lg:block/,
           /xl:hidden/,
           /xl:block/,
+          /opacity/,
         ],
         //purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
       },

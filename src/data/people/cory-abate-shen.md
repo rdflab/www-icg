@@ -12,5 +12,5 @@ researchAreas: []
 pubmed: ""
 url: "Lab Web Site::https://abate-shen.cumc.columbia.edu/"
 tags:
-  ["page-format::long", "publication-format::selected", "show-awards-honors"]
+  ["page-format::short", "publication-format::selected", "show-awards-honors"]
 ---

@@ -11,5 +11,5 @@ room: "505A"
 researchAreas: []
 pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Chio+Christine%5BAuthor%5D&sort=pubdate"
 url: "Lab Web Site::https://chiolab.com/"
-tags: ["page-format::long", "publication-format::recent"]
+tags: ["page-format::short", "publication-format::recent"]
 ---

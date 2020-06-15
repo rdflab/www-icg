@@ -12,5 +12,5 @@ room: "405"
 researchAreas: []
 pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Lasorella+Anna%5BAuthor%5D&sort=pubdate"
 url: ""
-tags: ["page-format::long", "publication-format::recent"]
+tags: ["page-format::short", "publication-format::recent"]
 ---

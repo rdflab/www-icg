@@ -2805,7 +2805,7 @@
       "Pelletier J",
       "Chio II"
     ],
-    "journal": "Nature Communications",
+    "journal": "Nature Comms",
     "year": 2019,
     "volume": "",
     "issue": "",
@@ -2961,7 +2961,7 @@
       "Park Y",
       "Tuveson D"
     ],
-    "journal": "Clinical Cancer research",
+    "journal": "Clin Cancer Res",
     "year": 2019,
     "volume": "",
     "issue": "",
@@ -2973,15 +2973,15 @@
     "people": ["christine-chio"]
   },
   {
-    "title": "Bioactivationof napabucasintriggersreactive oxygen species-mediated killing of cancer cells",
+    "title": "Bioactivation of Napabucasin Triggers Reactive Oxygen Species-Mediated Cancer Cell Death",
     "authors": [
       "Froeling F",
-      "Chio II,Li",
+      "Chio II Li",
       "Rogoff H",
       "Tuveson D",
       "Watson J"
     ],
-    "journal": "Clinical",
+    "journal": "Clin Cancer Res",
     "year": 2019,
     "volume": "",
     "issue": "",
@@ -5754,7 +5754,7 @@
   {
     "title": "Genetics of diffuse large B-cell lymphoma",
     "authors": ["Pasqualucci L", "Dalla-Favera R"],
-    "journal": "",
+    "journal": "Blood",
     "year": 2018,
     "volume": "131",
     "issue": "21",
@@ -5809,36 +5809,6 @@
     "people": ["riccardo-dalla-favera"]
   },
   {
-    "title": "Repurposing dasatinib for diffuse large B cell lymphoma",
-    "authors": [
-      "Scuoppo C",
-      "Wang J",
-      "Persaud M",
-      "Mittan SK",
-      "Basso K",
-      "Pasqualucci L",
-      "Rabadan R",
-      "Inghirami G",
-      "Grandori C",
-      "Bosch F,Dalla-Favera"
-    ],
-    "journal": "Proc Natl Acad Sci USA.Proc Natl Acad Sci USA",
-    "year": 2019,
-    "volume": "",
-    "issue": "",
-    "pages": "",
-    "pubmed": "31383760",
-    "tags": ["Article"],
-    "url": "",
-    "labs": ["riccardo-dalla-favera"],
-    "people": [
-      "claudio-scuoppo",
-      "katia-basso",
-      "laura-pasqualucci",
-      "riccardo-dalla-favera"
-    ]
-  },
-  {
     "title": "Unique and shared epigenetic programs of the CREBBP and EP300 Acetyltransferases in germinal center B cells reveal targetable dependencies in lymphoma",
     "authors": [
       "Meyer SN",
@@ -5856,7 +5826,7 @@
       "Dalla-Favera R",
       "Pasqualucci L"
     ],
-    "journal": "",
+    "journal": "Immunity",
     "year": 2019,
     "volume": "",
     "issue": "",

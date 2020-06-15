@@ -12,5 +12,5 @@ researchAreas: []
 pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Shen+Michael%5BAuthor%5D&sort=pubdate"
 url: ""
 tags:
-  ["page-format::long", "publication-format::selected", "show-awards-honors"]
+  ["page-format::short", "publication-format::selected", "show-awards-honors"]
 ---

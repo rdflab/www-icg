@@ -11,5 +11,5 @@ room: "407B"
 researchAreas: []
 pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Iavarone+Antonio%5BAuthor%5D&sort=pubdate"
 url: ""
-tags: ["page-format::long", "publication-format::recent"]
+tags: ["page-format::short", "publication-format::recent"]
 ---

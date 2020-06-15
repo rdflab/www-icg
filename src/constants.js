@@ -14,8 +14,8 @@ export const MONTHS = [
 ]
 
 export const GROUPS = [
-  "Faculty",
   "Directors",
+  "Faculty",
   "Administrator",
   "Administrative Staff",
   "Web Site",

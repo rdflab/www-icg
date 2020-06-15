@@ -11,5 +11,5 @@ room: "401B"
 researchAreas: []
 pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Cooke+A%5BAuthor%5D"
 url: ""
-tags: ["page-format::long", "publication-format::recent"]
+tags: ["page-format::short", "publication-format::recent"]
 ---

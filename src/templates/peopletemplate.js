@@ -79,26 +79,31 @@ const PeopleTemplate = ({ path, pageContext }) => {
 
   const filteredGroupMap = toPeopleGroupMap(typeFilteredPeople)
 
+  console.log(groupMap)
+
   var c = 0
   let typeOrderedPeople = []
   // extract number of records
   for (let g of GROUPS) {
-    const gp = groupMap[g]
+    console.log(g, g in groupMap)
+    if (g in groupMap) {
+      const gp = groupMap[g]
 
-    for (let person of gp) {
-      if (c >= offset) {
-        typeOrderedPeople.push(person)
+      for (let person of gp) {
+        if (c >= offset) {
+          typeOrderedPeople.push(person)
+        }
+
+        ++c
+
+        if (typeOrderedPeople.length === recordsPerPage) {
+          break
+        }
       }
-
-      ++c
 
       if (typeOrderedPeople.length === recordsPerPage) {
         break
       }
-    }
-
-    if (typeOrderedPeople.length === recordsPerPage) {
-      break
     }
   }
 
@@ -119,7 +124,7 @@ const PeopleTemplate = ({ path, pageContext }) => {
     >
       <div className="py-8">
         <Container>
-          <ShowSmall>
+          {/* <ShowSmall>
             <SearchBar
               handleInputChange={handleInputChange}
               placeholder="Type to find people..."
@@ -137,26 +142,18 @@ const PeopleTemplate = ({ path, pageContext }) => {
                 />
               </div>
             </Column>
-          </HideSmall>
+          </HideSmall> */}
 
           <ShowSmall size="lg">
-            <PeopleGroups
-              groupMap={filteredGroupMap}
-              cols={2}
-              colWidth="w-9/20"
-            />
+            <PeopleGroups groupMap={groupMap} cols={2} colWidth="w-9/20" />
           </ShowSmall>
 
           <ShowBetween s1="lg" s2="xl">
-            <PeopleGroups
-              groupMap={filteredGroupMap}
-              cols={3}
-              colWidth="w-3/10"
-            />
+            <PeopleGroups groupMap={groupMap} cols={3} colWidth="w-3/10" />
           </ShowBetween>
 
           <HideSmall size="xl">
-            <PeopleGroups groupMap={filteredGroupMap} />
+            <PeopleGroups groupMap={groupMap} />
           </HideSmall>
         </Container>
       </div>

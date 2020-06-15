@@ -334,6 +334,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         }
       }
 
+      peopleOrdered: allPeopleJson {
+        edges {
+          node {
+            name
+            people
+          }
+        }
+      }
+
       admin: allAdministrationJson {
         edges {
           node {
@@ -526,6 +535,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const allLabs = []
   const labMap = {}
   let facultyStaff = []
+  const sortedPeopleGroupMap = {}
 
   result.data.labs.edges.forEach(({ node }) => {
     const lab = node
@@ -579,6 +589,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   let admin = allAdmin[0]
   admin.groupMap = toLabPeopleMap(admin, peopleMap)
+
   //const adminPeople = admin.people.map((pid) => peopleMap[pid])
   //const adminGroupMap = toGroupMap(adminPeople)
 
@@ -657,16 +668,25 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   // People
   //
 
-  // createPage({
-  //   path: paths.peoplePath,
-  //   component: peopleTemplate,
-  //   context: {
-  //     crumbs: [["People", paths.peoplePath]],
-  //     nav: "People",
-  //     title: "Meet Our People",
-  //     allPeople: allPeople,
-  //   },
-  // })
+  // Build a table of all people
+  const allPeopleGroupMap = {}
+
+  result.data.peopleOrdered.edges.forEach(({ node }) => {
+    const group = node
+    allPeopleGroupMap[group.name] = group.people.map((id) => peopleMap[id])
+  })
+
+  createPage({
+    path: paths.peoplePath,
+    component: peopleTemplate,
+    context: {
+      crumbs: [["People", paths.peoplePath]],
+      nav: "People",
+      title: "Meet Our People",
+      allPeople: allPeople,
+      groupMap: allPeopleGroupMap,
+    },
+  })
 
   for (let person of allPeople) {
     const pid = person.frontmatter.id

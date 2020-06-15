@@ -415,26 +415,20 @@ const FacultyShortTemplate = ({ path, pageContext, data }) => {
       )} */}
 
       <div className="py-16">
-        <SmallContainer>
+        <Container>
+          <FacultyHeading2>Selected Publications</FacultyHeading2>
+
           {person.frontmatter.tags.includes("publication-format::recent") &&
             publications.length > 0 && (
-              <>
-                <FacultyHeading2>Recent Publications</FacultyHeading2>
-
-                <RecentPublications publications={publications} />
-              </>
+              <RecentPublications publications={publications} />
             )}
 
           {person.frontmatter.tags.includes("publication-format::selected") &&
             publications.length > 0 && (
-              <>
-                <FacultyHeading2>Selected Publications</FacultyHeading2>
-
-                <SelectedPublications
-                  id={person.frontmatter.id}
-                  publications={publications}
-                />
-              </>
+              <SelectedPublications
+                id={person.frontmatter.id}
+                publications={publications}
+              />
             )}
 
           <Column className="items-center justify-between pt-8">
@@ -447,7 +441,7 @@ const FacultyShortTemplate = ({ path, pageContext, data }) => {
               </Button>
             </Column> */}
           </Column>
-        </SmallContainer>
+        </Container>
       </div>
 
       {/* {labNews.length > 0 && (
