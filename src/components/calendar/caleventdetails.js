@@ -7,7 +7,7 @@ import { eventUrl } from "../../utils/urls"
 
 import HTMLDiv from "../htmldiv"
 import useSiteMetadata from "../../hooks/sitemetadata"
-import getEventType from "../../utils/eventype"
+import getEventType from "./eventype"
 
 const getEventTypeUrl = (root, eventType) => {
   return `${root}/${eventType.replace(" ", "-").toLowerCase()}`
@@ -33,7 +33,7 @@ const CalEventDetails = ({ event, isMobile, color }) => {
           </BlueLink>
         )}
       </div>
-      <h3 className="mb-2">
+      <h3>
         {color === "white" && (
           <WhiteLink to={eventUrl(event)}>{event.frontmatter.title}</WhiteLink>
         )}
@@ -45,7 +45,7 @@ const CalEventDetails = ({ event, isMobile, color }) => {
         )}
       </h3>
       <h5
-        className={`mb-2 ${
+        className={`mb-4 ${
           color === "white" ? "text-white" : "text-columbia-dark-gray"
         }`}
       >

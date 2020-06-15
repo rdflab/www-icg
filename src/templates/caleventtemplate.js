@@ -6,7 +6,7 @@ import MainColumn from "../components/maincolumn"
 import SideColumn from "../components/sidecolumn"
 import CalEventsSideBar from "../components/calendar/caleventssidebar"
 import Container from "../components/container"
-import getEventType from "../utils/eventype"
+import getEventType from "../components/calendar/eventype"
 
 const CalEventTemplate = ({ path, pageContext }) => {
   const { calEvent, allCalEvents } = pageContext
