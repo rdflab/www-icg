@@ -10,7 +10,7 @@ fax: ""
 email: "SZ2296@columbia.edu"
 room: "503B"
 researchAreas: []
-pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Zha+S%5BAuthor%5D"
+pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Zha+Shan%5BAuthor%5D&sort=pubdate"
 url: ""
 tags: ["page-format::long", "publication-format::recent"]
 ---

@@ -39,7 +39,7 @@ const PubMedLink = ({ person }) => (
     <Column className="uppercase mr-4 md:w-32">See more on</Column>
     <Column>
       <LinkExt
-        to={`https://pubmed.ncbi.nlm.nih.gov/?term=${person.frontmatter.lastName}+${person.frontmatter.firstName}%5BAuthor%5D&sort=pubdate`}
+        to={person.frontmatter.pubmed}
         className="opacity-70 hover:opacity-100 trans-ani"
       >
         <img src={pubmedsvg} className="w-32" />
@@ -182,19 +182,35 @@ const BackgroundSection = ({ file, children }) => (
   </BackgroundImage>
 )
 
-const GenericBackgroundSection = ({ children }) => (
-  <div
-    className="relative w-full overflow-hidden"
+// const GenericBackgroundSection = ({ children }) => (
+//   <div
+//     className="relative w-full overflow-hidden"
+//     style={{
+//       backgroundImage: `url(${headersvg})`,
+//       height: "36rem",
+//       backgroundPosition: "top center",
+//       backgroundRepeat: "no-repeat",
+//       backgroundSize: "cover",
+//     }}
+//   >
+//     {children}
+//   </div>
+// )
+
+const GenericBackgroundSection = ({ file, children }) => (
+  <BackgroundImage
+    fluid={file.childImageSharp.fluid}
     style={{
-      backgroundImage: `url(${headersvg})`,
+      width: "100%",
       height: "36rem",
       backgroundPosition: "top center",
       backgroundRepeat: "no-repeat",
       backgroundSize: "cover",
+      overflow: "hidden",
     }}
   >
     {children}
-  </div>
+  </BackgroundImage>
 )
 
 const FacultyHeading = ({ children }) => (
@@ -228,29 +244,23 @@ const Quote = ({ text }) => (
 )
 
 const Abstract = ({ person, markdown }) => {
-  let heading = null
-  let html = null
-
   if (markdown !== null) {
-    heading = (
-      <div className="text-3xl font-semibold mb-2">
-        <Quote text={markdown.frontmatter.title} />
-      </div>
+    return (
+      <SmallContainer className="my-16 text-2xl">
+        <div className="text-3xl font-semibold mb-2">
+          <Quote text={markdown.frontmatter.title} />
+        </div>
+        <div className="text-gray-600">
+          <HTMLDiv className="text-justify" html={markdown.html} />
+        </div>
+        <div className="mt-4">
+          <BlueLink to="#about">Read more</BlueLink>
+        </div>
+      </SmallContainer>
     )
-    html = <HTMLDiv className="text-justify" html={markdown.html} />
   } else {
-    heading = <FacultyHeading2>About {person.frontmatter.name}</FacultyHeading2>
+    return <div />
   }
-
-  return (
-    <SmallContainer className="my-16 text-2xl">
-      <div>{heading}</div>
-      <div className="text-gray-600">{html}</div>
-      <div className="mt-4">
-        <BlueLink to="#about">Read more</BlueLink>
-      </div>
-    </SmallContainer>
-  )
 }
 
 const About = ({ person, headshotFile, markdown }) => {
@@ -388,7 +398,7 @@ const FacultyLongTemplate = ({ path, pageContext, data }) => {
   } else {
     console.log("here", headshotImage)
     headerImage = (
-      <GenericBackgroundSection>
+      <GenericBackgroundSection file={data.genericHeaderFile}>
         {headshotImage !== null && (
           <Container className="absolute bottom-0 mb-8 z-20">
             {headshotImage}
@@ -522,6 +532,15 @@ export const query = graphql`
               ...GatsbyImageSharpFluid_withWebp
             }
           }
+        }
+      }
+    }
+
+    genericHeaderFile: file(name: { eq: "generic-header" }) {
+      relativePath
+      childImageSharp {
+        fluid(quality: 90, maxWidth: 1920) {
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }

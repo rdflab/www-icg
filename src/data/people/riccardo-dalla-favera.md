@@ -13,7 +13,7 @@ fax: "851-5256"
 email: "rd10@columbia.edu"
 room: "508A"
 researchAreas: []
-pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Dalla-Favera+R%5BAuthor%5D"
+pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Dalla-Favera+Riccardo%5BAuthor%5D&sort=pubdate"
 url: ""
 tags: ["page-format::short", "publication-format::recent"]
 ---

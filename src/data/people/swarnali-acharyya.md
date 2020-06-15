@@ -9,7 +9,7 @@ fax: ""
 email: "sa3141@columbia.edu"
 room: "402B"
 researchAreas: []
-pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Acharyya+S%5BAuthor%5D"
+pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Acharyya+Swarnali%5BAuthor%5D&sort=pubdate"
 url: ""
 tags: ["page-format::long", "publication-format::recent"]
 ---

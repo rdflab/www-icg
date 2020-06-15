@@ -9,7 +9,7 @@ fax: ""
 email: "kb451@cumc.columbia.edu"
 room: "506"
 researchAreas: []
-pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Basso+K%5BAuthor%5D"
+pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Basso+Katia%5BAuthor%5D&sort=pubdate"
 url: "Lab Web Site::https://rdf-lab.org/"
 tags:
   ["page-format::long", "publication-format::selected", "show-awards-honors"]

@@ -9,7 +9,7 @@ fax: ""
 email: "af2196@columbia.edu"
 room: "402A"
 researchAreas: []
-pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Ferrando+A%5BAuthor%5D"
+pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Ferrando+Adolfo%5BAuthor%5D&sort=pubdate"
 url: "Lab Web Site::http://ferrandolab.org/"
 tags: ["page-format::long", "publication-format::recent"]
 ---

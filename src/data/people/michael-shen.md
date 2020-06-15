@@ -9,7 +9,7 @@ fax: ""
 email: "ms3625@cumc.columbia.edu"
 room: ""
 researchAreas: []
-pubmed: ""
+pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Shen+Michael%5BAuthor%5D&sort=pubdate"
 url: ""
 tags:
   ["page-format::long", "publication-format::selected", "show-awards-honors"]
