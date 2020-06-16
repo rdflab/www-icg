@@ -15,7 +15,7 @@ const SelectItem = ({
   onClick,
   children,
 }) => {
-  const handleClick = (e) => {
+  const _handleClick = (e) => {
     const data = { text: text, selected: true }
     onClick(data)
   }
@@ -23,7 +23,7 @@ const SelectItem = ({
   return (
     <div
       className={`${className} ${selected ? selectedClassName : ""}`}
-      onClick={handleClick}
+      onClick={_handleClick}
     >
       {children}
     </div>
