@@ -12,8 +12,6 @@ import PublicationList from "./publicationlist"
 import useSiteMetadata from "../../hooks/sitemetadata"
 
 const RecentPublications = ({ publications, top, className }) => {
-  const { paths } = useSiteMetadata()
-
   // const createPublications = publications => {
   //   let ret = []
 

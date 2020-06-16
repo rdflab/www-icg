@@ -13,7 +13,7 @@ import ShowSmall from "../components/showsmall"
 import HideSmall from "../components/hidesmall"
 import ShowBetween from "../components/showbetween"
 import BackgroundImage from "gatsby-background-image"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import FacultyHeader from "../components/faculty/facultyheader"
 import Column from "../components/column"
 import FullDiv from "../components/fulldiv"
@@ -42,7 +42,7 @@ const PubMedLink = ({ person }) => (
         to={person.frontmatter.pubmed}
         className="opacity-70 hover:opacity-100 trans-ani"
       >
-        <img src={pubmedsvg} className="w-32" />
+        <img src={pubmedsvg} className="w-32" alt="PubMed" />
       </LinkExt>
     </Column>
   </Column>

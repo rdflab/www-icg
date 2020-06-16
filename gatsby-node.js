@@ -980,6 +980,25 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     component: calEventsTemplate,
     context: {
       allCalEvents: allCalEvents,
+      filterEventTypes: [],
+    },
+  })
+
+  createPage({
+    path: `${paths.eventsPath}/types/seminar`,
+    component: calEventsTemplate,
+    context: {
+      allCalEvents: allCalEvents,
+      filterEventTypes: ["Seminar"],
+    },
+  })
+
+  createPage({
+    path: `${paths.eventsPath}/types/public-talk`,
+    component: calEventsTemplate,
+    context: {
+      allCalEvents: allCalEvents,
+      filterEventTypes: ["Public Talk"],
     },
   })
 

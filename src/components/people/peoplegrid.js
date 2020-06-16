@@ -8,7 +8,6 @@ import genericsvg from "../../assets/svg/generic.svg"
 import { useStaticQuery, graphql } from "gatsby"
 import useImageMap from "../../hooks/imagemap"
 import Img from "gatsby-image"
-import DropShadowFrame from "../images/dropshadowframe"
 import getContextName from "../../utils/contextname"
 
 // const PersonCard = ({ person, smallView }) => (
@@ -152,7 +151,7 @@ const PeopleGrid = ({
 
   const imageMap = useImageMap(data)
 
-  const genericimg = <img src={genericsvg} className="w-full" />
+  const genericimg = <img src={genericsvg} className="w-full" alt="Generic person" />
 
   const rows = Math.floor(people.length / cols) + 1
 

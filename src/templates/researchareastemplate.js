@@ -3,7 +3,6 @@ import CrumbTitleLayout from "../components/crumbtitlelayout"
 import BlueLink from "../components/links/bluelink"
 import SiteSearch from "../components/search/sitesearch"
 import Container from "../components/container"
-import Column from "../components/column"
 
 const FlatCard = ({ children, className }) => (
   <div
@@ -22,9 +21,9 @@ const ResearchAreasTemplate = ({ path, pageContext }) => {
 
   const raMap = {}
 
-  allResearchAreas.map((ra) => {
+  for(let ra of allResearchAreas) {
     raMap[ra.name] = ra.id
-  })
+  }
 
   return (
     <CrumbTitleLayout

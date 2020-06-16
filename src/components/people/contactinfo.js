@@ -3,7 +3,6 @@ import EmailLink from "../links/emaillink"
 import PhoneLink from "../links/phonelink"
 import URLLink, { urlLink } from "../links/urllink"
 import RoomLink from "../links/roomlink"
-import WhiteLinkExt from "../links/whitelinkext"
 import ColorLinkExt from "../links/colorlinkext"
 
 const ContactInfo = ({

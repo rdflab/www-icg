@@ -1,26 +1,25 @@
 import React from "react"
 import WhiteLinkExt from "../links/whitelinkext"
-import H from "../headings/h"
 import ContactInfo from "../people/contactinfo"
 import Column from "../column"
 import { TitleDiv } from "../headings/h"
 import getContextName from "../../utils/contextname"
 
-const LabWebSite = ({ person }) => {
-  if (person.frontmatter.url.length > 0) {
-    return (
-      <div>
-        <h5>
-          <WhiteLinkExt to={person.frontmatter.url[1]}>
-            {person.frontmatter.url[0]}
-          </WhiteLinkExt>
-        </h5>
-      </div>
-    )
-  } else {
-    return <></>
-  }
-}
+// const LabWebSite = ({ person }) => {
+//   if (person.frontmatter.url.length > 0) {
+//     return (
+//       <div>
+//         <h5>
+//           <WhiteLinkExt to={person.frontmatter.url[1]}>
+//             {person.frontmatter.url[0]}
+//           </WhiteLinkExt>
+//         </h5>
+//       </div>
+//     )
+//   } else {
+//     return <></>
+//   }
+// }
 
 const FacultyHeader = ({ person, title, heading, subHeading, path }) => {
   if (heading === null) {

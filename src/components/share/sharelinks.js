@@ -28,7 +28,7 @@ const ShareLinks = ({ color, size, opacity, path }) => {
             icon={["fab", "facebook"]}
             className={`${className} text-3xl`}
           /> */}
-              <img src={FacebookSvgWhite} className={className} />
+              <img src={FacebookSvgWhite} className={className} alt="Share on Facebook"/>
             </LinkExt>
           </div>
           <div className="ml-4">
@@ -37,7 +37,7 @@ const ShareLinks = ({ color, size, opacity, path }) => {
             icon={["fab", "twitter"]}
             className={`opacity-90 hover:${opacity} trans-ani text-3xl`}
           /> */}
-              <img src={TwitterSvgWhite} className={className} />
+              <img src={TwitterSvgWhite} className={className} alt="Share on Twitter"/>
             </LinkExt>
           </div>
           <div className="ml-4">
@@ -48,7 +48,7 @@ const ShareLinks = ({ color, size, opacity, path }) => {
             icon={["fab", "linkedin"]}
             className={className}
           /> */}
-              <img src={LinkedinSvgWhite} className={className} />
+              <img src={LinkedinSvgWhite} className={className} alt="Share on Linkedin"/>
             </LinkExt>
           </div>
         </Column>
@@ -58,19 +58,19 @@ const ShareLinks = ({ color, size, opacity, path }) => {
         <Column isMobile={true} className={`items-center md:justify-end`}>
           <div>
             <LinkExt to={`https://www.facebook.com/sharer.php?u=${href}`}>
-              <img src={FacebookSvg} className={className} />
+              <img src={FacebookSvg} className={className} alt="Share on Facebook"/>
             </LinkExt>
           </div>
           <div className="ml-4">
             <LinkExt to={`https://twitter.com/share?ref_src=${href}`}>
-              <img src={TwitterSvg} className={className} />
+              <img src={TwitterSvg} className={className} alt="Share on Twitter"/>
             </LinkExt>
           </div>
           <div className="ml-4">
             <LinkExt
               to={`https://www.linkedin.com/sharing/share-offsite/?url=${href}`}
             >
-              <img src={LinkedinSvg} className={className} />
+              <img src={LinkedinSvg} className={className} alt="Share on Linkedin"/>
             </LinkExt>
           </div>
         </Column>

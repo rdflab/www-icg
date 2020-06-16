@@ -7,11 +7,8 @@ import { eventUrl } from "../../utils/urls"
 
 import HTMLDiv from "../htmldiv"
 import useSiteMetadata from "../../hooks/sitemetadata"
-import getEventType from "./eventype"
-
-const getEventTypeUrl = (root, eventType) => {
-  return `${root}/${eventType.replace(" ", "-").toLowerCase()}`
-}
+import getEventType from "./caleventype"
+import getEventTypeUrl from "./caleventtypeurl"
 
 const CalEventDetails = ({ event, isMobile, color }) => {
   const { paths } = useSiteMetadata()

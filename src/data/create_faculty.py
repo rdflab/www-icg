@@ -164,33 +164,30 @@ for i in range(15, df.shape[0]):
         
     faclabmap[id] = current_lab['id']
     
-    f = open('people/{}.md'.format(id), 'w')
-    print('---', file=f)
-    print('id: "{}"'.format(id), file=f)
-    #print('name: "{}"'.format(formatted_name), file=f)
-    print('firstName: "{}"'.format(first_name), file=f)
-    print('lastName: "{}"'.format(last_name), file=f)
-    print('postNominalLetters: "{}"'.format(' '.join(letters)), file=f)
-    print('titles: ["{}"]'.format(title), file=f)
-    #print('groups: ["people:{}"]'.format(g), file=f)
-    print('phone: "{}"'.format(phone), file=f)
-    print('fax: "{}"'.format(fax), file=f)
-    print('email: "{}"'.format(email), file=f)
-    print('room: "{}"'.format(room), file=f)
-    print('researchAreas: []', file=f)
+    # f = open('people/{}.md'.format(id), 'w')
+    # print('---', file=f)
+    # print('id: "{}"'.format(id), file=f)
+    # print('firstName: "{}"'.format(first_name), file=f)
+    # print('lastName: "{}"'.format(last_name), file=f)
+    # print('postNominalLetters: "{}"'.format(' '.join(letters)), file=f)
+    # print('titles: ["{}"]'.format(title), file=f)
+    # print('phone: "{}"'.format(phone), file=f)
+    # print('fax: "{}"'.format(fax), file=f)
+    # print('email: "{}"'.format(email), file=f)
+    # print('room: "{}"'.format(room), file=f)
+    # print('researchAreas: []', file=f)
     
-    print('pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term={}+{}%5BAuthor%5D"'.format(last_name, first_name[0]), file=f)
+    # print('pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term={}+{}%5BAuthor%5D"'.format(last_name, first_name[0]), file=f)
     
     
-    if (len(url) > 0):
-        print('url: "{}::{}"'.format(url[0], url[1]), file=f)
-    else:
-        print('url: ""', file=f)
+    # if (len(url) > 0):
+    #     print('url: "{}::{}"'.format(url[0], url[1]), file=f)
+    # else:
+    #     print('url: ""', file=f)
     
-    #print('formats: ["long"]', file=f)
-    print('tags: ["page-format::short", "publication-format::recent"]'.format(url), file=f)
-    print('---', file=f)
-    f.close()
+    # print('tags: ["page-format::short", "publication-format::recent"]'.format(url), file=f)
+    # print('---', file=f)
+    # f.close()
     
     people_map[g][last_name][first_name] = id
         

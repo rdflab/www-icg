@@ -11,6 +11,7 @@ import "../../node_modules/react-day-picker/lib/style.css"
 import "../components/calendar/calendar.scss"
 import HideSmall from "../components/hidesmall"
 import Container from "../components/container"
+import CalEventSelector from "../components/calendar/caleventselector"
 
 const EMPTY_QUERY = ""
 
@@ -22,6 +23,7 @@ const CalEventsTemplate = ({ path, pageContext }) => {
   const [page, setPage] = useState(1)
   const [recordsPerPage, setRecordsPerPage] = useState(20)
   const [selectedDays, setSelectedDays] = useState([])
+  const [filterEventTypes, setFilterEventTypes] = useState(pageContext.filterEventTypes)
 
   // useEffect(() => {
   //   for (let calEvent of allCalEvents) {
@@ -69,6 +71,10 @@ const CalEventsTemplate = ({ path, pageContext }) => {
     setQuery(q)
     setFilteredCalEvents(ret)
     setPage(1)
+  }
+
+  const handleTypeClick = (eventTypes) => {
+    setFilterEventTypes(eventTypes)
   }
 
   const onPageChanged = (data) => {
@@ -123,6 +129,19 @@ const CalEventsTemplate = ({ path, pageContext }) => {
     }
   }
 
+  // Filter by types
+  if (filterEventTypes.length > 0) {
+    calEvents = calEvents.filter((e) => {
+      for (let t of filterEventTypes) {
+        if (e.frontmatter.tags.includes(t)) {
+          return true
+        }
+      }
+
+      return false
+    })
+  }
+
   const offset = (page - 1) * recordsPerPage
   let pagedEvents = calEvents.slice(offset, offset + recordsPerPage)
 
@@ -153,7 +172,7 @@ const CalEventsTemplate = ({ path, pageContext }) => {
           <DayPicker selectedDays={selectedDays} onDayClick={handleDayClick} />
         </div>
       </SmallColumn> */}
-          <MainColumn>
+          <MainColumn className="mr-8">
             <div className="w-full">
               <HideSmall show={true}>
                 <SearchBar
@@ -211,6 +230,9 @@ const CalEventsTemplate = ({ path, pageContext }) => {
               selectedDays={selectedDays}
               onDayClick={handleDayClick}
             />
+
+
+            <CalEventSelector className="mt-5 ml-5" onClick={handleTypeClick} />
 
             {/* </Collapsible> */}
             {/* </SideBar> */}
