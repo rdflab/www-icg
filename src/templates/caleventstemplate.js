@@ -23,7 +23,9 @@ const CalEventsTemplate = ({ path, pageContext }) => {
   const [page, setPage] = useState(1)
   const [recordsPerPage, setRecordsPerPage] = useState(20)
   const [selectedDays, setSelectedDays] = useState([])
-  const [filterEventTypes, setFilterEventTypes] = useState(pageContext.filterEventTypes)
+  const [filterEventTypes, setFilterEventTypes] = useState(
+    pageContext.filterEventTypes
+  )
 
   // useEffect(() => {
   //   for (let calEvent of allCalEvents) {
@@ -230,7 +232,6 @@ const CalEventsTemplate = ({ path, pageContext }) => {
               selectedDays={selectedDays}
               onDayClick={handleDayClick}
             />
-
 
             <CalEventSelector className="mt-5 ml-5" onClick={handleTypeClick} />
 

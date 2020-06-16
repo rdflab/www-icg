@@ -17,7 +17,9 @@ const CalEventSelector = ({ onClick, className }) => {
     if (data.selected) {
       types = selectedTypes.concat([data.text])
     } else {
-      types = selectedTypes.filter(t => {return t !== data.text})
+      types = selectedTypes.filter((t) => {
+        return t !== data.text
+      })
     }
 
     setSelectedTypes(types)
@@ -28,27 +30,27 @@ const CalEventSelector = ({ onClick, className }) => {
   return (
     <div className={className}>
       <FilterItem
-          key={0}
-          onClick={_handleClick}
-          text="Seminar"
-          selected={selectedTypes.includes("Seminar")}
-        >
-          "Seminar"
-        </FilterItem>
-        <FilterItem
-          key={1}
-          onClick={_handleClick}
-          text="Public Talk"
-          selected={selectedTypes.includes("Public Talk")}
-        >
-          "Public Talk"
-        </FilterItem>
+        key={0}
+        onClick={_handleClick}
+        text="Seminar"
+        selected={selectedTypes.includes("Seminar")}
+      >
+        "Seminar"
+      </FilterItem>
+      <FilterItem
+        key={1}
+        onClick={_handleClick}
+        text="Public Talk"
+        selected={selectedTypes.includes("Public Talk")}
+      >
+        "Public Talk"
+      </FilterItem>
     </div>
   )
 }
 
 CalEventSelector.defaultProps = {
-  className: ""
+  className: "",
 }
 
 export default CalEventSelector

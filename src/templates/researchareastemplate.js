@@ -21,7 +21,7 @@ const ResearchAreasTemplate = ({ path, pageContext }) => {
 
   const raMap = {}
 
-  for(let ra of allResearchAreas) {
+  for (let ra of allResearchAreas) {
     raMap[ra.name] = ra.id
   }
 

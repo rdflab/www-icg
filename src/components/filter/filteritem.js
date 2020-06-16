@@ -8,7 +8,7 @@
 import React, { useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
-const FilterItem = ({text, onClick}) => {
+const FilterItem = ({ text, onClick }) => {
   const [selected, setSelected] = useState(false)
 
   const _handleClick = (e) => {
@@ -20,7 +20,10 @@ const FilterItem = ({text, onClick}) => {
   }
 
   return (
-    <div className="row items-center cursor-pointer my-2" onClick={_handleClick}>
+    <div
+      className="row items-center cursor-pointer my-2"
+      onClick={_handleClick}
+    >
       <div
         className={`row items-center w-6 h-6 border border-solid border-gray-400 trans-ani text-white rounded p-1 mr-2 ${
           selected ? "bg-blue-300 border-blue-300" : "bg-white"
@@ -36,6 +39,5 @@ const FilterItem = ({text, onClick}) => {
     </div>
   )
 }
-
 
 export default FilterItem

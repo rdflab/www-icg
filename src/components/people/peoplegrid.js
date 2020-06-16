@@ -151,7 +151,9 @@ const PeopleGrid = ({
 
   const imageMap = useImageMap(data)
 
-  const genericimg = <img src={genericsvg} className="w-full" alt="Generic person" />
+  const genericimg = (
+    <img src={genericsvg} className="w-full" alt="Generic person" />
+  )
 
   const rows = Math.floor(people.length / cols) + 1
 
