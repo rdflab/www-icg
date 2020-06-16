@@ -81,7 +81,7 @@ const SiteSearchMenuPane = ({ showMenu, handleClickEvent }) => {
 const SiteSearchMenu = ({ showMenu, selectedIndex, children }) => {
   return (
     <div
-      className={`absolute z-50 bg-white p-0 m-0 outline-none shadow-md rounded-md overflow-hidden border border-solid border-gray-200 w-full ${
+      className={`absolute z-100 bg-white p-0 m-0 outline-none shadow-md rounded-md overflow-hidden border border-solid border-gray-200 w-full ${
         showMenu ? "block" : "hidden"
       }`}
     >

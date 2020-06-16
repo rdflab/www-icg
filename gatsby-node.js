@@ -162,7 +162,23 @@ exports.createSchemaCustomization = ({ actions }) => {
 
     type AdministrationJson implements Node {
       name: String!
-      groups: [StaffGroups!]
+      groups: [StaffGroups!]!
+    }
+
+    type Appointment {
+      institute: String!
+      title: String!
+      url: String!
+    }
+
+    type AppointmentsJson implements Node {
+      id: String!
+      appointments: [Appointment!]!
+    }
+
+    type PeopleJson implements Node {
+      name: String!
+      people: [String!]!
     }
 
     type MarkdownRemark implements Node {
@@ -176,9 +192,12 @@ exports.createSchemaCustomization = ({ actions }) => {
     }
 
     type Frontmatter {
+      id: String!
       name: String!
       firstName: String!
       lastName: String!
+      title: String!
+      institute: String!
       titles: [String!]
       postNominalLetters: String!
       tags: [String!]!

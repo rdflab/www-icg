@@ -55,6 +55,7 @@ module.exports = {
       },
       zIndex: {
         "-40": "-40",
+        "100": "100",
       },
       colors: {
         "white-opacity-10": "rgba(255, 255, 255, 0.1)",

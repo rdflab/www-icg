@@ -56,7 +56,6 @@ const AwardsGrid = ({ cv, cols, colWidth, headingColor }) => {
   let pc = 0
   let index = 0
   let award = null
-  let found = false
 
   for (let r = 0; r < rows; ++r) {
     const col = []
@@ -66,7 +65,6 @@ const AwardsGrid = ({ cv, cols, colWidth, headingColor }) => {
 
       if (pc < cv.awards.length) {
         award = cv.awards[pc++]
-        found = true
       }
 
       col.push(
@@ -264,7 +262,6 @@ const Abstract = ({ person, markdown }) => {
 }
 
 const About = ({ person, headshotFile, markdown }) => {
-  let heading = null
   let html = null
 
   if (markdown !== null) {
@@ -339,10 +336,8 @@ const FacultyLongTemplate = ({ path, pageContext, data }) => {
     appointments,
     lab,
     publications,
-    labNews,
+    news,
   } = pageContext
-
-  const { paths } = useSiteMetadata()
 
   let headshotImage = (
     <img src={genericsvg} className="w-full" alt={person.frontmatter.name} />

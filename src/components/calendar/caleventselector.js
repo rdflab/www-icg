@@ -35,7 +35,7 @@ const CalEventSelector = ({ onClick, className }) => {
         text="Seminar"
         selected={selectedTypes.includes("Seminar")}
       >
-        "Seminar"
+        Seminar
       </FilterItem>
       <FilterItem
         key={1}
@@ -43,7 +43,7 @@ const CalEventSelector = ({ onClick, className }) => {
         text="Public Talk"
         selected={selectedTypes.includes("Public Talk")}
       >
-        "Public Talk"
+        Public Talk
       </FilterItem>
     </div>
   )

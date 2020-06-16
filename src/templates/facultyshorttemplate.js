@@ -55,7 +55,6 @@ const AwardsGrid = ({ cv, cols, colWidth, headingColor }) => {
   let pc = 0
   let index = 0
   let award = null
-  let found = false
 
   for (let r = 0; r < rows; ++r) {
     const col = []
@@ -65,7 +64,6 @@ const AwardsGrid = ({ cv, cols, colWidth, headingColor }) => {
 
       if (pc < cv.awards.length) {
         award = cv.awards[pc++]
-        found = true
       }
 
       col.push(
@@ -227,34 +225,33 @@ const Quote = ({ text }) => (
   </p>
 )
 
-const Abstract = ({ person, markdown }) => {
-  let heading = null
-  let html = null
+// const Abstract = ({ person, markdown }) => {
+//   let heading = null
+//   let html = null
 
-  if (markdown !== null) {
-    heading = (
-      <div className="text-3xl font-semibold mb-2">
-        <Quote text={markdown.frontmatter.title} />
-      </div>
-    )
-    html = <HTMLDiv className="text-justify" html={markdown.html} />
-  } else {
-    heading = <FacultyHeading2>About {person.frontmatter.name}</FacultyHeading2>
-  }
+//   if (markdown !== null) {
+//     heading = (
+//       <div className="text-3xl font-semibold mb-2">
+//         <Quote text={markdown.frontmatter.title} />
+//       </div>
+//     )
+//     html = <HTMLDiv className="text-justify" html={markdown.html} />
+//   } else {
+//     heading = <FacultyHeading2>About {person.frontmatter.name}</FacultyHeading2>
+//   }
 
-  return (
-    <SmallContainer className="my-16 text-2xl">
-      <div>{heading}</div>
-      <div className="text-gray-600">{html}</div>
-      <div className="mt-4">
-        <BlueLink to="#about">Read more</BlueLink>
-      </div>
-    </SmallContainer>
-  )
-}
+//   return (
+//     <SmallContainer className="my-16 text-2xl">
+//       <div>{heading}</div>
+//       <div className="text-gray-600">{html}</div>
+//       <div className="mt-4">
+//         <BlueLink to="#about">Read more</BlueLink>
+//       </div>
+//     </SmallContainer>
+//   )
+// }
 
 const About = ({ person, headshotFile, markdown }) => {
-  let heading = null
   let html = null
 
   if (markdown !== null) {
@@ -323,10 +320,8 @@ const FacultyShortTemplate = ({ path, pageContext, data }) => {
     appointments,
     lab,
     publications,
-    labNews,
+    news,
   } = pageContext
-
-  const { paths } = useSiteMetadata()
 
   let headshotImage = null
 
