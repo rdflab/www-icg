@@ -163,32 +163,21 @@ a:hover {
   @apply underline-link-hover text-gray gray-border;
 }
 
-.slide-menu-container {
-  @apply fixed m-0 p-0 top-0 left-0 w-screen h-screen opacity-0 z-50 trans-ani;
-  //transform: translate3d(-100vw, 0, 0);
-  background: rgba(0, 0, 0, 0.7);
-}
-
-.slide-menu-container-visible {
-  @apply opacity-100;
-  transform: translate3d(0vw, 0, 0);
-}
-
 .slide-menu-canvas {
   @apply fixed m-0 p-0 top-0 left-0 w-full h-screen -z-40 opacity-0 trans-ani;
   background: rgba(0, 0, 0, 0.5);
 }
 
 .slide-menu-canvas-visible {
-  @apply z-40 opacity-100;
+  @apply z-200 opacity-100;
 }
 
-.slide-menu-container-2 {
-  @apply fixed m-0 p-0 top-0 left-0 w-full h-screen z-50 bg-transparent trans-ani;
+.slide-menu-container {
+  @apply fixed m-0 p-0 top-0 left-0 w-full h-screen z-300 bg-transparent trans-ani;
   transform: translate3d(0, -100vh, 0);
 }
 
-.slide-menu-container-2-visible {
+.slide-menu-container-visible {
   @apply opacity-100;
   transform: translate3d(0, 0vh, 0);
 }

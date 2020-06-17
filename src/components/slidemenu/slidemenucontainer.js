@@ -20,7 +20,7 @@ const SiteSearchResult = ({ text, to }) => {
   )
 }
 
-const SlideMenuContainer = ({ title, onClickHandle, visible, maxResults }) => {
+const SlideMenuContainer = ({ title, onClick, visible, maxResults }) => {
   const data = useStaticQuery(graphql`
     query {
       links: allSlidemenulinksJson {
@@ -132,8 +132,8 @@ const SlideMenuContainer = ({ title, onClickHandle, visible, maxResults }) => {
 
   return (
     <div
-      className={`slide-menu-container-2 ${
-        visible ? "slide-menu-container-2-visible" : ""
+      className={`slide-menu-container ${
+        visible ? "slide-menu-container-visible" : ""
       }`}
     >
       <div
@@ -153,7 +153,7 @@ const SlideMenuContainer = ({ title, onClickHandle, visible, maxResults }) => {
             <img src={logo} className="h-8" alt="ICG logo" />
           </div>
           <div className="text-right">
-            <SlideMenuCloseButton onClick={onClickHandle} />
+            <SlideMenuCloseButton onClick={onClick} />
             {/* <button
               className="text-columbia-blue focus:outline-none"
               onClick={onClickHandle}

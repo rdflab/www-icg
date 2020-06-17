@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
+import React, { useState } from "react"
 import H from "./headings/h"
 import HideSmall from "./hidesmall"
 import Breadcrumb from "./breadcrumb"
@@ -26,15 +26,30 @@ const CrumbTitleLayout = ({
   crumbsFloat,
   backgroundColor,
 }) => {
+  const [menuVisible, setMenuVisible] = useState(false)
+
+  const onMenuButtonClick = (e) => {
+    setMenuVisible(true)
+  }
+
+  const onSlideMenuClick = (e) => {
+    setMenuVisible(false)
+  }
+
   if (headerFloat) {
     return (
-      <Layout title={title}>
+      <Layout
+        title={title}
+        menuVisible={menuVisible}
+        onSlideMenuClick={onSlideMenuClick}
+      >
         <div className={`w-full absolute z-50`}>
           <Header
             title={title}
             subTitle={subTitle}
             content={headerComponent}
             menuComponent={menuComponent}
+            onMenuButtonClick={onMenuButtonClick}
           />
           {crumbs.length > 0 && (
             <HideSmall>

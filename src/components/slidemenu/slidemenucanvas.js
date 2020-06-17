@@ -1,11 +1,11 @@
 import React from "react"
 
-const SlideMenuCanvas = ({ onClickHandle, visible }) => (
+const SlideMenuCanvas = ({ onClick, visible }) => (
   <div
     className={`slide-menu-canvas ${
       visible ? "slide-menu-canvas-visible" : ""
     }`}
-    onClick={onClickHandle}
+    onClick={onClick}
   />
 )
 

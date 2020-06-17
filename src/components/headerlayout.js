@@ -5,21 +5,38 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
+import React, { useState } from "react"
 import Layout from "./layout"
 import Header from "./header/header"
 
-const HeaderLayout = ({ title, headerComponent, menuComponent, children }) => (
-  <Layout title={title}>
-    <Header
-      title={title}
-      content={headerComponent}
-      menuComponent={menuComponent}
-    />
+const HeaderLayout = ({ title, headerComponent, menuComponent, children }) => {
+  const [menuVisible, setMenuVisible] = useState(false)
 
-    <main>{children}</main>
-  </Layout>
-)
+  const onMenuButtonClick = (e) => {
+    setMenuVisible(true)
+  }
+
+  const onSlideMenuClick = (e) => {
+    setMenuVisible(false)
+  }
+
+  return (
+    <Layout
+      title={title}
+      menuVisible={menuVisible}
+      onSlideMenuClick={onSlideMenuClick}
+    >
+      <Header
+        title={title}
+        content={headerComponent}
+        menuComponent={menuComponent}
+        onMenuButtonClick={onMenuButtonClick}
+      />
+
+      <main>{children}</main>
+    </Layout>
+  )
+}
 
 HeaderLayout.defaultProps = {
   title: null,

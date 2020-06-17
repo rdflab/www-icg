@@ -36,6 +36,7 @@ import {
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons"
 import { faClock } from "@fortawesome/free-regular-svg-icons"
+import SlideMenu from "./slidemenu/slidemenu"
 
 library.add(
   fab,
@@ -63,7 +64,33 @@ if (typeof window !== "undefined") {
   require("smooth-scroll")('a[href*="#"]')
 }
 
-const Layout = ({ title, children }) => {
+// export const ACTION_MENU_VISIBLE = 'MENU_VISIBLE'
+
+// export const menuVisibleAction = (visible) => {
+//   return { type: ACTION_MENU_VISIBLE, visible }
+// }
+
+// const INITIAL_STATE = {
+//   menuVisible: false
+// }
+
+// const updateState = (state = INITIAL_STATE, action) => {
+//   switch (action.type) {
+//     case ACTION_MENU_VISIBLE:
+//       return Object.assign({}, state, {
+//         menuVisible: action.visible
+//       })
+//     default:
+//       return state
+//   }
+// }
+
+// const store = createStore(updateState)
+
+// // Log the initial state
+// console.log('store', store.getState())
+
+const Layout = ({ title, children, menuVisible, onSlideMenuClick }) => {
   const siteMetadata = useSiteMetadata()
 
   return (
@@ -98,6 +125,8 @@ const Layout = ({ title, children }) => {
 
       {title !== "" && <SEO title={title} />}
 
+      <SlideMenu visible={menuVisible} onSlideMenuClick={onSlideMenuClick} />
+
       {children}
 
       <Footer siteTitle={siteMetadata.title}></Footer>
@@ -113,6 +142,8 @@ Layout.defaultProps = {
   crumbs: [],
   selectedTab: "",
   title: "",
+  menuVisible: false,
+  onSlideMenuClick: null,
 }
 
 export default Layout

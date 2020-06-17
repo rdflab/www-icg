@@ -1,30 +1,21 @@
-import React, { useState } from "react"
-import SlideMenuButton from "./slidemenubutton"
+import React from "react"
 import SlideMenuContainer from "./slidemenucontainer"
 import SlideMenuCanvas from "./slidemenucanvas"
 
-const SlideMenu = ({ title }) => {
-  const [visible, setVisible] = useState(false)
+const SlideMenu = ({ title, visible, onSlideMenuClick }) => (
+  <>
+    {/* <SlideMenuButton onClick={menuClickHandle} /> */}
+    <SlideMenuCanvas onClick={onSlideMenuClick} visible={visible} />
+    <SlideMenuContainer
+      title={title}
+      onClick={onSlideMenuClick}
+      visible={visible}
+    />
+  </>
+)
 
-  const toggleMenu = () => {
-    setVisible(!visible)
-  }
-
-  const onClickHandle = (e) => {
-    toggleMenu()
-  }
-
-  return (
-    <>
-      <SlideMenuButton onClickHandle={onClickHandle} />
-      <SlideMenuCanvas onClickHandle={onClickHandle} visible={visible} />
-      <SlideMenuContainer
-        title={title}
-        onClickHandle={onClickHandle}
-        visible={visible}
-      />
-    </>
-  )
+SlideMenu.defaultProps = {
+  onSlideMenuClick: null,
 }
 
 export default SlideMenu

@@ -20,7 +20,7 @@ const LabWebSite = ({ person }) => {
     return (
       <div>
         <h5>
-          <WhiteLinkExt to={to}>Lab Web Site</WhiteLinkExt>
+          <WhiteLinkExt to={to}>Go to Lab Web Site</WhiteLinkExt>
         </h5>
       </div>
     )

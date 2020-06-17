@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
+import React, { useState } from "react"
 import Breadcrumb from "./breadcrumb"
 import HideSmall from "./hidesmall"
 import HeaderLayout from "./headerlayout"
@@ -16,7 +16,7 @@ import Column from "./column"
 import whitelogo from "../assets/svg/icg-logo-white.svg"
 import { Link } from "gatsby"
 import ShowSmall from "./showsmall"
-import SlideMenu from "./slidemenu/slidemenu"
+import SlideMenuButton from "./slidemenu/slidemenubutton"
 
 const CrumbLayout = ({
   title,
@@ -29,14 +29,29 @@ const CrumbLayout = ({
   crumbsFloat,
   backgroundColor,
 }) => {
+  const [menuVisible, setMenuVisible] = useState(false)
+
+  const onMenuButtonClick = (e) => {
+    setMenuVisible(true)
+  }
+
+  const onSlideMenuClick = (e) => {
+    setMenuVisible(false)
+  }
+
   if (headerFloat) {
     return (
-      <Layout title={title}>
+      <Layout
+        title={title}
+        menuVisible={menuVisible}
+        onSlideMenuClick={onSlideMenuClick}
+      >
         <div className={`w-full absolute z-50 shadow-md`}>
           <Header
             title={title}
             content={headerComponent}
             menuComponent={menuComponent}
+            onMenuButtonClick={onMenuButtonClick}
           />
 
           <HideSmall size="lg">
@@ -52,10 +67,14 @@ const CrumbLayout = ({
   } else {
     if (headerLinksFloat) {
       return (
-        <Layout title={title}>
+        <Layout
+          title={title}
+          menuVisible={menuVisible}
+          onSlideMenuClick={onSlideMenuClick}
+        >
           <ShowSmall className="bg-columbia-blue-90" size="lg">
             <nav aria-label="Navigation" className="row p-3">
-              <SlideMenu title={title} />
+              <SlideMenuButton onClick={onMenuButtonClick} />
               <Link to="/">
                 <img src={whitelogo} className="h-10" alt="ICG Logo" />
               </Link>

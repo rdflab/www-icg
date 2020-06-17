@@ -9,6 +9,7 @@ import Column from "../column"
 //import logo from "../../assets/svg/icg-logo.svg"
 import whitelogo from "../../assets/svg/icg-logo-white.svg"
 import ShowSmall from "../showsmall"
+import SlideMenuButton from "../slidemenu/slidemenubutton"
 
 export const HeaderLinksNav = ({ menuComponent }) => (
   <nav aria-label="Navigation">
@@ -26,11 +27,14 @@ HeaderLinksNav.defaultProps = {
   menuComponent: null,
 }
 
-const Header = ({ title, content, menuComponent }) => (
+const Header = ({ title, content, menuComponent, onMenuButtonClick }) => (
   <>
     <ShowSmall className="bg-columbia-blue-90" size="lg">
       <nav aria-label="Navigation" className="row p-3">
-        <SlideMenu title={title} />
+        {/* <SlideMenu title={title} /> */}
+
+        <SlideMenuButton onClick={onMenuButtonClick} />
+
         <Link to="/">
           <img src={whitelogo} className="h-10" alt="IGC Logo" />
         </Link>
@@ -78,6 +82,7 @@ Header.defaultProps = {
   title: "",
   content: null,
   menuContent: null,
+  onMenuButtonClick: null,
 }
 
 export default Header
