@@ -18,35 +18,13 @@ import FacultyHeader from "../components/faculty/facultyheader"
 import Column from "../components/column"
 import FullDiv from "../components/fulldiv"
 import BlueIndexLink from "../components/links/blueindexlink"
-import pubmedsvg from "../assets/svg/pubmed.svg"
-import LinkExt from "../components/links/linkext"
 import BlueLinkExt from "../components/links/bluelinkext"
 import SmallContainer from "../components/smallcontainer"
 import DropShadowFrame from "../components/images/dropshadowframe"
-import useSiteMetadata from "../hooks/sitemetadata"
 import genericsvg from "../assets/svg/generic.svg"
 import headersvg from "../assets/svg/header.svg"
 import ShareLinks from "../components/share/sharelinks"
-
-const PubMedLink = ({ person }) => (
-  // <div className="uppercase">
-  //   <LinkExt to={person.frontmatter.pubmed}>
-  //     <img src={pubmedsvg} className="inline align-middle w-32" />
-  //   </LinkExt>
-  // </div>
-
-  <Column isVCentered={true}>
-    <Column className="uppercase mr-4 md:w-32">See more on</Column>
-    <Column>
-      <LinkExt
-        to={person.frontmatter.pubmed}
-        className="opacity-70 hover:opacity-100 trans-ani"
-      >
-        <img src={pubmedsvg} className="w-32" alt="PubMed" />
-      </LinkExt>
-    </Column>
-  </Column>
-)
+import { PubMedLink } from "./facultyshorttemplate"
 
 const AwardsGrid = ({ cv, cols, colWidth, headingColor }) => {
   const rows = Math.floor(cv.awards.length / cols) + 1
@@ -428,9 +406,11 @@ const FacultyLongTemplate = ({ path, pageContext, data }) => {
 
       <Abstract person={person} markdown={data.abstractMarkdown} />
 
-      <div className="py-16 bg-columbia-light-gray">
-        <Team labGroupMap={lab.groupMap} />
-      </div>
+      {Object.keys(lab.groupMap).length > 0 && (
+        <div className="py-16 bg-columbia-light-gray">
+          <Team labGroupMap={lab.groupMap} />
+        </div>
+      )}
 
       {/* {appointments !== null && appointments.appointments.length > 0 && (
         <div className="py-16">
@@ -471,22 +451,30 @@ const FacultyLongTemplate = ({ path, pageContext, data }) => {
 
       <div className="py-16 bg-columbia-light-gray">
         <Container>
-          <FacultyHeading2>Selected Publications</FacultyHeading2>
-
           {person.frontmatter.tags.includes("publication-format::recent") &&
             publications.length > 0 && (
-              <RecentPublications publications={publications} />
+              <>
+                <FacultyHeading2>Selected Publications</FacultyHeading2>
+
+                <RecentPublications publications={publications} />
+                <PubMedLink person={person} />
+              </>
             )}
 
           {person.frontmatter.tags.includes("publication-format::selected") &&
             publications.length > 0 && (
-              <SelectedPublications
-                id={person.frontmatter.id}
-                publications={publications}
-              />
+              <>
+                <FacultyHeading2>Selected Publications</FacultyHeading2>
+
+                <SelectedPublications
+                  id={person.frontmatter.id}
+                  publications={publications}
+                />
+                <PubMedLink person={person} />
+              </>
             )}
 
-          <Column className="items-center justify-between pt-8">
+          {/* <Column className="items-center justify-between pt-8">
             <PubMedLink person={person} />
             {/* <Column>
               <Button
@@ -494,8 +482,8 @@ const FacultyLongTemplate = ({ path, pageContext, data }) => {
               >
                 More Publications
               </Button>
-            </Column> */}
-          </Column>
+            </Column>
+          </Column> */}
         </Container>
       </div>
 

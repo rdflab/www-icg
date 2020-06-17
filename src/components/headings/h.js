@@ -13,9 +13,19 @@ export const TitleDiv = ({ title, heading, subHeading }) => (
   </div>
 )
 
-const H = ({ title, heading, subHeading, content, showShareLinks, path }) => {
+const H = ({
+  title,
+  heading,
+  subHeading,
+  content,
+  showShareLinks,
+  path,
+  className,
+}) => {
   return (
-    <div className="text-white w-full bg-columbia-secondary-blue-90">
+    <div
+      className={`text-white w-full bg-columbia-secondary-blue-90 ${className}`}
+    >
       <Container>
         <ShowSmall className="py-2">
           <TitleDiv title={title} heading={heading} subHeading={subHeading} />
@@ -48,6 +58,7 @@ H.defaultProps = {
   path: "",
   content: null,
   showShareLinks: false,
+  className: "",
 }
 
 export default H

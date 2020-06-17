@@ -24,7 +24,7 @@ export const SiteLink = ({ to, link }) => {
   }
 }
 
-const SiteSearchResult = ({ text, to, link, selected }) => {
+const SiteSearchResult = ({ text, to, selected }) => {
   const linkEl = useRef(null)
 
   const click = () => {
@@ -181,8 +181,7 @@ const SiteSearch = ({ className, placeholder, maxResults }) => {
                 <SiteSearchResult
                   key={`result-${c}`}
                   text={<SearchHighlight text={name} words={words} />}
-                  to={link[3]}
-                  link={siteData.linkNames[link[2]]}
+                  to={link[2]}
                   selected={index === selectedIndex}
                 />
               )

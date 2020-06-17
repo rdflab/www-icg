@@ -1,5 +1,4 @@
 import React from "react"
-import WhiteLinkExt from "../links/whitelinkext"
 import ContactInfo from "../people/contactinfo"
 import Column from "../column"
 import { TitleDiv } from "../headings/h"

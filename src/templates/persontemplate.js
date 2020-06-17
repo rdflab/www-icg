@@ -14,6 +14,7 @@ import Container from "../components/container"
 import H1 from "../components/headings/h1"
 import PersonHeader from "../components/people/personheader"
 import Share from "../components/share/share"
+import ShareLinks from "../components/share/sharelinks"
 
 const interests = (person) => {
   const n = person.researchAreas.length
@@ -146,19 +147,19 @@ const PersonTemplate = ({ path, pageContext, data }) => {
 
   return (
     <CrumbLayout
+      path={path}
       crumbs={[
         ["People", "/people"],
         [title, personUrl(person)],
       ]}
       headerComponent={<SiteSearch />}
+      menuComponent={<ShareLinks path={path} />}
     >
       <PersonHeader person={person} />
 
-      <Share path={path} color="text-blue-500" />
-
       {/* {interests2(person)} */}
 
-      <Container className="py-8">
+      <Container className="my-16">
         <Column>
           <div className="mr-8">
             {data.file !== null && (

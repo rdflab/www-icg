@@ -70,8 +70,8 @@ export const searchTree = (root, q) => {
         s2 = opStack.pop()
         s1 = opStack.pop()
 
-        s1 = Array.from(s1).filter((e) => {
-          return s2.has(e)
+        s1 = s1.filter((e) => {
+          return s2.includes(e)
         })
 
         opStack.push(s1)
@@ -82,7 +82,9 @@ export const searchTree = (root, q) => {
         s1 = opStack.pop()
 
         s2.forEach((e) => {
-          s1.add(e)
+          if (!s1.includes(e)) {
+            s1.push(e)
+          }
         })
 
         opStack.push(s1)
@@ -93,7 +95,7 @@ export const searchTree = (root, q) => {
         if (token !== EMPTY_TOKEN) {
           const word = token.toLowerCase()
 
-          const items = new Set()
+          const items = []
 
           node = root
 
@@ -112,7 +114,10 @@ export const searchTree = (root, q) => {
 
           if (found) {
             for (let item of node[1]) {
-              items.add(item)
+              if (!items.includes(item)) {
+                console.log(item)
+                items.push(item)
+              }
             }
           }
 
@@ -122,7 +127,7 @@ export const searchTree = (root, q) => {
           // boolean terms
           terms.push(word)
         } else {
-          opStack.push(new Set())
+          opStack.push([])
         }
 
         break

@@ -10,10 +10,12 @@ import HideSmall from "../components/hidesmall"
 import useSiteMetadata from "../hooks/sitemetadata"
 import useImageMap from "../hooks/imagemap"
 import Img from "gatsby-image"
+import ShowBetween from "../components/showbetween"
+import ShareLinks from "../components/share/sharelinks"
 
 const EMPTY_QUERY = ""
 
-const Lab = ({ lab, imageMap }) => {
+const LabCard = ({ lab, imageMap }) => {
   const [hover, setHover] = useState(false)
 
   const { paths } = useSiteMetadata()
@@ -41,16 +43,24 @@ const Lab = ({ lab, imageMap }) => {
 
   return (
     <div
-      className={`w-full rounded-md bg-white border border-solid border-gray-300 overflow-hidden mb-16 trans-ani ${
-        hover ? "shadow" : ""
-      }`}
+      className={`w-full mb-16 trans-ani`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
       <Link to={`${paths.labsPath}/${lab.id}`}>
-        <div className="bg-white">{img}</div>
-        <div className={`p-4 text-lg text-columbia-secondary-blue`}>
-          {lab.name}
+        <div
+          className={`opacity-90 trans-ani rounded-lg overflow-hidden ${
+            hover ? "opacity-100 shadow-md" : ""
+          }`}
+        >
+          {img}
+        </div>
+        <div
+          className={`m-1 mt-4 trans-ani ${
+            hover ? "text-blue" : "text-gray-800"
+          }`}
+        >
+          <h4>{lab.name}</h4>
         </div>
       </Link>
     </div>
@@ -72,7 +82,7 @@ const LabGrid = ({ labs, cols, colWidth, imageMap }) => {
 
       col.push(
         <Column className={`md:${colWidth}`} key={pc}>
-          {pc < labs.length && <Lab lab={lab} imageMap={imageMap} />}
+          {pc < labs.length && <LabCard lab={lab} imageMap={imageMap} />}
         </Column>
       )
 
@@ -142,6 +152,7 @@ const AllLabsTemplate = ({ path, pageContext, data }) => {
       nav="For Research Scientists"
       title="Research Labs"
       headerComponent={<SiteSearch />}
+      menuComponent={<ShareLinks path={path} />}
       // titleComponent={
       //   <SearchSummary count={groups.length} single="Lab" plural="Labs" />
       // }
@@ -153,17 +164,36 @@ const AllLabsTemplate = ({ path, pageContext, data }) => {
         className="my-4"
       /> */}
 
-      <div className="py-16">
+      <div className="my-16">
         <Container>
-          <ShowSmall size="lg">
+          <ShowSmall size="md">
             <LabGrid
               labs={allLabs}
+              imageMap={imageMap}
               cols={2}
               colWidth="w-9/20"
-              imageMap={imageMap}
             />
           </ShowSmall>
-          <HideSmall size="lg">
+
+          <ShowBetween s1="md" s2="lg">
+            <LabGrid
+              labs={allLabs}
+              imageMap={imageMap}
+              cols={3}
+              colWidth="w-3/10"
+            />
+          </ShowBetween>
+
+          <ShowBetween s1="lg" s2="xl">
+            <LabGrid
+              labs={allLabs}
+              imageMap={imageMap}
+              cols={4}
+              colWidth="w-11/50"
+            />
+          </ShowBetween>
+
+          <HideSmall size="xl">
             <LabGrid labs={allLabs} imageMap={imageMap} />
           </HideSmall>
         </Container>

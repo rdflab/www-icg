@@ -9,6 +9,8 @@ import Container from "../components/container"
 import getEventType from "../components/calendar/caleventype"
 import ShareLinks from "../components/share/sharelinks"
 
+import HTMLDiv from "../components/htmldiv"
+
 const CalEventTemplate = ({ path, pageContext }) => {
   const { calEvent, allCalEvents } = pageContext
 
@@ -30,7 +32,7 @@ const CalEventTemplate = ({ path, pageContext }) => {
         <Column>
           <MainColumn className="mr-16">
             <div className="w-full">
-              <div dangerouslySetInnerHTML={{ __html: calEvent.html }} />
+              <HTMLDiv html={calEvent.html} className="text-lg" />
 
               <div className="my-4 py-4 border-t border-b border-solid border-gray-400">
                 <CalEventLocation event={calEvent} showDate={true} />

@@ -89,7 +89,7 @@ const AdminStaffTemplate = ({ path, pageContext }) => {
             />
           </ShowBetween>
 
-          <ShowBetween s1="xl" s2="xxl">
+          <ShowBetween s1="xl" s2="2xl">
             <PeopleGroups
               groupMap={admin.groupMap}
               showPhoto={true}
@@ -99,7 +99,7 @@ const AdminStaffTemplate = ({ path, pageContext }) => {
             />
           </ShowBetween>
 
-          <HideSmall size="xxl">
+          <HideSmall size="2xl">
             <PeopleGroups
               groupMap={admin.groupMap}
               showPhoto={true}

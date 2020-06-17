@@ -2,7 +2,10 @@ const path = require(`path`)
 var fs = require("fs")
 
 const GROUPS = [
+  "Directors",
+  "Director",
   "Faculty",
+  "Members",
   "Administrator",
   "Administrative Staff",
   "Research Staff",

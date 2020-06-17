@@ -17,8 +17,14 @@ const PersonHeader = ({ person, title, heading, subHeading }) => {
       title={title}
       heading={heading}
       subHeading={subHeading}
-      content={<ContactInfo person={person} color="white" />}
+      content={
+        <div>
+          <div className="uppercase mb-2">Contact</div>
+          <ContactInfo person={person} color="white" />
+        </div>
+      }
       showShareLinks={false}
+      className="shadow-md"
     />
   )
 }

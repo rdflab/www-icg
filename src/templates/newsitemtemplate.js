@@ -38,11 +38,9 @@ const NewsItemTemplate = ({ path, pageContext }) => {
         <Column>
           <MainColumn className="mr-16">
             <FullDiv>
-              <div>
-                <NewsItemDate item={item} />
+              <NewsItemDate item={item} />
 
-                <NewsContent html={item.html} />
-              </div>
+              <NewsContent html={item.html} />
             </FullDiv>
           </MainColumn>
           <SideColumn>

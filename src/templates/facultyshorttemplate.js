@@ -23,10 +23,9 @@ import LinkExt from "../components/links/linkext"
 import BlueLinkExt from "../components/links/bluelinkext"
 import SmallContainer from "../components/smallcontainer"
 import DropShadowFrame from "../components/images/dropshadowframe"
-import useSiteMetadata from "../hooks/sitemetadata"
 import ShareLinks from "../components/share/sharelinks"
 
-const PubMedLink = ({ person }) => (
+export const PubMedLink = ({ person }) => (
   // <div className="uppercase">
   //   <LinkExt to={person.frontmatter.pubmed}>
   //     <img src={pubmedsvg} className="inline align-middle w-32" />
@@ -34,7 +33,7 @@ const PubMedLink = ({ person }) => (
   // </div>
 
   <Column isVCentered={true}>
-    <Column className="uppercase mr-4 md:w-32">See more on</Column>
+    <Column className="uppercase mr-4 md:w-32 my-2">See more on</Column>
     <Column>
       <LinkExt
         to={person.frontmatter.pubmed}
@@ -385,6 +384,8 @@ const FacultyShortTemplate = ({ path, pageContext, data }) => {
     )
   }
 
+  console.log("sdf", Object.keys(lab.groupMap).length)
+
   return (
     <CrumbLayout
       nav="Faculty"
@@ -419,9 +420,11 @@ const FacultyShortTemplate = ({ path, pageContext, data }) => {
         </div>
       )}
 
-      <div className="py-16 bg-columbia-light-gray">
-        <Team labGroupMap={lab.groupMap} />
-      </div>
+      {Object.keys(lab.groupMap).length > 0 && (
+        <div className="py-16 bg-columbia-light-gray">
+          <Team labGroupMap={lab.groupMap} />
+        </div>
+      )}
 
       {/* {appointments !== null && appointments.appointments.length > 0 && (
         <div className="py-16 bg-columbia-secondary-blue-10">
@@ -445,21 +448,27 @@ const FacultyShortTemplate = ({ path, pageContext, data }) => {
 
       <div className="py-16">
         <Container>
-          <FacultyHeading2>Selected Publications</FacultyHeading2>
-
           {person.frontmatter.tags.includes("publication-format::recent") &&
             publications.length > 0 && (
-              <RecentPublications publications={publications} />
+              <>
+                <FacultyHeading2>Selected Publications</FacultyHeading2>
+                <RecentPublications publications={publications} />
+                <PubMedLink person={person} />
+              </>
             )}
 
           {person.frontmatter.tags.includes("publication-format::selected") &&
             publications.length > 0 && (
-              <SelectedPublications
-                id={person.frontmatter.id}
-                publications={publications}
-              />
+              <>
+                <FacultyHeading2>Selected Publications</FacultyHeading2>
+                <SelectedPublications
+                  id={person.frontmatter.id}
+                  publications={publications}
+                />
+                <PubMedLink person={person} />
+              </>
             )}
-
+          {/* 
           <Column className="items-center justify-between pt-8">
             <PubMedLink person={person} />
             {/* <Column>
@@ -468,8 +477,8 @@ const FacultyShortTemplate = ({ path, pageContext, data }) => {
               >
                 More Publications
               </Button>
-            </Column> */}
-          </Column>
+            </Column> 
+          </Column> */}
         </Container>
       </div>
 

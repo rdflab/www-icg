@@ -31,7 +31,7 @@ const HeaderLinks = () => {
     )
 
     if (i < links.length - 1) {
-      ret.push(<div className="mx-2" />)
+      ret.push(<div className="mx-2" key={`spacing-${i}`} />)
     }
   }
 

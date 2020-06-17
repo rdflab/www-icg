@@ -1,10 +1,7 @@
 import React, { useState } from "react"
 import CrumbTitleLayout from "../components/crumbtitlelayout"
 import SiteSearch from "../components/search/sitesearch"
-import YearSelector from "../components/filter/yearselector"
-import HideSmall from "../components/hidesmall"
 import NewsSearchResults from "../components/news/newssearchresults"
-import Column from "../components/column"
 import Container from "../components/container"
 import ShareLinks from "../components/share/sharelinks"
 // import MainColumn from "../components/maincolumn"
@@ -96,13 +93,11 @@ const NewsTemplate = ({ path, pageContext }) => {
       menuComponent={<ShareLinks path={path} />}
     >
       <Container className="my-16">
-        <HideSmall>
+        {/* <HideSmall>
           <Column isVCentered={true} isCentered={true}>
-            <div>
               <YearSelector onClick={handleClick} />
-            </div>
           </Column>
-        </HideSmall>
+        </HideSmall> */}
         <NewsSearchResults
           news={yearFilteredNews}
           pagedNews={pagedNews}
