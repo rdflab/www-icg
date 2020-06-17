@@ -15,7 +15,7 @@ const ContactInfo = ({
 }) => {
   if (showIcons) {
     return (
-      <div className={`w-full h-full  ${className}`}>
+      <div className={`w-full h-full ${className}`}>
         {person.frontmatter.email !== "" && (
           <EmailLink color={color} to={person.frontmatter.email} />
         )}
@@ -67,7 +67,7 @@ ContactInfo.defaultProps = {
   className: "",
   url: "",
   color: "gray",
-  showIcons: true,
+  showIcons: false,
   showUrl: true,
 }
 

@@ -95,7 +95,7 @@ const IndexTemplate = ({ path, pageContext, data }) => {
           className="pb-4 mb-4 border-b border-solid border-white"
           key={i}
         >
-          <Column className="w-2/10 mr-4">
+          <Column className="w-1/10 mr-4">
             <CalEventDate event={calEvent} color="white" />
           </Column>
           <Column>
@@ -238,22 +238,26 @@ const IndexTemplate = ({ path, pageContext, data }) => {
       alt={true}
     /> */}
 
-      <Column className="bg-blue-800 py-32">
-        <Column w={5} className="md:pl-8 text-white">
-          <div className="p-8">
-            <HomeTitle>Upcoming Events</HomeTitle>
-            <p>See upcoming events and seminars of interest.</p>
-            <h3 className="mt-4">
-              <WhiteIndexLink to={paths.eventsPath}>
-                See all events
-              </WhiteIndexLink>
-            </h3>
-          </div>
-        </Column>
-        <Column w={7}>
-          <div className="w-full p-8">{calEvents}</div>
-        </Column>
-      </Column>
+      <div className="bg-blue-800 py-32">
+        <Container>
+          <Column>
+            <Column className="md:pl-8 text-white w-5/10">
+              <div className="p-8">
+                <HomeTitle>Upcoming Events</HomeTitle>
+                <p>See upcoming events and seminars of interest.</p>
+                <h3 className="mt-4">
+                  <WhiteIndexLink to={paths.eventsPath}>
+                    See all events
+                  </WhiteIndexLink>
+                </h3>
+              </div>
+            </Column>
+            <div className="w-5/10 border-t border-solid border-white pt-4">
+              {calEvents}
+            </div>
+          </Column>
+        </Container>
+      </div>
 
       {/* <HomeSection
         title="Publications"

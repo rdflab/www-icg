@@ -10,6 +10,6 @@ email: "ic2445@columbia.edu"
 room: "505A"
 researchAreas: []
 pubmed: "https://pubmed.ncbi.nlm.nih.gov/?term=Chio+Christine%5BAuthor%5D&sort=pubdate"
-url: "Lab Web Site::https://chiolab.com/"
+url: "Go to Lab Website::https://chiolab.com/"
 tags: ["page-format::short", "publication-format::recent"]
 ---

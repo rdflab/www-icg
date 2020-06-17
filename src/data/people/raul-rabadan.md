@@ -10,7 +10,7 @@ email: "rr2579@cumc.columbia.edu"
 room: ""
 researchAreas: []
 pubmed: ""
-url: "Lab Web Site::https://rabadan.c2b2.columbia.edu/"
+url: "Go to Lab Website::https://rabadan.c2b2.columbia.edu/"
 tags:
   ["page-format::short", "publication-format::selected", "show-awards-honors"]
 ---

@@ -50,8 +50,6 @@ h5 {
   align-items: center;
 }
 
-
-
 .is-current {
   color: white !important;
 }
@@ -80,25 +78,9 @@ h5 {
   @apply transition duration-300;
 }
 
-.blue {
-  @apply text-blue-500; //text-columbia-blue; //text-blue-700;
-}
-
-.text-blue {
-  @apply text-blue-500; //text-columbia-blue; //text-blue-700;
-}
-
 
 .white {
   @apply text-white;
-}
-
-.blue-bg {
-  @apply bg-columbia-blue;
-}
-
-.blue-border {
-  @apply border-blue-600; //border-columbia-blue;
 }
 
 .gray-border {
@@ -141,18 +123,28 @@ a:hover {
   @apply underline-link-hover border-b border-solid border-gray-800;
 }
 
-
-
 .blue-link {
-  @apply underline-link blue; 
+  @apply underline-link text-blue; 
 }
 
 .blue-link-active {
-  @apply border-columbia-blue;
+  @apply border-blue;
 }
 
 .blue-link:hover {
-  @apply underline-link-hover border-b border-solid blue blue-border;
+  @apply underline-link-hover border-b border-solid text-blue border-blue;
+}
+
+.red-link {
+  @apply underline-link text-red-500; 
+}
+
+.red-link-active {
+  @apply border-red-500;
+}
+
+.red-link:hover {
+  @apply underline-link-hover border-b border-solid border-red-500;
 }
 
 .white-link {
@@ -336,13 +328,6 @@ a:hover {
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
 }
 
-.person-card {
-
-}
-
-.person-card:hover {
-  box-shadow: 0 1rem 1rem -0.5rem rgba(0, 0, 0, 0.3);
-}
 
 .help-logo {
   @apply transition-all duration-300;

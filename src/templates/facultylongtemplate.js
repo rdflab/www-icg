@@ -17,7 +17,7 @@ import { graphql } from "gatsby"
 import FacultyHeader from "../components/faculty/facultyheader"
 import Column from "../components/column"
 import FullDiv from "../components/fulldiv"
-import BlueLink from "../components/links/bluelink"
+import BlueIndexLink from "../components/links/blueindexlink"
 import pubmedsvg from "../assets/svg/pubmed.svg"
 import LinkExt from "../components/links/linkext"
 import BlueLinkExt from "../components/links/bluelinkext"
@@ -71,7 +71,7 @@ const AwardsGrid = ({ cv, cols, colWidth, headingColor }) => {
         <Column className={`md:${colWidth}`} key={index}>
           {award !== null && (
             <div className="mb-4">
-              <h4 className="text-blue-600">{award.title}</h4>
+              <h4 className="text-blue">{award.title}</h4>
               <h5 className="text-gray-600">{award.year}</h5>
             </div>
           )}
@@ -252,7 +252,7 @@ const Abstract = ({ person, markdown }) => {
           <HTMLDiv className="text-justify" html={markdown.html} />
         </div>
         <div className="mt-4">
-          <BlueLink to="#about">Read more</BlueLink>
+          <BlueIndexLink to="#about">Read more</BlueIndexLink>
         </div>
       </SmallContainer>
     )

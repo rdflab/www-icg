@@ -10,7 +10,7 @@ email: "cabateshen@columbia.edu"
 room: "321B"
 researchAreas: []
 pubmed: ""
-url: "Lab Web Site::https://abate-shen.cumc.columbia.edu/"
+url: "Go to Lab Website::https://abate-shen.cumc.columbia.edu/"
 tags:
   ["page-format::short", "publication-format::selected", "show-awards-honors"]
 ---

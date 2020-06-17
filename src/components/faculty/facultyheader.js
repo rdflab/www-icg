@@ -36,17 +36,17 @@ const FacultyHeader = ({ person, title, heading, subHeading, path }) => {
         <TitleDiv title={title} heading={heading} subHeading={subHeading} />
       </div>
 
-      <div className="lg:w-4/12 bg-columbia-medium-blue p-8 md:pr-40 min-h-full">
-        <h5>
-          <ContactInfo person={person} color="white" />
-        </h5>
+      <div className="lg:w-4/12 bg-columbia-medium-blue p-8 md:pr-40 min-h-full text-xl">
+        <div className="uppercase py-2">Contact</div>
+
+        <ContactInfo person={person} color="white" showIcons={true} />
       </div>
     </Column>
   )
 }
 
 FacultyHeader.defaultProps = {
-  title: "Faculty",
+  title: null, //"Faculty",
   heading: null,
   subHeading: null,
   path: "",

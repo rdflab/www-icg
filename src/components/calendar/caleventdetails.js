@@ -9,27 +9,47 @@ import HTMLDiv from "../htmldiv"
 import useSiteMetadata from "../../hooks/sitemetadata"
 import getEventType from "./caleventype"
 import getEventTypeUrl from "./caleventtypeurl"
+import RedLink from "../links/redlink"
 
 const CalEventDetails = ({ event, isMobile, color }) => {
   const { paths } = useSiteMetadata()
 
   const eventType = getEventType(event)
 
+  let eventTypeLink
+
+  switch (color) {
+    case "white":
+      eventTypeLink = (
+        <WhiteLink to={getEventTypeUrl(paths.eventsPath, eventType)}>
+          {eventType}
+        </WhiteLink>
+      )
+      break
+    default:
+      switch (eventType) {
+        case "Public Talk":
+          eventTypeLink = (
+            <RedLink to={getEventTypeUrl(paths.eventsPath, eventType)}>
+              {eventType}
+            </RedLink>
+          )
+          break
+        default:
+          eventTypeLink = (
+            <BlueLink to={getEventTypeUrl(paths.eventsPath, eventType)}>
+              {eventType}
+            </BlueLink>
+          )
+          break
+      }
+
+      break
+  }
+
   return (
     <div>
-      <div className="uppercase text-blue-500">
-        {color === "white" && (
-          <WhiteLink to={getEventTypeUrl(paths.eventsPath, eventType)}>
-            {eventType}
-          </WhiteLink>
-        )}
-
-        {color !== "white" && (
-          <BlueLink to={getEventTypeUrl(paths.eventsPath, eventType)}>
-            {eventType}
-          </BlueLink>
-        )}
-      </div>
+      <div className="uppercase">{eventTypeLink}</div>
       <h3>
         {color === "white" && (
           <WhiteLink to={eventUrl(event)}>{event.frontmatter.title}</WhiteLink>

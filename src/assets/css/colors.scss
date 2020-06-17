@@ -160,17 +160,6 @@ $columbia-medium-blue: #2C6BAC;
   border-color: $columbia-secondary-blue-50;
 }
 
-@variants hover {
-  .border-columbia-secondary-blue {
-    border-color: $columbia-secondary-blue;
-  }
-
-  .border-columbia-secondary-blue-50 {
-    border-color: $columbia-secondary-blue-50;
-  }
-}
-
-
 .border-white-20 {
   border-color: rgba(255, 255, 255, 0.2);
 }
@@ -215,10 +204,16 @@ $columbia-medium-blue: #2C6BAC;
   background-color: rgba(255, 255, 255, 0.5);
 }
 
-
-
 .text-columbia-blue {
   color: $columbia-blue;
+}
+
+.text-blue {
+  @apply text-blue-500;
+}
+
+.border-blue {
+  @apply border-blue-500;
 }
 
 .text-white-50 {

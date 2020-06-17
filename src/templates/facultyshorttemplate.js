@@ -69,7 +69,7 @@ const AwardsGrid = ({ cv, cols, colWidth, headingColor }) => {
         <Column className={`md:${colWidth}`} key={index}>
           {award !== null && (
             <div className="mb-4">
-              <h4 className="text-blue-600">{award.title}</h4>
+              <h4 className="text-blue">{award.title}</h4>
               <h5 className="text-gray-600">{award.year}</h5>
             </div>
           )}

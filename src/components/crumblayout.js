@@ -67,8 +67,6 @@ const CrumbLayout = ({
               <Container>
                 <Column className="items-center justify-between">
                   <Link to="/" className="mr-8">
-                    {/* <ColumbiaICGWhiteImage style={{ width: `400px` }} /> */}
-
                     <img src={whitelogo} className="h-20" alt="ICG Logo" />
                   </Link>
 
