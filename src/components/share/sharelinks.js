@@ -24,10 +24,6 @@ const ShareLinks = ({ color, size, opacity, path }) => {
         <Column isMobile={true} className={`items-center md:justify-end`}>
           <div>
             <LinkExt to={`https://www.facebook.com/sharer.php?u=${href}`}>
-              {/* <FontAwesomeIcon
-            icon={["fab", "facebook"]}
-            className={`${className} text-3xl`}
-          /> */}
               <img
                 src={FacebookSvgWhite}
                 className={className}
@@ -37,10 +33,6 @@ const ShareLinks = ({ color, size, opacity, path }) => {
           </div>
           <div className="ml-4">
             <LinkExt to={`https://twitter.com/share?ref_src=${href}`}>
-              {/* <FontAwesomeIcon
-            icon={["fab", "twitter"]}
-            className={`opacity-90 hover:${opacity} trans-ani text-3xl`}
-          /> */}
               <img
                 src={TwitterSvgWhite}
                 className={className}
@@ -52,10 +44,6 @@ const ShareLinks = ({ color, size, opacity, path }) => {
             <LinkExt
               to={`https://www.linkedin.com/sharing/share-offsite/?url=${href}`}
             >
-              {/* <FontAwesomeIcon
-            icon={["fab", "linkedin"]}
-            className={className}
-          /> */}
               <img
                 src={LinkedinSvgWhite}
                 className={className}
@@ -105,7 +93,7 @@ const ShareLinks = ({ color, size, opacity, path }) => {
 ShareLinks.defaultProps = {
   color: "white",
   opacity: [70, 100],
-  size: "w-8",
+  size: "w-6",
   path: "",
 }
 

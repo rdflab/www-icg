@@ -1,8 +1,8 @@
 import React from "react"
-import Container from "../container"
-import WhiteLink from "../links/whitelink"
-import Column from "../column"
-import breadcrumbsvg from "../../assets/svg/breadcrumb.svg"
+import Container from "./container"
+import WhiteLink from "./links/whitelink"
+import Column from "./column"
+import breadcrumbarrowsvg from "../assets/svg/breadcrumbarrow.svg"
 import { Link } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
@@ -17,7 +17,7 @@ const Breadcrumb = ({ crumbs, className }) => {
 
   ret.push(
     <img
-      src={breadcrumbsvg}
+      src={breadcrumbarrowsvg}
       className="text-white px-4 h-6"
       key={ret.length}
       alt="Breadcrumb separator"
@@ -41,7 +41,7 @@ const Breadcrumb = ({ crumbs, className }) => {
         // />
 
         <img
-          src={breadcrumbsvg}
+          src={breadcrumbarrowsvg}
           className="text-white px-4 h-6"
           key={ret.length}
           alt="Breadcrumb separator"
@@ -52,7 +52,7 @@ const Breadcrumb = ({ crumbs, className }) => {
 
   return (
     <div
-      className={`w-full bg-columbia-secondary-blue-90 text-sm py-2 ${className}`}
+      className={`w-full bg-columbia-secondary-blue-90 text-sm py-3 ${className}`}
     >
       <Container>
         <Column className="items-center">{ret}</Column>

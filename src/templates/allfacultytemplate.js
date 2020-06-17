@@ -11,10 +11,11 @@ import useSiteMetadata from "../hooks/sitemetadata"
 import Img from "gatsby-image"
 import ShowBetween from "../components/showbetween"
 import useImageMap from "../hooks/imagemap"
+import ShareLinks from "../components/share/sharelinks"
 
 const EMPTY_QUERY = ""
 
-const Faculty = ({ person, imageMap }) => {
+const FacultyCard = ({ person, imageMap }) => {
   const [hover, setHover] = useState(false)
 
   const { paths } = useSiteMetadata()
@@ -59,8 +60,8 @@ const Faculty = ({ person, imageMap }) => {
             hover ? "text-blue" : "text-gray-800"
           }`}
         >
-          <h4>{person.frontmatter.name}</h4>
-          <h5>{person.frontmatter.postNominalLetters}</h5>
+          <h4>{`${person.frontmatter.name}, ${person.frontmatter.postNominalLetters}`}</h4>
+          {/* <h5>{person.frontmatter.postNominalLetters}</h5> */}
         </div>
       </Link>
     </div>
@@ -93,7 +94,9 @@ const StaffGrid = ({
 
       col.push(
         <Column className={`md:${colWidth}`} key={`person-${pc}`}>
-          {person !== null && <Faculty person={person} imageMap={imageMap} />}
+          {person !== null && (
+            <FacultyCard person={person} imageMap={imageMap} />
+          )}
         </Column>
       )
 
@@ -199,8 +202,9 @@ const AllFacultyTemplate = ({ path, pageContext, data }) => {
       path={path}
       crumbs={crumbs}
       nav="For Research Scientists"
-      title="Meet Our Faculty"
+      title="Faculty"
       headerComponent={<SiteSearch />}
+      menuComponent={<ShareLinks path={path} />}
       // titleComponent={
       //   <SearchSummary count={groups.length} single="Lab" plural="Labs" />
       // }
@@ -212,7 +216,7 @@ const AllFacultyTemplate = ({ path, pageContext, data }) => {
         className="my-4"
       /> */}
 
-      <div className="py-8">
+      <div className="my-8">
         <Container>
           {/* <Labs labs={allGroups} /> */}
           {/*<StaffGrid labs={allGroups} /> */}

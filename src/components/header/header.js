@@ -10,7 +10,23 @@ import Column from "../column"
 import whitelogo from "../../assets/svg/icg-logo-white.svg"
 import ShowSmall from "../showsmall"
 
-const Header = ({ title, content, menuContent }) => (
+export const HeaderLinksNav = ({ menuComponent }) => (
+  <nav aria-label="Navigation">
+    <Container>
+      <Column className="items-start justify-between">
+        <HeaderLinks />
+
+        {menuComponent !== null && menuComponent}
+      </Column>
+    </Container>
+  </nav>
+)
+
+HeaderLinksNav.defaultProps = {
+  menuComponent: null,
+}
+
+const Header = ({ title, content, menuComponent }) => (
   <>
     <ShowSmall className="bg-columbia-blue-90" size="lg">
       <nav aria-label="Navigation" className="row p-3">
@@ -21,7 +37,7 @@ const Header = ({ title, content, menuContent }) => (
       </nav>
     </ShowSmall>
 
-    <HideSmall size="lg" className="bg-columbia-blue-90">
+    <HideSmall size="lg" className="bg-columbia-blue-90 shadow-md">
       {/* <div className="p-3">
         <Container>
           <Column isVCentered={true} className="justify-between">
@@ -47,16 +63,8 @@ const Header = ({ title, content, menuContent }) => (
           </Column>
         </Container>
       </div>
-      <div className="pt-2">
-        <nav aria-label="Navigation">
-          <Container>
-            <Column className="items-center justify-between">
-              <HeaderLinks />
-
-              {menuContent !== null && menuContent}
-            </Column>
-          </Container>
-        </nav>
+      <div className="pt-2 pb-4">
+        <HeaderLinksNav menuComponent={menuComponent} />
       </div>
     </HideSmall>
   </>

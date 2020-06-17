@@ -14,7 +14,7 @@ const HeaderLayout = ({ title, headerComponent, menuComponent, children }) => (
     <Header
       title={title}
       content={headerComponent}
-      menuContent={menuComponent}
+      menuComponent={menuComponent}
     />
 
     <main>{children}</main>

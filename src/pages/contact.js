@@ -8,8 +8,8 @@ const Contact = () => (
     title="Contact ICG"
     crumbs={[["Contact Us", "/contact"]]}
   >
-    <div className="bg-columbia-light-gray py-8">
-      <Container className="pt-8">
+    <div className="my-8">
+      <Container className="mt-8">
         <div className="md:w-1/2 p-8 text-xl bg-white shadow-lg hover:shadow-xl rounded-lg trans-ani">
           <div>Institute for Cancer Generics</div>
           <div>Herbert Irving Cancer Center, Columbia University</div>
@@ -19,8 +19,8 @@ const Contact = () => (
         </div>
       </Container>
 
-      <Container>
-        <div className="md:w-1/2 my-16 shadow-lg hover:shadow-xl rounded-lg bg-white overflow-hidden trans-ani">
+      <Container className="py-8">
+        <div className="md:w-1/2  shadow-lg hover:shadow-xl rounded-lg bg-white overflow-hidden trans-ani">
           <div
             className="iframe-container w-full"
             style={{ minHeight: "32rem" }}

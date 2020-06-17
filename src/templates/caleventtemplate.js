@@ -7,6 +7,7 @@ import SideColumn from "../components/sidecolumn"
 import CalEventsSideBar from "../components/calendar/caleventssidebar"
 import Container from "../components/container"
 import getEventType from "../components/calendar/caleventype"
+import ShareLinks from "../components/share/sharelinks"
 
 const CalEventTemplate = ({ path, pageContext }) => {
   const { calEvent, allCalEvents } = pageContext
@@ -23,8 +24,9 @@ const CalEventTemplate = ({ path, pageContext }) => {
       title={title}
       subTitle={getEventType(calEvent)}
       crumbs={[["Events", "/events"]]}
+      menuComponent={<ShareLinks path={path} />}
     >
-      <Container className="py-8">
+      <Container className="my-16">
         <Column>
           <MainColumn className="mr-16">
             <div className="w-full">

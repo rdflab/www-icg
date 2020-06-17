@@ -4,6 +4,9 @@ module.exports = {
       sans: ["Inter"],
     },
     extend: {
+      screens: {
+        xxl: "1600px",
+      },
       width: {
         "1/10": "10%",
         "2/10": "20%",

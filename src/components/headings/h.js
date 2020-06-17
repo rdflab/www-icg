@@ -17,7 +17,7 @@ const H = ({ title, heading, subHeading, content, showShareLinks, path }) => {
   return (
     <div className="text-white w-full bg-columbia-secondary-blue-90">
       <Container>
-        <ShowSmall className="py-2">
+        <ShowSmall>
           <TitleDiv title={title} heading={heading} subHeading={subHeading} />
 
           {content !== null && <div className="py-2">{content}</div>}
@@ -27,7 +27,7 @@ const H = ({ title, heading, subHeading, content, showShareLinks, path }) => {
             </div>
           )}
         </ShowSmall>
-        <HideSmall className="pt-2 pb-4">
+        <HideSmall className="pb-4">
           <Column className="items-center justify-between">
             <TitleDiv title={title} heading={heading} subHeading={subHeading} />
 
@@ -47,7 +47,7 @@ H.defaultProps = {
   subHeading: "",
   path: "",
   content: null,
-  showShareLinks: true,
+  showShareLinks: false,
 }
 
 export default H

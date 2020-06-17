@@ -6,6 +6,8 @@ import Container from "../components/container"
 import ShowSmall from "../components/showsmall"
 import ShowBetween from "../components/showbetween"
 import HideSmall from "../components/hidesmall"
+import { useWindowSize } from "@react-hook/window-size"
+import ShareLinks from "../components/share/sharelinks"
 
 const EMPTY_QUERY = ""
 
@@ -16,6 +18,8 @@ const AdminStaffTemplate = ({ path, pageContext }) => {
   const [filteredGroups, setFilteredGroups] = useState([])
   const [page, setPage] = useState(1)
   const [recordsPerPage, setRecordsPerPage] = useState(20)
+
+  const [width, height] = useWindowSize()
 
   // const handleInputChange = e => {
   //   const q = e.target.value.toLowerCase()
@@ -51,6 +55,7 @@ const AdminStaffTemplate = ({ path, pageContext }) => {
       nav="Administration"
       title="Administration Team"
       headerComponent={<SiteSearch />}
+      menuComponent={<ShareLinks path={path} />}
       // titleComponent={
       //   <SearchSummary count={groups.length} single="Lab" plural="Labs" />
       // }
@@ -62,7 +67,7 @@ const AdminStaffTemplate = ({ path, pageContext }) => {
         className="my-4"
       /> */}
 
-      <div className="py-8">
+      <div className="my-8">
         <Container>
           <ShowSmall size="lg">
             <PeopleGroups
@@ -84,13 +89,23 @@ const AdminStaffTemplate = ({ path, pageContext }) => {
             />
           </ShowBetween>
 
-          <HideSmall size="xl">
+          <ShowBetween s1="xl" s2="xxl">
             <PeopleGroups
               groupMap={admin.groupMap}
               showPhoto={true}
               context="admin"
               cols={4}
               colWidth="w-11/50"
+            />
+          </ShowBetween>
+
+          <HideSmall size="xxl">
+            <PeopleGroups
+              groupMap={admin.groupMap}
+              showPhoto={true}
+              context="admin"
+              cols={5}
+              colWidth="w-9/50"
             />
           </HideSmall>
         </Container>

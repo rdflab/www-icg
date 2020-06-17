@@ -18,7 +18,6 @@ import { graphql } from "gatsby"
 import FacultyHeader from "../components/faculty/facultyheader"
 import Column from "../components/column"
 import FullDiv from "../components/fulldiv"
-import BlueLink from "../components/links/bluelink"
 import pubmedsvg from "../assets/svg/pubmed.svg"
 import LinkExt from "../components/links/linkext"
 import BlueLinkExt from "../components/links/bluelinkext"
@@ -168,7 +167,7 @@ const BackgroundSection = ({ file, children }) => (
     fluid={file.childImageSharp.fluid}
     style={{
       width: "100%",
-      height: "36rem",
+      height: "40rem",
       backgroundPosition: "top center",
       backgroundRepeat: "no-repeat",
       backgroundSize: "cover",
@@ -184,7 +183,7 @@ const GenericBackgroundSection = ({ file, children }) => (
     fluid={file.childImageSharp.fluid}
     style={{
       width: "100%",
-      height: "36rem",
+      height: "40rem",
       backgroundPosition: "top center",
       backgroundRepeat: "no-repeat",
       backgroundSize: "cover",
@@ -392,16 +391,16 @@ const FacultyShortTemplate = ({ path, pageContext, data }) => {
       title={person.frontmatter.name}
       crumbs={crumbs}
       headerComponent={<SiteSearch />}
-      headerLinksFloat={true}
-      show
+      headerFloat={true}
+      menuComponent={<ShareLinks path={path} />}
     >
       {headerImage !== null && headerImage}
 
       <FacultyHeader person={person} />
-
+      {/* 
       <Container className="m-8">
         <ShareLinks path={path} color="color" opacity={[40, 100]} />
-      </Container>
+      </Container> */}
 
       <div className="py-16">
         <About

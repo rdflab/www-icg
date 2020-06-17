@@ -10,7 +10,7 @@ const About = () => (
     crumbs={[["About", "/about"]]}
     headerComponent={<SiteSearch />}
   >
-    <Container className="py-8">
+    <Container className="my-8">
       <div>
         <p>
           The Institute for Cancer Genetics was founded in 1999 as part of a

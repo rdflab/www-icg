@@ -169,7 +169,7 @@ const BackgroundSection = ({ file, children }) => (
     fluid={file.childImageSharp.fluid}
     style={{
       width: "100%",
-      height: "36rem",
+      height: "42rem",
       backgroundPosition: "top center",
       backgroundRepeat: "no-repeat",
       backgroundSize: "cover",
@@ -200,7 +200,7 @@ const GenericBackgroundSection = ({ file, children }) => (
     fluid={file.childImageSharp.fluid}
     style={{
       width: "100%",
-      height: "36rem",
+      height: "42rem",
       backgroundPosition: "top center",
       backgroundRepeat: "no-repeat",
       backgroundSize: "cover",
@@ -410,19 +410,21 @@ const FacultyLongTemplate = ({ path, pageContext, data }) => {
 
   return (
     <CrumbLayout
+      path={path}
       nav="Faculty"
       title={person.frontmatter.name}
       crumbs={crumbs}
       headerComponent={<SiteSearch />}
-      headerLinksFloat={true}
+      menuComponent={<ShareLinks path={path} />}
+      headerFloat={true}
     >
       {headerImage !== null && headerImage}
 
       <FacultyHeader person={person} />
 
-      <Container className="m-8">
+      {/* <Container className="m-8">
         <ShareLinks path={path} color="color" opacity={[40, 100]} />
-      </Container>
+      </Container> */}
 
       <Abstract person={person} markdown={data.abstractMarkdown} />
 

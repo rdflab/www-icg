@@ -8,7 +8,7 @@
 import React from "react"
 import H from "./headings/h"
 import HideSmall from "./hidesmall"
-import Breadcrumb from "./breadcrumb/breadcrumbv2"
+import Breadcrumb from "./breadcrumb"
 import Layout from "./layout"
 import HeaderLayout from "./headerlayout"
 import Header from "./header/header"
@@ -28,17 +28,13 @@ const CrumbTitleLayout = ({
 }) => {
   if (headerFloat) {
     return (
-      <Layout
-        title={title}
-        headerComponent={headerComponent}
-        menuComponent={menuComponent}
-      >
+      <Layout title={title}>
         <div className={`w-full absolute z-50`}>
           <Header
             title={title}
             subTitle={subTitle}
             content={headerComponent}
-            menuContent={menuComponent}
+            menuComponent={menuComponent}
           />
           {crumbs.length > 0 && (
             <HideSmall>
@@ -61,7 +57,9 @@ const CrumbTitleLayout = ({
         headerComponent={headerComponent}
         menuComponent={menuComponent}
       >
-        <div className={`w-full ${crumbsFloat ? "absolute z-50" : ""}`}>
+        <div
+          className={`w-full shadow-md ${crumbsFloat ? "absolute z-50" : ""}`}
+        >
           {crumbs.length > 0 && (
             <HideSmall>
               <Breadcrumb crumbs={crumbs} />

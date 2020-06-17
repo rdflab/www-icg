@@ -6,17 +6,16 @@
  */
 
 import React from "react"
-import Breadcrumb from "./breadcrumb/breadcrumbv2"
+import Breadcrumb from "./breadcrumb"
 import HideSmall from "./hidesmall"
 import HeaderLayout from "./headerlayout"
 import Layout from "./layout"
-import Header from "./header/header"
+import Header, { HeaderLinksNav } from "./header/header"
 import Container from "./container"
 import Column from "./column"
 import whitelogo from "../assets/svg/icg-logo-white.svg"
 import { Link } from "gatsby"
 import ShowSmall from "./showsmall"
-import HeaderLinks from "./header/headerlinks"
 import SlideMenu from "./slidemenu/slidemenu"
 
 const CrumbLayout = ({
@@ -33,17 +32,16 @@ const CrumbLayout = ({
   if (headerFloat) {
     return (
       <Layout title={title}>
-        <div className={`w-full absolute z-50`}>
+        <div className={`w-full absolute z-50 shadow-md`}>
           <Header
             title={title}
             content={headerComponent}
-            menuContent={menuComponent}
+            menuComponent={menuComponent}
           />
-          {crumbs.length > 0 && (
-            <HideSmall size="lg">
-              <Breadcrumb crumbs={crumbs} />
-            </HideSmall>
-          )}
+
+          <HideSmall size="lg">
+            <Breadcrumb crumbs={crumbs} />
+          </HideSmall>
         </div>
 
         <div className={`relative min-h-screen ${backgroundColor}`}>
@@ -59,7 +57,7 @@ const CrumbLayout = ({
             <nav aria-label="Navigation" className="row p-3">
               <SlideMenu title={title} />
               <Link to="/">
-                <img src={whitelogo} className="h-10" alt="IGC Logo" />
+                <img src={whitelogo} className="h-10" alt="ICG Logo" />
               </Link>
             </nav>
           </ShowSmall>
@@ -71,7 +69,7 @@ const CrumbLayout = ({
                   <Link to="/" className="mr-8">
                     {/* <ColumbiaICGWhiteImage style={{ width: `400px` }} /> */}
 
-                    <img src={whitelogo} className="h-20" alt="IGC Logo" />
+                    <img src={whitelogo} className="h-20" alt="ICG Logo" />
                   </Link>
 
                   {headerComponent !== null && headerComponent}
@@ -80,20 +78,12 @@ const CrumbLayout = ({
             </div>
           </HideSmall>
 
-          <HideSmall className="w-full absolute z-50" size="lg">
+          <HideSmall className="w-full absolute z-50 shadow-md" size="lg">
             <div className="pt-2 bg-columbia-blue-90">
-              <nav aria-label="Navigation">
-                <Container>
-                  <Column className="items-center justify-between">
-                    <HeaderLinks />
-
-                    {menuComponent !== null && menuComponent}
-                  </Column>
-                </Container>
-              </nav>
+              <HeaderLinksNav menuComponent={menuComponent} />
             </div>
 
-            {crumbs.length > 0 && <Breadcrumb crumbs={crumbs} />}
+            <Breadcrumb crumbs={crumbs} />
           </HideSmall>
 
           <div className={`relative min-h-screen ${backgroundColor}`}>
@@ -108,14 +98,12 @@ const CrumbLayout = ({
           headerComponent={headerComponent}
           menuComponent={menuComponent}
         >
-          {crumbs.length > 0 && (
-            <HideSmall>
-              <Breadcrumb
-                crumbs={crumbs}
-                className={`${crumbsFloat ? "absolute z-50" : ""}`}
-              />
-            </HideSmall>
-          )}
+          <HideSmall>
+            <Breadcrumb
+              crumbs={crumbs}
+              className={`${crumbsFloat ? "absolute z-50" : ""}`}
+            />
+          </HideSmall>
 
           <div className={`relative min-h-screen ${backgroundColor}`}>
             {children}

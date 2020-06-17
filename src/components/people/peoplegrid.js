@@ -98,12 +98,12 @@ const PersonCard = ({
           {img}
         </div>
       )}
-      <div className="m-1 mt-4 text-gray-800">
+      <div className="m-1 mb-2 mt-4 text-gray-800">
         <h4>{link}</h4>
         <h5>{getContextName(context, person.titleMap)}</h5>
 
         {!smallView && (
-          <div className="mt-3">
+          <div className="mt-2">
             <ContactInfo person={person} showIcons={false} showUrl={showUrl} />
           </div>
         )}

@@ -6,6 +6,7 @@ import HideSmall from "../components/hidesmall"
 import NewsSearchResults from "../components/news/newssearchresults"
 import Column from "../components/column"
 import Container from "../components/container"
+import ShareLinks from "../components/share/sharelinks"
 // import MainColumn from "../components/maincolumn"
 // import SideColumn from "../components/sidecolumn"
 
@@ -92,9 +93,9 @@ const NewsTemplate = ({ path, pageContext }) => {
       //   </HideSmall>
       // }
       headerComponent={<SiteSearch />}
-      backgroundColor="bg-white"
+      menuComponent={<ShareLinks path={path} />}
     >
-      <Container className="py-8">
+      <Container className="my-16">
         <HideSmall>
           <Column isVCentered={true} isCentered={true}>
             <div>

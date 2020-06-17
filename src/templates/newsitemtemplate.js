@@ -9,6 +9,7 @@ import NewsContent from "../components/news/newscontent"
 import Collapsible from "../components/collapsible"
 import Container from "../components/container"
 import FullDiv from "../components/fulldiv"
+import ShareLinks from "../components/share/sharelinks"
 
 const NewsItemTemplate = ({ path, pageContext }) => {
   const { item, allNews } = pageContext
@@ -31,8 +32,9 @@ const NewsItemTemplate = ({ path, pageContext }) => {
       nav="News Article"
       title={title}
       crumbs={[["News", "/news"]]}
+      menuComponent={<ShareLinks path={path} />}
     >
-      <Container className="py-8">
+      <Container className="my-16">
         <Column>
           <MainColumn className="mr-16">
             <FullDiv>

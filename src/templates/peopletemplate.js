@@ -10,6 +10,7 @@ import ShowSmall from "../components/showsmall"
 import PeopleGroups from "../components/people/peoplegroups"
 import Container from "../components/container"
 import ShowBetween from "../components/showbetween"
+import ShareLinks from "../components/share/sharelinks"
 
 const EMPTY_QUERY = ""
 
@@ -110,6 +111,7 @@ const PeopleTemplate = ({ path, pageContext }) => {
       nav={nav}
       title={title}
       headerComponent={<SiteSearch />}
+      menuComponent={<ShareLinks path={path} />}
       // titleComponent={
       //   <SearchSummary
       //     count={typeFilteredPeople.length}
@@ -118,7 +120,7 @@ const PeopleTemplate = ({ path, pageContext }) => {
       //   />
       // }
     >
-      <div className="py-8">
+      <div className="my-16">
         <Container>
           {/* <ShowSmall>
             <SearchBar

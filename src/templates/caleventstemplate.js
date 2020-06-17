@@ -12,6 +12,7 @@ import "../components/calendar/calendar.scss"
 import HideSmall from "../components/hidesmall"
 import Container from "../components/container"
 import CalEventSelector from "../components/calendar/caleventselector"
+import ShareLinks from "../components/share/sharelinks"
 
 const EMPTY_QUERY = ""
 
@@ -154,7 +155,7 @@ const CalEventsTemplate = ({ path, pageContext }) => {
       title="Institute Events"
       crumbs={[["Events", "/events"]]}
       headerComponent={<SiteSearch />}
-      backgroundColor="bg-white"
+      menuComponent={<ShareLinks path={path} />}
       // titleComponent={
       //   <SearchSummary
       //     count={calEvents.length}
@@ -163,7 +164,7 @@ const CalEventsTemplate = ({ path, pageContext }) => {
       //   />
       // }
     >
-      <Container className="py-8">
+      <Container className="my-16">
         <Column>
           {/* <SmallColumn>
         <SearchBar

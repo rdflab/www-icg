@@ -9,6 +9,7 @@ import ShowSmall from "../components/showsmall"
 import { searchTree } from "../components/search/searchtree"
 import Column from "../components/column"
 import Container from "../components/container"
+import ShareLinks from "../components/share/sharelinks"
 
 const EMPTY_QUERY = ""
 
@@ -110,7 +111,7 @@ const PublicationsTemplate = ({ path, pageContext }) => {
       nav="Publications"
       title={title}
       headerComponent={<SiteSearch />}
-      backgroundColor="bg-white"
+      menuComponent={<ShareLinks path={path} />}
     >
       <Container className="mt-8">
         <ShowSmall>
