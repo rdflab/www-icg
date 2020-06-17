@@ -10,7 +10,7 @@ const Contact = () => (
   >
     <div className="my-8">
       <Container className="mt-8">
-        <div className="md:w-1/2 p-8 text-xl bg-white shadow-lg hover:shadow-xl rounded-lg trans-ani">
+        <div className="lg:w-1/2 p-8 text-xl bg-white shadow-md hover:shadow-lg rounded-lg trans-ani">
           <div>Institute for Cancer Generics</div>
           <div>Herbert Irving Cancer Center, Columbia University</div>
           <div>1130 St Nicholas Ave</div>
@@ -20,7 +20,7 @@ const Contact = () => (
       </Container>
 
       <Container className="py-8">
-        <div className="md:w-1/2  shadow-lg hover:shadow-xl rounded-lg bg-white overflow-hidden trans-ani">
+        <div className="lg:w-1/2  shadow-md hover:shadow-lg rounded-lg bg-white overflow-hidden trans-ani">
           <div
             className="iframe-container w-full"
             style={{ minHeight: "32rem" }}

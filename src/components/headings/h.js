@@ -17,7 +17,7 @@ const H = ({ title, heading, subHeading, content, showShareLinks, path }) => {
   return (
     <div className="text-white w-full bg-columbia-secondary-blue-90">
       <Container>
-        <ShowSmall>
+        <ShowSmall className="py-2">
           <TitleDiv title={title} heading={heading} subHeading={subHeading} />
 
           {content !== null && <div className="py-2">{content}</div>}

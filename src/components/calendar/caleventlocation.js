@@ -2,6 +2,7 @@ import React from "react"
 import Column from "../column"
 import HideSmall from "../hidesmall"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import ShowSmall from "../showsmall"
 
 const CalEventLocation = ({ event, showDate, isMobile, color }) => {
   let date
@@ -16,12 +17,11 @@ const CalEventLocation = ({ event, showDate, isMobile, color }) => {
 
   return (
     <>
-      <HideSmall
-        show={true}
+      <ShowSmall
         className={`${color === "white" ? "text-white" : "text-gray-500"}`}
       >
         <Column isVCentered={true} isMobile={true}>
-          <div className="w-1/10 text-center">
+          <div className="w-1/10 text-center mr-2">
             <FontAwesomeIcon icon={["far", "clock"]} className={`text-3xl`} />
           </div>
           <div className="w-9/10">
@@ -32,12 +32,12 @@ const CalEventLocation = ({ event, showDate, isMobile, color }) => {
           </div>
         </Column>
         <Column isVCentered={true} className="mt-4" isMobile={true}>
-          <div className="w-1/10 text-center">
+          <div className="w-1/10 text-center mr-2">
             <FontAwesomeIcon icon="map-marker-alt" className={`text-3xl`} />
           </div>
           <div className="w-9/10">{event.frontmatter.location}</div>
         </Column>
-      </HideSmall>
+      </ShowSmall>
 
       <HideSmall
         className={`${color === "white" ? "text-white" : "text-gray-500"}`}
