@@ -10,6 +10,7 @@ import useSiteMetadata from "../../hooks/sitemetadata"
 import getEventType from "./caleventype"
 import getEventTypeUrl from "./caleventtypeurl"
 import RedLink from "../links/redlink"
+import FullDiv from "../fulldiv"
 
 const CalEventDetails = ({ event, isMobile, color }) => {
   const { paths } = useSiteMetadata()
@@ -48,7 +49,7 @@ const CalEventDetails = ({ event, isMobile, color }) => {
   }
 
   return (
-    <div>
+    <FullDiv>
       <div className="uppercase">{eventTypeLink}</div>
       <h3>
         {color === "white" && (
@@ -69,7 +70,7 @@ const CalEventDetails = ({ event, isMobile, color }) => {
         <HTMLDiv html={event.excerpt} />
       </h5>
       <CalEventLocation event={event} isMobile={isMobile} color={color} />
-    </div>
+    </FullDiv>
   )
 }
 

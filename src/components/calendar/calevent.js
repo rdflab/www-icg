@@ -48,7 +48,7 @@ const CalEvent = ({ event }) => {
           <Column className="w-1/10 mr-4">
             <CalEventDate event={event} />
           </Column>
-          <Column>
+          <Column className="w-8/10">
             <CalEventDetails event={event} />
           </Column>
         </Column>

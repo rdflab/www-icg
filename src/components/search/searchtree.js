@@ -115,7 +115,6 @@ export const searchTree = (root, q) => {
           if (found) {
             for (let item of node[1]) {
               if (!items.includes(item)) {
-                console.log(item)
                 items.push(item)
               }
             }

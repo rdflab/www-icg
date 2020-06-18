@@ -384,8 +384,6 @@ const FacultyShortTemplate = ({ path, pageContext, data }) => {
     )
   }
 
-  console.log("sdf", Object.keys(lab.groupMap).length)
-
   return (
     <CrumbLayout
       nav="Faculty"

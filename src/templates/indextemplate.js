@@ -95,8 +95,8 @@ const IndexTemplate = ({ path, pageContext, data }) => {
           className="pb-4 mb-4 border-b border-solid border-white"
           key={i}
         >
-          <Column className="w-1/10 mr-4">
-            <CalEventDate event={calEvent} color="white" />
+          <Column className="w-full xs:w-2/10 md:w-1/10 mr-4">
+            <CalEventDate event={calEvent} color="white" smallFormat={true} />
           </Column>
           <Column>
             <CalEventDetails event={calEvent} color="white" />
@@ -241,7 +241,7 @@ const IndexTemplate = ({ path, pageContext, data }) => {
       <div className="bg-blue-800 py-32">
         <Container>
           <Column>
-            <Column className="md:pl-8 text-white w-5/10">
+            <Column className="md:pl-8 text-white lg:w-5/10">
               <div className="p-8">
                 <HomeTitle>Upcoming Events</HomeTitle>
                 <p>See upcoming events and seminars of interest.</p>
@@ -252,7 +252,7 @@ const IndexTemplate = ({ path, pageContext, data }) => {
                 </h3>
               </div>
             </Column>
-            <div className="w-5/10 border-t border-solid border-white pt-4">
+            <div className="lg:w-5/10 border-t border-solid border-white pt-4">
               {calEvents}
             </div>
           </Column>
