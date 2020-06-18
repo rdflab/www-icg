@@ -40,7 +40,7 @@ const Header = ({ title, content, menuComponent, onMenuButtonClick }) => (
       </nav>
     </ShowSmall>
 
-    <HideSmall size="lg" className="bg-columbia-blue-90 shadow-md">
+    <HideSmall size="lg" className="bg-columbia-blue-90">
       {/* <div className="p-3">
         <Container>
           <Column isVCentered={true} className="justify-between">

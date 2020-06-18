@@ -39,6 +39,7 @@ module.exports = {
         "9/50": "18%",
         "11/50": "22%",
         "12/50": "24%",
+        "19/100": "19%",
         "72": "18rem",
         "96": "24rem",
       },
@@ -72,6 +73,10 @@ module.exports = {
         "white-opacity-70": "rgba(255, 255, 255, 0.7)",
         "white-opacity-80": "rgba(255, 255, 255, 0.8)",
         "white-opacity-90": "rgba(255, 255, 255, 0.9)",
+      },
+      borderRadius: {
+        xl: "0.75rem",
+        "2xl": "1rem",
       },
     },
   },

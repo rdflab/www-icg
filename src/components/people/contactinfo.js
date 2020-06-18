@@ -56,7 +56,7 @@ const ContactInfo = ({
           </div>
         )}
         {showUrl && person.frontmatter.url.length > 0 && (
-          <div className="mt-1">{urlLink(person.frontmatter.url, color)}</div>
+          <div className="mt-4">{urlLink(person.frontmatter.url, color)}</div>
         )}
       </div>
     )

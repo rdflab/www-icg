@@ -31,14 +31,16 @@ const FacultyHeader = ({ person, title, heading, subHeading, path }) => {
 
   return (
     <Column className="text-white">
-      <div className="lg:w-8/12 bg-columbia-secondary-blue p-8 md:pl-40">
+      <div className="w-full md:w-5/10 lg:w-6/10 2xl:w-13/20 bg-columbia-secondary-blue p-8 md:pl-20 xl:pl-40 2xl:pl-56">
         <TitleDiv title={title} heading={heading} subHeading={subHeading} />
       </div>
 
-      <div className="lg:w-4/12 bg-columbia-medium-blue p-8 md:pr-40 min-h-full text-xl">
-        <div className="uppercase py-2">Contact</div>
+      <div className="w-full md:w-5/10 lg:w-4/10 2xl:w-7/20 bg-columbia-medium-blue p-8 md:pr-40 min-h-full text-xl">
+        <div className="uppercase font-light">Contact</div>
 
-        <ContactInfo person={person} color="white" showIcons={true} />
+        <div className="font-semibold mt-2">
+          <ContactInfo person={person} color="white" showIcons={false} />
+        </div>
       </div>
     </Column>
   )

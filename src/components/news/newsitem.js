@@ -5,7 +5,7 @@ import BlueLink from "../links/bluelink"
 import HTMLDiv from "../htmldiv"
 
 const NewsItem = ({ item }) => (
-  <article className="mb-8 pb-4">
+  <article className="mb-8 pb-4 border-b border-solid border-gray-300">
     <NewsItemDate item={item} />
     <h3>
       <BlueLink
@@ -15,7 +15,7 @@ const NewsItem = ({ item }) => (
         {item.frontmatter.title}
       </BlueLink>
     </h3>
-    <HTMLDiv html={item.excerpt} />
+    <HTMLDiv className="mt-2" html={item.excerpt} />
   </article>
 )
 

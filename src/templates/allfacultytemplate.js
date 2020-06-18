@@ -48,20 +48,25 @@ const FacultyCard = ({ person, imageMap }) => {
       onMouseLeave={onMouseLeave}
     >
       <Link to={`${paths.facultyPath}/${person.frontmatter.id}`}>
+        {/* <div
+          className={`trans-ani rounded-lg overflow-hidden ${hover ? "shadow-md" : ""}`}
+        > */}
         <div
-          className={`opacity-90 trans-ani rounded-lg overflow-hidden ${
-            hover ? "opacity-100 shadow-md" : ""
+          className={`trans-ani rounded-xl overflow-hidden border-b-4 border-solid border-transparent ${
+            hover ? "border-blue-700" : ""
           }`}
         >
-          {img}
-        </div>
-        <div
-          className={`m-1 mt-4 trans-ani ${
-            hover ? "text-blue" : "text-gray-800"
-          }`}
-        >
-          <h4>{`${person.frontmatter.name}, ${person.frontmatter.postNominalLetters}`}</h4>
-          {/* <h5>{person.frontmatter.postNominalLetters}</h5> */}
+          <div className={`opacity-90 trans-ani ${hover ? "opacity-100" : ""}`}>
+            {img}
+          </div>
+          <div
+            className={`p-2 py-4 trans-ani ${
+              hover ? "text-white bg-blue-500 " : "text"
+            }`}
+          >
+            <h4>{`${person.frontmatter.name}, ${person.frontmatter.postNominalLetters}`}</h4>
+            {/* <h5>{person.frontmatter.postNominalLetters}</h5> */}
+          </div>
         </div>
       </Link>
     </div>
@@ -257,7 +262,7 @@ const AllFacultyTemplate = ({ path, pageContext, data }) => {
               peopleMap={peopleMap}
               imageMap={imageMap}
               cols={5}
-              colWidth="w-9/50"
+              colWidth="w-19/100"
             />
           </HideSmall>
         </Container>
