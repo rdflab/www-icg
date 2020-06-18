@@ -48,7 +48,9 @@ const SiteSearchBar = ({
           placeholder={placeholder}
           value={text}
           onChange={handleInputChange}
-          className="bg-transparent w-full border-none outline-none"
+          className={`bg-transparent w-full border-none outline-none ${
+            hover || selected ? "text" : "text-transparent"
+          }`}
         />
       </div>
       <div className="flex items-center">

@@ -62,15 +62,15 @@ si = 0
 # Labs
 #
 
-link = 'Lab page'
+# link = 'Lab page'
     
-if link not in linkNameMap:
-    linkNameMap[link] = len(siteData['linkNames'])
-    siteData['linkNames'].append(link)
+# if link not in linkNameMap:
+#     linkNameMap[link] = len(siteData['linkNames'])
+#     siteData['linkNames'].append(link)
 
-siteData['sections'].append('Labs')
+# siteData['sections'].append('Labs')
 
-si += 1
+# si += 1
 
 #
 # People
@@ -155,6 +155,9 @@ for last in sorted(people):
             create_suffix_tree(siteData['tree'], name, len(siteData['links']))
     
             siteData['links'].append([name, si, to])
+            
+            if name == "Antony Holmes":
+                print([name, si, to], len(siteData['links']))
 
 si += 1
 
@@ -225,6 +228,9 @@ for last in sorted(people):
             create_suffix_tree(siteData['tree'], name, len(siteData['links']))
     
             siteData['links'].append([name, si, to])
+            
+            if name == "Antony Holmes":
+                print([name, si, to], len(siteData['links']))
 
 si += 1
 

@@ -24,7 +24,7 @@ import DropShadowFrame from "../components/images/dropshadowframe"
 import genericsvg from "../assets/svg/generic.svg"
 import headersvg from "../assets/svg/header.svg"
 import ShareLinks from "../components/share/sharelinks"
-import { PubMedLink } from "./facultyshorttemplate"
+import { PubMedLink, HeadShotImage } from "./facultyshorttemplate"
 
 const AwardsGrid = ({ cv, cols, colWidth, headingColor }) => {
   const rows = Math.floor(cv.awards.length / cols) + 1
@@ -317,19 +317,9 @@ const FacultyLongTemplate = ({ path, pageContext, data }) => {
     news,
   } = pageContext
 
-  let headshotImage = (
-    <img src={genericsvg} className="w-full" alt={person.frontmatter.name} />
-  )
-
-  if (data.file !== null) {
-    headshotImage = (
-      <Img fluid={data.file.childImageSharp.fluid} className="w-full h-full" />
-    )
-  }
-
-  headshotImage = (
+  const headshotImage = (
     <DropShadowFrame className="w-96 rounded-lg">
-      {headshotImage}
+      <HeadShotImage data={data} person={person} />
     </DropShadowFrame>
   )
 

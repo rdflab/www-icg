@@ -24,6 +24,7 @@ import BlueLinkExt from "../components/links/bluelinkext"
 import SmallContainer from "../components/smallcontainer"
 import DropShadowFrame from "../components/images/dropshadowframe"
 import ShareLinks from "../components/share/sharelinks"
+import genericsvg from "../assets/svg/generic.svg"
 
 export const PubMedLink = ({ person }) => (
   // <div className="uppercase">
@@ -310,6 +311,21 @@ const Team = ({ labGroupMap }) => (
   </Container>
 )
 
+export const HeadShotImage = ({ data, person }) => {
+  if (data.file !== null) {
+    return (
+      <Img
+        fluid={data.file.childImageSharp.fluid}
+        className="w-full h-full opacity-90 hover:opacity-100 trans-ani"
+      />
+    )
+  } else {
+    return (
+      <img src={genericsvg} className="w-full" alt={person.frontmatter.name} />
+    )
+  }
+}
+
 const FacultyShortTemplate = ({ path, pageContext, data }) => {
   const {
     crumbs,
@@ -321,21 +337,14 @@ const FacultyShortTemplate = ({ path, pageContext, data }) => {
     news,
   } = pageContext
 
-  let headshotImage = null
-
-  if (data.file !== null) {
-    headshotImage = (
-      <DropShadowFrame className="w-96 rounded-lg">
-        <Img
-          fluid={data.file.childImageSharp.fluid}
-          className="w-full h-full"
-        />
-      </DropShadowFrame>
-    )
-  }
-
   let headerImage = null
   let headerImageCredit = ""
+
+  const headshotImage = (
+    <DropShadowFrame className="w-96 rounded-lg">
+      <HeadShotImage data={data} person={person} />
+    </DropShadowFrame>
+  )
 
   if (data.abstractMarkdown !== null) {
     headerImageCredit = data.abstractMarkdown.frontmatter.headerImageCredit

@@ -156,7 +156,7 @@ export const searchTree = (root, q) => {
   //   }
   // }
 
-  const ret = Array.from(opStack.pop()).sort()
+  const ret = Array.from(opStack.pop()) //.sort()
 
   return [ret, terms]
 }
