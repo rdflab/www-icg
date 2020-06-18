@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 const BlueButton = ({ to, children }) => (
   <Link
     to={to}
-    className="border-2 border-solid border-blue-400 bg-white text-blue-400 hover:bg-blue-400 hover:shadow-md hover:text-white trans-ani uppercase px-4 py-3 rounded"
+    className="border-b-4 border-solid border-blue-700 bg-blue-500 text-white hover:bg-blue-700 font-semibold trans-ani uppercase px-5 py-4 rounded-md"
   >
     {children}
   </Link>

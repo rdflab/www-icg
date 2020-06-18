@@ -12,14 +12,14 @@ const Breadcrumb = ({ crumbs, className }) => {
 
     ret.push(
       <Link to="/" key={ret.length}>
-        <FontAwesomeIcon icon="home" className="text-white text-2xl" />
+        <FontAwesomeIcon icon="home" className="text-2xl" />
       </Link>
     )
 
     ret.push(
       <img
         src={breadcrumbarrowsvg}
-        className="text-white px-4 h-6"
+        className="px-4 h-6 opacity-90"
         key={ret.length}
         alt="Breadcrumb separator"
       />
@@ -43,7 +43,7 @@ const Breadcrumb = ({ crumbs, className }) => {
 
           <img
             src={breadcrumbarrowsvg}
-            className="text-white px-4 h-6"
+            className="px-4 h-6 opacity-90"
             key={ret.length}
             alt="Breadcrumb separator"
           />
@@ -53,7 +53,7 @@ const Breadcrumb = ({ crumbs, className }) => {
 
     return (
       <div
-        className={`w-full bg-columbia-secondary-blue-90 text-sm py-3 ${className}`}
+        className={`w-full bg-columbia-secondary-blue-90 text-white-90 text-sm py-3 ${className}`}
       >
         <Container>
           <Column className="items-center">{ret}</Column>

@@ -10,16 +10,47 @@ import Breadcrumb from "./breadcrumb"
 import HideSmall from "./hidesmall"
 import HeaderLayout from "./headerlayout"
 import Layout from "./layout"
-import Header, { HeaderLinksNav } from "./header/header"
-import Container from "./container"
-import Column from "./column"
-import whitelogo from "../assets/svg/icg-logo-white.svg"
-import { Link } from "gatsby"
-import ShowSmall from "./showsmall"
-import SlideMenuButton from "./slidemenu/slidemenubutton"
+import HeaderWithNav, { Header, HeaderLinksNav } from "./header/header"
+
+export const FloatingHeader = ({
+  crumbs,
+  title,
+  subTitle,
+  headerComponent,
+  menuComponent,
+  onMenuButtonClick,
+  children,
+}) => (
+  <div className={`w-full absolute z-50 shadow-md`}>
+    <HeaderWithNav
+      title={title}
+      subTitle={subTitle}
+      content={headerComponent}
+      menuComponent={menuComponent}
+      onMenuButtonClick={onMenuButtonClick}
+    />
+
+    <HideSmall>
+      <Breadcrumb crumbs={crumbs} />
+    </HideSmall>
+
+    {children}
+  </div>
+)
+
+FloatingHeader.defaultProps = {
+  crumbs: [],
+  title: "",
+  subTitle: "",
+  titleComponent: null,
+  headerComponent: null,
+  menuComponent: null,
+  onMenuButtonClick: null,
+}
 
 const CrumbLayout = ({
   title,
+  subTitle,
   headerComponent,
   menuComponent,
   children,
@@ -46,18 +77,14 @@ const CrumbLayout = ({
         menuVisible={menuVisible}
         onSlideMenuClick={onSlideMenuClick}
       >
-        <div className={`w-full absolute z-50 shadow-md`}>
-          <Header
-            title={title}
-            content={headerComponent}
-            menuComponent={menuComponent}
-            onMenuButtonClick={onMenuButtonClick}
-          />
-
-          <HideSmall size="lg">
-            <Breadcrumb crumbs={crumbs} />
-          </HideSmall>
-        </div>
+        <FloatingHeader
+          crumbs={crumbs}
+          title={title}
+          subTitle={subTitle}
+          content={headerComponent}
+          menuComponent={menuComponent}
+          onMenuButtonClick={onMenuButtonClick}
+        />
 
         <div className={`relative min-h-screen ${backgroundColor}`}>
           {children}
@@ -72,28 +99,13 @@ const CrumbLayout = ({
           menuVisible={menuVisible}
           onSlideMenuClick={onSlideMenuClick}
         >
-          <ShowSmall className="bg-columbia-blue-90" size="lg">
-            <nav aria-label="Navigation" className="row p-3">
-              <SlideMenuButton onClick={onMenuButtonClick} />
-              <Link to="/">
-                <img src={whitelogo} className="h-10" alt="ICG Logo" />
-              </Link>
-            </nav>
-          </ShowSmall>
-
-          <HideSmall size="lg" className="bg-columbia-blue-90">
-            <div className="pt-1">
-              <Container>
-                <Column className="items-center justify-between">
-                  <Link to="/" className="mr-8">
-                    <img src={whitelogo} className="h-20" alt="ICG Logo" />
-                  </Link>
-
-                  {headerComponent !== null && headerComponent}
-                </Column>
-              </Container>
-            </div>
-          </HideSmall>
+          <Header
+            title={title}
+            subTitle={subTitle}
+            content={headerComponent}
+            menuComponent={menuComponent}
+            onMenuButtonClick={onMenuButtonClick}
+          />
 
           <HideSmall className="w-full absolute z-50 shadow-md" size="lg">
             <div className="pt-2 bg-columbia-blue-90">
@@ -138,6 +150,7 @@ CrumbLayout.defaultProps = {
   crumbsFloat: false,
   selectedTab: "",
   title: "",
+  subTitle: "",
   titleComponent: null,
   headerComponent: null,
   menuComponent: null,

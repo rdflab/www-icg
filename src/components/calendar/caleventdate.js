@@ -61,7 +61,7 @@ const CalEventDate = ({ event, color, smallFormat }) => {
           {event.frontmatter.day}
         </div>
         <div
-          className={`uppercase text-sm px-2 text-center w-full ${dayColor} ${dayBgColor}`}
+          className={`uppercase text-sm p-1 text-center w-full ${dayColor} ${dayBgColor}`}
         >
           {event.frontmatter.weekday}
         </div>

@@ -92,7 +92,7 @@ const ShareLinks = ({ color, size, opacity, path }) => {
 
 ShareLinks.defaultProps = {
   color: "white",
-  opacity: [70, 100],
+  opacity: [60, 100],
   size: "w-6",
   path: "",
 }

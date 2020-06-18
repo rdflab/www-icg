@@ -11,7 +11,7 @@ import HideSmall from "./hidesmall"
 import Breadcrumb from "./breadcrumb"
 import Layout from "./layout"
 import HeaderLayout from "./headerlayout"
-import Header from "./header/header"
+import { FloatingHeader } from "./crumblayout"
 
 const CrumbTitleLayout = ({
   path,
@@ -43,21 +43,16 @@ const CrumbTitleLayout = ({
         menuVisible={menuVisible}
         onSlideMenuClick={onSlideMenuClick}
       >
-        <div className={`w-full absolute z-50`}>
-          <Header
-            title={title}
-            subTitle={subTitle}
-            content={headerComponent}
-            menuComponent={menuComponent}
-            onMenuButtonClick={onMenuButtonClick}
-          />
-          {crumbs.length > 0 && (
-            <HideSmall>
-              <Breadcrumb crumbs={crumbs} />
-            </HideSmall>
-          )}
+        <FloatingHeader
+          crumbs={crumbs}
+          title={title}
+          subTitle={subTitle}
+          content={headerComponent}
+          menuComponent={menuComponent}
+          onMenuButtonClick={onMenuButtonClick}
+        >
           <H title={nav} heading={title} subHeading={subTitle} path={path} />
-        </div>
+        </FloatingHeader>
 
         <div className={`relative min-h-screen ${backgroundColor}`}>
           {children}
@@ -75,11 +70,10 @@ const CrumbTitleLayout = ({
         <div
           className={`w-full shadow-md ${crumbsFloat ? "absolute z-50" : ""}`}
         >
-          {crumbs.length > 0 && (
-            <HideSmall>
-              <Breadcrumb crumbs={crumbs} />
-            </HideSmall>
-          )}
+          <HideSmall>
+            <Breadcrumb crumbs={crumbs} />
+          </HideSmall>
+
           <H title={nav} heading={title} subHeading={subTitle} path={path} />
         </div>
 

@@ -25,8 +25,8 @@ const FilterItem = ({ text, onClick }) => {
       onClick={_handleClick}
     >
       <div
-        className={`row items-center w-6 h-6 border border-solid border-gray-400 trans-ani text-white rounded p-1 mr-2 ${
-          selected ? "bg-blue-300 border-blue-300" : "bg-white"
+        className={`row items-center w-6 h-6 border border-solid border-gray-400 trans-ani text-white p-1 mr-2 ${
+          selected ? "bg-blue-400 border-blue-400" : "bg-white"
         }`}
       >
         <FontAwesomeIcon

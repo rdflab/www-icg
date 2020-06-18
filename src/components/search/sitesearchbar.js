@@ -57,7 +57,7 @@ const SiteSearchBar = ({
         <FontAwesomeIcon
           icon="search"
           className={`${
-            hover || selected ? "text-blue-500" : "text-gray-400"
+            hover || selected ? "text-blue-500" : "text-white-60"
           } trans-ani ml-2 text-lg`}
         />
       </div>

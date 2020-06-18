@@ -26,62 +26,53 @@ HeaderLinksNav.defaultProps = {
   menuComponent: null,
 }
 
-const Header = ({ title, content, menuComponent, onMenuButtonClick }) => (
+export const Header = ({ content, onMenuButtonClick, children }) => (
   <>
     <ShowSmall className="bg-columbia-blue-90" size="lg">
       <nav aria-label="Navigation" className="row p-3">
-        {/* <SlideMenu title={title} /> */}
-
         <SlideMenuButton onClick={onMenuButtonClick} />
 
         <Link to="/">
-          <img src={whitelogo} className="h-10" alt="IGC Logo" />
+          <img src={whitelogo} className="h-10" alt="ICG Logo" />
         </Link>
       </nav>
     </ShowSmall>
 
-    <HideSmall size="lg" className="bg-columbia-blue-90">
-      {/* <div className="p-3">
-        <Container>
-          <Column isVCentered={true} className="justify-between">
-            <Link to="/" className="mr-8">
-              <ColumbiaICGImage style={{ width: `400px` }} />
-            </Link>
-
-            {content !== null && content}
-          </Column>
-        </Container>
-      </div> */}
-
+    <HideSmall className="bg-columbia-blue-90" size="lg">
       <div className="pt-1">
         <Container>
           <Column className="items-center justify-between">
             <Link to="/" className="mr-8">
-              {/* <ColumbiaICGWhiteImage style={{ width: `400px` }} /> */}
-
-              <img src={whitelogo} className="h-20" alt="IGC Logo" />
+              <img src={whitelogo} className="h-20" alt="ICG Logo" />
             </Link>
 
             {content !== null && content}
           </Column>
         </Container>
       </div>
-      <div className="pt-2 pb-4">
-        <HeaderLinksNav menuComponent={menuComponent} />
-      </div>
+
+      {children}
     </HideSmall>
   </>
 )
 
-Header.propTypes = {
-  title: PropTypes.string,
+Header.defaultProps = {
+  content: null,
+  onMenuButtonClick: null,
 }
 
-Header.defaultProps = {
-  title: "",
+const HeaderWithNav = ({ content, menuComponent, onMenuButtonClick }) => (
+  <Header content={content} onMenuButtonClick={onMenuButtonClick}>
+    <div className="w-full pt-2">
+      <HeaderLinksNav menuComponent={menuComponent} />
+    </div>
+  </Header>
+)
+
+HeaderWithNav.defaultProps = {
   content: null,
   menuContent: null,
   onMenuButtonClick: null,
 }
 
-export default Header
+export default HeaderWithNav
