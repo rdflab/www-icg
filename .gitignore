@@ -62,7 +62,7 @@ public
 src/assets/images
 
 # ics files that change a lot
-static/events/ical
+static/events/ical/
 
 # Mac files
 .DS_Store
