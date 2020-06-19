@@ -4,7 +4,7 @@ firstName: "Danika"
 lastName: "Sommer"
 postNominalLetters: ""
 titles: ["Tech B"]
-phone: "851-5287"
+phone: "(212) 851-5287"
 fax: ""
 email: "ds3889@cumc.columbia.edu"
 room: "403"

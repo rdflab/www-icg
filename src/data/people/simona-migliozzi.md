@@ -4,7 +4,7 @@ firstName: "Simona"
 lastName: "Migliozzi"
 postNominalLetters: ""
 titles: ["Staff Associate"]
-phone: "851-5287"
+phone: "(212) 851-5287"
 fax: ""
 email: "sm4528@cumc.columbia.edu"
 room: "403"

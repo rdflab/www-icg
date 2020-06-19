@@ -4,7 +4,7 @@ firstName: "Richard"
 lastName: "Baer"
 postNominalLetters: "PhD"
 titles: [" Professor of Pathology & Cell Biology", "Directors::Deputy Director"]
-phone: "851-5275 "
+phone: "(212) 851-5275 "
 fax: "851-5220"
 email: "rb670@columbia.edu"
 room: "503A"

@@ -4,7 +4,7 @@ firstName: "Antonio"
 lastName: "Iavarone"
 postNominalLetters: "MD"
 titles: ["Professor of Neurology & Pathology & Cell Biology"]
-phone: "851-5245"
+phone: "(212) 851-5245"
 fax: "851-5267"
 email: "ai2102@columbia.edu"
 room: "407B"

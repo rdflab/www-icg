@@ -4,7 +4,7 @@ firstName: "Ryan"
 lastName: "Najac"
 postNominalLetters: ""
 titles: ["Tech B"]
-phone: "851-5287"
+phone: "(212) 851-5287"
 fax: ""
 email: "rdn2108@cumc.columbia.edu"
 room: "403"

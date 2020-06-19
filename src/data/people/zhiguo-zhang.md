@@ -4,7 +4,7 @@ firstName: "Zhiguo"
 lastName: "Zhang"
 postNominalLetters: "PhD"
 titles: ["Professor of Epigenomics & Molecular Biology"]
-phone: "851-4936"
+phone: "(212) 851-4936"
 fax: ""
 email: "zz2401@columbia.edu"
 room: "406"

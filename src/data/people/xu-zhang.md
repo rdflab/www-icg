@@ -4,7 +4,7 @@ firstName: "Xu"
 lastName: "Zhang"
 postNominalLetters: "PhD"
 titles: ["Postdoctoral Research Scientist "]
-phone: "851-4937"
+phone: "(212) 851-4937"
 fax: ""
 email: "xz2711@cumc.columbia.edu"
 room: "407"

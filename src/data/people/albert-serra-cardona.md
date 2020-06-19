@@ -4,7 +4,7 @@ firstName: "Albert"
 lastName: "Serra-Cardona"
 postNominalLetters: "PhD"
 titles: ["Postdoctoral Research Scientist"]
-phone: "851-4937"
+phone: "(212) 851-4937"
 fax: ""
 email: "as5251@cumc.columbia.edu"
 room: "407"

@@ -4,7 +4,7 @@ firstName: "Seoyoung"
 lastName: "Han"
 postNominalLetters: ""
 titles: ["Tech B"]
-phone: "951-4792"
+phone: "(212) 951-4792"
 fax: ""
 email: "sh3844@cumc.columbia.edu"
 room: "401A"

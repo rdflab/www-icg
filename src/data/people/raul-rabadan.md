@@ -4,7 +4,7 @@ firstName: "Raul"
 lastName: "Rabadan"
 postNominalLetters: "PhD"
 titles: ["Professor of Systems Biology & Biological Informatics"]
-phone: "212-851-5141"
+phone: "(212) 851-5141"
 fax: ""
 email: "rr2579@cumc.columbia.edu"
 room: ""

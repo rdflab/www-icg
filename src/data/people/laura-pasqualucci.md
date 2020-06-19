@@ -4,7 +4,7 @@ firstName: "Laura"
 lastName: "Pasqualucci"
 postNominalLetters: "MD"
 titles: ["Professor of Pathology & Cell Biology"]
-phone: "851-5248"
+phone: "(212) 851-5248"
 fax: ""
 email: "lp171@cumc.columbia.edu"
 room: " 507B"

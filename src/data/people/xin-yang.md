@@ -4,7 +4,7 @@ firstName: "Xin"
 lastName: "Yang"
 postNominalLetters: "PhD"
 titles: ["Postdoctoral Research Scientist"]
-phone: "851-5285"
+phone: "(212) 851-5285"
 fax: ""
 email: "xy2448@cumc.columbia.edu"
 room: "608"

@@ -421,23 +421,27 @@ const FacultyLongTemplate = ({ path, pageContext, data }) => {
         />
       </div>
 
-      {appointments !== null && appointments.appointments.length > 0 && (
-        <div className="py-16 bg-columbia-secondary-blue-10">
-          <SmallContainer>
-            <FacultyHeading2>Appointments</FacultyHeading2>
-            <AppointmentsGrid appointments={appointments.appointments} />
-          </SmallContainer>
-        </div>
-      )}
+      {person.frontmatter.tags.includes("appointments::show") &&
+        appointments !== null &&
+        appointments.appointments.length > 0 && (
+          <div className="py-16 bg-columbia-secondary-blue-10">
+            <SmallContainer>
+              <FacultyHeading2>Appointments</FacultyHeading2>
+              <AppointmentsGrid appointments={appointments.appointments} />
+            </SmallContainer>
+          </div>
+        )}
 
-      {cv !== null && cv.awards.length > 0 && (
-        <div className="py-16">
-          <SmallContainer>
-            <FacultyHeading2>Awards and Honors</FacultyHeading2>
-            <AwardsGrid cv={cv} />
-          </SmallContainer>
-        </div>
-      )}
+      {person.frontmatter.tags.includes("awards-honors::show") &&
+        cv !== null &&
+        cv.awards.length > 0 && (
+          <div className="py-16">
+            <SmallContainer>
+              <FacultyHeading2>Awards and Honors</FacultyHeading2>
+              <AwardsGrid cv={cv} />
+            </SmallContainer>
+          </div>
+        )}
 
       <div className="py-16 bg-columbia-light-gray">
         <Container>

@@ -4,7 +4,7 @@ firstName: "Demis"
 lastName: "Menolfi"
 postNominalLetters: "PhD"
 titles: ["Postdoctoral Research Fellow "]
-phone: "851-4785"
+phone: "(212) 851-4785"
 fax: ""
 email: "dm3231@cumc.columbia.edu"
 room: "501"

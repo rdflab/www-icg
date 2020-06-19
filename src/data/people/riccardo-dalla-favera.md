@@ -8,7 +8,7 @@ titles:
     "Professor of Pathology & Cell Biology, Genetics & Development, Microbiology & Immunology",
     "Directors::Director",
   ]
-phone: "851-5273 "
+phone: "(212) 851-5273 "
 fax: "851-5256"
 email: "rd10@columbia.edu"
 room: "508A"

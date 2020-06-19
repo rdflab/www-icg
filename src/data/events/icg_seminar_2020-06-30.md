@@ -7,7 +7,7 @@ tags: ["Event", "Seminar"]
 url: ""
 ---
 
-Simona Migliozzi (Antonio Iavarone)<br/>
-Yanqing Liu (Wei Gu)
+Simona Migliozzi (Iavarone Lab)<br/>
+Yanqing Liu (Gu Lab)
 
 <!-- endexcerpt -->

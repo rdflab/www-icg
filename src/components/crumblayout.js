@@ -14,8 +14,6 @@ import HeaderWithNav, { Header, HeaderLinksNav } from "./header/header"
 
 export const FloatingHeader = ({
   crumbs,
-  title,
-  subTitle,
   headerComponent,
   menuComponent,
   onMenuButtonClick,
@@ -23,8 +21,6 @@ export const FloatingHeader = ({
 }) => (
   <div className={`w-full absolute z-50 shadow-md`}>
     <HeaderWithNav
-      title={title}
-      subTitle={subTitle}
       content={headerComponent}
       menuComponent={menuComponent}
       onMenuButtonClick={onMenuButtonClick}
@@ -40,9 +36,6 @@ export const FloatingHeader = ({
 
 FloatingHeader.defaultProps = {
   crumbs: [],
-  title: "",
-  subTitle: "",
-  titleComponent: null,
   headerComponent: null,
   menuComponent: null,
   onMenuButtonClick: null,
@@ -79,9 +72,7 @@ const CrumbLayout = ({
       >
         <FloatingHeader
           crumbs={crumbs}
-          title={title}
-          subTitle={subTitle}
-          content={headerComponent}
+          headerComponent={headerComponent}
           menuComponent={menuComponent}
           onMenuButtonClick={onMenuButtonClick}
         />
@@ -151,7 +142,6 @@ CrumbLayout.defaultProps = {
   selectedTab: "",
   title: "",
   subTitle: "",
-  titleComponent: null,
   headerComponent: null,
   menuComponent: null,
   backgroundColor: "bg-white",

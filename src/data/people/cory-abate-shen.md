@@ -4,7 +4,7 @@ firstName: "Cory"
 lastName: "Abate-Shen"
 postNominalLetters: "PhD"
 titles: ["Professor of Pharmacology & Robert Sonneborn Prof of Medicine"]
-phone: "212-851-4731"
+phone: "(212) 851-4731"
 fax: ""
 email: "cabateshen@columbia.edu"
 room: "321B"

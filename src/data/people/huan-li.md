@@ -4,7 +4,7 @@ firstName: "Huan"
 lastName: "Li"
 postNominalLetters: ""
 titles: ["Staff Associate"]
-phone: "851-5285"
+phone: "(212) 851-5285"
 fax: ""
 email: "hl2977@cumc.columbia.edu"
 room: "608"

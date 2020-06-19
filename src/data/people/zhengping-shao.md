@@ -4,7 +4,7 @@ firstName: "Zhengping"
 lastName: "Shao"
 postNominalLetters: "MD PhD"
 titles: ["Postdoctoral Research Scientist"]
-phone: "851-4785"
+phone: "(212) 851-4785"
 fax: ""
 email: "zs2275@cumc.columbia.edu"
 room: "501"

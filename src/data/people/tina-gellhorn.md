@@ -4,7 +4,7 @@ firstName: "Tina"
 lastName: "Gellhorn"
 postNominalLetters: ""
 titles: ["Executive Assistant"]
-phone: "851-5274"
+phone: "(212) 851-5274"
 fax: "851-5256"
 email: "cg482@cumc.columbia.edu"
 room: "508"

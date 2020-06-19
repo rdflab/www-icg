@@ -4,7 +4,7 @@ firstName: "Sofija"
 lastName: "Powers"
 postNominalLetters: ""
 titles: ["Sr Research Worker"]
-phone: "851-5270"
+phone: "(212) 851-5270"
 fax: ""
 email: "sv2458@cumc.columbia.edu"
 room: "507"

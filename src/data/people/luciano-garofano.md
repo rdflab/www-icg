@@ -4,7 +4,7 @@ firstName: "Luciano"
 lastName: "Garofano"
 postNominalLetters: "PhD"
 titles: ["Postdoctoral Research Scientist "]
-phone: "851-5287"
+phone: "(212) 851-5287"
 fax: ""
 email: "lg2845@cumc.columbia.edu"
 room: "403"

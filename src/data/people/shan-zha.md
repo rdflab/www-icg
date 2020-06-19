@@ -4,7 +4,7 @@ firstName: "Shan"
 lastName: "Zha"
 postNominalLetters: "MD PhD"
 titles: ["Associate Professor of Pediatrics & Pathology & Cell Biology"]
-phone: "851-4779"
+phone: "(212) 851-4779"
 fax: ""
 email: "SZ2296@columbia.edu"
 room: "503B"

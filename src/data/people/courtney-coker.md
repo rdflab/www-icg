@@ -4,7 +4,7 @@ firstName: "Courtney"
 lastName: "Coker"
 postNominalLetters: ""
 titles: ["Staff Associate"]
-phone: "851-4792"
+phone: "(212) 851-4792"
 fax: ""
 email: "cc3703@cumc.columbia.edu"
 room: "401A"

@@ -4,7 +4,7 @@ firstName: "Zhiming"
 lastName: "Li"
 postNominalLetters: "PhD"
 titles: ["Postdoctoral Research Scientist "]
-phone: "851-4937"
+phone: "(212) 851-4937"
 fax: ""
 email: "zl2783@cumc.columbia.edu"
 room: "407"

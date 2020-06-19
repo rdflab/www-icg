@@ -4,7 +4,7 @@ firstName: "Foon"
 lastName: "Wu-Baer"
 postNominalLetters: ""
 titles: ["Senior Staff Associate"]
-phone: "851-5260"
+phone: "(212) 851-5260"
 fax: ""
 email: "fw110@cumc.columbia.edu"
 room: "502"

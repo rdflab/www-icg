@@ -4,7 +4,7 @@ firstName: "Teresa"
 lastName: "Palomero"
 postNominalLetters: "PhD"
 titles: ["Associate Professor of Pathology & Cell Biology"]
-phone: "851-4778"
+phone: "(212) 851-4778"
 fax: ""
 email: "tp2151@cumc.columbia.edu"
 room: "404"

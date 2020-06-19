@@ -4,7 +4,7 @@ firstName: "Karina"
 lastName: "Chan"
 postNominalLetters: ""
 titles: ["Tech B"]
-phone: "851-4966"
+phone: "(212) 851-4966"
 fax: ""
 email: "kmc2228@cumc.columbia.edu"
 room: "505"

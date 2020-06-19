@@ -4,6 +4,7 @@ import CalEvents from "./calevents"
 
 const CalSearchResults = ({
   events,
+  imageMap,
   pagedEvents,
   page,
   recordsPerPage,
@@ -16,7 +17,7 @@ const CalSearchResults = ({
           plural="Events"
         /> */}
 
-    <CalEvents calEvents={events} />
+    <CalEvents calEvents={events} imageMap={imageMap} />
 
     <Pagination
       page={page}
@@ -27,5 +28,9 @@ const CalSearchResults = ({
     />
   </div>
 )
+
+CalSearchResults.defaultProps = {
+  imageMap: {},
+}
 
 export default CalSearchResults

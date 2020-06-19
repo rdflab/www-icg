@@ -8,6 +8,6 @@ url: ""
 ---
 
 Teresa Palomero<br/>
-Xu Hua (Zhiguo Zhang)
+Xu Hua (Zhang Lab)
 
 <!-- endexcerpt -->

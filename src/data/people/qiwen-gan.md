@@ -4,7 +4,7 @@ firstName: "Qiwen"
 lastName: "Gan"
 postNominalLetters: "PhD"
 titles: ["Postdoctoral Research Scientist "]
-phone: "851-5287"
+phone: "(212) 851-5287"
 fax: ""
 email: "qg2189@cumc.columbia.edu"
 room: "403"

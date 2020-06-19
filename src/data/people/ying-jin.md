@@ -4,7 +4,7 @@ firstName: "Ying"
 lastName: "Jin"
 postNominalLetters: ""
 titles: ["Staff Associate"]
-phone: "851-5285"
+phone: "(212) 851-5285"
 fax: ""
 email: "yj2588@cumc.columbia.edu"
 room: "608"

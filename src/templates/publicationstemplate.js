@@ -49,6 +49,7 @@ const PublicationsTemplate = ({ path, pageContext }) => {
 
   const handleInputChange = (e) => {
     const q = e.target.value
+    const ql = q.toLowerCase()
 
     setQuery(q)
 
@@ -66,7 +67,20 @@ const PublicationsTemplate = ({ path, pageContext }) => {
     let ret = []
 
     for (let publication of allPublications) {
-      if (publication.title.toLowerCase().includes(q.toLowerCase())) {
+      let found = publication.title.toLowerCase().includes(ql)
+
+      if (!found) {
+        // try authors
+
+        for (let author of publication.authors) {
+          if (author.toLowerCase().includes(ql)) {
+            found = true
+            break
+          }
+        }
+      }
+
+      if (found) {
         ret.push(publication)
       }
     }

@@ -4,7 +4,7 @@ firstName: "Anouchka"
 lastName: "Laurent"
 postNominalLetters: "PhD"
 titles: ["Postdoctoral Research Scientist "]
-phone: "851-5292"
+phone: "(212) 851-5292"
 fax: ""
 email: "apl2161@cumc.columbia.edu"
 room: "401B"

@@ -4,7 +4,7 @@ firstName: "Christine"
 lastName: "Chio"
 postNominalLetters: "PhD"
 titles: ["Assistant Professor of Genetics & Development"]
-phone: "851-4967"
+phone: "(212) 851-4967"
 fax: "851-5256"
 email: "ic2445@columbia.edu"
 room: "505A"

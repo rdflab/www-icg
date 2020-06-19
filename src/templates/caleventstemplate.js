@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { graphql } from "gatsby"
 import CrumbTitleLayout from "../components/crumbtitlelayout"
 import SearchBar from "../components/search/searchbar"
 import SiteSearch from "../components/search/sitesearch"
@@ -13,10 +14,11 @@ import HideSmall from "../components/hidesmall"
 import Container from "../components/container"
 import CalEventSelector from "../components/calendar/caleventselector"
 import ShareLinks from "../components/share/sharelinks"
+import useImageMap from "../hooks/imagemap"
 
 const EMPTY_QUERY = ""
 
-const CalEventsTemplate = ({ path, pageContext }) => {
+const CalEventsTemplate = ({ path, pageContext, data }) => {
   const { allCalEvents } = pageContext
 
   const [query, setQuery] = useState(EMPTY_QUERY)
@@ -27,6 +29,8 @@ const CalEventsTemplate = ({ path, pageContext }) => {
   const [filterEventTypes, setFilterEventTypes] = useState(
     pageContext.filterEventTypes
   )
+
+  const imageMap = useImageMap(data)
 
   // useEffect(() => {
   //   for (let calEvent of allCalEvents) {
@@ -214,6 +218,7 @@ const CalEventsTemplate = ({ path, pageContext }) => {
 
               <CalSearchResults
                 events={calEvents}
+                imageMap={imageMap}
                 pagedEvents={pagedEvents}
                 page={page}
                 recordsPerPage={recordsPerPage}
@@ -246,3 +251,22 @@ const CalEventsTemplate = ({ path, pageContext }) => {
 }
 
 export default CalEventsTemplate
+
+export const query = graphql`
+  query {
+    files: allFile(filter: { absolutePath: { regex: "/images/people/" } }) {
+      edges {
+        node {
+          name
+          ext
+          relativePath
+          childImageSharp {
+            fluid(maxWidth: 500) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+  }
+`

@@ -4,7 +4,7 @@ firstName: "Jean"
 lastName: "Gautier"
 postNominalLetters: "PhD"
 titles: ["Professor of Genetic & Development"]
-phone: "851-4564"
+phone: "(212) 851-4564"
 fax: ""
 email: "jg130@columbia.edu"
 room: "603A, 602,613"

@@ -4,7 +4,7 @@ firstName: "Jorge"
 lastName: "Reyes"
 postNominalLetters: ""
 titles: ["Tech B"]
-phone: "851-4566/67/68"
+phone: "(212) 851-4566/67/68"
 fax: ""
 email: "jr4034@cumc.columbia.edu"
 room: "602"

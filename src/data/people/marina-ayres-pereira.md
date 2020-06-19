@@ -4,7 +4,7 @@ firstName: "Marina"
 lastName: "Ayres Pereira"
 postNominalLetters: "PhD"
 titles: ["Postdoctoral Research Scientist"]
-phone: "851-4966"
+phone: "(212) 851-4966"
 fax: ""
 email: "mma2246@cumc.columbia.edu"
 room: "505"

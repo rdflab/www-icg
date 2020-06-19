@@ -4,7 +4,7 @@ firstName: "Qiong"
 lastName: "Shen"
 postNominalLetters: ""
 titles: ["Senior Staff Associate"]
-phone: "851-5270"
+phone: "(212) 851-5270"
 fax: ""
 email: "qs4@cumc.columbia.edu"
 room: "507"

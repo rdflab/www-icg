@@ -4,7 +4,7 @@ firstName: "Wanchao"
 lastName: "Ma"
 postNominalLetters: ""
 titles: ["Sr Staff Associate "]
-phone: "851-4791"
+phone: "(212) 851-4791"
 fax: ""
 email: "wm49@cumc.columbia.edu"
 room: "401A"

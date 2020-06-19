@@ -4,7 +4,7 @@ firstName: "Swarnali"
 lastName: "Acharyya"
 postNominalLetters: "PhD"
 titles: ["Assistant Professor of Pathology & Cell Biology"]
-phone: "851-4792"
+phone: "(212) 851-4792"
 fax: ""
 email: "sa3141@columbia.edu"
 room: "402B"

@@ -29,6 +29,11 @@ const CalEventDate = ({ event, color, smallFormat }) => {
       }
   }
 
+  if (event.frontmatter.tags.includes("color::red")) {
+    textColor = "text-red-500"
+    dayBgColor = "bg-red-500"
+  }
+
   return (
     <>
       <ShowSmall className={`mb-2 w-full ${textColor}`}>
