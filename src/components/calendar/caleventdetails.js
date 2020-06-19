@@ -22,7 +22,7 @@ export const HeadShotImage = ({ name, imageMap }) => {
     return (
       <Img
         fluid={imageMap[name].childImageSharp.fluid}
-        className="w-48 h-48 opacity-90 hover:opacity-100 hover:shadow-md trans-ani"
+        className="w-48 h-48 opacity-95 hover:opacity-100 hover:shadow-md trans-ani"
       />
     )
   } else {
@@ -87,49 +87,47 @@ const CalEventDetails = ({ event, isMobile, color, imageMap }) => {
   }
 
   return (
-    <>
-      <Column className="justify-between">
-        <FullDiv className="m-4">
-          <div className="mb-2">
-            <div className="uppercase">{eventTypeLink}</div>
-            <h3>
-              {color === "white" && (
-                <WhiteLink to={eventUrl(event)}>
-                  {event.frontmatter.title}
-                </WhiteLink>
-              )}
-              {color === "blue" && (
-                <BlueLink to={eventUrl(event)}>
-                  {event.frontmatter.title}
-                </BlueLink>
-              )}
-              {color === "black" && (
-                <TextLink to={eventUrl(event)}>
-                  {event.frontmatter.title}
-                </TextLink>
-              )}
-            </h3>
-            <h5
-              className={`${
-                color === "white" ? "text-white" : "text-columbia-dark-gray"
-              }`}
-            >
-              <HTMLDiv html={event.excerpt} />
-            </h5>
-          </div>
+    <Column className="justify-between">
+      <FullDiv className="m-4">
+        <div className="mb-2">
+          <div className="uppercase">{eventTypeLink}</div>
+          <h3>
+            {color === "white" && (
+              <WhiteLink to={eventUrl(event)}>
+                {event.frontmatter.title}
+              </WhiteLink>
+            )}
+            {color === "blue" && (
+              <BlueLink to={eventUrl(event)}>
+                {event.frontmatter.title}
+              </BlueLink>
+            )}
+            {color === "black" && (
+              <TextLink to={eventUrl(event)}>
+                {event.frontmatter.title}
+              </TextLink>
+            )}
+          </h3>
+          <h5
+            className={`${
+              color === "white" ? "text-white" : "text-columbia-dark-gray"
+            }`}
+          >
+            <HTMLDiv html={event.excerpt} />
+          </h5>
+        </div>
 
-          <CalEventLocation event={event} isMobile={isMobile} color={color} />
+        <CalEventLocation event={event} isMobile={isMobile} color={color} />
 
-          <div className="text-sm mt-2">
-            {/* <FontAwesomeIcon icon={["far", "calendar"]} className={`text-xl text-gray-500 mr-2`} /> */}
-            <GrayLinkExt to={event.icsFile}>Add To Calendar</GrayLinkExt>
-          </div>
-        </FullDiv>
-        <HideSmall size="lg" className="pt-2 md:pt-0 w-48 h-48">
-          <HeadShotImage name={imageName} imageMap={imageMap} />
-        </HideSmall>
-      </Column>
-    </>
+        <div className="text-sm mt-2">
+          {/* <FontAwesomeIcon icon={["far", "calendar"]} className={`text-xl text-gray-500 mr-2`} /> */}
+          <GrayLinkExt to={event.icsFile}>Add To Calendar</GrayLinkExt>
+        </div>
+      </FullDiv>
+      <HideSmall size="lg" className="pt-2 md:pt-0 w-48 h-48">
+        <HeadShotImage name={imageName} imageMap={imageMap} />
+      </HideSmall>
+    </Column>
   )
 }
 

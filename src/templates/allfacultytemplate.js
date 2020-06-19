@@ -56,7 +56,7 @@ const FacultyCard = ({ person, imageMap }) => {
             hover ? "border-blue-700" : ""
           }`}
         >
-          <div className={`opacity-90 trans-ani ${hover ? "opacity-100" : ""}`}>
+          <div className={`opacity-95 trans-ani ${hover ? "opacity-100" : ""}`}>
             {img}
           </div>
           <div
