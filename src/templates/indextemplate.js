@@ -97,7 +97,7 @@ const IndexTemplate = ({ path, pageContext, data }) => {
     if (calEvent.start >= now) {
       calEvents.push(
         <Column
-          className="mb-6 bg-white shadow-md hover:shadow-lg trans-ani"
+          className="mb-6 bg-white shadow-md hover:shadow-lg overflow-hidden rounded-md trans-ani"
           key={i}
         >
           <Column className="w-2/10 md:w-1/10 m-4">
