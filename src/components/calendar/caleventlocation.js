@@ -18,7 +18,9 @@ const CalEventLocation = ({ event, showDate, isMobile, color }) => {
   return (
     <>
       <ShowSmall
-        className={`${color === "white" ? "text-white" : "text-gray-500"}`}
+        className={`w-full ${
+          color === "white" ? "text-white" : "text-gray-500"
+        }`}
       >
         <Column isVCentered={true} isMobile={true}>
           <div className="w-1/10 mr-2">
@@ -40,13 +42,15 @@ const CalEventLocation = ({ event, showDate, isMobile, color }) => {
       </ShowSmall>
 
       <HideSmall
-        className={`${color === "white" ? "text-white" : "text-gray-500"}`}
+        className={`w-full ${
+          color === "white" ? "text-white" : "text-gray-500"
+        }`}
       >
         <Column className="items-center">
-          <Column className="w-1/10 text-center mr-2">
-            <FontAwesomeIcon icon={["far", "clock"]} className={`text-3xl`} />
-          </Column>
-          <Column className="w-9/10">
+          <Column className="w-4/12 mr-8">
+            <div className="mr-4">
+              <FontAwesomeIcon icon={["far", "clock"]} className={`text-3xl`} />
+            </div>
             <div>
               {showDate && <div>{date}</div>}
               <div>
@@ -54,11 +58,11 @@ const CalEventLocation = ({ event, showDate, isMobile, color }) => {
               </div>
             </div>
           </Column>
-          <Column className="w-1/10 mr-2">
-            <FontAwesomeIcon icon="map-marker-alt" className={`text-3xl`} />
-          </Column>
-          <Column isMobile={true} className="w-9/10">
-            {event.frontmatter.location}
+          <Column className="w-8/12">
+            <div className="mr-4">
+              <FontAwesomeIcon icon="map-marker-alt" className={`text-3xl`} />
+            </div>
+            <div>{event.frontmatter.location}</div>
           </Column>
         </Column>
       </HideSmall>

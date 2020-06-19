@@ -206,7 +206,12 @@ export default AllLabsTemplate
 
 export const query = graphql`
   query {
-    files: allFile(filter: { absolutePath: { regex: "/images/people/" } }) {
+    files: allFile(
+      filter: {
+        absolutePath: { regex: "/images/people/" }
+        ext: { regex: "/jpg/" }
+      }
+    ) {
       edges {
         node {
           name

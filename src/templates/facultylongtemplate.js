@@ -495,7 +495,12 @@ export default FacultyLongTemplate
 
 export const query = graphql`
   query($id: String!) {
-    files: allFile(filter: { absolutePath: { regex: "/images/faculty/" } }) {
+    files: allFile(
+      filter: {
+        absolutePath: { regex: "/images/faculty/" }
+        ext: { regex: "/jpg/" }
+      }
+    ) {
       edges {
         node {
           relativePath

@@ -116,9 +116,7 @@ const CalEventDetails = ({ event, isMobile, color, imageMap }) => {
           <HeadShotImage name={imageName} imageMap={imageMap} />
         </div>
       </Column>
-      <div className="w-8/10">
-        <CalEventLocation event={event} isMobile={isMobile} color={color} />
-      </div>
+      <CalEventLocation event={event} isMobile={isMobile} color={color} />
     </>
   )
 }

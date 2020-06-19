@@ -18,6 +18,7 @@ import Button from "../components/button"
 import useSiteMetadata from "../hooks/sitemetadata"
 import DropShadowFrame from "../components/images/dropshadowframe"
 import Img from "gatsby-image"
+import FullDiv from "../components/fulldiv"
 
 const HomeSection = ({ title, subTitle, text, links, alt }) => {
   return (
@@ -95,11 +96,14 @@ const IndexTemplate = ({ path, pageContext, data }) => {
           className="pb-4 mb-4 border-b border-solid border-white"
           key={i}
         >
-          <Column className="w-full xs:w-2/10 md:w-1/10 mr-4">
+          <Column className="w-2/10 md:w-1/10 mr-4 ">
             <CalEventDate event={calEvent} color="white" smallFormat={true} />
           </Column>
-          <Column>
-            <CalEventDetails event={calEvent} color="white" />
+
+          <Column className="w-8/10 md:w-9/10">
+            <FullDiv>
+              <CalEventDetails event={calEvent} color="white" />
+            </FullDiv>
           </Column>
         </Column>
       )
@@ -241,8 +245,8 @@ const IndexTemplate = ({ path, pageContext, data }) => {
       <div className="bg-blue-800 py-32">
         <Container>
           <Column>
-            <Column className="md:pl-8 text-white lg:w-5/10">
-              <div className="p-8">
+            <Column className="text-white lg:w-3/10">
+              <div>
                 <HomeTitle>Upcoming Events</HomeTitle>
                 <p>See upcoming events and seminars of interest.</p>
                 <h3 className="mt-4">
@@ -252,7 +256,7 @@ const IndexTemplate = ({ path, pageContext, data }) => {
                 </h3>
               </div>
             </Column>
-            <div className="lg:w-5/10 border-t border-solid border-white pt-4">
+            <div className="lg:w-7/10 border-t border-solid border-white pt-4">
               {calEvents}
             </div>
           </Column>

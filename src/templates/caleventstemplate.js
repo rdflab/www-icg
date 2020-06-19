@@ -227,22 +227,12 @@ const CalEventsTemplate = ({ path, pageContext, data }) => {
             </div>
           </MainColumn>
           <SideColumn>
-            {/* <SideBar> */}
-            {/* <SearchBar
-          handleInputChange={handleInputChange}
-          placeholder="Type to find events..."
-        /> */}
-            {/* <Collapsible title="Filter By Date" height="auto"> */}
-
             <DayPicker
               selectedDays={selectedDays}
               onDayClick={handleDayClick}
             />
 
-            <CalEventSelector className="mt-5 ml-5" onClick={handleTypeClick} />
-
-            {/* </Collapsible> */}
-            {/* </SideBar> */}
+            {/* <CalEventSelector className="mt-5 ml-5" onClick={handleTypeClick} /> */}
           </SideColumn>
         </Column>
       </Container>
@@ -254,7 +244,12 @@ export default CalEventsTemplate
 
 export const query = graphql`
   query {
-    files: allFile(filter: { absolutePath: { regex: "/images/people/" } }) {
+    files: allFile(
+      filter: {
+        absolutePath: { regex: "/images/people/" }
+        ext: { regex: "/jpg/" }
+      }
+    ) {
       edges {
         node {
           name
