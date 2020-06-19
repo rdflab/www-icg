@@ -66,6 +66,7 @@ const CrumbTitleLayout = ({
         subTitle={subTitle}
         headerComponent={headerComponent}
         menuComponent={menuComponent}
+        backgroundColor={backgroundColor}
       >
         <div
           className={`w-full shadow-md ${crumbsFloat ? "absolute z-50" : ""}`}

@@ -21,6 +21,7 @@ import Img from "gatsby-image"
 import FullDiv from "../components/fulldiv"
 import useImageMap from "../hooks/imagemap"
 import ShareLinks from "../components/share/sharelinks"
+import CalEvent from "../components/calendar/calevent"
 
 const HomeSection = ({ title, subTitle, text, links, alt }) => {
   return (
@@ -70,22 +71,22 @@ HomeTitle.defaultProps = {
   className: "",
 }
 
-const CalEvent = ({ key, calEvent, imageMap }) => (
-  <Column
-    className="mb-6 bg-white shadow-md hover:shadow-lg overflow-hidden rounded-md trans-ani"
-    key={key}
-  >
-    <Column className="w-2/10 md:w-1/10 m-4">
-      <CalEventDate event={calEvent} />
-    </Column>
+// const CalEvent = ({ key, calEvent, imageMap }) => (
+//   <Column
+//     className="mb-6 bg-white shadow-md hover:shadow-lg overflow-hidden rounded-md trans-ani"
+//     key={key}
+//   >
+//     <Column className="w-2/10 md:w-1/10 m-4">
+//       <CalEventDate event={calEvent} />
+//     </Column>
 
-    <Column className="w-8/10 md:w-9/10">
-      <FullDiv>
-        <CalEventDetails event={calEvent} imageMap={imageMap} />
-      </FullDiv>
-    </Column>
-  </Column>
-)
+//     <Column className="w-8/10 md:w-9/10">
+//       <FullDiv>
+//         <CalEventDetails event={calEvent} imageMap={imageMap} />
+//       </FullDiv>
+//     </Column>
+//   </Column>
+// )
 
 const IndexTemplate = ({ path, pageContext, data }) => {
   const {
@@ -112,9 +113,7 @@ const IndexTemplate = ({ path, pageContext, data }) => {
     }
 
     if (calEvent.start >= now) {
-      calEvents.push(
-        <CalEvent key={i} calEvent={calEvent} imageMap={imageMap} />
-      )
+      calEvents.push(<CalEvent key={i} event={calEvent} imageMap={imageMap} />)
     }
 
     if (calEvents.length === nEvents) {

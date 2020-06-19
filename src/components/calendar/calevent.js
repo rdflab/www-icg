@@ -35,10 +35,10 @@ export const formatTime = (event) => {
 
 const CalEvent = ({ event, smallFormat, imageMap }) => {
   return (
-    <div className="w-full border-b border-solid border-gray-300 mb-4 pb-4">
+    <div className="w-full bg-white shadow-md hover:shadow-lg rounded-md mb-8 overflow-hidden trans-ani">
       <ShowSmall>
         <Column isMobile={true}>
-          <Column isMobile={true} className="w-2/10">
+          <Column isMobile={true} className="w-3/20 ml-4 mt-4">
             <CalEventDate event={event} smallFormat={smallFormat} />
           </Column>
         </Column>
@@ -46,7 +46,7 @@ const CalEvent = ({ event, smallFormat, imageMap }) => {
       </ShowSmall>
       <HideSmall className="w-full">
         <Column>
-          <Column className="w-1/10 my-4 mr-4">
+          <Column className="w-1/10 m-4 mr-4">
             <CalEventDate event={event} />
           </Column>
           <Column className="w-9/10">

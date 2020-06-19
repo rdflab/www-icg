@@ -77,9 +77,7 @@ const CrumbLayout = ({
           onMenuButtonClick={onMenuButtonClick}
         />
 
-        <div className={`relative min-h-screen ${backgroundColor}`}>
-          {children}
-        </div>
+        <div className={`relative min-h-screen`}>{children}</div>
       </MenuLayout>
     )
   } else {

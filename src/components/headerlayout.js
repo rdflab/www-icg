@@ -10,7 +10,13 @@ import Layout from "./layout"
 import HeaderWithNav from "./header/header"
 import MenuLayout from "./menulayout"
 
-const HeaderLayout = ({ title, headerComponent, menuComponent, children }) => {
+const HeaderLayout = ({
+  title,
+  headerComponent,
+  menuComponent,
+  backgroundColor,
+  children,
+}) => {
   const [menuVisible, setMenuVisible] = useState(false)
 
   const onMenuButtonClick = (e) => {
@@ -33,6 +39,7 @@ const HeaderLayout = ({ title, headerComponent, menuComponent, children }) => {
         onMenuButtonClick={onMenuButtonClick}
       />
 
+      <div className={`${backgroundColor}`}></div>
       <main>{children}</main>
     </MenuLayout>
   )
@@ -45,6 +52,7 @@ HeaderLayout.defaultProps = {
   menuComponent: null,
   floatHeader: false,
   floatHeaderLinks: false,
+  backgroundColor: "bg-white",
 }
 
 export default HeaderLayout

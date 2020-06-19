@@ -15,6 +15,7 @@ import Container from "../components/container"
 import CalEventSelector from "../components/calendar/caleventselector"
 import ShareLinks from "../components/share/sharelinks"
 import useImageMap from "../hooks/imagemap"
+import ShowSmall from "../components/showsmall"
 
 const EMPTY_QUERY = ""
 
@@ -160,6 +161,7 @@ const CalEventsTemplate = ({ path, pageContext, data }) => {
       crumbs={[["Events", "/events"]]}
       headerComponent={<SiteSearch />}
       menuComponent={<ShareLinks path={path} />}
+      headerFloat={true}
       // titleComponent={
       //   <SearchSummary
       //     count={calEvents.length}
@@ -168,9 +170,10 @@ const CalEventsTemplate = ({ path, pageContext, data }) => {
       //   />
       // }
     >
-      <Container className="my-16">
-        <Column>
-          {/* <SmallColumn>
+      <div className="bg-columbia-light-gray pt-48 md:pt-64 lg:pt-80">
+        <Container>
+          <Column>
+            {/* <SmallColumn>
         <SearchBar
           handleInputChange={handleInputChange}
           placeholder="Type to find events..."
@@ -179,31 +182,31 @@ const CalEventsTemplate = ({ path, pageContext, data }) => {
           <DayPicker selectedDays={selectedDays} onDayClick={handleDayClick} />
         </div>
       </SmallColumn> */}
-          <MainColumn className="md:mr-8">
-            <div className="w-full">
-              <HideSmall show={true}>
-                <SearchBar
-                  handleInputChange={handleInputChange}
-                  placeholder="Type to find events..."
-                  text={query}
-                />
-              </HideSmall>
+            <MainColumn className="md:mr-8">
+              <div className="w-full">
+                <ShowSmall size="lg">
+                  <SearchBar
+                    handleInputChange={handleInputChange}
+                    placeholder="Type to find events..."
+                    text={query}
+                  />
+                </ShowSmall>
 
-              <HideSmall>
-                <Column isCentered={true} className="mb-8">
-                  <div className="w-2/3">
-                    <SearchBar
-                      handleInputChange={handleInputChange}
-                      placeholder="Type to find events..."
-                      text={query}
-                    />
-                  </div>
-                </Column>
-              </HideSmall>
+                <HideSmall size="lg">
+                  <Column isCentered={true} className="mb-8">
+                    <div className="w-2/3">
+                      <SearchBar
+                        handleInputChange={handleInputChange}
+                        placeholder="Type to find events..."
+                        text={query}
+                      />
+                    </div>
+                  </Column>
+                </HideSmall>
 
-              {/* </div> */}
+                {/* </div> */}
 
-              {/* <Column className="justify-between">
+                {/* <Column className="justify-between">
               <div>
                 <Title>Events</Title>
               </div>
@@ -216,26 +219,27 @@ const CalEventsTemplate = ({ path, pageContext, data }) => {
               </div>
             </Column> */}
 
-              <CalSearchResults
-                events={calEvents}
-                imageMap={imageMap}
-                pagedEvents={pagedEvents}
-                page={page}
-                recordsPerPage={recordsPerPage}
-                onPageChanged={onPageChanged}
+                <CalSearchResults
+                  events={calEvents}
+                  imageMap={imageMap}
+                  pagedEvents={pagedEvents}
+                  page={page}
+                  recordsPerPage={recordsPerPage}
+                  onPageChanged={onPageChanged}
+                />
+              </div>
+            </MainColumn>
+            <SideColumn>
+              <DayPicker
+                selectedDays={selectedDays}
+                onDayClick={handleDayClick}
               />
-            </div>
-          </MainColumn>
-          <SideColumn>
-            <DayPicker
-              selectedDays={selectedDays}
-              onDayClick={handleDayClick}
-            />
 
-            {/* <CalEventSelector className="mt-5 ml-5" onClick={handleTypeClick} /> */}
-          </SideColumn>
-        </Column>
-      </Container>
+              {/* <CalEventSelector className="mt-5 ml-5" onClick={handleTypeClick} /> */}
+            </SideColumn>
+          </Column>
+        </Container>
+      </div>
     </CrumbTitleLayout>
   )
 }

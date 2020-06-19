@@ -616,7 +616,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       start.getMonth() + 1
     )}-${twoDigitFormat(start.getDate())}`
     const id = `${formattedTitle}-${formattedDate}`
-    const icsFile = `ical/${id}.ics`
+    const icsFile = `/events/ical/${id}.ics`
 
     calEvent.id = id
     calEvent.icsFile = icsFile
@@ -638,7 +638,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       end.getMinutes()
     )}00`
 
-    var ws = fs.createWriteStream(`static/events/${calEvent.icsFile}`)
+    var ws = fs.createWriteStream(`static${calEvent.icsFile}`)
     ws.write("BEGIN:VCALENDAR\n")
     ws.write("VERSION:2.0\n")
     ws.write("PRODID:-//hacksw/handcal//NONSGML v1.0//EN\n")
