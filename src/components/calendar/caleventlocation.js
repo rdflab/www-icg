@@ -55,12 +55,7 @@ const CalEventLocation = ({ event, showDate, isMobile, color }) => {
               className={`text-2xl mr-2`}
             />
             <div>
-              <ShowSmall size="lg">
-                {`${event.frontmatter.startTime}`}
-              </ShowSmall>
-              <HideSmall size="lg">
-                {`${event.frontmatter.startTime} - ${event.frontmatter.endTime}`}
-              </HideSmall>
+              {`${event.frontmatter.startTime} - ${event.frontmatter.endTime}`}
             </div>
           </Column>
         </Column>

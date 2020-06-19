@@ -15,6 +15,7 @@ import Img from "gatsby-image"
 import FullDiv from "../fulldiv"
 import GrayLinkExt from "../links/graylinkext"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import HideSmall from "../hidesmall"
 
 export const HeadShotImage = ({ name, imageMap }) => {
   if (name !== null && name in imageMap) {
@@ -89,7 +90,7 @@ const CalEventDetails = ({ event, isMobile, color, imageMap }) => {
     <>
       <Column className="justify-between">
         <FullDiv className="m-4">
-          <div className="mb-4">
+          <div className="mb-2">
             <div className="uppercase">{eventTypeLink}</div>
             <h3>
               {color === "white" && (
@@ -124,9 +125,9 @@ const CalEventDetails = ({ event, isMobile, color, imageMap }) => {
             <GrayLinkExt to={event.icsFile}>Add To Calendar</GrayLinkExt>
           </div>
         </FullDiv>
-        <div className="pt-2 md:pt-0 w-48 h-48">
+        <HideSmall size="lg" className="pt-2 md:pt-0 w-48 h-48">
           <HeadShotImage name={imageName} imageMap={imageMap} />
-        </div>
+        </HideSmall>
       </Column>
     </>
   )
