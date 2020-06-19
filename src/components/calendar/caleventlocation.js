@@ -26,10 +26,11 @@ const CalEventLocation = ({ event, showDate, isMobile, color }) => {
           <div className="w-1/10 mr-2">
             <FontAwesomeIcon icon={["far", "clock"]} className={`text-3xl`} />
           </div>
-          <div className="w-9/10">
+          <div className="w-9/10 mt-1">
             {showDate && <div>{date}</div>}
             <div>
-              {event.frontmatter.startTime} - {event.frontmatter.endTime}
+              {/* {`${event.frontmatter.startTime} - ${event.frontmatter.endTime}`} */}
+              {`${event.frontmatter.startTime}`}
             </div>
           </div>
         </Column>
@@ -37,7 +38,7 @@ const CalEventLocation = ({ event, showDate, isMobile, color }) => {
           <div className="w-1/10 mr-2">
             <FontAwesomeIcon icon="map-marker-alt" className={`text-3xl`} />
           </div>
-          <div className="w-9/10">{event.frontmatter.location}</div>
+          <div className="w-9/10 mt-1">{event.frontmatter.location}</div>
         </Column>
       </ShowSmall>
 
@@ -46,15 +47,16 @@ const CalEventLocation = ({ event, showDate, isMobile, color }) => {
           color === "white" ? "text-white" : "text-gray-500"
         }`}
       >
-        <Column className="items-center">
+        <Column className="items-center ">
           <Column className="w-4/12 mr-8">
             <div className="mr-4">
               <FontAwesomeIcon icon={["far", "clock"]} className={`text-3xl`} />
             </div>
-            <div>
+            <div className="mt-1">
               {showDate && <div>{date}</div>}
               <div>
-                {event.frontmatter.startTime} - {event.frontmatter.endTime}
+                {/* {`${event.frontmatter.startTime} - ${event.frontmatter.endTime}`} */}
+                {`${event.frontmatter.startTime}`}
               </div>
             </div>
           </Column>
@@ -62,7 +64,7 @@ const CalEventLocation = ({ event, showDate, isMobile, color }) => {
             <div className="mr-4">
               <FontAwesomeIcon icon="map-marker-alt" className={`text-3xl`} />
             </div>
-            <div>{event.frontmatter.location}</div>
+            <div className="mt-1">{event.frontmatter.location}</div>
           </Column>
         </Column>
       </HideSmall>

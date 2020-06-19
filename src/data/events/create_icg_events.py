@@ -21,7 +21,7 @@ for d in dates:
     
     print('---', file=f)
     print('title: "ICG Data Club"', file=f)
-    print('location: "Florence Irving Auditorium, 1130 St Nicholas Avenue"', file=f)
+    print('location: "Florence Irving Auditorium"', file=f)
     print('start: "{}T12:00:00"'.format(fd), file=f)
     print('end: "{}T13:00:00"'.format(fd), file=f)
     print('tags: ["Event", "Seminar"]', file=f)

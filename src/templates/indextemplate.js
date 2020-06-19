@@ -96,9 +96,12 @@ const IndexTemplate = ({ path, pageContext, data }) => {
 
     if (calEvent.start >= now) {
       calEvents.push(
-        <Column className="pb-4 mb-6 bg-white p-4 shadow-md" key={i}>
-          <Column className="w-2/10 md:w-1/10 mr-4">
-            <CalEventDate event={calEvent} smallFormat={true} />
+        <Column
+          className="mb-6 bg-white shadow-md hover:shadow-lg trans-ani"
+          key={i}
+        >
+          <Column className="w-2/10 md:w-1/10 m-4">
+            <CalEventDate event={calEvent} />
           </Column>
 
           <Column className="w-8/10 md:w-9/10">
@@ -248,10 +251,10 @@ const IndexTemplate = ({ path, pageContext, data }) => {
       <div className="bg-columbia-light-gray">
         <Container className="py-32">
           <Column>
-            <Column className="lg:w-3/10 mr-8 mb-8">
+            <Column className="lg:w-3/10 mr-4 mb-8">
               <div>
                 <HomeTitle>Upcoming Events</HomeTitle>
-                <p>See upcoming events and seminars of interest.</p>
+                <p>See upcoming events and seminars.</p>
                 <h3 className="mt-4">
                   <BlueIndexLink to={paths.eventsPath}>
                     See all events
