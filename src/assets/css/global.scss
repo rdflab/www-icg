@@ -156,11 +156,11 @@ a:hover {
 }
 
 .gray-link {
-  @apply underline-link text-gray;
+  @apply underline-link text-gray-500;
 }
 
 .gray-link:hover {
-  @apply underline-link-hover text-gray gray-border;
+  @apply underline-link-hover text-gray-500 border-gray-500;
 }
 
 .slide-menu-canvas {

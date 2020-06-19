@@ -9,8 +9,8 @@ import React, { useState } from "react"
 import Breadcrumb from "./breadcrumb"
 import HideSmall from "./hidesmall"
 import HeaderLayout from "./headerlayout"
-import Layout from "./layout"
 import HeaderWithNav, { Header, HeaderLinksNav } from "./header/header"
+import MenuLayout from "./menulayout"
 
 export const FloatingHeader = ({
   crumbs,
@@ -65,7 +65,7 @@ const CrumbLayout = ({
 
   if (headerFloat) {
     return (
-      <Layout
+      <MenuLayout
         title={title}
         menuVisible={menuVisible}
         onSlideMenuClick={onSlideMenuClick}
@@ -80,12 +80,12 @@ const CrumbLayout = ({
         <div className={`relative min-h-screen ${backgroundColor}`}>
           {children}
         </div>
-      </Layout>
+      </MenuLayout>
     )
   } else {
     if (headerLinksFloat) {
       return (
-        <Layout
+        <MenuLayout
           title={title}
           menuVisible={menuVisible}
           onSlideMenuClick={onSlideMenuClick}
@@ -109,7 +109,7 @@ const CrumbLayout = ({
           <div className={`relative min-h-screen ${backgroundColor}`}>
             {children}
           </div>
-        </Layout>
+        </MenuLayout>
       )
     } else {
       return (

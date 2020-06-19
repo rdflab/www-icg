@@ -9,9 +9,9 @@ import React, { useState } from "react"
 import H from "./headings/h"
 import HideSmall from "./hidesmall"
 import Breadcrumb from "./breadcrumb"
-import Layout from "./layout"
 import HeaderLayout from "./headerlayout"
 import { FloatingHeader } from "./crumblayout"
+import MenuLayout from "./menulayout"
 
 const CrumbTitleLayout = ({
   path,
@@ -38,7 +38,7 @@ const CrumbTitleLayout = ({
 
   if (headerFloat) {
     return (
-      <Layout
+      <MenuLayout
         title={title}
         menuVisible={menuVisible}
         onSlideMenuClick={onSlideMenuClick}
@@ -57,7 +57,7 @@ const CrumbTitleLayout = ({
         <div className={`relative min-h-screen ${backgroundColor}`}>
           {children}
         </div>
-      </Layout>
+      </MenuLayout>
     )
   } else {
     return (

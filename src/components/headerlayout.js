@@ -8,6 +8,7 @@
 import React, { useState } from "react"
 import Layout from "./layout"
 import HeaderWithNav from "./header/header"
+import MenuLayout from "./menulayout"
 
 const HeaderLayout = ({ title, headerComponent, menuComponent, children }) => {
   const [menuVisible, setMenuVisible] = useState(false)
@@ -21,7 +22,7 @@ const HeaderLayout = ({ title, headerComponent, menuComponent, children }) => {
   }
 
   return (
-    <Layout
+    <MenuLayout
       title={title}
       menuVisible={menuVisible}
       onSlideMenuClick={onSlideMenuClick}
@@ -33,7 +34,7 @@ const HeaderLayout = ({ title, headerComponent, menuComponent, children }) => {
       />
 
       <main>{children}</main>
-    </Layout>
+    </MenuLayout>
   )
 }
 

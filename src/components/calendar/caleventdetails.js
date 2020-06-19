@@ -13,6 +13,8 @@ import RedLink from "../links/redlink"
 import Column from "../column"
 import Img from "gatsby-image"
 import FullDiv from "../fulldiv"
+import GrayLinkExt from "../links/graylinkext"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 export const HeadShotImage = ({ name, imageMap }) => {
   if (name !== null && name in imageMap) {
@@ -116,6 +118,11 @@ const CalEventDetails = ({ event, isMobile, color, imageMap }) => {
           </div>
 
           <CalEventLocation event={event} isMobile={isMobile} color={color} />
+
+          <div className="text-sm mt-2">
+            {/* <FontAwesomeIcon icon={["far", "calendar"]} className={`text-xl text-gray-500 mr-2`} /> */}
+            <GrayLinkExt to={event.icsFile}>Add To Calendar</GrayLinkExt>
+          </div>
         </FullDiv>
         <div className="pt-2 md:pt-0 w-48 h-48">
           <HeadShotImage name={imageName} imageMap={imageMap} />

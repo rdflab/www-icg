@@ -20,7 +20,7 @@ import DropShadowFrame from "../components/images/dropshadowframe"
 import Img from "gatsby-image"
 import FullDiv from "../components/fulldiv"
 import useImageMap from "../hooks/imagemap"
-import CalEvent from "../components/calendar/calevent"
+import ShareLinks from "../components/share/sharelinks"
 
 const HomeSection = ({ title, subTitle, text, links, alt }) => {
   return (
@@ -70,6 +70,23 @@ HomeTitle.defaultProps = {
   className: "",
 }
 
+const CalEvent = ({ key, calEvent, imageMap }) => (
+  <Column
+    className="mb-6 bg-white shadow-md hover:shadow-lg overflow-hidden rounded-md trans-ani"
+    key={key}
+  >
+    <Column className="w-2/10 md:w-1/10 m-4">
+      <CalEventDate event={calEvent} />
+    </Column>
+
+    <Column className="w-8/10 md:w-9/10">
+      <FullDiv>
+        <CalEventDetails event={calEvent} imageMap={imageMap} />
+      </FullDiv>
+    </Column>
+  </Column>
+)
+
 const IndexTemplate = ({ path, pageContext, data }) => {
   const {
     director,
@@ -96,23 +113,8 @@ const IndexTemplate = ({ path, pageContext, data }) => {
 
     if (calEvent.start >= now) {
       calEvents.push(
-        <Column
-          className="mb-6 bg-white shadow-md hover:shadow-lg overflow-hidden rounded-md trans-ani"
-          key={i}
-        >
-          <Column className="w-2/10 md:w-1/10 m-4">
-            <CalEventDate event={calEvent} />
-          </Column>
-
-          <Column className="w-8/10 md:w-9/10">
-            <FullDiv>
-              <CalEventDetails event={calEvent} imageMap={imageMap} />
-            </FullDiv>
-          </Column>
-        </Column>
+        <CalEvent key={i} calEvent={calEvent} imageMap={imageMap} />
       )
-
-      //calEvents.push(<CalEvent key={i} event={calEvent} imageMap={imageMap} />)
     }
 
     if (calEvents.length === nEvents) {
@@ -138,6 +140,7 @@ const IndexTemplate = ({ path, pageContext, data }) => {
       headerFloat={true}
       title="Home"
       headerComponent={<SiteSearch />}
+      menuComponent={<ShareLinks path={path} />}
     >
       <CUMCImage />
       {/* <Container className="h-full py-8 sm:py-8">
@@ -250,20 +253,18 @@ const IndexTemplate = ({ path, pageContext, data }) => {
 
       <div className="bg-columbia-light-gray">
         <Container className="py-32">
-          <Column>
-            <Column className="lg:w-3/10 mr-4 mb-8">
-              <div>
-                <HomeTitle>Upcoming Events</HomeTitle>
-                <p>See upcoming events and seminars.</p>
-                <h3 className="mt-4">
-                  <BlueIndexLink to={paths.eventsPath}>
-                    See all events
-                  </BlueIndexLink>
-                </h3>
-              </div>
-            </Column>
-            <div className="lg:w-7/10">{calEvents}</div>
-          </Column>
+          <HomeTitle className="text-center">Upcoming Events</HomeTitle>
+          <Container>
+            <div className="mt-8">{calEvents}</div>
+
+            <div className="mt-8">
+              <h3>
+                <BlueIndexLink to={paths.eventsPath}>
+                  See all events
+                </BlueIndexLink>
+              </h3>
+            </div>
+          </Container>
         </Container>
       </div>
 

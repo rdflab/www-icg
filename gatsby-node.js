@@ -106,6 +106,10 @@ const getContextName = (contextMap, context) => {
   return ret
 }
 
+const twoDigitFormat = (v) => {
+  return v > 9 ? `${v}` : `0${v}`
+}
+
 // const toGroupMap = (allFaculty) => {
 //   const ret = {}
 
@@ -491,13 +495,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               month: start(formatString: "MMM")
               monthNum: start(formatString: "M")
               year: start(formatString: "YYYY")
-              startTime: start(formatString: "h:mm A")
+              startTime: start(formatString: "h:mm a")
               end
-              endTime: end(formatString: "h:mm A")
+              endTime: end(formatString: "h:mm a")
               url
               tags
             }
-            excerpt(format: HTML)
+            excerpt: excerpt(format: HTML)
+            description: excerpt(format: PLAIN)
           }
         }
       }
@@ -603,11 +608,56 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   result.data.events.edges.forEach(({ node }) => {
     const calEvent = node
 
+    const title = calEvent.frontmatter.title
+    const start = new Date(calEvent.frontmatter.start)
+    const end = new Date(calEvent.frontmatter.end)
+    const formattedTitle = title.toLowerCase().replace(/ /g, "-")
+    const formattedDate = `${start.getFullYear()}-${twoDigitFormat(
+      start.getMonth() + 1
+    )}-${twoDigitFormat(start.getDate())}`
+    const id = `${formattedTitle}-${formattedDate}`
+    const icsFile = `ical/${id}.ics`
+
+    calEvent.id = id
+    calEvent.icsFile = icsFile
+
     //calEvent.start = new Date(calEvent.frontmatter.start)
     //calEvent.end = new Date(calEvent.frontmatter.end)
 
     allCalEvents.push(calEvent)
+
+    // Create ics files for sharing
+
+    const dtyear = `${start.getFullYear()}${twoDigitFormat(
+      start.getMonth() + 1
+    )}${twoDigitFormat(start.getDate())}`
+    const dtstart = `${dtyear}T${twoDigitFormat(
+      start.getHours()
+    )}${twoDigitFormat(start.getMinutes())}00`
+    const dtend = `${dtyear}T${twoDigitFormat(end.getHours())}${twoDigitFormat(
+      end.getMinutes()
+    )}00`
+
+    var ws = fs.createWriteStream(`static/events/${calEvent.icsFile}`)
+    ws.write("BEGIN:VCALENDAR\n")
+    ws.write("VERSION:2.0\n")
+    ws.write("PRODID:-//hacksw/handcal//NONSGML v1.0//EN\n")
+    ws.write("BEGIN:VEVENT\n")
+    ws.write(`UID:${calEvent.id}@columbiaicg.org\n`)
+    ws.write(`DTSTAMP:${dtstart}\n`)
+    ws.write(`DTSTART:${dtstart}\n`)
+    ws.write(`DTEND:${dtend}\n`)
+    ws.write(`SUMMARY:${title}\n`)
+    ws.write(`DESCRIPTION:${calEvent.description}\n`)
+    ws.write(`LOCATION:${calEvent.frontmatter.location}\n`)
+    ws.write("END:VEVENT\n")
+    ws.write("END:VCALENDAR\n")
+    ws.close()
   })
+
+  //
+  // Create ical events
+  //
 
   let admin = allAdmin[0]
   admin.groupMap = toLabPeopleMap(admin, peopleMap)
@@ -665,6 +715,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   //
   // Make pages
   //
+
+  console.log("Writing pages...")
 
   const paths = result.data.site.siteMetadata.paths
 

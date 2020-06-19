@@ -1,4 +1,5 @@
 ---
+id: "icg-data-club-2020-07-07"
 title: "ICG Data Club"
 location: "Florence Irving Auditorium"
 start: "2020-07-07T12:00:00"

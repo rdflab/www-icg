@@ -3,6 +3,7 @@ import Column from "../column"
 import HideSmall from "../hidesmall"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import ShowSmall from "../showsmall"
+import ShowBetween from "../showbetween"
 
 const CalEventLocation = ({ event, showDate, isMobile, color }) => {
   let date
@@ -23,48 +24,69 @@ const CalEventLocation = ({ event, showDate, isMobile, color }) => {
         }`}
       >
         <Column isVCentered={true} isMobile={true}>
-          <div className="w-1/10 mr-2">
-            <FontAwesomeIcon icon={["far", "clock"]} className={`text-3xl`} />
+          <div className="text-center w-8 mr-2">
+            <FontAwesomeIcon icon={["far", "clock"]} className={`text-2xl`} />
           </div>
-          <div className="w-9/10 mt-1">
+          <div>
             {showDate && <div>{date}</div>}
             <div>
-              {/* {`${event.frontmatter.startTime} - ${event.frontmatter.endTime}`} */}
-              {`${event.frontmatter.startTime}`}
+              {`${event.frontmatter.startTime} - ${event.frontmatter.endTime}`}
+              {/* {`${event.frontmatter.startTime}`} */}
             </div>
           </div>
         </Column>
-        <Column isVCentered={true} className="mt-4" isMobile={true}>
-          <div className="w-1/10 mr-2">
-            <FontAwesomeIcon icon="map-marker-alt" className={`text-3xl`} />
+        <Column isVCentered={true} className="mt-2" isMobile={true}>
+          <div className="text-center w-8 mr-2">
+            <FontAwesomeIcon icon="map-marker-alt" className={`text-2xl`} />
           </div>
-          <div className="w-9/10 mt-1">{event.frontmatter.location}</div>
+          <div>{event.frontmatter.location}</div>
         </Column>
       </ShowSmall>
 
-      <HideSmall
-        className={`w-full ${
-          color === "white" ? "text-white" : "text-gray-500"
-        }`}
+      <ShowBetween
+        s1="md"
+        s2="2xl"
+        className={` ${color === "white" ? "text-white" : "text-gray-500"}`}
       >
-        <Column className="items-center ">
-          <Column className="w-4/12 mr-8">
-            <div className="mr-4">
-              <FontAwesomeIcon icon={["far", "clock"]} className={`text-3xl`} />
-            </div>
-            <div className="mt-1">
-              {showDate && <div>{date}</div>}
-              <div>
-                {/* {`${event.frontmatter.startTime} - ${event.frontmatter.endTime}`} */}
+        <Column className="items-start">
+          <Column className="w-full">
+            <FontAwesomeIcon
+              icon={["far", "clock"]}
+              className={`text-2xl mr-2`}
+            />
+            <div>
+              <ShowSmall size="lg">
                 {`${event.frontmatter.startTime}`}
-              </div>
+              </ShowSmall>
+              <HideSmall size="lg">
+                {`${event.frontmatter.startTime} - ${event.frontmatter.endTime}`}
+              </HideSmall>
             </div>
           </Column>
-          <Column className="w-8/12">
-            <div className="mr-4">
-              <FontAwesomeIcon icon="map-marker-alt" className={`text-3xl`} />
+        </Column>
+      </ShowBetween>
+
+      <HideSmall
+        size="2xl"
+        className={` ${color === "white" ? "text-white" : "text-gray-500"}`}
+      >
+        <Column className="items-start">
+          <Column className="w-5/12 mr-8">
+            <FontAwesomeIcon
+              icon={["far", "clock"]}
+              className={`text-2xl mr-2`}
+            />
+            <div>
+              {showDate && <div>{date}</div>}
+              {`${event.frontmatter.startTime} - ${event.frontmatter.endTime}`}
             </div>
-            <div className="mt-1">{event.frontmatter.location}</div>
+          </Column>
+          <Column className="w-7/12">
+            <FontAwesomeIcon
+              icon="map-marker-alt"
+              className={`text-2xl mr-2`}
+            />
+            <div>{event.frontmatter.location}</div>
           </Column>
         </Column>
       </HideSmall>

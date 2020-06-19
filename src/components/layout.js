@@ -6,7 +6,6 @@
  */
 
 import React from "react"
-import PropTypes from "prop-types"
 import { library } from "@fortawesome/fontawesome-svg-core"
 
 //import "../assets/css/global.scss"
@@ -35,8 +34,7 @@ import {
   faChevronDown,
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons"
-import { faClock } from "@fortawesome/free-regular-svg-icons"
-import SlideMenu from "./slidemenu/slidemenu"
+import { faClock, faCalendar } from "@fortawesome/free-regular-svg-icons"
 
 library.add(
   fab,
@@ -56,7 +54,8 @@ library.add(
   faUsers,
   faChevronUp,
   faChevronDown,
-  faChevronRight
+  faChevronRight,
+  faCalendar
 )
 
 if (typeof window !== "undefined") {
@@ -90,7 +89,7 @@ if (typeof window !== "undefined") {
 // // Log the initial state
 // console.log('store', store.getState())
 
-const Layout = ({ title, children, menuVisible, onSlideMenuClick }) => {
+const Layout = ({ title, children }) => {
   const siteMetadata = useSiteMetadata()
 
   return (
@@ -125,8 +124,6 @@ const Layout = ({ title, children, menuVisible, onSlideMenuClick }) => {
 
       {title !== "" && <SEO title={title} />}
 
-      <SlideMenu visible={menuVisible} onSlideMenuClick={onSlideMenuClick} />
-
       {children}
 
       <Footer siteTitle={siteMetadata.title}></Footer>
@@ -134,16 +131,8 @@ const Layout = ({ title, children, menuVisible, onSlideMenuClick }) => {
   )
 }
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
-
 Layout.defaultProps = {
-  crumbs: [],
-  selectedTab: "",
   title: "",
-  menuVisible: false,
-  onSlideMenuClick: null,
 }
 
 export default Layout
