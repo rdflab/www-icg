@@ -179,7 +179,7 @@ const CalEventsTemplate = ({ path, pageContext, data }) => {
           <DayPicker selectedDays={selectedDays} onDayClick={handleDayClick} />
         </div>
       </SmallColumn> */}
-          <MainColumn className="mr-8">
+          <MainColumn className="md:mr-8">
             <div className="w-full">
               <HideSmall show={true}>
                 <SearchBar
