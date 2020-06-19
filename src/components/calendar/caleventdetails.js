@@ -84,7 +84,7 @@ const CalEventDetails = ({ event, isMobile, color, imageMap }) => {
 
   return (
     <>
-      <Column className="justify-between mb-2">
+      <Column className="justify-between mb-4">
         <div>
           <div className="uppercase">{eventTypeLink}</div>
           <h3>

@@ -105,7 +105,7 @@ const AdminStaffTemplate = ({ path, pageContext }) => {
               showPhoto={true}
               context="admin"
               cols={5}
-              colWidth="w-9/50"
+              colWidth="w-19/100"
             />
           </HideSmall>
         </Container>
