@@ -10,7 +10,6 @@ import useSiteMetadata from "../../hooks/sitemetadata"
 import getEventType from "./caleventype"
 import getEventTypeUrl from "./caleventtypeurl"
 import RedLink from "../links/redlink"
-import FullDiv from "../fulldiv"
 import Column from "../column"
 import Img from "gatsby-image"
 
@@ -63,12 +62,14 @@ const CalEventDetails = ({ event, isMobile, color, imageMap }) => {
       break
   }
 
-  if (event.frontmatter.tags.includes("color::red")) {
-    eventTypeLink = (
-      <RedLink to={getEventTypeUrl(paths.eventsPath, eventType)}>
-        {eventType}
-      </RedLink>
-    )
+  if (color !== "white") {
+    if (event.frontmatter.tags.includes("color::red")) {
+      eventTypeLink = (
+        <RedLink to={getEventTypeUrl(paths.eventsPath, eventType)}>
+          {eventType}
+        </RedLink>
+      )
+    }
   }
 
   // See if we should include an image

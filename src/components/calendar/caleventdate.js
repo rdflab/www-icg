@@ -29,9 +29,11 @@ const CalEventDate = ({ event, color, smallFormat }) => {
       }
   }
 
-  if (event.frontmatter.tags.includes("color::red")) {
-    textColor = "text-red-500"
-    dayBgColor = "bg-red-500"
+  if (color !== "white") {
+    if (event.frontmatter.tags.includes("color::red")) {
+      textColor = "text-red-500"
+      dayBgColor = "bg-red-500"
+    }
   }
 
   return (
