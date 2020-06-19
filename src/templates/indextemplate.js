@@ -19,6 +19,8 @@ import useSiteMetadata from "../hooks/sitemetadata"
 import DropShadowFrame from "../components/images/dropshadowframe"
 import Img from "gatsby-image"
 import FullDiv from "../components/fulldiv"
+import useImageMap from "../hooks/imagemap"
+import CalEvent from "../components/calendar/calevent"
 
 const HomeSection = ({ title, subTitle, text, links, alt }) => {
   return (
@@ -79,6 +81,8 @@ const IndexTemplate = ({ path, pageContext, data }) => {
 
   const { paths } = useSiteMetadata()
 
+  const imageMap = useImageMap(data)
+
   const now = new Date()
 
   const calEvents = []
@@ -92,21 +96,20 @@ const IndexTemplate = ({ path, pageContext, data }) => {
 
     if (calEvent.start >= now) {
       calEvents.push(
-        <Column
-          className="pb-4 mb-4 border-b border-solid border-white"
-          key={i}
-        >
-          <Column className="w-2/10 md:w-1/10 mr-4 ">
-            <CalEventDate event={calEvent} color="white" smallFormat={true} />
+        <Column className="pb-4 mb-6 bg-white p-4 shadow-md" key={i}>
+          <Column className="w-2/10 md:w-1/10 mr-4">
+            <CalEventDate event={calEvent} smallFormat={true} />
           </Column>
 
           <Column className="w-8/10 md:w-9/10">
             <FullDiv>
-              <CalEventDetails event={calEvent} color="white" />
+              <CalEventDetails event={calEvent} imageMap={imageMap} />
             </FullDiv>
           </Column>
         </Column>
       )
+
+      //calEvents.push(<CalEvent key={i} event={calEvent} imageMap={imageMap} />)
     }
 
     if (calEvents.length === nEvents) {
@@ -242,23 +245,21 @@ const IndexTemplate = ({ path, pageContext, data }) => {
       alt={true}
     /> */}
 
-      <div className="bg-blue-800 py-32">
-        <Container>
+      <div className="bg-columbia-light-gray">
+        <Container className="py-32">
           <Column>
-            <Column className="text-white lg:w-3/10">
+            <Column className="lg:w-3/10 mr-8 mb-8">
               <div>
                 <HomeTitle>Upcoming Events</HomeTitle>
                 <p>See upcoming events and seminars of interest.</p>
                 <h3 className="mt-4">
-                  <WhiteIndexLink to={paths.eventsPath}>
+                  <BlueIndexLink to={paths.eventsPath}>
                     See all events
-                  </WhiteIndexLink>
+                  </BlueIndexLink>
                 </h3>
               </div>
             </Column>
-            <div className="lg:w-7/10 border-t border-solid border-white pt-4">
-              {calEvents}
-            </div>
+            <div className="lg:w-7/10">{calEvents}</div>
           </Column>
         </Container>
       </div>
@@ -297,6 +298,26 @@ export const query = graphql`
       childImageSharp {
         fluid(maxWidth: 500) {
           ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
+    files: allFile(
+      filter: {
+        absolutePath: { regex: "/images/people/" }
+        ext: { regex: "/jpg/" }
+      }
+    ) {
+      edges {
+        node {
+          name
+          ext
+          relativePath
+          childImageSharp {
+            fluid(maxWidth: 500) {
+              ...GatsbyImageSharpFluid
+            }
+          }
         }
       }
     }

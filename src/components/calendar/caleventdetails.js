@@ -112,7 +112,7 @@ const CalEventDetails = ({ event, isMobile, color, imageMap }) => {
             <HTMLDiv html={event.excerpt} />
           </h5>
         </div>
-        <div className="py-2">
+        <div className="pt-2 md:pt-0">
           <HeadShotImage name={imageName} imageMap={imageMap} />
         </div>
       </Column>
