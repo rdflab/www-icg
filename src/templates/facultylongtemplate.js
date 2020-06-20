@@ -24,7 +24,7 @@ import DropShadowFrame from "../components/images/dropshadowframe"
 import genericsvg from "../assets/svg/generic.svg"
 import headersvg from "../assets/svg/header.svg"
 import ShareLinks from "../components/share/sharelinks"
-import { PubMedLink, HeadShotImage } from "./facultyshorttemplate"
+import { PubMedLink, HeadShotImage, Team } from "./facultyshorttemplate"
 
 const AwardsGrid = ({ cv, cols, colWidth, headingColor }) => {
   const rows = Math.floor(cv.awards.length / cols) + 1
@@ -269,42 +269,6 @@ const About = ({ person, headshotFile, markdown }) => {
     </SmallContainer>
   )
 }
-
-const Team = ({ labGroupMap }) => (
-  <Container>
-    <FacultyHeading>Meet The Team</FacultyHeading>
-
-    <ShowSmall size="lg">
-      <PeopleGroups
-        groupMap={labGroupMap}
-        cols={2}
-        colWidth="w-9/20"
-        showHeadings={false}
-        showUrl={false}
-      />
-    </ShowSmall>
-
-    <ShowBetween s1="lg" s2="xl">
-      <PeopleGroups
-        groupMap={labGroupMap}
-        cols={3}
-        colWidth="w-3/10"
-        showHeadings={false}
-        showUrl={false}
-      />
-    </ShowBetween>
-
-    <HideSmall size="xl">
-      <PeopleGroups
-        groupMap={labGroupMap}
-        showHeadings={false}
-        showUrl={false}
-      />
-    </HideSmall>
-
-    {/* <PeopleGroups groupMap={labGroupMap} /> faculty={faculty} /> */}
-  </Container>
-)
 
 const FacultyLongTemplate = ({ path, pageContext, data }) => {
   const {

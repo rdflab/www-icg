@@ -281,7 +281,7 @@ const About = ({ person, headshotFile, markdown }) => {
   )
 }
 
-const Team = ({ labGroupMap }) => (
+export const Team = ({ labGroupMap }) => (
   <Container>
     <FacultyHeading>Meet The Team</FacultyHeading>
 
@@ -291,6 +291,7 @@ const Team = ({ labGroupMap }) => (
         cols={2}
         colWidth="w-9/20"
         showHeadings={false}
+        showUrl={false}
       />
     </ShowSmall>
 
@@ -300,11 +301,26 @@ const Team = ({ labGroupMap }) => (
         cols={3}
         colWidth="w-3/10"
         showHeadings={false}
+        showUrl={false}
       />
     </ShowBetween>
 
-    <HideSmall size="xl">
-      <PeopleGroups groupMap={labGroupMap} showHeadings={false} />
+    <ShowBetween s1="xl" s2="2xl">
+      <PeopleGroups
+        groupMap={labGroupMap}
+        cols={4}
+        colWidth="w-11/50"
+        showHeadings={false}
+        showUrl={false}
+      />
+    </ShowBetween>
+
+    <HideSmall size="2xl">
+      <PeopleGroups
+        groupMap={labGroupMap}
+        showHeadings={false}
+        showUrl={false}
+      />
     </HideSmall>
 
     {/* <PeopleGroups groupMap={labGroupMap} /> faculty={faculty} /> */}

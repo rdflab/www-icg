@@ -51,8 +51,8 @@ PeopleGroups.defaultProps = {
   smallView: false,
   showHeadings: true,
   showUrl: true,
-  cols: 4,
-  colWidth: "w-11/50",
+  cols: 5,
+  colWidth: "w-19/100",
   headingColor: "text-columbia-blue",
   context: "default",
 }
