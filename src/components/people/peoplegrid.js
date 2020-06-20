@@ -94,7 +94,7 @@ const PersonCard = ({
   return (
     <div className={`w-full trans-ani mb-4 `}>
       {img !== null && (
-        <div className="overflow-hidden opacity-95 hover:shadow-md hover:opacity-100 rounded-lg trans-ani">
+        <div className="overflow-hidden shadow hover:shadow-md rounded-lg trans-ani">
           {img}
         </div>
       )}

@@ -12,6 +12,7 @@ import Img from "gatsby-image"
 import ShowBetween from "../components/showbetween"
 import useImageMap from "../hooks/imagemap"
 import ShareLinks from "../components/share/sharelinks"
+import getContextName from "../utils/contextname"
 
 const EMPTY_QUERY = ""
 
@@ -43,7 +44,7 @@ const FacultyCard = ({ person, imageMap }) => {
 
   return (
     <div
-      className={`w-full mb-16 trans-ani`}
+      className={`w-full h-full trans-ani`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
@@ -52,20 +53,31 @@ const FacultyCard = ({ person, imageMap }) => {
           className={`trans-ani rounded-lg overflow-hidden ${hover ? "shadow-md" : ""}`}
         > */}
         <div
-          className={`trans-ani rounded-xl overflow-hidden border-b-4 border-solid border-transparent ${
-            hover ? "border-blue-700" : ""
+          className={`relative trans-ani rounded-lg overflow-hidden h-full bg-white shadow ${
+            hover ? "shadow-md" : ""
           }`}
         >
-          <div className={`opacity-95 trans-ani ${hover ? "opacity-100" : ""}`}>
-            {img}
-          </div>
+          <div>{img}</div>
           <div
-            className={`p-2 py-4 trans-ani ${
-              hover ? "text-white bg-blue-500 " : "text"
+            className={`w-full h-full p-4 trans-ani  ${
+              hover ? "text-white-90 bg-blue-500" : ""
             }`}
           >
-            <h4>{`${person.frontmatter.name}, ${person.frontmatter.postNominalLetters}`}</h4>
+            {/* <h5>{`${person.frontmatter.name}, ${person.frontmatter.postNominalLetters}`}</h5> */}
+            {/* <h4>{person.frontmatter.name}</h4> */}
             {/* <h5>{person.frontmatter.postNominalLetters}</h5> */}
+
+            <ShowSmall>
+              <h4>{`${person.frontmatter.name}, ${person.frontmatter.postNominalLetters}`}</h4>
+              <h5>{getContextName("people", person.titleMap)}</h5>
+            </ShowSmall>
+
+            <HideSmall>
+              <div className="font-semibold">{`${person.frontmatter.name}, ${person.frontmatter.postNominalLetters}`}</div>
+              <div className="text-sm">
+                {getContextName("people", person.titleMap)}
+              </div>
+            </HideSmall>
           </div>
         </div>
       </Link>
@@ -98,7 +110,7 @@ const StaffGrid = ({
       }
 
       col.push(
-        <Column className={`md:${colWidth}`} key={`person-${pc}`}>
+        <Column className={`md:${colWidth}  mb-12`} key={`person-${pc}`}>
           {person !== null && (
             <FacultyCard person={person} imageMap={imageMap} />
           )}
@@ -109,7 +121,7 @@ const StaffGrid = ({
     }
 
     ret.push(
-      <Column className="justify-between" key={r}>
+      <Column className="justify-between items-start items-stretch" key={r}>
         {col}
       </Column>
     )
@@ -210,6 +222,7 @@ const AllFacultyTemplate = ({ path, pageContext, data }) => {
       title="Faculty"
       headerComponent={<SiteSearch />}
       menuComponent={<ShareLinks path={path} />}
+      headerFloat={true}
       // titleComponent={
       //   <SearchSummary count={groups.length} single="Lab" plural="Labs" />
       // }
@@ -221,7 +234,7 @@ const AllFacultyTemplate = ({ path, pageContext, data }) => {
         className="my-4"
       /> */}
 
-      <div className="my-8">
+      <div className="pb-32 pt-48 md:pt-56 lg:pt-72 bg-columbia-light-gray">
         <Container>
           {/* <Labs labs={allGroups} /> */}
           {/*<StaffGrid labs={allGroups} /> */}

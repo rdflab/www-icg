@@ -35,7 +35,7 @@ export const formatTime = (event) => {
 
 const CalEvent = ({ event, smallFormat, imageMap }) => {
   return (
-    <div className="w-full bg-white shadow-md hover:shadow-lg rounded-md mb-8 overflow-hidden trans-ani">
+    <div className="w-full bg-white shadow hover:shadow-md hover:border-b-4 rounded-md mb-6 overflow-hidden trans-ani">
       <ShowSmall>
         <Column isMobile={true}>
           <Column isMobile={true} className="w-3/20 ml-4 mt-4">
