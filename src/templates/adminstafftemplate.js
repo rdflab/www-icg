@@ -56,6 +56,7 @@ const AdminStaffTemplate = ({ path, pageContext }) => {
       title="Administration Team"
       headerComponent={<SiteSearch />}
       menuComponent={<ShareLinks path={path} />}
+      headerFloat={true}
       // titleComponent={
       //   <SearchSummary count={groups.length} single="Lab" plural="Labs" />
       // }
@@ -67,7 +68,7 @@ const AdminStaffTemplate = ({ path, pageContext }) => {
         className="my-4"
       /> */}
 
-      <div className="my-8">
+      <div className="pb-32 pt-48 md:pt-56 lg:pt-72 bg-columbia-light-gray">
         <Container>
           <ShowSmall size="lg">
             <PeopleGroups

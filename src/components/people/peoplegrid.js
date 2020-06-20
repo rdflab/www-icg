@@ -9,6 +9,8 @@ import { useStaticQuery, graphql } from "gatsby"
 import useImageMap from "../../hooks/imagemap"
 import Img from "gatsby-image"
 import getContextName from "../../utils/contextname"
+import ShowSmall from "../showsmall"
+import HideSmall from "../hidesmall"
 
 // const PersonCard = ({ person, smallView }) => (
 //   <div
@@ -92,16 +94,19 @@ const PersonCard = ({
   }
 
   return (
-    <div className={`w-full trans-ani mb-4 `}>
-      {img !== null && (
-        <div className="overflow-hidden shadow hover:shadow-md rounded-lg trans-ani">
-          {img}
-        </div>
-      )}
-      <div className="m-1 mb-2 mt-4 text-gray-800">
-        <h4>{link}</h4>
-        <h5>{getContextName(context, person.titleMap)}</h5>
-
+    <div
+      className={`w-full shadow hover:shadow-md bg-white overflow-hidden rounded-lg trans-ani`}
+    >
+      {img !== null && <div className="rounded-lg trans-ani">{img}</div>}
+      <div className="m-4 text-gray-800">
+        <ShowSmall>
+          <h4>{link}</h4>
+          <h5>{getContextName(context, person.titleMap)}</h5>
+        </ShowSmall>
+        <HideSmall>
+          <div className="font-semibold">{link}</div>
+          <div>{getContextName(context, person.titleMap)}</div>
+        </HideSmall>
         {!smallView && (
           <div className="mt-2">
             <ContactInfo person={person} showIcons={false} showUrl={showUrl} />
@@ -207,7 +212,7 @@ const PeopleGrid = ({
       }
 
       col.push(
-        <Column className={`md:${colWidth}`} key={index}>
+        <Column className={`md:${colWidth} mb-8`} key={index}>
           {person !== null && (
             <PersonCard
               person={person}
@@ -230,7 +235,7 @@ const PeopleGrid = ({
 
     if (col.length > 0) {
       ret.push(
-        <Column className="justify-between" key={r}>
+        <Column className="justify-between items-start items-stretch" key={r}>
           {col}
         </Column>
       )

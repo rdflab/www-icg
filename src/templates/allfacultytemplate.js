@@ -110,7 +110,7 @@ const StaffGrid = ({
       }
 
       col.push(
-        <Column className={`md:${colWidth}  mb-12`} key={`person-${pc}`}>
+        <Column className={`md:${colWidth} mb-8`} key={`person-${pc}`}>
           {person !== null && (
             <FacultyCard person={person} imageMap={imageMap} />
           )}
