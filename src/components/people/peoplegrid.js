@@ -76,6 +76,7 @@ const PersonCard = ({
   context,
   isFaculty,
   showUrl,
+  showCard,
 }) => {
   let link
 
@@ -95,10 +96,12 @@ const PersonCard = ({
 
   return (
     <div
-      className={`w-full shadow hover:shadow-md bg-white overflow-hidden rounded-lg trans-ani`}
+      className={`w-full overflow-hidden rounded-lg trans-ani ${
+        showCard ? "shadow hover:shadow-md bg-white" : ""
+      }`}
     >
       {img !== null && <div className="rounded-lg trans-ani">{img}</div>}
-      <div className="m-4 text-gray-800">
+      <div className={`${showCard ? "m-4" : ""} text-gray-800`}>
         <ShowSmall>
           <h4>{link}</h4>
           <h5>{getContextName(context, person.titleMap)}</h5>
@@ -120,6 +123,7 @@ const PersonCard = ({
 PersonCard.defaultProps = {
   context: "default",
   showUrl: true,
+  showCard: true,
 }
 
 const PeopleGrid = ({
@@ -133,6 +137,7 @@ const PeopleGrid = ({
   showPhoto,
   showHeadings,
   showUrl,
+  showCard,
   context,
 }) => {
   const data = useStaticQuery(graphql`
@@ -221,6 +226,7 @@ const PeopleGrid = ({
               context={context}
               isFaculty={name === "Faculty"}
               showUrl={showUrl}
+              showCard={showCard}
             />
           )}
         </Column>
@@ -267,6 +273,7 @@ PeopleGrid.defaultProps = {
   showPhoto: false,
   showHeadings: true,
   showUrl: true,
+  showCard: true,
   headingColor: "text-columbia-blue",
   context: "default",
 }

@@ -12,6 +12,6 @@ import React from "react"
 //   })}, ${date.toLocaleString("default", { year: "numeric" })}`
 // }
 
-const NewsItemDate = ({ item }) => <h4>{item.frontmatter.date}</h4>
+const NewsItemDate = ({ item }) => <h5>{item.frontmatter.date}</h5>
 
 export default NewsItemDate

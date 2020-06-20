@@ -90,17 +90,17 @@ const AdminStaffTemplate = ({ path, pageContext }) => {
             />
           </ShowBetween>
 
-          <ShowBetween s1="xl" s2="2xl">
+          <ShowBetween s1="xl" s2="3xl">
             <PeopleGroups
               groupMap={admin.groupMap}
               showPhoto={true}
               context="admin"
               cols={4}
-              colWidth="w-11/50"
+              colWidth="w-23/100"
             />
           </ShowBetween>
 
-          <HideSmall size="2xl">
+          <HideSmall size="3xl">
             <PeopleGroups
               groupMap={admin.groupMap}
               showPhoto={true}

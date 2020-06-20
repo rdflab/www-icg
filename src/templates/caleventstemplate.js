@@ -234,8 +234,6 @@ const CalEventsTemplate = ({ path, pageContext, data }) => {
                 selectedDays={selectedDays}
                 onDayClick={handleDayClick}
               />
-
-              {/* <CalEventSelector className="mt-5 ml-5" onClick={handleTypeClick} /> */}
             </SideColumn>
           </Column>
         </Container>

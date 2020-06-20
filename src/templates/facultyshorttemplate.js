@@ -292,6 +292,7 @@ export const Team = ({ labGroupMap }) => (
         colWidth="w-9/20"
         showHeadings={false}
         showUrl={false}
+        showCard={false}
       />
     </ShowSmall>
 
@@ -302,6 +303,7 @@ export const Team = ({ labGroupMap }) => (
         colWidth="w-3/10"
         showHeadings={false}
         showUrl={false}
+        showCard={false}
       />
     </ShowBetween>
 
@@ -312,6 +314,7 @@ export const Team = ({ labGroupMap }) => (
         colWidth="w-11/50"
         showHeadings={false}
         showUrl={false}
+        showCard={false}
       />
     </ShowBetween>
 
@@ -320,6 +323,7 @@ export const Team = ({ labGroupMap }) => (
         groupMap={labGroupMap}
         showHeadings={false}
         showUrl={false}
+        showCard={false}
       />
     </HideSmall>
 

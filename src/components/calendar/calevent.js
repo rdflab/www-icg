@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import Column from "../column"
 
 import CalEventDate from "./caleventdate"
@@ -34,8 +34,22 @@ export const formatTime = (event) => {
 }
 
 const CalEvent = ({ event, smallFormat, imageMap }) => {
+  const [hover, setHover] = useState(false)
+
+  const onMouseEnter = (e) => {
+    setHover(true)
+  }
+
+  const onMouseLeave = (e) => {
+    setHover(false)
+  }
+
   return (
-    <div className="w-full bg-white shadow hover:shadow-md hover:border-b-4 rounded-md mb-6 overflow-hidden trans-ani">
+    <div
+      className="w-full bg-white shadow hover:shadow-md  rounded-md mb-6 overflow-hidden trans-ani"
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
       <ShowSmall>
         <Column isMobile={true}>
           <Column isMobile={true} className="w-3/20 ml-4 mt-4">
@@ -51,7 +65,11 @@ const CalEvent = ({ event, smallFormat, imageMap }) => {
           </Column>
           <Column className="w-9/10">
             <FullDiv>
-              <CalEventDetails event={event} imageMap={imageMap} />
+              <CalEventDetails
+                event={event}
+                imageMap={imageMap}
+                hover={hover}
+              />
             </FullDiv>
           </Column>
         </Column>

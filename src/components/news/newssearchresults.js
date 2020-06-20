@@ -1,6 +1,7 @@
 import React from "react"
 import Pagination from "../pagination"
 import NewsItems from "./newsitems"
+import FullDiv from "../fulldiv"
 
 const NewsSearchResults = ({
   news,
@@ -9,7 +10,7 @@ const NewsSearchResults = ({
   recordsPerPage,
   onPageChanged,
 }) => (
-  <div className="mt-8">
+  <FullDiv>
     {/* <SearchSummary count={news.length} single="News Item" plural="News Items" /> */}
 
     <NewsItems news={pagedNews} />
@@ -21,7 +22,7 @@ const NewsSearchResults = ({
       pageNeighbours={1}
       onPageChanged={onPageChanged}
     />
-  </div>
+  </FullDiv>
 )
 
 export default NewsSearchResults

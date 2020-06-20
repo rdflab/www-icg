@@ -12,6 +12,7 @@ const PeopleGroups = ({
   headingColor,
   showPhoto,
   showUrl,
+  showCard,
   context,
 }) => {
   const ret = []
@@ -35,6 +36,7 @@ const PeopleGroups = ({
               context={g}
               showHeadings={showHeadings}
               showUrl={showUrl}
+              showCard={showCard}
             />
           </div>
         )
@@ -51,6 +53,7 @@ PeopleGroups.defaultProps = {
   smallView: false,
   showHeadings: true,
   showUrl: true,
+  showCard: true,
   cols: 5,
   colWidth: "w-19/100",
   headingColor: "text-columbia-blue",

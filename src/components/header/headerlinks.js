@@ -30,14 +30,14 @@ const HeaderLinks = () => {
       </HeaderLink>
     )
 
-    if (i < links.length - 1) {
-      ret.push(<div className="mx-2" key={`spacing-${i}`} />)
-    }
+    // if (i < links.length - 1) {
+    //   ret.push(<div className="mx-2" key={`spacing-${i}`} />)
+    // }
   }
 
   return (
-    <div className="w-full sm:w-8/10 lg:w-6/10 xl:w-4/10">
-      <Column className="justify-between">{ret}</Column>
+    <div className="w-full">
+      <Column className="justify-start">{ret}</Column>
     </div>
   )
 }

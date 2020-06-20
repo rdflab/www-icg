@@ -6,6 +6,7 @@ module.exports = {
     extend: {
       screens: {
         "2xl": "1600px",
+        "3xl": "1800px",
       },
       width: {
         "1/10": "10%",
@@ -40,10 +41,14 @@ module.exports = {
         "11/50": "22%",
         "12/50": "24%",
         "19/100": "19%",
+        "23/100": "23%",
         "64": "16rem",
         "72": "18rem",
         "80": "20rem",
         "96": "24rem",
+      },
+      minWidth: {
+        "48": "12rem",
       },
       height: {
         "1/2": "50%",
@@ -51,6 +56,9 @@ module.exports = {
         "72": "18rem",
         "80": "20rem",
         "96": "24rem",
+      },
+      minHeight: {
+        "48": "12rem",
       },
       padding: {
         "64": "16rem",

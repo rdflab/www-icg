@@ -17,12 +17,13 @@ import GrayLinkExt from "../links/graylinkext"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import HideSmall from "../hidesmall"
 
-export const HeadShotImage = ({ name, imageMap }) => {
+export const HeadShotImage = ({ name, imageMap, hover }) => {
   if (name !== null && name in imageMap) {
     return (
       <Img
         fluid={imageMap[name].childImageSharp.fluid}
-        className="w-48 h-48 opacity-95 hover:opacity-100 hover:shadow-md trans-ani"
+        className="w-48 h-48 trans-ani"
+        style={{ transform: hover ? "scale(1.08)" : "scale(1.02)" }}
       />
     )
   } else {
@@ -30,7 +31,11 @@ export const HeadShotImage = ({ name, imageMap }) => {
   }
 }
 
-const CalEventDetails = ({ event, isMobile, color, imageMap }) => {
+HeadShotImage.defaultProps = {
+  hover: false,
+}
+
+const CalEventDetails = ({ event, isMobile, color, imageMap, hover }) => {
   const { paths } = useSiteMetadata()
 
   const eventType = getEventType(event)
@@ -124,8 +129,11 @@ const CalEventDetails = ({ event, isMobile, color, imageMap }) => {
           <GrayLinkExt to={event.icsFile}>Add To Calendar</GrayLinkExt>
         </div>
       </FullDiv>
-      <HideSmall size="lg" className="pt-2 md:pt-0 w-48 h-48">
-        <HeadShotImage name={imageName} imageMap={imageMap} />
+      <HideSmall
+        size="lg"
+        className="pt-2 md:pt-0 min-w-48 min-h-48 overflow-hidden"
+      >
+        <HeadShotImage name={imageName} imageMap={imageMap} hover={hover} />
       </HideSmall>
     </Column>
   )
@@ -137,4 +145,5 @@ CalEventDetails.defaultProps = {
   isMobile: false,
   color: "black",
   imageMap: {},
+  hover: false,
 }

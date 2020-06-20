@@ -2,10 +2,13 @@ import React, { useState } from "react"
 import CrumbTitleLayout from "../components/crumbtitlelayout"
 import SiteSearch from "../components/search/sitesearch"
 import NewsSearchResults from "../components/news/newssearchresults"
+import SmallContainer from "../components/smallcontainer"
 import Container from "../components/container"
 import ShareLinks from "../components/share/sharelinks"
-// import MainColumn from "../components/maincolumn"
-// import SideColumn from "../components/sidecolumn"
+import Column from "../components/column"
+import MainColumn from "../components/maincolumn"
+import SideColumn from "../components/sidecolumn"
+import DayPicker from "react-day-picker"
 
 const EMPTY_QUERY = ""
 
@@ -17,6 +20,7 @@ const NewsTemplate = ({ path, pageContext }) => {
   const [page, setPage] = useState(1)
   const [recordsPerPage, setRecordsPerPage] = useState(20)
   const [filterYears, setFilterYears] = useState([])
+  const [selectedDays, setSelectedDays] = useState([])
 
   // useEffect(() => {
   //   for (let item of allNews) {
@@ -58,6 +62,8 @@ const NewsTemplate = ({ path, pageContext }) => {
     setPage(1)
   }
 
+  const handleDayClick = (day, { selected }) => {}
+
   const hasSearchResults = query !== EMPTY_QUERY
   let news = hasSearchResults ? filteredNews : allNews
 
@@ -91,21 +97,30 @@ const NewsTemplate = ({ path, pageContext }) => {
       // }
       headerComponent={<SiteSearch />}
       menuComponent={<ShareLinks path={path} />}
+      headerFloat={true}
+      backgroundColor="bg-columbia-light-gray"
     >
-      <Container className="my-16">
-        {/* <HideSmall>
-          <Column isVCentered={true} isCentered={true}>
-              <YearSelector onClick={handleClick} />
+      <div className="pt-48 md:pt-64 lg:pt-80">
+        <Container>
+          <Column>
+            <MainColumn className="md:mr-8">
+              <NewsSearchResults
+                news={yearFilteredNews}
+                pagedNews={pagedNews}
+                page={page}
+                recordsPerPage={recordsPerPage}
+                onPageChanged={onPageChanged}
+              />
+            </MainColumn>
+            <SideColumn>
+              <DayPicker
+                selectedDays={selectedDays}
+                onDayClick={handleDayClick}
+              />
+            </SideColumn>
           </Column>
-        </HideSmall> */}
-        <NewsSearchResults
-          news={yearFilteredNews}
-          pagedNews={pagedNews}
-          page={page}
-          recordsPerPage={recordsPerPage}
-          onPageChanged={onPageChanged}
-        />
-      </Container>
+        </Container>
+      </div>
     </CrumbTitleLayout>
   )
 }

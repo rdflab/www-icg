@@ -466,6 +466,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             html
             frontmatter {
               title
+              category
               date(formatString: "MMM DD, YYYY")
               year: date(formatString: "YYYY")
               people

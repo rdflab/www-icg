@@ -37,7 +37,8 @@ const FacultyCard = ({ person, imageMap }) => {
     img = (
       <Img
         fluid={imageMap[person.frontmatter.id].childImageSharp.fluid}
-        className="w-full h-full"
+        className="trans-ani"
+        style={{ transform: hover ? "scale(1.08)" : "scale(1.02)" }}
       />
     )
   }
@@ -57,7 +58,7 @@ const FacultyCard = ({ person, imageMap }) => {
             hover ? "shadow-md" : ""
           }`}
         >
-          <div>{img}</div>
+          <div className="overflow-hidden">{img}</div>
           <div
             className={`w-full h-full p-4 trans-ani  ${
               hover ? "text-white-90 bg-blue-500" : ""
