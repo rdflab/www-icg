@@ -71,7 +71,7 @@ const HeaderWithNav = ({ content, menuComponent, onMenuButtonClick }) => (
 
 HeaderWithNav.defaultProps = {
   content: null,
-  menuContent: null,
+  menuComponent: null,
   onMenuButtonClick: null,
 }
 

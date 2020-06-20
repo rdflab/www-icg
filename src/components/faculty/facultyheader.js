@@ -38,7 +38,7 @@ const FacultyHeader = ({ person, title, heading, subHeading, path }) => {
       <div className="w-full md:w-5/10 lg:w-4/10 2xl:w-7/20 bg-columbia-medium-blue p-8 md:pr-40 min-h-full text-xl">
         <div className="uppercase font-light">Contact</div>
 
-        <div className="font-semibold mt-2">
+        <div className="tracking-wide mt-2">
           <ContactInfo person={person} color="white" showIcons={false} />
         </div>
       </div>

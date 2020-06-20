@@ -47,7 +47,7 @@ const CrumbTitleLayout = ({
           crumbs={crumbs}
           title={title}
           subTitle={subTitle}
-          content={headerComponent}
+          headerComponent={headerComponent}
           menuComponent={menuComponent}
           onMenuButtonClick={onMenuButtonClick}
         >

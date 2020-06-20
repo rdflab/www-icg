@@ -9,6 +9,8 @@ import React from "react"
 import PublicationList from "./publicationlist"
 import Column from "../column"
 import FullDiv from "../fulldiv"
+import HideSmall from "../hidesmall"
+import ShowSmall from "../showsmall"
 
 const PublicationYears = ({ publications, sectionMode, showLabLink }) => {
   let yearMap = new Map()
@@ -32,8 +34,13 @@ const PublicationYears = ({ publications, sectionMode, showLabLink }) => {
         .map((year, index) => {
           return (
             <Column className="mb-8" key={year}>
-              <Column className="w-full md:w-1/12 justify-center md:mr-4">
-                <h4 className="text-blue-500">{year}</h4>
+              <Column className="justify-center md:mr-4">
+                <ShowSmall className="text-white-95 bg-blue-300 border-b-4 border-solid border-blue-500 p-2 mb-4">
+                  <h4>{year}</h4>
+                </ShowSmall>
+                <HideSmall className="w-24 h-24 bg-blue-300 border-b-4 border-solid border-blue-500 text-center py-8 text-white-95">
+                  <h4>{year}</h4>
+                </HideSmall>
               </Column>
               <Column className="w-full md:w-11/12">
                 <FullDiv>
