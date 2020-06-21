@@ -236,15 +236,15 @@ a:hover {
 }
 
 .header-link:hover {
-  @apply opacity-100; //columbia-secondary-blue;
+  @apply opacity-95; //columbia-secondary-blue;
 }
 
 .header-link-active {
-  @apply header-link-underline border-white opacity-90; //columbia-secondary-blue;
+  @apply header-link-underline border-white opacity-95; //columbia-secondary-blue;
 }
 
 .header-link-active:hover {
-  @apply border-white opacity-90; //columbia-secondary-blue; 
+  @apply border-white opacity-95; //columbia-secondary-blue; 
 }
 
 

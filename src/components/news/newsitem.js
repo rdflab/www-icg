@@ -8,7 +8,7 @@ import WhiteLink from "../links/whitelink"
 
 const NewsItem = ({ item }) => {
   return (
-    <article className="w-full mb-8 bg-columbia-secondary-blue shadow hover:shadow-md rounded text-white overflow-hidden trans-ani">
+    <article className="w-full mb-8 bg-columbia-secondary-blue shadow hover:shadow-md rounded-md text-white overflow-hidden trans-ani">
       <Column className="justify-between">
         <div className="p-8 w-full">
           <Column className="justify-between uppercase text-white-80">

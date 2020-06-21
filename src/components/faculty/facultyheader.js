@@ -36,7 +36,7 @@ const FacultyHeader = ({ person, title, heading, subHeading, path }) => {
       </div>
 
       <div className="w-full md:w-5/10 lg:w-4/10 2xl:w-8/20 bg-columbia-medium-blue p-8 md:pr-20 xl:pr-32 2xl:pr-40 3xl:pr-56 min-h-full text-xl">
-        <div className="uppercase font-light">Contact</div>
+        <h5 className="uppercase font-light">Contact</h5>
 
         <div className="tracking-wide mt-2">
           <ContactInfo person={person} color="white" showIcons={false} />
@@ -47,7 +47,7 @@ const FacultyHeader = ({ person, title, heading, subHeading, path }) => {
 }
 
 FacultyHeader.defaultProps = {
-  title: null, //"Faculty",
+  title: "Faculty",
   heading: null,
   subHeading: null,
   path: "",

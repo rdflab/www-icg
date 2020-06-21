@@ -281,7 +281,7 @@ const IndexTemplate = ({ path, pageContext, data }) => {
         {/* <BlueIndexLink to="/research-areas/publications">
           All Publications
         </BlueIndexLink> */}
-        <div className="text-center">
+        <div className="text-center mt-16">
           <Button to={paths.publicationsPath}>All Publications</Button>
         </div>
       </HomeDiv>

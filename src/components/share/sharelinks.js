@@ -31,7 +31,7 @@ const ShareLinks = ({ color, size, opacity, path }) => {
               />
             </LinkExt>
           </div>
-          <div className="ml-4">
+          <div className="ml-5">
             <LinkExt to={`https://twitter.com/share?ref_src=${href}`}>
               <img
                 src={TwitterSvgWhite}
@@ -40,7 +40,7 @@ const ShareLinks = ({ color, size, opacity, path }) => {
               />
             </LinkExt>
           </div>
-          <div className="ml-4">
+          <div className="ml-5">
             <LinkExt
               to={`https://www.linkedin.com/sharing/share-offsite/?url=${href}`}
             >
@@ -65,7 +65,7 @@ const ShareLinks = ({ color, size, opacity, path }) => {
               />
             </LinkExt>
           </div>
-          <div className="ml-4">
+          <div className="ml-5">
             <LinkExt to={`https://twitter.com/share?ref_src=${href}`}>
               <img
                 src={TwitterSvg}
@@ -74,7 +74,7 @@ const ShareLinks = ({ color, size, opacity, path }) => {
               />
             </LinkExt>
           </div>
-          <div className="ml-4">
+          <div className="ml-5">
             <LinkExt
               to={`https://www.linkedin.com/sharing/share-offsite/?url=${href}`}
             >
@@ -92,8 +92,8 @@ const ShareLinks = ({ color, size, opacity, path }) => {
 
 ShareLinks.defaultProps = {
   color: "white",
-  opacity: [60, 100],
-  size: "w-6",
+  opacity: [50, 95],
+  size: "w-8",
   path: "",
 }
 

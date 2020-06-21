@@ -35,10 +35,10 @@ const PublicationYears = ({ publications, sectionMode, showLabLink }) => {
           return (
             <Column className="mb-8" key={year}>
               <Column className="justify-center md:mr-4">
-                <ShowSmall className="text-white-95 bg-blue-300 border-b-4 border-solid border-blue-500 p-2 mb-4">
+                <ShowSmall className="text-white-95 bg-blue-400 p-2 mb-4">
                   <h4>{year}</h4>
                 </ShowSmall>
-                <HideSmall className="w-24 h-24 bg-blue-300 border-b-4 border-solid border-blue-500 text-center py-8 text-white-95">
+                <HideSmall className="w-24 h-24 bg-blue-400 text-center py-8 text-white-95">
                   <h4>{year}</h4>
                 </HideSmall>
               </Column>

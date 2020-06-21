@@ -12,6 +12,8 @@ import DayPicker from "react-day-picker"
 
 const EMPTY_QUERY = ""
 
+// nav="News"
+
 const NewsTemplate = ({ path, pageContext }) => {
   const { allNews } = pageContext
 
@@ -62,7 +64,11 @@ const NewsTemplate = ({ path, pageContext }) => {
     setPage(1)
   }
 
-  const handleDayClick = (day, { selected }) => {}
+  const handleDayClick = (day, { selected }) => {
+    setQuery("")
+    setSelectedDays(selected ? [] : [day])
+    setPage(1)
+  }
 
   const hasSearchResults = query !== EMPTY_QUERY
   let news = hasSearchResults ? filteredNews : allNews
@@ -77,14 +83,56 @@ const NewsTemplate = ({ path, pageContext }) => {
     yearFilteredNews = news
   }
 
+  let dayFilteredNews = []
+
+  if (selectedDays.length > 0) {
+    const day = parseInt(
+      selectedDays[0].toLocaleString("default", { day: "numeric" })
+    )
+    const month = parseInt(
+      selectedDays[0].toLocaleString("default", { month: "numeric" })
+    )
+    const year = parseInt(
+      selectedDays[0].toLocaleString("default", { year: "numeric" })
+    )
+
+    dayFilteredNews = yearFilteredNews.filter((e) => {
+      return (
+        parseInt(e.frontmatter.day) === day &&
+        parseInt(e.frontmatter.monthNum) === month &&
+        parseInt(e.frontmatter.year) === year
+      )
+    })
+  } else {
+    dayFilteredNews = yearFilteredNews
+
+    // const now = new Date()
+
+    // const day = parseInt(now.toLocaleString("default", { day: "numeric" }))
+    // const month = parseInt(
+    //   now.toLocaleString("default", { month: "numeric" })
+    // )
+    // const year = parseInt(now.toLocaleString("default", { year: "numeric" }))
+
+    // dayFilteredNews = yearFilteredNews.filter((e) => {
+    //   const t1 =
+    //     parseInt(e.frontmatter.day) >= day &&
+    //     parseInt(e.frontmatter.monthNum) === month &&
+    //     parseInt(e.frontmatter.year) === year
+    //   const t2 =
+    //     parseInt(e.frontmatter.monthNum) > month &&
+    //     parseInt(e.frontmatter.year) >= year
+    //   return t1 || t2
+    // })
+  }
+
   const offset = (page - 1) * recordsPerPage
-  let pagedNews = yearFilteredNews.slice(offset, offset + recordsPerPage)
+  let pagedNews = dayFilteredNews.slice(offset, offset + recordsPerPage)
 
   return (
     <CrumbTitleLayout
       path={path}
       crumbs={[["News", "/news"]]}
-      nav="News"
       title="Institute News"
       // titleComponent={
       //   <HideSmall>
@@ -105,7 +153,7 @@ const NewsTemplate = ({ path, pageContext }) => {
           <Column>
             <MainColumn className="md:mr-8">
               <NewsSearchResults
-                news={yearFilteredNews}
+                news={dayFilteredNews}
                 pagedNews={pagedNews}
                 page={page}
                 recordsPerPage={recordsPerPage}

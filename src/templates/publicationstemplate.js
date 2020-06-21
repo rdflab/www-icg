@@ -13,6 +13,8 @@ import ShareLinks from "../components/share/sharelinks"
 
 const EMPTY_QUERY = ""
 
+// nav="Publications"
+
 const PublicationsTemplate = ({ path, pageContext }) => {
   const {
     title,
@@ -122,7 +124,6 @@ const PublicationsTemplate = ({ path, pageContext }) => {
       path={path}
       crumbs={crumbs}
       selectedTab={selectedTab}
-      nav="Publications"
       title={title}
       headerComponent={<SiteSearch />}
       menuComponent={<ShareLinks path={path} />}

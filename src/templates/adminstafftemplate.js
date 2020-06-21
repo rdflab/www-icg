@@ -48,11 +48,12 @@ const AdminStaffTemplate = ({ path, pageContext }) => {
   // const offset = (page - 1) * recordsPerPage
   // let pagedGroups = groups.slice(offset, offset + recordsPerPage)
 
+  // nav="Administration"
+
   return (
     <CrumbTitleLayout
       path={path}
       crumbs={crumbs}
-      nav="Administration"
       title="Administration Team"
       headerComponent={<SiteSearch />}
       menuComponent={<ShareLinks path={path} />}

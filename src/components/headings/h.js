@@ -7,7 +7,7 @@ import ShareLinks from "../share/sharelinks"
 
 export const TitleDiv = ({ title, heading, subHeading }) => (
   <div>
-    {title !== "" && <div className="uppercase">{title}</div>}
+    {title !== "" && <h5 className="uppercase mb-2">{title}</h5>}
     {heading !== "" && <h1>{heading}</h1>}
     {subHeading !== "" && <h3>{subHeading}</h3>}
   </div>
@@ -23,9 +23,7 @@ const H = ({
   className,
 }) => {
   return (
-    <div
-      className={`text-white w-full bg-columbia-secondary-blue-90 ${className}`}
-    >
+    <div className={`text-white w-full bg-columbia-blue-90 ${className}`}>
       <Container>
         <ShowSmall className="py-2">
           <TitleDiv title={title} heading={heading} subHeading={subHeading} />

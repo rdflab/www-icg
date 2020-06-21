@@ -12,12 +12,14 @@ import "../../node_modules/react-day-picker/lib/style.css"
 import "../components/calendar/calendar.scss"
 import HideSmall from "../components/hidesmall"
 import Container from "../components/container"
-import CalEventSelector from "../components/calendar/caleventselector"
+//import CalEventSelector from "../components/calendar/caleventselector"
 import ShareLinks from "../components/share/sharelinks"
 import useImageMap from "../hooks/imagemap"
 import ShowSmall from "../components/showsmall"
 
 const EMPTY_QUERY = ""
+
+// nav="Events"
 
 const CalEventsTemplate = ({ path, pageContext, data }) => {
   const { allCalEvents } = pageContext
@@ -156,7 +158,6 @@ const CalEventsTemplate = ({ path, pageContext, data }) => {
   return (
     <CrumbTitleLayout
       path={path}
-      nav="Events"
       title="Institute Events"
       crumbs={[["Events", "/events"]]}
       headerComponent={<SiteSearch />}

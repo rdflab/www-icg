@@ -3,6 +3,23 @@ import getEventType from "./caleventype"
 import HideSmall from "../hidesmall"
 import ShowSmall from "../showsmall"
 
+const Day = ({ event, dayColor, dayBgColor }) => (
+  // <div className="shadow">
+  <div>
+    <div
+      className={`uppercase text-sm text-center w-full p-1 ${dayColor} ${dayBgColor}`}
+    >
+      {event.frontmatter.month}
+    </div>
+    <div className="uppercase font-light text-center text-2xl w-full">
+      {event.frontmatter.day}
+    </div>
+    <div className={`uppercase text-sm pb-2 text-center w-full`}>
+      {event.frontmatter.weekday}
+    </div>
+  </div>
+)
+
 const CalEventDate = ({ event, color, smallFormat }) => {
   const eventType = getEventType(event)
 
@@ -45,33 +62,11 @@ const CalEventDate = ({ event, color, smallFormat }) => {
           </div>
         )}
         {!smallFormat && (
-          <>
-            <div className="uppercase text-sm text-center w-full">
-              {event.frontmatter.month}
-            </div>
-            <div className="uppercase font-light text-center text-3xl w-full">
-              {event.frontmatter.day}
-            </div>
-            <div
-              className={`uppercase text-sm p-1 text-center w-full ${dayColor} ${dayBgColor}`}
-            >
-              {event.frontmatter.weekday}
-            </div>
-          </>
+          <Day event={event} dayColor={dayColor} dayBgColor={dayBgColor} />
         )}
       </ShowSmall>
-      <HideSmall className={`text-center mb-4 w-full ${textColor}`}>
-        <div className="uppercase text-sm text-center w-full">
-          {event.frontmatter.month}
-        </div>
-        <div className="uppercase font-light text-center text-3xl w-full">
-          {event.frontmatter.day}
-        </div>
-        <div
-          className={`uppercase text-sm p-1 text-center w-full ${dayColor} ${dayBgColor}`}
-        >
-          {event.frontmatter.weekday}
-        </div>
+      <HideSmall className={`text-center mb-4 w-full`}>
+        <Day event={event} dayColor={dayColor} dayBgColor={dayBgColor} />
       </HideSmall>
     </>
   )

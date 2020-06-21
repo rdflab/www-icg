@@ -4,12 +4,13 @@ import BlueLink from "../components/links/bluelink"
 import SiteSearch from "../components/search/sitesearch"
 import Container from "../components/container"
 
+// nav="Administration"
+
 const AdminTemplate = ({ path, pageContext }) => {
   return (
     <CrumbTitleLayout
       path={path}
       crumbs={[["Administration", "/administration"]]}
-      nav="Administration"
       title="Administration"
       headerComponent={<SiteSearch />}
       backgroundColor="bg-white"

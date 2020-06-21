@@ -23,7 +23,7 @@ export const HeadShotImage = ({ name, imageMap, hover }) => {
       <Img
         fluid={imageMap[name].childImageSharp.fluid}
         className="w-48 h-48 trans-ani"
-        style={{ transform: hover ? "scale(1.08)" : "scale(1.02)" }}
+        style={{ transform: hover ? "scale(1.06)" : "scale(1.02)" }}
       />
     )
   } else {

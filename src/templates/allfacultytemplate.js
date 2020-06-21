@@ -38,7 +38,7 @@ const FacultyCard = ({ person, imageMap }) => {
       <Img
         fluid={imageMap[person.frontmatter.id].childImageSharp.fluid}
         className="trans-ani"
-        style={{ transform: hover ? "scale(1.08)" : "scale(1.02)" }}
+        style={{ transform: hover ? "scale(1.06)" : "scale(1.02)" }}
       />
     )
   }
@@ -215,11 +215,12 @@ const AllFacultyTemplate = ({ path, pageContext, data }) => {
   // const offset = (page - 1) * recordsPerPage
   // let pagedGroups = groups.slice(offset, offset + recordsPerPage)
 
+  // nav="For Research Scientists"
+
   return (
     <CrumbTitleLayout
       path={path}
       crumbs={crumbs}
-      nav="For Research Scientists"
       title="Faculty"
       headerComponent={<SiteSearch />}
       menuComponent={<ShareLinks path={path} />}
