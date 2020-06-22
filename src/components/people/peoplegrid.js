@@ -96,7 +96,7 @@ const PersonCard = ({
   }
 
   return (
-    <Card className="h-full">
+    <Card className="h-full" showCard={showCard}>
       {img !== null && <div className="rounded-lg trans-ani">{img}</div>}
       <div className={`${showCard ? "m-4" : ""} text-gray-800`}>
         <ShowSmall>
