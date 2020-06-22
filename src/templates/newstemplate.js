@@ -136,7 +136,7 @@ const NewsTemplate = ({ path, pageContext }) => {
     <CrumbTitleLayout
       path={path}
       crumbs={crumbs}
-      title="Institute News"
+      title="News"
       // titleComponent={
       //   <HideSmall>
       //     <SearchSummary

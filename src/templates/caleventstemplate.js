@@ -160,7 +160,7 @@ const CalEventsTemplate = ({ path, pageContext, data }) => {
   return (
     <CrumbTitleLayout
       path={path}
-      title="Institute Events"
+      title="Events"
       crumbs={crumbs}
       headerComponent={<SiteSearch />}
       menuComponent={<ShareLinks path={path} />}

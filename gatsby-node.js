@@ -986,7 +986,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     path: paths.publicationsPath,
     component: publicationsTemplate,
     context: {
-      title: `Institute Publications`,
+      title: `Publications`,
       crumbs: [["Publications", paths.publicationsPath]],
       selectedTab: "Publications",
       allPublications: allPublications,
