@@ -34,7 +34,7 @@ const PublicationYears = ({ publications, sectionMode, showLabLink }) => {
         .map((year, index) => {
           return (
             <Column className="mb-8" key={year}>
-              <Column className="justify-center md:mr-4">
+              <Column className="justify-center">
                 <ShowSmall className="text-white-95 bg-blue-400 p-2 mb-4">
                   <h4>{year}</h4>
                 </ShowSmall>
@@ -42,7 +42,7 @@ const PublicationYears = ({ publications, sectionMode, showLabLink }) => {
                   <h4>{year}</h4>
                 </HideSmall>
               </Column>
-              <Column className="w-full md:w-11/12">
+              <Column className="w-full md:w-11/12 bg-white border border-solid border-gray 300 p-6">
                 <FullDiv>
                   <PublicationList
                     publications={yearMap.get(year)}

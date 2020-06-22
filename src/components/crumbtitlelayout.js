@@ -24,7 +24,7 @@ const CrumbTitleLayout = ({
   crumbs,
   headerFloat,
   crumbsFloat,
-  backgroundColor,
+  bgColorClass,
 }) => {
   const [menuVisible, setMenuVisible] = useState(false)
 
@@ -54,7 +54,7 @@ const CrumbTitleLayout = ({
           <H title={nav} heading={title} subHeading={subTitle} path={path} />
         </FloatingHeader>
 
-        <div className={`relative min-h-screen ${backgroundColor}`}>
+        <div className={`relative min-h-screen ${bgColorClass}`}>
           {children}
         </div>
       </MenuLayout>
@@ -66,7 +66,7 @@ const CrumbTitleLayout = ({
         subTitle={subTitle}
         headerComponent={headerComponent}
         menuComponent={menuComponent}
-        backgroundColor={backgroundColor}
+        bgColorClass={bgColorClass}
       >
         <div
           className={`w-full shadow-md ${crumbsFloat ? "absolute z-50" : ""}`}
@@ -78,7 +78,7 @@ const CrumbTitleLayout = ({
           <H title={nav} heading={title} subHeading={subTitle} path={path} />
         </div>
 
-        <div className={`relative min-h-screen ${backgroundColor}`}>
+        <div className={`relative min-h-screen ${bgColorClass}`}>
           {children}
         </div>
       </HeaderLayout>
@@ -92,10 +92,10 @@ const CrumbTitleLayout = ({
 //       menuComponent={menuComponent}
 //       crumbs={crumbs}
 //       crumbsFloat={crumbsFloat}
-//       backgroundColor={backgroundColor}
+//       bgColorClass={bgColorClass}
 //     >
 //       <H title={nav} heading={title} path={path} />
-//       <div className={`${backgroundColor}`}>{children}</div>
+//       <div className={`${bgColorClass}`}>{children}</div>
 //     </CrumbLayout>
 //   )
 // }
@@ -112,7 +112,7 @@ CrumbTitleLayout.defaultProps = {
   titleComponent: null,
   headerComponent: null,
   menuComponent: null,
-  backgroundColor: "bg-white",
+  bgColorClass: "bg-white",
 }
 
 export default CrumbTitleLayout

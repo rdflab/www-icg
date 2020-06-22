@@ -11,6 +11,7 @@ import Img from "gatsby-image"
 import getContextName from "../../utils/contextname"
 import ShowSmall from "../showsmall"
 import HideSmall from "../hidesmall"
+import Card from "../card"
 
 // const PersonCard = ({ person, smallView }) => (
 //   <div
@@ -95,11 +96,7 @@ const PersonCard = ({
   }
 
   return (
-    <div
-      className={`w-full overflow-hidden rounded-lg trans-ani ${
-        showCard ? "shadow hover:shadow-md bg-white" : ""
-      }`}
-    >
+    <Card className="h-full">
       {img !== null && <div className="rounded-lg trans-ani">{img}</div>}
       <div className={`${showCard ? "m-4" : ""} text-gray-800`}>
         <ShowSmall>
@@ -116,7 +113,7 @@ const PersonCard = ({
           </div>
         )}
       </div>
-    </div>
+    </Card>
   )
 }
 

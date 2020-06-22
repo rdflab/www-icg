@@ -55,7 +55,8 @@ library.add(
   faChevronUp,
   faChevronDown,
   faChevronRight,
-  faCalendar
+  faCalendar,
+  faChevronRight
 )
 
 if (typeof window !== "undefined") {

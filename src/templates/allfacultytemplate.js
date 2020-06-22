@@ -13,6 +13,9 @@ import ShowBetween from "../components/showbetween"
 import useImageMap from "../hooks/imagemap"
 import ShareLinks from "../components/share/sharelinks"
 import getContextName from "../utils/contextname"
+import FlHdDiv from "../components/flhddiv"
+import Breadcrumb from "../components/breadcrumb2"
+import Card from "../components/card"
 
 const EMPTY_QUERY = ""
 
@@ -53,11 +56,7 @@ const FacultyCard = ({ person, imageMap }) => {
         {/* <div
           className={`trans-ani rounded-lg overflow-hidden ${hover ? "shadow-md" : ""}`}
         > */}
-        <div
-          className={`relative trans-ani rounded-lg overflow-hidden h-full bg-white shadow ${
-            hover ? "shadow-md" : ""
-          }`}
-        >
+        <Card className="h-full">
           <div className="overflow-hidden">{img}</div>
           <div
             className={`w-full h-full p-4 trans-ani  ${
@@ -80,7 +79,7 @@ const FacultyCard = ({ person, imageMap }) => {
               </div>
             </HideSmall>
           </div>
-        </div>
+        </Card>
       </Link>
     </div>
   )
@@ -236,8 +235,9 @@ const AllFacultyTemplate = ({ path, pageContext, data }) => {
         className="my-4"
       /> */}
 
-      <div className="pb-32 pt-48 md:pt-56 lg:pt-72 bg-columbia-light-gray">
+      <FlHdDiv className="bg-columbia-light-gray">
         <Container>
+          <Breadcrumb crumbs={crumbs} />
           {/* <Labs labs={allGroups} /> */}
           {/*<StaffGrid labs={allGroups} /> */}
 
@@ -281,7 +281,7 @@ const AllFacultyTemplate = ({ path, pageContext, data }) => {
             />
           </HideSmall>
         </Container>
-      </div>
+      </FlHdDiv>
     </CrumbTitleLayout>
   )
 }

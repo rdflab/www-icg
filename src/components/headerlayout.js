@@ -14,7 +14,7 @@ const HeaderLayout = ({
   title,
   headerComponent,
   menuComponent,
-  backgroundColor,
+  bgColorClass,
   children,
 }) => {
   const [menuVisible, setMenuVisible] = useState(false)
@@ -39,7 +39,7 @@ const HeaderLayout = ({
         onMenuButtonClick={onMenuButtonClick}
       />
 
-      <div className={`${backgroundColor}`}></div>
+      <div className={`${bgColorClass}`}></div>
       <main>{children}</main>
     </MenuLayout>
   )
@@ -52,7 +52,7 @@ HeaderLayout.defaultProps = {
   menuComponent: null,
   floatHeader: false,
   floatHeaderLinks: false,
-  backgroundColor: "bg-white",
+  bgColorClass: "bg-white",
 }
 
 export default HeaderLayout

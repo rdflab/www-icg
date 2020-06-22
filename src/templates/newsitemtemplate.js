@@ -10,6 +10,11 @@ import Collapsible from "../components/collapsible"
 import Container from "../components/container"
 import FullDiv from "../components/fulldiv"
 import ShareLinks from "../components/share/sharelinks"
+import FlHdDiv from "../components/flhddiv"
+import Breadcrumb from "../components/breadcrumb2"
+import SiteSearch from "../components/search/sitesearch"
+
+// nav="News Article"
 
 const NewsItemTemplate = ({ path, pageContext }) => {
   const { item, allNews } = pageContext
@@ -25,31 +30,35 @@ const NewsItemTemplate = ({ path, pageContext }) => {
   // }
 
   const title = item.frontmatter.title
+  const crumbs = [["News", "/news"]]
 
   return (
     <CrumbTitleLayout
       path={path}
-      nav="News Article"
       title={title}
-      crumbs={[["News", "/news"]]}
+      headerComponent={<SiteSearch />}
       menuComponent={<ShareLinks path={path} />}
+      headerFloat={true}
     >
-      <Container className="my-16">
-        <Column>
-          <MainColumn className="mr-16">
-            <FullDiv>
-              <NewsItemDate item={item} />
+      <FlHdDiv>
+        <Container>
+          <Breadcrumb crumbs={crumbs} />
+          <Column>
+            <MainColumn className="mr-16">
+              <FullDiv>
+                <NewsItemDate item={item} />
 
-              <NewsContent html={item.html} />
-            </FullDiv>
-          </MainColumn>
-          <SideColumn>
-            <Collapsible title="Recent News">
-              <SideBarNews allNews={allNews} />
-            </Collapsible>
-          </SideColumn>
-        </Column>
-      </Container>
+                <NewsContent html={item.html} />
+              </FullDiv>
+            </MainColumn>
+            <SideColumn>
+              <Collapsible title="Recent News">
+                <SideBarNews allNews={allNews} />
+              </Collapsible>
+            </SideColumn>
+          </Column>
+        </Container>
+      </FlHdDiv>
     </CrumbTitleLayout>
   )
 }

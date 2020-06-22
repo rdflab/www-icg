@@ -13,7 +13,7 @@ const AdminTemplate = ({ path, pageContext }) => {
       crumbs={[["Administration", "/administration"]]}
       title="Administration"
       headerComponent={<SiteSearch />}
-      backgroundColor="bg-white"
+      bgColorClass="bg-white"
     >
       <Container className="py-8">
         <div className="lg:w-1/2 border-t-4 border-b-4 border-solid border-gray-400 py-4 my-8">

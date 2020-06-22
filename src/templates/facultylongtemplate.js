@@ -7,11 +7,7 @@ import SelectedPublications from "../components/publication/selectedpublications
 import HTMLDiv from "../components/htmldiv"
 import SiteSearch from "../components/search/sitesearch"
 import Container from "../components/container"
-import PeopleGroups from "../components/people/peoplegroups"
 import Img from "gatsby-image"
-import ShowSmall from "../components/showsmall"
-import HideSmall from "../components/hidesmall"
-import ShowBetween from "../components/showbetween"
 import BackgroundImage from "gatsby-background-image"
 import { graphql } from "gatsby"
 import FacultyHeader from "../components/faculty/facultyheader"
@@ -21,10 +17,10 @@ import BlueIndexLink from "../components/links/blueindexlink"
 import BlueLinkExt from "../components/links/bluelinkext"
 import SmallContainer from "../components/smallcontainer"
 import DropShadowFrame from "../components/images/dropshadowframe"
-import genericsvg from "../assets/svg/generic.svg"
 import headersvg from "../assets/svg/header.svg"
 import ShareLinks from "../components/share/sharelinks"
 import { PubMedLink, HeadShotImage, Team } from "./facultyshorttemplate"
+import Breadcrumb from "../components/breadcrumb2"
 
 const AwardsGrid = ({ cv, cols, colWidth, headingColor }) => {
   const rows = Math.floor(cv.awards.length / cols) + 1
@@ -357,6 +353,10 @@ const FacultyLongTemplate = ({ path, pageContext, data }) => {
       {/* <Container className="m-8">
         <ShareLinks path={path} color="color" opacity={[40, 100]} />
       </Container> */}
+
+      <Container>
+        <Breadcrumb crumbs={crumbs} />
+      </Container>
 
       <Abstract person={person} markdown={data.abstractMarkdown} />
 

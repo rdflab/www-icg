@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import CrumbLayout from "../components/crumblayout"
 
 import RecentPublications from "../components/publication/recentpublications"
@@ -25,6 +25,7 @@ import SmallContainer from "../components/smallcontainer"
 import DropShadowFrame from "../components/images/dropshadowframe"
 import ShareLinks from "../components/share/sharelinks"
 import genericsvg from "../assets/svg/generic.svg"
+import Breadcrumb from "../components/breadcrumb2"
 
 export const PubMedLink = ({ person }) => (
   // <div className="uppercase">
@@ -332,18 +333,41 @@ export const Team = ({ labGroupMap }) => (
 )
 
 export const HeadShotImage = ({ data, person }) => {
+  const [hover, setHover] = useState(false)
+
+  const onMouseEnter = (e) => {
+    setHover(true)
+  }
+
+  const onMouseLeave = (e) => {
+    setHover(false)
+  }
+
+  let img
+
   if (data.file !== null) {
-    return (
+    img = (
       <Img
         fluid={data.file.childImageSharp.fluid}
-        className="w-full h-full opacity-90 hover:opacity-100 trans-ani"
+        className="w-full h-full trans-ani"
+        style={{ transform: hover ? "scale(1.06)" : "scale(1.02)" }}
       />
     )
   } else {
-    return (
+    img = (
       <img src={genericsvg} className="w-full" alt={person.frontmatter.name} />
     )
   }
+
+  return (
+    <div
+      className="overflow-hidden w-full h-full"
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
+      {img}
+    </div>
+  )
 }
 
 const FacultyShortTemplate = ({ path, pageContext, data }) => {
@@ -417,7 +441,6 @@ const FacultyShortTemplate = ({ path, pageContext, data }) => {
     <CrumbLayout
       nav="Faculty"
       title={person.frontmatter.name}
-      crumbs={crumbs}
       headerComponent={<SiteSearch />}
       headerFloat={true}
       menuComponent={<ShareLinks path={path} />}
@@ -430,7 +453,11 @@ const FacultyShortTemplate = ({ path, pageContext, data }) => {
         <ShareLinks path={path} color="color" opacity={[40, 100]} />
       </Container> */}
 
-      <div className="py-16">
+      <Container>
+        <Breadcrumb crumbs={crumbs} />
+      </Container>
+
+      <div className="py-8">
         <About
           person={person}
           headshotFile={data.file}

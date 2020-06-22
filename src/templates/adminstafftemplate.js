@@ -8,6 +8,8 @@ import ShowBetween from "../components/showbetween"
 import HideSmall from "../components/hidesmall"
 import { useWindowSize } from "@react-hook/window-size"
 import ShareLinks from "../components/share/sharelinks"
+import FlHdDiv from "../components/flhddiv"
+import Breadcrumb from "../components/breadcrumb2"
 
 const EMPTY_QUERY = ""
 
@@ -69,8 +71,9 @@ const AdminStaffTemplate = ({ path, pageContext }) => {
         className="my-4"
       /> */}
 
-      <div className="pb-32 pt-48 md:pt-56 lg:pt-72 bg-columbia-light-gray">
+      <FlHdDiv className="bg-columbia-light-gray">
         <Container>
+          <Breadcrumb crumbs={crumbs} />
           <ShowSmall size="lg">
             <PeopleGroups
               groupMap={admin.groupMap}
@@ -111,7 +114,7 @@ const AdminStaffTemplate = ({ path, pageContext }) => {
             />
           </HideSmall>
         </Container>
-      </div>
+      </FlHdDiv>
     </CrumbTitleLayout>
   )
 }

@@ -40,8 +40,6 @@ const H = ({
             <TitleDiv title={title} heading={heading} subHeading={subHeading} />
 
             <Column>{content !== null && <div>{content}</div>}</Column>
-
-            {showShareLinks && <ShareLinks path={path} color="white" />}
           </Column>
         </HideSmall>
       </Container>

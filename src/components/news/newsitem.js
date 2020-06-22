@@ -1,14 +1,13 @@
 import React from "react"
-import NewsItemDate from "./newsitemdate"
-import BlueLink from "../links/bluelink"
 
 import HTMLDiv from "../htmldiv"
 import Column from "../column"
 import WhiteLink from "../links/whitelink"
+import Card from "../card"
 
 const NewsItem = ({ item }) => {
   return (
-    <article className="w-full mb-8 bg-columbia-secondary-blue shadow hover:shadow-md rounded-md text-white overflow-hidden trans-ani">
+    <Card className="mb-8 bg-columbia-secondary-blue text-white">
       <Column className="justify-between">
         <div className="p-8 w-full">
           <Column className="justify-between uppercase text-white-80">
@@ -34,7 +33,7 @@ const NewsItem = ({ item }) => {
           <div className="w-56 h-56"></div>
         </div>
       </Column>
-    </article>
+    </Card>
   )
 }
 

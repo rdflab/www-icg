@@ -10,6 +10,8 @@ import { searchTree } from "../components/search/searchtree"
 import Column from "../components/column"
 import Container from "../components/container"
 import ShareLinks from "../components/share/sharelinks"
+import FlHdDiv from "../components/flhddiv"
+import Breadcrumb from "../components/breadcrumb2"
 
 const EMPTY_QUERY = ""
 
@@ -127,47 +129,52 @@ const PublicationsTemplate = ({ path, pageContext }) => {
       title={title}
       headerComponent={<SiteSearch />}
       menuComponent={<ShareLinks path={path} />}
+      headerFloat={true}
+      bgColorClass="bg-columbia-light-gray"
     >
-      <Container className="mt-8">
-        <ShowSmall>
-          <SearchBar
-            handleInputChange={handleInputChange}
-            placeholder="Type to find publications..."
-            text={query}
-          />
-        </ShowSmall>
+      <FlHdDiv>
+        <Container>
+          <Breadcrumb crumbs={crumbs} />
+          <ShowSmall>
+            <SearchBar
+              handleInputChange={handleInputChange}
+              placeholder="Type to find publications..."
+              text={query}
+            />
+          </ShowSmall>
 
-        <HideSmall>
-          <Column isCentered={true} className="mb-8">
-            <div className="w-1/2">
-              <SearchBar
-                handleInputChange={handleInputChange}
-                placeholder="Type to find publications..."
-                text={query}
-              />
-            </div>
-          </Column>
-        </HideSmall>
-
-        <HideSmall>
-          <Column isVCentered={true} className="mt-8 justify-center">
-            {showYears && (
-              <div>
-                <YearSelector onClick={handleClick} />
+          <HideSmall>
+            <Column isCentered={true} className="mb-8">
+              <div className="w-1/2">
+                <SearchBar
+                  handleInputChange={handleInputChange}
+                  placeholder="Type to find publications..."
+                  text={query}
+                />
               </div>
-            )}
-          </Column>
-        </HideSmall>
+            </Column>
+          </HideSmall>
 
-        <PubSearchResults
-          publications={yearFilteredPublications}
-          pagedPublications={pagedPublications}
-          page={page}
-          recordsPerPage={recordsPerPage}
-          onPageChanged={onPageChanged}
-          showLabLink={showLabLink}
-        />
-      </Container>
+          <HideSmall>
+            <Column isVCentered={true} className="mt-8 justify-center">
+              {showYears && (
+                <div>
+                  <YearSelector onClick={handleClick} />
+                </div>
+              )}
+            </Column>
+          </HideSmall>
+
+          <PubSearchResults
+            publications={yearFilteredPublications}
+            pagedPublications={pagedPublications}
+            page={page}
+            recordsPerPage={recordsPerPage}
+            onPageChanged={onPageChanged}
+            showLabLink={showLabLink}
+          />
+        </Container>
+      </FlHdDiv>
     </CrumbTitleLayout>
   )
 }

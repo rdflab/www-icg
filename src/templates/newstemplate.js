@@ -2,13 +2,14 @@ import React, { useState } from "react"
 import CrumbTitleLayout from "../components/crumbtitlelayout"
 import SiteSearch from "../components/search/sitesearch"
 import NewsSearchResults from "../components/news/newssearchresults"
-import SmallContainer from "../components/smallcontainer"
 import Container from "../components/container"
 import ShareLinks from "../components/share/sharelinks"
 import Column from "../components/column"
 import MainColumn from "../components/maincolumn"
 import SideColumn from "../components/sidecolumn"
 import DayPicker from "react-day-picker"
+import FlHdDiv from "../components/flhddiv"
+import Breadcrumb from "../components/breadcrumb2"
 
 const EMPTY_QUERY = ""
 
@@ -129,10 +130,12 @@ const NewsTemplate = ({ path, pageContext }) => {
   const offset = (page - 1) * recordsPerPage
   let pagedNews = dayFilteredNews.slice(offset, offset + recordsPerPage)
 
+  const crumbs = [["News", "/news"]]
+
   return (
     <CrumbTitleLayout
       path={path}
-      crumbs={[["News", "/news"]]}
+      crumbs={crumbs}
       title="Institute News"
       // titleComponent={
       //   <HideSmall>
@@ -146,12 +149,13 @@ const NewsTemplate = ({ path, pageContext }) => {
       headerComponent={<SiteSearch />}
       menuComponent={<ShareLinks path={path} />}
       headerFloat={true}
-      backgroundColor="bg-columbia-light-gray"
+      bgColorClass="bg-columbia-light-gray"
     >
-      <div className="pt-48 md:pt-64 lg:pt-80">
+      <FlHdDiv>
         <Container>
+          <Breadcrumb crumbs={crumbs} />
           <Column>
-            <MainColumn className="md:mr-8">
+            <MainColumn className="mr-4 xl:mr-0">
               <NewsSearchResults
                 news={dayFilteredNews}
                 pagedNews={pagedNews}
@@ -160,7 +164,7 @@ const NewsTemplate = ({ path, pageContext }) => {
                 onPageChanged={onPageChanged}
               />
             </MainColumn>
-            <SideColumn>
+            <SideColumn className="justify-end text-right">
               <DayPicker
                 selectedDays={selectedDays}
                 onDayClick={handleDayClick}
@@ -168,7 +172,7 @@ const NewsTemplate = ({ path, pageContext }) => {
             </SideColumn>
           </Column>
         </Container>
-      </div>
+      </FlHdDiv>
     </CrumbTitleLayout>
   )
 }

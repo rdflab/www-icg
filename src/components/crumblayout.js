@@ -17,6 +17,7 @@ export const FloatingHeader = ({
   headerComponent,
   menuComponent,
   onMenuButtonClick,
+  showBreadcrumb,
   children,
 }) => (
   <div className={`w-full absolute z-50 shadow-md`}>
@@ -26,9 +27,11 @@ export const FloatingHeader = ({
       onMenuButtonClick={onMenuButtonClick}
     />
 
-    <HideSmall>
-      <Breadcrumb crumbs={crumbs} />
-    </HideSmall>
+    {showBreadcrumb && crumbs.length > 0 && (
+      <HideSmall>
+        <Breadcrumb crumbs={crumbs} />
+      </HideSmall>
+    )}
 
     {children}
   </div>
@@ -39,6 +42,7 @@ FloatingHeader.defaultProps = {
   headerComponent: null,
   menuComponent: null,
   onMenuButtonClick: null,
+  showBreadcrumb: false,
 }
 
 const CrumbLayout = ({
@@ -51,7 +55,7 @@ const CrumbLayout = ({
   headerFloat,
   headerLinksFloat,
   crumbsFloat,
-  backgroundColor,
+  bgColorClass,
 }) => {
   const [menuVisible, setMenuVisible] = useState(false)
 
@@ -104,7 +108,7 @@ const CrumbLayout = ({
             <Breadcrumb crumbs={crumbs} />
           </HideSmall>
 
-          <div className={`relative min-h-screen ${backgroundColor}`}>
+          <div className={`relative min-h-screen ${bgColorClass}`}>
             {children}
           </div>
         </MenuLayout>
@@ -123,7 +127,7 @@ const CrumbLayout = ({
             />
           </HideSmall>
 
-          <div className={`relative min-h-screen ${backgroundColor}`}>
+          <div className={`relative min-h-screen ${bgColorClass}`}>
             {children}
           </div>
         </HeaderLayout>
@@ -142,7 +146,7 @@ CrumbLayout.defaultProps = {
   subTitle: "",
   headerComponent: null,
   menuComponent: null,
-  backgroundColor: "bg-white",
+  bgColorClass: "bg-white",
 }
 
 export default CrumbLayout

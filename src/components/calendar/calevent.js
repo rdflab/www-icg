@@ -6,6 +6,7 @@ import CalEventDetails from "./caleventdetails"
 import ShowSmall from "../showsmall"
 import HideSmall from "../hidesmall"
 import FullDiv from "../fulldiv"
+import Card from "../card"
 
 export const formatDate = (event) => {
   return `${event.start.toLocaleString("default", {
@@ -45,8 +46,8 @@ const CalEvent = ({ event, smallFormat, imageMap }) => {
   }
 
   return (
-    <div
-      className="w-full bg-white shadow hover:shadow-md  rounded-md mb-6 overflow-hidden trans-ani"
+    <Card
+      className="mb-6"
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
@@ -74,7 +75,7 @@ const CalEvent = ({ event, smallFormat, imageMap }) => {
           </Column>
         </Column>
       </HideSmall>
-    </div>
+    </Card>
   )
 }
 

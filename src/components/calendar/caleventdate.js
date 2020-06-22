@@ -40,8 +40,8 @@ const CalEventDate = ({ event, color, smallFormat }) => {
           dayBgColor = "bg-red-500"
           break
         default:
-          textColor = "text-columbia-secondary-blue"
-          dayBgColor = "bg-columbia-secondary-blue"
+          textColor = "text-blue-500" //"text-columbia-secondary-blue"
+          dayBgColor = "bg-blue-500" //"bg-columbia-secondary-blue"
           break
       }
   }

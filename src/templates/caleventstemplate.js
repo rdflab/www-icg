@@ -16,6 +16,8 @@ import Container from "../components/container"
 import ShareLinks from "../components/share/sharelinks"
 import useImageMap from "../hooks/imagemap"
 import ShowSmall from "../components/showsmall"
+import FlHdDiv from "../components/flhddiv"
+import Breadcrumb from "../components/breadcrumb2"
 
 const EMPTY_QUERY = ""
 
@@ -154,12 +156,12 @@ const CalEventsTemplate = ({ path, pageContext, data }) => {
 
   const offset = (page - 1) * recordsPerPage
   let pagedEvents = calEvents.slice(offset, offset + recordsPerPage)
-
+  const crumbs = [["Events", "/events"]]
   return (
     <CrumbTitleLayout
       path={path}
       title="Institute Events"
-      crumbs={[["Events", "/events"]]}
+      crumbs={crumbs}
       headerComponent={<SiteSearch />}
       menuComponent={<ShareLinks path={path} />}
       headerFloat={true}
@@ -171,8 +173,9 @@ const CalEventsTemplate = ({ path, pageContext, data }) => {
       //   />
       // }
     >
-      <div className="bg-columbia-light-gray pt-48 md:pt-64 lg:pt-80">
+      <FlHdDiv className="bg-columbia-light-gray">
         <Container>
+          <Breadcrumb crumbs={crumbs} />
           <Column>
             {/* <SmallColumn>
         <SearchBar
@@ -183,7 +186,7 @@ const CalEventsTemplate = ({ path, pageContext, data }) => {
           <DayPicker selectedDays={selectedDays} onDayClick={handleDayClick} />
         </div>
       </SmallColumn> */}
-            <MainColumn className="md:mr-8">
+            <MainColumn className="mr-4 xl:mr-0">
               <div className="w-full">
                 <ShowSmall size="lg">
                   <SearchBar
@@ -230,7 +233,7 @@ const CalEventsTemplate = ({ path, pageContext, data }) => {
                 />
               </div>
             </MainColumn>
-            <SideColumn>
+            <SideColumn className="justify-end text-right">
               <DayPicker
                 selectedDays={selectedDays}
                 onDayClick={handleDayClick}
@@ -238,7 +241,7 @@ const CalEventsTemplate = ({ path, pageContext, data }) => {
             </SideColumn>
           </Column>
         </Container>
-      </div>
+      </FlHdDiv>
     </CrumbTitleLayout>
   )
 }

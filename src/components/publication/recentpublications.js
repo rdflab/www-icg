@@ -9,7 +9,6 @@ import React from "react"
 //import Button from "../../components/button"
 //import PublicationYears from "./publicationyears"
 import PublicationList from "./publicationlist"
-import useSiteMetadata from "../../hooks/sitemetadata"
 
 const RecentPublications = ({ publications, top, className }) => {
   // const createPublications = publications => {
