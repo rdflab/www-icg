@@ -35,7 +35,7 @@ const FooterLinks = () => {
         aria-label={`Goto Booking Site`}
         to="https://booking.columbiaicg.org"
       >
-        Book Instruments
+        Booking Service
       </WhiteLinkExt>
     </div>
   )
