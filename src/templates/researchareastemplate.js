@@ -31,7 +31,7 @@ const ResearchAreasTemplate = ({ path, pageContext }) => {
       crumbs={[["Research Areas", "/research-areas"]]}
       nav="For Research Scientists"
       title="Research Areas"
-      headerComponent={<SiteSearch />}
+      headerContent={<SiteSearch />}
       bgColorClass="bg-white"
     >
       <Container className="py-8">

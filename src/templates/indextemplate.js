@@ -135,8 +135,8 @@ const IndexTemplate = ({ path, pageContext, data }) => {
     <CrumbLayout
       floatMode="header"
       title="Home"
-      headerComponent={<SiteSearch />}
-      menuComponent={<ShareLinks path={path} />}
+      headerContent={<SiteSearch />}
+      crumbContent={<ShareLinks path={path} />}
     >
       <CUMCImage />
       {/* <Container className="h-full py-8 sm:py-8">

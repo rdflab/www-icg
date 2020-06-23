@@ -14,7 +14,7 @@ const AdminTemplate = ({ path, pageContext }) => {
       path={path}
       crumbs={[["Administration", "/administration"]]}
       title="Administration"
-      headerComponent={<SiteSearch />}
+      headerContent={<SiteSearch />}
       bgColorClass="bg-white"
     >
       <FlHdDiv>

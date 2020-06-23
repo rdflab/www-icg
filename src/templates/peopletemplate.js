@@ -113,10 +113,10 @@ const PeopleTemplate = ({ path, pageContext }) => {
       path={path}
       crumbs={crumbs}
       title={title}
-      headerComponent={<SiteSearch />}
-      menuComponent={<ShareLinks path={path} />}
+      headerContent={<SiteSearch />}
+      crumbContent={<ShareLinks path={path} />}
       bgColorClass="bg-columbia-light-gray"
-      // titleComponent={
+      // titleContent={
       //   <SearchSummary
       //     count={typeFilteredPeople.length}
       //     single="Member"

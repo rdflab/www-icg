@@ -70,6 +70,9 @@ module.exports = {
         "80": "20rem",
         "96": "24rem",
       },
+      borderWidth: {
+        "3": "3px",
+      },
       opacity: {
         "10": ".1",
         "20": ".2",

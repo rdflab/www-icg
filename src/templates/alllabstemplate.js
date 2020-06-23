@@ -151,9 +151,9 @@ const AllLabsTemplate = ({ path, pageContext, data }) => {
       crumbs={crumbs}
       nav="For Research Scientists"
       title="Research Labs"
-      headerComponent={<SiteSearch />}
-      menuComponent={<ShareLinks path={path} />}
-      // titleComponent={
+      headerContent={<SiteSearch />}
+      crumbContent={<ShareLinks path={path} />}
+      // titleContent={
       //   <SearchSummary count={groups.length} single="Lab" plural="Labs" />
       // }
     >

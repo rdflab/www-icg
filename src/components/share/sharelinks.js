@@ -13,7 +13,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 // import LinkedinSvgWhite from "../../assets/svg/linkedin-white.svg"
 
 const ShareLink = ({ to, icon, size, color, opacity }) => (
-  <div className="ml-5">
+  <div className="ml-4">
     <LinkExt to={to}>
       <FontAwesomeIcon
         icon={["fab", icon]}
@@ -131,7 +131,7 @@ const ShareLinks = ({ color, size, opacity, path }) => {
 ShareLinks.defaultProps = {
   color: "text-white",
   opacity: [50, 95],
-  size: "text-3xl",
+  size: "text-2xl",
   path: "",
 }
 

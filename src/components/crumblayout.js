@@ -14,15 +14,15 @@ import MenuLayout from "./menulayout"
 
 export const FloatingHeader = ({
   crumbs,
-  headerComponent,
-  menuComponent,
+  headerContent,
+  menuContent,
   onMenuButtonClick,
   children,
 }) => (
   <div className={`w-full absolute z-50`}>
     <HeaderWithNav
-      content={headerComponent}
-      menuComponent={menuComponent}
+      content={headerContent}
+      menuContent={menuContent}
       onMenuButtonClick={onMenuButtonClick}
     />
 
@@ -32,16 +32,17 @@ export const FloatingHeader = ({
 
 FloatingHeader.defaultProps = {
   crumbs: [],
-  headerComponent: null,
-  menuComponent: null,
+  headerContent: null,
+  menuContent: null,
   onMenuButtonClick: null,
 }
 
 const CrumbLayout = ({
   title,
-  headerComponent,
-  menuComponent,
-  titleComponent,
+  headerContent,
+  menuContent,
+  titleContent,
+  crumbContent,
   children,
   crumbs,
   floatMode,
@@ -67,14 +68,14 @@ const CrumbLayout = ({
         >
           <FloatingHeader
             crumbs={crumbs}
-            headerComponent={headerComponent}
-            menuComponent={menuComponent}
+            headerContent={headerContent}
+            menuContent={menuContent}
             onMenuButtonClick={onMenuButtonClick}
           >
-            {titleComponent}
+            {titleContent}
 
             {crumbs !== null && crumbs.length > 0 && (
-              <Breadcrumb crumbs={crumbs} />
+              <Breadcrumb crumbs={crumbs} content={crumbContent} />
             )}
           </FloatingHeader>
 
@@ -91,20 +92,20 @@ const CrumbLayout = ({
           onSlideMenuClick={onSlideMenuClick}
         >
           <Header
-            content={headerComponent}
-            menuComponent={menuComponent}
+            content={headerContent}
+            menuContent={menuContent}
             onMenuButtonClick={onMenuButtonClick}
           />
 
           <HideSmall className="w-full absolute z-50 shadow-md" size="lg">
             <div className="pt-2 bg-columbia-blue-90">
-              <HeaderLinksNav menuComponent={menuComponent} />
+              <HeaderLinksNav menuContent={menuContent} />
             </div>
 
-            {titleComponent}
+            {titleContent}
 
             {crumbs !== null && crumbs.length > 0 && (
-              <Breadcrumb crumbs={crumbs} />
+              <Breadcrumb crumbs={crumbs} content={crumbContent} />
             )}
           </HideSmall>
 
@@ -113,19 +114,37 @@ const CrumbLayout = ({
           </div>
         </MenuLayout>
       )
+    case "crumb":
+      return (
+        <HeaderLayout
+          title={title}
+          headerContent={headerContent}
+          menuContent={menuContent}
+          bgColorClass={bgColorClass}
+        >
+          {titleContent}
+
+          <HideSmall className="w-full absolute z-50 shadow-md" size="lg">
+            {crumbs !== null && crumbs.length > 0 && (
+              <Breadcrumb crumbs={crumbs} content={crumbContent} />
+            )}
+          </HideSmall>
+          <div className={`relative min-h-screen`}>{children}</div>
+        </HeaderLayout>
+      )
     default:
       return (
         <HeaderLayout
           title={title}
-          headerComponent={headerComponent}
-          menuComponent={menuComponent}
+          headerContent={headerContent}
+          menuContent={menuContent}
           bgColorClass={bgColorClass}
         >
-          {titleComponent}
-
           {crumbs !== null && crumbs.length > 0 && (
-            <Breadcrumb crumbs={crumbs} />
+            <Breadcrumb crumbs={crumbs} content={crumbContent} />
           )}
+
+          {titleContent}
 
           <div className={`relative min-h-screen`}>{children}</div>
         </HeaderLayout>
@@ -139,9 +158,10 @@ CrumbLayout.defaultProps = {
   selectedTab: "",
   title: "",
   subTitle: "",
-  headerComponent: null,
-  menuComponent: null,
-  titleComponent: null,
+  headerContent: null,
+  menuContent: null,
+  titleContent: null,
+  crumbContent: null,
   bgColorClass: "bg-white",
 }
 

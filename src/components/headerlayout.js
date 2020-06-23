@@ -12,8 +12,8 @@ import MenuLayout from "./menulayout"
 
 const HeaderLayout = ({
   title,
-  headerComponent,
-  menuComponent,
+  headerContent,
+  menuContent,
   bgColorClass,
   children,
 }) => {
@@ -35,8 +35,8 @@ const HeaderLayout = ({
     >
       <HeaderWithNav
         title={title}
-        content={headerComponent}
-        menuComponent={menuComponent}
+        content={headerContent}
+        menuContent={menuContent}
         onMenuButtonClick={onMenuButtonClick}
       />
 
@@ -49,9 +49,9 @@ const HeaderLayout = ({
 
 HeaderLayout.defaultProps = {
   title: null,
-  titleComponent: null,
-  headerComponent: null,
-  menuComponent: null,
+  titleContent: null,
+  headerContent: null,
+  menuContent: null,
   floatHeader: false,
   floatHeaderLinks: false,
   bgColorClass: "bg-white",

@@ -37,8 +37,8 @@ const NewsItemTemplate = ({ path, pageContext }) => {
       path={path}
       crumbs={crumbs}
       title={title}
-      headerComponent={<SiteSearch />}
-      menuComponent={<ShareLinks path={path} />}
+      headerContent={<SiteSearch />}
+      crumbContent={<ShareLinks path={path} />}
     >
       <FlHdDiv>
         <Container>

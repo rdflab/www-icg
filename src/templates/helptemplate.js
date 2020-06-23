@@ -36,7 +36,7 @@ const HelpTemplate = ({ path, pageContext, data }) => {
       path={path}
       crumbs={[["Help", "/help"]]}
       title={`About ${title} Web Site`}
-      headerComponent={<SiteSearch />}
+      headerContent={<SiteSearch />}
       bgColorClass="bg-columbia-light-gray"
     >
       <FlHdDiv className="min-h-full">

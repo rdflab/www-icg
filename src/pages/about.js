@@ -12,7 +12,7 @@ const About = () => (
   <CrumbTitleLayout
     title="Mission"
     crumbs={[["About", "/about"]]}
-    headerComponent={<SiteSearch />}
+    headerContent={<SiteSearch />}
     bgColorClass="bg-columbia-light-gray"
   >
     <FlHdDiv>

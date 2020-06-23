@@ -8,14 +8,16 @@
 import React from "react"
 import CrumbLayout from "./crumblayout"
 import H from "./headings/h"
+import Container from "./container"
 
 const CrumbTitleLayout = ({
   path,
   nav,
   title,
   subTitle,
-  headerComponent,
-  menuComponent,
+  headerContent,
+  menuContent,
+  crumbContent,
   children,
   crumbs,
   floatMode,
@@ -23,16 +25,24 @@ const CrumbTitleLayout = ({
 }) => (
   <CrumbLayout
     title={title}
-    headerComponent={headerComponent}
-    menuComponent={menuComponent}
-    titleComponent={
-      <H
-        title={nav}
-        heading={title}
-        subHeading={subTitle}
-        path={path}
-        className="pb-2"
-      />
+    headerContent={headerContent}
+    menuContent={menuContent}
+    crumbContent={crumbContent}
+    // titleContent={
+    //   <H
+    //     title={nav}
+    //     heading={title}
+    //     subHeading={subTitle}
+    //     path={path}
+    //     className="py-2"
+    //   />
+    // }
+    titleContent={
+      <div className="py-3 bg-columbia-blue-80">
+        <Container>
+          <h1 className="text-white-95">{title}</h1>
+        </Container>
+      </div>
     }
     crumbs={crumbs}
     floatMode={floatMode}
@@ -50,9 +60,10 @@ CrumbTitleLayout.defaultProps = {
   nav: null,
   title: null,
   subTitle: null,
-  titleComponent: null,
-  headerComponent: null,
-  menuComponent: null,
+  titleContent: null,
+  headerContent: null,
+  menuContent: null,
+  crumbContent: null,
   bgColorClass: "bg-white",
 }
 

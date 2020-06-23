@@ -25,7 +25,7 @@ const LabPeopleTemplate = ({ path, pageContext }) => {
       path={path}
       crumbs={crumbs}
       title={title}
-      headerComponent={<SiteSearch />}
+      headerContent={<SiteSearch />}
     >
       <PersonHeader person={faculty} title="Labs" />
       <div className="bg-columbia-light-gray py-8">

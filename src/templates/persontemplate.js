@@ -158,8 +158,8 @@ const PersonTemplate = ({ path, pageContext, data }) => {
         [person.frontmatter.name, path],
       ]}
       title={person.frontmatter.name}
-      headerComponent={<SiteSearch />}
-      menuComponent={<ShareLinks path={path} />}
+      headerContent={<SiteSearch />}
+      crumbContent={<ShareLinks path={path} />}
     >
       {/* {interests2(person)} */}
 

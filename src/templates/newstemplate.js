@@ -137,7 +137,7 @@ const NewsTemplate = ({ path, pageContext }) => {
       path={path}
       crumbs={crumbs}
       title="News"
-      // titleComponent={
+      // titleContent={
       //   <HideSmall>
       //     <SearchSummary
       //       count={news.length}
@@ -146,8 +146,8 @@ const NewsTemplate = ({ path, pageContext }) => {
       //     />
       //   </HideSmall>
       // }
-      headerComponent={<SiteSearch />}
-      menuComponent={<ShareLinks path={path} />}
+      headerContent={<SiteSearch />}
+      crumbContent={<ShareLinks path={path} />}
       bgColorClass="bg-columbia-light-gray"
     >
       <FlHdDiv>

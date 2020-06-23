@@ -23,7 +23,7 @@ const ResearchAreaTemplate = ({ path, pageContext }) => {
         [researchArea.name, `/research-areas/${researchArea.id}`],
       ]}
       title={researchArea.name}
-      headerComponent={<SiteSearch />}
+      headerContent={<SiteSearch />}
     >
       <PeopleGroups groupMap={groupMap} showLabLink={true} />
     </CrumbTitleLayout>

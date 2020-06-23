@@ -7,8 +7,6 @@ import SelectedPublications from "../components/publication/selectedpublications
 import HTMLDiv from "../components/htmldiv"
 import SiteSearch from "../components/search/sitesearch"
 import Container from "../components/container"
-import Img from "gatsby-image"
-import BackgroundImage from "gatsby-background-image"
 import { graphql } from "gatsby"
 import FacultyHeader from "../components/faculty/facultyheader"
 import Column from "../components/column"
@@ -17,9 +15,17 @@ import BlueIndexLink from "../components/links/blueindexlink"
 import BlueLinkExt from "../components/links/bluelinkext"
 import SmallContainer from "../components/smallcontainer"
 import DropShadowFrame from "../components/images/dropshadowframe"
-import headersvg from "../assets/svg/header.svg"
 import ShareLinks from "../components/share/sharelinks"
-import { PubMedLink, HeadShotImage, Team } from "./facultyshorttemplate"
+import {
+  PubMedLink,
+  HeadShotImage,
+  Team,
+  BackgroundSection,
+  GenericBackgroundSection,
+  FacultyHeading2,
+  FacultyHeading,
+  Quote,
+} from "./facultyshorttemplate"
 //import Breadcrumb from "../components/breadcrumb2"
 import ZoomImage from "../components/images/zoomimage"
 import Card from "../components/card"
@@ -142,22 +148,6 @@ AppointmentsGrid.defaultProps = {
   headingColor: "text-columbia-secondary-blue",
 }
 
-const BackgroundSection = ({ file, children }) => (
-  <BackgroundImage
-    fluid={file.childImageSharp.fluid}
-    style={{
-      width: "100%",
-      height: "42rem",
-      backgroundPosition: "top center",
-      backgroundRepeat: "no-repeat",
-      backgroundSize: "cover",
-      overflow: "hidden",
-    }}
-  >
-    {children}
-  </BackgroundImage>
-)
-
 // const GenericBackgroundSection = ({ children }) => (
 //   <div
 //     className="relative w-full overflow-hidden"
@@ -172,52 +162,6 @@ const BackgroundSection = ({ file, children }) => (
 //     {children}
 //   </div>
 // )
-
-const GenericBackgroundSection = ({ file, children }) => (
-  <BackgroundImage
-    fluid={file.childImageSharp.fluid}
-    style={{
-      width: "100%",
-      height: "42rem",
-      backgroundPosition: "top center",
-      backgroundRepeat: "no-repeat",
-      backgroundSize: "cover",
-      overflow: "hidden",
-    }}
-  >
-    {children}
-  </BackgroundImage>
-)
-
-const FacultyHeading = ({ children }) => (
-  <h2 className="uppercase mb-8 text-center" style={{ fontWeight: "normal" }}>
-    {children}
-  </h2>
-)
-
-const FacultyHeading2 = ({ children }) => (
-  <h3 className="uppercase mb-8" style={{ fontWeight: "normal" }}>
-    {children}
-  </h3>
-)
-
-const Quote = ({ text }) => (
-  <p className="text-justify">
-    <span
-      className="text-blue-500 mr-1"
-      style={{ fontFamily: "Playfair Display", fontSize: "150%" }}
-    >
-      &ldquo;
-    </span>
-    {text}
-    <span
-      className="text-blue-500 ml-1"
-      style={{ fontFamily: "Playfair Display", fontSize: "150%" }}
-    >
-      &rdquo;
-    </span>
-  </p>
-)
 
 const Abstract = ({ person, markdown }) => {
   if (markdown !== null) {
@@ -286,9 +230,7 @@ const FacultyLongTemplate = ({ path, pageContext, data }) => {
     </DropShadowFrame>
   )
 
-  let headerImage = (
-    <img src={headersvg} className="w-full" alt={person.frontmatter.name} />
-  )
+  let headerImage
 
   let headerImageCredit = ""
 
@@ -344,9 +286,8 @@ const FacultyLongTemplate = ({ path, pageContext, data }) => {
       path={path}
       crumbs={crumbs}
       title={person.frontmatter.name}
-      headerComponent={<SiteSearch />}
-      menuComponent={<ShareLinks path={path} />}
-      floatMode="header"
+      headerContent={<SiteSearch />}
+      crumbContent={<ShareLinks path={path} />}
     >
       {headerImage !== null && headerImage}
 

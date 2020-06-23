@@ -166,10 +166,10 @@ const CalEventsTemplate = ({ path, pageContext, data }) => {
       path={path}
       crumbs={crumbs}
       title="Events"
-      headerComponent={<SiteSearch />}
-      menuComponent={<ShareLinks path={path} />}
+      headerContent={<SiteSearch />}
+      crumbContent={<ShareLinks path={path} />}
       bgColorClass="bg-columbia-light-gray"
-      // titleComponent={
+      // titleContent={
       //   <SearchSummary
       //     count={calEvents.length}
       //     single="Event"

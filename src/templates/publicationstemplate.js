@@ -127,8 +127,8 @@ const PublicationsTemplate = ({ path, pageContext }) => {
       crumbs={crumbs}
       selectedTab={selectedTab}
       title={title}
-      headerComponent={<SiteSearch />}
-      menuComponent={<ShareLinks path={path} />}
+      headerContent={<SiteSearch />}
+      crumbContent={<ShareLinks path={path} />}
       bgColorClass="bg-columbia-light-gray"
     >
       <FlHdDiv>

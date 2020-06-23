@@ -7,7 +7,13 @@ import { Link } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import HideSmall from "./hidesmall"
 
-const Breadcrumb = ({ crumbs, opacity, className }) => {
+const Divider = ({ color, opacity }) => (
+  <div className={`px-3 text-white opacity-${opacity}`}>
+    <FontAwesomeIcon icon={[`fas`, `chevron-right`]} className={`text-lg`} />
+  </div>
+)
+
+const Breadcrumb = ({ crumbs, opacity, content, className }) => {
   if (crumbs !== null && crumbs.length > 0) {
     const ret = []
 
@@ -15,18 +21,19 @@ const Breadcrumb = ({ crumbs, opacity, className }) => {
       <Link to="/" key={ret.length}>
         <FontAwesomeIcon
           icon="home"
-          className={`text-2xl text-white opacity-${opacity} hover:opacity-100 trans-ani`}
+          className={`text-xl text-white opacity-${opacity} hover:opacity-100 trans-ani`}
         />
       </Link>
     )
 
     ret.push(
-      <img
-        src={breadcrumbarrowsvg}
-        className={`px-4 h-6 opacity-${opacity}`}
-        key={ret.length}
-        alt="Breadcrumb separator"
-      />
+      // <img
+      //   src={breadcrumbarrowsvg}
+      //   className={`px-4 h-6 opacity-${opacity}`}
+      //   key={ret.length}
+      //   alt="Breadcrumb separator"
+      // />
+      <Divider opacity={opacity} />
     )
 
     for (let i = 0; i < crumbs.length; ++i) {
@@ -44,27 +51,26 @@ const Breadcrumb = ({ crumbs, opacity, className }) => {
 
       if (i < crumbs.length - 1) {
         ret.push(
-          // <FaChevronRight
-          //   key={`arrow-${i}`}
-          //   className="text-white-opacity-50 mx-2"
+          // <img
+          //   src={breadcrumbarrowsvg}
+          //   className="px-4 h-6 opacity-${opacity}"
+          //   key={ret.length}
+          //   alt="Breadcrumb separator"
           // />
 
-          <img
-            src={breadcrumbarrowsvg}
-            className="px-4 h-6 opacity-${opacity}"
-            key={ret.length}
-            alt="Breadcrumb separator"
-          />
+          <Divider opacity={opacity} />
         )
       }
     }
 
     return (
-      <HideSmall
-        className={`w-full bg-columbia-secondary-blue-90 text-sm py-3 ${className}`}
-      >
+      <HideSmall className={`bg-columbia-blue-90 py-2 ${className}`}>
         <Container>
-          <Column className="items-center">{ret}</Column>
+          <Column className="justify-between items-center">
+            <Column className="items-center">{ret}</Column>
+
+            <div>{content !== null && content}</div>
+          </Column>
         </Container>
       </HideSmall>
     )
@@ -75,6 +81,7 @@ const Breadcrumb = ({ crumbs, opacity, className }) => {
 
 Breadcrumb.defaultProps = {
   className: "",
+  content: null,
   opacity: 80,
 }
 

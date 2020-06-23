@@ -28,7 +28,7 @@ const LabTemplate = ({ path, pageContext }) => {
   const title = labName(faculty)
 
   return (
-    <CrumbLayout crumbs={crumbs} title={title} headerComponent={<SiteSearch />}>
+    <CrumbLayout crumbs={crumbs} title={title} headerContent={<SiteSearch />}>
       {/* <PersonHeader person={faculty} title="Labs" /> */}
 
       <LabHeader person={faculty} path={path} />

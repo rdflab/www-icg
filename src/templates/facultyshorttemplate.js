@@ -163,12 +163,12 @@ AppointmentsGrid.defaultProps = {
   headingColor: "text-columbia-secondary-blue",
 }
 
-const BackgroundSection = ({ file, children }) => (
+export const BackgroundSection = ({ file, children }) => (
   <BackgroundImage
     fluid={file.childImageSharp.fluid}
     style={{
       width: "100%",
-      height: "40rem",
+      height: "30rem",
       backgroundPosition: "top center",
       backgroundRepeat: "no-repeat",
       backgroundSize: "cover",
@@ -179,12 +179,12 @@ const BackgroundSection = ({ file, children }) => (
   </BackgroundImage>
 )
 
-const GenericBackgroundSection = ({ file, children }) => (
+export const GenericBackgroundSection = ({ file, children }) => (
   <BackgroundImage
     fluid={file.childImageSharp.fluid}
     style={{
       width: "100%",
-      height: "40rem",
+      height: "30rem",
       backgroundPosition: "top center",
       backgroundRepeat: "no-repeat",
       backgroundSize: "cover",
@@ -195,19 +195,19 @@ const GenericBackgroundSection = ({ file, children }) => (
   </BackgroundImage>
 )
 
-const FacultyHeading = ({ children }) => (
+export const FacultyHeading = ({ children }) => (
   <h2 className="uppercase mb-8 text-center" style={{ fontWeight: "normal" }}>
     {children}
   </h2>
 )
 
-const FacultyHeading2 = ({ children }) => (
+export const FacultyHeading2 = ({ children }) => (
   <h3 className="uppercase mb-8" style={{ fontWeight: "normal" }}>
     {children}
   </h3>
 )
 
-const Quote = ({ text }) => (
+export const Quote = ({ text }) => (
   <p className="text-justify">
     <span
       className="text-blue-500 mr-1"
@@ -417,9 +417,8 @@ const FacultyShortTemplate = ({ path, pageContext, data }) => {
     <CrumbLayout
       crumbs={crumbs}
       title={person.frontmatter.name}
-      headerComponent={<SiteSearch />}
-      floatMode="header"
-      menuComponent={<ShareLinks path={path} />}
+      headerContent={<SiteSearch />}
+      crumbContent={<ShareLinks path={path} />}
     >
       {headerImage !== null && headerImage}
 

@@ -10,20 +10,20 @@ import whitelogo from "../../assets/svg/icg-logo-white.svg"
 import ShowSmall from "../showsmall"
 import SlideMenuButton from "../slidemenu/slidemenubutton"
 
-export const HeaderLinksNav = ({ menuComponent }) => (
+export const HeaderLinksNav = ({ menuContent }) => (
   <nav aria-label="Navigation">
     <Container>
       <Column className="items-start justify-between">
         <HeaderLinks />
 
-        {menuComponent !== null && menuComponent}
+        {menuContent !== null && menuContent}
       </Column>
     </Container>
   </nav>
 )
 
 HeaderLinksNav.defaultProps = {
-  menuComponent: null,
+  menuContent: null,
 }
 
 export const Header = ({ content, onMenuButtonClick, children }) => (
@@ -61,17 +61,17 @@ Header.defaultProps = {
   onMenuButtonClick: null,
 }
 
-const HeaderWithNav = ({ content, menuComponent, onMenuButtonClick }) => (
+const HeaderWithNav = ({ content, menuContent, onMenuButtonClick }) => (
   <Header content={content} onMenuButtonClick={onMenuButtonClick}>
-    <div className="w-full pt-2">
-      <HeaderLinksNav menuComponent={menuComponent} />
+    <div className="w-full py-2">
+      <HeaderLinksNav menuContent={menuContent} />
     </div>
   </Header>
 )
 
 HeaderWithNav.defaultProps = {
   content: null,
-  menuComponent: null,
+  menuContent: null,
   onMenuButtonClick: null,
 }
 

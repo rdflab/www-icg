@@ -9,7 +9,7 @@ const Booking = () => (
       ["Instrument Booking", "/services/booking"],
     ]}
     title="Instrument Booking"
-    headerComponent={<SiteSearch />}
+    headerContent={<SiteSearch />}
   >
     <div className="w-full h-full min-h-full overflow-hidden">
       <div

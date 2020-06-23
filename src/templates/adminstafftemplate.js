@@ -61,10 +61,10 @@ const AdminStaffTemplate = ({ path, pageContext, data }) => {
       path={path}
       crumbs={crumbs}
       title="Administration"
-      headerComponent={<SiteSearch />}
-      menuComponent={<ShareLinks path={path} />}
+      headerContent={<SiteSearch />}
+      crumbContent={<ShareLinks path={path} />}
       bgColorClass="bg-columbia-light-gray"
-      // titleComponent={
+      // titleContent={
       //   <SearchSummary count={groups.length} single="Lab" plural="Labs" />
       // }
     >
