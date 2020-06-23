@@ -20,7 +20,11 @@ import DropShadowFrame from "../components/images/dropshadowframe"
 import headersvg from "../assets/svg/header.svg"
 import ShareLinks from "../components/share/sharelinks"
 import { PubMedLink, HeadShotImage, Team } from "./facultyshorttemplate"
-import Breadcrumb from "../components/breadcrumb2"
+//import Breadcrumb from "../components/breadcrumb2"
+import ZoomImage from "../components/images/zoomimage"
+import Card from "../components/card"
+
+// nav="Faculty"
 
 const AwardsGrid = ({ cv, cols, colWidth, headingColor }) => {
   const rows = Math.floor(cv.awards.length / cols) + 1
@@ -248,12 +252,11 @@ const About = ({ person, headshotFile, markdown }) => {
       <Column>
         <Column className="mr-8">
           {headshotFile !== null && (
-            <DropShadowFrame className="w-48 h-48 rounded-lg opacity-90 hover:opacity-100">
-              <Img
-                fluid={headshotFile.childImageSharp.fluid}
-                className="w-full h-full"
-              />
-            </DropShadowFrame>
+            <div>
+              <Card className="w-48 h-48 overflow-hidden">
+                <ZoomImage fluid={headshotFile.childImageSharp.fluid} />
+              </Card>
+            </div>
           )}
         </Column>
         <Column>
@@ -339,12 +342,11 @@ const FacultyLongTemplate = ({ path, pageContext, data }) => {
   return (
     <CrumbLayout
       path={path}
-      nav="Faculty"
-      title={person.frontmatter.name}
       crumbs={crumbs}
+      title={person.frontmatter.name}
       headerComponent={<SiteSearch />}
       menuComponent={<ShareLinks path={path} />}
-      headerFloat={true}
+      floatMode="header"
     >
       {headerImage !== null && headerImage}
 
@@ -354,9 +356,9 @@ const FacultyLongTemplate = ({ path, pageContext, data }) => {
         <ShareLinks path={path} color="color" opacity={[40, 100]} />
       </Container> */}
 
-      <Container>
+      {/* <Container>
         <Breadcrumb crumbs={crumbs} />
-      </Container>
+      </Container> */}
 
       <Abstract person={person} markdown={data.abstractMarkdown} />
 
@@ -487,6 +489,15 @@ export const query = graphql`
     }
 
     file(absolutePath: { regex: "/images/people/" }, name: { eq: $id }) {
+      relativePath
+      childImageSharp {
+        fluid(maxWidth: 500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
+    generic: file(absolutePath: { regex: "/generic.png/" }) {
       relativePath
       childImageSharp {
         fluid(maxWidth: 500) {

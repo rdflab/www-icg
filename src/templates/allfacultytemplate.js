@@ -3,19 +3,18 @@ import CrumbTitleLayout from "../components/crumbtitlelayout"
 import SiteSearch from "../components/search/sitesearch"
 import Column from "../components/column"
 import { Link, graphql } from "gatsby"
-import genericsvg from "../assets/svg/generic.svg"
 import Container from "../components/container"
 import ShowSmall from "../components/showsmall"
 import HideSmall from "../components/hidesmall"
 import useSiteMetadata from "../hooks/sitemetadata"
-import Img from "gatsby-image"
 import ShowBetween from "../components/showbetween"
 import useImageMap from "../hooks/imagemap"
 import ShareLinks from "../components/share/sharelinks"
 import getContextName from "../utils/contextname"
 import FlHdDiv from "../components/flhddiv"
-import Breadcrumb from "../components/breadcrumb2"
+//import Breadcrumb from "../components/breadcrumb2"
 import Card from "../components/card"
+import ZoomImage from "../components/images/zoomimage"
 
 const EMPTY_QUERY = ""
 
@@ -32,56 +31,47 @@ const FacultyCard = ({ person, imageMap }) => {
     setHover(false)
   }
 
-  let img = (
-    <img src={genericsvg} className="w-full" alt={person.frontmatter.name} />
-  )
-
-  if (person.frontmatter.id in imageMap) {
-    img = (
-      <Img
-        fluid={imageMap[person.frontmatter.id].childImageSharp.fluid}
-        className="trans-ani"
-        style={{ transform: hover ? "scale(1.06)" : "scale(1.02)" }}
-      />
-    )
-  }
-
   return (
-    <div
-      className={`w-full h-full trans-ani`}
+    <Card
+      className="w-full h-full overflow-hidden"
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
       <Link to={`${paths.facultyPath}/${person.frontmatter.id}`}>
-        {/* <div
-          className={`trans-ani rounded-lg overflow-hidden ${hover ? "shadow-md" : ""}`}
-        > */}
-        <Card className="h-full">
-          <div className="overflow-hidden">{img}</div>
-          <div
-            className={`w-full h-full p-4 trans-ani  ${
-              hover ? "text-white-90 bg-blue-500" : ""
-            }`}
-          >
-            {/* <h5>{`${person.frontmatter.name}, ${person.frontmatter.postNominalLetters}`}</h5> */}
-            {/* <h4>{person.frontmatter.name}</h4> */}
-            {/* <h5>{person.frontmatter.postNominalLetters}</h5> */}
+        <div className="w-full overflow-hidden">
+          <ZoomImage
+            fluid={
+              person.frontmatter.id in imageMap
+                ? imageMap[person.frontmatter.id].childImageSharp.fluid
+                : imageMap["generic"].childImageSharp.fluid
+            }
+            className="trans-ani"
+            extZoom={hover}
+          />
+        </div>
+        <div
+          className={`w-full h-full p-4 trans-ani  ${
+            hover ? "text-white-90 bg-blue-500" : ""
+          }`}
+        >
+          {/* <h5>{`${person.frontmatter.name}, ${person.frontmatter.postNominalLetters}`}</h5> */}
+          {/* <h4>{person.frontmatter.name}</h4> */}
+          {/* <h5>{person.frontmatter.postNominalLetters}</h5> */}
 
-            <ShowSmall>
-              <h4>{`${person.frontmatter.name}, ${person.frontmatter.postNominalLetters}`}</h4>
-              <h5>{getContextName("people", person.titleMap)}</h5>
-            </ShowSmall>
+          <ShowSmall>
+            <h4>{`${person.frontmatter.name}, ${person.frontmatter.postNominalLetters}`}</h4>
+            <h5>{getContextName("people", person.titleMap)}</h5>
+          </ShowSmall>
 
-            <HideSmall>
-              <div className="font-semibold">{`${person.frontmatter.name}, ${person.frontmatter.postNominalLetters}`}</div>
-              <div className="text-sm">
-                {getContextName("people", person.titleMap)}
-              </div>
-            </HideSmall>
-          </div>
-        </Card>
+          <HideSmall>
+            <div className="font-semibold">{`${person.frontmatter.name}, ${person.frontmatter.postNominalLetters}`}</div>
+            <div className="text-sm">
+              {getContextName("people", person.titleMap)}
+            </div>
+          </HideSmall>
+        </div>
       </Link>
-    </div>
+    </Card>
   )
 }
 
@@ -223,7 +213,7 @@ const AllFacultyTemplate = ({ path, pageContext, data }) => {
       title="Faculty"
       headerComponent={<SiteSearch />}
       menuComponent={<ShareLinks path={path} />}
-      headerFloat={true}
+      bgColorClass="bg-columbia-light-gray"
       // titleComponent={
       //   <SearchSummary count={groups.length} single="Lab" plural="Labs" />
       // }
@@ -235,9 +225,9 @@ const AllFacultyTemplate = ({ path, pageContext, data }) => {
         className="my-4"
       /> */}
 
-      <FlHdDiv className="bg-columbia-light-gray">
+      <FlHdDiv>
         <Container>
-          <Breadcrumb crumbs={crumbs} />
+          {/* <Breadcrumb crumbs={crumbs} /> */}
           {/* <Labs labs={allGroups} /> */}
           {/*<StaffGrid labs={allGroups} /> */}
 
@@ -306,6 +296,17 @@ export const query = graphql`
               ...GatsbyImageSharpFluid
             }
           }
+        }
+      }
+    }
+
+    generic: file(absolutePath: { regex: "/generic.png/" }) {
+      name
+      ext
+      relativePath
+      childImageSharp {
+        fluid(maxWidth: 500) {
+          ...GatsbyImageSharpFluid
         }
       }
     }

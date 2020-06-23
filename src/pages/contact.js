@@ -2,19 +2,17 @@ import React from "react"
 import Container from "../components/container"
 import CrumbTitleLayout from "../components/crumbtitlelayout"
 import FlHdDiv from "../components/flhddiv"
-import Breadcrumb from "../components/breadcrumb2"
 import Card from "../components/card"
 
 // nav="Contact Us"
 const Contact = () => (
   <CrumbTitleLayout
     title="Contact Us"
-    headerFloat={true}
+    crumbs={[["Contact Us", "/contact"]]}
     bgColorClass="bg-columbia-light-gray"
   >
     <FlHdDiv>
       <Container>
-        <Breadcrumb crumbs={[["Contact Us", "/contact"]]} />
         <Card className="p-8">
           <div>Institute for Cancer Generics</div>
           <div>Herbert Irving Cancer Center, Columbia University</div>

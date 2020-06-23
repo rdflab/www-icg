@@ -45,7 +45,7 @@ const CalEventLocation = ({ event, showDate, isMobile, color }) => {
 
       <ShowBetween
         s1="md"
-        s2="2xl"
+        s2="xl"
         className={` ${color === "white" ? "text-white" : "text-gray-500"}`}
       >
         <Column className="items-start">
@@ -62,7 +62,7 @@ const CalEventLocation = ({ event, showDate, isMobile, color }) => {
       </ShowBetween>
 
       <HideSmall
-        size="2xl"
+        size="xl"
         className={` ${color === "white" ? "text-white" : "text-gray-500"}`}
       >
         <Column className="items-start">

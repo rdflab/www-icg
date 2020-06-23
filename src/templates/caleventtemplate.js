@@ -11,7 +11,7 @@ import ShareLinks from "../components/share/sharelinks"
 
 import HTMLDiv from "../components/htmldiv"
 import FlHdDiv from "../components/flhddiv"
-import Breadcrumb from "../components/breadcrumb2"
+//import Breadcrumb from "../components/breadcrumb2"
 import SiteSearch from "../components/search/sitesearch"
 
 // nav={"Event"}
@@ -26,14 +26,13 @@ const CalEventTemplate = ({ path, pageContext }) => {
   return (
     <CrumbTitleLayout
       path={path}
+      crumbs={crumbs}
       title={title}
       headerComponent={<SiteSearch />}
       menuComponent={<ShareLinks path={path} />}
-      headerFloat={true}
     >
       <FlHdDiv>
         <Container>
-          <Breadcrumb crumbs={crumbs} />
           <Column>
             <MainColumn className="mr-16">
               <div className="w-full">

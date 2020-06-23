@@ -16,14 +16,15 @@ import FullDiv from "../fulldiv"
 import GrayLinkExt from "../links/graylinkext"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import HideSmall from "../hidesmall"
+import ZoomImage from "../images/zoomimage"
 
 export const HeadShotImage = ({ name, imageMap, hover }) => {
   if (name !== null && name in imageMap) {
     return (
-      <Img
+      <ZoomImage
         fluid={imageMap[name].childImageSharp.fluid}
-        className="w-48 h-48 trans-ani"
-        style={{ transform: hover ? "scale(1.06)" : "scale(1.02)" }}
+        className="w-48 h-48"
+        extZoom={hover}
       />
     )
   } else {

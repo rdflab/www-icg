@@ -133,7 +133,7 @@ const IndexTemplate = ({ path, pageContext, data }) => {
 
   return (
     <CrumbLayout
-      headerFloat={true}
+      floatMode="header"
       title="Home"
       headerComponent={<SiteSearch />}
       menuComponent={<ShareLinks path={path} />}

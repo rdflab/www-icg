@@ -3,7 +3,7 @@ id: "michael-shen"
 firstName: "Michael"
 lastName: "Shen"
 postNominalLetters: "PhD"
-titles: ["Professor of Medical Sciences (in Medicine)"]
+titles: ["Professor of Medical Sciences"]
 phone: "(212) 851-4723"
 fax: ""
 email: "ms3625@cumc.columbia.edu"

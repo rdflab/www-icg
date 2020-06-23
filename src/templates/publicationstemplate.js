@@ -11,7 +11,7 @@ import Column from "../components/column"
 import Container from "../components/container"
 import ShareLinks from "../components/share/sharelinks"
 import FlHdDiv from "../components/flhddiv"
-import Breadcrumb from "../components/breadcrumb2"
+//import Breadcrumb from "../components/breadcrumb2"
 
 const EMPTY_QUERY = ""
 
@@ -129,12 +129,11 @@ const PublicationsTemplate = ({ path, pageContext }) => {
       title={title}
       headerComponent={<SiteSearch />}
       menuComponent={<ShareLinks path={path} />}
-      headerFloat={true}
       bgColorClass="bg-columbia-light-gray"
     >
       <FlHdDiv>
         <Container>
-          <Breadcrumb crumbs={crumbs} />
+          {/* <Breadcrumb crumbs={crumbs} /> */}
           <ShowSmall>
             <SearchBar
               handleInputChange={handleInputChange}

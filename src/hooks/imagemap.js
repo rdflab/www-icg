@@ -9,6 +9,10 @@ const useImageMap = (data) => {
     }
   }
 
+  if (data.generic !== undefined) {
+    imageMap["generic"] = data.generic
+  }
+
   return imageMap
 }
 

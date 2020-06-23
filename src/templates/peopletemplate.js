@@ -11,8 +11,12 @@ import PeopleGroups from "../components/people/peoplegroups"
 import Container from "../components/container"
 import ShowBetween from "../components/showbetween"
 import ShareLinks from "../components/share/sharelinks"
+import FlHdDiv from "../components/flhddiv"
+//import Breadcrumb from "../components/breadcrumb2"
 
 const EMPTY_QUERY = ""
+
+// nav={nav}
 
 const PeopleTemplate = ({ path, pageContext }) => {
   const { nav, title, crumbs, allPeople, groupMap } = pageContext
@@ -108,10 +112,10 @@ const PeopleTemplate = ({ path, pageContext }) => {
     <CrumbTitleLayout
       path={path}
       crumbs={crumbs}
-      nav={nav}
       title={title}
       headerComponent={<SiteSearch />}
       menuComponent={<ShareLinks path={path} />}
+      bgColorClass="bg-columbia-light-gray"
       // titleComponent={
       //   <SearchSummary
       //     count={typeFilteredPeople.length}
@@ -120,8 +124,9 @@ const PeopleTemplate = ({ path, pageContext }) => {
       //   />
       // }
     >
-      <div className="my-16">
+      <FlHdDiv>
         <Container>
+          {/* <Breadcrumb crumbs={crumbs} /> */}
           {/* <ShowSmall>
             <SearchBar
               handleInputChange={handleInputChange}
@@ -151,10 +156,10 @@ const PeopleTemplate = ({ path, pageContext }) => {
           </ShowBetween>
 
           <HideSmall size="xl">
-            <PeopleGroups groupMap={groupMap} />
+            <PeopleGroups groupMap={groupMap} cols={4} colWidth="w-12/50" />
           </HideSmall>
         </Container>
-      </div>
+      </FlHdDiv>
     </CrumbTitleLayout>
   )
 }

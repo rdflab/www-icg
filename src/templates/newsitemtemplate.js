@@ -11,7 +11,7 @@ import Container from "../components/container"
 import FullDiv from "../components/fulldiv"
 import ShareLinks from "../components/share/sharelinks"
 import FlHdDiv from "../components/flhddiv"
-import Breadcrumb from "../components/breadcrumb2"
+//import Breadcrumb from "../components/breadcrumb2"
 import SiteSearch from "../components/search/sitesearch"
 
 // nav="News Article"
@@ -35,14 +35,13 @@ const NewsItemTemplate = ({ path, pageContext }) => {
   return (
     <CrumbTitleLayout
       path={path}
+      crumbs={crumbs}
       title={title}
       headerComponent={<SiteSearch />}
       menuComponent={<ShareLinks path={path} />}
-      headerFloat={true}
     >
       <FlHdDiv>
         <Container>
-          <Breadcrumb crumbs={crumbs} />
           <Column>
             <MainColumn className="mr-16">
               <FullDiv>

@@ -17,21 +17,14 @@ export const FloatingHeader = ({
   headerComponent,
   menuComponent,
   onMenuButtonClick,
-  showBreadcrumb,
   children,
 }) => (
-  <div className={`w-full absolute z-50 shadow-md`}>
+  <div className={`w-full absolute z-50`}>
     <HeaderWithNav
       content={headerComponent}
       menuComponent={menuComponent}
       onMenuButtonClick={onMenuButtonClick}
     />
-
-    {showBreadcrumb && crumbs.length > 0 && (
-      <HideSmall>
-        <Breadcrumb crumbs={crumbs} />
-      </HideSmall>
-    )}
 
     {children}
   </div>
@@ -42,19 +35,16 @@ FloatingHeader.defaultProps = {
   headerComponent: null,
   menuComponent: null,
   onMenuButtonClick: null,
-  showBreadcrumb: false,
 }
 
 const CrumbLayout = ({
   title,
-  subTitle,
   headerComponent,
   menuComponent,
+  titleComponent,
   children,
   crumbs,
-  headerFloat,
-  headerLinksFloat,
-  crumbsFloat,
+  floatMode,
   bgColorClass,
 }) => {
   const [menuVisible, setMenuVisible] = useState(false)
@@ -67,25 +57,33 @@ const CrumbLayout = ({
     setMenuVisible(false)
   }
 
-  if (headerFloat) {
-    return (
-      <MenuLayout
-        title={title}
-        menuVisible={menuVisible}
-        onSlideMenuClick={onSlideMenuClick}
-      >
-        <FloatingHeader
-          crumbs={crumbs}
-          headerComponent={headerComponent}
-          menuComponent={menuComponent}
-          onMenuButtonClick={onMenuButtonClick}
-        />
+  switch (floatMode) {
+    case "header":
+      return (
+        <MenuLayout
+          title={title}
+          menuVisible={menuVisible}
+          onSlideMenuClick={onSlideMenuClick}
+        >
+          <FloatingHeader
+            crumbs={crumbs}
+            headerComponent={headerComponent}
+            menuComponent={menuComponent}
+            onMenuButtonClick={onMenuButtonClick}
+          >
+            {titleComponent}
 
-        <div className={`relative min-h-screen`}>{children}</div>
-      </MenuLayout>
-    )
-  } else {
-    if (headerLinksFloat) {
+            {crumbs !== null && crumbs.length > 0 && (
+              <Breadcrumb crumbs={crumbs} />
+            )}
+          </FloatingHeader>
+
+          <div className={`relative min-h-screen ${bgColorClass}`}>
+            {children}
+          </div>
+        </MenuLayout>
+      )
+    case "header-links":
       return (
         <MenuLayout
           title={title}
@@ -93,8 +91,6 @@ const CrumbLayout = ({
           onSlideMenuClick={onSlideMenuClick}
         >
           <Header
-            title={title}
-            subTitle={subTitle}
             content={headerComponent}
             menuComponent={menuComponent}
             onMenuButtonClick={onMenuButtonClick}
@@ -105,7 +101,11 @@ const CrumbLayout = ({
               <HeaderLinksNav menuComponent={menuComponent} />
             </div>
 
-            <Breadcrumb crumbs={crumbs} />
+            {titleComponent}
+
+            {crumbs !== null && crumbs.length > 0 && (
+              <Breadcrumb crumbs={crumbs} />
+            )}
           </HideSmall>
 
           <div className={`relative min-h-screen ${bgColorClass}`}>
@@ -113,39 +113,35 @@ const CrumbLayout = ({
           </div>
         </MenuLayout>
       )
-    } else {
+    default:
       return (
         <HeaderLayout
           title={title}
           headerComponent={headerComponent}
           menuComponent={menuComponent}
+          bgColorClass={bgColorClass}
         >
-          <HideSmall>
-            <Breadcrumb
-              crumbs={crumbs}
-              className={`${crumbsFloat ? "absolute z-50" : ""}`}
-            />
-          </HideSmall>
+          {titleComponent}
 
-          <div className={`relative min-h-screen ${bgColorClass}`}>
-            {children}
-          </div>
+          {crumbs !== null && crumbs.length > 0 && (
+            <Breadcrumb crumbs={crumbs} />
+          )}
+
+          <div className={`relative min-h-screen`}>{children}</div>
         </HeaderLayout>
       )
-    }
   }
 }
 
 CrumbLayout.defaultProps = {
   crumbs: [],
-  headerFloat: false,
-  headerLinksFloat: false,
-  crumbsFloat: false,
+  floatMode: "none",
   selectedTab: "",
   title: "",
   subTitle: "",
   headerComponent: null,
   menuComponent: null,
+  titleComponent: null,
   bgColorClass: "bg-white",
 }
 

@@ -34,13 +34,15 @@ const HeaderLayout = ({
       onSlideMenuClick={onSlideMenuClick}
     >
       <HeaderWithNav
+        title={title}
         content={headerComponent}
         menuComponent={menuComponent}
         onMenuButtonClick={onMenuButtonClick}
       />
 
-      <div className={`${bgColorClass}`}></div>
-      <main>{children}</main>
+      <div className={`${bgColorClass}`}>
+        <main>{children}</main>
+      </div>
     </MenuLayout>
   )
 }

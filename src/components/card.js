@@ -10,8 +10,10 @@ const Card = ({
   <div
     onMouseEnter={onMouseEnter}
     onMouseLeave={onMouseLeave}
-    className={`relative trans-ani rounded-lg overflow-hidden w-full ${
-      showCard ? "bg-white shadow hover:shadow-md" : ""
+    className={`relative trans-ani rounded-lg  ${
+      showCard
+        ? "bg-white border border-solid border-gray-300 hover:shadow"
+        : ""
     } ${className}`}
   >
     {children}

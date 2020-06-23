@@ -30,7 +30,7 @@ const PersonHeader = ({ person, title, heading, subHeading }) => {
 }
 
 PersonHeader.defaultProps = {
-  title: "People",
+  title: "",
   heading: null,
   subHeading: null,
 }

@@ -13,7 +13,7 @@ import SlideMenuButton from "../slidemenu/slidemenubutton"
 export const HeaderLinksNav = ({ menuComponent }) => (
   <nav aria-label="Navigation">
     <Container>
-      <Column className="items-start justify-between pb-2">
+      <Column className="items-start justify-between">
         <HeaderLinks />
 
         {menuComponent !== null && menuComponent}

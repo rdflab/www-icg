@@ -11,8 +11,6 @@ import { Redirect } from "@reach/router"
 const axios = require("axios")
 
 export const SiteLink = ({ to, link }) => {
-  let linkComp
-
   if (to.includes("http")) {
     return (
       <BlueLinkExt target="_blank" to={to}>
@@ -100,14 +98,10 @@ const SiteSearch = ({ className, placeholder, maxResults }) => {
   const [query, setQuery] = useState("")
   const [results, setResults] = useState([])
   const [searchItems, setSearchItems] = useState([])
-  const [searchListElements, setSearchListElements] = useState([])
   const [showMenu, setShowMenu] = useState(false)
-  const [hover, setHover] = useState(false)
   const [siteData, setSiteData] = useState(null)
   const [selectedIndex, setSelectedIndex] = useState(-1)
   const [redirect, setRedirect] = useState("")
-
-  const resultEls = useRef([])
 
   useEffect(() => {
     if (query !== "") {
@@ -215,7 +209,6 @@ const SiteSearch = ({ className, placeholder, maxResults }) => {
         }
 
         setResults(ret)
-        setSearchListElements(searchComps)
       } else {
         if (showMenu) {
           setShowMenu(false)
@@ -319,7 +312,7 @@ const SiteSearch = ({ className, placeholder, maxResults }) => {
   return (
     <>
       {redirect !== "" && <Redirect to={redirect} noThrow />}
-      <HideSmall size="md" className="relative w-1/2">
+      <HideSmall size="md" className="relative w-11/20">
         <SiteSearchBar
           handleInputChange={handleInputChange}
           handleKeyDown={onKeyDown}

@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import Card from "../card"
 
 const SearchBar = ({
   handleInputChange,
@@ -20,11 +21,8 @@ const SearchBar = ({
   }
 
   return (
-    <div
-      className={`row z-40 px-4 py-2 border border-solid border-gray-300 rounded-md items-center bg-white trans-ani ${
-        border ? "border-gray-300" : ""
-      } ${hover || selected ? "shadow" : ""}
-       ${className}`}
+    <Card
+      className={`row z-40 px-4 py-3 items-center ${className}`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
@@ -42,7 +40,7 @@ const SearchBar = ({
           hover ? "text-blue-400" : "text-gray-400"
         } trans-ani ml-2 text-lg`}
       />
-    </div>
+    </Card>
   )
 }
 

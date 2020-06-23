@@ -15,6 +15,11 @@ import H1 from "../components/headings/h1"
 import PersonHeader from "../components/people/personheader"
 import Share from "../components/share/share"
 import ShareLinks from "../components/share/sharelinks"
+import FlHdDiv from "../components/flhddiv"
+//import Breadcrumb from "../components/breadcrumb2"
+import ContactInfo from "../components/people/contactinfo"
+import CrumbTitleLayout from "../components/crumbtitlelayout"
+import Card from "../components/card"
 
 const interests = (person) => {
   const n = person.researchAreas.length
@@ -146,21 +151,21 @@ const PersonTemplate = ({ path, pageContext, data }) => {
   const title = `${person.frontmatter.firstName} ${person.frontmatter.lastName}`
 
   return (
-    <CrumbLayout
+    <CrumbTitleLayout
       path={path}
       crumbs={[
         ["People", "/people"],
-        [title, personUrl(person)],
+        [person.frontmatter.name, path],
       ]}
+      title={person.frontmatter.name}
       headerComponent={<SiteSearch />}
       menuComponent={<ShareLinks path={path} />}
     >
-      <PersonHeader person={person} />
-
       {/* {interests2(person)} */}
 
-      <Container className="my-16">
-        <Column>
+      <FlHdDiv>
+        <Container></Container>
+        <Container className="my-8">
           <div className="mr-8">
             {data.file !== null && (
               <Img
@@ -170,15 +175,23 @@ const PersonTemplate = ({ path, pageContext, data }) => {
               />
             )}
           </div>
+
           <div className="p-4 w-full">
             <HTMLDiv html={person.html} />
           </div>
-        </Column>
-      </Container>
+        </Container>
+        <div className="bg-columbia-secondary-blue py-8">
+          <Container>
+            <div className="uppercase text-white text-lg">Contact</div>
+            <div className="text-white text-lg">
+              <ContactInfo person={person} color="white" />
+            </div>
+          </Container>
+        </div>
 
-      {/* <Heading>About {personName(person)}</Heading> */}
+        {/* <Heading>About {personName(person)}</Heading> */}
 
-      {/* {cv !== null && cv.education.length > 0 && (
+        {/* {cv !== null && cv.education.length > 0 && (
         <div className="py-8">
           <Container>
             <Education cv={cv} />
@@ -210,19 +223,22 @@ const PersonTemplate = ({ path, pageContext, data }) => {
         </div>
       )} */}
 
-      {publications.length > 0 && (
-        <Container className="py-8">
-          <Heading className="text-center">Publications</Heading>
-          <div>
-            <SimplePubSearch
-              allPublications={publications}
-              showLabLink={false}
-              sectionMode="alt"
-            />
+        {publications.length > 0 && (
+          <div className="bg-columbia-light-gray py-16">
+            <Container>
+              <Heading className="text-center">Publications</Heading>
+              <div>
+                <SimplePubSearch
+                  allPublications={publications}
+                  showLabLink={false}
+                  sectionMode="alt"
+                />
+              </div>
+            </Container>
           </div>
-        </Container>
-      )}
-    </CrumbLayout>
+        )}
+      </FlHdDiv>
+    </CrumbTitleLayout>
   )
 }
 

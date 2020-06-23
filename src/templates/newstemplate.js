@@ -9,7 +9,7 @@ import MainColumn from "../components/maincolumn"
 import SideColumn from "../components/sidecolumn"
 import DayPicker from "react-day-picker"
 import FlHdDiv from "../components/flhddiv"
-import Breadcrumb from "../components/breadcrumb2"
+//import Breadcrumb from "../components/breadcrumb2"
 
 const EMPTY_QUERY = ""
 
@@ -148,14 +148,13 @@ const NewsTemplate = ({ path, pageContext }) => {
       // }
       headerComponent={<SiteSearch />}
       menuComponent={<ShareLinks path={path} />}
-      headerFloat={true}
       bgColorClass="bg-columbia-light-gray"
     >
       <FlHdDiv>
         <Container>
-          <Breadcrumb crumbs={crumbs} />
+          {/* <Breadcrumb crumbs={crumbs} /> */}
           <Column>
-            <MainColumn className="mr-4 xl:mr-0">
+            <MainColumn>
               <NewsSearchResults
                 news={dayFilteredNews}
                 pagedNews={pagedNews}
@@ -164,11 +163,14 @@ const NewsTemplate = ({ path, pageContext }) => {
                 onPageChanged={onPageChanged}
               />
             </MainColumn>
-            <SideColumn className="justify-end text-right">
-              <DayPicker
-                selectedDays={selectedDays}
-                onDayClick={handleDayClick}
-              />
+            <SideColumn className="pl-16">
+              <div>
+                <div className="text uppercase">Date Filter</div>
+                <DayPicker
+                  selectedDays={selectedDays}
+                  onDayClick={handleDayClick}
+                />
+              </div>
             </SideColumn>
           </Column>
         </Container>

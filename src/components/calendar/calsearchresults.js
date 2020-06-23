@@ -17,11 +17,11 @@ const CalSearchResults = ({
           plural="Events"
         /> */}
 
-    <CalEvents calEvents={events} imageMap={imageMap} />
+    <CalEvents calEvents={pagedEvents} imageMap={imageMap} />
 
     <Pagination
       page={page}
-      totalRecords={pagedEvents.length}
+      totalRecords={events.length}
       recordsPerPage={recordsPerPage}
       pageNeighbours={1}
       onPageChanged={onPageChanged}

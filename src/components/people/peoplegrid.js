@@ -1,17 +1,14 @@
-import React from "react"
+import React, { useState } from "react"
 import ContactInfo from "./contactinfo"
 import Column from "../column"
 import FullDiv from "../fulldiv"
 import FacultyLink from "../faculty/facultylink"
 import PersonLink from "../people/personlink"
-import genericsvg from "../../assets/svg/generic.svg"
-import { useStaticQuery, graphql } from "gatsby"
-import useImageMap from "../../hooks/imagemap"
-import Img from "gatsby-image"
 import getContextName from "../../utils/contextname"
 import ShowSmall from "../showsmall"
 import HideSmall from "../hidesmall"
 import Card from "../card"
+import ZoomImage from "../images/zoomimage"
 
 // const PersonCard = ({ person, smallView }) => (
 //   <div
@@ -72,13 +69,24 @@ import Card from "../card"
 
 const PersonCard = ({
   person,
-  img,
+  imageMap,
   smallView,
   context,
   isFaculty,
   showUrl,
+  showPhoto,
   showCard,
 }) => {
+  const [hover, setHover] = useState(false)
+
+  const onMouseEnter = (e) => {
+    setHover(true)
+  }
+
+  const onMouseLeave = (e) => {
+    setHover(false)
+  }
+
   let link
 
   if (isFaculty) {
@@ -96,9 +104,25 @@ const PersonCard = ({
   }
 
   return (
-    <Card className="h-full" showCard={showCard}>
-      {img !== null && <div className="rounded-lg trans-ani">{img}</div>}
-      <div className={`${showCard ? "m-4" : ""} text-gray-800`}>
+    <Card
+      className="w-full h-full overflow-hidden"
+      showCard={showCard}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
+      {showPhoto && (
+        <div className="overflow-hidden">
+          <ZoomImage
+            fluid={
+              person.frontmatter.id in imageMap
+                ? imageMap[person.frontmatter.id].childImageSharp.fluid
+                : imageMap["generic"].childImageSharp.fluid
+            }
+            extZoom={hover}
+          />
+        </div>
+      )}
+      <div className={`text ${showCard ? "m-4" : ""}`}>
         <ShowSmall>
           <h4>{link}</h4>
           <h5>{getContextName(context, person.titleMap)}</h5>
@@ -120,11 +144,13 @@ const PersonCard = ({
 PersonCard.defaultProps = {
   context: "default",
   showUrl: true,
+  showPhoto: true,
   showCard: true,
 }
 
 const PeopleGrid = ({
   name,
+  imageMap,
   people,
   cols,
   colWidth,
@@ -137,36 +163,6 @@ const PeopleGrid = ({
   showCard,
   context,
 }) => {
-  const data = useStaticQuery(graphql`
-    query {
-      files: allFile(
-        filter: {
-          absolutePath: { regex: "/images/people/" }
-          ext: { regex: "/jpg/" }
-        }
-      ) {
-        edges {
-          node {
-            name
-            ext
-            relativePath
-            childImageSharp {
-              fluid(maxWidth: 500) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  const imageMap = useImageMap(data)
-
-  const genericimg = (
-    <img src={genericsvg} className="w-full" alt="Generic person" />
-  )
-
   const rows = Math.floor(people.length / cols) + 1
 
   const ret = []
@@ -182,7 +178,6 @@ const PeopleGrid = ({
 
     for (let c = 0; c < cols; ++c) {
       person = null
-      img = null
 
       if (pc < people.length) {
         person = people[pc++]
@@ -197,19 +192,6 @@ const PeopleGrid = ({
       }
 
       if (person !== null && person !== undefined) {
-        if (showPhoto) {
-          if (person.frontmatter.id in imageMap) {
-            img = (
-              <Img
-                fluid={imageMap[person.frontmatter.id].childImageSharp.fluid}
-                className="w-full h-full"
-              />
-            )
-          } else {
-            img = genericimg
-          }
-        }
-
         found = true
       }
 
@@ -218,11 +200,12 @@ const PeopleGrid = ({
           {person !== null && (
             <PersonCard
               person={person}
-              img={img}
+              imageMap={imageMap}
               smallView={smallView}
               context={context}
               isFaculty={name === "Faculty"}
               showUrl={showUrl}
+              showPhoto={showPhoto}
               showCard={showCard}
             />
           )}

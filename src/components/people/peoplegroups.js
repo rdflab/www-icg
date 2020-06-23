@@ -4,6 +4,7 @@ import PeopleGrid from "./peoplegrid"
 
 const PeopleGroups = ({
   groupMap,
+  imageMap,
   cols,
   colWidth,
   smallView,
@@ -26,6 +27,7 @@ const PeopleGroups = ({
           <div className="mb-4" key={g}>
             <PeopleGrid
               name={g}
+              imageMap={imageMap}
               people={people}
               faculty={faculty}
               cols={cols}

@@ -9,7 +9,6 @@ import HTMLDiv from "../components/htmldiv"
 import SiteSearch from "../components/search/sitesearch"
 import Container from "../components/container"
 import PeopleGroups from "../components/people/peoplegroups"
-import Img from "gatsby-image"
 import ShowSmall from "../components/showsmall"
 import HideSmall from "../components/hidesmall"
 import ShowBetween from "../components/showbetween"
@@ -24,8 +23,9 @@ import BlueLinkExt from "../components/links/bluelinkext"
 import SmallContainer from "../components/smallcontainer"
 import DropShadowFrame from "../components/images/dropshadowframe"
 import ShareLinks from "../components/share/sharelinks"
-import genericsvg from "../assets/svg/generic.svg"
-import Breadcrumb from "../components/breadcrumb2"
+//import Breadcrumb from "../components/breadcrumb2"
+import Card from "../components/card"
+import ZoomImage from "../components/images/zoomimage"
 
 export const PubMedLink = ({ person }) => (
   // <div className="uppercase">
@@ -333,40 +333,16 @@ export const Team = ({ labGroupMap }) => (
 )
 
 export const HeadShotImage = ({ data, person }) => {
-  const [hover, setHover] = useState(false)
-
-  const onMouseEnter = (e) => {
-    setHover(true)
-  }
-
-  const onMouseLeave = (e) => {
-    setHover(false)
-  }
-
-  let img
-
-  if (data.file !== null) {
-    img = (
-      <Img
-        fluid={data.file.childImageSharp.fluid}
-        className="w-full h-full trans-ani"
-        style={{ transform: hover ? "scale(1.06)" : "scale(1.02)" }}
-      />
-    )
-  } else {
-    img = (
-      <img src={genericsvg} className="w-full" alt={person.frontmatter.name} />
-    )
-  }
-
   return (
-    <div
-      className="overflow-hidden w-full h-full"
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-    >
-      {img}
-    </div>
+    <Card>
+      <ZoomImage
+        fluid={
+          data.file !== null
+            ? data.file.childImageSharp.fluid
+            : data.generic.childImageSharp.fluid
+        }
+      />
+    </Card>
   )
 }
 
@@ -439,10 +415,10 @@ const FacultyShortTemplate = ({ path, pageContext, data }) => {
 
   return (
     <CrumbLayout
-      nav="Faculty"
+      crumbs={crumbs}
       title={person.frontmatter.name}
       headerComponent={<SiteSearch />}
-      headerFloat={true}
+      floatMode="header"
       menuComponent={<ShareLinks path={path} />}
     >
       {headerImage !== null && headerImage}
@@ -453,9 +429,9 @@ const FacultyShortTemplate = ({ path, pageContext, data }) => {
         <ShareLinks path={path} color="color" opacity={[40, 100]} />
       </Container> */}
 
-      <Container>
+      {/* <Container>
         <Breadcrumb crumbs={crumbs} />
-      </Container>
+      </Container> */}
 
       <div className="py-8">
         <About
@@ -569,6 +545,15 @@ export const query = graphql`
     }
 
     file(absolutePath: { regex: "/images/people/" }, name: { eq: $id }) {
+      relativePath
+      childImageSharp {
+        fluid(maxWidth: 500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
+    generic: file(absolutePath: { regex: "/generic.png/" }) {
       relativePath
       childImageSharp {
         fluid(maxWidth: 500) {

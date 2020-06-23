@@ -15,7 +15,7 @@ const ContactInfo = ({
 }) => {
   if (showIcons) {
     return (
-      <div className={`w-full h-full ${className}`}>
+      <div className={`h-full ${className}`}>
         {person.frontmatter.email !== "" && (
           <EmailLink color={color} to={person.frontmatter.email} />
         )}
@@ -32,7 +32,7 @@ const ContactInfo = ({
     )
   } else {
     return (
-      <div className={`w-full h-full  ${className}`}>
+      <div className={`h-full  ${className}`}>
         {person.frontmatter.email !== "" && (
           <div className="mt-1">
             <ColorLinkExt

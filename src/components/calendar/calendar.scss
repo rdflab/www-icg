@@ -1,6 +1,16 @@
 @import "../../assets/css/colors.scss";
 
+.DayPicker-Caption {
+    padding: 0 !important;
+}
+
+.DayPicker-Month {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
 .DayPicker-Day {
+    @apply transition duration-300;
     width: 2rem !important;
     height: 2rem !important;
     max-width: 2rem !important;
@@ -11,7 +21,6 @@
     color: black !important;
     border: none;
     border-radius: 0 !important;
-    @apply transition duration-300;
 }
 
 .DayPicker-Day:hover {

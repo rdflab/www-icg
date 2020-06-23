@@ -17,7 +17,7 @@ import ShareLinks from "../components/share/sharelinks"
 import useImageMap from "../hooks/imagemap"
 import ShowSmall from "../components/showsmall"
 import FlHdDiv from "../components/flhddiv"
-import Breadcrumb from "../components/breadcrumb2"
+//import Breadcrumb from "../components/breadcrumb2"
 
 const EMPTY_QUERY = ""
 
@@ -155,16 +155,20 @@ const CalEventsTemplate = ({ path, pageContext, data }) => {
   }
 
   const offset = (page - 1) * recordsPerPage
+
   let pagedEvents = calEvents.slice(offset, offset + recordsPerPage)
+
+  console.log(pagedEvents.length, "aha")
+
   const crumbs = [["Events", "/events"]]
   return (
     <CrumbTitleLayout
       path={path}
-      title="Events"
       crumbs={crumbs}
+      title="Events"
       headerComponent={<SiteSearch />}
       menuComponent={<ShareLinks path={path} />}
-      headerFloat={true}
+      bgColorClass="bg-columbia-light-gray"
       // titleComponent={
       //   <SearchSummary
       //     count={calEvents.length}
@@ -173,9 +177,9 @@ const CalEventsTemplate = ({ path, pageContext, data }) => {
       //   />
       // }
     >
-      <FlHdDiv className="bg-columbia-light-gray">
+      <div className="mt-16">
         <Container>
-          <Breadcrumb crumbs={crumbs} />
+          {/* <Breadcrumb crumbs={crumbs} /> */}
           <Column>
             {/* <SmallColumn>
         <SearchBar
@@ -186,7 +190,7 @@ const CalEventsTemplate = ({ path, pageContext, data }) => {
           <DayPicker selectedDays={selectedDays} onDayClick={handleDayClick} />
         </div>
       </SmallColumn> */}
-            <MainColumn className="mr-4 xl:mr-0">
+            <MainColumn>
               <div className="w-full">
                 <ShowSmall size="lg">
                   <SearchBar
@@ -233,15 +237,18 @@ const CalEventsTemplate = ({ path, pageContext, data }) => {
                 />
               </div>
             </MainColumn>
-            <SideColumn className="justify-end text-right">
-              <DayPicker
-                selectedDays={selectedDays}
-                onDayClick={handleDayClick}
-              />
+            <SideColumn className="pl-16">
+              <div>
+                <div className="text uppercase">Date Filter</div>
+                <DayPicker
+                  selectedDays={selectedDays}
+                  onDayClick={handleDayClick}
+                />
+              </div>
             </SideColumn>
           </Column>
         </Container>
-      </FlHdDiv>
+      </div>
     </CrumbTitleLayout>
   )
 }

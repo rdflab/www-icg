@@ -6,10 +6,16 @@ import mariadbsvg from "../assets/svg/maria-db.svg"
 import npmsvg from "../assets/svg/npm-logo-black.svg"
 import LinkExt from "../components/links/linkext"
 import Column from "../components/column"
-import Container from "../components/container"
+import SmallContainer from "../components/smallcontainer"
 import useSiteMetadata from "../hooks/sitemetadata"
 import useCurrentBuild from "../hooks/currentbuild"
 import SiteSearch from "../components/search/sitesearch"
+import FlHdDiv from "../components/flhddiv"
+//import Breadcrumb from "../components/breadcrumb2"
+import Card from "../components/card"
+import Container from "../components/container"
+
+// nav="Help"
 
 const HelpTemplate = ({ path, pageContext, data }) => {
   const { title } = useSiteMetadata()
@@ -28,24 +34,25 @@ const HelpTemplate = ({ path, pageContext, data }) => {
   return (
     <CrumbTitleLayout
       path={path}
-      nav="Help"
-      title={`About ${title} Web Site`}
       crumbs={[["Help", "/help"]]}
+      title={`About ${title} Web Site`}
       headerComponent={<SiteSearch />}
+      bgColorClass="bg-columbia-light-gray"
     >
-      <div className="bg-columbia-light-gray py-16 min-h-full">
-        <Container>
-          <div className="bg-white rounded-md shadow-lg hover:shadow-xl trans-ani p-12 md:w-1/2">
+      <FlHdDiv className="min-h-full">
+        <Container></Container>
+        <SmallContainer>
+          <Card className="p-8">
             {/* <p>Institute for Cancer Genetics website</p> */}
             <p>Last updated: {currentDate}</p>
             <p className="mt-4">
-              Proudly developed by{" "}
+              Proudly Developed By{" "}
               <BlueLinkExt to="mailto:antony@antonyholmes.com">
                 Antony Holmes
               </BlueLinkExt>
             </p>
             <p className="mt-4">&copy; {copyright} Antony Holmes</p>
-          </div>
+          </Card>
 
           <div className="pt-32 pb-64">
             <p className="font-semibold">
@@ -87,8 +94,8 @@ const HelpTemplate = ({ path, pageContext, data }) => {
               </Column>
             </Column>
           </div>
-        </Container>
-      </div>
+        </SmallContainer>
+      </FlHdDiv>
     </CrumbTitleLayout>
   )
 }

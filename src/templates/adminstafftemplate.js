@@ -9,11 +9,13 @@ import HideSmall from "../components/hidesmall"
 import { useWindowSize } from "@react-hook/window-size"
 import ShareLinks from "../components/share/sharelinks"
 import FlHdDiv from "../components/flhddiv"
-import Breadcrumb from "../components/breadcrumb2"
+//import Breadcrumb from "../components/breadcrumb2"
+import { graphql } from "gatsby"
+import useImageMap from "../hooks/imagemap"
 
 const EMPTY_QUERY = ""
 
-const AdminStaffTemplate = ({ path, pageContext }) => {
+const AdminStaffTemplate = ({ path, pageContext, data }) => {
   const { admin, crumbs } = pageContext
 
   const [query, setQuery] = useState(EMPTY_QUERY)
@@ -22,6 +24,8 @@ const AdminStaffTemplate = ({ path, pageContext }) => {
   const [recordsPerPage, setRecordsPerPage] = useState(20)
 
   const [width, height] = useWindowSize()
+
+  const imageMap = useImageMap(data)
 
   // const handleInputChange = e => {
   //   const q = e.target.value.toLowerCase()
@@ -56,10 +60,10 @@ const AdminStaffTemplate = ({ path, pageContext }) => {
     <CrumbTitleLayout
       path={path}
       crumbs={crumbs}
-      title="Administration Team"
+      title="Administration"
       headerComponent={<SiteSearch />}
       menuComponent={<ShareLinks path={path} />}
-      headerFloat={true}
+      bgColorClass="bg-columbia-light-gray"
       // titleComponent={
       //   <SearchSummary count={groups.length} single="Lab" plural="Labs" />
       // }
@@ -71,9 +75,9 @@ const AdminStaffTemplate = ({ path, pageContext }) => {
         className="my-4"
       /> */}
 
-      <FlHdDiv className="bg-columbia-light-gray">
+      <FlHdDiv>
         <Container>
-          <Breadcrumb crumbs={crumbs} />
+          {/* <Breadcrumb crumbs={crumbs} /> */}
           <ShowSmall size="lg">
             <PeopleGroups
               groupMap={admin.groupMap}
@@ -81,6 +85,7 @@ const AdminStaffTemplate = ({ path, pageContext }) => {
               showPhoto={true}
               colWidth="w-9/20"
               context="admin"
+              imageMap={imageMap}
             />
           </ShowSmall>
 
@@ -91,6 +96,7 @@ const AdminStaffTemplate = ({ path, pageContext }) => {
               showPhoto={true}
               colWidth="w-3/10"
               context="admin"
+              imageMap={imageMap}
             />
           </ShowBetween>
 
@@ -101,6 +107,7 @@ const AdminStaffTemplate = ({ path, pageContext }) => {
               context="admin"
               cols={4}
               colWidth="w-23/100"
+              imageMap={imageMap}
             />
           </ShowBetween>
 
@@ -111,6 +118,7 @@ const AdminStaffTemplate = ({ path, pageContext }) => {
               context="admin"
               cols={5}
               colWidth="w-19/100"
+              imageMap={imageMap}
             />
           </HideSmall>
         </Container>
@@ -120,3 +128,38 @@ const AdminStaffTemplate = ({ path, pageContext }) => {
 }
 
 export default AdminStaffTemplate
+
+export const query = graphql`
+  query {
+    files: allFile(
+      filter: {
+        absolutePath: { regex: "/images/people/" }
+        ext: { regex: "/jpg/" }
+      }
+    ) {
+      edges {
+        node {
+          name
+          ext
+          relativePath
+          childImageSharp {
+            fluid(maxWidth: 500) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+
+    generic: file(absolutePath: { regex: "/generic.png/" }) {
+      name
+      ext
+      relativePath
+      childImageSharp {
+        fluid(maxWidth: 500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`

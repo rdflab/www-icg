@@ -4,10 +4,11 @@ import Column from "./column"
 import { Link } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import HideSmall from "./hidesmall"
+import Container from "./container"
 
 const Divider = ({ color, opacity }) => (
   <div className={`px-3 ${color} ${opacity}`}>
-    <FontAwesomeIcon icon={[`fas`, `chevron-right`]} className={`text-2xl`} />
+    <FontAwesomeIcon icon={[`fas`, `chevron-right`]} className={`text-xl`} />
   </div>
   //<div className={`px-3 ${color} opacity-70`}><h5>/</h5></div>
 )
@@ -20,7 +21,7 @@ const Breadcrumb = ({ crumbs, color, opacity, className }) => {
       <Link to="/" key={ret.length}>
         <FontAwesomeIcon
           icon="home"
-          className={`text-2xl ${color} ${opacity} hover:opacity-90 trans-ani`}
+          className={`text-xl ${color} ${opacity} hover:opacity-90 trans-ani`}
         />
       </Link>
     )
@@ -32,9 +33,7 @@ const Breadcrumb = ({ crumbs, color, opacity, className }) => {
 
       ret.push(
         <Link key={ret.length} to={crumb[1]}>
-          <div
-            className={`${color} ${opacity} hover:opacity-90 font-semibold trans-ani`}
-          >
+          <div className={`${color} ${opacity} hover:opacity-90 trans-ani`}>
             {crumb[0]}
           </div>
         </Link>
@@ -46,8 +45,10 @@ const Breadcrumb = ({ crumbs, color, opacity, className }) => {
     }
 
     return (
-      <HideSmall className={`w-full pt-4 pb-8 ${className}`}>
-        <Column className="items-center">{ret}</Column>
+      <HideSmall className={`w-full py-3 bg-white-90 ${className}`}>
+        <Container>
+          <Column className="items-center">{ret}</Column>
+        </Container>
       </HideSmall>
     )
   } else {
@@ -57,8 +58,8 @@ const Breadcrumb = ({ crumbs, color, opacity, className }) => {
 
 Breadcrumb.defaultProps = {
   className: "",
-  opacity: "opacity-60",
-  color: "text-gray-500",
+  opacity: "opacity-80",
+  color: "text-columbia-blue",
 }
 
 export default Breadcrumb

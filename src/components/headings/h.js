@@ -25,18 +25,18 @@ const H = ({
   return (
     <div className={`text-white w-full bg-columbia-blue-90 ${className}`}>
       <Container>
-        <ShowSmall className="py-2">
+        <ShowSmall>
           <TitleDiv title={title} heading={heading} subHeading={subHeading} />
 
-          {content !== null && <div className="py-2">{content}</div>}
+          {content !== null && <div>{content}</div>}
           {showShareLinks && (
-            <div className="py-2">
+            <div>
               <ShareLinks path={path} color="white" />
             </div>
           )}
         </ShowSmall>
-        <HideSmall className="pb-4">
-          <Column className="items-center justify-between">
+        <HideSmall>
+          <Column className="items-start justify-between">
             <TitleDiv title={title} heading={heading} subHeading={subHeading} />
 
             <Column>{content !== null && <div>{content}</div>}</Column>

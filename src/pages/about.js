@@ -3,7 +3,7 @@ import Container from "../components/container"
 import CrumbTitleLayout from "../components/crumbtitlelayout"
 import SiteSearch from "../components/search/sitesearch"
 import FlHdDiv from "../components/flhddiv"
-import Breadcrumb from "../components/breadcrumb2"
+//import Breadcrumb from "../components/breadcrumb2"
 import Card from "../components/card"
 
 //nav="About"
@@ -11,13 +11,12 @@ import Card from "../components/card"
 const About = () => (
   <CrumbTitleLayout
     title="Mission"
+    crumbs={[["About", "/about"]]}
     headerComponent={<SiteSearch />}
-    headerFloat={true}
     bgColorClass="bg-columbia-light-gray"
   >
     <FlHdDiv>
       <Container>
-        <Breadcrumb crumbs={[["About", "/about"]]} />
         <Card className="p-8">
           <p>
             The Institute for Cancer Genetics was founded in 1999 as part of a
