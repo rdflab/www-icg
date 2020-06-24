@@ -13,13 +13,15 @@ import Container from "./container"
 const CrumbTitleLayout = ({
   path,
   nav,
+  crumbs,
+  crumbLocation,
   title,
   subTitle,
   headerContent,
   menuContent,
   crumbContent,
   children,
-  crumbs,
+
   floatMode,
   bgColorClass,
 }) => (
@@ -38,13 +40,16 @@ const CrumbTitleLayout = ({
     //   />
     // }
     titleContent={
-      <div className="py-3 bg-columbia-blue-80">
-        <Container>
-          <h1 className="text-white-95">{title}</h1>
-        </Container>
-      </div>
+      title !== "" ? (
+        <div className="pt-8">
+          <Container className="border-b border-solid border-gray-400 pb-2">
+            <h3 className="text-gray-600">{title}</h3>
+          </Container>
+        </div>
+      ) : null
     }
     crumbs={crumbs}
+    crumbLocation={crumbLocation}
     floatMode={floatMode}
     bgColorClass={bgColorClass}
   >
@@ -56,10 +61,11 @@ CrumbTitleLayout.defaultProps = {
   path: "",
   crumbs: [],
   floatMode: "none",
+  crumbLocation: "bottom",
   selectedTab: "",
   nav: null,
-  title: null,
-  subTitle: null,
+  title: "",
+  subTitle: "",
   titleContent: null,
   headerContent: null,
   menuContent: null,

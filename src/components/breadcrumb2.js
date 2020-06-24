@@ -45,7 +45,7 @@ const Breadcrumb = ({ crumbs, color, opacity, className }) => {
     }
 
     return (
-      <HideSmall className={`w-full py-3 bg-white  ${className}`}>
+      <HideSmall className={`w-full py-6 ${className}`}>
         <Container>
           <Column className="items-center">{ret}</Column>
         </Container>
@@ -59,7 +59,7 @@ const Breadcrumb = ({ crumbs, color, opacity, className }) => {
 Breadcrumb.defaultProps = {
   className: "",
   opacity: "opacity-60",
-  color: "text-columbia-blue",
+  color: "text-blue-600",
 }
 
 export default Breadcrumb

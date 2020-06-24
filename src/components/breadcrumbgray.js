@@ -2,13 +2,13 @@ import React from "react"
 import Container from "./container"
 //import WhiteLink from "./links/whitelink"
 import Column from "./column"
-import breadcrumbarrowsvg from "../assets/svg/breadcrumb-arrow-white.svg"
+import breadcrumbarrowsvg from "../assets/svg/breadcrumb-arrow.svg"
 import { Link } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import HideSmall from "./hidesmall"
 
 const Divider = ({ color, opacity }) => (
-  <div className={`px-3 text-white opacity-${opacity}`}>
+  <div className={`px-3 opacity-${opacity}`}>
     {/* <FontAwesomeIcon icon={[`fas`, `chevron-right`]} className={`text-lg`} /> */}
     <img
       src={breadcrumbarrowsvg}
@@ -18,7 +18,7 @@ const Divider = ({ color, opacity }) => (
   </div>
 )
 
-const Breadcrumb = ({ crumbs, opacity, content, className }) => {
+const BreadcrumbGray = ({ crumbs, color, opacity, content, className }) => {
   if (crumbs !== null && crumbs.length > 0) {
     const ret = []
 
@@ -26,7 +26,7 @@ const Breadcrumb = ({ crumbs, opacity, content, className }) => {
       <Link to="/" key={ret.length}>
         <FontAwesomeIcon
           icon="home"
-          className={`text-xl text-white opacity-${opacity} hover:opacity-100 trans-ani`}
+          className={`text-xl ${color} opacity-${opacity} hover:opacity-100 trans-ani`}
         />
       </Link>
     )
@@ -47,7 +47,7 @@ const Breadcrumb = ({ crumbs, opacity, content, className }) => {
       ret.push(
         <Link key={ret.length} to={crumb[1]}>
           <div
-            className={`text-white opacity-${opacity} hover:opacity-100 trans-ani`}
+            className={`${color} opacity-${opacity} hover:opacity-100 trans-ani`}
           >
             {crumb[0]}
           </div>
@@ -69,10 +69,10 @@ const Breadcrumb = ({ crumbs, opacity, content, className }) => {
     }
 
     return (
-      <HideSmall className={`bg-columbia-blue-90 py-3 ${className}`}>
-        <Container>
+      <HideSmall className={`py-4 ${className}`}>
+        <Container className="border-t border-solid border-gray-400 py-4">
           <Column className="justify-between items-center">
-            <Column className="items-center">{ret}</Column>
+            <Column>{ret}</Column>
 
             <div>{content !== null && content}</div>
           </Column>
@@ -84,10 +84,11 @@ const Breadcrumb = ({ crumbs, opacity, content, className }) => {
   }
 }
 
-Breadcrumb.defaultProps = {
+BreadcrumbGray.defaultProps = {
   className: "",
   content: null,
+  color: "text-gray-500",
   opacity: 80,
 }
 
-export default Breadcrumb
+export default BreadcrumbGray

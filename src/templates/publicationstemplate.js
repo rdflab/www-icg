@@ -126,24 +126,24 @@ const PublicationsTemplate = ({ path, pageContext }) => {
       path={path}
       crumbs={crumbs}
       selectedTab={selectedTab}
-      title={title}
       headerContent={<SiteSearch />}
       crumbContent={<ShareLinks path={path} />}
-      bgColorClass="bg-columbia-light-gray"
     >
-      <FlHdDiv>
-        <Container>
-          {/* <Breadcrumb crumbs={crumbs} /> */}
-          <ShowSmall>
+      <div>
+        {/* <Breadcrumb crumbs={crumbs} /> */}
+        <ShowSmall className="py-8 bg-columbia-light-gray">
+          <Container>
             <SearchBar
               handleInputChange={handleInputChange}
               placeholder="Type to find publications..."
               text={query}
             />
-          </ShowSmall>
+          </Container>
+        </ShowSmall>
 
-          <HideSmall>
-            <Column isCentered={true} className="mb-8">
+        <HideSmall className="bg-columbia-light-gray py-12">
+          <Container>
+            <Column isCentered={true}>
               <div className="w-1/2">
                 <SearchBar
                   handleInputChange={handleInputChange}
@@ -152,8 +152,10 @@ const PublicationsTemplate = ({ path, pageContext }) => {
                 />
               </div>
             </Column>
-          </HideSmall>
+          </Container>
+        </HideSmall>
 
+        <Container>
           <HideSmall>
             <Column isVCentered={true} className="mt-8 justify-center">
               {showYears && (
@@ -173,7 +175,7 @@ const PublicationsTemplate = ({ path, pageContext }) => {
             showLabLink={showLabLink}
           />
         </Container>
-      </FlHdDiv>
+      </div>
     </CrumbTitleLayout>
   )
 }

@@ -227,26 +227,45 @@ a:hover {
 // }
 
 
-.header-link-underline {
-  @apply link pb-1 border-b-3 mr-8 border-solid font-semibold text-white uppercase opacity-70 trans-ani;
+// .header-link-underline {
+//   @apply link pb-1 border-b-3 mr-8 border-solid font-semibold text-white uppercase opacity-70 trans-ani;
+// }
+
+// .header-link {
+//   @apply header-link-underline border-transparent ; 
+// }
+
+// .header-link:hover {
+//   @apply opacity-95; //columbia-secondary-blue;
+// }
+
+// .header-link-active {
+//   @apply header-link-underline border-white opacity-95; //columbia-secondary-blue;
+// }
+
+// .header-link-active:hover {
+//   @apply border-white opacity-95; //columbia-secondary-blue; 
+// }
+
+.header-link-base {
+  @apply link mr-8 font-semibold trans-ani; 
 }
 
 .header-link {
-  @apply header-link-underline border-transparent ; 
+  @apply header-link-base text-white-60; 
 }
 
 .header-link:hover {
-  @apply opacity-95; //columbia-secondary-blue;
+  @apply text-white-80;
 }
 
 .header-link-active {
-  @apply header-link-underline border-white opacity-95; //columbia-secondary-blue;
+  @apply header-link-base text-white; 
 }
 
 .header-link-active:hover {
-  @apply border-white opacity-95; //columbia-secondary-blue; 
+  @apply text-white; 
 }
-
 
 
 

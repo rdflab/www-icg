@@ -72,9 +72,13 @@ const CalEventsTemplate = ({ path, pageContext, data }) => {
       const month = event.frontmatter.start
         .toLocaleString("default", { month: "short" })
         .toLowerCase()
-      const title = event.frontmatter.title.toLowerCase()
 
-      if (title.includes(q) || day === q || month === q) {
+      if (
+        event.frontmatter.title.toLowerCase().includes(q) ||
+        event.excerpt.toLowerCase().includes(q) ||
+        day === q ||
+        month === q
+      ) {
         ret.push(event)
       }
     }
@@ -158,17 +162,14 @@ const CalEventsTemplate = ({ path, pageContext, data }) => {
 
   let pagedEvents = calEvents.slice(offset, offset + recordsPerPage)
 
-  console.log(pagedEvents.length, "aha")
-
   const crumbs = [["Events", "/events"]]
   return (
     <CrumbTitleLayout
       path={path}
       crumbs={crumbs}
-      title="Events"
+      title=""
       headerContent={<SiteSearch />}
       crumbContent={<ShareLinks path={path} />}
-      bgColorClass="bg-columbia-light-gray"
       // titleContent={
       //   <SearchSummary
       //     count={calEvents.length}
@@ -177,8 +178,31 @@ const CalEventsTemplate = ({ path, pageContext, data }) => {
       //   />
       // }
     >
-      <div className="mt-16">
-        <Container>
+      <div>
+        <ShowSmall size="lg" className="bg-columbia-light-gray py-8">
+          <Container>
+            <SearchBar
+              handleInputChange={handleInputChange}
+              placeholder="Type to find events..."
+              text={query}
+            />
+          </Container>
+        </ShowSmall>
+
+        <HideSmall size="lg" className="bg-columbia-light-gray py-12">
+          <Container>
+            <Column isCentered={true}>
+              <div className="w-1/2">
+                <SearchBar
+                  handleInputChange={handleInputChange}
+                  placeholder="Type to find events..."
+                  text={query}
+                />
+              </div>
+            </Column>
+          </Container>
+        </HideSmall>
+        <Container className="py-8">
           {/* <Breadcrumb crumbs={crumbs} /> */}
           <Column>
             {/* <SmallColumn>
@@ -192,26 +216,6 @@ const CalEventsTemplate = ({ path, pageContext, data }) => {
       </SmallColumn> */}
             <MainColumn>
               <div className="w-full">
-                <ShowSmall size="lg">
-                  <SearchBar
-                    handleInputChange={handleInputChange}
-                    placeholder="Type to find events..."
-                    text={query}
-                  />
-                </ShowSmall>
-
-                <HideSmall size="lg">
-                  <Column isCentered={true} className="mb-8">
-                    <div className="w-2/3">
-                      <SearchBar
-                        handleInputChange={handleInputChange}
-                        placeholder="Type to find events..."
-                        text={query}
-                      />
-                    </div>
-                  </Column>
-                </HideSmall>
-
                 {/* </div> */}
 
                 {/* <Column className="justify-between">

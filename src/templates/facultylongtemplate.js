@@ -225,7 +225,7 @@ const FacultyLongTemplate = ({ path, pageContext, data }) => {
   } = pageContext
 
   const headshotImage = (
-    <DropShadowFrame className="w-96 rounded-lg">
+    <DropShadowFrame className="w-96">
       <HeadShotImage data={data} person={person} />
     </DropShadowFrame>
   )
@@ -288,11 +288,12 @@ const FacultyLongTemplate = ({ path, pageContext, data }) => {
       title={person.frontmatter.name}
       headerContent={<SiteSearch />}
       crumbContent={<ShareLinks path={path} />}
+      floatMode="header"
+      bgColorClass="bg-white"
     >
       {headerImage !== null && headerImage}
 
       <FacultyHeader person={person} />
-
       {/* <Container className="m-8">
         <ShareLinks path={path} color="color" opacity={[40, 100]} />
       </Container> */}
@@ -350,7 +351,7 @@ const FacultyLongTemplate = ({ path, pageContext, data }) => {
           </div>
         )}
 
-      <div className="py-16 bg-columbia-light-gray">
+      <div className="py-16">
         <Container>
           {person.frontmatter.tags.includes("publication-format::recent") &&
             publications.length > 0 && (

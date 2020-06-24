@@ -136,7 +136,7 @@ const NewsTemplate = ({ path, pageContext }) => {
     <CrumbTitleLayout
       path={path}
       crumbs={crumbs}
-      title="News"
+      title=""
       // titleContent={
       //   <HideSmall>
       //     <SearchSummary
@@ -148,7 +148,6 @@ const NewsTemplate = ({ path, pageContext }) => {
       // }
       headerContent={<SiteSearch />}
       crumbContent={<ShareLinks path={path} />}
-      bgColorClass="bg-columbia-light-gray"
     >
       <FlHdDiv>
         <Container>

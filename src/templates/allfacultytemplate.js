@@ -33,12 +33,13 @@ const FacultyCard = ({ person, imageMap }) => {
 
   return (
     <Card
+      showCard={false}
       className="w-full h-full overflow-hidden"
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
       <Link to={`${paths.facultyPath}/${person.frontmatter.id}`}>
-        <div className="w-full overflow-hidden">
+        <div className={`w-full overflow-hidden rounded-md trans-ani`}>
           <ZoomImage
             fluid={
               person.frontmatter.id in imageMap
@@ -50,8 +51,8 @@ const FacultyCard = ({ person, imageMap }) => {
           />
         </div>
         <div
-          className={`w-full h-full p-4 trans-ani  ${
-            hover ? "text-white-90 bg-blue-500" : ""
+          className={`w-full h-full pt-4 trans-ani  ${
+            hover ? "text-blue-500" : ""
           }`}
         >
           {/* <h5>{`${person.frontmatter.name}, ${person.frontmatter.postNominalLetters}`}</h5> */}
@@ -141,20 +142,23 @@ const StaffGroups = ({
 
   for (let group of allGroups) {
     ret.push(
-      <h3 className={`${headingColor} my-4`} key={`header-${group.name}`}>
-        {group.name}
-      </h3>
-    )
+      <div className="mb-8">
+        <h5
+          className={`${headingColor} font-semibold mb-4`}
+          key={`header-${group.name}`}
+        >
+          {group.name}
+        </h5>
 
-    ret.push(
-      <StaffGrid
-        people={group.people}
-        peopleMap={peopleMap}
-        imageMap={imageMap}
-        key={group.name}
-        cols={cols}
-        colWidth={colWidth}
-      />
+        <StaffGrid
+          people={group.people}
+          peopleMap={peopleMap}
+          imageMap={imageMap}
+          key={group.name}
+          cols={cols}
+          colWidth={colWidth}
+        />
+      </div>
     )
   }
 
@@ -164,7 +168,7 @@ const StaffGroups = ({
 StaffGroups.defaultProps = {
   cols: 4,
   colWidth: "w-11/50",
-  headingColor: "text-columbia-blue",
+  headingColor: "text",
 }
 
 const AllFacultyTemplate = ({ path, pageContext, data }) => {
@@ -213,7 +217,7 @@ const AllFacultyTemplate = ({ path, pageContext, data }) => {
       title="Faculty"
       headerContent={<SiteSearch />}
       crumbContent={<ShareLinks path={path} />}
-      bgColorClass="bg-columbia-light-gray"
+      bgColorClass="bg-white"
       // titleContent={
       //   <SearchSummary count={groups.length} single="Lab" plural="Labs" />
       // }

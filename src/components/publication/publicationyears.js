@@ -38,11 +38,11 @@ const PublicationYears = ({ publications, sectionMode, showLabLink }) => {
                 <ShowSmall className="text-white-95 bg-blue-400 p-2 mb-4">
                   <h4>{year}</h4>
                 </ShowSmall>
-                <HideSmall className="w-24 h-24 bg-blue-400 text-center py-8 text-white-95">
+                <HideSmall className="w-24 h-24 text-white-95 bg-blue-400 text-center py-8 mr-8">
                   <h4>{year}</h4>
                 </HideSmall>
               </Column>
-              <Column className="w-full md:w-11/12 bg-white border border-solid border-gray 300 p-6">
+              <Column className="w-full md:w-11/12">
                 <FullDiv>
                   <PublicationList
                     publications={yearMap.get(year)}

@@ -7,7 +7,10 @@ import Card from "../card"
 
 const NewsItem = ({ item }) => {
   return (
-    <Card className="mb-8 bg-columbia-secondary-blue text-white">
+    <Card
+      showCard={false}
+      className="mb-8 bg-columbia-secondary-blue text-white"
+    >
       <Column className="justify-between">
         <div className="p-8 w-full">
           <Column className="justify-between uppercase text-white-80">

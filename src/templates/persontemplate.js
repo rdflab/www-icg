@@ -171,7 +171,7 @@ const PersonTemplate = ({ path, pageContext, data }) => {
               <Img
                 fluid={data.file.childImageSharp.fluid}
                 style={{ width: "20rem" }}
-                className="block rounded-lg shadow-lg hover:shadow-xl trans-ani"
+                className="block shadow-lg hover:shadow-xl trans-ani"
               />
             )}
           </div>

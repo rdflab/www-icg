@@ -168,7 +168,7 @@ export const BackgroundSection = ({ file, children }) => (
     fluid={file.childImageSharp.fluid}
     style={{
       width: "100%",
-      height: "30rem",
+      height: "40rem",
       backgroundPosition: "top center",
       backgroundRepeat: "no-repeat",
       backgroundSize: "cover",
@@ -184,7 +184,7 @@ export const GenericBackgroundSection = ({ file, children }) => (
     fluid={file.childImageSharp.fluid}
     style={{
       width: "100%",
-      height: "30rem",
+      height: "40rem",
       backgroundPosition: "top center",
       backgroundRepeat: "no-repeat",
       backgroundSize: "cover",
@@ -361,7 +361,7 @@ const FacultyShortTemplate = ({ path, pageContext, data }) => {
   let headerImageCredit = ""
 
   const headshotImage = (
-    <DropShadowFrame className="w-96 rounded-lg">
+    <DropShadowFrame className="w-96">
       <HeadShotImage data={data} person={person} />
     </DropShadowFrame>
   )
@@ -419,6 +419,8 @@ const FacultyShortTemplate = ({ path, pageContext, data }) => {
       title={person.frontmatter.name}
       headerContent={<SiteSearch />}
       crumbContent={<ShareLinks path={path} />}
+      floatMode="header"
+      bgColorClass="bg-white"
     >
       {headerImage !== null && headerImage}
 

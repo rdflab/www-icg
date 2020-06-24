@@ -10,7 +10,7 @@ const CalSearchResults = ({
   recordsPerPage,
   onPageChanged,
 }) => (
-  <div className="w-full mt-8">
+  <div className="w-full">
     {/* <SearchSummary
           count={events.length}
           single="Event"

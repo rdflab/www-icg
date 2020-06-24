@@ -134,7 +134,6 @@ const IndexTemplate = ({ path, pageContext, data }) => {
   return (
     <CrumbLayout
       floatMode="header"
-      title="Home"
       headerContent={<SiteSearch />}
       crumbContent={<ShareLinks path={path} />}
     >

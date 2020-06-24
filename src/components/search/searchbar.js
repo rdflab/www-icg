@@ -22,7 +22,7 @@ const SearchBar = ({
 
   return (
     <Card
-      className={`row z-40 px-4 py-3 items-center ${className}`}
+      className={`row z-40 px-4 py-3 rounded-md items-center ${className}`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >

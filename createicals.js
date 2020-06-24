@@ -16,8 +16,6 @@ for (let file of files) {
     fs.readFile(`${dir}/${file}`, "utf8", function (err, data) {
       var content = fm(data)
 
-      console.log(content.body.split("\n")[0])
-
       const title = content.attributes.title
       const start = new Date(content.attributes.start)
       const end = new Date(content.attributes.end)

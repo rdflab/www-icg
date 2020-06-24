@@ -11,6 +11,8 @@ import HideSmall from "./hidesmall"
 import HeaderLayout from "./headerlayout"
 import HeaderWithNav, { Header, HeaderLinksNav } from "./header/header"
 import MenuLayout from "./menulayout"
+import BreadcrumbGray from "./breadcrumbgray"
+import Container from "./container"
 
 export const FloatingHeader = ({
   crumbs,
@@ -39,12 +41,13 @@ FloatingHeader.defaultProps = {
 
 const CrumbLayout = ({
   title,
+  crumbs,
+  crumbLocation,
   headerContent,
   menuContent,
   titleContent,
   crumbContent,
   children,
-  crumbs,
   floatMode,
   bgColorClass,
 }) => {
@@ -74,13 +77,21 @@ const CrumbLayout = ({
           >
             {titleContent}
 
-            {crumbs !== null && crumbs.length > 0 && (
-              <Breadcrumb crumbs={crumbs} content={crumbContent} />
-            )}
+            {crumbLocation === "top" &&
+              crumbs !== null &&
+              crumbs.length > 0 && (
+                <Breadcrumb crumbs={crumbs} content={crumbContent} />
+              )}
           </FloatingHeader>
 
-          <div className={`relative min-h-screen ${bgColorClass}`}>
-            {children}
+          <div className={`${bgColorClass}`}>
+            <div className={`relative min-h-screen ${bgColorClass}`}>
+              {children}
+            </div>
+
+            {crumbLocation === "bottom" && (
+              <BreadcrumbGray crumbs={crumbs} content={crumbContent} />
+            )}
           </div>
         </MenuLayout>
       )
@@ -104,13 +115,19 @@ const CrumbLayout = ({
 
             {titleContent}
 
-            {crumbs !== null && crumbs.length > 0 && (
-              <Breadcrumb crumbs={crumbs} content={crumbContent} />
-            )}
+            {crumbLocation === "top" &&
+              crumbs !== null &&
+              crumbs.length > 0 && (
+                <Breadcrumb crumbs={crumbs} content={crumbContent} />
+              )}
           </HideSmall>
 
-          <div className={`relative min-h-screen ${bgColorClass}`}>
-            {children}
+          <div className={`${bgColorClass}`}>
+            <div className={`relative min-h-screen `}>{children}</div>
+
+            {crumbLocation === "bottom" && (
+              <BreadcrumbGray crumbs={crumbs} content={crumbContent} />
+            )}
           </div>
         </MenuLayout>
       )
@@ -122,14 +139,25 @@ const CrumbLayout = ({
           menuContent={menuContent}
           bgColorClass={bgColorClass}
         >
+          <HideSmall className="w-full absolute z-50 shadow" size="lg">
+            {crumbLocation === "top" &&
+              crumbs !== null &&
+              crumbs.length > 0 && (
+                <Breadcrumb crumbs={crumbs} content={crumbContent} />
+              )}
+          </HideSmall>
+
           {titleContent}
 
-          <HideSmall className="w-full absolute z-50 shadow-md" size="lg">
-            {crumbs !== null && crumbs.length > 0 && (
-              <Breadcrumb crumbs={crumbs} content={crumbContent} />
+          <div className={`${bgColorClass}`}>
+            <div className={`relative min-h-screen ${bgColorClass}`}>
+              {children}
+            </div>
+
+            {crumbLocation === "bottom" && (
+              <BreadcrumbGray crumbs={crumbs} content={crumbContent} />
             )}
-          </HideSmall>
-          <div className={`relative min-h-screen`}>{children}</div>
+          </div>
         </HeaderLayout>
       )
     default:
@@ -140,13 +168,21 @@ const CrumbLayout = ({
           menuContent={menuContent}
           bgColorClass={bgColorClass}
         >
-          {crumbs !== null && crumbs.length > 0 && (
+          {crumbLocation === "top" && crumbs !== null && crumbs.length > 0 && (
             <Breadcrumb crumbs={crumbs} content={crumbContent} />
           )}
 
           {titleContent}
 
-          <div className={`relative min-h-screen`}>{children}</div>
+          <div className={`${bgColorClass}`}>
+            <div className={`relative min-h-screen ${bgColorClass}`}>
+              {children}
+            </div>
+
+            {crumbLocation === "bottom" && (
+              <BreadcrumbGray crumbs={crumbs} content={crumbContent} />
+            )}
+          </div>
         </HeaderLayout>
       )
   }
@@ -155,6 +191,7 @@ const CrumbLayout = ({
 CrumbLayout.defaultProps = {
   crumbs: [],
   floatMode: "none",
+  crumbLocation: "bottom",
   selectedTab: "",
   title: "",
   subTitle: "",

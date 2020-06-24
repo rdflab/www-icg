@@ -24,7 +24,7 @@ const PeopleGroups = ({
 
       if (people.length > 0) {
         ret.push(
-          <div className="mb-4" key={g}>
+          <div className="mb-8" key={g}>
             <PeopleGrid
               name={g}
               imageMap={imageMap}
@@ -55,10 +55,10 @@ PeopleGroups.defaultProps = {
   smallView: false,
   showHeadings: true,
   showUrl: true,
-  showCard: true,
+  showCard: false,
   cols: 5,
   colWidth: "w-19/100",
-  headingColor: "text-columbia-blue",
+  headingColor: "text",
   context: "default",
 }
 
