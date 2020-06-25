@@ -21,7 +21,7 @@ const SearchBar = ({
 
   return (
     <div
-      className={`row z-40 px-4 py-3 bg-white shadow hover:shadow-md rounded-md items-center trans-ani ${className}`}
+      className={`row z-40 px-6 py-3 bg-white border border-solid border-gray-300 hover:shadow rounded-full items-center trans-ani ${className}`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >

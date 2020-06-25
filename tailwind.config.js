@@ -62,6 +62,8 @@ module.exports = {
         "48": "12rem",
         "128": "32rem",
         "192": "32rem",
+        "200": "50rem",
+        "224": "56rem",
       },
       padding: {
         "60": "15rem",

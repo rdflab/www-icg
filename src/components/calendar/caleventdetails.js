@@ -18,21 +18,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import HideSmall from "../hidesmall"
 import ZoomImage from "../images/zoomimage"
 
-export const HeadShotImage = ({ name, imageMap, hover }) => {
-  if (name !== null && name in imageMap) {
-    return (
+export const EventImage = ({ name, imageMap, hover }) => (
+  <div className="w-48 h-48">
+    {name !== null && name in imageMap && (
       <ZoomImage
         fluid={imageMap[name].childImageSharp.fluid}
-        className="w-48 h-48"
+        className="w-full h-full"
         extZoom={hover}
       />
-    )
-  } else {
-    return <div className="w-48 h-48"></div>
-  }
-}
+    )}
+  </div>
+)
 
-HeadShotImage.defaultProps = {
+EventImage.defaultProps = {
   hover: false,
 }
 
@@ -134,7 +132,7 @@ const CalEventDetails = ({ event, isMobile, color, imageMap, hover }) => {
         size="lg"
         className="pt-2 md:pt-0 min-w-48 min-h-48 overflow-hidden"
       >
-        <HeadShotImage name={imageName} imageMap={imageMap} hover={hover} />
+        <EventImage name={imageName} imageMap={imageMap} hover={hover} />
       </HideSmall>
     </Column>
   )

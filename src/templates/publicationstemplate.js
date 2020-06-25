@@ -129,35 +129,34 @@ const PublicationsTemplate = ({ path, pageContext }) => {
       selectedTab={selectedTab}
       headerContent={<SiteSearch />}
       crumbContent={<ShareLinks path={path} />}
+      bgColorClass="bg-white"
     >
-      <div>
-        {/* <Breadcrumb crumbs={crumbs} /> */}
-        <ShowSmall className="py-8 bg-columbia-light-gray">
-          <Container>
-            <SearchBar
-              handleInputChange={handleInputChange}
-              placeholder="Type to find publications..."
-              text={query}
-            />
-          </Container>
-        </ShowSmall>
-
-        <HideSmall className="bg-columbia-light-gray py-8">
-          <Container>
-            <Column isCentered={true}>
-              <div className="w-1/2">
-                <SearchBar
-                  handleInputChange={handleInputChange}
-                  placeholder="Type to find publications..."
-                  text={query}
-                />
-              </div>
-            </Column>
-          </Container>
-        </HideSmall>
-
+      <ShowSmall className="py-8">
         <Container>
-          {/* <HideSmall>
+          <SearchBar
+            handleInputChange={handleInputChange}
+            placeholder="Type to find publications..."
+            text={query}
+          />
+        </Container>
+      </ShowSmall>
+
+      <HideSmall className="py-8">
+        <Container>
+          <Column isCentered={true}>
+            <div className="w-1/2">
+              <SearchBar
+                handleInputChange={handleInputChange}
+                placeholder="Type to find publications..."
+                text={query}
+              />
+            </div>
+          </Column>
+        </Container>
+      </HideSmall>
+
+      <Container className="pb-8">
+        {/* <HideSmall>
             <Column isVCentered={true} className="mt-8 justify-center">
               {showYears && (
                 <div>
@@ -167,16 +166,15 @@ const PublicationsTemplate = ({ path, pageContext }) => {
             </Column>
           </HideSmall> */}
 
-          <PubSearchResults
-            publications={yearFilteredPublications}
-            pagedPublications={pagedPublications}
-            page={page}
-            recordsPerPage={recordsPerPage}
-            onPageChanged={onPageChanged}
-            showLabLink={showLabLink}
-          />
-        </Container>
-      </div>
+        <PubSearchResults
+          publications={yearFilteredPublications}
+          pagedPublications={pagedPublications}
+          page={page}
+          recordsPerPage={recordsPerPage}
+          onPageChanged={onPageChanged}
+          showLabLink={showLabLink}
+        />
+      </Container>
     </CrumbTitleLayout>
   )
 }

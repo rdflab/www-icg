@@ -235,9 +235,10 @@ const PeopleGrid = ({
   if (found) {
     return (
       <FullDiv key={name}>
-        {showHeadings && <h3 className={`mb-4 ${headingColor}`}>{name}</h3>}
+        {showHeadings && <h3 className={`mb-2 ${headingColor}`}>{name}</h3>}
 
-        <Card className="p-4 md:p-6">{ret}</Card>
+        {/* <Card className="p-4 md:p-6">{ret}</Card> */}
+        {ret}
       </FullDiv>
     )
   } else {

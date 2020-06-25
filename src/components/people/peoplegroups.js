@@ -25,7 +25,7 @@ const PeopleGroups = ({
 
       if (people.length > 0) {
         ret.push(
-          <div className="mb-8 md:mb-12" key={g}>
+          <div className="mb-8" key={g}>
             <PeopleGrid
               name={g}
               imageMap={imageMap}

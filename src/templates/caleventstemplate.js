@@ -172,7 +172,7 @@ const CalEventsTemplate = ({ path, pageContext, data }) => {
       title="Events"
       headerContent={<SiteSearch />}
       crumbContent={<ShareLinks path={path} />}
-      bgColorClass="bg-columbia-light-gray"
+      bgColorClass="bg-white"
       // titleContent={
       //   <SearchSummary
       //     count={calEvents.length}
@@ -181,7 +181,7 @@ const CalEventsTemplate = ({ path, pageContext, data }) => {
       //   />
       // }
     >
-      <ShowSmall size="lg" className="bg-columbia-light-gray py-8">
+      <ShowSmall size="lg" className="py-8">
         <Container>
           <SearchBar
             handleInputChange={handleInputChange}
@@ -234,7 +234,7 @@ const CalEventsTemplate = ({ path, pageContext, data }) => {
               </div>
             </Column> */}
 
-              <HideSmall size="lg" className="bg-columbia-light-gray py-8">
+              <HideSmall size="lg" className="py-8">
                 <Column isCentered={true}>
                   <div className="w-1/2">
                     <SearchBar

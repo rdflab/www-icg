@@ -142,21 +142,21 @@ const StaffGroups = ({
 
   for (let group of allGroups) {
     ret.push(
-      <>
+      <div className="mb-8">
         <h3 className={`${headingColor} mb-2`} key={`header-${group.name}`}>
           {group.name}
         </h3>
-        <Card className="bg-white p-4 md:p-6 mb-8 md:mb-12">
-          <StaffGrid
-            people={group.people}
-            peopleMap={peopleMap}
-            imageMap={imageMap}
-            key={group.name}
-            cols={cols}
-            colWidth={colWidth}
-          />
-        </Card>
-      </>
+        {/* <Card className="bg-white p-4 md:p-6 mb-8 md:mb-12"> */}
+        <StaffGrid
+          people={group.people}
+          peopleMap={peopleMap}
+          imageMap={imageMap}
+          key={group.name}
+          cols={cols}
+          colWidth={colWidth}
+        />
+        {/* </Card> */}
+      </div>
     )
   }
 
@@ -215,6 +215,7 @@ const AllFacultyTemplate = ({ path, pageContext, data }) => {
       title="Faculty"
       headerContent={<SiteSearch />}
       crumbContent={<ShareLinks path={path} />}
+      bgColorClass="bg-white"
       // titleContent={
       //   <SearchSummary count={groups.length} single="Lab" plural="Labs" />
       // }

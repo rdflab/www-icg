@@ -47,7 +47,7 @@ const CalEvent = ({ event, smallFormat, imageMap }) => {
 
   return (
     <Card
-      className="bg-white mb-8 overflow-hidden"
+      className="bg-white mb-4 overflow-hidden"
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
