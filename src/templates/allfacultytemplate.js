@@ -142,20 +142,21 @@ const StaffGroups = ({
 
   for (let group of allGroups) {
     ret.push(
-      <Card className="bg-white p-4 md:p-8 mb-8 md:mb-12">
-        <h4 className={`${headingColor} mb-4`} key={`header-${group.name}`}>
+      <>
+        <h3 className={`${headingColor} mb-2`} key={`header-${group.name}`}>
           {group.name}
-        </h4>
-
-        <StaffGrid
-          people={group.people}
-          peopleMap={peopleMap}
-          imageMap={imageMap}
-          key={group.name}
-          cols={cols}
-          colWidth={colWidth}
-        />
-      </Card>
+        </h3>
+        <Card className="bg-white p-4 md:p-6 mb-8 md:mb-12">
+          <StaffGrid
+            people={group.people}
+            peopleMap={peopleMap}
+            imageMap={imageMap}
+            key={group.name}
+            cols={cols}
+            colWidth={colWidth}
+          />
+        </Card>
+      </>
     )
   }
 
@@ -165,7 +166,7 @@ const StaffGroups = ({
 StaffGroups.defaultProps = {
   cols: 4,
   colWidth: "w-11/50",
-  headingColor: "text-gray-600",
+  headingColor: "text-gray-700",
 }
 
 const AllFacultyTemplate = ({ path, pageContext, data }) => {

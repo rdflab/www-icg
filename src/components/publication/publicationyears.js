@@ -34,26 +34,38 @@ const PublicationYears = ({ publications, sectionMode, showLabLink }) => {
         })
         .map((year, index) => {
           return (
-            <Column className="mb-8" key={year}>
-              <Column className="justify-center">
-                <ShowSmall className="text-white-95 bg-blue-400 p-2 mb-4">
-                  <h4>{year}</h4>
-                </ShowSmall>
-                <HideSmall className="w-24 h-24 text-white-95 bg-blue-400 text-center py-8 mr-4">
-                  <h4>{year}</h4>
-                </HideSmall>
-              </Column>
-              <Column className="w-full md:w-11/12">
-                <div>
-                  {/* <Card className="p-8"> */}
-                  <PublicationList
-                    publications={yearMap.get(year)}
-                    showLabLink={showLabLink}
-                  />
-                  {/* </Card> */}
-                </div>
-              </Column>
-            </Column>
+            // <Column className="mb-8" key={year}>
+            //   <Column className="justify-center">
+            //     <ShowSmall className="text-white-95 bg-blue-400 p-2 mb-4">
+            //       <h4>{year}</h4>
+            //     </ShowSmall>
+            //     <HideSmall className="w-24 h-24 text-white-95 bg-blue-400 text-center py-8 mr-4">
+            //       <h4>{year}</h4>
+            //     </HideSmall>
+            //   </Column>
+            //   <Column className="w-full md:w-11/12">
+            //     <Card className="p-4 p-8">
+            //       {/* <Card className="p-8"> */}
+            //       <PublicationList
+            //         publications={yearMap.get(year)}
+            //         showLabLink={showLabLink}
+            //       />
+            //       {/* </Card> */}
+            //     </Card>
+            //   </Column>
+            // </Column>
+
+            <div className="mb-8">
+              <h3 className={`text-gray-700 mb-2`} key={`header-${year}`}>
+                {year}
+              </h3>
+              <Card className="p-4 md:p-8">
+                <PublicationList
+                  publications={yearMap.get(year)}
+                  showLabLink={showLabLink}
+                />
+              </Card>
+            </div>
           )
         })}
     </>

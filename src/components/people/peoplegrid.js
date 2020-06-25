@@ -235,9 +235,9 @@ const PeopleGrid = ({
   if (found) {
     return (
       <FullDiv key={name}>
-        {showHeadings && <h4 className={`mb-4 ${headingColor}`}>{name}</h4>}
+        {showHeadings && <h3 className={`mb-4 ${headingColor}`}>{name}</h3>}
 
-        <div>{ret}</div>
+        <Card className="p-4 md:p-6">{ret}</Card>
       </FullDiv>
     )
   } else {
@@ -254,7 +254,7 @@ PeopleGrid.defaultProps = {
   showHeadings: true,
   showUrl: true,
   showCard: false,
-  headingColor: "text-gray-600",
+  headingColor: "text",
   context: "default",
 }
 

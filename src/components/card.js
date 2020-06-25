@@ -11,7 +11,7 @@ const Card = ({
     onMouseEnter={onMouseEnter}
     onMouseLeave={onMouseLeave}
     className={`relative trans-ani  ${
-      showCard ? " bg-white shadow-lg rounded-xl" : ""
+      showCard ? " bg-white shadow-md rounded-lg" : ""
     } ${className}`}
   >
     {children}

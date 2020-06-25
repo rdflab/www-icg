@@ -129,7 +129,6 @@ const PublicationsTemplate = ({ path, pageContext }) => {
       selectedTab={selectedTab}
       headerContent={<SiteSearch />}
       crumbContent={<ShareLinks path={path} />}
-      bgColorClass="bg-white"
     >
       <div>
         {/* <Breadcrumb crumbs={crumbs} /> */}

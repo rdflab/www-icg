@@ -37,7 +37,7 @@ const IndexLink = ({ color, to, children }) => {
       </ColorLink>
       <FontAwesomeIcon
         icon="chevron-right"
-        className={`${chevronColor} inline align-center text-xl trans-ani`}
+        className={`${chevronColor} inline align-center text-xl trans-ani ml-2`}
       />
     </div>
   )

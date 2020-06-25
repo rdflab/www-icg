@@ -47,7 +47,7 @@ const CalEvent = ({ event, smallFormat, imageMap }) => {
 
   return (
     <Card
-      className="bg-white mb-12 overflow-hidden"
+      className="bg-white mb-8 overflow-hidden"
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
@@ -61,7 +61,7 @@ const CalEvent = ({ event, smallFormat, imageMap }) => {
       </ShowSmall>
       <HideSmall className="w-full">
         <Column>
-          <Column className="w-1/10 m-4 mr-4">
+          <Column className="w-1/10 mt-4 ml-4">
             <CalEventDate event={event} />
           </Column>
           <Column className="w-9/10">

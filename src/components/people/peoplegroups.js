@@ -25,7 +25,7 @@ const PeopleGroups = ({
 
       if (people.length > 0) {
         ret.push(
-          <Card className="p-4 md:p-8 mb-8 md:mb-12" key={g}>
+          <div className="mb-8 md:mb-12" key={g}>
             <PeopleGrid
               name={g}
               imageMap={imageMap}
@@ -41,7 +41,7 @@ const PeopleGroups = ({
               showUrl={showUrl}
               showCard={showCard}
             />
-          </Card>
+          </div>
         )
       }
     }
@@ -59,7 +59,7 @@ PeopleGroups.defaultProps = {
   showCard: false,
   cols: 5,
   colWidth: "w-19/100",
-  headingColor: "text-gray-600",
+  headingColor: "text-gray-700",
   context: "default",
 }
 

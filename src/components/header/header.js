@@ -41,9 +41,9 @@ export const Header = ({ content, onMenuButtonClick, children }) => (
     <HideSmall size="lg">
       {children}
 
-      <div className="bg-columbia-blue-85 shadow pb-2">
+      <div className="bg-columbia-blue-85 pb-2">
         <Container>
-          <Column className="items-center justify-between ">
+          <Column className="items-center justify-between">
             <Link to="/" className="mr-8">
               <img src={whitelogo} className="h-20" alt="ICG Logo" />
             </Link>
