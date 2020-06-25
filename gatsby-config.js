@@ -1,9 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Institute for Cancer Genetics`,
-    description: `Institute for Cancer Genetics website`,
+    title: `Antony Holmes`,
+    description: `Antony Holmes`,
     author: `Antony B Holmes <antony@antonyholmes.com>`,
-    siteUrl: `https://d3gbammu2xkksk.cloudfront.net`,
     facultyGroups: [`Director`, `Faculty`],
     adminGroups: [`Directors`, `Administrative Staff`, `Web Site`],
     labGroups: [`Faculty`, `Research Staff`],

@@ -1,4 +1,0 @@
-<h2>Education</h2>
-<p>1999-2002 Albert Einstein College of Medicine</p>
-<h2>Experience</h2>
-<p>2002-present: Department of Pathology and Cell Biology and Pediatrics, Institute for Cancer Genetics</p>
