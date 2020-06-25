@@ -11,6 +11,7 @@ import Column from "../column"
 import FullDiv from "../fulldiv"
 import HideSmall from "../hidesmall"
 import ShowSmall from "../showsmall"
+import Card from "../card"
 
 const PublicationYears = ({ publications, sectionMode, showLabLink }) => {
   let yearMap = new Map()
@@ -38,17 +39,19 @@ const PublicationYears = ({ publications, sectionMode, showLabLink }) => {
                 <ShowSmall className="text-white-95 bg-blue-400 p-2 mb-4">
                   <h4>{year}</h4>
                 </ShowSmall>
-                <HideSmall className="w-24 h-24 text-white-95 bg-blue-400 text-center py-8 mr-8">
+                <HideSmall className="w-24 h-24 text-white-95 bg-blue-400 text-center py-8 mr-4">
                   <h4>{year}</h4>
                 </HideSmall>
               </Column>
               <Column className="w-full md:w-11/12">
-                <FullDiv>
+                <div>
+                  {/* <Card className="p-8"> */}
                   <PublicationList
                     publications={yearMap.get(year)}
                     showLabLink={showLabLink}
                   />
-                </FullDiv>
+                  {/* </Card> */}
+                </div>
               </Column>
             </Column>
           )

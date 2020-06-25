@@ -39,7 +39,7 @@ const FacultyCard = ({ person, imageMap }) => {
       onMouseLeave={onMouseLeave}
     >
       <Link to={`${paths.facultyPath}/${person.frontmatter.id}`}>
-        <div className={`w-full overflow-hidden rounded-md trans-ani`}>
+        <div className={`w-full overflow-hidden rounded-lg trans-ani`}>
           <ZoomImage
             fluid={
               person.frontmatter.id in imageMap
@@ -142,13 +142,10 @@ const StaffGroups = ({
 
   for (let group of allGroups) {
     ret.push(
-      <div className="mb-8">
-        <h5
-          className={`${headingColor} font-semibold mb-4`}
-          key={`header-${group.name}`}
-        >
+      <Card className="bg-white p-4 md:p-8 mb-8 md:mb-12">
+        <h4 className={`${headingColor} mb-4`} key={`header-${group.name}`}>
           {group.name}
-        </h5>
+        </h4>
 
         <StaffGrid
           people={group.people}
@@ -158,7 +155,7 @@ const StaffGroups = ({
           cols={cols}
           colWidth={colWidth}
         />
-      </div>
+      </Card>
     )
   }
 
@@ -168,7 +165,7 @@ const StaffGroups = ({
 StaffGroups.defaultProps = {
   cols: 4,
   colWidth: "w-11/50",
-  headingColor: "text",
+  headingColor: "text-gray-600",
 }
 
 const AllFacultyTemplate = ({ path, pageContext, data }) => {
@@ -217,7 +214,6 @@ const AllFacultyTemplate = ({ path, pageContext, data }) => {
       title="Faculty"
       headerContent={<SiteSearch />}
       crumbContent={<ShareLinks path={path} />}
-      bgColorClass="bg-white"
       // titleContent={
       //   <SearchSummary count={groups.length} single="Lab" plural="Labs" />
       // }

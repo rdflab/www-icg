@@ -28,7 +28,7 @@ HeaderLinksNav.defaultProps = {
 
 export const Header = ({ content, onMenuButtonClick, children }) => (
   <>
-    <ShowSmall className="bg-columbia-blue-80" size="lg">
+    <ShowSmall className="bg-columbia-blue-85" size="lg">
       <nav aria-label="Navigation" className="row p-3">
         <SlideMenuButton onClick={onMenuButtonClick} />
 
@@ -41,7 +41,7 @@ export const Header = ({ content, onMenuButtonClick, children }) => (
     <HideSmall size="lg">
       {children}
 
-      <div className="bg-columbia-blue-80 py-1">
+      <div className="bg-columbia-blue-85 shadow pb-2">
         <Container>
           <Column className="items-center justify-between ">
             <Link to="/" className="mr-8">
@@ -63,7 +63,7 @@ Header.defaultProps = {
 
 const HeaderWithNav = ({ content, menuContent, onMenuButtonClick }) => (
   <Header content={content} onMenuButtonClick={onMenuButtonClick}>
-    <div className="w-full py-2 bg-columbia-blue">
+    <div className="w-full py-4 bg-columbia-blue-85">
       <HeaderLinksNav menuContent={menuContent} />
     </div>
   </Header>

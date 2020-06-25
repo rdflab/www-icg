@@ -31,7 +31,7 @@ const FacultyHeader = ({ person, title, heading, subHeading, path }) => {
 
   return (
     <Column className="text-white ">
-      <div className="w-full md:w-5/10 lg:w-6/10 2xl:w-12/20 bg-columbia-secondary-blue py-16 md:pl-20 xl:pl-32 2xl:pl-40 3xl:pl-56 items-center">
+      <div className="w-full md:w-5/10 lg:w-6/10 2xl:w-12/20 bg-columbia-secondary-blue py-8 pr-8 pl-8 md:pl-20 xl:pl-32 2xl:pl-40 3xl:pl-56">
         <TitleDiv title={title} heading={heading} subHeading={subHeading} />
       </div>
 

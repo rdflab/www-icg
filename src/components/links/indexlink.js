@@ -1,8 +1,18 @@
-import React from "react"
+import React, { useState } from "react"
 import ColorLink from "./colorlink"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const IndexLink = ({ color, to, children }) => {
+  const [hover, setHover] = useState(false)
+
+  const onMouseEnter = (e) => {
+    setHover(true)
+  }
+
+  const onMouseLeave = (e) => {
+    setHover(false)
+  }
+
   let chevronColor
 
   switch (color) {
@@ -21,15 +31,15 @@ const IndexLink = ({ color, to, children }) => {
   }
 
   return (
-    <>
+    <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
       <ColorLink color={color} to={to}>
         {children}
       </ColorLink>
       <FontAwesomeIcon
         icon="chevron-right"
-        className={`${chevronColor} inline align-center ml-1 text-xl`}
+        className={`${chevronColor} inline align-center text-xl trans-ani`}
       />
-    </>
+    </div>
   )
 }
 

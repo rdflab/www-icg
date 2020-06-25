@@ -17,6 +17,7 @@ import ShareLinks from "../components/share/sharelinks"
 import useImageMap from "../hooks/imagemap"
 import ShowSmall from "../components/showsmall"
 import FlHdDiv from "../components/flhddiv"
+import FullDiv from "../components/fulldiv"
 //import Breadcrumb from "../components/breadcrumb2"
 
 const EMPTY_QUERY = ""
@@ -29,7 +30,7 @@ const CalEventsTemplate = ({ path, pageContext, data }) => {
   const [query, setQuery] = useState(EMPTY_QUERY)
   const [filteredCalEvents, setFilteredCalEvents] = useState([])
   const [page, setPage] = useState(1)
-  const [recordsPerPage, setRecordsPerPage] = useState(20)
+  const [recordsPerPage, setRecordsPerPage] = useState(10)
   const [selectedDays, setSelectedDays] = useState([])
   const [filterEventTypes, setFilterEventTypes] = useState(
     pageContext.filterEventTypes
@@ -163,13 +164,15 @@ const CalEventsTemplate = ({ path, pageContext, data }) => {
   let pagedEvents = calEvents.slice(offset, offset + recordsPerPage)
 
   const crumbs = [["Events", "/events"]]
+
   return (
     <CrumbTitleLayout
       path={path}
       crumbs={crumbs}
-      title=""
+      title="Events"
       headerContent={<SiteSearch />}
       crumbContent={<ShareLinks path={path} />}
+      bgColorClass="bg-columbia-light-gray"
       // titleContent={
       //   <SearchSummary
       //     count={calEvents.length}
@@ -178,18 +181,17 @@ const CalEventsTemplate = ({ path, pageContext, data }) => {
       //   />
       // }
     >
-      <div>
-        <ShowSmall size="lg" className="bg-columbia-light-gray py-8">
-          <Container>
-            <SearchBar
-              handleInputChange={handleInputChange}
-              placeholder="Type to find events..."
-              text={query}
-            />
-          </Container>
-        </ShowSmall>
+      <ShowSmall size="lg" className="bg-columbia-light-gray py-8">
+        <Container>
+          <SearchBar
+            handleInputChange={handleInputChange}
+            placeholder="Type to find events..."
+            text={query}
+          />
+        </Container>
+      </ShowSmall>
 
-        <HideSmall size="lg" className="bg-columbia-light-gray py-12">
+      {/* <HideSmall size="lg" className="bg-columbia-light-gray py-8">
           <Container>
             <Column isCentered={true}>
               <div className="w-1/2">
@@ -201,11 +203,12 @@ const CalEventsTemplate = ({ path, pageContext, data }) => {
               </div>
             </Column>
           </Container>
-        </HideSmall>
-        <Container className="py-8">
-          {/* <Breadcrumb crumbs={crumbs} /> */}
-          <Column>
-            {/* <SmallColumn>
+        </HideSmall> */}
+
+      <Container>
+        {/* <Breadcrumb crumbs={crumbs} /> */}
+        <Column>
+          {/* <SmallColumn>
         <SearchBar
           handleInputChange={handleInputChange}
           placeholder="Type to find events..."
@@ -214,11 +217,11 @@ const CalEventsTemplate = ({ path, pageContext, data }) => {
           <DayPicker selectedDays={selectedDays} onDayClick={handleDayClick} />
         </div>
       </SmallColumn> */}
-            <MainColumn>
-              <div className="w-full">
-                {/* </div> */}
+          <MainColumn w="w-8/10">
+            <FullDiv>
+              {/* </div> */}
 
-                {/* <Column className="justify-between">
+              {/* <Column className="justify-between">
               <div>
                 <Title>Events</Title>
               </div>
@@ -231,6 +234,19 @@ const CalEventsTemplate = ({ path, pageContext, data }) => {
               </div>
             </Column> */}
 
+              <HideSmall size="lg" className="bg-columbia-light-gray py-8">
+                <Column isCentered={true}>
+                  <div className="w-1/2">
+                    <SearchBar
+                      handleInputChange={handleInputChange}
+                      placeholder="Type to find events..."
+                      text={query}
+                    />
+                  </div>
+                </Column>
+              </HideSmall>
+
+              <div className="mb-4">
                 <CalSearchResults
                   events={calEvents}
                   imageMap={imageMap}
@@ -240,19 +256,19 @@ const CalEventsTemplate = ({ path, pageContext, data }) => {
                   onPageChanged={onPageChanged}
                 />
               </div>
-            </MainColumn>
-            <SideColumn className="pl-16">
-              <div>
-                <div className="text uppercase">Date Filter</div>
-                <DayPicker
-                  selectedDays={selectedDays}
-                  onDayClick={handleDayClick}
-                />
-              </div>
-            </SideColumn>
-          </Column>
-        </Container>
-      </div>
+            </FullDiv>
+          </MainColumn>
+          <SideColumn w="w-2/10" className="pl-12">
+            <div className="pt-8">
+              <h4>Date Filter</h4>
+              <DayPicker
+                selectedDays={selectedDays}
+                onDayClick={handleDayClick}
+              />
+            </div>
+          </SideColumn>
+        </Column>
+      </Container>
     </CrumbTitleLayout>
   )
 }

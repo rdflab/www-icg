@@ -39,6 +39,7 @@ const NewsItemTemplate = ({ path, pageContext }) => {
       title={title}
       headerContent={<SiteSearch />}
       crumbContent={<ShareLinks path={path} />}
+      bgColorClass="bg-white"
     >
       <FlHdDiv>
         <Container>

@@ -8,7 +8,7 @@ const SideColumn = ({ w, children, className }) => (
 )
 
 SideColumn.defaultProps = {
-  w: 3,
+  w: "w-3/12",
   className: "",
 }
 

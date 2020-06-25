@@ -115,7 +115,6 @@ const PeopleTemplate = ({ path, pageContext }) => {
       title={title}
       headerContent={<SiteSearch />}
       crumbContent={<ShareLinks path={path} />}
-      bgColorClass="bg-columbia-light-gray"
       // titleContent={
       //   <SearchSummary
       //     count={typeFilteredPeople.length}

@@ -1,6 +1,7 @@
 import React from "react"
 import { GROUPS } from "../../constants"
 import PeopleGrid from "./peoplegrid"
+import Card from "../card"
 
 const PeopleGroups = ({
   groupMap,
@@ -24,7 +25,7 @@ const PeopleGroups = ({
 
       if (people.length > 0) {
         ret.push(
-          <div className="mb-8" key={g}>
+          <Card className="p-4 md:p-8 mb-8 md:mb-12" key={g}>
             <PeopleGrid
               name={g}
               imageMap={imageMap}
@@ -40,7 +41,7 @@ const PeopleGroups = ({
               showUrl={showUrl}
               showCard={showCard}
             />
-          </div>
+          </Card>
         )
       }
     }
@@ -58,7 +59,7 @@ PeopleGroups.defaultProps = {
   showCard: false,
   cols: 5,
   colWidth: "w-19/100",
-  headingColor: "text",
+  headingColor: "text-gray-600",
   context: "default",
 }
 

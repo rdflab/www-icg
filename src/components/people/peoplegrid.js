@@ -111,7 +111,7 @@ const PersonCard = ({
       onMouseLeave={onMouseLeave}
     >
       {showPhoto && (
-        <div className="overflow-hidden rounded-md">
+        <div className="overflow-hidden rounded-lg">
           <ZoomImage
             fluid={
               person.frontmatter.id in imageMap
@@ -235,9 +235,7 @@ const PeopleGrid = ({
   if (found) {
     return (
       <FullDiv key={name}>
-        {showHeadings && (
-          <h5 className={`mb-4 font-semibold ${headingColor}`}>{name}</h5>
-        )}
+        {showHeadings && <h4 className={`mb-4 ${headingColor}`}>{name}</h4>}
 
         <div>{ret}</div>
       </FullDiv>
@@ -256,7 +254,7 @@ PeopleGrid.defaultProps = {
   showHeadings: true,
   showUrl: true,
   showCard: false,
-  headingColor: "text",
+  headingColor: "text-gray-600",
   context: "default",
 }
 

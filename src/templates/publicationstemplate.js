@@ -123,11 +123,13 @@ const PublicationsTemplate = ({ path, pageContext }) => {
 
   return (
     <CrumbTitleLayout
+      title="Publications"
       path={path}
       crumbs={crumbs}
       selectedTab={selectedTab}
       headerContent={<SiteSearch />}
       crumbContent={<ShareLinks path={path} />}
+      bgColorClass="bg-white"
     >
       <div>
         {/* <Breadcrumb crumbs={crumbs} /> */}
@@ -141,7 +143,7 @@ const PublicationsTemplate = ({ path, pageContext }) => {
           </Container>
         </ShowSmall>
 
-        <HideSmall className="bg-columbia-light-gray py-12">
+        <HideSmall className="bg-columbia-light-gray py-8">
           <Container>
             <Column isCentered={true}>
               <div className="w-1/2">
@@ -156,7 +158,7 @@ const PublicationsTemplate = ({ path, pageContext }) => {
         </HideSmall>
 
         <Container>
-          <HideSmall>
+          {/* <HideSmall>
             <Column isVCentered={true} className="mt-8 justify-center">
               {showYears && (
                 <div>
@@ -164,7 +166,7 @@ const PublicationsTemplate = ({ path, pageContext }) => {
                 </div>
               )}
             </Column>
-          </HideSmall>
+          </HideSmall> */}
 
           <PubSearchResults
             publications={yearFilteredPublications}

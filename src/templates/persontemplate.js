@@ -20,6 +20,7 @@ import FlHdDiv from "../components/flhddiv"
 import ContactInfo from "../components/people/contactinfo"
 import CrumbTitleLayout from "../components/crumbtitlelayout"
 import Card from "../components/card"
+import PublicationList from "../components/publication/publicationlist"
 
 const interests = (person) => {
   const n = person.researchAreas.length
@@ -160,6 +161,7 @@ const PersonTemplate = ({ path, pageContext, data }) => {
       title={person.frontmatter.name}
       headerContent={<SiteSearch />}
       crumbContent={<ShareLinks path={path} />}
+      bgColorClass="bg-white"
     >
       {/* {interests2(person)} */}
 
@@ -180,8 +182,8 @@ const PersonTemplate = ({ path, pageContext, data }) => {
             <HTMLDiv html={person.html} />
           </div>
         </Container>
-        <div className="bg-columbia-secondary-blue py-8">
-          <Container>
+        <div>
+          <Container className="bg-columbia-secondary-blue p-8">
             <div className="uppercase text-white text-lg">Contact</div>
             <div className="text-white text-lg">
               <ContactInfo person={person} color="white" />
@@ -224,15 +226,11 @@ const PersonTemplate = ({ path, pageContext, data }) => {
       )} */}
 
         {publications.length > 0 && (
-          <div className="bg-columbia-light-gray py-16">
+          <div className="py-16">
             <Container>
               <Heading className="text-center">Publications</Heading>
               <div>
-                <SimplePubSearch
-                  allPublications={publications}
-                  showLabLink={false}
-                  sectionMode="alt"
-                />
+                <PublicationList publications={publications} />
               </div>
             </Container>
           </div>

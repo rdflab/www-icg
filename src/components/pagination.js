@@ -1,5 +1,7 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
+import Column from "./column"
+import { Link } from "gatsby"
 
 const LEFT_PAGE = "LEFT"
 const RIGHT_PAGE = "RIGHT"
@@ -20,12 +22,13 @@ const range = (from, to, step = 1) => {
   return range
 }
 
-const PaginationBlockDiv = ({ children, className }) => (
-  <div
-    className={`row w-8 h-8 justify-center items-center text-center ${className}`}
+const PaginationBlockDiv = ({ children, className, onClick }) => (
+  <Column
+    className={`w-8 h-8 mx-1 justify-center items-center text-center rounded-full cursor-pointer border border-solid border-transparent trans-ani ${className}`}
+    onClick={onClick}
   >
     {children}
-  </div>
+  </Column>
 )
 
 PaginationBlockDiv.defaultProps = {
@@ -155,12 +158,9 @@ class Pagination extends Component {
     const pages = this.fetchPageNumbers()
 
     return (
-      <div
-        className="row justify-center items center py-8"
-        aria-label="Pagination"
-      >
+      <div className="row justify-center items center" aria-label="Pagination">
         {pages.map((page, index) => {
-          if (page === LEFT_PAGE)
+          if (page === LEFT_PAGE) {
             return (
               <PaginationBlockDiv key={`left-${index}`}>
                 <div>
@@ -176,8 +176,9 @@ class Pagination extends Component {
                 </div>
               </PaginationBlockDiv>
             )
+          }
 
-          if (page === RIGHT_PAGE)
+          if (page === RIGHT_PAGE) {
             return (
               <PaginationBlockDiv key={`right-${index}`}>
                 <div>
@@ -193,18 +194,19 @@ class Pagination extends Component {
                 </div>
               </PaginationBlockDiv>
             )
+          }
 
           return (
-            <PaginationBlockDiv key={`current-${index}`}>
-              <div>
-                <a
-                  className={currentPage === page ? "blue-link" : "gray-link"}
-                  href="#"
-                  onClick={this.handleClick(page)}
-                >
-                  {page}
-                </a>
-              </div>
+            <PaginationBlockDiv
+              key={`current-${index}`}
+              className={` ${
+                page === currentPage
+                  ? "bg-gray-400 text-white"
+                  : "hover:border-gray-400 hover:bg-white"
+              }`}
+              onClick={this.handleClick(page)}
+            >
+              {page}
             </PaginationBlockDiv>
           )
         })}

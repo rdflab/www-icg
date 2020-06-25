@@ -8,6 +8,7 @@ tags: ["Event", "Seminar"]
 url: ""
 ---
 
-Weekly seminar series showcasing department research.
+Wei Gu<br/>
+George Rosenberger (Andrea Califano)
 
 <!-- endexcerpt -->

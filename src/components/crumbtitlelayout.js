@@ -41,9 +41,25 @@ const CrumbTitleLayout = ({
     // }
     titleContent={
       title !== "" ? (
-        <div className="pt-8">
-          <Container className="border-b border-solid border-gray-400 pb-2">
-            <h3 className="text-gray-600">{title}</h3>
+        // <div className="pt-8">
+        //   <Container className="border-b border-solid border-gray-400 pb-2">
+        //     <h3 className="text">{title}</h3>
+        //   </Container>
+        // </div>
+        //   <div className="pt-8">
+        //   <Container className="text-center">
+        //     <h1>{title}</h1>
+        //   </Container>
+        // </div>
+
+        <div className="py-4 bg-columbia-blue-70">
+          <Container>
+            <h4
+              className="text-white uppercase"
+              style={{ fontWeight: "normal" }}
+            >
+              {title}
+            </h4>
           </Container>
         </div>
       ) : null
@@ -70,7 +86,7 @@ CrumbTitleLayout.defaultProps = {
   headerContent: null,
   menuContent: null,
   crumbContent: null,
-  bgColorClass: "bg-white",
+  bgColorClass: "bg-columbia-light-gray",
 }
 
 export default CrumbTitleLayout

@@ -60,6 +60,7 @@ public
 
 # large images
 src/assets/images
+src/assets/svg
 
 # ics files that change a lot
 static/events/ical/

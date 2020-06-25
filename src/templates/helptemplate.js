@@ -40,8 +40,7 @@ const HelpTemplate = ({ path, pageContext, data }) => {
       bgColorClass="bg-columbia-light-gray"
     >
       <FlHdDiv className="min-h-full">
-        <Container></Container>
-        <SmallContainer>
+        <Container>
           <Card className="p-8">
             {/* <p>Institute for Cancer Genetics website</p> */}
             <p>Last updated: {currentDate}</p>
@@ -94,7 +93,7 @@ const HelpTemplate = ({ path, pageContext, data }) => {
               </Column>
             </Column>
           </div>
-        </SmallContainer>
+        </Container>
       </FlHdDiv>
     </CrumbTitleLayout>
   )

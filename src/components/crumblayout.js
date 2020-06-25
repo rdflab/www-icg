@@ -12,7 +12,6 @@ import HeaderLayout from "./headerlayout"
 import HeaderWithNav, { Header, HeaderLinksNav } from "./header/header"
 import MenuLayout from "./menulayout"
 import BreadcrumbGray from "./breadcrumbgray"
-import Container from "./container"
 
 export const FloatingHeader = ({
   crumbs,
@@ -84,11 +83,10 @@ const CrumbLayout = ({
               )}
           </FloatingHeader>
 
-          <div className={`${bgColorClass}`}>
+          <div className={`relative ${bgColorClass}`}>
             <div className={`relative min-h-screen ${bgColorClass}`}>
               {children}
             </div>
-
             {crumbLocation === "bottom" && (
               <BreadcrumbGray crumbs={crumbs} content={crumbContent} />
             )}
@@ -149,7 +147,7 @@ const CrumbLayout = ({
 
           {titleContent}
 
-          <div className={`${bgColorClass}`}>
+          <div className={`relative ${bgColorClass}`}>
             <div className={`relative min-h-screen ${bgColorClass}`}>
               {children}
             </div>
@@ -174,7 +172,7 @@ const CrumbLayout = ({
 
           {titleContent}
 
-          <div className={`${bgColorClass}`}>
+          <div className={`relative ${bgColorClass}`}>
             <div className={`relative min-h-screen ${bgColorClass}`}>
               {children}
             </div>
@@ -199,7 +197,7 @@ CrumbLayout.defaultProps = {
   menuContent: null,
   titleContent: null,
   crumbContent: null,
-  bgColorClass: "bg-white",
+  bgColorClass: "bg-columbia-light-gray",
 }
 
 export default CrumbLayout

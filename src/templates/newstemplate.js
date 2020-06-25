@@ -136,7 +136,7 @@ const NewsTemplate = ({ path, pageContext }) => {
     <CrumbTitleLayout
       path={path}
       crumbs={crumbs}
-      title=""
+      title="News"
       // titleContent={
       //   <HideSmall>
       //     <SearchSummary
@@ -148,12 +148,13 @@ const NewsTemplate = ({ path, pageContext }) => {
       // }
       headerContent={<SiteSearch />}
       crumbContent={<ShareLinks path={path} />}
+      bgColorClass="bg-white"
     >
       <FlHdDiv>
         <Container>
           {/* <Breadcrumb crumbs={crumbs} /> */}
           <Column>
-            <MainColumn>
+            <MainColumn w="w-8/10">
               <NewsSearchResults
                 news={dayFilteredNews}
                 pagedNews={pagedNews}
@@ -162,9 +163,9 @@ const NewsTemplate = ({ path, pageContext }) => {
                 onPageChanged={onPageChanged}
               />
             </MainColumn>
-            <SideColumn className="pl-16">
+            <SideColumn w="w-2/10" className="pl-12">
               <div>
-                <div className="text uppercase">Date Filter</div>
+                <h4>Date Filter</h4>
                 <DayPicker
                   selectedDays={selectedDays}
                   onDayClick={handleDayClick}

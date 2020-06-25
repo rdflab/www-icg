@@ -69,8 +69,8 @@ const BreadcrumbGray = ({ crumbs, color, opacity, content, className }) => {
     }
 
     return (
-      <HideSmall className={`py-4 ${className}`}>
-        <Container className="border-t border-solid border-gray-400 py-4">
+      <HideSmall className={`w-full  pt-8 ${className}`}>
+        <Container className="border-t border-solid border-gray-400 py-5">
           <Column className="justify-between items-center">
             <Column>{ret}</Column>
 

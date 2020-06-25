@@ -23,12 +23,12 @@ const Labs = ({ groups, peopleMap }) => (
       return (
         // <SectionBreak key={index}>
         <Column key={index} isCentered={true} className="mb-8">
-          <Column w={6}>
+          <Column className="w-1/2">
             <h2 className="my-2">
               <BlueLink to={labUrl(group)}>{name}</BlueLink>
             </h2>
           </Column>
-          <Column w={6}>
+          <Column className="w-1/2">
             <FlatCard>
               <MembersLink to={labMembersUrl(group)} />
               <PublicationsLink

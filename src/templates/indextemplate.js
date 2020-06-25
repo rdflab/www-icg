@@ -136,6 +136,7 @@ const IndexTemplate = ({ path, pageContext, data }) => {
       floatMode="header"
       headerContent={<SiteSearch />}
       crumbContent={<ShareLinks path={path} />}
+      bgColorClass="bg-white"
     >
       <CUMCImage />
       {/* <Container className="h-full py-8 sm:py-8">
@@ -161,7 +162,7 @@ const IndexTemplate = ({ path, pageContext, data }) => {
 
       <HomeDiv className="bg-blue-600 text-white">
         <Column>
-          <Column w={6} className="items-center justify-center">
+          <Column className="w-1/2 items-center justify-center">
             <div className="mb-8">
               <DropShadowFrame className="w-48 h-48 rounded">
                 <Img
@@ -180,7 +181,7 @@ const IndexTemplate = ({ path, pageContext, data }) => {
               <div>Director</div>
             </div>
           </Column>
-          <Column w={6}>
+          <Column className="w-1/2">
             <div>
               <HomeTitle>Our Mission</HomeTitle>
               <div className="text-xl">
@@ -218,7 +219,7 @@ const IndexTemplate = ({ path, pageContext, data }) => {
       <Benchwork>
         <Container className="py-32">
           <Column className="py-8">
-            <Column w={6}>
+            <Column className="w-1/2">
               <div>
                 <HomeTitle>Meet The Faculty</HomeTitle>
                 <p className="text-xl">
@@ -230,7 +231,7 @@ const IndexTemplate = ({ path, pageContext, data }) => {
                 </h3>
               </div>
             </Column>
-            <Column w={6}></Column>
+            <Column className="w-1/2"></Column>
           </Column>
         </Container>
       </Benchwork>

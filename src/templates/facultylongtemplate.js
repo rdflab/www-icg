@@ -166,17 +166,19 @@ AppointmentsGrid.defaultProps = {
 const Abstract = ({ person, markdown }) => {
   if (markdown !== null) {
     return (
-      <SmallContainer className="my-16 text-2xl">
-        <div className="text-3xl font-semibold mb-2">
-          <Quote text={markdown.frontmatter.title} />
-        </div>
-        <div className="text-gray-600">
-          <HTMLDiv className="text-justify" html={markdown.html} />
-        </div>
-        <div className="mt-4">
-          <BlueIndexLink to="#about">Read more</BlueIndexLink>
-        </div>
-      </SmallContainer>
+      <div className="bg-white py-24">
+        <SmallContainer className="text-2xl">
+          <div className="text-3xl font-semibold mb-2">
+            <Quote text={markdown.frontmatter.title} />
+          </div>
+          <div className="text-gray-600">
+            <HTMLDiv className="text-justify" html={markdown.html} />
+          </div>
+          <div className="mt-4">
+            <BlueIndexLink to="#about">Read more</BlueIndexLink>
+          </div>
+        </SmallContainer>
+      </div>
     )
   } else {
     return <div />
@@ -191,25 +193,27 @@ const About = ({ person, headshotFile, markdown }) => {
   }
 
   return (
-    <SmallContainer className="my-16 text-2xl">
-      <FacultyHeading>About {person.frontmatter.name}</FacultyHeading>
-      <Column>
-        <Column className="mr-8">
-          {headshotFile !== null && (
-            <div>
-              <Card className="w-48 h-48 overflow-hidden">
-                <ZoomImage fluid={headshotFile.childImageSharp.fluid} />
-              </Card>
-            </div>
-          )}
-        </Column>
+    <div className="bg-white py-24">
+      <SmallContainer className="text-2xl">
+        <FacultyHeading>About {person.frontmatter.name}</FacultyHeading>
         <Column>
-          <FullDiv>
-            <div>{html}</div>
-          </FullDiv>
+          <Column className="mr-8">
+            {headshotFile !== null && (
+              <div>
+                <Card className="w-48 h-48 overflow-hidden">
+                  <ZoomImage fluid={headshotFile.childImageSharp.fluid} />
+                </Card>
+              </div>
+            )}
+          </Column>
+          <Column>
+            <FullDiv>
+              <div>{html}</div>
+            </FullDiv>
+          </Column>
         </Column>
-      </Column>
-    </SmallContainer>
+      </SmallContainer>
+    </div>
   )
 }
 
@@ -289,7 +293,6 @@ const FacultyLongTemplate = ({ path, pageContext, data }) => {
       headerContent={<SiteSearch />}
       crumbContent={<ShareLinks path={path} />}
       floatMode="header"
-      bgColorClass="bg-white"
     >
       {headerImage !== null && headerImage}
 
@@ -305,7 +308,7 @@ const FacultyLongTemplate = ({ path, pageContext, data }) => {
       <Abstract person={person} markdown={data.abstractMarkdown} />
 
       {Object.keys(lab.groupMap).length > 0 && (
-        <div className="py-16 bg-columbia-light-gray">
+        <div className="py-24">
           <Team labGroupMap={lab.groupMap} />
         </div>
       )}

@@ -13,7 +13,7 @@ const Contact = () => (
   >
     <FlHdDiv>
       <Container>
-        <Card className="p-8">
+        <Card showCard={false} className="bg-white p-8">
           <div>Institute for Cancer Generics</div>
           <div>Herbert Irving Cancer Center, Columbia University</div>
           <div>1130 St Nicholas Ave</div>

@@ -2,9 +2,7 @@ import React from "react"
 import Column from "./column"
 
 const SmallColumn = ({ children, className }) => (
-  <Column w="4" className={`md:hidden ${className}`}>
-    {children}
-  </Column>
+  <Column className={`w-3/12 md:hidden ${className}`}>{children}</Column>
 )
 
 SmallColumn.defaultProps = {

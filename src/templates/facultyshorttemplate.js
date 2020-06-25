@@ -26,6 +26,7 @@ import ShareLinks from "../components/share/sharelinks"
 //import Breadcrumb from "../components/breadcrumb2"
 import Card from "../components/card"
 import ZoomImage from "../components/images/zoomimage"
+import H1 from "../components/headings/h1"
 
 export const PubMedLink = ({ person }) => (
   // <div className="uppercase">
@@ -196,15 +197,11 @@ export const GenericBackgroundSection = ({ file, children }) => (
 )
 
 export const FacultyHeading = ({ children }) => (
-  <h2 className="uppercase mb-8 text-center" style={{ fontWeight: "normal" }}>
-    {children}
-  </h2>
+  <h1 className="mb-8 text-center">{children}</h1>
 )
 
 export const FacultyHeading2 = ({ children }) => (
-  <h3 className="uppercase mb-8" style={{ fontWeight: "normal" }}>
-    {children}
-  </h3>
+  <h2 className="mb-8">{children}</h2>
 )
 
 export const Quote = ({ text }) => (
@@ -259,7 +256,7 @@ const About = ({ person, headshotFile, markdown }) => {
   }
 
   return (
-    <SmallContainer className="my-16 text-2xl">
+    <SmallContainer className="text-2xl">
       {/* <FacultyHeading>About {person.frontmatter.name}</FacultyHeading> */}
       <Column>
         {/* <Column className="mr-8">
@@ -420,7 +417,6 @@ const FacultyShortTemplate = ({ path, pageContext, data }) => {
       headerContent={<SiteSearch />}
       crumbContent={<ShareLinks path={path} />}
       floatMode="header"
-      bgColorClass="bg-white"
     >
       {headerImage !== null && headerImage}
 
@@ -434,7 +430,7 @@ const FacultyShortTemplate = ({ path, pageContext, data }) => {
         <Breadcrumb crumbs={crumbs} />
       </Container> */}
 
-      <div className="py-8">
+      <div className="py-24 bg-white">
         <About
           person={person}
           headshotFile={data.file}
@@ -477,7 +473,7 @@ const FacultyShortTemplate = ({ path, pageContext, data }) => {
         </div>
       )} */}
 
-      <div className="py-16">
+      <div className="py-24">
         <Container>
           {person.frontmatter.tags.includes("publication-format::recent") &&
             publications.length > 0 && (
