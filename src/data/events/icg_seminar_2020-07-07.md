@@ -9,6 +9,6 @@ url: ""
 ---
 
 Wei Gu<br/>
-George Rosenberger (Andrea Califano)
+George Rosenberger (Califano Lab)
 
 <!-- endexcerpt -->
